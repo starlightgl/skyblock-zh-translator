@@ -4,10 +4,22 @@ Set-Location -Path $PSScriptRoot
 $ProgressPreference = "SilentlyContinue"
 
 function Get-JavaMajor($javaExe) {
+    # 先读 JDK 目录里的 release 文件（最可靠，不用运行 java）
+    $release = Join-Path (Split-Path (Split-Path $javaExe -Parent) -Parent) "release"
+    if (Test-Path $release) {
+        $text = Get-Content $release -Raw
+        if ($text -match 'JAVA_VERSION="(\d+)') { return [int]$Matches[1] }
+    }
+    # 退而求其次：运行 java -version（它输出到 stderr，必须临时放宽错误处理）
+    $old = $ErrorActionPreference
     try {
+        $ErrorActionPreference = "Continue"
         $out = (& $javaExe -version 2>&1 | Out-String)
         if ($out -match 'version "(\d+)') { return [int]$Matches[1] }
-    } catch {}
+    } catch {
+    } finally {
+        $ErrorActionPreference = $old
+    }
     return 0
 }
 

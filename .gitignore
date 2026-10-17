@@ -42,3 +42,6 @@ test-build-26x.ps1
 run-print-methods.ps1
 remap_26.py
 class-info.txt
+
+# local JDK downloaded by build.ps1
+jdk/

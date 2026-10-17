@@ -45,6 +45,12 @@ public class ModConfig {
         if (buttonPosition == null) buttonPosition = ButtonPosition.START;
         if (chatBubbleDuration <= 0) chatBubbleDuration = 6;
         if (chatBubbleMaxDistance <= 0) chatBubbleMaxDistance = 16;
+        if (customBaseUrl == null) customBaseUrl = "";
+        if (customApiKey == null) customApiKey = "";
+        if (customModel == null) customModel = "";
+        if (customPrompt == null) customPrompt = DEFAULT_CUSTOM_PROMPT;
+        if (customTimeoutSeconds < 5) customTimeoutSeconds = 60;
+        if (autoItemProvider == null) autoItemProvider = TranslationProvider.GOOGLE;
     }
 
     public static void save() {
@@ -85,6 +91,34 @@ public class ModConfig {
     public boolean showTranslateButton = true;
     public ButtonPosition buttonPosition = ButtonPosition.START;
     public boolean autoTranslateItems = false;
+
+    // ── 中文增强版新增 ─────────────────────────────────────────────
+    public static final String DEFAULT_CUSTOM_PROMPT =
+            "The text comes from Hypixel SkyBlock, a Minecraft MMORPG server. "
+          + "Translate naturally for players. Keep SkyBlock proper nouns consistent: item names, reforges, enchantments, "
+          + "pets, mobs, bosses, slayers, dungeons floors, NPC names, locations, collections and skill names. "
+          + "If you are not sure about the standard translation of such a proper noun, keep the original English name. "
+          + "Keep stat names short (e.g. Strength, Crit Damage, Mana) in their common community translation.";
+
+    /** OpenAI-compatible endpoint, e.g. https://api.deepseek.com/v1 */
+    public String customBaseUrl = "";
+    public String customApiKey = "";
+    public String customModel = "";
+    /** < 0 means "do not send temperature" (needed for some reasoning models). */
+    public float customTemperature = 0.3f;
+    public int customTimeoutSeconds = 60;
+    public boolean enableCustomItem = true;
+
+    /** Extra context appended to the system prompt of every AI provider. */
+    public String customPrompt = DEFAULT_CUSTOM_PROMPT;
+    /** Inject matching entries of config/npc_translator_glossary.json into the prompt. */
+    public boolean useGlossary = true;
+    /** Replace numbers with {0},{1}.. before caching/translating. */
+    public boolean normalizeNumbers = true;
+    /** Original mod deleted the dictionary on every disconnect; now opt-in. */
+    public boolean clearDictOnDisconnect = false;
+    /** Provider used by "auto translate items" (original was hardcoded to Google). */
+    public TranslationProvider autoItemProvider = TranslationProvider.GOOGLE;
 
     public enum ButtonPosition {
         START("npctranslator.config.button_position.start"),
@@ -152,7 +186,8 @@ public class ModConfig {
         GEMINI("Gemini AI"),
         GROQ("Groq AI"),
         MISTRAL("Mistral AI"),
-        OPENROUTER("OpenRouter AI");
+        OPENROUTER("OpenRouter AI"),
+        CUSTOM("Custom API (OpenAI-compatible)");
 
         public final String displayName;
 

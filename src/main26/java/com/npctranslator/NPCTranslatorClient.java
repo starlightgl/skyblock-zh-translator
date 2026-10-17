@@ -43,6 +43,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
     public static KeyMapping keyTranslateGroq;
     public static KeyMapping keyTranslateMistral;
     public static KeyMapping keyTranslateOpenRouter;
+    public static KeyMapping keyTranslateCustom;
     public static KeyMapping keyRevertTranslation;
     public static KeyMapping menuKey;
 
@@ -70,12 +71,14 @@ public class NPCTranslatorClient implements ClientModInitializer {
     public static boolean groqJustPressed = false;
     public static boolean mistralJustPressed = false;
     public static boolean openRouterJustPressed = false;
+    public static boolean customJustPressed = false;
     public static boolean revertJustPressed = false;
     private static boolean lastGoogleState = false;
     private static boolean lastGeminiState = false;
     private static boolean lastGroqState = false;
     private static boolean lastMistralState = false;
     private static boolean lastOpenRouterState = false;
+    private static boolean lastCustomState = false;
     private static boolean lastRevertState = false;
     private static long animationTick = 0;
 
@@ -174,6 +177,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
         TranslationDictionary.load();
         ModConfig.load();
         config = ModConfig.INSTANCE;
+        Glossary.ensureFile();
         startTtsRunner();
 
         net.minecraft.client.KeyMapping.Category customCategory = net.minecraft.client.KeyMapping.Category.MISC;
@@ -258,6 +262,13 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 finalCategory
         );
         KeyMappingHelper.registerKeyMapping(keyTranslateOpenRouter);
+
+        keyTranslateCustom = new KeyMapping(
+                "key.npctranslator.translate.custom",
+                InputConstants.KEY_N,
+                finalCategory
+        );
+        KeyMappingHelper.registerKeyMapping(keyTranslateCustom);
 
         keyRevertTranslation = new KeyMapping(
                 "key.npctranslator.translate.revert",
@@ -347,6 +358,10 @@ public class NPCTranslatorClient implements ClientModInitializer {
             openRouterJustPressed = pOpenRouter && !lastOpenRouterState;
             lastOpenRouterState = pOpenRouter;
 
+            boolean pCustom = isKeyCurrentlyDown(keyTranslateCustom);
+            customJustPressed = pCustom && !lastCustomState;
+            lastCustomState = pCustom;
+
             boolean pRevert = isKeyCurrentlyDown(keyRevertTranslation);
             revertJustPressed = pRevert && !lastRevertState;
             lastRevertState = pRevert;
@@ -369,7 +384,10 @@ public class NPCTranslatorClient implements ClientModInitializer {
 
         // Oyun kapanınca (sunucudan ayrılınca) sözlüğü sil
         net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents.DISCONNECT.register((handler, client) -> {
-            TranslationDictionary.clear();
+            // 中文增强版：默认不再删除词典，只有勾选了 clearDictOnDisconnect 才删
+            if (config != null && config.clearDictOnDisconnect) {
+                TranslationDictionary.clear();
+            }
             ITEM_CACHE.clear();
             PENDING_ITEMS.clear();
             ACTIVE_TRANSLATED_ITEMS.clear();
@@ -625,6 +643,10 @@ public class NPCTranslatorClient implements ClientModInitializer {
             client.execute(() -> { ChatComponent c = getChatComponent(client); if(c!=null) c.addClientSystemMessage(Component.translatable("npctranslator.error.config").withStyle(ChatFormatting.RED)); });
             return;
         }
+        if (config.chatTranslationProvider == ModConfig.TranslationProvider.CUSTOM && !isCustomConfigured()) {
+            client.execute(() -> { ChatComponent c = getChatComponent(client); if(c!=null) c.addClientSystemMessage(Component.translatable("npctranslator.error.custom_config").withStyle(ChatFormatting.RED)); });
+            return;
+        }
 
         String targetLangName;
         String displayLanguageCode;
@@ -661,7 +683,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 final String formattedInput = tempFormattedInput;
                 final ClickEvent finalClickEvent = tempClickEvent;
 
-                String translatedText = getTranslatedText(formattedInput, displayLanguageCode, targetLangName, false, config.chatTranslationProvider);
+                String translatedText = translateChatCached(formattedInput, displayLanguageCode, targetLangName, config.chatTranslationProvider);
                 com.npctranslator.chatbubble.ChatBubbleManager.onTranslationComplete(msgId, translatedText);
 
                 if (config.enableTts) {
@@ -690,7 +712,61 @@ public class NPCTranslatorClient implements ClientModInitializer {
         });
     }
 
+    // ── 中文增强版：辅助方法 ─────────────────────────────────────────
+    private static boolean isBlank(String s) {
+        return s == null || s.trim().isEmpty();
+    }
+
+    public static boolean isCustomConfigured() {
+        return config != null && !isBlank(config.customBaseUrl) && !isBlank(config.customModel);
+    }
+
+    private static String buildSystemPrompt(boolean isTooltip, String langName, String content) {
+        Map<String, String> hits = config.useGlossary
+                ? TranslationUtil.findGlossaryHits(Glossary.get(), content, 80)
+                : Collections.emptyMap();
+        return TranslationUtil.buildSystemPrompt(isTooltip, langName, config.customPrompt, hits);
+    }
+
+    /** Chat translation with number-normalised dictionary cache. */
+    private static String translateChatCached(String formattedInput, String langCode, String langName, ModConfig.TranslationProvider provider) throws Exception {
+        String dictProvider = provider.name() + "_CHAT";
+        TranslationUtil.Template t = config.normalizeNumbers ? TranslationUtil.normalize(formattedInput) : TranslationUtil.Template.raw(formattedInput);
+        String cached = TranslationDictionary.get(t.text, dictProvider);
+        if (cached != null && !cached.isEmpty()) {
+            return TranslationUtil.restore(cached, t.numbers);
+        }
+        String tr = getTranslatedText(t.text, langCode, langName, false, provider);
+        if (tr != null && !tr.isEmpty() && TranslationUtil.placeholdersMatch(t.text, tr)) {
+            if (!tr.equals(t.text)) {
+                TranslationDictionary.put(t.text, tr, dictProvider);
+                TranslationDictionary.save();
+            }
+            return TranslationUtil.restore(tr, t.numbers);
+        }
+        // The model mangled the {n} placeholders: translate the raw text instead (not cached).
+        if (t.hasNumbers()) {
+            return getTranslatedText(formattedInput, langCode, langName, false, provider);
+        }
+        return tr;
+    }
+
+    /** Translate a list of lines in one request ("ID|text" batch format). */
+    private static Map<Integer, String> translateBatch(List<String> lines, String langCode, String targetLang, ModConfig.TranslationProvider provider) throws Exception {
+        if (lines.isEmpty()) return new HashMap<>();
+        String translatedContent = getTranslatedText(TranslationUtil.buildBatch(lines), langCode, targetLang, true, provider);
+        return TranslationUtil.parseBatch(translatedContent, lines.size());
+    }
+
     private static String getTranslatedText(String content, String langCode, String langName, boolean isTooltip, ModConfig.TranslationProvider provider) throws Exception {
+        String result = getTranslatedTextRaw(content, langCode, langName, isTooltip, provider);
+        if (provider != ModConfig.TranslationProvider.GOOGLE) {
+            result = TranslationUtil.stripThink(result);
+        }
+        return result;
+    }
+
+    private static String getTranslatedTextRaw(String content, String langCode, String langName, boolean isTooltip, ModConfig.TranslationProvider provider) throws Exception {
         if (provider == ModConfig.TranslationProvider.GOOGLE) {
             String cacheKey = langCode + ":" + content;
             String cached = TRANSLATION_MEMORY_CACHE.get(cacheKey);
@@ -781,11 +857,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 JsonArray messages = new JsonArray();
                 JsonObject systemMessage = new JsonObject();
                 systemMessage.addProperty("role", "system");
-                if (isTooltip) {
-                    systemMessage.addProperty("content", "Translate Minecraft item tooltip to " + langName + ". CRITICAL: Keep all Minecraft § color codes. You will receive lines prefixed with 'ID|'. You MUST return each translated line prefixed with the EXACT SAME 'ID|'. Output ONLY the translated lines.");
-                } else {
-                    systemMessage.addProperty("content", "Translate Minecraft NPC chat to " + langName + ". CRITICAL: Keep ALL Minecraft § color/formatting codes (like §e, §f, §l, §o etc) exactly where they are. DO NOT translate speaker names, player names, or prefixes. ONLY translate the actual message content. Output ONLY the final translated line with § codes preserved.");
-                }
+                systemMessage.addProperty("content", buildSystemPrompt(isTooltip, langName, content));
                 messages.add(systemMessage);
                 JsonObject userMessage = new JsonObject();
                 userMessage.addProperty("role", "user");
@@ -817,11 +889,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
             
             JsonObject systemInstruction = new JsonObject();
             JsonObject partsObjSys = new JsonObject();
-            if (isTooltip) {
-                partsObjSys.addProperty("text", "Translate Minecraft item tooltip to " + langName + ". CRITICAL: Keep all Minecraft § color codes. You will receive lines prefixed with 'ID|'. You MUST return each translated line prefixed with the EXACT SAME 'ID|'. Output ONLY the translated lines.");
-            } else {
-                partsObjSys.addProperty("text", "Translate Minecraft NPC chat to " + langName + ". CRITICAL: Keep ALL Minecraft § color/formatting codes (like §e, §f, §l, §o etc) exactly where they are. DO NOT translate speaker names, player names, or prefixes. ONLY translate the actual message content. Output ONLY the final translated line with § codes preserved.");
-            }
+            partsObjSys.addProperty("text", buildSystemPrompt(isTooltip, langName, content));
             JsonArray sysParts = new JsonArray();
             sysParts.add(partsObjSys);
             systemInstruction.add("parts", sysParts);
@@ -887,11 +955,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 JsonArray messages = new JsonArray();
                 JsonObject systemMessage = new JsonObject();
                 systemMessage.addProperty("role", "system");
-                if (isTooltip) {
-                    systemMessage.addProperty("content", "Translate Minecraft item tooltip to " + langName + ". CRITICAL: Keep all Minecraft § color codes. Maintain exact line order and spacing. Output ONLY translation.");
-                } else {
-                    systemMessage.addProperty("content", "Translate Minecraft NPC chat to " + langName + ". CRITICAL: Keep ALL Minecraft § color/formatting codes (like §e, §f, §l, §o etc) exactly where they are. DO NOT translate speaker names, player names, or prefixes. ONLY translate the actual message content. Output ONLY the final translated line with § codes preserved.");
-                }
+                systemMessage.addProperty("content", buildSystemPrompt(isTooltip, langName, content));
                 messages.add(systemMessage);
                 JsonObject userMessage = new JsonObject();
                 userMessage.addProperty("role", "user");
@@ -936,11 +1000,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 JsonArray messages = new JsonArray();
                 JsonObject systemMessage = new JsonObject();
                 systemMessage.addProperty("role", "system");
-                if (isTooltip) {
-                    systemMessage.addProperty("content", "Translate Minecraft item tooltip to " + langName + ". CRITICAL: Keep all Minecraft § color codes. Maintain exact line order and spacing. Output ONLY translation.");
-                } else {
-                    systemMessage.addProperty("content", "Translate Minecraft NPC chat to " + langName + ". CRITICAL: Keep ALL Minecraft § color/formatting codes (like §e, §f, §l, §o etc) exactly where they are. DO NOT translate speaker names, player names, or prefixes. ONLY translate the actual message content. Output ONLY the final translated line with § codes preserved.");
-                }
+                systemMessage.addProperty("content", buildSystemPrompt(isTooltip, langName, content));
                 messages.add(systemMessage);
                 JsonObject userMessage = new JsonObject();
                 userMessage.addProperty("role", "user");
@@ -969,6 +1029,50 @@ public class NPCTranslatorClient implements ClientModInitializer {
                     throw new Exception("OpenRouter API failed. Status: " + response.statusCode());
                 }
             }
+        } else if (provider == ModConfig.TranslationProvider.CUSTOM) {
+            if (!isCustomConfigured()) {
+                throw new Exception("Custom API not configured. Status: 401");
+            }
+            JsonObject jsonBody = new JsonObject();
+            jsonBody.addProperty("model", config.customModel.trim());
+            if (config.customTemperature >= 0) {
+                jsonBody.addProperty("temperature", config.customTemperature);
+            }
+            jsonBody.addProperty("stream", false);
+            JsonArray messages = new JsonArray();
+            JsonObject systemMessage = new JsonObject();
+            systemMessage.addProperty("role", "system");
+            systemMessage.addProperty("content", buildSystemPrompt(isTooltip, langName, content));
+            messages.add(systemMessage);
+            JsonObject userMessage = new JsonObject();
+            userMessage.addProperty("role", "user");
+            userMessage.addProperty("content", content);
+            messages.add(userMessage);
+            jsonBody.add("messages", messages);
+
+            HttpRequest.Builder builder = HttpRequest.newBuilder()
+                    .uri(URI.create(TranslationUtil.chatCompletionsUrl(config.customBaseUrl)))
+                    .header("Content-Type", "application/json")
+                    .timeout(java.time.Duration.ofSeconds(Math.max(5, config.customTimeoutSeconds)))
+                    .POST(HttpRequest.BodyPublishers.ofString(GSON.toJson(jsonBody)));
+            if (!isBlank(config.customApiKey)) {
+                builder.header("Authorization", "Bearer " + config.customApiKey.trim());
+            }
+
+            HttpResponse<String> response = HTTP_CLIENT.send(builder.build(), HttpResponse.BodyHandlers.ofString());
+            if (response.statusCode() == 200) {
+                JsonObject responseJson = GSON.fromJson(response.body(), JsonObject.class);
+                JsonObject message = responseJson.getAsJsonArray("choices").get(0).getAsJsonObject().getAsJsonObject("message");
+                JsonElement contentEl = message.get("content");
+                if (contentEl == null || contentEl.isJsonNull()) {
+                    throw new Exception("Custom API returned empty content");
+                }
+                return contentEl.getAsString();
+            }
+            String body = response.body() == null ? "" : response.body();
+            if (body.length() > 300) body = body.substring(0, 300);
+            System.err.println("[NPCTranslator] Custom API error " + response.statusCode() + ": " + body);
+            throw new Exception("Custom API failed. Status: " + response.statusCode());
         }
         return content;
     }
@@ -1105,6 +1209,17 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 triggerTranslation(tooltip, cacheKey, ModConfig.TranslationProvider.OPENROUTER);
             }
         }
+        if (customJustPressed && config.enableCustomItem && !TOGGLED_THIS_TICK.contains(cacheKey + "_U")) {
+            TOGGLED_THIS_TICK.add(cacheKey + "_U");
+            if (isAlreadyTranslated && currentProvider == ModConfig.TranslationProvider.CUSTOM) {
+                ACTIVE_TRANSLATED_ITEMS.remove(cacheKey); REVERTED_ITEMS.add(cacheKey);
+                TRANSLATED_PROVIDER_CACHE.remove(cacheKey); ITEM_CACHE.remove(cacheKey);
+            } else {
+                ITEM_CACHE.remove(cacheKey); PENDING_ITEMS.remove(cacheKey); REVERTED_ITEMS.remove(cacheKey);
+                ACTIVE_TRANSLATED_ITEMS.add(cacheKey); TRANSLATED_PROVIDER_CACHE.put(cacheKey, ModConfig.TranslationProvider.CUSTOM);
+                triggerTranslation(tooltip, cacheKey, ModConfig.TranslationProvider.CUSTOM);
+            }
+        }
         if (revertJustPressed && !TOGGLED_THIS_TICK.contains(cacheKey + "_R")) {
             TOGGLED_THIS_TICK.add(cacheKey + "_R");
             ACTIVE_TRANSLATED_ITEMS.remove(cacheKey); REVERTED_ITEMS.add(cacheKey);
@@ -1127,6 +1242,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 case GROQ: providerEnabled = config.enableGroqItem; break;
                 case MISTRAL: providerEnabled = config.enableMistralItem; break;
                 case OPENROUTER: providerEnabled = config.enableOpenRouterItem; break;
+                case CUSTOM: providerEnabled = config.enableCustomItem; break;
             }
 
             if (providerEnabled) {
@@ -1140,6 +1256,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                         provider == ModConfig.TranslationProvider.GEMINI ? "npctranslator.tooltip.translated.gemini" :
                         provider == ModConfig.TranslationProvider.MISTRAL ? "npctranslator.tooltip.translated.mistral" :
                         provider == ModConfig.TranslationProvider.OPENROUTER ? "npctranslator.tooltip.translated.openrouter" :
+                        provider == ModConfig.TranslationProvider.CUSTOM ? "npctranslator.tooltip.translated.custom" :
                         "npctranslator.tooltip.translated.groq"
                     ).withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC));
                 } catch (Exception ignored) {}
@@ -1165,9 +1282,10 @@ public class NPCTranslatorClient implements ClientModInitializer {
             } catch (Exception ignored) {}
         } else if (config.autoTranslateItems && !REVERTED_ITEMS.contains(cacheKey) && !ACTIVE_TRANSLATED_ITEMS.contains(cacheKey)) {
             // Auto translate items logic
+            ModConfig.TranslationProvider autoProvider = config.autoItemProvider != null ? config.autoItemProvider : ModConfig.TranslationProvider.GOOGLE;
             ACTIVE_TRANSLATED_ITEMS.add(cacheKey);
-            TRANSLATED_PROVIDER_CACHE.put(cacheKey, ModConfig.TranslationProvider.GOOGLE);
-            triggerTranslation(tooltip, cacheKey, ModConfig.TranslationProvider.GOOGLE);
+            TRANSLATED_PROVIDER_CACHE.put(cacheKey, autoProvider);
+            triggerTranslation(tooltip, cacheKey, autoProvider);
         }
 
         renderShortcutsFooter(tooltip, isTranslated, PENDING_ITEMS.contains(cacheKey), cacheKey);
@@ -1209,6 +1327,10 @@ public class NPCTranslatorClient implements ClientModInitializer {
                     String k = getKeyName(keyTranslateOpenRouter, "-");
                     tooltip.add(Component.translatable("npctranslator.tooltip.translate.openrouter", k).withStyle(ChatFormatting.DARK_GRAY));
                 }
+                if (config.enableCustomItem && isCustomConfigured()) {
+                    String k = getKeyName(keyTranslateCustom, "N");
+                    tooltip.add(Component.translatable("npctranslator.tooltip.translate.custom", k).withStyle(ChatFormatting.DARK_GRAY));
+                }
             }
         } catch (Exception ignored) {}
     }
@@ -1233,6 +1355,11 @@ public class NPCTranslatorClient implements ClientModInitializer {
             ITEM_CACHE.put(cacheKey, List.of(Component.translatable("npctranslator.error.config").withStyle(ChatFormatting.RED, ChatFormatting.BOLD)));
             return;
         }
+        if (provider == ModConfig.TranslationProvider.CUSTOM && !isCustomConfigured()) {
+            ACTIVE_TRANSLATED_ITEMS.remove(cacheKey);
+            ITEM_CACHE.put(cacheKey, List.of(Component.translatable("npctranslator.error.custom_config").withStyle(ChatFormatting.RED, ChatFormatting.BOLD)));
+            return;
+        }
 
         
         PENDING_ITEMS.add(cacheKey);
@@ -1246,51 +1373,66 @@ public class NPCTranslatorClient implements ClientModInitializer {
 
         CompletableFuture.runAsync(() -> {
             try {
-                List<String> missingLines = new ArrayList<>();
+                String providerName = provider.name(); // e.g. "GOOGLE", "GEMINI", "CUSTOM"
                 List<String> allLinesOriginal = new ArrayList<>();
-                String providerName = provider.name(); // e.g. "GOOGLE", "GEMINI", "GROQ"
+                List<TranslationUtil.Template> templates = new ArrayList<>();
+                LinkedHashSet<String> missingSet = new LinkedHashSet<>();
                 for (Component line : tooltipSnapshot) {
                     String parsed = toFormattedString(line).trim();
-                    if (!parsed.isEmpty()) {
-                        allLinesOriginal.add(parsed);
-                        if (!TranslationDictionary.has(parsed, providerName)) {
-                            missingLines.add(parsed);
-                        }
+                    if (parsed.isEmpty()) continue;
+                    TranslationUtil.Template t = config.normalizeNumbers ? TranslationUtil.normalize(parsed) : TranslationUtil.Template.raw(parsed);
+                    allLinesOriginal.add(parsed);
+                    templates.add(t);
+                    if (!TranslationDictionary.has(t.text, providerName)) {
+                        missingSet.add(t.text);
                     }
                 }
 
-                if (!missingLines.isEmpty()) {
-                    StringBuilder batch = new StringBuilder();
-                    for (int i = 0; i < missingLines.size(); i++) {
-                        batch.append(i).append("|").append(missingLines.get(i)).append("\n");
-                    }
-                    
-                    String translatedContent = getTranslatedText(batch.toString(), langCode, targetLang, true, provider);
-                    String[] transLines = translatedContent.split("\n");
-                    
-                    for (String tLine : transLines) {
-                        int pipeIdx = tLine.indexOf('|');
-                        if (pipeIdx != -1) {
-                            try {
-                                int id = Integer.parseInt(tLine.substring(0, pipeIdx).trim());
-                                if (id >= 0 && id < missingLines.size()) {
-                                    String translatedText = tLine.substring(pipeIdx + 1).trim();
-                                    TranslationDictionary.put(missingLines.get(id), translatedText, providerName);
-                                }
-                            } catch (Exception e) {}
+                // 1) Translate only the templates we have never seen (numbers already replaced by {n}).
+                if (!missingSet.isEmpty()) {
+                    List<String> missingLines = new ArrayList<>(missingSet);
+                    Map<Integer, String> result = translateBatch(missingLines, langCode, targetLang, provider);
+                    boolean changed = false;
+                    for (Map.Entry<Integer, String> e : result.entrySet()) {
+                        String template = missingLines.get(e.getKey());
+                        String tr = e.getValue();
+                        if (TranslationUtil.placeholdersMatch(template, tr)) {
+                            TranslationDictionary.put(template, tr, providerName);
+                            changed = true;
                         }
                     }
-                    TranslationDictionary.save();
+                    if (changed) TranslationDictionary.save();
+                }
+
+                // 2) Assemble; lines with numbers whose template failed get one raw (uncached) retry.
+                String[] out = new String[allLinesOriginal.size()];
+                List<String> retryLines = new ArrayList<>();
+                List<Integer> retryIdx = new ArrayList<>();
+                for (int i = 0; i < allLinesOriginal.size(); i++) {
+                    TranslationUtil.Template t = templates.get(i);
+                    String tr = TranslationDictionary.get(t.text, providerName);
+                    if (tr != null && !tr.isEmpty()) {
+                        out[i] = TranslationUtil.restore(tr, t.numbers);
+                    } else if (t.hasNumbers()) {
+                        retryLines.add(allLinesOriginal.get(i));
+                        retryIdx.add(i);
+                    }
+                }
+                if (!retryLines.isEmpty()) {
+                    try {
+                        Map<Integer, String> retry = translateBatch(retryLines, langCode, targetLang, provider);
+                        for (Map.Entry<Integer, String> e : retry.entrySet()) {
+                            out[retryIdx.get(e.getKey())] = e.getValue();
+                        }
+                    } catch (Exception retryError) {
+                        retryError.printStackTrace();
+                    }
                 }
 
                 List<Component> translatedTooltip = new ArrayList<>();
-                for (String orig : allLinesOriginal) {
-                    String tr = TranslationDictionary.get(orig, providerName);
-                    if (tr != null && !tr.isEmpty()) {
-                        translatedTooltip.add(parseColorCodes(tr));
-                    } else {
-                        translatedTooltip.add(parseColorCodes(orig));
-                    }
+                for (int i = 0; i < allLinesOriginal.size(); i++) {
+                    String line = out[i] != null && !out[i].isEmpty() ? out[i] : allLinesOriginal.get(i);
+                    translatedTooltip.add(parseColorCodes(line));
                 }
 
                 if (!translatedTooltip.isEmpty()) {
@@ -1298,7 +1440,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-                String providerName = provider == ModConfig.TranslationProvider.GEMINI ? "Gemini" : provider == ModConfig.TranslationProvider.GROQ ? "Groq" : "Google";
+                String providerName = provider.toString();
                 boolean isRateLimit = e.getMessage() != null && e.getMessage().contains("429");
                 String errorMsgKey = e.getMessage() != null && e.getMessage().contains("401") ? "npctranslator.error.api_key_invalid" :
                                   isRateLimit ? "npctranslator.error.api_limit_exceeded" :

@@ -2,8 +2,8 @@
 	"schemaVersion": 1,
 	"id": "hypixel-npc-and-items-translate",
 	"version": "${version}",
-	"name": "NPC & Items Translator",
-	"description": "Translate NPC chat messages, item tooltips and GUI text in Hypixel SkyBlock and more. Supports Google Translate (free) and Groq AI. Client-side only.",
+	"name": "NPC & Items Translator (SkyBlock 中文增强)",
+	"description": "Translate NPC chat messages, item tooltips and GUI text in Hypixel SkyBlock and more. Supports Google Translate (free) and Groq AI. Client-side only. Fork: custom OpenAI-compatible API, custom prompt, glossary, number-placeholder cache.",
 	"authors": [
 		"KALPSIZ__"
 	],
@@ -24,7 +24,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.19.2",
-		"minecraft": ">=1.21.4",
+		"minecraft": ">=26.3",
 		"java": ">=21",
 		"fabric-api": "*",
 		"yet_another_config_lib_v3": ">=3.5.0"

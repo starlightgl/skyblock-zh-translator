@@ -73,11 +73,19 @@ try {
     }
 } catch {}
 
-Write-Host "==> 开始编译（第一次要下载 Gradle、Minecraft 和 Fabric 依赖，可能需要 5~15 分钟）..." -ForegroundColor Cyan
-& .\gradlew.bat @gradleArgs
-if ($LASTEXITCODE -ne 0) { throw "编译失败，请把上面的报错发给 Claude" }
+$targets = @("26.2", "26.3")
+$built = @()
+foreach ($t in $targets) {
+    Write-Host ""
+    Write-Host "==> 编译 Minecraft $t 版（第一次要下载 Gradle、Minecraft 和 Fabric 依赖，可能需要 5~15 分钟）..." -ForegroundColor Cyan
+    & .\gradlew.bat clean @gradleArgs "-PmcTarget=$t"
+    if ($LASTEXITCODE -ne 0) { throw "Minecraft $t 版编译失败，请把上面的报错发给 Claude" }
+    $jar = Get-ChildItem ".\build\libs\*.jar" | Where-Object { $_.Name -notlike "*-sources.jar" } | Select-Object -First 1
+    Copy-Item $jar.FullName -Destination (Join-Path $PSScriptRoot "..") -Force
+    $built += $jar.Name
+}
 
-$jar = Get-ChildItem ".\build\libs\*.jar" | Where-Object { $_.Name -notlike "*-sources.jar" } | Select-Object -First 1
-Copy-Item $jar.FullName -Destination (Join-Path $PSScriptRoot "..") -Force
 Write-Host ""
-Write-Host "==> 完成！jar 已复制到上一级文件夹：$($jar.Name)" -ForegroundColor Green
+Write-Host "==> 完成！以下 jar 已复制到上一级文件夹：" -ForegroundColor Green
+$built | ForEach-Object { Write-Host "    $_" -ForegroundColor Green }
+Write-Host "    文件名里的 mc26.2 / mc26.3 对应游戏版本，只装和你游戏版本一致的那个。" -ForegroundColor Green

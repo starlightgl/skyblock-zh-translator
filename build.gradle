@@ -12,7 +12,12 @@ buildscript {
 apply plugin: 'fabric-loom'
 apply plugin: 'maven-publish'
 
-version = project.mod_version
+// Per-Minecraft-version settings live in gradle-<mcTarget>.properties
+def mcTarget = project.findProperty('mcTarget') ?: '26.3'
+def targetProps = new Properties()
+file("gradle-${mcTarget}.properties").withInputStream { targetProps.load(it) }
+
+version = "${project.mod_version}+mc${mcTarget}"
 group = project.maven_group
 
 base {
@@ -36,23 +41,25 @@ sourceSets {
 }
 
 dependencies {
-	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	minecraft "com.mojang:minecraft:${targetProps['minecraft_version']}"
 	// 26.x is unobfuscated - use implementation instead of modImplementation
 	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
 	// Fabric API
-	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+	implementation "net.fabricmc.fabric-api:fabric-api:${targetProps['fabric_api_version']}"
 	
 	compileOnly "dev.isxander:yet-another-config-lib:3.8.1+1.21.4-neoforge"
-	implementation "com.terraformersmc:modmenu:${project.modmenu_version}"
+	implementation "com.terraformersmc:modmenu:${targetProps['modmenu_version']}"
 }
 
 processResources {
 	def version = project.version
+	def minecraftDep = targetProps['minecraft_dep']
 	inputs.property "version", version
+	inputs.property "minecraftDep", minecraftDep
 
 	filesMatching("fabric.mod.json") {
-		expand "version": version
+		expand "version": version, "minecraft_dep": minecraftDep
 	}
 }
 

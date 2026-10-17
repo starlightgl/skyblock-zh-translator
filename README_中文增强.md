@@ -1,6 +1,6 @@
 # NPC & Items Translator · SkyBlock 中文增强版
 
-基于 KALPSIZ__ 的 hypixel-skyblock-npc-and-items-translate（MIT 协议），只适配 Minecraft 26.3。
+基于 KALPSIZ__ 的 hypixel-skyblock-npc-and-items-translate（MIT 协议），适配 Minecraft 26.2 和 26.3。
 
 ## 编译
 
@@ -8,9 +8,10 @@
 
 - 会自动查找 JDK 25；找不到就下载一个便携版放到 `jdk` 文件夹，不影响系统。
 - 第一次编译要下载 Gradle、Minecraft 和 Fabric 依赖。如果开了 Clash 之类的“系统代理”，脚本会自动让 Gradle 走代理。
-- 成功后，jar 会复制到上一级文件夹（`npc-translator-zh`）。
+- 会依次编译 26.2 和 26.3 两个版本，成功后 jar 会复制到上一级文件夹（`npc-translator-zh`），文件名里带 `mc26.2` / `mc26.3`。只装和游戏版本一致的那个。
+- 只想编一个版本：`gradlew.bat build -PmcTarget=26.2`。
 
-安装：把 jar 放进 26.3 的 mods 文件夹，并**删掉原版的 NPC Translator jar**（两者 Mod ID 相同）。依赖跟原版一样：Fabric API、YetAnotherConfigLib、ModMenu。
+安装：把对应版本的 jar 放进 mods 文件夹，并**删掉原版的 NPC Translator jar**（两者 Mod ID 相同）。依赖跟原版一样：Fabric API、YetAnotherConfigLib、ModMenu。
 
 ## 新增功能
 

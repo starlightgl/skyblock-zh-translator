@@ -36,6 +36,7 @@ public class HubScreen extends Screen {
         this.addRenderableWidget(Button.builder(Component.translatable("npctranslator.option.clearDict"), button -> {
             int count = TranslationDictionary.size();
             TranslationDictionary.clear();
+            com.npctranslator.HudTranslator.clearCache();
             NPCTranslatorClient.ITEM_CACHE.clear();
             if (this.minecraft != null && this.minecraft.player != null) {
                 this.minecraft.player.sendSystemMessage(Component.translatable("npctranslator.dict_cleared", count));

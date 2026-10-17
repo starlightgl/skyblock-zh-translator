@@ -120,6 +120,17 @@ public class ModConfig {
     /** Provider used by "auto translate items" (original was hardcoded to Google). */
     public TranslationProvider autoItemProvider = TranslationProvider.GOOGLE;
 
+    /** Fixed translations from config/npc_translator_phrasebook.json (no API call). */
+    public boolean usePhrasebook = true;
+    /** Replace chat system messages / NPC lines that have a fixed translation. */
+    public boolean fixedChatTranslation = true;
+    /** Translate the scoreboard sidebar. */
+    public boolean translateSidebar = true;
+    /** Translate the item name shown above the hotbar when switching items. */
+    public boolean translateHeldItemName = true;
+    /** Let sidebar lines / item names without a known translation be sent to the AI (auto-translate provider). */
+    public boolean hudUseAI = true;
+
     public enum ButtonPosition {
         START("npctranslator.config.button_position.start"),
         END("npctranslator.config.button_position.end");

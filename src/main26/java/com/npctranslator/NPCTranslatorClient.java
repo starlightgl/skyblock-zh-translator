@@ -178,6 +178,8 @@ public class NPCTranslatorClient implements ClientModInitializer {
         ModConfig.load();
         config = ModConfig.INSTANCE;
         Glossary.ensureFile();
+        PhraseBook.loadAsync();
+        HudTranslator.init();
         startTtsRunner();
 
         net.minecraft.client.KeyMapping.Category customCategory = net.minecraft.client.KeyMapping.Category.MISC;
@@ -293,6 +295,16 @@ public class NPCTranslatorClient implements ClientModInitializer {
             if (rawText.contains("[Çevir]") || rawText.contains("[TR]") || rawText.contains("[Translate]") || rawText.contains("[EN]") || (!btnText.isEmpty() && rawText.contains(btnText))) {
                 return text;
             }
+
+            // 中文增强版：短语库里有固定译文的系统提示/NPC 对话直接替换，不调用 AI
+            if (config.usePhrasebook && config.fixedChatTranslation) {
+                try {
+                    Component fixed = translateChatFixed(text);
+                    if (fixed != null) return fixed;
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
             
             String msgId = String.valueOf(messageCounter.incrementAndGet());
             String encodedText = Base64.getEncoder().encodeToString(rawText.getBytes(java.nio.charset.StandardCharsets.UTF_8));
@@ -404,6 +416,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                     .executes(context -> {
                         int count = TranslationDictionary.size();
                         TranslationDictionary.clear();
+                        HudTranslator.clearCache();
                         ITEM_CACHE.clear();
                         Minecraft.getInstance().player.sendSystemMessage(Component.translatable("npctranslator.dict_cleared", count));
                         return 1;
@@ -414,6 +427,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                         .executes(context -> {
                             int count = TranslationDictionary.size();
                             TranslationDictionary.clear();
+                            HudTranslator.clearCache();
                             ITEM_CACHE.clear();
                             Minecraft.getInstance().player.sendSystemMessage(Component.translatable("npctranslator.dict_cleared", count));
                             return 1;
@@ -540,7 +554,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
         ChatFormatting.RED, ChatFormatting.LIGHT_PURPLE, ChatFormatting.YELLOW, ChatFormatting.WHITE
     ));
 
-    private static String textToFormattedString(Component text) {
+    public static String textToFormattedString(Component text) {
         StringBuilder sb = new StringBuilder();
         text.visit((style, string) -> {
             // Apply color
@@ -564,7 +578,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
         return sb.toString();
     }
 
-    private static MutableComponent formattedStringToText(String formatted) {
+    public static MutableComponent formattedStringToText(String formatted) {
         MutableComponent result = Component.empty();
         StringBuilder current = new StringBuilder();
         ChatFormatting currentColor = null;
@@ -717,13 +731,76 @@ public class NPCTranslatorClient implements ClientModInitializer {
         return s == null || s.trim().isEmpty();
     }
 
+    /** Whether a provider has what it needs (API key / endpoint) to be called. */
+    public static boolean isProviderUsable(ModConfig.TranslationProvider p) {
+        ModConfig c = ModConfig.INSTANCE;
+        if (p == null || c == null) return false;
+        switch (p) {
+            case GOOGLE: return true;
+            case GEMINI: return !isBlank(c.geminiApiKey);
+            case GROQ: return !isBlank(c.groqApiKey);
+            case MISTRAL: return !isBlank(c.mistralApiKey);
+            case OPENROUTER: return !isBlank(c.openRouterApiKey);
+            case CUSTOM: return !isBlank(c.customBaseUrl) && !isBlank(c.customModel);
+            default: return false;
+        }
+    }
+
+    /** Same target-language wording the item translator uses. */
+    public static String targetLanguageName(String langCode) {
+        ModConfig c = ModConfig.INSTANCE;
+        return c.useGameLanguage ? ("the language for locale code: " + langCode) : c.targetLanguage.englishName;
+    }
+
+    /**
+     * Fixed (phrase-book) translation of a whole chat message, or null.
+     * "[NPC] Name: text" keeps the speaker and translates the text after ": ".
+     * Messages with more than one click action (e.g. [YES] [NO]) are left alone.
+     */
+    private static Component translateChatFixed(Component text) {
+        if (!PhraseBook.isReady()) return null;
+        List<ClickEvent> clicks = new ArrayList<>();
+        List<HoverEvent> hovers = new ArrayList<>();
+        collectEvents(text, clicks, hovers);
+        if (clicks.size() > 1) return null;
+        String formatted = textToFormattedString(text);
+        String plain = TranslationUtil.stripColorCodes(formatted).trim();
+        String result = null;
+        if (plain.startsWith("[NPC] ")) {
+            int idx = formatted.indexOf(": ");
+            if (idx > 0) {
+                String tb = PhraseBook.translate(formatted.substring(idx + 2));
+                if (tb != null) result = formatted.substring(0, idx + 2) + tb;
+            }
+        } else {
+            result = PhraseBook.translate(formatted);
+        }
+        if (result == null) return null;
+        MutableComponent comp = formattedStringToText(result);
+        final ClickEvent ce = clicks.isEmpty() ? null : clicks.get(0);
+        final HoverEvent he = hovers.isEmpty() ? null : hovers.get(0);
+        if (ce != null || he != null) {
+            comp = Component.empty().append(comp).withStyle(st -> st.withClickEvent(ce).withHoverEvent(he));
+        }
+        return comp;
+    }
+
+    private static void collectEvents(Component c, List<ClickEvent> clicks, List<HoverEvent> hovers) {
+        Style st = c.getStyle();
+        if (st != null) {
+            if (st.getClickEvent() != null && !clicks.contains(st.getClickEvent())) clicks.add(st.getClickEvent());
+            if (st.getHoverEvent() != null && hovers.isEmpty()) hovers.add(st.getHoverEvent());
+        }
+        for (Component sib : c.getSiblings()) collectEvents(sib, clicks, hovers);
+    }
+
     public static boolean isCustomConfigured() {
         return config != null && !isBlank(config.customBaseUrl) && !isBlank(config.customModel);
     }
 
     private static String buildSystemPrompt(boolean isTooltip, String langName, String content) {
         Map<String, String> hits = config.useGlossary
-                ? TranslationUtil.findGlossaryHits(Glossary.get(), content, 80)
+                ? Glossary.index().hits(content, 80)
                 : Collections.emptyMap();
         return TranslationUtil.buildSystemPrompt(isTooltip, langName, config.customPrompt, hits);
     }
@@ -752,7 +829,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
     }
 
     /** Translate a list of lines in one request ("ID|text" batch format). */
-    private static Map<Integer, String> translateBatch(List<String> lines, String langCode, String targetLang, ModConfig.TranslationProvider provider) throws Exception {
+    public static Map<Integer, String> translateBatch(List<String> lines, String langCode, String targetLang, ModConfig.TranslationProvider provider) throws Exception {
         if (lines.isEmpty()) return new HashMap<>();
         String translatedContent = getTranslatedText(TranslationUtil.buildBatch(lines), langCode, targetLang, true, provider);
         return TranslationUtil.parseBatch(translatedContent, lines.size());
@@ -1375,13 +1452,23 @@ public class NPCTranslatorClient implements ClientModInitializer {
             try {
                 String providerName = provider.name(); // e.g. "GOOGLE", "GEMINI", "CUSTOM"
                 List<String> allLinesOriginal = new ArrayList<>();
+                for (Component line : tooltipSnapshot) {
+                    allLinesOriginal.add(toFormattedString(line).trim());
+                }
+                int n = allLinesOriginal.size();
+
+                // 0) Fixed translations from the phrase book (may merge wrapped lore lines).
+                String[] fixed = config.usePhrasebook ? PhraseBook.translateLines(allLinesOriginal) : new String[n];
+
                 List<TranslationUtil.Template> templates = new ArrayList<>();
                 LinkedHashSet<String> missingSet = new LinkedHashSet<>();
-                for (Component line : tooltipSnapshot) {
-                    String parsed = toFormattedString(line).trim();
-                    if (parsed.isEmpty()) continue;
+                for (int i = 0; i < n; i++) {
+                    String parsed = allLinesOriginal.get(i);
+                    if (parsed.isEmpty() || fixed[i] != null) {
+                        templates.add(null);
+                        continue;
+                    }
                     TranslationUtil.Template t = config.normalizeNumbers ? TranslationUtil.normalize(parsed) : TranslationUtil.Template.raw(parsed);
-                    allLinesOriginal.add(parsed);
                     templates.add(t);
                     if (!TranslationDictionary.has(t.text, providerName)) {
                         missingSet.add(t.text);
@@ -1405,11 +1492,12 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 }
 
                 // 2) Assemble; lines with numbers whose template failed get one raw (uncached) retry.
-                String[] out = new String[allLinesOriginal.size()];
+                String[] out = new String[n];
                 List<String> retryLines = new ArrayList<>();
                 List<Integer> retryIdx = new ArrayList<>();
-                for (int i = 0; i < allLinesOriginal.size(); i++) {
+                for (int i = 0; i < n; i++) {
                     TranslationUtil.Template t = templates.get(i);
+                    if (t == null) continue;
                     String tr = TranslationDictionary.get(t.text, providerName);
                     if (tr != null && !tr.isEmpty()) {
                         out[i] = TranslationUtil.restore(tr, t.numbers);
@@ -1430,9 +1518,19 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 }
 
                 List<Component> translatedTooltip = new ArrayList<>();
-                for (int i = 0; i < allLinesOriginal.size(); i++) {
-                    String line = out[i] != null && !out[i].isEmpty() ? out[i] : allLinesOriginal.get(i);
-                    translatedTooltip.add(parseColorCodes(line));
+                for (int i = 0; i < n; i++) {
+                    String original = allLinesOriginal.get(i);
+                    if (fixed[i] == PhraseMatcher.MERGED) continue;
+                    if (fixed[i] != null) {
+                        for (String wrapped : PhraseMatcher.wrap(fixed[i], 64)) {
+                            translatedTooltip.add(parseColorCodes(wrapped));
+                        }
+                    } else if (original.isEmpty()) {
+                        translatedTooltip.add(Component.empty());
+                    } else {
+                        String line = out[i] != null && !out[i].isEmpty() ? out[i] : original;
+                        translatedTooltip.add(parseColorCodes(line));
+                    }
                 }
 
                 if (!translatedTooltip.isEmpty()) {
@@ -1453,7 +1551,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
         });
     }
 
-    private static String toFormattedString(Component text) {
+    public static String toFormattedString(Component text) {
         StringBuilder sb = new StringBuilder();
         text.visit((style, string) -> {
             net.minecraft.network.chat.TextColor color = style.getColor();
@@ -1476,7 +1574,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
         return sb.toString();
     }
 
-    private static Component parseColorCodes(String text) {
+    public static Component parseColorCodes(String text) {
         MutableComponent root = Component.empty();
         String[] parts = text.split("\u00A7");
         if (parts.length == 0) return Component.literal(text);

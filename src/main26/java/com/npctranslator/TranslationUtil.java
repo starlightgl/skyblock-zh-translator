@@ -123,32 +123,97 @@ public final class TranslationUtil {
 
     /**
      * Glossary terms that occur in the text (case-insensitive, not inside a longer word).
-     * Longer terms win when several overlap ("Aspect of the Dragons" before "Dragon").
+     * Convenience wrapper; for big glossaries build a {@link GlossaryIndex} once and reuse it.
      */
     public static Map<String, String> findGlossaryHits(Map<String, String> glossary, String text, int max) {
-        Map<String, String> hits = new LinkedHashMap<>();
-        if (glossary == null || glossary.isEmpty() || text == null) return hits;
-        String plain = stripColorCodes(text);
-        List<Map.Entry<String, String>> entries = new ArrayList<>(glossary.entrySet());
-        entries.sort((a, b) -> b.getKey().length() - a.getKey().length());
-        for (Map.Entry<String, String> e : entries) {
-            String term = e.getKey();
-            if (term == null || term.trim().length() < 2 || term.startsWith("_")) continue;
-            Pattern p = Pattern.compile("(?<![A-Za-z])" + Pattern.quote(term.trim()) + "(?![A-Za-z])",
-                    Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE);
-            if (p.matcher(plain).find()) {
-                hits.put(term.trim(), e.getValue());
-                if (hits.size() >= max) break;
+        return new GlossaryIndex(glossary).hits(text, max);
+    }
+
+    /**
+     * Pre-sorted, pre-lowercased glossary for fast lookups (thousands of entries, no regex).
+     * Longer terms win; a shorter term is only reported if it occurs outside every longer match
+     * ("Crit Damage" hides the "Damage" inside it).
+     */
+    public static final class GlossaryIndex {
+        private final String[] keys;      // original keys, longest first
+        private final String[] lower;     // lowercased keys
+        private final String[] values;
+        private final Map<String, String> exact; // exact (case-sensitive) key -> value
+
+        public GlossaryIndex(Map<String, String> glossary) {
+            List<Map.Entry<String, String>> entries = new ArrayList<>();
+            Map<String, String> ex = new java.util.HashMap<>();
+            if (glossary != null) {
+                for (Map.Entry<String, String> e : glossary.entrySet()) {
+                    String k = e.getKey();
+                    if (k == null || e.getValue() == null || k.startsWith("_")) continue;
+                    String t = k.trim();
+                    if (t.length() < 2) continue;
+                    entries.add(new java.util.AbstractMap.SimpleEntry<>(t, e.getValue()));
+                    ex.put(t, e.getValue());
+                }
             }
+            entries.sort((a, b) -> b.getKey().length() - a.getKey().length());
+            keys = new String[entries.size()];
+            lower = new String[entries.size()];
+            values = new String[entries.size()];
+            for (int i = 0; i < entries.size(); i++) {
+                keys[i] = entries.get(i).getKey();
+                lower[i] = keys[i].toLowerCase(java.util.Locale.ROOT);
+                values[i] = entries.get(i).getValue();
+            }
+            exact = ex;
         }
-        return hits;
+
+        public int size() { return keys.length; }
+
+        /** Exact, case-sensitive lookup (used for whole item names / captured values). */
+        public String exact(String term) {
+            return term == null ? null : exact.get(term.trim());
+        }
+
+        public Map<String, String> hits(String text, int max) {
+            Map<String, String> hits = new LinkedHashMap<>();
+            if (text == null || keys.length == 0) return hits;
+            String plain = stripColorCodes(text).toLowerCase(java.util.Locale.ROOT);
+            List<int[]> spans = new ArrayList<>();
+            for (int i = 0; i < keys.length && hits.size() < max; i++) {
+                String k = lower[i];
+                int from = 0;
+                while (true) {
+                    int at = plain.indexOf(k, from);
+                    if (at < 0) break;
+                    int end = at + k.length();
+                    boolean leftOk = at == 0 || !isAsciiLetter(plain.charAt(at - 1)) || !isAsciiLetter(k.charAt(0));
+                    boolean rightOk = end >= plain.length() || !isAsciiLetter(plain.charAt(end)) || !isAsciiLetter(k.charAt(k.length() - 1));
+                    if (leftOk && rightOk && !covered(spans, at, end)) {
+                        hits.put(keys[i], values[i]);
+                        spans.add(new int[]{at, end});
+                        break;
+                    }
+                    from = at + 1;
+                }
+            }
+            return hits;
+        }
+
+        private static boolean covered(List<int[]> spans, int start, int end) {
+            for (int[] s : spans) {
+                if (start >= s[0] && end <= s[1]) return true;
+            }
+            return false;
+        }
+
+        private static boolean isAsciiLetter(char c) {
+            return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z');
+        }
     }
 
     public static String buildSystemPrompt(boolean isTooltip, String langName, String customPrompt,
                                            Map<String, String> glossaryHits) {
         StringBuilder sb = new StringBuilder();
         if (isTooltip) {
-            sb.append("Translate Minecraft item tooltip lines to ").append(langName).append(".\n")
+            sb.append("Translate Minecraft UI text lines (item tooltips, item names, scoreboard sidebar) to ").append(langName).append(".\n")
               .append("RULES:\n")
               .append("1. Keep every Minecraft § colour/format code (e.g. §6, §l) exactly where it is.\n")
               .append("2. Each input line starts with 'ID|'. Return each translated line with the EXACT SAME 'ID|' prefix, one line per input line, same count, same order.\n")

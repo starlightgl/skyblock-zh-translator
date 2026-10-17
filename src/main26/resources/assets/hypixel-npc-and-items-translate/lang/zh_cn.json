@@ -164,5 +164,16 @@
   "text.autoconfig.npc_translator.option.clearDictOnDisconnect": "退出服务器时清空词典",
   "text.autoconfig.npc_translator.option.clearDictOnDisconnect.tooltip": "原版默认每次断开连接都会删除词典。关闭后词典会一直保留，可用 /translate DeleteDict 手动清空。",
   "text.autoconfig.npc_translator.option.autoItemProvider": "自动翻译使用的引擎",
-  "text.autoconfig.npc_translator.option.autoItemProvider.tooltip": "开启“自动翻译物品”时用哪个引擎（原版固定为 Google）。"
+  "text.autoconfig.npc_translator.option.autoItemProvider.tooltip": "开启“自动翻译物品”时用哪个引擎（原版固定为 Google）。",
+  "text.autoconfig.npc_translator.group.fixed": "固定译文 / 侧边栏 / 手持物品名",
+  "text.autoconfig.npc_translator.option.usePhrasebook": "使用固定译文短语库",
+  "text.autoconfig.npc_translator.option.usePhrasebook.tooltip": "优先使用 config/npc_translator_phrasebook.json 里的人工校对译文（来自 SkyBlockZH），命中的内容不调用 AI。",
+  "text.autoconfig.npc_translator.option.fixedChatTranslation": "聊天提示固定翻译",
+  "text.autoconfig.npc_translator.option.fixedChatTranslation.tooltip": "系统提示和 NPC 对话在短语库里有译文时，直接显示中文。",
+  "text.autoconfig.npc_translator.option.translateSidebar": "翻译侧边栏",
+  "text.autoconfig.npc_translator.option.translateSidebar.tooltip": "翻译右侧计分板。先查短语库和词典，没有的在后台交给“自动翻译使用的引擎”。",
+  "text.autoconfig.npc_translator.option.translateHeldItemName": "翻译手持物品名",
+  "text.autoconfig.npc_translator.option.translateHeldItemName.tooltip": "切换物品时物品栏上方的名字，复用背包里物品描述的翻译结果。",
+  "text.autoconfig.npc_translator.option.hudUseAI": "侧边栏/物品名允许调用 AI",
+  "text.autoconfig.npc_translator.option.hudUseAI.tooltip": "关闭后侧边栏和手持物品名只用已有的译文（短语库、词典），不会额外请求接口。"
 }

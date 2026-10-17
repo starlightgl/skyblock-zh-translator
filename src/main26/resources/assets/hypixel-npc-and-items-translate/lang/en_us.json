@@ -164,5 +164,16 @@
   "text.autoconfig.npc_translator.option.clearDictOnDisconnect": "Clear dictionary on disconnect",
   "text.autoconfig.npc_translator.option.clearDictOnDisconnect.tooltip": "The original mod wiped the dictionary on every disconnect. Off = keep it.",
   "text.autoconfig.npc_translator.option.autoItemProvider": "Auto-translate provider",
-  "text.autoconfig.npc_translator.option.autoItemProvider.tooltip": "Provider used when \"Auto translate items\" is on."
+  "text.autoconfig.npc_translator.option.autoItemProvider.tooltip": "Provider used when \"Auto translate items\" is on.",
+  "text.autoconfig.npc_translator.group.fixed": "Fixed translations / Sidebar / Held item name",
+  "text.autoconfig.npc_translator.option.usePhrasebook": "Use phrase book",
+  "text.autoconfig.npc_translator.option.usePhrasebook.tooltip": "Prefer curated translations from config/npc_translator_phrasebook.json (no API call).",
+  "text.autoconfig.npc_translator.option.fixedChatTranslation": "Fixed chat translations",
+  "text.autoconfig.npc_translator.option.fixedChatTranslation.tooltip": "Replace system messages / NPC lines that have a fixed translation.",
+  "text.autoconfig.npc_translator.option.translateSidebar": "Translate sidebar",
+  "text.autoconfig.npc_translator.option.translateSidebar.tooltip": "Translate the scoreboard sidebar.",
+  "text.autoconfig.npc_translator.option.translateHeldItemName": "Translate held item name",
+  "text.autoconfig.npc_translator.option.translateHeldItemName.tooltip": "Translate the item name above the hotbar using the inventory tooltip translations.",
+  "text.autoconfig.npc_translator.option.hudUseAI": "Allow AI for sidebar / item name",
+  "text.autoconfig.npc_translator.option.hudUseAI.tooltip": "Off = only use existing translations (phrase book, dictionary)."
 }

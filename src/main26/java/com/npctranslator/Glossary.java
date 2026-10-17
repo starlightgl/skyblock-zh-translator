@@ -28,6 +28,7 @@ public final class Glossary {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
 
     private static volatile Map<String, String> terms = Collections.emptyMap();
+    private static volatile TranslationUtil.GlossaryIndex index = new TranslationUtil.GlossaryIndex(Collections.emptyMap());
     private static volatile long loadedModified = -1L;
 
     private Glossary() {}
@@ -74,7 +75,14 @@ public final class Glossary {
             }
         }
         terms = Collections.unmodifiableMap(loaded);
+        index = new TranslationUtil.GlossaryIndex(loaded);
         loadedModified = mod;
+    }
+
+    /** Pre-built index for fast matching (rebuilt when the file changes). */
+    public static TranslationUtil.GlossaryIndex index() {
+        get();
+        return index;
     }
 
     public static int size() {

@@ -9,7 +9,8 @@
     "ChatHudAccessor",
     "ItemStackMixin",
     "GuiGraphicsMixin",
-    "ChatComponentMixin"
+    "ChatComponentMixin",
+    "HudMixin"
   ],
   "injectors": {
     "defaultRequire": 1

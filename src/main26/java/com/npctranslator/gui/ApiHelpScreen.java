@@ -36,11 +36,7 @@ public class ApiHelpScreen extends Screen {
         for (int i = 0; i < presets.length; i++) {
             com.npctranslator.config.ModConfig.ApiPreset p = presets[i];
             this.addRenderableWidget(Button.builder(Component.literal(p.displayName), button -> {
-                try {
-                    net.minecraft.util.Util.getPlatform().openUri(p.keyPage);
-                } catch (Throwable e) {
-                    try { java.awt.Desktop.getDesktop().browse(new java.net.URI(p.keyPage)); } catch (Exception ignored) {}
-                }
+                openLink(p.keyPage);
             }).bounds(x, startY + padding * i, buttonWidth, buttonHeight).build());
         }
 
@@ -48,6 +44,18 @@ public class ApiHelpScreen extends Screen {
         this.addRenderableWidget(Button.builder(Component.translatable("npctranslator.api_help.back"), button -> {
             com.npctranslator.NPCTranslatorClient.setScreen(this.minecraft, parent);
         }).bounds(x, startY + padding * presets.length + 10, buttonWidth, buttonHeight).build());
+    }
+
+    /** Opens a web page; Minecraft's own helper differs between 26.2 and 26.3, so it is looked up at runtime. */
+    private static void openLink(String url) {
+        try {
+            Object platform = Class.forName("net.minecraft.util.Util").getMethod("getPlatform").invoke(null);
+            platform.getClass().getMethod("openUri", String.class).invoke(platform, url);
+            return;
+        } catch (Throwable ignored) {}
+        try {
+            java.awt.Desktop.getDesktop().browse(new java.net.URI(url));
+        } catch (Throwable ignored) {}
     }
 
     @Override

@@ -312,6 +312,16 @@ public class NPCTranslatorClient implements ClientModInitializer {
             String encodedText = Base64.getEncoder().encodeToString(rawText.getBytes(java.nio.charset.StandardCharsets.UTF_8));
             ORIGINAL_MESSAGES.put(msgId, text.copy());
             rememberNpcLine(msgId, rawText);
+
+            // 中文增强版：已经翻译过（词典里有）的消息直接显示译文，比如 SkyHanni 的“获得了 X 硬币/物品”这类固定格式消息
+            if (config.autoShowStoredChat) {
+                try {
+                    Component stored = storedChatTranslation(text, msgId);
+                    if (stored != null) return stored;
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
             MESSAGE_ID_TO_BASE64.put(msgId, encodedText);
 
             String cachedTranslation = TRANSLATION_MEMORY_CACHE.get(rawText);
@@ -807,6 +817,59 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 notifyTranslationError(e);
             }
         });
+    }
+
+    // ── 中文增强版：用词典里已存的译文自动显示聊天消息 ─────────────────
+    /** Translation built only from stored data (phrase book / dictionary), or null if anything is missing. */
+    private static Component storedChatTranslation(Component text, String msgId) {
+        ModConfig.TranslationProvider provider = config.chatTranslationProvider;
+        if (provider == null) return null;
+        String dictProvider = provider.name() + "_CHAT";
+        MutableComponent body;
+        List<ChatSegment> segments = splitByEvents(text);
+        if (countClickEvents(segments) > 1) {
+            body = Component.empty();
+            boolean any = false;
+            for (ChatSegment seg : segments) {
+                String tr = seg.formatted;
+                if (WORD.matcher(TranslationUtil.stripColorCodes(seg.formatted)).find()) {
+                    tr = storedLine(seg.formatted.trim(), dictProvider);
+                    if (tr == null) return null;
+                    any = true;
+                }
+                MutableComponent part = formattedStringToText(tr);
+                if (seg.click != null || seg.hover != null) {
+                    final ClickEvent ce = seg.click;
+                    final HoverEvent he = seg.hover;
+                    part = Component.empty().append(part).withStyle(st -> st.withClickEvent(ce).withHoverEvent(he));
+                }
+                body.append(part);
+            }
+            if (!any) return null;
+        } else {
+            String tr = storedLine(textToFormattedString(text), dictProvider);
+            if (tr == null) return null;
+            body = formattedStringToText(tr);
+            List<ClickEvent> clicks = new ArrayList<>();
+            List<HoverEvent> hovers = new ArrayList<>();
+            collectEvents(text, clicks, hovers);
+            final ClickEvent ce = clicks.isEmpty() ? null : clicks.get(0);
+            final HoverEvent he = hovers.isEmpty() ? null : hovers.get(0);
+            if (ce != null || he != null) body = Component.empty().append(body).withStyle(st -> st.withClickEvent(ce).withHoverEvent(he));
+        }
+        String code = config.useGameLanguage ? getEffectiveLanguageCode() : config.targetLanguage.code;
+        MutableComponent prefix = Component.translatable("npctranslator.translated", code.toUpperCase())
+                .withStyle(style -> style.withColor(ChatFormatting.GREEN)
+                        .withClickEvent(new ClickEvent.RunCommand("/revert_npc " + msgId))
+                        .withHoverEvent(new HoverEvent.ShowText(Component.translatable("npctranslator.hover_revert"))));
+        return Component.empty().append(prefix).append(body).append(retranslateButton(msgId));
+    }
+
+    private static String storedLine(String formatted, String dictProvider) {
+        TranslationUtil.Template t = config.normalizeNumbers ? TranslationUtil.normalize(formatted) : TranslationUtil.Template.raw(formatted);
+        String tr = TranslationDictionary.get(t.text, dictProvider);
+        if (tr != null && !tr.isEmpty() && TranslationUtil.placeholdersMatch(t.text, tr)) return TranslationUtil.restore(tr, t.numbers);
+        return null;
     }
 
     // ── 中文增强版：指定清除译文并重新翻译 ─────────────────────────────

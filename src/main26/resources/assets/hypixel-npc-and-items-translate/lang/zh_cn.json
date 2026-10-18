@@ -186,5 +186,7 @@
   "text.autoconfig.npc_translator.option.rememberTranslatedItems": "记住已翻译的物品",
   "text.autoconfig.npc_translator.option.rememberTranslatedItems.tooltip": "翻译过一次的物品，以后再看到（比如关掉菜单重新打开）会自动显示译文，主要用词典里存好的结果，基本不再调用 AI。在物品上按“恢复原文”键可以取消对这个物品的记忆。",
   "text.autoconfig.npc_translator.option.translateModTooltips": "翻译其他模组的提示文字",
-  "text.autoconfig.npc_translator.option.translateModTooltips.tooltip": "翻译其他模组加在物品描述里的行（最低 BIN、几日均价、集市价格等），以及 Skyblocker 快捷导航这类按钮的悬停提示。先查短语库和词典，没有的在后台交给“自动翻译使用的引擎”，数字会自动套用，价格变了也不用重新翻。"
+  "text.autoconfig.npc_translator.option.translateModTooltips.tooltip": "翻译其他模组加在物品描述里的行（最低 BIN、几日均价、集市价格等），以及 Skyblocker 快捷导航这类按钮的悬停提示。先查短语库和词典，没有的在后台交给“自动翻译使用的引擎”，数字会自动套用，价格变了也不用重新翻。",
+  "text.autoconfig.npc_translator.option.autoShowStoredChat": "自动显示已存的聊天译文",
+  "text.autoconfig.npc_translator.option.autoShowStoredChat.tooltip": "翻译过的聊天消息（文字相同，数字不同也算）再出现时直接用词典里的译文显示，不调用 AI。比如 SkyHanni 的“获得了 X 硬币”这类固定格式提示。点前面的 [翻译] 可以看原文。"
 }

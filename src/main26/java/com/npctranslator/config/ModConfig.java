@@ -126,6 +126,8 @@ public class ModConfig {
     public boolean usePhrasebook = true;
     /** Replace chat system messages / NPC lines that have a fixed translation. */
     public boolean fixedChatTranslation = true;
+    /** Chat messages whose translation is already stored in the dictionary are shown translated automatically. */
+    public boolean autoShowStoredChat = true;
     /** Translate the scoreboard sidebar. */
     public boolean translateSidebar = true;
     /** Translate the item name shown above the hotbar when switching items. */

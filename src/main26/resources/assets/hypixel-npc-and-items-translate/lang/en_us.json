@@ -186,5 +186,7 @@
   "text.autoconfig.npc_translator.option.rememberTranslatedItems": "Remember translated items",
   "text.autoconfig.npc_translator.option.rememberTranslatedItems.tooltip": "An item you translated once is shown translated again automatically, e.g. after closing and reopening a menu. Press the revert key on an item to stop this for it.",
   "text.autoconfig.npc_translator.option.translateModTooltips": "Translate other mods' tooltip text",
-  "text.autoconfig.npc_translator.option.translateModTooltips.tooltip": "Translate lines that other mods add to item tooltips (lowest BIN, average prices, bazaar prices…) and button tooltips such as Skyblocker's quick navigation. Uses the phrase book and dictionary first; unknown lines go to the auto-translate provider in the background."
+  "text.autoconfig.npc_translator.option.translateModTooltips.tooltip": "Translate lines that other mods add to item tooltips (lowest BIN, average prices, bazaar prices…) and button tooltips such as Skyblocker's quick navigation. Uses the phrase book and dictionary first; unknown lines go to the auto-translate provider in the background.",
+  "text.autoconfig.npc_translator.option.autoShowStoredChat": "Auto-show stored chat translations",
+  "text.autoconfig.npc_translator.option.autoShowStoredChat.tooltip": "A chat message you have translated before (same text, numbers may differ) is shown translated right away from the dictionary, without an API call. Click the prefix to see the original."
 }

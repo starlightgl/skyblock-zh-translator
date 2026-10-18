@@ -27,10 +27,14 @@ import java.util.regex.Pattern;
  */
 public final class EnchantHints {
 
-    public record Entry(String en, String zh, String hint, boolean ultimate) {}
+    public record Entry(String en, String zh, String hint, boolean ultimate, List<String> aliases) {}
 
     private static volatile Map<String, Entry> byName = Map.of();
     private static volatile Pattern pattern;
+    private static volatile Map<String, Entry> byEnglish = Map.of();
+    private static volatile Pattern listPattern;
+    /** What may remain on a line that is only a list of enchantments: levels, arrows, separators, bullets. */
+    private static final Pattern LIST_LEFTOVER = Pattern.compile("^[\\s,，、;；/|›»•◆▸+\\-→>:：()（）0-9IVXLC]*$");
     private static volatile boolean loaded;
 
     private EnchantHints() {}
@@ -39,7 +43,7 @@ public final class EnchantHints {
         if (loaded) return;
         loaded = true;
         Map<String, Entry> entries = new LinkedHashMap<>();
-        try (InputStream in = EnchantHints.class.getResourceAsStream("/assets/hypixel-npc-and-items-translate/enchant_hints.json")) {
+        try (InputStream in = EnchantHints.class.getResourceAsStream("/assets/hypixel-npc-and-items-translate/defaults/npc_translator_enchants.json")) {
             if (in != null) read(new InputStreamReader(in, StandardCharsets.UTF_8), entries);
         } catch (Exception e) {
             System.err.println("[NPCTranslator] enchant hints: " + e.getMessage());
@@ -55,10 +59,23 @@ public final class EnchantHints {
             System.err.println("[NPCTranslator] npc_translator_enchants.json: " + e.getMessage());
         }
         Map<String, Entry> names = new LinkedHashMap<>();
+        Map<String, Entry> english = new LinkedHashMap<>();
         for (Entry e : entries.values()) {
             names.put(e.en, e);
+            english.put(e.en, e);
+            for (String a : e.aliases) { names.putIfAbsent(a, e); english.putIfAbsent(a, e); }
             if (e.zh != null && !e.zh.isEmpty()) names.putIfAbsent(e.zh, e);
         }
+        List<String> en = new ArrayList<>(english.keySet());
+        en.sort((a, b) -> b.length() - a.length());
+        StringBuilder enAlt = new StringBuilder();
+        for (String k : en) {
+            if (enAlt.length() > 0) enAlt.append('|');
+            enAlt.append(Pattern.quote(k));
+        }
+        byEnglish = english;
+        // "not preceded by a letter" — but a letter that is a colour/format code (§l) does not count
+        listPattern = en.isEmpty() ? null : Pattern.compile("(?<!(?<!§)[A-Za-z])(" + enAlt + ")(?![A-Za-z])");
         List<String> keys = new ArrayList<>(names.keySet());
         keys.sort((a, b) -> b.length() - a.length());
         StringBuilder alt = new StringBuilder();
@@ -83,7 +100,13 @@ public final class EnchantHints {
             String zh = o.has("zh") ? o.get("zh").getAsString() : "";
             String hint = o.has("hint") ? o.get("hint").getAsString() : "";
             boolean ult = o.has("ultimate") && o.get("ultimate").getAsBoolean();
-            into.put(en, new Entry(en, zh, hint, ult));
+            List<String> aliases = new ArrayList<>();
+            if (o.has("aliases") && o.get("aliases").isJsonArray()) {
+                for (JsonElement a : o.getAsJsonArray("aliases")) aliases.add(a.getAsString());
+            } else if (into.containsKey(en)) {
+                aliases.addAll(into.get(en).aliases()); // a user file without aliases keeps the built-in ones
+            }
+            into.put(en, new Entry(en, zh, hint, ult, aliases));
         }
     }
 
@@ -100,6 +123,38 @@ public final class EnchantHints {
             }
         }
         return out;
+    }
+
+    /**
+     * A line that is nothing but enchantment names (with optional levels, arrows, commas), e.g.
+     * "Sharpness VII, Critical VII" or Skyblocker's "› Smoldering, Tabasco, Vicious": every name is
+     * swapped for its Chinese name, colours kept. Returns null for any other line.
+     */
+    public static String translateList(String formatted) {
+        load();
+        if (listPattern == null || formatted == null || formatted.isEmpty()) return null;
+        String plain = formatted.replaceAll("§.", "");
+        Matcher m = listPattern.matcher(plain);
+        StringBuilder rest = new StringBuilder();
+        int last = 0, count = 0;
+        while (m.find()) {
+            rest.append(plain, last, m.start());
+            last = m.end();
+            count++;
+        }
+        rest.append(plain.substring(last));
+        if (count == 0 || !LIST_LEFTOVER.matcher(rest).matches()) return null;
+        // a single bare word ("Power", "Protection") may be a menu label, not an enchantment: needs a level
+        if (count == 1 && !rest.toString().matches(".*[IVXLC].*")) return null;
+        Matcher f = listPattern.matcher(formatted);
+        StringBuilder out = new StringBuilder();
+        while (f.find()) {
+            Entry e = byEnglish.get(f.group(1));
+            String zh = e == null || e.zh == null || e.zh.isEmpty() ? f.group(1) : e.zh;
+            f.appendReplacement(out, Matcher.quoteReplacement(zh));
+        }
+        f.appendTail(out);
+        return out.toString();
     }
 
     /** "  锋利 Sharpness - 近战伤害提升" */

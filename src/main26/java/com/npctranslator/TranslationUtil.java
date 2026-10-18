@@ -99,6 +99,31 @@ public final class TranslationUtil {
         return out;
     }
 
+    private static final Pattern ENGLISH_WORD = Pattern.compile("[A-Za-z][A-Za-z']+");
+    private static final Pattern ROMAN = Pattern.compile("[IVXLCDM]+");
+    private static final Pattern RESOURCE_ID = Pattern.compile("^[a-z0-9_.-]+:[a-z0-9_/.-]+$");
+
+    /**
+     * Whether a line still has English worth sending to the AI. Roman numerals, item ids
+     * ("minecraft:iron_sword") and lines that are already Chinese except for a few all-caps tokens
+     * ("按住 SHIFT", "NPC") are skipped.
+     */
+    public static boolean needsTranslation(String text) {
+        String s = stripColorCodes(text).trim();
+        if (s.isEmpty() || RESOURCE_ID.matcher(s).matches()) return false;
+        boolean cjk = s.codePoints().anyMatch(c -> c >= 0x4E00 && c <= 0x9FFF);
+        Matcher m = ENGLISH_WORD.matcher(s);
+        boolean any = false;
+        while (m.find()) {
+            String w = m.group();
+            if (ROMAN.matcher(w).matches()) continue;
+            if (!cjk) return true;
+            if (w.length() >= 3 && !w.equals(w.toUpperCase())) return true; // a real English word left in a Chinese line
+            any = true;
+        }
+        return !cjk && any;
+    }
+
     public static String stripColorCodes(String s) {
         return s == null ? "" : COLOR_CODE.matcher(s).replaceAll("");
     }

@@ -1787,8 +1787,8 @@ public class NPCTranslatorClient implements ClientModInitializer {
         ModConfig.TranslationProvider currentProvider = TRANSLATED_PROVIDER_CACHE.get(cacheKey);
         boolean isAlreadyTranslated = ACTIVE_TRANSLATED_ITEMS.contains(cacheKey) && ITEM_CACHE.containsKey(cacheKey);
 
-        // 中文增强版：Ctrl + 翻译键 = 清掉这个物品已存的译文，跳过短语库，用该引擎重新翻译
-        if (isCtrlDown()) {
+        // 中文增强版：Ctrl/Shift + 翻译键 = 清掉这个物品已存的译文，跳过短语库，用该引擎重新翻译
+        if (isCtrlDown() || isShiftDown()) {
             ModConfig.TranslationProvider rp = null;
             String suffix = null;
             if (customJustPressed && config.enableCustomItem) { rp = ModConfig.TranslationProvider.CUSTOM; suffix = "_U"; }
@@ -1925,7 +1925,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                                 rebuilt.add(line);
                                 if (MOD_TRANSLATED.contains(line)) continue;
                                 // e.g. the extra lines shown while holding Shift, or price lines from other mods
-                                if (WORD.matcher(TranslationUtil.stripColorCodes(key)).find()) {
+                                if (TranslationUtil.needsTranslation(key)) {
                                     if (unmatched == null) unmatched = new ArrayList<>();
                                     unmatched.add(key);
                                 }
@@ -2077,6 +2077,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 List<String> missing = new ArrayList<>();
                 for (String line : todo) {
                     String fixedTr = config.usePhrasebook ? PhraseBook.translate(line) : null;
+                    if (fixedTr == null) fixedTr = EnchantHints.translateList(line);
                     if (fixedTr != null) { done.put(line, fixedTr); continue; }
                     TranslationUtil.Template t = config.normalizeNumbers ? TranslationUtil.normalize(line) : TranslationUtil.Template.raw(line);
                     String tr = TranslationDictionary.get(t.text, providerName);
@@ -2164,7 +2165,8 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 LinkedHashSet<String> missingSet = new LinkedHashSet<>();
                 for (int i = 0; i < n; i++) {
                     String parsed = allLinesOriginal.get(i);
-                    if (parsed.isEmpty() || fixed[i] != null) {
+                    if (fixed[i] == null && !parsed.isEmpty()) fixed[i] = EnchantHints.translateList(parsed);
+                    if (parsed.isEmpty() || fixed[i] != null || !TranslationUtil.needsTranslation(parsed)) {
                         templates.add(null);
                         continue;
                     }

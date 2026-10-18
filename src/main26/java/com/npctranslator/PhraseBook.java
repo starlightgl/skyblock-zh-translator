@@ -46,26 +46,23 @@ public final class PhraseBook {
 
     private static void load() {
         long mod = FILE.exists() ? FILE.lastModified() : 0L;
-        if (mod == 0L) {
-            matcher = null;
-            loadedModified = 0L;
-            return;
-        }
         List<String[]> entries = new ArrayList<>();
-        try (Reader r = new InputStreamReader(Files.newInputStream(FILE.toPath()), StandardCharsets.UTF_8)) {
-            JsonElement root = JsonParser.parseReader(r);
-            JsonArray arr = root.isJsonArray() ? root.getAsJsonArray()
-                    : root.getAsJsonObject().getAsJsonArray("entries");
-            if (arr != null) {
-                for (JsonElement el : arr) {
-                    if (!el.isJsonObject()) continue;
-                    JsonObject o = el.getAsJsonObject();
-                    if (!o.has("en") || !o.has("zh")) continue;
-                    entries.add(new String[]{o.get("en").getAsString(), o.get("zh").getAsString()});
-                }
+        // The user's file comes first: the matcher keeps the first entry for a sentence, so user edits win.
+        if (mod != 0L) {
+            try (Reader r = new InputStreamReader(Files.newInputStream(FILE.toPath()), StandardCharsets.UTF_8)) {
+                readEntries(r, entries);
+            } catch (Exception e) {
+                System.err.println("[NPCTranslator] Failed to read phrasebook: " + e.getMessage());
             }
+        }
+        try (java.io.InputStream in = PhraseBook.class.getResourceAsStream("/assets/hypixel-npc-and-items-translate/defaults/npc_translator_phrasebook.json")) {
+            if (in != null) readEntries(new InputStreamReader(in, StandardCharsets.UTF_8), entries);
         } catch (Exception e) {
-            System.err.println("[NPCTranslator] Failed to read phrasebook: " + e.getMessage());
+            System.err.println("[NPCTranslator] Failed to read built-in phrasebook: " + e.getMessage());
+        }
+        if (entries.isEmpty()) {
+            matcher = null;
+            loadedModified = mod;
             return;
         }
         long t0 = System.currentTimeMillis();
@@ -78,7 +75,20 @@ public final class PhraseBook {
         System.out.println("[NPCTranslator] Phrasebook loaded: " + m.size() + " entries in " + (System.currentTimeMillis() - t0) + " ms");
     }
 
-    /** Current matcher or null (not loaded / no file). Checks for file changes at most every 5 s. */
+    private static void readEntries(Reader r, List<String[]> into) {
+        JsonElement root = JsonParser.parseReader(r);
+        JsonArray arr = root.isJsonArray() ? root.getAsJsonArray()
+                : root.getAsJsonObject().getAsJsonArray("entries");
+        if (arr == null) return;
+        for (JsonElement el : arr) {
+            if (!el.isJsonObject()) continue;
+            JsonObject o = el.getAsJsonObject();
+            if (!o.has("en") || !o.has("zh")) continue;
+            into.add(new String[]{o.get("en").getAsString(), o.get("zh").getAsString()});
+        }
+    }
+
+    /** Current matcher or null (not loaded yet). Checks for file changes at most every 5 s. */
     private static PhraseMatcher current() {
         long now = System.currentTimeMillis();
         if (now - lastCheck > 5000) {

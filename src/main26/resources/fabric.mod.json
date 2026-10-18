@@ -11,7 +11,7 @@
 	"contact": {
 		"sources": "https://github.com/starlightgl/skyblock-zh-translator"
 	},
-	"license": "MIT",
+	"license": "GPL-3.0-only",
 	"icon": "assets/hypixel-npc-and-items-translate/icon.png",
 	"environment": "client",
 	"entrypoints": {

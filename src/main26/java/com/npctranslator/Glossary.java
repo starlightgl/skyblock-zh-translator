@@ -36,10 +36,8 @@ public final class Glossary {
     public static synchronized void ensureFile() {
         if (FILE.exists()) return;
         Map<String, String> sample = new LinkedHashMap<>();
-        sample.put("_说明", "左边写英文原文（不区分大小写），右边写你想要的固定译名。想保留英文就左右写一样。改完保存即可，游戏内自动生效。以下划线开头的键是注释。");
-        sample.put("_示例1", "Hyperion => Hyperion");
-        sample.put("Hyperion", "Hyperion");
-        sample.put("Skyblock Level", "空岛等级");
+        sample.put("_说明", "模组已内置一万多条术语。这里写你自己想改或想加的：左边英文原文，右边固定译名，想保留英文就左右写一样。这里的条目优先于内置的。保存后游戏内自动生效。以下划线开头的键是注释。");
+        sample.put("_示例", "\"Hyperion\": \"Hyperion\"");
         try (Writer w = new OutputStreamWriter(Files.newOutputStream(FILE.toPath()), StandardCharsets.UTF_8)) {
             GSON.toJson(sample, w);
         } catch (Exception e) {
@@ -58,7 +56,7 @@ public final class Glossary {
 
     private static synchronized void reload(long mod) {
         if (mod == loadedModified) return;
-        Map<String, String> loaded = new LinkedHashMap<>();
+        Map<String, String> loaded = new LinkedHashMap<>(builtIn());
         if (FILE.exists()) {
             try (Reader r = new InputStreamReader(Files.newInputStream(FILE.toPath()), StandardCharsets.UTF_8)) {
                 Type type = new TypeToken<LinkedHashMap<String, String>>() {}.getType();
@@ -77,6 +75,30 @@ public final class Glossary {
         terms = Collections.unmodifiableMap(loaded);
         index = new TranslationUtil.GlossaryIndex(loaded);
         loadedModified = mod;
+    }
+
+    private static Map<String, String> builtIn;
+
+    /** Glossary shipped inside the jar (defaults/npc_translator_glossary.json); the config file overrides it. */
+    private static synchronized Map<String, String> builtIn() {
+        if (builtIn != null) return builtIn;
+        Map<String, String> m = new LinkedHashMap<>();
+        try (java.io.InputStream in = Glossary.class.getResourceAsStream("/assets/hypixel-npc-and-items-translate/defaults/npc_translator_glossary.json")) {
+            if (in != null) {
+                Type type = new TypeToken<LinkedHashMap<String, String>>() {}.getType();
+                Map<String, String> raw = GSON.fromJson(new InputStreamReader(in, StandardCharsets.UTF_8), type);
+                if (raw != null) {
+                    for (Map.Entry<String, String> e : raw.entrySet()) {
+                        if (e.getKey() == null || e.getValue() == null || e.getKey().startsWith("_")) continue;
+                        m.put(e.getKey(), e.getValue());
+                    }
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("[NPCTranslator] Failed to read built-in glossary: " + e.getMessage());
+        }
+        builtIn = Collections.unmodifiableMap(m);
+        return builtIn;
     }
 
     /** Pre-built index for fast matching (rebuilt when the file changes). */

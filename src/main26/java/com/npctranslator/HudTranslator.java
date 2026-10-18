@@ -97,10 +97,11 @@ public final class HudTranslator {
         if (formatted.isEmpty()) return null;
         Component cached = CACHE.get(formatted);
         if (cached != null) return cached;
-        if (!HAS_WORD.matcher(TranslationUtil.stripColorCodes(formatted)).matches()) return null;
+        if (!TranslationUtil.needsTranslation(formatted)) return null;
 
         ModConfig c = cfg();
         String out = c.usePhrasebook ? PhraseBook.translate(formatted) : null;
+        if (out == null) out = EnchantHints.translateList(formatted);
         if (out == null) {
             TranslationUtil.Template t = c.normalizeNumbers ? TranslationUtil.normalize(formatted) : TranslationUtil.Template.raw(formatted);
             String tr = TranslationDictionary.get(t.text, provider().name());
@@ -192,9 +193,11 @@ public final class HudTranslator {
     /** Phrase book, then dictionary; unknown lines are queued for the background AI batch. */
     private static String lookupLine(String formatted) {
         if (formatted.isEmpty()) return null;
-        if (!HAS_WORD.matcher(TranslationUtil.stripColorCodes(formatted)).matches()) return null;
+        if (!TranslationUtil.needsTranslation(formatted)) return null;
         ModConfig c = cfg();
         String out = c.usePhrasebook ? PhraseBook.translate(formatted) : null;
+        if (out != null) return out;
+        out = EnchantHints.translateList(formatted);
         if (out != null) return out;
         TranslationUtil.Template t = c.normalizeNumbers ? TranslationUtil.normalize(formatted) : TranslationUtil.Template.raw(formatted);
         String tr = TranslationDictionary.get(t.text, provider().name());
@@ -230,7 +233,7 @@ public final class HudTranslator {
         if (formatted.isEmpty()) return null;
         Component cached = CACHE.get(formatted);
         if (cached != null) return cached;
-        if (!HAS_WORD.matcher(TranslationUtil.stripColorCodes(formatted)).matches()) return null;
+        if (!TranslationUtil.needsTranslation(formatted)) return null;
 
         ModConfig c = cfg();
         TranslationUtil.Template t = c.normalizeNumbers ? TranslationUtil.normalize(formatted) : TranslationUtil.Template.raw(formatted);

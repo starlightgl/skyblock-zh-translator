@@ -80,6 +80,9 @@ jar {
 	from("LICENSE") {
 		rename { "${it}_$projectName"}
 	}
+	from("NOTICE.md") {
+		rename { "NOTICE_${projectName}.md" }
+	}
 }
 
 publishing {

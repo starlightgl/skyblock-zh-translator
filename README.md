@@ -22,12 +22,12 @@
 - **数字占位缓存**：翻译前把数字换成占位符，存的是句子模板。数字、价格、倒计时变了也不用重新翻，也不会一闪一闪。
 
 ### 固定译文与术语
-- **固定短语库**：可导入 SkyBlockZH 社区语料（约 4.3 万条）。命中的句子直接显示中文，不调用 AI。一行里有多个「标签: 数值」的，会逐段翻译。
+- **固定短语库**：内置 SkyBlockZH 社区语料约 4.4 万条，装上就能用。命中的句子直接显示中文，不调用 AI。一行里有多个「标签: 数值」的，会逐段翻译。
 - **术语表**：保证物品名、属性名前后统一，修改后即时生效。
-- **附魔词库与附魔说明**：145 个附魔（含全部终极附魔）都有统一译名。按住 Shift 时，每个附魔下方会显示「中文名 英文原名 一句话功能」。
+- **附魔词库与附魔说明**：145 个附魔（含全部终极附魔）都有统一译名，附魔列表直接本地翻译、不调用 AI（Skyblocker 等模组用的内部名如 Syphon 也认得）。按住 Shift 时，每个附魔下方会显示「中文名 英文原名 一句话功能」。
 
 ### 物品描述
-- 按翻译键（默认 **N**）翻译鼠标指着的物品，按 **V** 恢复原文，按 **Ctrl+N** 丢掉旧译文重新翻译。
+- 按翻译键（默认 **N**）翻译鼠标指着的物品，按 **V** 恢复原文，按 **Shift+N** 或 **Ctrl+N** 丢掉旧译文重新翻译。
 - 逐行替换：Skyblocker、SkyHanni 等模组加的最低价、均价这些行会原样保留。
 - 按 Shift 出现的详情会在后台自动补翻；关掉菜单再打开，翻译过的物品会自动显示译文。
 - 其他模组加在物品描述里的行，以及 Skyblocker 快捷导航这类按钮的悬停提示，也会翻译。
@@ -76,29 +76,31 @@
 | `/translate forget 关键词` | 删掉这些译文，下次出现时重新翻译 |
 | `/translate DeleteDict` | 清空整个词典 |
 | N | 翻译鼠标指着的物品（自定义 API） |
-| Ctrl + N | 丢掉这个物品的旧译文，跳过短语库重新翻译 |
+| Shift + N 或 Ctrl + N | 丢掉这个物品的旧译文，跳过短语库重新翻译 |
 | V | 恢复物品原文，并且不再自动翻译这个物品 |
 | Shift | 查看附魔说明 |
 
 按键都可以在游戏的按键设置里改。
 
-## 数据文件（游戏目录 `config` 文件夹）
+## 数据文件
+
+短语库、术语表、附魔说明都已经内置在 jar 里，**一个 jar 就能用**，不需要手动放任何文件。
+
+想自己改译名时，在游戏目录的 `config` 文件夹里写同名文件，里面的条目会覆盖内置的：
 
 | 文件 | 内容 |
 |---|---|
 | `npc_translator.json` | 模组设置（含 API Key，不要分享给别人） |
 | `npc_translator_dict.json` | 翻译词典，AI 翻译过的内容都存在这里 |
-| `npc_translator_glossary.json` | 术语表，左英文右中文，保存后即时生效 |
-| `npc_translator_phrasebook.json` | 固定短语库（需自行导出，见下文） |
-| `npc_translator_enchants.json` | 附魔说明：中文名、英文名、一句话功能，可自行修改 |
+| `npc_translator_glossary.json` | 自己的术语：左英文右中文，保存后即时生效 |
+| `npc_translator_phrasebook.json` | 自己的固定译文：`{"entries":[{"en":"...","zh":"..."}]}` |
+| `npc_translator_enchants.json` | 自己改的附魔译名和说明 |
 
-**导出短语库和术语表**：先下载 [SkyBlockZH](https://github.com/BingKKni/SkyBlockZH) 仓库，再运行
+想用新版 SkyBlockZH 语料重新生成内置数据：
 
 ```
 python tools/export_skyblockzh.py <SkyBlockZH 文件夹> <输出文件夹>
 ```
-
-把生成的两个 JSON 放进游戏的 `config` 文件夹。
 
 ## 自己编译
 
@@ -120,7 +122,8 @@ python tools/export_skyblockzh.py <SkyBlockZH 文件夹> <输出文件夹>
 
 ## 致谢与许可
 
-- 原模组：[KALPSIZ__ / NPC & Items Translator](https://github.com/knutolof06/hypixel-skyblock-npc-and-items-translate)，MIT 协议。本项目的代码同样以 MIT 协议发布，见 [LICENSE](LICENSE)。
-- 固定短语库和术语表的数据来自 [SkyBlockZH](https://github.com/BingKKni/SkyBlockZH)，GPL-3.0 协议。本仓库只包含导出脚本，不包含这份数据；如果你分发导出的数据，请遵守 GPL-3.0 并注明出处。
+- 本项目以 **GPL-3.0** 协议发布，见 [LICENSE](LICENSE)；版权与出处说明见 [NOTICE.md](NOTICE.md)。
+- 原模组：[KALPSIZ__ / NPC & Items Translator](https://github.com/knutolof06/hypixel-skyblock-npc-and-items-translate)，原代码为 MIT 协议，其版权声明保留在 NOTICE.md 中。
+- 内置的固定短语库和术语表数据来自 [SkyBlockZH](https://github.com/BingKKni/SkyBlockZH)（GPL-3.0）。
 - 附魔译名参考了 Minecraft 官方中文译名和 [Hypixel 空岛生存中文维基](https://hypixel-skyblock.fandom.com/zh/wiki/%E9%99%84%E9%AD%94)。
 - Hypixel、Hypixel SkyBlock 是 Hypixel Inc. 的商标；Minecraft 是 Mojang Studios 的商标。本项目与它们无关。

@@ -114,6 +114,8 @@ python tools/export_skyblockzh.py <SkyBlockZH 文件夹> <输出文件夹>
 - 依次编译 26.2 和 26.3 两个版本，成功后 jar 会复制到上一级文件夹。
 - 只编一个版本：`gradlew.bat build -PmcTarget=26.2`
 
+也可以不在本地编译：每次推送代码，GitHub Actions 都会自动编译两个版本（在 Actions 页面的 Artifacts 里下载）；推送 `v` 开头的版本标签时，两个 jar 会自动上传到对应的 Release。
+
 ## 常见问题
 
 **会被 Hypixel 封号吗？**

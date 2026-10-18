@@ -3,7 +3,7 @@
 	"id": "hypixel-npc-and-items-translate",
 	"version": "${version}",
 	"name": "SkyBlock 中文翻译 (SkyBlock ZH Translator)",
-	"description": "Hypixel SkyBlock 中文翻译：NPC 对话、物品描述、侧边栏、悬浮文字和其他模组提示。支持任意 OpenAI 兼容 AI 接口、固定短语库、术语表、附魔说明，数字与倒计时自动套用缓存。基于 KALPSIZ__ 的 NPC & Items Translator（MIT）。",
+	"description": "Hypixel SkyBlock 中文翻译：NPC 对话、物品描述、计分板、全息文字及其他模组提示。内置固定短语库、术语表与附魔说明，其余内容通过国内 OpenAI 兼容 AI 接口翻译。基于 KALPSIZ__ 的 NPC & Items Translator。",
 	"authors": [
 		"KALPSIZ__",
 		"starlightgl"

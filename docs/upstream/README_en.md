@@ -1,4 +1,8 @@
-[🇨🇳 中文增强版](README.md) | [🇺🇸 English](README_en.md) | [🇹🇷 Türkçe](README_tr.md) | [🇷🇺 Русский](README_ru.md) | [🇩🇪 Deutsch](README_de.md) | [🇨🇳 中文](README_zh.md)
+> 以下为原模组 NPC & Items Translator 的说明文档，仅作存档，内容不适用于本项目。本项目的说明见 [README](../../README.md)。
+>
+> This is the documentation of the original NPC & Items Translator, kept for reference. It does not describe this fork.
+
+[English](README_en.md) | [Türkçe](README_tr.md) | [Русский](README_ru.md) | [Deutsch](README_de.md) | [中文](README_zh.md)
 
 ---
 

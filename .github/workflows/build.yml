@@ -1,8 +1,6 @@
-# 发布流程（详见 README「发布新版本」）：
-#   1. gradle.properties 里改 mod_version；CHANGELOG.md 顶部加同版本号的一节
-#   2. 推送标签 v<mod_version>（例如 v1.5.1-zh.2；测试版用 v1.5.1-zh.3-beta.1）
-#   3. 这里自动：检查版本号 → 建草稿发布（说明取自 CHANGELOG）→ 编译 26.2/26.3 并上传 jar → 正式发布
-# 平时每次推送也会编译两个版本，jar 在 Actions 页面的 Artifacts 里。
+# 构建与发布工作流，说明见 docs/RELEASING.md。
+#   - 推送到 skyblock-zh 分支或提交 Pull Request：构建 Minecraft 26.2 与 26.3 两个版本。
+#   - 推送 v* 标签：校验版本号，按 CHANGELOG.md 生成发布说明，构建并上传 jar，最后发布。
 
 name: build
 on:
@@ -28,29 +26,28 @@ jobs:
           VERSION="${TAG#v}"
           MOD_VERSION="$(grep '^mod_version=' gradle.properties | cut -d= -f2 | tr -d '\r')"
           if [ "$VERSION" != "$MOD_VERSION" ]; then
-            echo "::error::标签 $TAG 和 gradle.properties 里的 mod_version=$MOD_VERSION 不一致"; exit 1
+            echo "::error::标签 $TAG 与 gradle.properties 中的 mod_version（$MOD_VERSION）不一致"; exit 1
           fi
           sed "s/{VERSION}/$VERSION/g" .github/release-header.md > notes.md
-          awk -v v="$VERSION" '
-            index($0, "## " v " ") == 1 || $0 == "## " v { found = 1; next }
-            found && /^## / { exit }
-            found { print }
-          ' CHANGELOG.md > section.md
-          if [ ! -s section.md ]; then
-            # 测试版（1.5.1-zh.3-beta.1）可以直接用正式版号（1.5.1-zh.3）那一节
-            BASE="$(echo "$VERSION" | sed -E 's/-(beta|pre|rc).*$//')"
-            awk -v v="$BASE" '
-              index($0, "## " v " ") == 1 || $0 == "## " v { found = 1; next }
+          section() {
+            awk -v v="$1" '
+              index($0, "## [" v "]") == 1 || index($0, "## " v " ") == 1 || $0 == "## " v { found = 1; next }
               found && /^## / { exit }
+              found && /^\[[^]]+\]: / { next }
               found { print }
-            ' CHANGELOG.md > section.md
-          fi
+            ' CHANGELOG.md
+          }
+          section "$VERSION" > section.md
+          BASE="$(echo "$VERSION" | sed -E 's/-(beta|pre|rc).*$//')"
+          # 预发布版本使用对应正式版的条目
+          [ -s section.md ] || section "$BASE" > section.md
           if [ ! -s section.md ]; then
-            echo "::error::CHANGELOG.md 里没有找到「## $VERSION」这一节"; exit 1
+            echo "::error::CHANGELOG.md 中缺少版本 $VERSION 的条目"; exit 1
           fi
           case "$VERSION" in *-beta*|*-pre*|*-rc*)
-            printf '> **测试版**：新功能还在验证，遇到问题请回退到上一个正式版。\n\n' >> notes.md;;
+            printf '> [!NOTE]\n> 此为 %s 的预发布版本，用于测试，可能存在问题。日常使用请选择最新正式版。\n\n' "$BASE" >> notes.md;;
           esac
+          echo "## 更新内容" >> notes.md
           cat section.md >> notes.md
       - name: create draft release
         run: |

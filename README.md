@@ -1,156 +1,184 @@
-**中文增强版** | [English](README_en.md) | [Türkçe](README_tr.md) | [Русский](README_ru.md) | [Deutsch](README_de.md) | [原版中文说明](README_zh.md)
-
----
-
 # SkyBlock 中文翻译（SkyBlock ZH Translator）
 
-一个纯客户端的 Fabric 模组，把 Hypixel SkyBlock 里的 NPC 对话、物品描述、侧边栏、悬浮文字和各类提示翻译成中文。
+[![build](https://github.com/starlightgl/skyblock-zh-translator/actions/workflows/build.yml/badge.svg)](https://github.com/starlightgl/skyblock-zh-translator/actions/workflows/build.yml)
+[![release](https://img.shields.io/github/v/release/starlightgl/skyblock-zh-translator?label=release)](https://github.com/starlightgl/skyblock-zh-translator/releases/latest)
+[![license](https://img.shields.io/github/license/starlightgl/skyblock-zh-translator)](LICENSE)
 
-基于 [KALPSIZ__ 的 NPC & Items Translator](https://github.com/knutolof06/hypixel-skyblock-npc-and-items-translate)（MIT 协议）修改，针对中文玩家做了大量增强：可以接入任意 OpenAI 兼容的 AI 接口，内置固定译文和术语表，能识别数字和倒计时，尽量少调 AI、少花钱。
+Hypixel SkyBlock 中文翻译模组，适用于 Fabric（Minecraft 26.2 / 26.3），仅需安装在客户端。
+翻译范围包括 NPC 对话、物品描述、计分板、全息文字、聊天消息以及其他模组添加的提示文本。
 
-- **支持版本**：Minecraft 26.2 / 26.3，Fabric
-- **前置模组**：Fabric API、YetAnotherConfigLib、ModMenu
-- 本模组与 Hypixel、Mojang 无关，非官方作品。
+> A client-side Fabric mod that translates Hypixel SkyBlock into Simplified Chinese. Documentation is in Chinese.
 
----
+本项目基于 KALPSIZ__ 的 [NPC & Items Translator](https://github.com/knutolof06/hypixel-skyblock-npc-and-items-translate) 开发，面向中文玩家进行了扩展：内置社区维护的固定译文与术语表，仅在必要时调用 AI 接口，并对数字、倒计时等动态内容做了缓存处理。
 
-## 主要功能
+本项目为非官方作品，与 Hypixel Inc. 及 Mojang Studios 无关。
 
-### 翻译引擎
-- **国内 AI 接口**：内置 DeepSeek、通义千问、智谱、Kimi、硅基流动、火山方舟预设，选好填密钥即可；中转站等 OpenAI 兼容接口也能手动填。推理模型输出的 `<think>` 会自动去掉。翻译失败时聊天栏会显示红字原因。
-- **自定义提示词**：默认已写好 SkyBlock 背景说明，可以自己改。
-- **数字占位缓存**：翻译前把数字换成占位符，存的是句子模板。数字、价格、倒计时变了也不用重新翻，也不会一闪一闪。
+## 目录
 
-### 固定译文与术语
-- **固定短语库**：内置 SkyBlockZH 社区语料约 4.4 万条，装上就能用。命中的句子直接显示中文，不调用 AI。一行里有多个「标签: 数值」的，会逐段翻译。
-- **术语表**：保证物品名、属性名前后统一，修改后即时生效。
-- **附魔词库与附魔说明**：145 个附魔（含全部终极附魔）都有统一译名，附魔列表直接本地翻译、不调用 AI（Skyblocker 等模组用的内部名如 Syphon 也认得）。按住 Shift 时，每个附魔下方会显示「中文名 英文原名 一句话功能」。
+- [功能](#功能)
+- [安装](#安装)
+- [配置](#配置)
+- [快捷键与命令](#快捷键与命令)
+- [自定义数据](#自定义数据)
+- [更新](#更新)
+- [从源码构建](#从源码构建)
+- [常见问题](#常见问题)
+- [许可与致谢](#许可与致谢)
 
-### 物品描述
-- 按翻译键（默认 **N**）翻译鼠标指着的物品，按 **V** 恢复原文，按 **Shift+N** 或 **Ctrl+N** 丢掉旧译文重新翻译。
-- 逐行替换：Skyblocker、SkyHanni 等模组加的最低价、均价这些行会原样保留。
-- **整页翻译**：打开菜单后按 **M**，把这一页所有物品一次翻完（重复的句子只翻一次，合并成几次请求），之后鼠标指哪个都是秒出。设置里可以打开「打开菜单自动整页翻译」。
-- Hypixel 把一句话折成好几行的，会先拼回整句再翻，不会出现「查看你的技能进度和 / 。」这种断句错误。
-- 按 Shift 出现的详情会在后台自动补翻；关掉菜单再打开，翻译过的物品会自动显示译文。
-- 其他模组加在物品描述里的行，以及 Skyblocker 快捷导航这类按钮的悬停提示，也会翻译。
+## 功能
 
-### 世界与界面
-- 侧边栏计分板、切换物品时物品栏上方的物品名。
-- NPC 头顶的名字和副标题、全息文字、文字展示实体（真实玩家的名字不会动）。
+### 翻译机制
+
+- **固定短语库**：内置 SkyBlockZH 社区语料约 4.4 万条。命中的文本直接显示译文，不调用 AI；同一行内的多个「标签: 数值」字段逐段匹配。
+- **术语表**：内置 1 万余条术语，用于统一物品、属性等名称的译法，修改后即时生效。
+- **附魔译名与说明**：收录 145 个附魔（含全部终极附魔）的统一译名，附魔列表在本地翻译；按住 `Shift` 时在每个附魔下方显示中文名、英文原名与功能说明。
+- **AI 翻译**：未命中本地数据的文本交由 OpenAI 兼容接口翻译，结果写入本地词典，相同文本只翻译一次。
+- **数字占位缓存**：译文以句子模板存储，数值、价格和倒计时变化时无需重新翻译，也不会出现闪烁。
+
+### 物品提示框
+
+- 按翻译键翻译当前物品；逐行替换文本，保留其他模组添加的内容（如 Skyblocker、SkyHanni 的价格信息）。
+- **整页翻译**：在容器界面中一次翻译当前页面的全部物品。相同文本去重后合并为批量请求，界面左上角显示翻译进度。
+- 被折成多行的句子先合并为完整句子再翻译，避免断句造成的误译。
+- 外观相同的物品共用同一份译文；重新打开菜单时自动显示已有译文。
+- 翻译 Skyblocker 价格表格行、快捷导航按钮提示等其他模组的文本。
+- 提示框底部列出可用的快捷键。
+
+### 界面与世界
+
+- 计分板（侧边栏）与切换物品时显示的物品名称。
+- NPC 名称与副标题、全息文字、文字展示实体（不翻译真实玩家的名称）。
 
 ### 聊天
-- 系统提示、NPC 对话命中短语库时直接显示中文。
-- 翻译过的固定格式消息（比如 SkyHanni 的「获得了 X 硬币」）再出现时，直接用存好的译文显示。
-- 带多个可点选项的对话按选项分段翻译，点哪个就是哪个。
-- NPC 一段长话被拆成几条消息时，会带上前后句一起翻，避免意思翻错。
-- 点译文前面的 `[翻译]` 看原文，点后面的 `↻` 重新翻译。
 
----
+- 系统消息与 NPC 对话命中短语库时直接显示译文；已翻译过的固定格式消息再次出现时自动显示已存译文。
+- 含多个可点击选项的对话按选项分段翻译，点击行为保持不变。
+- 拆分为多条消息的 NPC 对话结合上下文翻译。
+- 点击译文前的 `[翻译]` 查看原文，点击 `↻` 重新翻译。
 
 ## 安装
 
-1. 安装 Fabric Loader 和前置模组：Fabric API、YetAnotherConfigLib、ModMenu。
-2. 到 [Releases](../../releases) 下载和游戏版本一致的 jar（文件名带 `mc26.2` 或 `mc26.3`），放进 `mods` 文件夹。
-3. 如果装过原版 NPC & Items Translator，要先删掉，两者的模组 ID 相同。
+1. 安装 [Fabric Loader](https://fabricmc.net/) 及前置模组：Fabric API、YetAnotherConfigLib、ModMenu。
+2. 在 [Releases](https://github.com/starlightgl/skyblock-zh-translator/releases/latest) 页面下载与游戏版本对应的 jar：
+
+   | Minecraft 版本 | 文件名后缀 |
+   |---|---|
+   | 26.2 | `+mc26.2.jar` |
+   | 26.3 | `+mc26.3.jar` |
+
+3. 将 jar 放入 `mods` 目录。如已安装原版 NPC & Items Translator，请先将其移除（两者的模组 ID 相同）。
+
+短语库、术语表和附魔数据均已内置在 jar 中，无需额外放置配置文件。
 
 ## 配置
 
-游戏里输入 `/translate` 打开设置，或者在 ModMenu 里点本模组的设置按钮。
+按 `Z`、输入 `/translate` 或通过 ModMenu 打开设置界面。
 
-**接入 AI**：按 **Z** 或输入 `/translate` 打开设置，在「API → 自定义 API」里：
+### 接入 AI 接口
 
-1. 「服务商」选一个，Base URL 和推荐模型会自动填好；
-2. 填入在该平台申请的 API Key，保存即可。
+在「API → 自定义 API」中选择服务商并填写 API Key。选择服务商后，接口地址与推荐模型会自动填入，两者均可手动修改。
 
-| 服务商 | Base URL | 推荐模型（以服务商文档为准） |
+| 服务商 | 接口地址（Base URL） | 推荐模型 |
 |---|---|---|
-| DeepSeek 深度求索 | `https://api.deepseek.com/v1` | `deepseek-flash` |
+| DeepSeek | `https://api.deepseek.com/v1` | `deepseek-flash` |
 | 阿里云百炼（通义千问） | `https://dashscope.aliyuncs.com/compatible-mode/v1` | `qwen-plus` |
 | 智谱 GLM | `https://open.bigmodel.cn/api/paas/v4` | `glm-5.3` |
-| Kimi 月之暗面 | `https://api.moonshot.cn/v1` | `kimi-k2.6` |
+| Kimi（月之暗面） | `https://api.moonshot.cn/v1` | `kimi-k2.6` |
 | 硅基流动 | `https://api.siliconflow.cn/v1` | `deepseek-ai/DeepSeek-V3` |
-| 火山方舟（豆包） | `https://ark.cn-beijing.volces.com/api/v3` | 填方舟控制台里的模型 ID |
+| 火山方舟（豆包） | `https://ark.cn-beijing.volces.com/api/v3` | 方舟控制台中的模型 ID |
 
-中转站、ClinePass 等其他 OpenAI 兼容接口选「其他」手动填写。Base URL 会自动补 `/chat/completions`。
+- 模型名称以各服务商的最新文档为准。
+- 其他 OpenAI 兼容接口（如中转服务）请选择「其他」并手动填写。
+- 接口地址末尾会自动补全 `/chat/completions`；推理模型输出的 `<think>` 内容会被自动移除。
+- 设置界面中的「如何获取 API」页面提供上述平台的 API Key 申请入口。
 
-本模组只使用这一类接口；原版的 Google 翻译、Gemini、Groq、Mistral、OpenRouter 在国内无法直连，已经移除。
+### 常用选项
 
-**常用开关**（都在设置里）：检查更新、固定短语库、翻译侧边栏、翻译悬浮文字、翻译其他模组的提示文字、记住已翻译的物品、打开菜单自动整页翻译、自动显示已存的聊天译文、附魔副标题（关闭 / 按住 Shift / 一直显示）。
+| 选项 | 说明 | 默认 |
+|---|---|---|
+| 检查更新 | 加入服务器时检查是否有新的正式版 | 开启 |
+| 固定短语库 | 优先使用内置及自定义的固定译文 | 开启 |
+| 翻译侧边栏 / 悬浮文字 / 其他模组提示 | 分别控制对应区域的翻译 | 开启 |
+| 记住已翻译的物品 | 重新打开菜单时自动显示已有译文 | 开启 |
+| 打开菜单自动整页翻译 | 打开或切换菜单页面时在后台翻译整页物品（会产生 API 调用） | 关闭 |
+| 自动显示已存的聊天译文 | 固定格式的聊天消息直接显示已存译文 | 开启 |
+| 附魔说明 | 关闭 / 按住 `Shift` 显示 / 始终显示 | 按住 `Shift` |
 
-## 指令与按键
+## 快捷键与命令
 
-| 指令 / 按键 | 作用 |
+| 按键 | 功能 |
 |---|---|
-| `/translate` | 打开设置 |
-| `/translate find 关键词` | 查看词典里包含关键词的已存译文 |
-| `/translate forget 关键词` | 删掉这些译文，下次出现时重新翻译 |
-| `/translate DeleteDict` | 清空整个词典 |
-| `/translate debug` | 开/关调试日志：其他模组提示行的处理过程写进 `logs/latest.log`，排查「某行没翻译」用 |
-| N | 翻译鼠标指着的物品 |
-| Shift + N 或 Ctrl + N | 丢掉这个物品的旧译文，跳过短语库重新翻译 |
-| M | 整页翻译：翻译当前菜单里的所有物品 |
-| V | 恢复物品原文，并且不再自动翻译这个物品 |
-| Z | 打开翻译设置（在菜单里也能用） |
-| Shift | 查看附魔说明 |
+| `N` | 翻译当前物品 |
+| `Shift` + `N` 或 `Ctrl` + `N` | 清除该物品的已存译文，跳过短语库重新翻译 |
+| `V` | 恢复物品原文，并停止自动翻译该物品 |
+| `M` | 翻译当前菜单页面的全部物品 |
+| `Z` | 打开翻译设置（容器界面中同样可用） |
+| `Shift`（按住） | 显示附魔说明 |
 
-这些按键在物品描述最底部也有提示。按键都可以在游戏的按键设置里改。
+| 命令 | 功能 |
+|---|---|
+| `/translate` | 打开设置界面 |
+| `/translate find <关键词>` | 列出词典中包含关键词的已存译文 |
+| `/translate forget <关键词>` | 删除匹配的已存译文，下次出现时重新翻译 |
+| `/translate DeleteDict` | 清空翻译词典 |
+| `/translate debug` | 开启或关闭调试日志，记录其他模组提示行的处理过程（输出至 `logs/latest.log`） |
 
-## 数据文件
+按键可在游戏的「按键绑定」中修改。
 
-短语库、术语表、附魔说明都已经内置在 jar 里，**一个 jar 就能用**，不需要手动放任何文件。
+## 自定义数据
 
-想自己改译名时，在游戏目录的 `config` 文件夹里写同名文件，里面的条目会覆盖内置的：
+在游戏目录的 `config` 文件夹中放置以下同名文件，其中的条目会覆盖内置数据：
 
 | 文件 | 内容 |
 |---|---|
-| `npc_translator.json` | 模组设置（含 API Key，不要分享给别人） |
-| `npc_translator_dict.json` | 翻译词典，AI 翻译过的内容都存在这里 |
-| `npc_translator_glossary.json` | 自己的术语：左英文右中文，保存后即时生效 |
-| `npc_translator_phrasebook.json` | 自己的固定译文：`{"entries":[{"en":"...","zh":"..."}]}` |
-| `npc_translator_enchants.json` | 自己改的附魔译名和说明 |
+| `npc_translator.json` | 模组设置（包含 API Key，请勿外传） |
+| `npc_translator_dict.json` | 翻译词典，保存 AI 翻译结果 |
+| `npc_translator_glossary.json` | 自定义术语，格式为 `"English": "中文"`，保存后即时生效 |
+| `npc_translator_phrasebook.json` | 自定义固定译文，格式为 `{"entries": [{"en": "...", "zh": "..."}]}` |
+| `npc_translator_enchants.json` | 自定义附魔译名与说明 |
 
-想用新版 SkyBlockZH 语料重新生成内置数据：
+使用新版 SkyBlockZH 语料重新生成内置数据：
 
 ```
-python tools/export_skyblockzh.py <SkyBlockZH 文件夹> <输出文件夹>
+python tools/export_skyblockzh.py <SkyBlockZH 目录> <输出目录>
 ```
 
 ## 更新
 
-- 进服时模组会到 GitHub 查一次新版本，有的话在聊天栏给出下载链接（设置里可以关掉「检查更新」）。
-- 升级时用新 jar 替换 `mods` 里的旧 jar 即可，设置和已存译文都会保留。
-- 每个版本改了什么见 [更新日志](CHANGELOG.md)。版本号格式是 `原模组版本-zh.序号`，带 `-beta` 的是测试版。
+- 模组在加入服务器时检查 GitHub 上的最新正式版，有新版本时在聊天栏提供下载链接。可在设置中关闭「检查更新」。
+- 升级时以新版 jar 替换 `mods` 目录中的旧版即可，设置与已存译文会保留。
+- 各版本的变更见 [CHANGELOG.md](CHANGELOG.md)。版本号格式为 `<原模组版本>-zh.<序号>`；带 `-beta` 后缀的为预发布版本，不会通过游戏内更新提示推送。
 
-## 自己编译
+## 从源码构建
 
-双击 `一键编译.bat`：
+需要 JDK 25。
 
-- 没有 JDK 25 会自动下载一个便携版，放在 `jdk` 文件夹里，不影响系统。
-- 依次编译 26.2 和 26.3 两个版本，成功后 jar 会复制到上一级文件夹。
-- 只编一个版本：`gradlew.bat build -PmcTarget=26.2`
+```
+gradlew build -PmcTarget=26.2
+gradlew build -PmcTarget=26.3
+```
 
-也可以不在本地编译：每次推送代码，GitHub Actions 都会自动编译两个版本（在 Actions 页面的 Artifacts 里下载）。
+构建产物位于 `build/libs/`。Windows 用户也可运行 `一键编译.bat`：脚本会在缺少 JDK 25 时下载便携版至 `jdk` 目录，并依次构建两个版本。
 
-### 发布新版本
-
-1. `gradle.properties` 里改 `mod_version`（例如 `1.5.1-zh.3`，测试版 `1.5.1-zh.3-beta.1`）。
-2. 在 `CHANGELOG.md` 顶部加一节 `## 1.5.1-zh.3 (日期)`，写这一版改了什么。
-3. 提交后推送标签 `v1.5.1-zh.3`。GitHub Actions 会检查版本号是否一致、用更新日志生成发布说明、编译 26.2 / 26.3 两个 jar 并上传，然后正式发布；测试版会标成「预发布」，游戏内的更新提示不会推送它。
+每次推送都会由 GitHub Actions 构建两个版本，构建产物可在对应运行的 Artifacts 中下载。版本发布流程见 [docs/RELEASING.md](docs/RELEASING.md)。
 
 ## 常见问题
 
-**会被 Hypixel 封号吗？**
-这个模组只在你自己的客户端上翻译文字，不发包、不自动操作游戏，属于 Hypixel 一般允许的那类显示类模组。但规则以 Hypixel 官方为准，请自行判断。
+**使用本模组是否违反 Hypixel 规则？**
+本模组仅在客户端替换显示的文字，不发送数据包，也不执行任何自动化操作，属于显示类修改。具体规则以 Hypixel 官方说明为准。
 
-**会花很多 API 费用吗？**
-固定短语库和词典命中的内容不调用 AI。同一句话只翻一次，数字变了也不用重翻，所以玩一阵子后基本不花钱。
+**AI 接口的调用量大吗？**
+命中短语库、术语表或本地词典的文本不会调用 AI；同一文本只翻译一次，数值变化也不会触发重新翻译。随着词典积累，调用量会明显下降。
 
----
+**某一行没有被翻译怎么办？**
+输入 `/translate debug` 后将鼠标停留在该物品上，日志中会记录该行的处理过程。提交问题时请附上相关日志。
 
-## 致谢与许可
+## 许可与致谢
 
-- 本项目以 **GPL-3.0** 协议发布，见 [LICENSE](LICENSE)；版权与出处说明见 [NOTICE.md](NOTICE.md)。
-- 原模组：[KALPSIZ__ / NPC & Items Translator](https://github.com/knutolof06/hypixel-skyblock-npc-and-items-translate)，原代码为 MIT 协议，其版权声明保留在 NOTICE.md 中。
-- 内置的固定短语库和术语表数据来自 [SkyBlockZH](https://github.com/BingKKni/SkyBlockZH)（GPL-3.0）。
-- 附魔译名参考了 Minecraft 官方中文译名和 [Hypixel 空岛生存中文维基](https://hypixel-skyblock.fandom.com/zh/wiki/%E9%99%84%E9%AD%94)。
-- Hypixel、Hypixel SkyBlock 是 Hypixel Inc. 的商标；Minecraft 是 Mojang Studios 的商标。本项目与它们无关。
+本项目以 [GPL-3.0](LICENSE) 协议发布，版权与出处说明见 [NOTICE.md](NOTICE.md)。
+
+- **原模组**：KALPSIZ__ 的 [NPC & Items Translator](https://github.com/knutolof06/hypixel-skyblock-npc-and-items-translate)（MIT），其版权声明保留在 NOTICE.md 中。原模组的多语言说明文档存档于 [docs/upstream](docs/upstream/)。
+- **内置数据**：固定短语库与术语表导出自 [SkyBlockZH](https://github.com/BingKKni/SkyBlockZH)（GPL-3.0）。
+- **附魔译名**：参考 Minecraft 官方中文译名及 [Hypixel SkyBlock 中文维基](https://hypixel-skyblock.fandom.com/zh/wiki/%E9%99%84%E9%AD%94)。
+
+Hypixel 与 Hypixel SkyBlock 是 Hypixel Inc. 的商标；Minecraft 是 Mojang Studios 的商标。

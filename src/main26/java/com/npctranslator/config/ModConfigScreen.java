@@ -299,6 +299,13 @@ public class ModConfigScreen {
                                         .build())
 
                                 .option(Option.<Boolean>createBuilder()
+                                        .name(Component.translatable("text.autoconfig.npc_translator.option.autoTranslatePage"))
+                                        .description(OptionDescription.of(Component.translatable("text.autoconfig.npc_translator.option.autoTranslatePage.tooltip")))
+                                        .binding(false, () -> config.autoTranslatePage, val -> config.autoTranslatePage = val)
+                                        .controller(TickBoxControllerBuilder::create)
+                                        .build())
+
+                                .option(Option.<Boolean>createBuilder()
                                         .name(Component.translatable("text.autoconfig.npc_translator.option.rememberTranslatedItems"))
                                         .description(OptionDescription.of(Component.translatable("text.autoconfig.npc_translator.option.rememberTranslatedItems.tooltip")))
                                         .binding(true, () -> config.rememberTranslatedItems, val -> config.rememberTranslatedItems = val)

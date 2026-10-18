@@ -27,7 +27,11 @@ import java.util.regex.Pattern;
  */
 public final class EnchantHints {
 
-    public record Entry(String en, String zh, String hint, boolean ultimate, List<String> aliases) {}
+    public record Entry(String en, String zh, String hint, boolean ultimate, List<String> aliases, boolean generic) {
+        public Entry(String en, String zh, String hint, boolean ultimate, List<String> aliases) {
+            this(en, zh, hint, ultimate, aliases, false);
+        }
+    }
 
     private static volatile Map<String, Entry> byName = Map.of();
     private static volatile Pattern pattern;
@@ -36,6 +40,10 @@ public final class EnchantHints {
     /** What may remain on a line that is only a list of enchantments: levels, arrows, separators, bullets. */
     private static final Pattern LIST_LEFTOVER = Pattern.compile("^[\\s,，、;；/|›»•◆▸+\\-→>:：()（）0-9IVXLC]*$");
     private static volatile boolean loaded;
+    /** Names that stand for a group, not one enchantment ("Ultimate enchant"): no level after them. */
+    private static volatile Map<String, Entry> generics = Map.of();
+    private static final Pattern LIST_SPLIT = Pattern.compile("[,，、;；]");
+    private static final Pattern BULLETS = Pattern.compile("^[\\s›»•◆▸>\\-→:：]+|[\\s.。]+$");
 
     private EnchantHints() {}
 
@@ -84,6 +92,14 @@ public final class EnchantHints {
             alt.append(Pattern.quote(k));
         }
         byName = names;
+        Map<String, Entry> gen = new LinkedHashMap<>();
+        for (Entry e : entries.values()) {
+            if (!e.generic) continue;
+            gen.put(e.en.toLowerCase(), e);
+            for (String a : e.aliases) gen.put(a.toLowerCase(), e);
+            if (e.zh != null && !e.zh.isEmpty()) gen.put(e.zh.toLowerCase(), e);
+        }
+        generics = gen;
         // a name always followed by its level in SkyBlock lore ("Sharpness VII", "锋利 VII")
         pattern = keys.isEmpty() ? null : Pattern.compile("(?<![A-Za-z])(" + alt + ") ?([IVXL]{1,4})(?![A-Za-z])");
     }
@@ -100,13 +116,14 @@ public final class EnchantHints {
             String zh = o.has("zh") ? o.get("zh").getAsString() : "";
             String hint = o.has("hint") ? o.get("hint").getAsString() : "";
             boolean ult = o.has("ultimate") && o.get("ultimate").getAsBoolean();
+            boolean generic = o.has("generic") && o.get("generic").getAsBoolean();
             List<String> aliases = new ArrayList<>();
             if (o.has("aliases") && o.get("aliases").isJsonArray()) {
                 for (JsonElement a : o.getAsJsonArray("aliases")) aliases.add(a.getAsString());
             } else if (into.containsKey(en)) {
                 aliases.addAll(into.get(en).aliases()); // a user file without aliases keeps the built-in ones
             }
-            into.put(en, new Entry(en, zh, hint, ult, aliases));
+            into.put(en, new Entry(en, zh, hint, ult, aliases, generic));
         }
     }
 
@@ -120,6 +137,13 @@ public final class EnchantHints {
             while (m.find()) {
                 Entry e = byName.get(m.group(1));
                 if (e != null && !out.contains(e)) out.add(e);
+            }
+            if (!generics.isEmpty()) {
+                String plain = BULLETS.matcher(line.getString().replaceAll("§.", "")).replaceAll("");
+                for (String part : LIST_SPLIT.split(plain)) {
+                    Entry g = generics.get(part.trim().toLowerCase());
+                    if (g != null && !out.contains(g)) out.add(g);
+                }
             }
         }
         return out;
@@ -137,15 +161,18 @@ public final class EnchantHints {
         Matcher m = listPattern.matcher(plain);
         StringBuilder rest = new StringBuilder();
         int last = 0, count = 0;
+        boolean generic = false;
         while (m.find()) {
             rest.append(plain, last, m.start());
             last = m.end();
             count++;
+            Entry e = byEnglish.get(m.group(1));
+            if (e != null && e.generic) generic = true;
         }
         rest.append(plain.substring(last));
         if (count == 0 || !LIST_LEFTOVER.matcher(rest).matches()) return null;
         // a single bare word ("Power", "Protection") may be a menu label, not an enchantment: needs a level
-        if (count == 1 && !rest.toString().matches(".*[IVXLC].*")) return null;
+        if (count == 1 && !generic && !rest.toString().matches(".*[IVXLC].*")) return null;
         Matcher f = listPattern.matcher(formatted);
         StringBuilder out = new StringBuilder();
         while (f.find()) {

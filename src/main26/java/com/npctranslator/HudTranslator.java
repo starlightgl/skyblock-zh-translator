@@ -38,6 +38,17 @@ public final class HudTranslator {
 
     private HudTranslator() {}
 
+    // ── /translate debug ──
+    public static volatile boolean debug = false;
+    private static final Set<String> DEBUG_SEEN = ConcurrentHashMap.newKeySet();
+
+    /** Log one line of the translation process (each distinct message once). */
+    public static void debugLog(String msg) {
+        if (!debug) return;
+        if (DEBUG_SEEN.size() > 4000) DEBUG_SEEN.clear();
+        if (DEBUG_SEEN.add(msg)) System.out.println("[NPCTranslator-debug] " + msg);
+    }
+
     public static synchronized void init() {
         if (executor != null) return;
         executor = Executors.newSingleThreadScheduledExecutor(r -> {
@@ -193,16 +204,21 @@ public final class HudTranslator {
     /** Phrase book, then dictionary; unknown lines are queued for the background AI batch. */
     private static String lookupLine(String formatted) {
         if (formatted.isEmpty()) return null;
-        if (!TranslationUtil.needsTranslation(formatted)) return null;
+        if (!TranslationUtil.needsTranslation(formatted)) { debugLog("skip (no English): " + formatted); return null; }
         ModConfig c = cfg();
         String out = c.usePhrasebook ? PhraseBook.translate(formatted) : null;
-        if (out != null) return out;
+        if (out != null) { debugLog("phrasebook: " + formatted + " => " + out); return out; }
         out = EnchantHints.translateList(formatted);
-        if (out != null) return out;
+        if (out != null) { debugLog("enchant list: " + formatted + " => " + out); return out; }
         TranslationUtil.Template t = c.normalizeNumbers ? TranslationUtil.normalize(formatted) : TranslationUtil.Template.raw(formatted);
         String tr = TranslationDictionary.get(t.text, provider().name());
-        if (tr != null && !tr.isEmpty()) return TranslationUtil.restore(tr, t.numbers);
-        if (c.hudUseAI) enqueue(t.text);
+        if (tr != null && !tr.isEmpty()) { debugLog("dictionary: " + t.text + " => " + tr); return TranslationUtil.restore(tr, t.numbers); }
+        if (c.hudUseAI) {
+            enqueue(t.text);
+            debugLog("queued for AI (" + provider() + "): " + t.text + (FAILED.containsKey(t.text) ? " [failed recently]" : ""));
+        } else {
+            debugLog("not translated (hudUseAI off): " + t.text);
+        }
         return null;
     }
 
@@ -294,8 +310,10 @@ public final class HudTranslator {
                 if (tr != null && TranslationUtil.placeholdersMatch(tpl, tr)) {
                     TranslationDictionary.put(tpl, tr, p.name());
                     changed = true;
+                    debugLog("AI ok: " + tpl + " => " + tr);
                 } else {
                     FAILED.put(tpl, now);
+                    debugLog("AI rejected: " + tpl + " => " + tr);
                 }
                 PENDING.remove(tpl);
             }
@@ -307,6 +325,7 @@ public final class HudTranslator {
                 PENDING.remove(tpl);
             }
             System.err.println("[NPCTranslator] HUD batch failed: " + e.getMessage());
+            debugLog("AI batch failed (" + batch.size() + " lines): " + e);
         }
     }
 }

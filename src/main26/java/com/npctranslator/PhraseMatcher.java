@@ -42,6 +42,8 @@ public final class PhraseMatcher {
     private static final class Template {
         final Pattern pattern;
         final String zh;
+        /** Literal characters of the template: more specific templates are tried first. */
+        int literal;
         Template(Pattern pattern, String zh) { this.pattern = pattern; this.zh = zh; }
     }
 
@@ -57,6 +59,8 @@ public final class PhraseMatcher {
             if (e == null || e.length < 2 || e[0] == null || e[1] == null) continue;
             add(e[0], e[1]);
         }
+        // "Grants +%s ❤ Health." before "Grants %1$s %2$s %3$s." (stable: earlier user entries still win ties)
+        for (List<Template> list : buckets.values()) list.sort((x, y) -> Integer.compare(y.literal, x.literal));
     }
 
     /** Optional: translate captured values (e.g. location names) before they are put back. */
@@ -94,6 +98,7 @@ public final class PhraseMatcher {
         int letters = literal.replaceAll("[^A-Za-z]", "").length();
         if (!symbol && !label && letters < 6) return;
         Template t = new Template(Pattern.compile(re.toString()), zh);
+        t.literal = PH.matcher(key).replaceAll("").length();
         buckets.computeIfAbsent(bucketKey(key), k -> new ArrayList<>()).add(t);
         size++;
     }
@@ -235,7 +240,9 @@ public final class PhraseMatcher {
                     String v = m.group(i);
                     // A placeholder holds a value (number, name, item), never half a sentence.
                     if (v.length() > 40 || v.split(" ").length > 6 || v.contains(", ")
-                            || v.matches(".*[!?。！？]$")
+                            || v.matches(".*[.!?。！？]$")
+                            // a value never spans two sentences ("+75 ❤ Health. Protection V Grants +20 ❤ Defense")
+                            || v.matches(".*[.!?。！？]\\s+\\S.*")
                             // "Soulflow Cost: %s" must not swallow "1 Mana Cost: 90": a value never holds another "Label:"
                             || LABEL_INSIDE.matcher(v).find()) { ok = false; break; }
                     String tv = valueTranslator.apply(v);

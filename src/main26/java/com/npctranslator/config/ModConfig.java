@@ -91,6 +91,8 @@ public class ModConfig {
     public boolean showTranslateButton = true;
     public ButtonPosition buttonPosition = ButtonPosition.START;
     public boolean autoTranslateItems = false;
+    /** 中文增强版：打开菜单时在后台把整页物品一次翻完 */
+    public boolean autoTranslatePage = false;
     /** Items you translated once are shown translated again automatically (e.g. after reopening a menu). */
     public boolean rememberTranslatedItems = true;
 

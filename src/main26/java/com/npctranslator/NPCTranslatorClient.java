@@ -55,7 +55,8 @@ public class NPCTranslatorClient implements ClientModInitializer {
     public static final Map<String, Map<String, List<Component>>> ITEM_LINE_MAP = new ConcurrentHashMap<>();
     private static final Set<String> PENDING_ITEMS = Collections.newSetFromMap(new ConcurrentHashMap<>());
     // WeakHashMap to track tooltips processed by ItemStackMixin without modifying them
-    public static final java.util.Map<List<Component>, Boolean> PROCESSED_TOOLTIPS = new java.util.WeakHashMap<>();
+    // identity + weak keys: other mods add lines to the list after we saw it, which must not change its key
+    public static final java.util.Map<List<Component>, Boolean> PROCESSED_TOOLTIPS = new com.google.common.collect.MapMaker().weakKeys().makeMap();
     private static final Map<String, Component> ORIGINAL_MESSAGES = new ConcurrentHashMap<>();
     private static final Set<String> REVERTED_ITEMS = Collections.newSetFromMap(new ConcurrentHashMap<>());
     private static final java.util.concurrent.atomic.AtomicInteger messageCounter = new java.util.concurrent.atomic.AtomicInteger(0);
@@ -281,6 +282,13 @@ public class NPCTranslatorClient implements ClientModInitializer {
         );
         KeyMappingHelper.registerKeyMapping(keyRevertTranslation);
         
+        keyTranslatePage = new KeyMapping(
+                "key.npctranslator.translate.page",
+                InputConstants.KEY_M,
+                finalCategory
+        );
+        KeyMappingHelper.registerKeyMapping(keyTranslatePage);
+
         menuKey = new KeyMapping(
                 "key.npctranslator.menu",
                 InputConstants.KEY_Z,
@@ -393,6 +401,11 @@ public class NPCTranslatorClient implements ClientModInitializer {
 
             TOGGLED_THIS_TICK.clear();
             animationTick++;
+            try {
+                tickPageTranslation(client);
+            } catch (Throwable t) {
+                System.err.println("[NPCTranslator] page translation: " + t);
+            }
             
             while (menuKey.consumeClick()) {
                 openSettings();
@@ -459,6 +472,15 @@ public class NPCTranslatorClient implements ClientModInitializer {
                             mc.player.sendSystemMessage(Component.translatable("npctranslator.forget.done", n, kw).withStyle(ChatFormatting.GREEN));
                             return 1;
                         })))
+                .then(com.mojang.brigadier.builder.LiteralArgumentBuilder.literal("debug")
+                    .executes(context -> {
+                        HudTranslator.debug = !HudTranslator.debug;
+                        Minecraft mc = Minecraft.getInstance();
+                        mc.player.sendSystemMessage(Component.literal(HudTranslator.debug
+                                ? "[翻译调试] 已开启：其他模组提示行的处理过程会写进 logs/latest.log，再输入一次关闭"
+                                : "[翻译调试] 已关闭").withStyle(ChatFormatting.AQUA));
+                        return 1;
+                    }))
                 .then(com.mojang.brigadier.builder.LiteralArgumentBuilder.literal("DeleteDict")
                     .executes(context -> {
                         int count = TranslationDictionary.size();
@@ -1643,9 +1665,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
         Minecraft client = Minecraft.getInstance();
         if (client == null) return;
         
-        String itemKey = stack.getItem().toString() + "_" + (stack.getComponents() != null ? stack.getComponents().hashCode() : 0);
-        String lang = getEffectiveLanguageCode();
-        String cacheKey = itemKey + "_" + lang;
+        String cacheKey = itemCacheKey(stack);
 
         if (config.translateModTooltips) translateForeignLines(stack, tooltip);
         handleTooltipStateAndRender(tooltip, cacheKey);
@@ -1655,6 +1675,178 @@ public class NPCTranslatorClient implements ClientModInitializer {
         for (Component c : tooltip) known.add(c.getString());
         lastItemLines = known;
         lastItemLinesAt = System.currentTimeMillis();
+    }
+
+    static String itemCacheKey(ItemStack stack) {
+        String itemKey = stack.getItem().toString() + "_" + (stack.getComponents() != null ? stack.getComponents().hashCode() : 0);
+        return itemKey + "_" + getEffectiveLanguageCode();
+    }
+
+    // ── 中文增强版：整页翻译 ─────────────────────────────────────────
+    /** Set while we read tooltips ourselves (page translation): the item hook must not touch them. */
+    public static final ThreadLocal<Boolean> COLLECTING = ThreadLocal.withInitial(() -> Boolean.FALSE);
+    private static KeyMapping keyTranslatePage;
+    private static boolean lastPageState = false;
+    private static volatile boolean pageRunning = false;
+    private static int pageScanTick = 0;
+    private static int lastPageSignature = 0;
+    private static final Set<String> PAGE_EMPTY = Collections.newSetFromMap(new ConcurrentHashMap<>());
+
+    private static ModConfig.TranslationProvider pageProvider() {
+        if (config.enableCustomItem && isCustomConfigured()) return ModConfig.TranslationProvider.CUSTOM;
+        ModConfig.TranslationProvider p = config.autoItemProvider != null ? config.autoItemProvider : ModConfig.TranslationProvider.GOOGLE;
+        return isProviderUsable(p) ? p : null;
+    }
+
+    private static void tickPageTranslation(Minecraft client) {
+        boolean down = isKeyCurrentlyDown(keyTranslatePage);
+        boolean pressed = down && !lastPageState;
+        lastPageState = down;
+        if (config == null || !config.enabled) return;
+        boolean scan = config.autoTranslatePage && ++pageScanTick % 10 == 0;
+        if (!pressed && !scan) return;
+        if (!(getScreen(client) instanceof net.minecraft.client.gui.screens.inventory.AbstractContainerScreen<?> screen)
+                || client.player == null || client.level == null) {
+            lastPageSignature = 0;
+            return;
+        }
+        if (pressed && !(screen.getFocused() instanceof net.minecraft.client.gui.components.EditBox)) {
+            translatePage(client, screen, true);
+            return;
+        }
+        if (scan) translatePage(client, screen, false);
+    }
+
+    private static void pageMessage(Minecraft client, String text, ChatFormatting color) {
+        if (client.player == null) return;
+        Component c = Component.literal(text).withStyle(color);
+        try {
+            client.player.sendOverlayMessage(c);
+        } catch (Throwable t) {
+            client.player.sendSystemMessage(c);
+        }
+    }
+
+    /** Collect every item of the open menu and translate all of them with a few batched requests. */
+    private static void translatePage(Minecraft client, net.minecraft.client.gui.screens.inventory.AbstractContainerScreen<?> screen, boolean manual) {
+        if (pageRunning) {
+            if (manual) pageMessage(client, "[整页翻译] 上一页还在翻译中…", ChatFormatting.YELLOW);
+            return;
+        }
+        ModConfig.TranslationProvider provider = pageProvider();
+        if (provider == null) {
+            if (manual) pageMessage(client, "[整页翻译] 没有可用的翻译接口，请先在设置里填自定义 API", ChatFormatting.RED);
+            return;
+        }
+        List<net.minecraft.world.inventory.Slot> slots = new ArrayList<>();
+        for (net.minecraft.world.inventory.Slot slot : screen.getMenu().slots) {
+            if (slot.hasItem() && !(slot.container instanceof net.minecraft.world.entity.player.Inventory)) slots.add(slot);
+        }
+        if (slots.isEmpty()) {
+            // the player's own inventory screen: translate the inventory instead
+            for (net.minecraft.world.inventory.Slot slot : screen.getMenu().slots) if (slot.hasItem()) slots.add(slot);
+        }
+        Map<String, List<String>> items = new LinkedHashMap<>();
+        int signature = 1;
+        for (net.minecraft.world.inventory.Slot slot : slots) {
+            ItemStack stack = slot.getItem();
+            String key = itemCacheKey(stack);
+            signature = signature * 31 + key.hashCode();
+            if (items.containsKey(key) || REVERTED_ITEMS.contains(key) || PENDING_ITEMS.contains(key) || PAGE_EMPTY.contains(key)) continue;
+            if (ACTIVE_TRANSLATED_ITEMS.contains(key) && ITEM_CACHE.containsKey(key)) continue;
+            items.put(key, null);
+        }
+        if (!manual && signature == lastPageSignature) return;
+        lastPageSignature = signature;
+        if (items.isEmpty()) {
+            if (manual) pageMessage(client, "[整页翻译] 这一页都翻译过了", ChatFormatting.GREEN);
+            return;
+        }
+        net.minecraft.world.item.Item.TooltipContext ctx = net.minecraft.world.item.Item.TooltipContext.of(client.level);
+        net.minecraft.world.item.TooltipFlag flag = client.options.advancedItemTooltips
+                ? net.minecraft.world.item.TooltipFlag.ADVANCED : net.minecraft.world.item.TooltipFlag.NORMAL;
+        for (net.minecraft.world.inventory.Slot slot : slots) {
+            ItemStack stack = slot.getItem();
+            String key = itemCacheKey(stack);
+            if (!items.containsKey(key) || items.get(key) != null) continue;
+            List<Component> tooltip;
+            COLLECTING.set(Boolean.TRUE);
+            try {
+                tooltip = stack.getTooltipLines(ctx, client.player, flag);
+            } catch (Throwable t) {
+                tooltip = List.of();
+            } finally {
+                COLLECTING.set(Boolean.FALSE);
+            }
+            List<String> lines = new ArrayList<>(tooltip.size());
+            boolean any = false;
+            for (Component c : tooltip) {
+                String f = toFormattedString(c).trim();
+                lines.add(f);
+                if (!any && !f.isEmpty() && TranslationUtil.needsTranslation(f)) any = true;
+            }
+            if (any) items.put(key, lines);
+        }
+        items.values().removeIf(java.util.Objects::isNull);
+        if (items.isEmpty()) return;
+
+        for (String key : items.keySet()) {
+            PENDING_ITEMS.add(key);
+            ACTIVE_TRANSLATED_ITEMS.add(key);
+            TRANSLATED_PROVIDER_CACHE.put(key, provider);
+            REVERTED_ITEMS.remove(key);
+        }
+        pageRunning = true;
+        CompletableFuture.runAsync(() -> {
+            int done = 0;
+            try {
+                String providerName = provider.name();
+                Map<String, ItemLines.Plan> plans = new LinkedHashMap<>();
+                LinkedHashSet<String> missing = new LinkedHashSet<>();
+                for (Map.Entry<String, List<String>> e : items.entrySet()) {
+                    ItemLines.Plan plan = ItemLines.plan(e.getValue(), config.usePhrasebook);
+                    plans.put(e.getKey(), plan);
+                    ItemLines.collectMissing(plan, providerName, missing);
+                }
+                if (manual || !missing.isEmpty()) {
+                    final int count = items.size(), lines = missing.size();
+                    client.execute(() -> pageMessage(client, lines == 0
+                            ? "[整页翻译] " + count + " 个物品，全部来自本地词库"
+                            : "[整页翻译] " + count + " 个物品，" + lines + " 句交给 AI，请稍等…", ChatFormatting.YELLOW));
+                }
+                if (!missing.isEmpty()) ItemLines.translateMissing(missing, provider, 40, 3);
+                for (Map.Entry<String, ItemLines.Plan> e : plans.entrySet()) {
+                    String key = e.getKey();
+                    ItemLines.Result r = ItemLines.assemble(e.getValue(), provider, null);
+                    if (r.changed() && !r.tooltip().isEmpty()) {
+                        ITEM_LINE_MAP.put(key, r.lineMap());
+                        ITEM_CACHE.put(key, r.tooltip());
+                        rememberItem(e.getValue().lines.get(0), provider);
+                        done++;
+                    } else {
+                        ACTIVE_TRANSLATED_ITEMS.remove(key);
+                        TRANSLATED_PROVIDER_CACHE.remove(key);
+                        if (PAGE_EMPTY.size() > 5000) PAGE_EMPTY.clear();
+                        PAGE_EMPTY.add(key);
+                    }
+                }
+                final int finished = done;
+                if (manual || !missing.isEmpty()) {
+                    client.execute(() -> pageMessage(client, "[整页翻译] 完成：" + finished + " 个物品", ChatFormatting.GREEN));
+                }
+            } catch (Throwable t) {
+                for (String key : items.keySet()) {
+                    if (!ITEM_CACHE.containsKey(key)) {
+                        ACTIVE_TRANSLATED_ITEMS.remove(key);
+                        TRANSLATED_PROVIDER_CACHE.remove(key);
+                    }
+                }
+                notifyTranslationError(t instanceof Exception ex ? ex : new Exception(t));
+            } finally {
+                for (String key : items.keySet()) PENDING_ITEMS.remove(key);
+                pageRunning = false;
+            }
+        });
     }
 
     // ── 中文增强版：附魔副标题 ─────────────────────────────────────────
@@ -1721,6 +1913,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
             Component line = tooltip.get(i);
             String plain = line.getString();
             if (plain.isBlank() || own.contains(plain)) continue;
+            if (HudTranslator.debug) HudTranslator.debugLog("item hook, mod line: " + toFormattedString(line));
             Component t = HudTranslator.modText(line);
             if (t != null) {
                 tooltip.set(i, t);
@@ -1739,6 +1932,14 @@ public class NPCTranslatorClient implements ClientModInitializer {
         List<Component> out = components;
         if (config.translateModTooltips) {
             Set<String> known = System.currentTimeMillis() - lastItemLinesAt < 250 ? lastItemLines : Collections.emptySet();
+            if (HudTranslator.debug) {
+                StringBuilder sb = new StringBuilder("rendered tooltip (" + out.size() + " lines, item lines known: " + known.size() + "):");
+                for (Component line : out) {
+                    sb.append("\n    ").append(known.contains(line.getString()) ? "[item] " : MOD_TRANSLATED.contains(line) ? "[done] " : "[mod]  ")
+                      .append(toFormattedString(line));
+                }
+                HudTranslator.debugLog(sb.toString());
+            }
             for (int i = 0; i < out.size(); i++) {
                 Component line = out.get(i);
                 if (known.contains(line.getString()) || MOD_TRANSLATED.contains(line)) continue;
@@ -2157,54 +2358,27 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 }
                 int n = allLinesOriginal.size();
 
-                // 0) Fixed translations from the phrase book (may merge wrapped lore lines).
+                // 0) Phrase book / enchant lists; wrapped lore sentences are joined before going to the AI.
                 boolean forceAi = FORCE_AI_ITEMS.remove(cacheKey);
-                String[] fixed = config.usePhrasebook && !forceAi ? PhraseBook.translateLines(allLinesOriginal) : new String[n];
-
-                List<TranslationUtil.Template> templates = new ArrayList<>();
-                LinkedHashSet<String> missingSet = new LinkedHashSet<>();
-                for (int i = 0; i < n; i++) {
-                    String parsed = allLinesOriginal.get(i);
-                    if (fixed[i] == null && !parsed.isEmpty()) fixed[i] = EnchantHints.translateList(parsed);
-                    if (parsed.isEmpty() || fixed[i] != null || !TranslationUtil.needsTranslation(parsed)) {
-                        templates.add(null);
-                        continue;
-                    }
-                    TranslationUtil.Template t = config.normalizeNumbers ? TranslationUtil.normalize(parsed) : TranslationUtil.Template.raw(parsed);
-                    templates.add(t);
-                    if (!TranslationDictionary.has(t.text, providerName)) {
-                        missingSet.add(t.text);
-                    }
-                }
+                ItemLines.Plan plan = ItemLines.plan(allLinesOriginal, config.usePhrasebook && !forceAi);
 
                 // 1) Translate only the templates we have never seen (numbers already replaced by {n}).
+                LinkedHashSet<String> missingSet = new LinkedHashSet<>();
+                ItemLines.collectMissing(plan, providerName, missingSet);
                 if (!missingSet.isEmpty()) {
-                    List<String> missingLines = new ArrayList<>(missingSet);
-                    Map<Integer, String> result = translateBatch(missingLines, langCode, targetLang, provider);
-                    boolean changed = false;
-                    for (Map.Entry<Integer, String> e : result.entrySet()) {
-                        String template = missingLines.get(e.getKey());
-                        String tr = e.getValue();
-                        if (TranslationUtil.placeholdersMatch(template, tr)) {
-                            TranslationDictionary.put(template, tr, providerName);
-                            changed = true;
-                        }
-                    }
-                    if (changed) TranslationDictionary.save();
+                    ItemLines.translateMissing(missingSet, provider, 40, 2);
                 }
 
-                // 2) Assemble; lines with numbers whose template failed get one raw (uncached) retry.
-                String[] out = new String[n];
+                // 2) Lines with numbers whose template failed get one raw (uncached) retry.
+                String[] raw = new String[n];
                 List<String> retryLines = new ArrayList<>();
                 List<Integer> retryIdx = new ArrayList<>();
                 for (int i = 0; i < n; i++) {
-                    TranslationUtil.Template t = templates.get(i);
-                    if (t == null) continue;
+                    TranslationUtil.Template t = plan.templates[i];
+                    if (t == null || !t.hasNumbers()) continue;
                     String tr = TranslationDictionary.get(t.text, providerName);
-                    if (tr != null && !tr.isEmpty()) {
-                        out[i] = TranslationUtil.restore(tr, t.numbers);
-                    } else if (t.hasNumbers()) {
-                        retryLines.add(allLinesOriginal.get(i));
+                    if (tr == null || tr.isEmpty()) {
+                        retryLines.add(TranslationUtil.restore(t.text, t.numbers));
                         retryIdx.add(i);
                     }
                 }
@@ -2212,38 +2386,16 @@ public class NPCTranslatorClient implements ClientModInitializer {
                     try {
                         Map<Integer, String> retry = translateBatch(retryLines, langCode, targetLang, provider);
                         for (Map.Entry<Integer, String> e : retry.entrySet()) {
-                            out[retryIdx.get(e.getKey())] = e.getValue();
+                            raw[retryIdx.get(e.getKey())] = e.getValue();
                         }
                     } catch (Exception retryError) {
                         retryError.printStackTrace();
                     }
                 }
 
-                List<Component> translatedTooltip = new ArrayList<>();
-                Map<String, List<Component>> lineMap = new ConcurrentHashMap<>();
-                for (int i = 0; i < n; i++) {
-                    String original = allLinesOriginal.get(i);
-                    if (fixed[i] == PhraseMatcher.MERGED) {
-                        lineMap.putIfAbsent(original, List.of());
-                        continue;
-                    }
-                    if (fixed[i] != null) {
-                        List<Component> wrappedLines = new ArrayList<>();
-                        for (String wrapped : PhraseMatcher.wrap(fixed[i], 64)) {
-                            wrappedLines.add(parseColorCodes(wrapped));
-                        }
-                        translatedTooltip.addAll(wrappedLines);
-                        lineMap.put(original, wrappedLines);
-                    } else if (original.isEmpty()) {
-                        translatedTooltip.add(Component.empty());
-                    } else {
-                        boolean has = out[i] != null && !out[i].isEmpty();
-                        String line = has ? out[i] : original;
-                        Component c = parseColorCodes(line);
-                        translatedTooltip.add(c);
-                        if (has) lineMap.put(original, List.of(c));
-                    }
-                }
+                ItemLines.Result result = ItemLines.assemble(plan, provider, raw);
+                List<Component> translatedTooltip = result.tooltip();
+                Map<String, List<Component>> lineMap = result.lineMap();
 
                 if (!translatedTooltip.isEmpty()) {
                     ITEM_LINE_MAP.put(cacheKey, lineMap);

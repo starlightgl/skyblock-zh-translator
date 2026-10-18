@@ -195,5 +195,8 @@
   "npctranslator.config.enchant_hint.shift": "Hold Shift",
   "npctranslator.config.enchant_hint.always": "Always",
   "npctranslator.enchant_hint.header": "Enchantments:",
-  "npctranslator.enchant_hint.press_shift": "Hold Shift for enchantment notes"
+  "npctranslator.enchant_hint.press_shift": "Hold Shift for enchantment notes",
+  "key.npctranslator.translate.page": "Translate whole menu page",
+  "text.autoconfig.npc_translator.option.autoTranslatePage": "Auto-translate whole menu page",
+  "text.autoconfig.npc_translator.option.autoTranslatePage.tooltip": "When a menu opens or changes page, translate every item in it in the background with a few batched requests. Costs API usage; off by default. The page key (default M) works either way."
 }

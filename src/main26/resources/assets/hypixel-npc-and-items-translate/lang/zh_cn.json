@@ -195,5 +195,8 @@
   "npctranslator.config.enchant_hint.shift": "按住 Shift 显示",
   "npctranslator.config.enchant_hint.always": "一直显示",
   "npctranslator.enchant_hint.header": "附魔说明：",
-  "npctranslator.enchant_hint.press_shift": "按住 Shift 查看附魔说明"
+  "npctranslator.enchant_hint.press_shift": "按住 Shift 查看附魔说明",
+  "key.npctranslator.translate.page": "整页翻译（翻译当前菜单所有物品）",
+  "text.autoconfig.npc_translator.option.autoTranslatePage": "打开菜单自动整页翻译",
+  "text.autoconfig.npc_translator.option.autoTranslatePage.tooltip": "打开或翻页时，在后台把当前菜单里所有物品一次翻完（合并成几次请求）。会产生 API 费用，默认关闭；不开也可以随时按整页翻译键（默认 M）。"
 }

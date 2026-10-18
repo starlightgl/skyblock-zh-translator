@@ -1114,6 +1114,19 @@
    "aliases": [
     "Ultimate Wisdom"
    ]
+  },
+  {
+   "en": "Ultimate enchant",
+   "zh": "终极附魔",
+   "hint": "统称：任选一种终极附魔，每件装备只能有一个",
+   "ultimate": true,
+   "generic": true,
+   "aliases": [
+    "Ultimate Enchant",
+    "Ultimate enchantment",
+    "Ultimate Enchantment",
+    "ultimate enchant"
+   ]
   }
  ]
 }

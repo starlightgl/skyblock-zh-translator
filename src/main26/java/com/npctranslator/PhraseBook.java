@@ -66,13 +66,26 @@ public final class PhraseBook {
             return;
         }
         long t0 = System.currentTimeMillis();
-        PhraseMatcher m = new PhraseMatcher(entries).withValueTranslator(v -> {
-            String z = Glossary.index().exact(v);
-            return z != null ? z : v;
-        });
+        PhraseMatcher m = new PhraseMatcher(entries).withValueTranslator(PhraseBook::translateValue);
         matcher = m;
         loadedModified = mod;
         System.out.println("[NPCTranslator] Phrasebook loaded: " + m.size() + " entries in " + (System.currentTimeMillis() - t0) + " ms");
+    }
+
+    private static final java.util.regex.Pattern VALUE_CORE =
+            java.util.regex.Pattern.compile("^([^A-Za-z]*?)([A-Za-z](?:[A-Za-z' -]*[A-Za-z])?)([^A-Za-z]*)$");
+
+    /** A placeholder value: glossary term as a whole, or its words with numbers/icons around them ("+75 ❤ Health"). */
+    static String translateValue(String v) {
+        TranslationUtil.GlossaryIndex g = Glossary.index();
+        String z = g.exact(v);
+        if (z != null) return z;
+        java.util.regex.Matcher m = VALUE_CORE.matcher(v);
+        if (m.matches()) {
+            String core = g.exact(m.group(2));
+            if (core != null) return m.group(1) + core + m.group(3);
+        }
+        return v;
     }
 
     private static void readEntries(Reader r, List<String[]> into) {

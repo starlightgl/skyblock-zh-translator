@@ -177,5 +177,12 @@
   "text.autoconfig.npc_translator.option.translateWorldText": "Translate floating text",
   "text.autoconfig.npc_translator.option.translateWorldText.tooltip": "Translate NPC names and subtitles, holograms and text displays in the world. Uses the phrase book and dictionary first; unknown lines go to the auto-translate provider in the background.",
   "text.autoconfig.npc_translator.option.hudUseAI": "Allow AI for sidebar / item name",
-  "text.autoconfig.npc_translator.option.hudUseAI.tooltip": "Off = only use existing translations (phrase book, dictionary)."
+  "text.autoconfig.npc_translator.option.hudUseAI.tooltip": "Off = only use existing translations (phrase book, dictionary).",
+  "npctranslator.retranslate.hover": "Translate this message again (ignores the stored translation)",
+  "npctranslator.find.none": "No stored translation contains \"%s\".",
+  "npctranslator.find.header": "Stored translations containing \"%s\" (up to 8):",
+  "npctranslator.forget.too_short": "Keyword is too short (at least 2 characters).",
+  "npctranslator.forget.done": "Removed %s stored translations containing \"%s\". They will be translated again next time they appear.",
+  "text.autoconfig.npc_translator.option.rememberTranslatedItems": "Remember translated items",
+  "text.autoconfig.npc_translator.option.rememberTranslatedItems.tooltip": "An item you translated once is shown translated again automatically, e.g. after closing and reopening a menu. Press the revert key on an item to stop this for it."
 }

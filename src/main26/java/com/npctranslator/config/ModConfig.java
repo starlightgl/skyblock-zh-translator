@@ -91,6 +91,8 @@ public class ModConfig {
     public boolean showTranslateButton = true;
     public ButtonPosition buttonPosition = ButtonPosition.START;
     public boolean autoTranslateItems = false;
+    /** Items you translated once are shown translated again automatically (e.g. after reopening a menu). */
+    public boolean rememberTranslatedItems = true;
 
     // ── 中文增强版新增 ─────────────────────────────────────────────
     public static final String DEFAULT_CUSTOM_PROMPT =

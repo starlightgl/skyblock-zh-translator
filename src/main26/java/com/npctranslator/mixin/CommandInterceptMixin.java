@@ -12,7 +12,10 @@ public class CommandInterceptMixin {
 
     @Inject(method = "sendCommand", at = @At("HEAD"), cancellable = true)
     private void interceptTranslateCommand(String command, CallbackInfo ci) {
-        if (command.startsWith("translate_npc ")) {
+        if (command.startsWith("retranslate_npc ")) {
+            NPCTranslatorClient.handleRetranslate(command.substring("retranslate_npc ".length()).trim());
+            ci.cancel();
+        } else if (command.startsWith("translate_npc ")) {
             String msgId = command.substring("translate_npc ".length()).trim();
             NPCTranslatorClient.handleTranslation(msgId);
             ci.cancel();
@@ -32,6 +35,12 @@ public class CommandInterceptMixin {
 
     @Inject(method = "sendUnattendedCommand", at = @At("HEAD"), cancellable = true)
     private void interceptClickTranslateCommand(String command, net.minecraft.client.gui.screens.Screen screen, CallbackInfo ci) {
+        String rc = command.startsWith("/") ? command.substring(1) : command;
+        if (rc.startsWith("retranslate_npc ")) {
+            NPCTranslatorClient.handleRetranslate(rc.substring("retranslate_npc ".length()).trim());
+            ci.cancel();
+            return;
+        }
         if (command.startsWith("/translate_npc ")) {
             String msgId = command.substring("/translate_npc ".length()).trim();
             NPCTranslatorClient.handleTranslation(msgId);

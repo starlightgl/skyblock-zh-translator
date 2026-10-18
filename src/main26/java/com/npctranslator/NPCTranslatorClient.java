@@ -415,6 +415,40 @@ public class NPCTranslatorClient implements ClientModInitializer {
                     openSettings();
                     return 1;
                 })
+                .then(com.mojang.brigadier.builder.LiteralArgumentBuilder.literal("find")
+                    .then(com.mojang.brigadier.builder.RequiredArgumentBuilder.argument("keyword", com.mojang.brigadier.arguments.StringArgumentType.greedyString())
+                        .executes(context -> {
+                            String kw = ((String) context.getArgument("keyword", String.class)).trim();
+                            List<Map.Entry<String, String>> hits = TranslationDictionary.find(kw, 9);
+                            Minecraft mc = Minecraft.getInstance();
+                            if (hits.isEmpty()) {
+                                mc.player.sendSystemMessage(Component.translatable("npctranslator.find.none", kw).withStyle(ChatFormatting.GRAY));
+                                return 1;
+                            }
+                            mc.player.sendSystemMessage(Component.translatable("npctranslator.find.header", kw).withStyle(ChatFormatting.YELLOW));
+                            for (int i = 0; i < Math.min(8, hits.size()); i++) {
+                                Map.Entry<String, String> e = hits.get(i);
+                                String key = e.getKey();
+                                String orig = key.substring(key.indexOf(':') + 1);
+                                mc.player.sendSystemMessage(Component.literal(" " + TranslationUtil.stripColorCodes(orig) + " \u2192 " + TranslationUtil.stripColorCodes(e.getValue())).withStyle(ChatFormatting.GRAY));
+                            }
+                            if (hits.size() > 8) mc.player.sendSystemMessage(Component.literal(" …").withStyle(ChatFormatting.GRAY));
+                            return 1;
+                        })))
+                .then(com.mojang.brigadier.builder.LiteralArgumentBuilder.literal("forget")
+                    .then(com.mojang.brigadier.builder.RequiredArgumentBuilder.argument("keyword", com.mojang.brigadier.arguments.StringArgumentType.greedyString())
+                        .executes(context -> {
+                            String kw = ((String) context.getArgument("keyword", String.class)).trim();
+                            Minecraft mc = Minecraft.getInstance();
+                            if (kw.length() < 2) {
+                                mc.player.sendSystemMessage(Component.translatable("npctranslator.forget.too_short").withStyle(ChatFormatting.RED));
+                                return 0;
+                            }
+                            int n = TranslationDictionary.removeMatching(kw);
+                            clearRuntimeCaches();
+                            mc.player.sendSystemMessage(Component.translatable("npctranslator.forget.done", n, kw).withStyle(ChatFormatting.GREEN));
+                            return 1;
+                        })))
                 .then(com.mojang.brigadier.builder.LiteralArgumentBuilder.literal("DeleteDict")
                     .executes(context -> {
                         int count = TranslationDictionary.size();
@@ -481,7 +515,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
         for (int i = 0; i < messages.size(); i++) {
             GuiMessage line = messages.get(i);
             String fullStyled = extractClickCommands(line.content());
-            if (fullStyled.contains(searchMarker)) {
+            if (containsMarker(fullStyled, searchMarker)) {
                 GuiMessage newLine = new GuiMessage(line.addedTime(), newMessage, null, null, null);
                 messages.set(i, newLine);
                 int scroll = accessor.getScrolledLines();
@@ -506,10 +540,22 @@ public class NPCTranslatorClient implements ClientModInitializer {
         }
     }
 
+    /** marker followed by a non-digit, so "translate_npc 1" does not match "translate_npc 12". */
+    private static boolean containsMarker(String hay, String marker) {
+        int from = 0;
+        while (true) {
+            int at = hay.indexOf(marker, from);
+            if (at < 0) return false;
+            int end = at + marker.length();
+            if (end >= hay.length() || !Character.isDigit(hay.charAt(end))) return true;
+            from = at + 1;
+        }
+    }
+
     private static String extractClickCommands(Component text) {
         StringBuilder sb = new StringBuilder();
         if (text.getStyle() != null && text.getStyle().getClickEvent() instanceof ClickEvent.RunCommand runCmd) {
-            sb.append(runCmd.command());
+            sb.append(runCmd.command()).append('\n');
         }
         for (Component sibling : text.getSiblings()) {
             sb.append(extractClickCommands(sibling));
@@ -722,7 +768,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                         .withStyle(style -> style.withColor(ChatFormatting.GREEN)
                             .withClickEvent(new ClickEvent.RunCommand("/revert_npc " + msgId))
                             .withHoverEvent(new HoverEvent.ShowText(Component.translatable("npctranslator.hover_revert"))));
-                    MutableComponent translatedMessage = Component.empty().append(prefix).append(body);
+                    MutableComponent translatedMessage = Component.empty().append(prefix).append(body).append(retranslateButton(msgId));
                     client.execute(() -> replaceMessageInChat(client, searchMarker, translatedMessage));
                     return;
                 }
@@ -754,13 +800,120 @@ public class NPCTranslatorClient implements ClientModInitializer {
                     translationContent.withStyle(s -> s.withClickEvent(finalClickEvent));
                 }
 
-                MutableComponent translatedMessage = Component.empty().append(prefix).append(translationContent);
+                MutableComponent translatedMessage = Component.empty().append(prefix).append(translationContent).append(retranslateButton(msgId));
                 client.execute(() -> replaceMessageInChat(client, searchMarker, translatedMessage));
             } catch (Exception e) {
                 e.printStackTrace();
                 notifyTranslationError(e);
             }
         });
+    }
+
+    // ── 中文增强版：指定清除译文并重新翻译 ─────────────────────────────
+    private static MutableComponent retranslateButton(String msgId) {
+        return Component.literal(" \u21bb").withStyle(st -> st.withColor(ChatFormatting.DARK_GRAY)
+                .withClickEvent(new ClickEvent.RunCommand("/retranslate_npc " + msgId))
+                .withHoverEvent(new HoverEvent.ShowText(Component.translatable("npctranslator.retranslate.hover"))));
+    }
+
+    /** Drop the stored translation of one chat message and translate it again. */
+    public static void handleRetranslate(String msgId) {
+        try {
+            Component originalMsg = ORIGINAL_MESSAGES.get(msgId);
+            if (originalMsg != null && config.chatTranslationProvider != null) {
+                String dictProvider = config.chatTranslationProvider.name() + "_CHAT";
+                forgetChatText(textToFormattedString(originalMsg), dictProvider);
+                for (ChatSegment seg : splitByEvents(originalMsg)) forgetChatText(seg.formatted.trim(), dictProvider);
+                TRANSLATION_MEMORY_CACHE.remove(originalMsg.getString());
+                TranslationDictionary.save();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        handleTranslation(msgId);
+    }
+
+    private static void forgetChatText(String formatted, String dictProvider) {
+        TranslationUtil.Template t = config.normalizeNumbers ? TranslationUtil.normalize(formatted) : TranslationUtil.Template.raw(formatted);
+        TranslationDictionary.remove(t.text, dictProvider);
+        TranslationDictionary.remove(formatted, dictProvider);
+    }
+
+    // ── 中文增强版：记住翻译过的物品（按物品名，不按物品数据哈希） ─────────
+    private static String itemNameKey(String firstLine) {
+        if (firstLine == null) return null;
+        String f = firstLine.trim();
+        if (f.isEmpty()) return null;
+        return config.normalizeNumbers ? TranslationUtil.normalize(f).text : f;
+    }
+
+    private static void rememberItem(String firstLine, ModConfig.TranslationProvider provider) {
+        String key = itemNameKey(firstLine);
+        if (key == null || provider == null) return;
+        if (!provider.name().equals(TranslationDictionary.get(key, "ITEM_SEEN"))) {
+            TranslationDictionary.put(key, provider.name(), "ITEM_SEEN");
+            TranslationDictionary.save();
+        }
+    }
+
+    private static void unrememberItem(List<Component> tooltip) {
+        if (tooltip == null || tooltip.isEmpty()) return;
+        String key = itemNameKey(toFormattedString(tooltip.get(0)));
+        if (key != null && TranslationDictionary.has(key, "ITEM_SEEN")) {
+            TranslationDictionary.remove(key, "ITEM_SEEN");
+            TranslationDictionary.save();
+        }
+    }
+
+    private static ModConfig.TranslationProvider rememberedProvider(List<Component> tooltip) {
+        if (tooltip == null || tooltip.isEmpty()) return null;
+        String key = itemNameKey(toFormattedString(tooltip.get(0)));
+        String v = key == null ? null : TranslationDictionary.get(key, "ITEM_SEEN");
+        if (v == null) return null;
+        try {
+            return ModConfig.TranslationProvider.valueOf(v);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    /** Items re-translated with Ctrl: the phrase book is skipped so the AI result replaces it. */
+    private static final Set<String> FORCE_AI_ITEMS = Collections.newSetFromMap(new ConcurrentHashMap<>());
+
+    private static void forgetTooltipLines(List<Component> tooltip, ModConfig.TranslationProvider provider) {
+        for (Component line : tooltip) {
+            String f = toFormattedString(line).trim();
+            if (f.isEmpty()) continue;
+            TranslationUtil.Template t = config.normalizeNumbers ? TranslationUtil.normalize(f) : TranslationUtil.Template.raw(f);
+            TranslationDictionary.remove(t.text, provider.name());
+        }
+        TranslationDictionary.save();
+        HudTranslator.clearCache();
+    }
+
+    private static boolean isCtrlDown() {
+        Minecraft client = Minecraft.getInstance();
+        if (client == null) return false;
+        for (int code : new int[]{341, 345}) { // GLFW left / right control
+            try {
+                try {
+                    java.lang.reflect.Method m = InputConstants.class.getMethod("isKeyDown", int.class);
+                    if ((boolean) m.invoke(null, code)) return true;
+                } catch (NoSuchMethodException e) {
+                    java.lang.reflect.Method m = InputConstants.class.getMethod("isKeyDown", com.mojang.blaze3d.platform.Window.class, int.class);
+                    if (client.getWindow() != null && (boolean) m.invoke(null, client.getWindow(), code)) return true;
+                }
+            } catch (Exception ignored) {}
+        }
+        return false;
+    }
+
+    /** Clears every in-memory translation cache (after dictionary entries were removed). */
+    private static void clearRuntimeCaches() {
+        HudTranslator.clearCache();
+        ITEM_CACHE.clear(); ITEM_LINE_MAP.clear();
+        ACTIVE_TRANSLATED_ITEMS.clear();
+        TRANSLATION_MEMORY_CACHE.clear();
     }
 
     // ── 中文增强版：NPC 长对话被拆成多条消息时，带上前后文 ─────────────
@@ -1462,12 +1615,32 @@ public class NPCTranslatorClient implements ClientModInitializer {
         ModConfig.TranslationProvider currentProvider = TRANSLATED_PROVIDER_CACHE.get(cacheKey);
         boolean isAlreadyTranslated = ACTIVE_TRANSLATED_ITEMS.contains(cacheKey) && ITEM_CACHE.containsKey(cacheKey);
 
+        // 中文增强版：Ctrl + 翻译键 = 清掉这个物品已存的译文，跳过短语库，用该引擎重新翻译
+        if (isCtrlDown()) {
+            ModConfig.TranslationProvider rp = null;
+            String suffix = null;
+            if (customJustPressed && config.enableCustomItem) { rp = ModConfig.TranslationProvider.CUSTOM; suffix = "_U"; }
+            else if (googleJustPressed && config.enableGoogleItem) { rp = ModConfig.TranslationProvider.GOOGLE; suffix = "_G"; }
+            else if (geminiJustPressed && config.enableGeminiItem) { rp = ModConfig.TranslationProvider.GEMINI; suffix = "_X"; }
+            else if (groqJustPressed && config.enableGroqItem) { rp = ModConfig.TranslationProvider.GROQ; suffix = "_C"; }
+            else if (mistralJustPressed && config.enableMistralItem) { rp = ModConfig.TranslationProvider.MISTRAL; suffix = "_M"; }
+            else if (openRouterJustPressed && config.enableOpenRouterItem) { rp = ModConfig.TranslationProvider.OPENROUTER; suffix = "_O"; }
+            if (rp != null && !TOGGLED_THIS_TICK.contains(cacheKey + suffix)) {
+                TOGGLED_THIS_TICK.add(cacheKey + suffix);
+                forgetTooltipLines(tooltip, rp);
+                ITEM_CACHE.remove(cacheKey); ITEM_LINE_MAP.remove(cacheKey); PENDING_ITEMS.remove(cacheKey); REVERTED_ITEMS.remove(cacheKey);
+                ACTIVE_TRANSLATED_ITEMS.add(cacheKey); TRANSLATED_PROVIDER_CACHE.put(cacheKey, rp);
+                FORCE_AI_ITEMS.add(cacheKey);
+                triggerTranslation(tooltip, cacheKey, rp);
+            }
+        }
+
         // Toggle off if same key pressed while already translated with that provider
         if (googleJustPressed && config.enableGoogleItem && !TOGGLED_THIS_TICK.contains(cacheKey + "_G")) {
             TOGGLED_THIS_TICK.add(cacheKey + "_G");
             if (isAlreadyTranslated && currentProvider == ModConfig.TranslationProvider.GOOGLE) {
                 // Same key pressed → revert
-                ACTIVE_TRANSLATED_ITEMS.remove(cacheKey); REVERTED_ITEMS.add(cacheKey);
+                ACTIVE_TRANSLATED_ITEMS.remove(cacheKey); REVERTED_ITEMS.add(cacheKey); unrememberItem(tooltip);
                 TRANSLATED_PROVIDER_CACHE.remove(cacheKey); ITEM_CACHE.remove(cacheKey); ITEM_LINE_MAP.remove(cacheKey);
             } else {
                 ITEM_CACHE.remove(cacheKey); ITEM_LINE_MAP.remove(cacheKey); PENDING_ITEMS.remove(cacheKey); REVERTED_ITEMS.remove(cacheKey);
@@ -1478,7 +1651,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
         if (geminiJustPressed && config.enableGeminiItem && !TOGGLED_THIS_TICK.contains(cacheKey + "_X")) {
             TOGGLED_THIS_TICK.add(cacheKey + "_X");
             if (isAlreadyTranslated && currentProvider == ModConfig.TranslationProvider.GEMINI) {
-                ACTIVE_TRANSLATED_ITEMS.remove(cacheKey); REVERTED_ITEMS.add(cacheKey);
+                ACTIVE_TRANSLATED_ITEMS.remove(cacheKey); REVERTED_ITEMS.add(cacheKey); unrememberItem(tooltip);
                 TRANSLATED_PROVIDER_CACHE.remove(cacheKey); ITEM_CACHE.remove(cacheKey); ITEM_LINE_MAP.remove(cacheKey);
             } else {
                 ITEM_CACHE.remove(cacheKey); ITEM_LINE_MAP.remove(cacheKey); PENDING_ITEMS.remove(cacheKey); REVERTED_ITEMS.remove(cacheKey);
@@ -1489,7 +1662,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
         if (groqJustPressed && config.enableGroqItem && !TOGGLED_THIS_TICK.contains(cacheKey + "_C")) {
             TOGGLED_THIS_TICK.add(cacheKey + "_C");
             if (isAlreadyTranslated && currentProvider == ModConfig.TranslationProvider.GROQ) {
-                ACTIVE_TRANSLATED_ITEMS.remove(cacheKey); REVERTED_ITEMS.add(cacheKey);
+                ACTIVE_TRANSLATED_ITEMS.remove(cacheKey); REVERTED_ITEMS.add(cacheKey); unrememberItem(tooltip);
                 TRANSLATED_PROVIDER_CACHE.remove(cacheKey); ITEM_CACHE.remove(cacheKey); ITEM_LINE_MAP.remove(cacheKey);
             } else {
                 ITEM_CACHE.remove(cacheKey); ITEM_LINE_MAP.remove(cacheKey); PENDING_ITEMS.remove(cacheKey); REVERTED_ITEMS.remove(cacheKey);
@@ -1500,7 +1673,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
         if (mistralJustPressed && config.enableMistralItem && !TOGGLED_THIS_TICK.contains(cacheKey + "_M")) {
             TOGGLED_THIS_TICK.add(cacheKey + "_M");
             if (isAlreadyTranslated && currentProvider == ModConfig.TranslationProvider.MISTRAL) {
-                ACTIVE_TRANSLATED_ITEMS.remove(cacheKey); REVERTED_ITEMS.add(cacheKey);
+                ACTIVE_TRANSLATED_ITEMS.remove(cacheKey); REVERTED_ITEMS.add(cacheKey); unrememberItem(tooltip);
                 TRANSLATED_PROVIDER_CACHE.remove(cacheKey); ITEM_CACHE.remove(cacheKey); ITEM_LINE_MAP.remove(cacheKey);
             } else {
                 ITEM_CACHE.remove(cacheKey); ITEM_LINE_MAP.remove(cacheKey); PENDING_ITEMS.remove(cacheKey); REVERTED_ITEMS.remove(cacheKey);
@@ -1511,7 +1684,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
         if (openRouterJustPressed && config.enableOpenRouterItem && !TOGGLED_THIS_TICK.contains(cacheKey + "_O")) {
             TOGGLED_THIS_TICK.add(cacheKey + "_O");
             if (isAlreadyTranslated && currentProvider == ModConfig.TranslationProvider.OPENROUTER) {
-                ACTIVE_TRANSLATED_ITEMS.remove(cacheKey); REVERTED_ITEMS.add(cacheKey);
+                ACTIVE_TRANSLATED_ITEMS.remove(cacheKey); REVERTED_ITEMS.add(cacheKey); unrememberItem(tooltip);
                 TRANSLATED_PROVIDER_CACHE.remove(cacheKey); ITEM_CACHE.remove(cacheKey); ITEM_LINE_MAP.remove(cacheKey);
             } else {
                 ITEM_CACHE.remove(cacheKey); ITEM_LINE_MAP.remove(cacheKey); PENDING_ITEMS.remove(cacheKey); REVERTED_ITEMS.remove(cacheKey);
@@ -1522,7 +1695,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
         if (customJustPressed && config.enableCustomItem && !TOGGLED_THIS_TICK.contains(cacheKey + "_U")) {
             TOGGLED_THIS_TICK.add(cacheKey + "_U");
             if (isAlreadyTranslated && currentProvider == ModConfig.TranslationProvider.CUSTOM) {
-                ACTIVE_TRANSLATED_ITEMS.remove(cacheKey); REVERTED_ITEMS.add(cacheKey);
+                ACTIVE_TRANSLATED_ITEMS.remove(cacheKey); REVERTED_ITEMS.add(cacheKey); unrememberItem(tooltip);
                 TRANSLATED_PROVIDER_CACHE.remove(cacheKey); ITEM_CACHE.remove(cacheKey); ITEM_LINE_MAP.remove(cacheKey);
             } else {
                 ITEM_CACHE.remove(cacheKey); ITEM_LINE_MAP.remove(cacheKey); PENDING_ITEMS.remove(cacheKey); REVERTED_ITEMS.remove(cacheKey);
@@ -1532,7 +1705,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
         }
         if (revertJustPressed && !TOGGLED_THIS_TICK.contains(cacheKey + "_R")) {
             TOGGLED_THIS_TICK.add(cacheKey + "_R");
-            ACTIVE_TRANSLATED_ITEMS.remove(cacheKey); REVERTED_ITEMS.add(cacheKey);
+            ACTIVE_TRANSLATED_ITEMS.remove(cacheKey); REVERTED_ITEMS.add(cacheKey); unrememberItem(tooltip);
             TRANSLATED_PROVIDER_CACHE.remove(cacheKey); ITEM_CACHE.remove(cacheKey); ITEM_LINE_MAP.remove(cacheKey);
         }
 
@@ -1615,6 +1788,13 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 tooltip.add(Component.empty());
                 ITEM_CACHE.get(cacheKey).forEach(tooltip::add);
             } catch (Exception ignored) {}
+        } else if (config.rememberTranslatedItems && !REVERTED_ITEMS.contains(cacheKey) && !ACTIVE_TRANSLATED_ITEMS.contains(cacheKey)
+                && rememberedProvider(tooltip) != null) {
+            // 中文增强版：翻译过的物品（比如重新打开菜单后 key 变了）自动重新显示译文，结果主要来自词典
+            ModConfig.TranslationProvider remembered = rememberedProvider(tooltip);
+            ACTIVE_TRANSLATED_ITEMS.add(cacheKey);
+            TRANSLATED_PROVIDER_CACHE.put(cacheKey, remembered);
+            triggerTranslation(tooltip, cacheKey, remembered);
         } else if (config.autoTranslateItems && !REVERTED_ITEMS.contains(cacheKey) && !ACTIVE_TRANSLATED_ITEMS.contains(cacheKey)) {
             // Auto translate items logic
             ModConfig.TranslationProvider autoProvider = config.autoItemProvider != null ? config.autoItemProvider : ModConfig.TranslationProvider.GOOGLE;
@@ -1785,7 +1965,8 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 int n = allLinesOriginal.size();
 
                 // 0) Fixed translations from the phrase book (may merge wrapped lore lines).
-                String[] fixed = config.usePhrasebook ? PhraseBook.translateLines(allLinesOriginal) : new String[n];
+                boolean forceAi = FORCE_AI_ITEMS.remove(cacheKey);
+                String[] fixed = config.usePhrasebook && !forceAi ? PhraseBook.translateLines(allLinesOriginal) : new String[n];
 
                 List<TranslationUtil.Template> templates = new ArrayList<>();
                 LinkedHashSet<String> missingSet = new LinkedHashSet<>();
@@ -1873,6 +2054,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 if (!translatedTooltip.isEmpty()) {
                     ITEM_LINE_MAP.put(cacheKey, lineMap);
                     ITEM_CACHE.put(cacheKey, translatedTooltip);
+                    if (n > 0) rememberItem(allLinesOriginal.get(0), provider);
                 }
             } catch (Exception e) {
                 e.printStackTrace();

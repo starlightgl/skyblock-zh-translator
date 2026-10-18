@@ -60,6 +60,42 @@ public class TranslationDictionary {
         }
     }
 
+    public static void remove(String original, String provider) {
+        if (original != null) dictionary.remove(provider + ":" + original);
+    }
+
+    /** Entries whose original or translation contains the keyword (colour codes ignored, case-insensitive). */
+    public static java.util.List<java.util.Map.Entry<String, String>> find(String keyword, int limit) {
+        java.util.List<java.util.Map.Entry<String, String>> out = new java.util.ArrayList<>();
+        String kw = keyword.toLowerCase(java.util.Locale.ROOT);
+        for (java.util.Map.Entry<String, String> e : dictionary.entrySet()) {
+            if (matches(e, kw)) {
+                out.add(e);
+                if (out.size() >= limit) break;
+            }
+        }
+        return out;
+    }
+
+    public static int removeMatching(String keyword) {
+        String kw = keyword.toLowerCase(java.util.Locale.ROOT);
+        int n = 0;
+        for (java.util.Map.Entry<String, String> e : new java.util.ArrayList<>(dictionary.entrySet())) {
+            if (matches(e, kw) && dictionary.remove(e.getKey()) != null) n++;
+        }
+        if (n > 0) save();
+        return n;
+    }
+
+    private static boolean matches(java.util.Map.Entry<String, String> e, String kw) {
+        String key = e.getKey();
+        if (key.startsWith("ITEM_SEEN:")) return false;
+        int colon = key.indexOf(':');
+        String original = colon >= 0 ? key.substring(colon + 1) : key;
+        return TranslationUtil.stripColorCodes(original).toLowerCase(java.util.Locale.ROOT).contains(kw)
+                || TranslationUtil.stripColorCodes(e.getValue()).toLowerCase(java.util.Locale.ROOT).contains(kw);
+    }
+
     public static int size() {
         return dictionary.size();
     }

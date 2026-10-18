@@ -177,5 +177,12 @@
   "text.autoconfig.npc_translator.option.translateWorldText": "翻译悬浮文字",
   "text.autoconfig.npc_translator.option.translateWorldText.tooltip": "翻译世界里的 NPC 名字和副标题、全息文字、文字展示实体。先查短语库和词典，没有的在后台交给“自动翻译使用的引擎”。",
   "text.autoconfig.npc_translator.option.hudUseAI": "侧边栏/物品名允许调用 AI",
-  "text.autoconfig.npc_translator.option.hudUseAI.tooltip": "关闭后侧边栏和手持物品名只用已有的译文（短语库、词典），不会额外请求接口。"
+  "text.autoconfig.npc_translator.option.hudUseAI.tooltip": "关闭后侧边栏和手持物品名只用已有的译文（短语库、词典），不会额外请求接口。",
+  "npctranslator.retranslate.hover": "重新翻译这条消息（不用已存的译文）",
+  "npctranslator.find.none": "词典里没有包含“%s”的译文。",
+  "npctranslator.find.header": "包含“%s”的已存译文（最多显示 8 条）：",
+  "npctranslator.forget.too_short": "关键词太短，至少 2 个字。",
+  "npctranslator.forget.done": "已删除 %s 条包含“%s”的译文，下次出现时会重新翻译。",
+  "text.autoconfig.npc_translator.option.rememberTranslatedItems": "记住已翻译的物品",
+  "text.autoconfig.npc_translator.option.rememberTranslatedItems.tooltip": "翻译过一次的物品，以后再看到（比如关掉菜单重新打开）会自动显示译文，主要用词典里存好的结果，基本不再调用 AI。在物品上按“恢复原文”键可以取消对这个物品的记忆。"
 }

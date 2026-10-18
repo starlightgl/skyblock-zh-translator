@@ -97,6 +97,7 @@ public final class Glossary {
         } catch (Exception e) {
             System.err.println("[NPCTranslator] Failed to read built-in glossary: " + e.getMessage());
         }
+        m.putAll(TermFixes.glossary()); // 中文增强版的修正（如宝石名）覆盖社区语料
         builtIn = Collections.unmodifiableMap(m);
         return builtIn;
     }

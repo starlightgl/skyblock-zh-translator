@@ -41,7 +41,7 @@ public class TranslationDictionary {
     }
 
     public static String get(String original, String provider) {
-        return dictionary.get(provider + ":" + original);
+        return TermFixes.apply(dictionary.get(provider + ":" + original));
     }
 
     public static void put(String original, String translated, String provider) {
@@ -94,6 +94,48 @@ public class TranslationDictionary {
         String original = colon >= 0 ? key.substring(colon + 1) : key;
         return TranslationUtil.stripColorCodes(original).toLowerCase(java.util.Locale.ROOT).contains(kw)
                 || TranslationUtil.stripColorCodes(e.getValue()).toLowerCase(java.util.Locale.ROOT).contains(kw);
+    }
+
+    /** Menu of an entry key ("CUSTOM@Bazaar ➜ Mining:..." → "Bazaar ➜ Mining"), or null for shared entries. */
+    public static String menuOf(String key) {
+        int colon = key.indexOf(':');
+        String ns = colon >= 0 ? key.substring(0, colon) : key;
+        int at = ns.indexOf('@');
+        return at >= 0 ? ns.substring(at + 1) : null;
+    }
+
+    /** Number of saved entries per menu, most first. */
+    public static java.util.List<java.util.Map.Entry<String, Integer>> menus() {
+        java.util.Map<String, Integer> count = new java.util.HashMap<>();
+        for (String key : dictionary.keySet()) {
+            String menu = menuOf(key);
+            if (menu != null) count.merge(menu, 1, Integer::sum);
+        }
+        java.util.List<java.util.Map.Entry<String, Integer>> out = new java.util.ArrayList<>(count.entrySet());
+        out.sort((a, b) -> b.getValue() - a.getValue());
+        return out;
+    }
+
+    /** Removes every entry saved under a menu whose name contains the keyword (case-insensitive). */
+    public static int removeMenu(String keyword) {
+        String kw = keyword.toLowerCase(java.util.Locale.ROOT);
+        int n = 0;
+        for (String key : new java.util.ArrayList<>(dictionary.keySet())) {
+            String menu = menuOf(key);
+            if (menu != null && menu.toLowerCase(java.util.Locale.ROOT).contains(kw) && dictionary.remove(key) != null) n++;
+        }
+        if (n > 0) save();
+        return n;
+    }
+
+    /** Removes the entries saved under exactly this menu. */
+    public static int removeMenuExact(String menu) {
+        int n = 0;
+        for (String key : new java.util.ArrayList<>(dictionary.keySet())) {
+            if (menu.equals(menuOf(key)) && dictionary.remove(key) != null) n++;
+        }
+        if (n > 0) save();
+        return n;
     }
 
     public static int size() {

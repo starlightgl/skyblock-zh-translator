@@ -66,7 +66,10 @@ public final class ItemLines {
         boolean[] ai = new boolean[n];
         for (int i = 0; i < n; i++) {
             String parsed = lines.get(i);
+            String rule = parsed.isEmpty() ? null : PatternRules.translate(parsed);
+            if (rule != null && p.fixed[i] != PhraseMatcher.MERGED) p.fixed[i] = rule;
             if (p.fixed[i] == null && !parsed.isEmpty()) p.fixed[i] = EnchantHints.translateList(parsed);
+            if (p.fixed[i] == null && !parsed.isEmpty()) p.fixed[i] = glossaryName(parsed);
             ai[i] = !parsed.isEmpty() && p.fixed[i] == null && TranslationUtil.needsTranslation(parsed);
         }
         // Wrapped sentences: join consecutive AI lines that continue the previous one.
@@ -94,6 +97,16 @@ public final class ItemLines {
             i = j + 1;
         }
         return p;
+    }
+
+    /** A line that is exactly one glossary term (an item or material name): its fixed translation. */
+    static String glossaryName(String formatted) {
+        String plain = TranslationUtil.stripColorCodes(formatted).trim();
+        if (plain.length() < 3 || plain.length() > 48) return null;
+        String zh = Glossary.index().exact(plain);
+        if (zh == null || zh.equals(plain) || zh.isEmpty()) return null;
+        java.util.regex.Matcher lead = java.util.regex.Pattern.compile("^((?:§[0-9a-fk-or])*)").matcher(formatted.trim());
+        return (lead.find() ? lead.group(1) : "") + zh;
     }
 
     private static String plain(String formatted) {
@@ -139,11 +152,23 @@ public final class ItemLines {
         return col;
     }
 
-    /** Templates of the plan that are not in the dictionary yet. */
-    public static void collectMissing(Plan p, String providerName, Collection<String> into) {
+    /** Templates the AI returned unchanged this session: not asked again until restart. */
+    private static final java.util.Set<String> UNCHANGED = ConcurrentHashMap.newKeySet();
+
+    /** Templates of the plan that have no translation yet (for this menu or globally). */
+    public static void collectMissing(Plan p, ModConfig.TranslationProvider provider, String menu, Collection<String> into) {
         for (TranslationUtil.Template t : p.templates) {
-            if (t != null && !TranslationDictionary.has(t.text, providerName)) into.add(t.text);
+            if (t == null || UNCHANGED.contains(t.text)) continue;
+            String tr = NPCTranslatorClient.dictGet(t.text, provider, menu);
+            if (tr == null || tr.isEmpty()) into.add(t.text);
         }
+    }
+
+    /** Same plain text (colour codes and spacing ignored): the AI did not translate the line. */
+    private static boolean unchanged(String template, String translated) {
+        String a = TranslationUtil.stripColorCodes(template).replaceAll("\\s+", " ").trim();
+        String b = TranslationUtil.stripColorCodes(translated).replaceAll("\\s+", " ").trim();
+        return a.equalsIgnoreCase(b) && TranslationUtil.needsTranslation(template);
     }
 
     /**
@@ -151,18 +176,22 @@ public final class ItemLines {
      * once; results go into the dictionary. Throws the first error if nothing at all succeeded.
      */
     public static int translateMissing(Collection<String> missing, ModConfig.TranslationProvider provider,
-                                       int batchSize, int parallel) throws Exception {
-        return translateMissing(missing, provider, batchSize, parallel, null);
+                                       int batchSize, int parallel, String menu) throws Exception {
+        return translateMissing(missing, provider, batchSize, parallel, null, menu);
     }
 
-    /** Same, reporting the number of lines handled after every finished request. */
+    /**
+     * Same, reporting the number of lines handled after every finished request. Results are saved
+     * under the menu they came from ({@code menu}, null = no menu) and the menu is told to the AI.
+     */
     public static int translateMissing(Collection<String> missing, ModConfig.TranslationProvider provider,
-                                       int batchSize, int parallel, java.util.function.IntConsumer progress) throws Exception {
+                                       int batchSize, int parallel, java.util.function.IntConsumer progress,
+                                       String menu) throws Exception {
         List<String> all = new ArrayList<>(new LinkedHashSet<>(missing));
         if (all.isEmpty()) return 0;
         String langCode = NPCTranslatorClient.getEffectiveLanguageCode();
         String targetLang = NPCTranslatorClient.targetLanguageName(langCode);
-        String providerName = provider.name();
+        String ns = NPCTranslatorClient.dictNs(provider, menu);
         List<List<String>> chunks = new ArrayList<>();
         for (int i = 0; i < all.size(); i += batchSize) chunks.add(all.subList(i, Math.min(all.size(), i + batchSize)));
         Map<Integer, Exception> errors = new ConcurrentHashMap<>();
@@ -173,20 +202,26 @@ public final class ItemLines {
                 final int idx = k;
                 final List<String> chunk = chunks.get(k);
                 wave.add(CompletableFuture.runAsync(() -> {
+                    NPCTranslatorClient.MENU_CONTEXT.set(menu);
                     try {
                         Map<Integer, String> res = NPCTranslatorClient.translateBatch(chunk, langCode, targetLang, provider);
                         int got = 0;
                         for (Map.Entry<Integer, String> e : res.entrySet()) {
                             String template = chunk.get(e.getKey());
-                            if (TranslationUtil.placeholdersMatch(template, e.getValue())) {
-                                TranslationDictionary.put(template, e.getValue(), providerName);
-                                got++;
+                            if (!TranslationUtil.placeholdersMatch(template, e.getValue())) continue;
+                            if (unchanged(template, e.getValue())) {
+                                UNCHANGED.add(template);
+                                HudTranslator.debugLog("AI left the line untranslated: " + template);
+                                continue;
                             }
+                            TranslationDictionary.put(template, e.getValue(), ns);
+                            got++;
                         }
                         synchronized (ok) { ok[0] += got; }
                     } catch (Exception e) {
                         errors.put(idx, e);
                     } finally {
+                        NPCTranslatorClient.MENU_CONTEXT.remove();
                         if (progress != null) progress.accept(chunk.size());
                     }
                 }));
@@ -199,8 +234,7 @@ public final class ItemLines {
     }
 
     /** Build the translated tooltip from the plan and the dictionary. */
-    public static Result assemble(Plan p, ModConfig.TranslationProvider provider, String[] rawOverride) {
-        String providerName = provider.name();
+    public static Result assemble(Plan p, ModConfig.TranslationProvider provider, String[] rawOverride, String menu) {
         int n = p.lines.size();
         List<Component> translated = new ArrayList<>();
         Map<String, List<Component>> lineMap = new ConcurrentHashMap<>();
@@ -223,10 +257,10 @@ public final class ItemLines {
                 translated.add(Component.empty());
                 continue;
             }
-            String out = rawOverride != null ? rawOverride[i] : null;
+            String out = rawOverride != null ? TermFixes.apply(rawOverride[i]) : null;
             TranslationUtil.Template t = p.templates[i];
             if (out == null && t != null) {
-                String tr = TranslationDictionary.get(t.text, providerName);
+                String tr = NPCTranslatorClient.dictGet(t.text, provider, menu);
                 if (tr != null && !tr.isEmpty()) out = TranslationUtil.restore(tr, t.numbers);
             }
             if (out != null && !out.isEmpty()) {

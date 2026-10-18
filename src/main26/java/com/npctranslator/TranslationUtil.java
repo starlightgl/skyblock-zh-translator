@@ -243,7 +243,9 @@ public final class TranslationUtil {
               .append("1. Keep every Minecraft § colour/format code (e.g. §6, §l) exactly where it is.\n")
               .append("2. Each input line starts with 'ID|'. Return each translated line with the EXACT SAME 'ID|' prefix, one line per input line, same count, same order.\n")
               .append("3. Tokens like {0}, {1} stand for numbers. Keep them unchanged and in the correct position.\n")
-              .append("4. Output ONLY the translated lines. No explanations, no code fences.\n");
+              .append("4. Output ONLY the translated lines. No explanations, no code fences.\n")
+              .append("5. Translate item, material and gemstone names too, following the glossary (e.g. Topaz Gemstone => 黄玉). ")
+              .append("Never return a line unchanged unless it is only a player name, a number or a code.\n");
         } else {
             sb.append("Translate Minecraft NPC chat to ").append(langName).append(".\n")
               .append("RULES:\n")

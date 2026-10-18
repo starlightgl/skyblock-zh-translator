@@ -440,7 +440,9 @@ public class NPCTranslatorClient implements ClientModInitializer {
                                 Map.Entry<String, String> e = hits.get(i);
                                 String key = e.getKey();
                                 String orig = key.substring(key.indexOf(':') + 1);
-                                mc.player.sendSystemMessage(Component.literal(" " + TranslationUtil.stripColorCodes(orig) + " \u2192 " + TranslationUtil.stripColorCodes(e.getValue())).withStyle(ChatFormatting.GRAY));
+                                String menu = TranslationDictionary.menuOf(key);
+                                mc.player.sendSystemMessage(Component.literal(" " + (menu != null ? "[" + menu + "] " : "")
+                                        + TranslationUtil.stripColorCodes(orig) + " \u2192 " + TranslationUtil.stripColorCodes(e.getValue())).withStyle(ChatFormatting.GRAY));
                             }
                             if (hits.size() > 8) mc.player.sendSystemMessage(Component.literal(" …").withStyle(ChatFormatting.GRAY));
                             return 1;
@@ -457,6 +459,37 @@ public class NPCTranslatorClient implements ClientModInitializer {
                             int n = TranslationDictionary.removeMatching(kw);
                             clearRuntimeCaches();
                             mc.player.sendSystemMessage(Component.translatable("npctranslator.forget.done", n, kw).withStyle(ChatFormatting.GREEN));
+                            return 1;
+                        })))
+                .then(com.mojang.brigadier.builder.LiteralArgumentBuilder.literal("menus")
+                    .executes(context -> {
+                        Minecraft mc = Minecraft.getInstance();
+                        List<Map.Entry<String, Integer>> menus = TranslationDictionary.menus();
+                        if (menus.isEmpty()) {
+                            mc.player.sendSystemMessage(Component.literal("[翻译] 还没有按菜单保存的译文").withStyle(ChatFormatting.GRAY));
+                            return 1;
+                        }
+                        mc.player.sendSystemMessage(Component.literal("[翻译] 按菜单保存的译文（菜单名 · 条数）：").withStyle(ChatFormatting.YELLOW));
+                        for (int i = 0; i < Math.min(15, menus.size()); i++) {
+                            Map.Entry<String, Integer> m = menus.get(i);
+                            mc.player.sendSystemMessage(Component.literal(" " + m.getKey() + " · " + m.getValue()).withStyle(ChatFormatting.GRAY));
+                        }
+                        if (menus.size() > 15) mc.player.sendSystemMessage(Component.literal(" …共 " + menus.size() + " 个菜单").withStyle(ChatFormatting.GRAY));
+                        mc.player.sendSystemMessage(Component.literal("用 /translate forgetmenu <菜单名> 清除某个菜单的译文").withStyle(ChatFormatting.DARK_GRAY));
+                        return 1;
+                    }))
+                .then(com.mojang.brigadier.builder.LiteralArgumentBuilder.literal("forgetmenu")
+                    .then(com.mojang.brigadier.builder.RequiredArgumentBuilder.argument("menu", com.mojang.brigadier.arguments.StringArgumentType.greedyString())
+                        .executes(context -> {
+                            String kw = ((String) context.getArgument("menu", String.class)).trim();
+                            Minecraft mc = Minecraft.getInstance();
+                            if (kw.length() < 2) {
+                                mc.player.sendSystemMessage(Component.translatable("npctranslator.forget.too_short").withStyle(ChatFormatting.RED));
+                                return 0;
+                            }
+                            int n = TranslationDictionary.removeMenu(kw);
+                            clearRuntimeCaches();
+                            mc.player.sendSystemMessage(Component.literal("[翻译] 已清除菜单名含「" + kw + "」的 " + n + " 条译文，下次打开会重新翻译").withStyle(ChatFormatting.GREEN));
                             return 1;
                         })))
                 .then(com.mojang.brigadier.builder.LiteralArgumentBuilder.literal("debug")
@@ -1258,6 +1291,14 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 ? Glossary.index().hits(content, 80)
                 : Collections.emptyMap();
         String prompt = TranslationUtil.buildSystemPrompt(isTooltip, langName, config.customPrompt, hits);
+        String menu = isTooltip ? MENU_CONTEXT.get() : null;
+        if (menu != null) {
+            prompt += "\nMENU:\nThese lines come from the in-game menu \"" + menu + "\". Use it to pick the right meaning.\n";
+            if (menu.toLowerCase(Locale.ROOT).contains("bazaar")) {
+                prompt += "In Bazaar menus use: Bazaar = 集市, Buy Order = 挂单收购, Sell Offer = 挂单出售, "
+                        + "Instant Buy = 立即买入, Instant Sell = 立即卖出, products = 种商品.\n";
+            }
+        }
         String ctx = isTooltip ? null : CHAT_CONTEXT.get();
         if (ctx != null) {
             prompt += "\nSPLIT DIALOGUE:\nThis NPC line is one part of a longer speech that Hypixel split over several chat lines. "
@@ -1675,11 +1716,51 @@ public class NPCTranslatorClient implements ClientModInitializer {
             sb.append(toFormattedString(stack.getHoverName()));
             net.minecraft.world.item.component.ItemLore lore = stack.get(net.minecraft.core.component.DataComponents.LORE);
             if (lore != null) for (Component l : lore.lines()) sb.append('\n').append(toFormattedString(l));
-            h = sb.toString().hashCode();
+            // numbers left out: Bazaar prices and countdowns change all the time, the item stays the same
+            h = TranslationUtil.normalize(sb.toString()).text.hashCode();
         } catch (Exception e) {
             h = stack.getComponents() != null ? stack.getComponents().hashCode() : 0;
         }
-        return stack.getItem().toString() + "_" + Integer.toHexString(h) + "_" + getEffectiveLanguageCode();
+        String menu = currentMenu();
+        return stack.getItem().toString() + "_" + Integer.toHexString(h) + "_" + getEffectiveLanguageCode()
+                + (menu == null ? "" : "@" + menu);
+    }
+
+    // ── 中文增强版：按菜单分类保存译文 ──────────────────────────────────
+    /** Menu given to the AI as context while a batch from that menu is translated. */
+    public static final ThreadLocal<String> MENU_CONTEXT = new ThreadLocal<>();
+
+    /** Title of the open container menu ("Bazaar ➜ Mining"), numbers folded; null outside menus. */
+    public static String currentMenu() {
+        try {
+            return menuKey(getScreen(Minecraft.getInstance()));
+        } catch (Throwable t) {
+            return null;
+        }
+    }
+
+    static String menuKey(Screen s) {
+        if (!(s instanceof net.minecraft.client.gui.screens.inventory.AbstractContainerScreen<?>)
+                || s instanceof net.minecraft.client.gui.screens.inventory.InventoryScreen
+                || s instanceof net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen) return null;
+        String t = TranslationUtil.stripColorCodes(s.getTitle().getString())
+                .replaceAll("\\d+", "#").replace(':', '：').replace('@', '＠').replaceAll("\\s+", " ").trim();
+        if (t.isEmpty()) return null;
+        return t.length() > 60 ? t.substring(0, 60) : t;
+    }
+
+    /** Dictionary namespace: per menu when inside one ("CUSTOM@Bazaar ➜ Mining"), else the provider. */
+    public static String dictNs(ModConfig.TranslationProvider provider, String menu) {
+        return menu == null ? provider.name() : provider.name() + "@" + menu;
+    }
+
+    /** This menu's translation first, then the one shared by all menus. */
+    public static String dictGet(String template, ModConfig.TranslationProvider provider, String menu) {
+        if (menu != null) {
+            String s = TranslationDictionary.get(template, dictNs(provider, menu));
+            if (s != null && !s.isEmpty()) return s;
+        }
+        return TranslationDictionary.get(template, provider.name());
     }
 
     // ── 中文增强版：整页翻译 ─────────────────────────────────────────
@@ -1758,6 +1839,20 @@ public class NPCTranslatorClient implements ClientModInitializer {
             return;
         }
         if (pressed && !(screen.getFocused() instanceof net.minecraft.client.gui.components.EditBox)) {
+            if ((isShiftDown() || isCtrlDown()) && !pageRunning) {
+                // Shift/Ctrl + M: drop this menu's saved translations and translate the page again
+                String menu = menuKey(screen);
+                int n = menu == null ? 0 : TranslationDictionary.removeMenuExact(menu);
+                String suffix = menu == null ? "" : "@" + menu;
+                for (String key : new ArrayList<>(ITEM_CACHE.keySet())) {
+                    if (menu != null && key.endsWith(suffix)) {
+                        ITEM_CACHE.remove(key); ITEM_LINE_MAP.remove(key);
+                        ACTIVE_TRANSLATED_ITEMS.remove(key); TRANSLATED_PROVIDER_CACHE.remove(key);
+                    }
+                }
+                PAGE_EMPTY.clear();
+                HudTranslator.debugLog("page re-translate: " + menu + ", removed " + n);
+            }
             translatePage(client, screen, true);
             return;
         }
@@ -1776,6 +1871,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
 
     /** Collect every item of the open menu and translate all of them with a few batched requests. */
     private static void translatePage(Minecraft client, net.minecraft.client.gui.screens.inventory.AbstractContainerScreen<?> screen, boolean manual) {
+        final String menu = menuKey(screen);
         if (pageRunning) {
             if (manual) pageMessage(client, "[整页翻译] 上一页还在翻译中…", ChatFormatting.YELLOW);
             return;
@@ -1857,13 +1953,13 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 for (Map.Entry<String, List<String>> e : items.entrySet()) {
                     ItemLines.Plan plan = ItemLines.plan(e.getValue(), config.usePhrasebook);
                     plans.put(e.getKey(), plan);
-                    ItemLines.collectMissing(plan, providerName, missing);
+                    ItemLines.collectMissing(plan, provider, menu, missing);
                 }
                 pageLinesTotal = missing.size();
-                if (!missing.isEmpty()) ItemLines.translateMissing(missing, provider, 40, 3, pageLinesDone::addAndGet);
+                if (!missing.isEmpty()) ItemLines.translateMissing(missing, provider, 25, 3, pageLinesDone::addAndGet, menu);
                 for (Map.Entry<String, ItemLines.Plan> e : plans.entrySet()) {
                     String key = e.getKey();
-                    ItemLines.Result r = ItemLines.assemble(e.getValue(), provider, null);
+                    ItemLines.Result r = ItemLines.assemble(e.getValue(), provider, null, menu);
                     if (r.changed() && !r.tooltip().isEmpty()) {
                         ITEM_LINE_MAP.put(key, r.lineMap());
                         ITEM_CACHE.put(key, r.tooltip());
@@ -2283,7 +2379,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
         if (formatted.isEmpty() || provider == null || !config.normalizeNumbers) return null;
         TranslationUtil.Template t = TranslationUtil.normalize(formatted);
         if (!t.hasNumbers()) return null;
-        String tr = TranslationDictionary.get(t.text, provider.name());
+        String tr = dictGet(t.text, provider, currentMenu());
         if (tr == null || tr.isEmpty() || !TranslationUtil.placeholdersMatch(t.text, tr)) return null;
         return TranslationUtil.restore(tr, t.numbers);
     }
@@ -2304,9 +2400,11 @@ public class NPCTranslatorClient implements ClientModInitializer {
         EXTRA_LAST.put(cacheKey, now);
         if (EXTRA_LAST.size() > 2000) EXTRA_LAST.clear();
         List<String> todo = new ArrayList<>(new LinkedHashSet<>(lines));
+        final String menu = currentMenu();
         CompletableFuture.runAsync(() -> {
             try {
-                String providerName = provider.name();
+                String providerName = dictNs(provider, menu);
+                MENU_CONTEXT.set(menu);
                 String langCode = getEffectiveLanguageCode();
                 String targetLang = config.useGameLanguage ? ("the language for locale code: " + langCode) : config.targetLanguage.englishName;
                 Map<String, String> done = new HashMap<>();
@@ -2316,7 +2414,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                     if (fixedTr == null) fixedTr = EnchantHints.translateList(line);
                     if (fixedTr != null) { done.put(line, fixedTr); continue; }
                     TranslationUtil.Template t = config.normalizeNumbers ? TranslationUtil.normalize(line) : TranslationUtil.Template.raw(line);
-                    String tr = TranslationDictionary.get(t.text, providerName);
+                    String tr = dictGet(t.text, provider, menu);
                     if (tr != null && !tr.isEmpty()) done.put(line, TranslationUtil.restore(tr, t.numbers));
                     else if (!missing.contains(t.text)) missing.add(t.text);
                 }
@@ -2334,7 +2432,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                     for (String line : todo) {
                         if (done.containsKey(line)) continue;
                         TranslationUtil.Template t = config.normalizeNumbers ? TranslationUtil.normalize(line) : TranslationUtil.Template.raw(line);
-                        String tr = TranslationDictionary.get(t.text, providerName);
+                        String tr = dictGet(t.text, provider, menu);
                         if (tr != null && !tr.isEmpty()) done.put(line, TranslationUtil.restore(tr, t.numbers));
                     }
                 }
@@ -2351,6 +2449,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
             } catch (Exception e) {
                 e.printStackTrace();
             } finally {
+                MENU_CONTEXT.remove();
                 EXTRA_PENDING.remove(cacheKey);
             }
         });
@@ -2383,6 +2482,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
         // Create a snapshot of the tooltip on the main thread to avoid ConcurrentModificationException
         // since the main thread might modify the tooltip (e.g. adding shortcuts) while we iterate async.
         List<Component> tooltipSnapshot = new ArrayList<>(tooltip);
+        final String menu = currentMenu();
 
         CompletableFuture.runAsync(() -> {
             try {
@@ -2399,9 +2499,9 @@ public class NPCTranslatorClient implements ClientModInitializer {
 
                 // 1) Translate only the templates we have never seen (numbers already replaced by {n}).
                 LinkedHashSet<String> missingSet = new LinkedHashSet<>();
-                ItemLines.collectMissing(plan, providerName, missingSet);
+                ItemLines.collectMissing(plan, provider, menu, missingSet);
                 if (!missingSet.isEmpty()) {
-                    ItemLines.translateMissing(missingSet, provider, 40, 2);
+                    ItemLines.translateMissing(missingSet, provider, 25, 2, menu);
                 }
 
                 // 2) Lines with numbers whose template failed get one raw (uncached) retry.
@@ -2411,7 +2511,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 for (int i = 0; i < n; i++) {
                     TranslationUtil.Template t = plan.templates[i];
                     if (t == null || !t.hasNumbers()) continue;
-                    String tr = TranslationDictionary.get(t.text, providerName);
+                    String tr = dictGet(t.text, provider, menu);
                     if (tr == null || tr.isEmpty()) {
                         retryLines.add(TranslationUtil.restore(t.text, t.numbers));
                         retryIdx.add(i);
@@ -2428,7 +2528,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                     }
                 }
 
-                ItemLines.Result result = ItemLines.assemble(plan, provider, raw);
+                ItemLines.Result result = ItemLines.assemble(plan, provider, raw, menu);
                 List<Component> translatedTooltip = result.tooltip();
                 Map<String, List<Component>> lineMap = result.lineMap();
 

@@ -260,6 +260,8 @@ public final class HudTranslator {
         if (formatted.isEmpty()) return null;
         if (!TranslationUtil.needsTranslation(formatted)) { debugLog("skip (no English): " + formatted); return null; }
         ModConfig c = cfg();
+        String rule = PatternRules.translate(formatted);
+        if (rule != null) return rule;
         String out = c.usePhrasebook ? PhraseBook.translate(formatted) : null;
         if (out != null) { debugLog("phrasebook: " + formatted + " => " + out); return out; }
         out = EnchantHints.translateList(formatted);

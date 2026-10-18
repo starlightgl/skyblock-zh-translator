@@ -55,6 +55,10 @@ public final class PhraseBook {
                 System.err.println("[NPCTranslator] Failed to read phrasebook: " + e.getMessage());
             }
         }
+        // 中文增强版的修正（如宝石名）排在社区语料前面
+        for (java.util.Map.Entry<String, String> f : TermFixes.glossary().entrySet()) {
+            entries.add(new String[]{f.getKey(), f.getValue()});
+        }
         try (java.io.InputStream in = PhraseBook.class.getResourceAsStream("/assets/hypixel-npc-and-items-translate/defaults/npc_translator_phrasebook.json")) {
             if (in != null) readEntries(new InputStreamReader(in, StandardCharsets.UTF_8), entries);
         } catch (Exception e) {
@@ -124,13 +128,17 @@ public final class PhraseBook {
     /** §-formatted line in, §-formatted Chinese line out, or null. */
     public static String translate(String formatted) {
         PhraseMatcher m = current();
-        return m == null ? null : m.translate(formatted);
+        return m == null ? null : TermFixes.apply(m.translate(formatted));
     }
 
     /** See {@link PhraseMatcher#translateLines}; returns all-null when not loaded. */
     public static String[] translateLines(List<String> formattedLines) {
         PhraseMatcher m = current();
         if (m == null) return new String[formattedLines.size()];
-        return m.translateLines(formattedLines, 6);
+        String[] out = m.translateLines(formattedLines, 6);
+        for (int i = 0; i < out.length; i++) {
+            if (out[i] != null && out[i] != PhraseMatcher.MERGED) out[i] = TermFixes.apply(out[i]);
+        }
+        return out;
     }
 }

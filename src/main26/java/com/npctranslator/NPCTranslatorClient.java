@@ -722,11 +722,79 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 client.execute(() -> replaceMessageInChat(client, searchMarker, translatedMessage));
             } catch (Exception e) {
                 e.printStackTrace();
+                notifyTranslationError(e);
             }
         });
     }
 
     // ── 中文增强版：辅助方法 ─────────────────────────────────────────
+    /**
+     * Reads choices[0].message.content from an OpenAI-style response. Some gateways (e.g. ClinePass)
+     * wrap the whole object in {"data": {...}}, so unwrap that first.
+     */
+    static String extractChatContent(String rawBody) throws Exception {
+        JsonObject root;
+        try {
+            root = GSON.fromJson(rawBody, JsonObject.class);
+        } catch (Exception e) {
+            throw new Exception("Custom API returned non-JSON: " + shorten(rawBody, 120));
+        }
+        if (root != null && !root.has("choices") && root.has("data") && root.get("data").isJsonObject()) {
+            root = root.getAsJsonObject("data");
+        }
+        if (root == null || !root.has("choices") || !root.get("choices").isJsonArray() || root.getAsJsonArray("choices").size() == 0) {
+            System.err.println("[NPCTranslator] Custom API unexpected response: " + shorten(rawBody, 300));
+            String apiMsg = apiErrorMessage(rawBody);
+            throw new Exception("Custom API returned no choices" + (apiMsg != null ? " (" + apiMsg + ")" : ""));
+        }
+        JsonObject first = root.getAsJsonArray("choices").get(0).getAsJsonObject();
+        JsonObject message = first.has("message") && first.get("message").isJsonObject() ? first.getAsJsonObject("message") : null;
+        JsonElement contentEl = message == null ? null : message.get("content");
+        if (contentEl == null || contentEl.isJsonNull()) {
+            throw new Exception("Custom API returned empty content");
+        }
+        return contentEl.getAsString();
+    }
+
+    /** error.message / message / error from an error body, or null. */
+    static String apiErrorMessage(String rawBody) {
+        try {
+            JsonObject o = GSON.fromJson(rawBody, JsonObject.class);
+            if (o == null) return null;
+            if (o.has("data") && o.get("data").isJsonObject() && !o.has("error")) o = o.getAsJsonObject("data");
+            JsonElement err = o.get("error");
+            if (err != null && err.isJsonObject() && err.getAsJsonObject().has("message")) {
+                return shorten(err.getAsJsonObject().get("message").getAsString(), 120);
+            }
+            if (err != null && err.isJsonPrimitive()) return shorten(err.getAsString(), 120);
+            if (o.has("message") && o.get("message").isJsonPrimitive()) return shorten(o.get("message").getAsString(), 120);
+        } catch (Exception ignored) {
+        }
+        return null;
+    }
+
+    private static String shorten(String s, int max) {
+        if (s == null) return "";
+        s = s.replace('\n', ' ');
+        return s.length() > max ? s.substring(0, max) + "…" : s;
+    }
+
+    private static volatile long lastErrorNotice = 0;
+
+    /** Red chat line when a translation fails, at most once every 10 s. */
+    static void notifyTranslationError(Exception e) {
+        long now = System.currentTimeMillis();
+        if (now - lastErrorNotice < 10_000L) return;
+        lastErrorNotice = now;
+        String msg = e.getMessage() == null ? e.getClass().getSimpleName() : e.getMessage();
+        Minecraft client = Minecraft.getInstance();
+        client.execute(() -> {
+            if (client.player != null) {
+                client.player.sendSystemMessage(Component.literal("[翻译失败] " + shorten(msg, 160)).withStyle(ChatFormatting.RED));
+            }
+        });
+    }
+
     private static boolean isBlank(String s) {
         return s == null || s.trim().isEmpty();
     }
@@ -1137,19 +1205,14 @@ public class NPCTranslatorClient implements ClientModInitializer {
             }
 
             HttpResponse<String> response = HTTP_CLIENT.send(builder.build(), HttpResponse.BodyHandlers.ofString());
+            String rawBody = response.body() == null ? "" : response.body();
             if (response.statusCode() == 200) {
-                JsonObject responseJson = GSON.fromJson(response.body(), JsonObject.class);
-                JsonObject message = responseJson.getAsJsonArray("choices").get(0).getAsJsonObject().getAsJsonObject("message");
-                JsonElement contentEl = message.get("content");
-                if (contentEl == null || contentEl.isJsonNull()) {
-                    throw new Exception("Custom API returned empty content");
-                }
-                return contentEl.getAsString();
+                return extractChatContent(rawBody);
             }
-            String body = response.body() == null ? "" : response.body();
-            if (body.length() > 300) body = body.substring(0, 300);
+            String body = rawBody.length() > 300 ? rawBody.substring(0, 300) : rawBody;
             System.err.println("[NPCTranslator] Custom API error " + response.statusCode() + ": " + body);
-            throw new Exception("Custom API failed. Status: " + response.statusCode());
+            String apiMsg = apiErrorMessage(rawBody);
+            throw new Exception("Custom API failed. Status: " + response.statusCode() + (apiMsg != null ? " (" + apiMsg + ")" : ""));
         }
         return content;
     }

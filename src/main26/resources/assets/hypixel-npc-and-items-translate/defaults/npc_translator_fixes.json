@@ -84,7 +84,17 @@
   "Flawed Peridot Gemstone": "有瑕橄榄石",
   "Fine Peridot Gemstone": "精细橄榄石",
   "Flawless Peridot Gemstone": "无瑕橄榄石",
-  "Perfect Peridot Gemstone": "完美橄榄石"
+  "Perfect Peridot Gemstone": "完美橄榄石",
+  "Divine": "神圣",
+  "DIVINE": "神圣",
+  "Common Commodity": "普通商品",
+  "Uncommon Commodity": "罕见商品",
+  "Rare Commodity": "稀有商品",
+  "Epic Commodity": "史诗商品",
+  "Legendary Commodity": "传说商品",
+  "Mythic Commodity": "神话商品",
+  "Divine Commodity": "神圣商品",
+  "Special Commodity": "特殊商品"
  },
  "output": {
   "Ruby": "红宝石",

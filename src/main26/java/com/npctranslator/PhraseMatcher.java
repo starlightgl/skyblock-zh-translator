@@ -97,10 +97,37 @@ public final class PhraseMatcher {
         boolean label = literal.matches("[A-Za-z][A-Za-z '\\-]*:");
         int letters = literal.replaceAll("[^A-Za-z]", "").length();
         if (!symbol && !label && letters < 6) return;
-        Template t = new Template(Pattern.compile(re.toString()), zh);
+        Template t = new Template(Pattern.compile(re.toString()), renumber(key, zh));
         t.literal = PH.matcher(key).replaceAll("").length();
         buckets.computeIfAbsent(bucketKey(key), k -> new ArrayList<>()).add(t);
         size++;
+    }
+
+    /**
+     * Fragments cut from longer corpus sentences keep their original numbers ("for %2$s seconds."
+     * with only one value): number the placeholders by their order in the English text instead.
+     */
+    private static String renumber(String en, String zh) {
+        Matcher m = PH.matcher(en);
+        Map<String, Integer> order = new HashMap<>();
+        int seq = 0;
+        boolean shifted = false;
+        while (m.find()) {
+            seq++;
+            if (m.group(1) != null) {
+                order.putIfAbsent(m.group(1), seq);
+                if (Integer.parseInt(m.group(1)) != seq) shifted = true;
+            }
+        }
+        if (!shifted || order.isEmpty()) return zh;
+        Matcher z = PH.matcher(zh);
+        StringBuilder sb = new StringBuilder();
+        while (z.find()) {
+            Integer to = z.group(1) != null ? order.get(z.group(1)) : null;
+            z.appendReplacement(sb, Matcher.quoteReplacement(to != null ? "%" + to + "$s" : z.group()));
+        }
+        z.appendTail(sb);
+        return sb.toString();
     }
 
     /** Bucket by the first word when the template starts with literal text, else "*". */
@@ -334,11 +361,13 @@ public final class PhraseMatcher {
         int i = 0;
         while (i < n) {
             boolean done = false;
-            if (!isBlank(lines.get(i))) {
+            // the first line is the item name: never merge it with the description below it
+            if (i > 0 && !isBlank(lines.get(i))) {
                 int maxJ = Math.min(n - 1, i + Math.max(0, maxJoin - 1));
-                // stop at a blank line: that is a paragraph boundary
+                // stop at a blank line (paragraph boundary) or where the colour changes
+                // ("§fSnow Block" + "§8Common Commodity" are two different things)
                 for (int k = i + 1; k <= maxJ; k++) {
-                    if (isBlank(lines.get(k))) { maxJ = k - 1; break; }
+                    if (isBlank(lines.get(k)) || !sameParagraph(lines.get(k - 1), lines.get(k))) { maxJ = k - 1; break; }
                 }
                 for (int j = maxJ; j > i; j--) {
                     StringBuilder joined = new StringBuilder(lines.get(i));
@@ -359,6 +388,31 @@ public final class PhraseMatcher {
             }
         }
         return out;
+    }
+
+    private static final Pattern COLOUR = Pattern.compile("(?i)§[0-9a-fr]");
+
+    /** Consecutive lore lines of one paragraph keep their base colour (or the next line has none). */
+    static boolean sameParagraph(String prev, String next) {
+        String lead = leadColour(next);
+        if (lead.isEmpty()) return true;
+        if (lead.equalsIgnoreCase(leadColour(prev))) return true;
+        Matcher m = COLOUR.matcher(prev);
+        String last = "";
+        while (m.find()) last = m.group();
+        return lead.equalsIgnoreCase(last);
+    }
+
+    private static String leadColour(String s) {
+        String t = s.replaceFirst("^[\\s\u00a0]+", "");
+        String col = "";
+        int i = 0;
+        while (i + 1 < t.length() && t.charAt(i) == '§') {
+            String code = t.substring(i, i + 2);
+            if (COLOUR.matcher(code).matches()) col = code;
+            i += 2;
+        }
+        return col;
     }
 
     private static boolean isBlank(String formatted) {

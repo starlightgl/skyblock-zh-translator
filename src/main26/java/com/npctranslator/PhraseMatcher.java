@@ -144,13 +144,84 @@ public final class PhraseMatcher {
             zh = matchTemplates(buckets.get(bucketKey(key)), key, formatted, baseCodes);
             if (zh == null) zh = matchTemplates(buckets.get("*"), key, formatted, baseCodes);
         }
-        if (zh == null) return null;
+        if (zh == null) {
+            String split = splitFields(formatted);
+            if (split != null) return split;
+            // a single "Label: value" whose label is known (e.g. "Mana Cost: 150")
+            String body = formatted.replaceFirst("^[\\s  ]+", "");
+            return LABEL_VALUE.matcher(body).matches() ? translateField(body) : null;
+        }
         zh = restoreGlyphs(formatted, zh);
         String leadingSpace = leadingWhitespace(CODE.matcher(formatted).replaceAll(""));
         if (zh.startsWith("§")) {
             return leadingSpace + zh;
         }
         return leadingSpace + baseCodes + zh;
+    }
+
+    private static final Pattern LABEL_INSIDE = Pattern.compile("[A-Za-z]{2,}:(\\s|$)");
+    /** Whitespace followed by a "Label:" (1–4 words, first one capitalised), colour codes allowed. */
+    private static final Pattern FIELD_START = Pattern.compile(
+            "(\\s+)((?:§.)*[A-Z][A-Za-z']*(?: (?:§.)*[A-Za-z][A-Za-z']*){0,3}:)");
+    private static final Pattern LABEL_VALUE = Pattern.compile("^((?:§.)*[^:]+:)(\\s*)((?:§.|[^A-Za-z])*)$");
+
+    /**
+     * Several fields on one line ("Soulflow Cost: 1 Mana Cost: 90"): translate each "Label: value"
+     * part on its own. Returns null unless every part could be translated.
+     */
+    private String splitFields(String formatted) {
+        Matcher m = FIELD_START.matcher(formatted);
+        List<Integer> cuts = new ArrayList<>();
+        int last = 0;
+        while (m.find()) {
+            // cut only after a complete "Label: value" (the part since the last cut already has its colon
+            // and some value), so "Soulflow Cost:" is never split into "Soulflow" + "Cost:"
+            String prev = CODE.matcher(formatted.substring(last, m.start(1))).replaceAll("");
+            int colon = prev.indexOf(':');
+            if (m.start(2) > 0 && colon >= 0 && prev.substring(colon + 1).trim().length() > 0) {
+                cuts.add(m.start(2));
+                last = m.start(2);
+            }
+        }
+        if (cuts.isEmpty()) return null;
+        cuts.add(formatted.length());
+        StringBuilder out = new StringBuilder();
+        int from = 0;
+        for (int cut : cuts) {
+            String seg = formatted.substring(from, cut);
+            from = cut;
+            String body = seg.replaceAll("[\\s  ]+$", "");
+            String tail = seg.substring(body.length());
+            String tr = translateField(body);
+            if (tr == null) return null;
+            out.append(tr).append(tail);
+        }
+        return out.toString();
+    }
+
+    /** One "Label: value" part: phrase book first, otherwise a known label followed by a plain value. */
+    private String translateField(String seg) {
+        String key = normalize(seg);
+        String zh = exact.get(key);
+        if (zh == null) {
+            zh = matchTemplates(buckets.get(bucketKey(key)), key, seg, leadCodes(seg));
+            if (zh == null) zh = matchTemplates(buckets.get("*"), key, seg, leadCodes(seg));
+        }
+        if (zh != null) {
+            zh = restoreGlyphs(seg, zh);
+            return zh.startsWith("§") ? zh : leadCodes(seg) + zh;
+        }
+        Matcher lv = LABEL_VALUE.matcher(seg);
+        if (!lv.matches()) return null;
+        String label = exact.get(normalize(lv.group(1)));
+        if (label == null) return null;
+        String lab = label.replaceAll("[\\s  ]+$", "");
+        return (lab.startsWith("§") ? lab : leadCodes(seg) + lab) + " " + lv.group(3).trim();
+    }
+
+    private static String leadCodes(String formatted) {
+        Matcher lead = LEADING_CODES.matcher(formatted);
+        return lead.find() ? lead.group(1) : "";
     }
 
     private String matchTemplates(List<Template> list, String key, String formatted, String baseCodes) {
@@ -164,7 +235,9 @@ public final class PhraseMatcher {
                     String v = m.group(i);
                     // A placeholder holds a value (number, name, item), never half a sentence.
                     if (v.length() > 40 || v.split(" ").length > 6 || v.contains(", ")
-                            || v.matches(".*[!?。！？]$")) { ok = false; break; }
+                            || v.matches(".*[!?。！？]$")
+                            // "Soulflow Cost: %s" must not swallow "1 Mana Cost: 90": a value never holds another "Label:"
+                            || LABEL_INSIDE.matcher(v).find()) { ok = false; break; }
                     String tv = valueTranslator.apply(v);
                     // Zh templates without their own colours: keep the value's original colour.
                     if (t.zh.indexOf('§') < 0) {

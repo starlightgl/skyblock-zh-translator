@@ -51,6 +51,8 @@ public class NPCTranslatorClient implements ClientModInitializer {
     private static final Map<String, String> TRANSLATION_MEMORY_CACHE = new ConcurrentHashMap<>();
     
     public static final Map<String, List<Component>> ITEM_CACHE = new ConcurrentHashMap<>();
+    /** cacheKey -> (original formatted lore line -> replacement lines; empty list = line merged away). */
+    public static final Map<String, Map<String, List<Component>>> ITEM_LINE_MAP = new ConcurrentHashMap<>();
     private static final Set<String> PENDING_ITEMS = Collections.newSetFromMap(new ConcurrentHashMap<>());
     // WeakHashMap to track tooltips processed by ItemStackMixin without modifying them
     public static final java.util.Map<List<Component>, Boolean> PROCESSED_TOOLTIPS = new java.util.WeakHashMap<>();
@@ -400,7 +402,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
             if (config != null && config.clearDictOnDisconnect) {
                 TranslationDictionary.clear();
             }
-            ITEM_CACHE.clear();
+            ITEM_CACHE.clear(); ITEM_LINE_MAP.clear();
             PENDING_ITEMS.clear();
             ACTIVE_TRANSLATED_ITEMS.clear();
             REVERTED_ITEMS.clear();
@@ -417,7 +419,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                         int count = TranslationDictionary.size();
                         TranslationDictionary.clear();
                         HudTranslator.clearCache();
-                        ITEM_CACHE.clear();
+                        ITEM_CACHE.clear(); ITEM_LINE_MAP.clear();
                         Minecraft.getInstance().player.sendSystemMessage(Component.translatable("npctranslator.dict_cleared", count));
                         return 1;
                     })
@@ -428,7 +430,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                             int count = TranslationDictionary.size();
                             TranslationDictionary.clear();
                             HudTranslator.clearCache();
-                            ITEM_CACHE.clear();
+                            ITEM_CACHE.clear(); ITEM_LINE_MAP.clear();
                             Minecraft.getInstance().player.sendSystemMessage(Component.translatable("npctranslator.dict_cleared", count));
                             return 1;
                         })
@@ -1298,9 +1300,9 @@ public class NPCTranslatorClient implements ClientModInitializer {
             if (isAlreadyTranslated && currentProvider == ModConfig.TranslationProvider.GOOGLE) {
                 // Same key pressed → revert
                 ACTIVE_TRANSLATED_ITEMS.remove(cacheKey); REVERTED_ITEMS.add(cacheKey);
-                TRANSLATED_PROVIDER_CACHE.remove(cacheKey); ITEM_CACHE.remove(cacheKey);
+                TRANSLATED_PROVIDER_CACHE.remove(cacheKey); ITEM_CACHE.remove(cacheKey); ITEM_LINE_MAP.remove(cacheKey);
             } else {
-                ITEM_CACHE.remove(cacheKey); PENDING_ITEMS.remove(cacheKey); REVERTED_ITEMS.remove(cacheKey);
+                ITEM_CACHE.remove(cacheKey); ITEM_LINE_MAP.remove(cacheKey); PENDING_ITEMS.remove(cacheKey); REVERTED_ITEMS.remove(cacheKey);
                 ACTIVE_TRANSLATED_ITEMS.add(cacheKey); TRANSLATED_PROVIDER_CACHE.put(cacheKey, ModConfig.TranslationProvider.GOOGLE);
                 triggerTranslation(tooltip, cacheKey, ModConfig.TranslationProvider.GOOGLE);
             }
@@ -1309,9 +1311,9 @@ public class NPCTranslatorClient implements ClientModInitializer {
             TOGGLED_THIS_TICK.add(cacheKey + "_X");
             if (isAlreadyTranslated && currentProvider == ModConfig.TranslationProvider.GEMINI) {
                 ACTIVE_TRANSLATED_ITEMS.remove(cacheKey); REVERTED_ITEMS.add(cacheKey);
-                TRANSLATED_PROVIDER_CACHE.remove(cacheKey); ITEM_CACHE.remove(cacheKey);
+                TRANSLATED_PROVIDER_CACHE.remove(cacheKey); ITEM_CACHE.remove(cacheKey); ITEM_LINE_MAP.remove(cacheKey);
             } else {
-                ITEM_CACHE.remove(cacheKey); PENDING_ITEMS.remove(cacheKey); REVERTED_ITEMS.remove(cacheKey);
+                ITEM_CACHE.remove(cacheKey); ITEM_LINE_MAP.remove(cacheKey); PENDING_ITEMS.remove(cacheKey); REVERTED_ITEMS.remove(cacheKey);
                 ACTIVE_TRANSLATED_ITEMS.add(cacheKey); TRANSLATED_PROVIDER_CACHE.put(cacheKey, ModConfig.TranslationProvider.GEMINI);
                 triggerTranslation(tooltip, cacheKey, ModConfig.TranslationProvider.GEMINI);
             }
@@ -1320,9 +1322,9 @@ public class NPCTranslatorClient implements ClientModInitializer {
             TOGGLED_THIS_TICK.add(cacheKey + "_C");
             if (isAlreadyTranslated && currentProvider == ModConfig.TranslationProvider.GROQ) {
                 ACTIVE_TRANSLATED_ITEMS.remove(cacheKey); REVERTED_ITEMS.add(cacheKey);
-                TRANSLATED_PROVIDER_CACHE.remove(cacheKey); ITEM_CACHE.remove(cacheKey);
+                TRANSLATED_PROVIDER_CACHE.remove(cacheKey); ITEM_CACHE.remove(cacheKey); ITEM_LINE_MAP.remove(cacheKey);
             } else {
-                ITEM_CACHE.remove(cacheKey); PENDING_ITEMS.remove(cacheKey); REVERTED_ITEMS.remove(cacheKey);
+                ITEM_CACHE.remove(cacheKey); ITEM_LINE_MAP.remove(cacheKey); PENDING_ITEMS.remove(cacheKey); REVERTED_ITEMS.remove(cacheKey);
                 ACTIVE_TRANSLATED_ITEMS.add(cacheKey); TRANSLATED_PROVIDER_CACHE.put(cacheKey, ModConfig.TranslationProvider.GROQ);
                 triggerTranslation(tooltip, cacheKey, ModConfig.TranslationProvider.GROQ);
             }
@@ -1331,9 +1333,9 @@ public class NPCTranslatorClient implements ClientModInitializer {
             TOGGLED_THIS_TICK.add(cacheKey + "_M");
             if (isAlreadyTranslated && currentProvider == ModConfig.TranslationProvider.MISTRAL) {
                 ACTIVE_TRANSLATED_ITEMS.remove(cacheKey); REVERTED_ITEMS.add(cacheKey);
-                TRANSLATED_PROVIDER_CACHE.remove(cacheKey); ITEM_CACHE.remove(cacheKey);
+                TRANSLATED_PROVIDER_CACHE.remove(cacheKey); ITEM_CACHE.remove(cacheKey); ITEM_LINE_MAP.remove(cacheKey);
             } else {
-                ITEM_CACHE.remove(cacheKey); PENDING_ITEMS.remove(cacheKey); REVERTED_ITEMS.remove(cacheKey);
+                ITEM_CACHE.remove(cacheKey); ITEM_LINE_MAP.remove(cacheKey); PENDING_ITEMS.remove(cacheKey); REVERTED_ITEMS.remove(cacheKey);
                 ACTIVE_TRANSLATED_ITEMS.add(cacheKey); TRANSLATED_PROVIDER_CACHE.put(cacheKey, ModConfig.TranslationProvider.MISTRAL);
                 triggerTranslation(tooltip, cacheKey, ModConfig.TranslationProvider.MISTRAL);
             }
@@ -1342,9 +1344,9 @@ public class NPCTranslatorClient implements ClientModInitializer {
             TOGGLED_THIS_TICK.add(cacheKey + "_O");
             if (isAlreadyTranslated && currentProvider == ModConfig.TranslationProvider.OPENROUTER) {
                 ACTIVE_TRANSLATED_ITEMS.remove(cacheKey); REVERTED_ITEMS.add(cacheKey);
-                TRANSLATED_PROVIDER_CACHE.remove(cacheKey); ITEM_CACHE.remove(cacheKey);
+                TRANSLATED_PROVIDER_CACHE.remove(cacheKey); ITEM_CACHE.remove(cacheKey); ITEM_LINE_MAP.remove(cacheKey);
             } else {
-                ITEM_CACHE.remove(cacheKey); PENDING_ITEMS.remove(cacheKey); REVERTED_ITEMS.remove(cacheKey);
+                ITEM_CACHE.remove(cacheKey); ITEM_LINE_MAP.remove(cacheKey); PENDING_ITEMS.remove(cacheKey); REVERTED_ITEMS.remove(cacheKey);
                 ACTIVE_TRANSLATED_ITEMS.add(cacheKey); TRANSLATED_PROVIDER_CACHE.put(cacheKey, ModConfig.TranslationProvider.OPENROUTER);
                 triggerTranslation(tooltip, cacheKey, ModConfig.TranslationProvider.OPENROUTER);
             }
@@ -1353,9 +1355,9 @@ public class NPCTranslatorClient implements ClientModInitializer {
             TOGGLED_THIS_TICK.add(cacheKey + "_U");
             if (isAlreadyTranslated && currentProvider == ModConfig.TranslationProvider.CUSTOM) {
                 ACTIVE_TRANSLATED_ITEMS.remove(cacheKey); REVERTED_ITEMS.add(cacheKey);
-                TRANSLATED_PROVIDER_CACHE.remove(cacheKey); ITEM_CACHE.remove(cacheKey);
+                TRANSLATED_PROVIDER_CACHE.remove(cacheKey); ITEM_CACHE.remove(cacheKey); ITEM_LINE_MAP.remove(cacheKey);
             } else {
-                ITEM_CACHE.remove(cacheKey); PENDING_ITEMS.remove(cacheKey); REVERTED_ITEMS.remove(cacheKey);
+                ITEM_CACHE.remove(cacheKey); ITEM_LINE_MAP.remove(cacheKey); PENDING_ITEMS.remove(cacheKey); REVERTED_ITEMS.remove(cacheKey);
                 ACTIVE_TRANSLATED_ITEMS.add(cacheKey); TRANSLATED_PROVIDER_CACHE.put(cacheKey, ModConfig.TranslationProvider.CUSTOM);
                 triggerTranslation(tooltip, cacheKey, ModConfig.TranslationProvider.CUSTOM);
             }
@@ -1363,7 +1365,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
         if (revertJustPressed && !TOGGLED_THIS_TICK.contains(cacheKey + "_R")) {
             TOGGLED_THIS_TICK.add(cacheKey + "_R");
             ACTIVE_TRANSLATED_ITEMS.remove(cacheKey); REVERTED_ITEMS.add(cacheKey);
-            TRANSLATED_PROVIDER_CACHE.remove(cacheKey); ITEM_CACHE.remove(cacheKey);
+            TRANSLATED_PROVIDER_CACHE.remove(cacheKey); ITEM_CACHE.remove(cacheKey); ITEM_LINE_MAP.remove(cacheKey);
         }
 
         boolean isTranslated = ACTIVE_TRANSLATED_ITEMS.contains(cacheKey) && ITEM_CACHE.containsKey(cacheKey);
@@ -1387,9 +1389,23 @@ public class NPCTranslatorClient implements ClientModInitializer {
 
             if (providerEnabled) {
                 List<Component> translated = ITEM_CACHE.get(cacheKey);
+                Map<String, List<Component>> lineMap = ITEM_LINE_MAP.get(cacheKey);
                 try {
-                    tooltip.clear();
-                    tooltip.addAll(translated);
+                    if (lineMap != null) {
+                        // Replace only the lines we translated. Lines added by other mods (prices, etc.)
+                        // or lines that changed since the translation stay exactly as they are.
+                        List<Component> rebuilt = new ArrayList<>(tooltip.size());
+                        for (Component line : tooltip) {
+                            List<Component> repl = lineMap.get(toFormattedString(line).trim());
+                            if (repl == null) rebuilt.add(line);
+                            else rebuilt.addAll(repl);
+                        }
+                        tooltip.clear();
+                        tooltip.addAll(rebuilt);
+                    } else {
+                        tooltip.clear();
+                        tooltip.addAll(translated);
+                    }
                     tooltip.add(Component.empty());
                     tooltip.add(Component.translatable(
                         provider == ModConfig.TranslationProvider.GOOGLE ? "npctranslator.tooltip.translated.google" :
@@ -1581,22 +1597,33 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 }
 
                 List<Component> translatedTooltip = new ArrayList<>();
+                Map<String, List<Component>> lineMap = new HashMap<>();
                 for (int i = 0; i < n; i++) {
                     String original = allLinesOriginal.get(i);
-                    if (fixed[i] == PhraseMatcher.MERGED) continue;
+                    if (fixed[i] == PhraseMatcher.MERGED) {
+                        lineMap.putIfAbsent(original, List.of());
+                        continue;
+                    }
                     if (fixed[i] != null) {
+                        List<Component> wrappedLines = new ArrayList<>();
                         for (String wrapped : PhraseMatcher.wrap(fixed[i], 64)) {
-                            translatedTooltip.add(parseColorCodes(wrapped));
+                            wrappedLines.add(parseColorCodes(wrapped));
                         }
+                        translatedTooltip.addAll(wrappedLines);
+                        lineMap.put(original, wrappedLines);
                     } else if (original.isEmpty()) {
                         translatedTooltip.add(Component.empty());
                     } else {
-                        String line = out[i] != null && !out[i].isEmpty() ? out[i] : original;
-                        translatedTooltip.add(parseColorCodes(line));
+                        boolean has = out[i] != null && !out[i].isEmpty();
+                        String line = has ? out[i] : original;
+                        Component c = parseColorCodes(line);
+                        translatedTooltip.add(c);
+                        if (has) lineMap.put(original, List.of(c));
                     }
                 }
 
                 if (!translatedTooltip.isEmpty()) {
+                    ITEM_LINE_MAP.put(cacheKey, lineMap);
                     ITEM_CACHE.put(cacheKey, translatedTooltip);
                 }
             } catch (Exception e) {

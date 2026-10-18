@@ -10,7 +10,9 @@
     "ItemStackMixin",
     "GuiGraphicsMixin",
     "ChatComponentMixin",
-    "HudMixin"
+    "HudMixin",
+    "EntityRendererMixin",
+    "TextDisplayMixin"
   ],
   "injectors": {
     "defaultRequire": 1

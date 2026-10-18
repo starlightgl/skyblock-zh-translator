@@ -52,6 +52,8 @@ public final class HudTranslator {
     public static void clearCache() {
         CACHE.clear();
         FAILED.clear();
+        WORLD_CACHE.clear();
+        WORLD_MISS.clear();
     }
 
     private static ModConfig cfg() {
@@ -117,6 +119,77 @@ public final class HudTranslator {
         if (CACHE.size() > 3000) CACHE.clear();
         CACHE.put(formatted, comp);
         return comp;
+    }
+
+    // ── Floating text in the world (NPC names/subtitles, holograms, text displays) ──
+
+    private static final Map<String, Component> WORLD_CACHE = new ConcurrentHashMap<>();
+    private static final Map<String, Long> WORLD_MISS = new ConcurrentHashMap<>();
+
+    /**
+     * Translation of a name tag / text display, or null if none is known yet. Multi-line text is
+     * translated line by line. Misses are re-checked at most every 2 s (background AI results
+     * land in the dictionary and are picked up then).
+     */
+    public static Component worldText(Component original) {
+        ModConfig c = cfg();
+        if (c == null || !c.enabled || !c.translateWorldText || original == null) return null;
+        try {
+            String formatted = NPCTranslatorClient.toFormattedString(original);
+            if (formatted.isEmpty()) return null;
+            Component cached = WORLD_CACHE.get(formatted);
+            if (cached != null) return cached;
+            long now = System.currentTimeMillis();
+            Long missAt = WORLD_MISS.get(formatted);
+            if (missAt != null && now - missAt < 2000L) return null;
+
+            String out;
+            if (formatted.indexOf('\n') >= 0) {
+                String[] lines = formatted.split("\n", -1);
+                boolean any = false;
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < lines.length; i++) {
+                    String tr = lookupLine(lines[i]);
+                    if (tr != null) any = true;
+                    if (i > 0) sb.append('\n');
+                    sb.append(tr != null ? tr : lines[i]);
+                }
+                out = any ? sb.toString() : null;
+            } else {
+                out = lookupLine(formatted);
+            }
+            if (out == null) {
+                if (WORLD_MISS.size() > 5000) WORLD_MISS.clear();
+                WORLD_MISS.put(formatted, now);
+                return null;
+            }
+            WORLD_MISS.remove(formatted);
+            Component comp = NPCTranslatorClient.parseColorCodes(out);
+            if (WORLD_CACHE.size() > 3000) WORLD_CACHE.clear();
+            WORLD_CACHE.put(formatted, comp);
+            return comp;
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    /** Whether worldText would now return a translation (used to refresh cached text displays). */
+    public static boolean hasWorldText(Component original) {
+        return worldText(original) != null;
+    }
+
+    /** Phrase book, then dictionary; unknown lines are queued for the background AI batch. */
+    private static String lookupLine(String formatted) {
+        if (formatted.isEmpty()) return null;
+        if (!HAS_WORD.matcher(TranslationUtil.stripColorCodes(formatted)).matches()) return null;
+        ModConfig c = cfg();
+        String out = c.usePhrasebook ? PhraseBook.translate(formatted) : null;
+        if (out != null) return out;
+        TranslationUtil.Template t = c.normalizeNumbers ? TranslationUtil.normalize(formatted) : TranslationUtil.Template.raw(formatted);
+        String tr = TranslationDictionary.get(t.text, provider().name());
+        if (tr != null && !tr.isEmpty()) return TranslationUtil.restore(tr, t.numbers);
+        if (c.hudUseAI) enqueue(t.text);
+        return null;
     }
 
     // ── Item name above the hotbar ───────────────────────────────────────────

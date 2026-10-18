@@ -174,6 +174,8 @@
   "text.autoconfig.npc_translator.option.translateSidebar.tooltip": "Translate the scoreboard sidebar.",
   "text.autoconfig.npc_translator.option.translateHeldItemName": "Translate held item name",
   "text.autoconfig.npc_translator.option.translateHeldItemName.tooltip": "Translate the item name above the hotbar using the inventory tooltip translations.",
+  "text.autoconfig.npc_translator.option.translateWorldText": "Translate floating text",
+  "text.autoconfig.npc_translator.option.translateWorldText.tooltip": "Translate NPC names and subtitles, holograms and text displays in the world. Uses the phrase book and dictionary first; unknown lines go to the auto-translate provider in the background.",
   "text.autoconfig.npc_translator.option.hudUseAI": "Allow AI for sidebar / item name",
   "text.autoconfig.npc_translator.option.hudUseAI.tooltip": "Off = only use existing translations (phrase book, dictionary)."
 }

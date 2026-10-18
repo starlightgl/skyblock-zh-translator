@@ -128,6 +128,8 @@ public class ModConfig {
     public boolean translateSidebar = true;
     /** Translate the item name shown above the hotbar when switching items. */
     public boolean translateHeldItemName = true;
+    /** Translate floating text in the world: NPC names/subtitles, holograms, text displays. */
+    public boolean translateWorldText = true;
     /** Let sidebar lines / item names without a known translation be sent to the AI (auto-translate provider). */
     public boolean hudUseAI = true;
 

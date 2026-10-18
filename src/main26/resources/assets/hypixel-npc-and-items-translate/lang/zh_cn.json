@@ -174,6 +174,8 @@
   "text.autoconfig.npc_translator.option.translateSidebar.tooltip": "翻译右侧计分板。先查短语库和词典，没有的在后台交给“自动翻译使用的引擎”。",
   "text.autoconfig.npc_translator.option.translateHeldItemName": "翻译手持物品名",
   "text.autoconfig.npc_translator.option.translateHeldItemName.tooltip": "切换物品时物品栏上方的名字，复用背包里物品描述的翻译结果。",
+  "text.autoconfig.npc_translator.option.translateWorldText": "翻译悬浮文字",
+  "text.autoconfig.npc_translator.option.translateWorldText.tooltip": "翻译世界里的 NPC 名字和副标题、全息文字、文字展示实体。先查短语库和词典，没有的在后台交给“自动翻译使用的引擎”。",
   "text.autoconfig.npc_translator.option.hudUseAI": "侧边栏/物品名允许调用 AI",
   "text.autoconfig.npc_translator.option.hudUseAI.tooltip": "关闭后侧边栏和手持物品名只用已有的译文（短语库、词典），不会额外请求接口。"
 }

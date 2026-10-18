@@ -184,5 +184,7 @@
   "npctranslator.forget.too_short": "关键词太短，至少 2 个字。",
   "npctranslator.forget.done": "已删除 %s 条包含“%s”的译文，下次出现时会重新翻译。",
   "text.autoconfig.npc_translator.option.rememberTranslatedItems": "记住已翻译的物品",
-  "text.autoconfig.npc_translator.option.rememberTranslatedItems.tooltip": "翻译过一次的物品，以后再看到（比如关掉菜单重新打开）会自动显示译文，主要用词典里存好的结果，基本不再调用 AI。在物品上按“恢复原文”键可以取消对这个物品的记忆。"
+  "text.autoconfig.npc_translator.option.rememberTranslatedItems.tooltip": "翻译过一次的物品，以后再看到（比如关掉菜单重新打开）会自动显示译文，主要用词典里存好的结果，基本不再调用 AI。在物品上按“恢复原文”键可以取消对这个物品的记忆。",
+  "text.autoconfig.npc_translator.option.translateModTooltips": "翻译其他模组的提示文字",
+  "text.autoconfig.npc_translator.option.translateModTooltips.tooltip": "翻译其他模组加在物品描述里的行（最低 BIN、几日均价、集市价格等），以及 Skyblocker 快捷导航这类按钮的悬停提示。先查短语库和词典，没有的在后台交给“自动翻译使用的引擎”，数字会自动套用，价格变了也不用重新翻。"
 }

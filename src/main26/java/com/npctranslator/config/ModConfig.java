@@ -132,6 +132,8 @@ public class ModConfig {
     public boolean translateHeldItemName = true;
     /** Translate floating text in the world: NPC names/subtitles, holograms, text displays. */
     public boolean translateWorldText = true;
+    /** Translate lines other mods add to tooltips (prices etc.) and widget/button tooltips. */
+    public boolean translateModTooltips = true;
     /** Let sidebar lines / item names without a known translation be sent to the AI (auto-translate provider). */
     public boolean hudUseAI = true;
 

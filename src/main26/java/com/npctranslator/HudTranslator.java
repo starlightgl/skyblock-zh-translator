@@ -134,6 +134,17 @@ public final class HudTranslator {
     public static Component worldText(Component original) {
         ModConfig c = cfg();
         if (c == null || !c.enabled || !c.translateWorldText || original == null) return null;
+        return lookupComponent(original);
+    }
+
+    /** Text added by other mods (price lines, button tooltips); same lookup as floating text. */
+    public static Component modText(Component original) {
+        ModConfig c = cfg();
+        if (c == null || !c.enabled || !c.translateModTooltips || original == null) return null;
+        return lookupComponent(original);
+    }
+
+    private static Component lookupComponent(Component original) {
         try {
             String formatted = NPCTranslatorClient.toFormattedString(original);
             if (formatted.isEmpty()) return null;

@@ -12,7 +12,8 @@
     "ChatComponentMixin",
     "HudMixin",
     "EntityRendererMixin",
-    "TextDisplayMixin"
+    "TextDisplayMixin",
+    "WidgetTooltipMixin"
   ],
   "injectors": {
     "defaultRequire": 1

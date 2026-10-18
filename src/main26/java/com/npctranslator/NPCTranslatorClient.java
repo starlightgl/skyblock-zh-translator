@@ -1584,7 +1584,70 @@ public class NPCTranslatorClient implements ClientModInitializer {
         String lang = getEffectiveLanguageCode();
         String cacheKey = itemKey + "_" + lang;
 
+        if (config.translateModTooltips) translateForeignLines(stack, tooltip);
         handleTooltipStateAndRender(tooltip, cacheKey);
+
+        Set<String> known = new HashSet<>();
+        for (Component c : tooltip) known.add(c.getString());
+        lastItemLines = known;
+        lastItemLinesAt = System.currentTimeMillis();
+    }
+
+    // ── 中文增强版：其他模组加进提示框的文字（价格行、按钮提示等） ──────────
+    private static volatile Set<String> lastItemLines = Collections.emptySet();
+    private static volatile long lastItemLinesAt = 0;
+    /** Mod lines we already replaced; never sent again to the item's extra-line translation. */
+    private static final Set<Component> MOD_TRANSLATED = Collections.synchronizedSet(Collections.newSetFromMap(new WeakHashMap<>()));
+
+    /** Lines that are neither the item name nor its lore were added by other mods: translate them. */
+    private static void translateForeignLines(ItemStack stack, List<Component> tooltip) {
+        Set<String> own = new HashSet<>();
+        try {
+            own.add(stack.getHoverName().getString());
+            net.minecraft.world.item.component.ItemLore lore = stack.get(net.minecraft.core.component.DataComponents.LORE);
+            if (lore != null) for (Component l : lore.lines()) own.add(l.getString());
+        } catch (Exception ignored) {}
+        if (own.size() <= 1) return; // no lore: probably not a SkyBlock item, leave it alone
+        for (int i = 0; i < tooltip.size(); i++) {
+            Component line = tooltip.get(i);
+            String plain = line.getString();
+            if (plain.isBlank() || own.contains(plain)) continue;
+            Component t = HudTranslator.modText(line);
+            if (t != null) {
+                tooltip.set(i, t);
+                MOD_TRANSLATED.add(t);
+            }
+        }
+    }
+
+    /**
+     * Called for every tooltip about to be drawn. Lines that appeared after our item hook (added
+     * by mods that run later) or tooltips that are not item tooltips at all are translated here.
+     */
+    public static List<Component> processRenderedTooltip(List<Component> components) {
+        if (config == null || !config.enabled || components == null || components.isEmpty()) return components;
+        boolean processed = PROCESSED_TOOLTIPS.containsKey(components);
+        List<Component> out = components;
+        if (config.translateModTooltips) {
+            Set<String> known = System.currentTimeMillis() - lastItemLinesAt < 250 ? lastItemLines : Collections.emptySet();
+            for (int i = 0; i < out.size(); i++) {
+                Component line = out.get(i);
+                if (known.contains(line.getString()) || MOD_TRANSLATED.contains(line)) continue;
+                Component t = HudTranslator.modText(line);
+                if (t == null) continue;
+                if (out == components) out = new ArrayList<>(components);
+                out.set(i, t);
+                MOD_TRANSLATED.add(t);
+            }
+        }
+        if (!processed && isItemTranslationEnabled()) {
+            try {
+                if (out == components) out = new ArrayList<>(components);
+                handleGeneralTooltip(out);
+            } catch (Exception ignored) {}
+        }
+        if (out != components && processed) PROCESSED_TOOLTIPS.put(out, true);
+        return out;
     }
 
     public static void handleGeneralTooltip(List<Component> tooltip) {
@@ -1742,6 +1805,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                             List<Component> repl = lineMap.get(key);
                             if (repl == null) {
                                 rebuilt.add(line);
+                                if (MOD_TRANSLATED.contains(line)) continue;
                                 // e.g. the extra lines shown while holding Shift, or price lines from other mods
                                 if (WORD.matcher(TranslationUtil.stripColorCodes(key)).find()) {
                                     if (unmatched == null) unmatched = new ArrayList<>();

@@ -200,5 +200,8 @@
   "text.autoconfig.npc_translator.option.autoTranslatePage": "打开菜单自动整页翻译",
   "text.autoconfig.npc_translator.option.autoTranslatePage.tooltip": "打开或翻页时，在后台把当前菜单里所有物品一次翻完（合并成几次请求）。会产生 API 费用，默认关闭；不开也可以随时按整页翻译键（默认 M）。",
   "text.autoconfig.npc_translator.option.checkUpdates": "检查更新",
-  "text.autoconfig.npc_translator.option.checkUpdates.tooltip": "进服时到 GitHub 查一次有没有新的正式版，有的话在聊天栏提示并给出下载链接。"
+  "text.autoconfig.npc_translator.option.checkUpdates.tooltip": "进服时到 GitHub 查一次有没有新的正式版，有的话在聊天栏提示并给出下载链接。",
+  "npctranslator.tooltip.footer.translate": "[%s] 翻译 · [Shift/Ctrl+%s] 强制重新翻译",
+  "npctranslator.tooltip.footer.translated": "[%s] 恢复原文 · [Shift/Ctrl+%s] 强制重新翻译",
+  "npctranslator.tooltip.footer.more": "[%s] 翻译整页菜单 · [%s] 翻译设置"
 }

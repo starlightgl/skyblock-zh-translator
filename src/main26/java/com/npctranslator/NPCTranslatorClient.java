@@ -418,6 +418,18 @@ public class NPCTranslatorClient implements ClientModInitializer {
             while (menuKey.consumeClick()) {
                 openSettings();
             }
+            boolean pMenu = isKeyCurrentlyDown(menuKey);
+            boolean menuJust = pMenu && !lastMenuState;
+            lastMenuState = pMenu;
+            if (menuJust) {
+                Screen cur = getScreen(client);
+                if (cur instanceof net.minecraft.client.gui.screens.inventory.AbstractContainerScreen<?>
+                        && !(cur.getFocused() instanceof net.minecraft.client.gui.components.EditBox)) {
+                    // close the menu properly (tells the server) before showing our settings
+                    if (client.player != null) client.player.closeContainer();
+                    openSettings();
+                }
+            }
         });
 
         net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents.JOIN.register((handler, sender, client) -> {
@@ -1709,6 +1721,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
     public static final ThreadLocal<Boolean> COLLECTING = ThreadLocal.withInitial(() -> Boolean.FALSE);
     private static KeyMapping keyTranslatePage;
     private static boolean lastPageState = false;
+    private static boolean lastMenuState = false;
     private static volatile boolean pageRunning = false;
     private static int pageScanTick = 0;
     private static int lastPageSignature = 0;
@@ -2270,43 +2283,37 @@ public class NPCTranslatorClient implements ClientModInitializer {
         return PENDING_ITEMS.contains(cacheKey);
     }
 
+    /** Shortcut hints at the very bottom of item tooltips. */
     private static void renderShortcutsFooter(List<Component> tooltip, boolean isTranslated, boolean isPending, String cacheKey) {
         try {
-            ModConfig.TranslationProvider currentProvider = TRANSLATED_PROVIDER_CACHE.get(cacheKey);
-
+            if (isPending) return;
+            boolean custom = config.enableCustomItem && isCustomConfigured();
+            String tk = custom ? getKeyName(keyTranslateCustom, "N") : getKeyName(keyTranslateGoogle, "G");
+            tooltip.add(Component.empty());
             if (isTranslated) {
-                // Only show revert button when already translated
-                tooltip.add(Component.empty());
-                String k = getKeyName(keyRevertTranslation, "V");
-                tooltip.add(Component.translatable("npctranslator.tooltip.revert", k).withStyle(ChatFormatting.DARK_GRAY));
-            } else if (!isPending) {
-                // Show all translate buttons only when not translated and not loading
-                tooltip.add(Component.empty());
-                if (config.enableGoogleItem) {
-                    String k = getKeyName(keyTranslateGoogle, "G");
-                    tooltip.add(Component.translatable("npctranslator.tooltip.translate.google", k).withStyle(ChatFormatting.DARK_GRAY));
+                tooltip.add(Component.translatable("npctranslator.tooltip.footer.translated",
+                        getKeyName(keyRevertTranslation, "V"), tk).withStyle(ChatFormatting.DARK_GRAY));
+            } else {
+                tooltip.add(Component.translatable("npctranslator.tooltip.footer.translate", tk, tk).withStyle(ChatFormatting.DARK_GRAY));
+                // other AI engines that have a key configured keep their own line
+                if (!custom && config.enableCustomItem && isCustomConfigured()) {
+                    tooltip.add(Component.translatable("npctranslator.tooltip.translate.custom", getKeyName(keyTranslateCustom, "N")).withStyle(ChatFormatting.DARK_GRAY));
                 }
                 if (config.enableGeminiItem && config.geminiApiKey != null && !config.geminiApiKey.trim().isEmpty()) {
-                    String k = getKeyName(keyTranslateGemini, "X");
-                    tooltip.add(Component.translatable("npctranslator.tooltip.translate.gemini", k).withStyle(ChatFormatting.DARK_GRAY));
+                    tooltip.add(Component.translatable("npctranslator.tooltip.translate.gemini", getKeyName(keyTranslateGemini, "X")).withStyle(ChatFormatting.DARK_GRAY));
                 }
                 if (config.enableGroqItem && config.groqApiKey != null && !config.groqApiKey.trim().isEmpty()) {
-                    String k = getKeyName(keyTranslateGroq, "C");
-                    tooltip.add(Component.translatable("npctranslator.tooltip.translate.groq", k).withStyle(ChatFormatting.DARK_GRAY));
+                    tooltip.add(Component.translatable("npctranslator.tooltip.translate.groq", getKeyName(keyTranslateGroq, "C")).withStyle(ChatFormatting.DARK_GRAY));
                 }
                 if (config.enableMistralItem && config.mistralApiKey != null && !config.mistralApiKey.trim().isEmpty()) {
-                    String k = getKeyName(keyTranslateMistral, "-");
-                    tooltip.add(Component.translatable("npctranslator.tooltip.translate.mistral", k).withStyle(ChatFormatting.DARK_GRAY));
+                    tooltip.add(Component.translatable("npctranslator.tooltip.translate.mistral", getKeyName(keyTranslateMistral, "-")).withStyle(ChatFormatting.DARK_GRAY));
                 }
                 if (config.enableOpenRouterItem && config.openRouterApiKey != null && !config.openRouterApiKey.trim().isEmpty()) {
-                    String k = getKeyName(keyTranslateOpenRouter, "-");
-                    tooltip.add(Component.translatable("npctranslator.tooltip.translate.openrouter", k).withStyle(ChatFormatting.DARK_GRAY));
-                }
-                if (config.enableCustomItem && isCustomConfigured()) {
-                    String k = getKeyName(keyTranslateCustom, "N");
-                    tooltip.add(Component.translatable("npctranslator.tooltip.translate.custom", k).withStyle(ChatFormatting.DARK_GRAY));
+                    tooltip.add(Component.translatable("npctranslator.tooltip.translate.openrouter", getKeyName(keyTranslateOpenRouter, "-")).withStyle(ChatFormatting.DARK_GRAY));
                 }
             }
+            tooltip.add(Component.translatable("npctranslator.tooltip.footer.more",
+                    getKeyName(keyTranslatePage, "M"), getKeyName(menuKey, "Z")).withStyle(ChatFormatting.DARK_GRAY));
         } catch (Exception ignored) {}
     }
 

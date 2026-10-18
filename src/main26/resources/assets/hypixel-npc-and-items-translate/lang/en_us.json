@@ -200,5 +200,8 @@
   "text.autoconfig.npc_translator.option.autoTranslatePage": "Auto-translate whole menu page",
   "text.autoconfig.npc_translator.option.autoTranslatePage.tooltip": "When a menu opens or changes page, translate every item in it in the background with a few batched requests. Costs API usage; off by default. The page key (default M) works either way.",
   "text.autoconfig.npc_translator.option.checkUpdates": "Check for updates",
-  "text.autoconfig.npc_translator.option.checkUpdates.tooltip": "On joining a server, check GitHub once for a newer release and post a download link in chat."
+  "text.autoconfig.npc_translator.option.checkUpdates.tooltip": "On joining a server, check GitHub once for a newer release and post a download link in chat.",
+  "npctranslator.tooltip.footer.translate": "[%s] Translate · [Shift/Ctrl+%s] Force re-translate",
+  "npctranslator.tooltip.footer.translated": "[%s] Show original · [Shift/Ctrl+%s] Force re-translate",
+  "npctranslator.tooltip.footer.more": "[%s] Translate whole menu · [%s] Translator settings"
 }

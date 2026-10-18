@@ -56,6 +56,10 @@ public final class ItemLines {
         ModConfig c = ModConfig.INSTANCE;
         int n = lines.size();
         if (usePhrasebook) {
+            // right after start-up the phrase book is still loading: wait for it (we run off the render thread)
+            for (int w = 0; w < 80 && !PhraseBook.isReady(); w++) {
+                try { Thread.sleep(100); } catch (InterruptedException e) { break; }
+            }
             String[] pb = PhraseBook.translateLines(lines);
             System.arraycopy(pb, 0, p.fixed, 0, n);
         }
@@ -108,9 +112,12 @@ public final class ItemLines {
         char first = b.charAt(0);
         boolean unfinished = Character.isLowerCase(last) || last == ',' || last == '，' || Character.isLowerCase(first);
         if (!unfinished) return false;
-        // same colour at the join (lore paragraphs keep one base colour)
+        // same colour at the join (lore paragraphs keep one base colour) ...
         String lead = leadColor(next);
-        return lead.isEmpty() || lead.equalsIgnoreCase(lastColor(prev)) || lead.equalsIgnoreCase(leadColor(prev));
+        if (lead.isEmpty() || lead.equalsIgnoreCase(lastColor(prev)) || lead.equalsIgnoreCase(leadColor(prev))) return true;
+        // ... or a highlighted value/word that clearly continues the sentence ("breaks after" + "§a2,000§7 uses.")
+        boolean prevOpen = Character.isLowerCase(last) || last == ',';
+        return prevOpen && (Character.isLowerCase(first) || Character.isDigit(first));
     }
 
     private static String leadColor(String s) {
@@ -145,6 +152,12 @@ public final class ItemLines {
      */
     public static int translateMissing(Collection<String> missing, ModConfig.TranslationProvider provider,
                                        int batchSize, int parallel) throws Exception {
+        return translateMissing(missing, provider, batchSize, parallel, null);
+    }
+
+    /** Same, reporting the number of lines handled after every finished request. */
+    public static int translateMissing(Collection<String> missing, ModConfig.TranslationProvider provider,
+                                       int batchSize, int parallel, java.util.function.IntConsumer progress) throws Exception {
         List<String> all = new ArrayList<>(new LinkedHashSet<>(missing));
         if (all.isEmpty()) return 0;
         String langCode = NPCTranslatorClient.getEffectiveLanguageCode();
@@ -173,6 +186,8 @@ public final class ItemLines {
                         synchronized (ok) { ok[0] += got; }
                     } catch (Exception e) {
                         errors.put(idx, e);
+                    } finally {
+                        if (progress != null) progress.accept(chunk.size());
                     }
                 }));
             }

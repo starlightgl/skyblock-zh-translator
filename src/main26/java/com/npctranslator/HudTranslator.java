@@ -153,7 +153,61 @@ public final class HudTranslator {
     public static Component modText(Component original) {
         ModConfig c = cfg();
         if (c == null || !c.enabled || !c.translateModTooltips || original == null) return null;
+        if (isGrid(original)) return gridText(original);
         return lookupComponent(original);
+    }
+
+    // ── Skyblocker 的表格行（价格等）：内容放在 GridComponent$Contents 里，getString() 是空的 ──
+    private static volatile Class<?> gridClass;
+    private static volatile java.lang.reflect.Method gridGroup, gridCells;
+    private static volatile java.lang.reflect.Constructor<?> gridCtor;
+    private static volatile boolean gridBroken = false;
+
+    /** Whether a tooltip line is one of Skyblocker's grid (table) lines. */
+    public static boolean isGrid(Component line) {
+        if (line == null || gridBroken) return false;
+        Object contents = line.getContents();
+        if (contents == null) return false;
+        Class<?> k = contents.getClass();
+        if (k == gridClass) return true;
+        if (gridClass != null || !k.getName().endsWith("GridComponent$Contents")) return false;
+        try {
+            gridGroup = k.getMethod("group");
+            gridCells = k.getMethod("components");
+            gridCtor = k.getConstructor(String.class, List.class);
+            gridClass = k;
+            return true;
+        } catch (Throwable t) {
+            gridBroken = true;
+            debugLog("grid line not supported: " + t);
+            return false;
+        }
+    }
+
+    /** A grid line with each cell translated, or null when no cell has a translation yet. */
+    @SuppressWarnings("unchecked")
+    private static Component gridText(Component line) {
+        try {
+            Object contents = line.getContents();
+            String group = (String) gridGroup.invoke(contents);
+            List<Component> cells = (List<Component>) gridCells.invoke(contents);
+            List<Component> out = new ArrayList<>(cells.size());
+            boolean any = false;
+            for (Component cell : cells) {
+                Component t = cell == null ? null : (isGrid(cell) ? gridText(cell) : lookupComponent(cell));
+                if (debug && cell != null) debugLog("grid cell: " + NPCTranslatorClient.toFormattedString(cell) + (t != null ? " => " + NPCTranslatorClient.toFormattedString(t) : " (not yet)"));
+                if (t != null) any = true;
+                out.add(t != null ? t : cell);
+            }
+            if (!any) return null;
+            MutableComponent m = MutableComponent.create((net.minecraft.network.chat.ComponentContents) gridCtor.newInstance(group, List.copyOf(out)));
+            m.setStyle(line.getStyle());
+            for (Component s : line.getSiblings()) m.append(s);
+            return m;
+        } catch (Throwable t) {
+            debugLog("grid line failed: " + t);
+            return null;
+        }
     }
 
     private static Component lookupComponent(Component original) {

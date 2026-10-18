@@ -67,6 +67,8 @@ public class ModConfig {
     public boolean hasSeenWelcomeScreen = false;
 
     public boolean enabled = true;
+    /** 中文增强版：进服时检查 GitHub 上有没有新版本 */
+    public boolean checkUpdates = true;
     public TranslationProvider chatTranslationProvider = TranslationProvider.GOOGLE;
     public boolean enableGoogleItem = true;
     public boolean enableGeminiItem = true;

@@ -1,6 +1,8 @@
-# 每次推送都编译 26.2 和 26.3 两个版本（检查能不能编过，jar 在 Actions 页面的 Artifacts 里）。
-# 推送 v 开头的标签（例如 v1.5.2-zh.1）时，两个 jar 会自动上传到同名的 Release；
-# 也可以在 Actions 页面手动运行，填一个已有的标签，给那个版本补传 jar。
+# 发布流程（详见 README「发布新版本」）：
+#   1. gradle.properties 里改 mod_version；CHANGELOG.md 顶部加同版本号的一节
+#   2. 推送标签 v<mod_version>（例如 v1.5.1-zh.2；测试版用 v1.5.1-zh.3-beta.1）
+#   3. 这里自动：检查版本号 → 建草稿发布（说明取自 CHANGELOG）→ 编译 26.2/26.3 并上传 jar → 正式发布
+# 平时每次推送也会编译两个版本，jar 在 Actions 页面的 Artifacts 里。
 
 name: build
 on:
@@ -8,30 +10,70 @@ on:
     branches: [skyblock-zh]
     tags: ['v*']
   pull_request:
-  workflow_dispatch:
-    inputs:
-      tag:
-        description: '要编译并上传 jar 的版本标签（例如 v1.5.1-zh.1）'
-        required: true
 
 permissions:
   contents: write
 
 jobs:
+  prepare:
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-24.04
+    env:
+      GH_TOKEN: ${{ github.token }}
+      TAG: ${{ github.ref_name }}
+    steps:
+      - uses: actions/checkout@v6
+      - name: check version and write release notes
+        run: |
+          VERSION="${TAG#v}"
+          MOD_VERSION="$(grep '^mod_version=' gradle.properties | cut -d= -f2 | tr -d '\r')"
+          if [ "$VERSION" != "$MOD_VERSION" ]; then
+            echo "::error::标签 $TAG 和 gradle.properties 里的 mod_version=$MOD_VERSION 不一致"; exit 1
+          fi
+          sed "s/{VERSION}/$VERSION/g" .github/release-header.md > notes.md
+          awk -v v="$VERSION" '
+            index($0, "## " v " ") == 1 || $0 == "## " v { found = 1; next }
+            found && /^## / { exit }
+            found { print }
+          ' CHANGELOG.md > section.md
+          if [ ! -s section.md ]; then
+            # 测试版（1.5.1-zh.3-beta.1）可以直接用正式版号（1.5.1-zh.3）那一节
+            BASE="$(echo "$VERSION" | sed -E 's/-(beta|pre|rc).*$//')"
+            awk -v v="$BASE" '
+              index($0, "## " v " ") == 1 || $0 == "## " v { found = 1; next }
+              found && /^## / { exit }
+              found { print }
+            ' CHANGELOG.md > section.md
+          fi
+          if [ ! -s section.md ]; then
+            echo "::error::CHANGELOG.md 里没有找到「## $VERSION」这一节"; exit 1
+          fi
+          case "$VERSION" in *-beta*|*-pre*|*-rc*)
+            printf '> **测试版**：新功能还在验证，遇到问题请回退到上一个正式版。\n\n' >> notes.md;;
+          esac
+          cat section.md >> notes.md
+      - name: create draft release
+        run: |
+          PRE=""
+          case "$TAG" in *-beta*|*-pre*|*-rc*) PRE="--prerelease";; esac
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release edit "$TAG" --notes-file notes.md --title "SkyBlock 中文翻译 ${TAG#v}" $PRE
+          else
+            gh release create "$TAG" --draft --verify-tag --title "SkyBlock 中文翻译 ${TAG#v}" --notes-file notes.md $PRE
+          fi
+
   build:
+    needs: prepare
+    if: ${{ !failure() && !cancelled() }}
     name: build mc${{ matrix.mc }}
     runs-on: ubuntu-24.04
     strategy:
       fail-fast: false
       matrix:
         mc: ['26.2', '26.3']
-    env:
-      TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || (startsWith(github.ref, 'refs/tags/') && github.ref_name || '') }}
     steps:
       - name: checkout repository
         uses: actions/checkout@v6
-        with:
-          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref }}
       - name: validate gradle wrapper
         uses: gradle/actions/wrapper-validation@v6
       - name: setup jdk
@@ -50,12 +92,22 @@ jobs:
           name: npc_translator_skyblock_zh-mc${{ matrix.mc }}
           path: build/libs/*+mc${{ matrix.mc }}.jar
       - name: upload to release
-        if: env.TAG != ''
+        if: startsWith(github.ref, 'refs/tags/v')
         env:
           GH_TOKEN: ${{ github.token }}
+        run: gh release upload "${{ github.ref_name }}" build/libs/*+mc${{ matrix.mc }}.jar --clobber
+
+  publish:
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-24.04
+    env:
+      GH_TOKEN: ${{ github.token }}
+      TAG: ${{ github.ref_name }}
+    steps:
+      - name: publish release
         run: |
-          if ! gh release view "$TAG" >/dev/null 2>&1; then
-            gh release create "$TAG" --title "SkyBlock 中文翻译 ${TAG#v}" \
-              --notes "26.2 用 +mc26.2 的 jar，26.3 用 +mc26.3 的 jar。前置：Fabric API、YetAnotherConfigLib、ModMenu。" || true
-          fi
-          gh release upload "$TAG" build/libs/*+mc${{ matrix.mc }}.jar --clobber
+          case "$TAG" in
+            *-beta*|*-pre*|*-rc*) gh release edit "$TAG" --repo "$GITHUB_REPOSITORY" --draft=false --prerelease ;;
+            *) gh release edit "$TAG" --repo "$GITHUB_REPOSITORY" --draft=false --latest ;;
+          esac

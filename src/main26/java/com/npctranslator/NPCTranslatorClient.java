@@ -282,6 +282,14 @@ public class NPCTranslatorClient implements ClientModInitializer {
         );
         KeyMappingHelper.registerKeyMapping(keyRevertTranslation);
         
+        net.fabricmc.fabric.api.client.screen.v1.ScreenEvents.AFTER_INIT.register((client, screen, w, h) -> {
+            if (screen instanceof net.minecraft.client.gui.screens.inventory.AbstractContainerScreen<?>) {
+                net.fabricmc.fabric.api.client.screen.v1.ScreenEvents.afterExtract(screen).register((s, g, mx, my, delta) -> {
+                    try { drawPageProgress(g); } catch (Throwable ignored) {}
+                });
+            }
+        });
+
         keyTranslatePage = new KeyMapping(
                 "key.npctranslator.translate.page",
                 InputConstants.KEY_M,
@@ -413,6 +421,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
         });
 
         net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents.JOIN.register((handler, sender, client) -> {
+            UpdateChecker.onJoin(client);
             if (!config.hasSeenWelcomeScreen) {
             client.execute(() -> {
                     setScreen(client, new com.npctranslator.gui.WelcomeScreen());
@@ -1677,9 +1686,22 @@ public class NPCTranslatorClient implements ClientModInitializer {
         lastItemLinesAt = System.currentTimeMillis();
     }
 
+    /**
+     * Cache key of an item = what the player sees (item type, name, lore), not its hidden data:
+     * three identical items with different internal ids share one translation.
+     */
     static String itemCacheKey(ItemStack stack) {
-        String itemKey = stack.getItem().toString() + "_" + (stack.getComponents() != null ? stack.getComponents().hashCode() : 0);
-        return itemKey + "_" + getEffectiveLanguageCode();
+        int h;
+        try {
+            StringBuilder sb = new StringBuilder();
+            sb.append(toFormattedString(stack.getHoverName()));
+            net.minecraft.world.item.component.ItemLore lore = stack.get(net.minecraft.core.component.DataComponents.LORE);
+            if (lore != null) for (Component l : lore.lines()) sb.append('\n').append(toFormattedString(l));
+            h = sb.toString().hashCode();
+        } catch (Exception e) {
+            h = stack.getComponents() != null ? stack.getComponents().hashCode() : 0;
+        }
+        return stack.getItem().toString() + "_" + Integer.toHexString(h) + "_" + getEffectiveLanguageCode();
     }
 
     // ── 中文增强版：整页翻译 ─────────────────────────────────────────
@@ -1691,6 +1713,52 @@ public class NPCTranslatorClient implements ClientModInitializer {
     private static int pageScanTick = 0;
     private static int lastPageSignature = 0;
     private static final Set<String> PAGE_EMPTY = Collections.newSetFromMap(new ConcurrentHashMap<>());
+
+    // 整页翻译进度：画在菜单左上角，翻完前一直显示（关掉菜单再打开也还在）
+    private static volatile int pageItems = 0;
+    private static final java.util.concurrent.atomic.AtomicInteger pageLinesDone = new java.util.concurrent.atomic.AtomicInteger();
+    private static volatile int pageLinesTotal = 0;
+    private static volatile String pageResult = null;
+    private static volatile int pageResultColor = 0xFF55FF55;
+    private static volatile long pageResultUntil = 0;
+
+    private static void pageFinished(String text, int color, long millis) {
+        pageResult = text;
+        pageResultColor = color;
+        pageResultUntil = System.currentTimeMillis() + millis;
+    }
+
+    /** Progress box for the page translation, drawn over container screens. */
+    private static void drawPageProgress(net.minecraft.client.gui.GuiGraphicsExtractor g) {
+        Minecraft mc = Minecraft.getInstance();
+        if (mc == null || mc.font == null) return;
+        String text;
+        int color;
+        float frac = -1f;
+        if (pageRunning) {
+            int total = pageLinesTotal, done = Math.min(pageLinesDone.get(), total);
+            if (total > 0) {
+                text = "整页翻译中 · " + pageItems + " 个物品 · " + done + "/" + total + " 句";
+                frac = done / (float) total;
+            } else {
+                text = "整页翻译中 · " + pageItems + " 个物品";
+            }
+            color = 0xFFFFFF55;
+        } else if (pageResult != null && System.currentTimeMillis() < pageResultUntil) {
+            text = pageResult;
+            color = pageResultColor;
+        } else {
+            return;
+        }
+        int w = mc.font.width(text);
+        int x = 4, y = 4;
+        g.fill(x - 3, y - 3, x + w + 3, y + 9 + (frac >= 0 ? 5 : 2), 0xC0000000);
+        g.text(mc.font, text, x, y, color, true);
+        if (frac >= 0) {
+            g.fill(x, y + 10, x + w, y + 12, 0xFF404040);
+            g.fill(x, y + 10, x + Math.round(w * frac), y + 12, 0xFF55FF55);
+        }
+    }
 
     private static ModConfig.TranslationProvider pageProvider() {
         if (config.enableCustomItem && isCustomConfigured()) return ModConfig.TranslationProvider.CUSTOM;
@@ -1735,7 +1803,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
         }
         ModConfig.TranslationProvider provider = pageProvider();
         if (provider == null) {
-            if (manual) pageMessage(client, "[整页翻译] 没有可用的翻译接口，请先在设置里填自定义 API", ChatFormatting.RED);
+            if (manual) pageFinished("整页翻译：没有可用的翻译接口，请先在设置里填自定义 API", 0xFFFF5555, 5000);
             return;
         }
         List<net.minecraft.world.inventory.Slot> slots = new ArrayList<>();
@@ -1759,7 +1827,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
         if (!manual && signature == lastPageSignature) return;
         lastPageSignature = signature;
         if (items.isEmpty()) {
-            if (manual) pageMessage(client, "[整页翻译] 这一页都翻译过了", ChatFormatting.GREEN);
+            if (manual) pageFinished("整页翻译：这一页都翻译过了", 0xFF55FF55, 2500);
             return;
         }
         net.minecraft.world.item.Item.TooltipContext ctx = net.minecraft.world.item.Item.TooltipContext.of(client.level);
@@ -1790,6 +1858,10 @@ public class NPCTranslatorClient implements ClientModInitializer {
         items.values().removeIf(java.util.Objects::isNull);
         if (items.isEmpty()) return;
 
+        pageItems = items.size();
+        pageLinesTotal = 0;
+        pageLinesDone.set(0);
+        pageResult = null;
         for (String key : items.keySet()) {
             PENDING_ITEMS.add(key);
             ACTIVE_TRANSLATED_ITEMS.add(key);
@@ -1808,13 +1880,8 @@ public class NPCTranslatorClient implements ClientModInitializer {
                     plans.put(e.getKey(), plan);
                     ItemLines.collectMissing(plan, providerName, missing);
                 }
-                if (manual || !missing.isEmpty()) {
-                    final int count = items.size(), lines = missing.size();
-                    client.execute(() -> pageMessage(client, lines == 0
-                            ? "[整页翻译] " + count + " 个物品，全部来自本地词库"
-                            : "[整页翻译] " + count + " 个物品，" + lines + " 句交给 AI，请稍等…", ChatFormatting.YELLOW));
-                }
-                if (!missing.isEmpty()) ItemLines.translateMissing(missing, provider, 40, 3);
+                pageLinesTotal = missing.size();
+                if (!missing.isEmpty()) ItemLines.translateMissing(missing, provider, 40, 3, pageLinesDone::addAndGet);
                 for (Map.Entry<String, ItemLines.Plan> e : plans.entrySet()) {
                     String key = e.getKey();
                     ItemLines.Result r = ItemLines.assemble(e.getValue(), provider, null);
@@ -1832,7 +1899,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 }
                 final int finished = done;
                 if (manual || !missing.isEmpty()) {
-                    client.execute(() -> pageMessage(client, "[整页翻译] 完成：" + finished + " 个物品", ChatFormatting.GREEN));
+                    pageFinished("整页翻译完成 · " + finished + " 个物品" + (missing.isEmpty() ? "（全部来自本地词库）" : ""), 0xFF55FF55, 3000);
                 }
             } catch (Throwable t) {
                 for (String key : items.keySet()) {
@@ -1842,6 +1909,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                     }
                 }
                 notifyTranslationError(t instanceof Exception ex ? ex : new Exception(t));
+                pageFinished("整页翻译失败：" + shorten(String.valueOf(t.getMessage()), 60), 0xFFFF5555, 6000);
             } finally {
                 for (String key : items.keySet()) PENDING_ITEMS.remove(key);
                 pageRunning = false;
@@ -1873,7 +1941,13 @@ public class NPCTranslatorClient implements ClientModInitializer {
             if (seen.size() > 30) break;
         }
         if (!show && lastEnchantLine >= 0) {
-            tooltip.add(lastEnchantLine + 1, Component.translatable("npctranslator.enchant_hint.press_shift").withStyle(ChatFormatting.DARK_GRAY));
+            // after the enchantment paragraph (its descriptions), not between a name and its description
+            int at = lastEnchantLine + 1;
+            for (int k = at; k < tooltip.size() && k <= lastEnchantLine + 8; k++) {
+                if (tooltip.get(k).getString().isBlank()) { at = k; break; }
+                if (k == tooltip.size() - 1) at = k + 1;
+            }
+            tooltip.add(at, Component.translatable("npctranslator.enchant_hint.press_shift").withStyle(ChatFormatting.DARK_GRAY));
         }
     }
 
@@ -1912,7 +1986,8 @@ public class NPCTranslatorClient implements ClientModInitializer {
         for (int i = 0; i < tooltip.size(); i++) {
             Component line = tooltip.get(i);
             String plain = line.getString();
-            if (plain.isBlank() || own.contains(plain)) continue;
+            boolean grid = HudTranslator.isGrid(line); // Skyblocker price table rows: text lives in the cells
+            if (!grid && (plain.isBlank() || own.contains(plain))) continue;
             if (HudTranslator.debug) HudTranslator.debugLog("item hook, mod line: " + toFormattedString(line));
             Component t = HudTranslator.modText(line);
             if (t != null) {
@@ -1935,14 +2010,16 @@ public class NPCTranslatorClient implements ClientModInitializer {
             if (HudTranslator.debug) {
                 StringBuilder sb = new StringBuilder("rendered tooltip (" + out.size() + " lines, item lines known: " + known.size() + "):");
                 for (Component line : out) {
-                    sb.append("\n    ").append(known.contains(line.getString()) ? "[item] " : MOD_TRANSLATED.contains(line) ? "[done] " : "[mod]  ")
+                    sb.append("\n    ").append(MOD_TRANSLATED.contains(line) ? "[done] " : HudTranslator.isGrid(line) ? "[grid] "
+                            : known.contains(line.getString()) ? "[item] " : "[mod]  ")
                       .append(toFormattedString(line));
                 }
                 HudTranslator.debugLog(sb.toString());
             }
             for (int i = 0; i < out.size(); i++) {
                 Component line = out.get(i);
-                if (known.contains(line.getString()) || MOD_TRANSLATED.contains(line)) continue;
+                if (MOD_TRANSLATED.contains(line)) continue;
+                if (!HudTranslator.isGrid(line) && known.contains(line.getString())) continue;
                 Component t = HudTranslator.modText(line);
                 if (t == null) continue;
                 if (out == components) out = new ArrayList<>(components);

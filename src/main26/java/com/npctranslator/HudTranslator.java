@@ -73,7 +73,7 @@ public final class HudTranslator {
 
     private static ModConfig.TranslationProvider provider() {
         ModConfig c = cfg();
-        return c.autoItemProvider != null ? c.autoItemProvider : ModConfig.TranslationProvider.GOOGLE;
+        return c.autoItemProvider != null ? c.autoItemProvider : ModConfig.TranslationProvider.CUSTOM;
     }
 
     // ── Sidebar ────────────────────────────────────────────────────────────

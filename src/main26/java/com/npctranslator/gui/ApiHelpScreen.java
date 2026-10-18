@@ -26,42 +26,28 @@ public class ApiHelpScreen extends Screen {
         int x = this.width / 2 - buttonWidth / 2;
         int padding = 26;
 
-        int totalButtons = 5;
+        com.npctranslator.config.ModConfig.ApiPreset[] presets = java.util.Arrays.stream(com.npctranslator.config.ModConfig.ApiPreset.values())
+                .filter(p -> !p.keyPage.isEmpty()).toArray(com.npctranslator.config.ModConfig.ApiPreset[]::new);
+        int totalButtons = presets.length + 1;
         int totalHeight = totalButtons * buttonHeight + (totalButtons - 1) * (padding - buttonHeight);
         int startY = this.height / 2 - totalHeight / 2 + 20;
 
-        // Groq API Button
-        this.addRenderableWidget(Button.builder(Component.translatable("npctranslator.api_help.groq"), button -> {
-            try {
-                java.awt.Desktop.getDesktop().browse(new java.net.URI("https://console.groq.com/keys"));
-            } catch (Exception e) {}
-        }).bounds(x, startY, buttonWidth, buttonHeight).build());
-
-        // Gemini API Button
-        this.addRenderableWidget(Button.builder(Component.translatable("npctranslator.api_help.gemini"), button -> {
-            try {
-                java.awt.Desktop.getDesktop().browse(new java.net.URI("https://aistudio.google.com/app/apikey"));
-            } catch (Exception e) {}
-        }).bounds(x, startY + padding, buttonWidth, buttonHeight).build());
-
-        // Mistral API Button
-        this.addRenderableWidget(Button.builder(Component.translatable("npctranslator.api_help.mistral"), button -> {
-            try {
-                java.awt.Desktop.getDesktop().browse(new java.net.URI("https://console.mistral.ai/api-keys/"));
-            } catch (Exception e) {}
-        }).bounds(x, startY + padding * 2, buttonWidth, buttonHeight).build());
-
-        // OpenRouter API Button
-        this.addRenderableWidget(Button.builder(Component.translatable("npctranslator.api_help.openrouter"), button -> {
-            try {
-                java.awt.Desktop.getDesktop().browse(new java.net.URI("https://openrouter.ai/settings/keys"));
-            } catch (Exception e) {}
-        }).bounds(x, startY + padding * 3, buttonWidth, buttonHeight).build());
+        // 中文增强版：国内能直连的服务商，点按钮打开它的 API Key 页面
+        for (int i = 0; i < presets.length; i++) {
+            com.npctranslator.config.ModConfig.ApiPreset p = presets[i];
+            this.addRenderableWidget(Button.builder(Component.literal(p.displayName), button -> {
+                try {
+                    net.minecraft.util.Util.getPlatform().openUri(p.keyPage);
+                } catch (Throwable e) {
+                    try { java.awt.Desktop.getDesktop().browse(new java.net.URI(p.keyPage)); } catch (Exception ignored) {}
+                }
+            }).bounds(x, startY + padding * i, buttonWidth, buttonHeight).build());
+        }
 
         // Back Button
         this.addRenderableWidget(Button.builder(Component.translatable("npctranslator.api_help.back"), button -> {
             com.npctranslator.NPCTranslatorClient.setScreen(this.minecraft, parent);
-        }).bounds(x, startY + padding * 3 + 36, buttonWidth, buttonHeight).build());
+        }).bounds(x, startY + padding * presets.length + 10, buttonWidth, buttonHeight).build());
     }
 
     @Override

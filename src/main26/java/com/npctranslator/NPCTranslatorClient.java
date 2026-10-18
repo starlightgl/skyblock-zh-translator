@@ -233,41 +233,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
 
         final net.minecraft.client.KeyMapping.Category finalCategory = customCategory;
 
-        keyTranslateGoogle = new KeyMapping(
-                "key.npctranslator.translate.google",
-                InputConstants.KEY_G,
-                finalCategory
-        );
-        KeyMappingHelper.registerKeyMapping(keyTranslateGoogle);
-
-        keyTranslateGemini = new KeyMapping(
-                "key.npctranslator.translate.gemini",
-                InputConstants.KEY_X,
-                finalCategory
-        );
-        KeyMappingHelper.registerKeyMapping(keyTranslateGemini);
-
-        keyTranslateGroq = new KeyMapping(
-                "key.npctranslator.translate.groq",
-                InputConstants.KEY_C,
-                finalCategory
-        );
-        KeyMappingHelper.registerKeyMapping(keyTranslateGroq);
-
-        keyTranslateMistral = new KeyMapping(
-                "key.npctranslator.translate.mistral",
-                InputConstants.UNKNOWN.getValue(),
-                finalCategory
-        );
-        KeyMappingHelper.registerKeyMapping(keyTranslateMistral);
-
-        keyTranslateOpenRouter = new KeyMapping(
-                "key.npctranslator.translate.openrouter",
-                InputConstants.UNKNOWN.getValue(),
-                finalCategory
-        );
-        KeyMappingHelper.registerKeyMapping(keyTranslateOpenRouter);
-
+        // 中文增强版：Google / Gemini / Groq / Mistral / OpenRouter 在国内用不了，不再注册它们的按键（G / X / C 还给游戏和其他模组）
         keyTranslateCustom = new KeyMapping(
                 "key.npctranslator.translate.custom",
                 InputConstants.KEY_N,
@@ -1775,7 +1741,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
 
     private static ModConfig.TranslationProvider pageProvider() {
         if (config.enableCustomItem && isCustomConfigured()) return ModConfig.TranslationProvider.CUSTOM;
-        ModConfig.TranslationProvider p = config.autoItemProvider != null ? config.autoItemProvider : ModConfig.TranslationProvider.GOOGLE;
+        ModConfig.TranslationProvider p = config.autoItemProvider != null ? config.autoItemProvider : ModConfig.TranslationProvider.CUSTOM;
         return isProviderUsable(p) ? p : null;
     }
 
@@ -2178,7 +2144,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                            && ITEM_CACHE.get(cacheKey).stream().anyMatch(t -> t.getString().startsWith("⚠"));
         
         if (isTranslated) {
-            ModConfig.TranslationProvider provider = TRANSLATED_PROVIDER_CACHE.getOrDefault(cacheKey, ModConfig.TranslationProvider.GOOGLE);
+            ModConfig.TranslationProvider provider = TRANSLATED_PROVIDER_CACHE.getOrDefault(cacheKey, ModConfig.TranslationProvider.CUSTOM);
             
             // "tikli olmayan item altında yazısı çıkmasın google tranlate dahil"
             boolean providerEnabled = false;
@@ -2270,7 +2236,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
             triggerTranslation(tooltip, cacheKey, remembered);
         } else if (config.autoTranslateItems && !REVERTED_ITEMS.contains(cacheKey) && !ACTIVE_TRANSLATED_ITEMS.contains(cacheKey)) {
             // Auto translate items logic
-            ModConfig.TranslationProvider autoProvider = config.autoItemProvider != null ? config.autoItemProvider : ModConfig.TranslationProvider.GOOGLE;
+            ModConfig.TranslationProvider autoProvider = config.autoItemProvider != null ? config.autoItemProvider : ModConfig.TranslationProvider.CUSTOM;
             ACTIVE_TRANSLATED_ITEMS.add(cacheKey);
             TRANSLATED_PROVIDER_CACHE.put(cacheKey, autoProvider);
             triggerTranslation(tooltip, cacheKey, autoProvider);
@@ -2287,30 +2253,15 @@ public class NPCTranslatorClient implements ClientModInitializer {
     private static void renderShortcutsFooter(List<Component> tooltip, boolean isTranslated, boolean isPending, String cacheKey) {
         try {
             if (isPending) return;
-            boolean custom = config.enableCustomItem && isCustomConfigured();
-            String tk = custom ? getKeyName(keyTranslateCustom, "N") : getKeyName(keyTranslateGoogle, "G");
+            String tk = getKeyName(keyTranslateCustom, "N");
             tooltip.add(Component.empty());
             if (isTranslated) {
                 tooltip.add(Component.translatable("npctranslator.tooltip.footer.translated",
                         getKeyName(keyRevertTranslation, "V"), tk).withStyle(ChatFormatting.DARK_GRAY));
-            } else {
+            } else if (isCustomConfigured()) {
                 tooltip.add(Component.translatable("npctranslator.tooltip.footer.translate", tk, tk).withStyle(ChatFormatting.DARK_GRAY));
-                // other AI engines that have a key configured keep their own line
-                if (!custom && config.enableCustomItem && isCustomConfigured()) {
-                    tooltip.add(Component.translatable("npctranslator.tooltip.translate.custom", getKeyName(keyTranslateCustom, "N")).withStyle(ChatFormatting.DARK_GRAY));
-                }
-                if (config.enableGeminiItem && config.geminiApiKey != null && !config.geminiApiKey.trim().isEmpty()) {
-                    tooltip.add(Component.translatable("npctranslator.tooltip.translate.gemini", getKeyName(keyTranslateGemini, "X")).withStyle(ChatFormatting.DARK_GRAY));
-                }
-                if (config.enableGroqItem && config.groqApiKey != null && !config.groqApiKey.trim().isEmpty()) {
-                    tooltip.add(Component.translatable("npctranslator.tooltip.translate.groq", getKeyName(keyTranslateGroq, "C")).withStyle(ChatFormatting.DARK_GRAY));
-                }
-                if (config.enableMistralItem && config.mistralApiKey != null && !config.mistralApiKey.trim().isEmpty()) {
-                    tooltip.add(Component.translatable("npctranslator.tooltip.translate.mistral", getKeyName(keyTranslateMistral, "-")).withStyle(ChatFormatting.DARK_GRAY));
-                }
-                if (config.enableOpenRouterItem && config.openRouterApiKey != null && !config.openRouterApiKey.trim().isEmpty()) {
-                    tooltip.add(Component.translatable("npctranslator.tooltip.translate.openrouter", getKeyName(keyTranslateOpenRouter, "-")).withStyle(ChatFormatting.DARK_GRAY));
-                }
+            } else {
+                tooltip.add(Component.translatable("npctranslator.tooltip.footer.setup", getKeyName(menuKey, "Z")).withStyle(ChatFormatting.DARK_GRAY));
             }
             tooltip.add(Component.translatable("npctranslator.tooltip.footer.more",
                     getKeyName(keyTranslatePage, "M"), getKeyName(menuKey, "Z")).withStyle(ChatFormatting.DARK_GRAY));

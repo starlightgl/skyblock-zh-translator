@@ -17,7 +17,7 @@
 ## 主要功能
 
 ### 翻译引擎
-- **自定义 AI 接口**：填 Base URL、API Key、模型名即可，支持 DeepSeek、ClinePass、各类中转站等 OpenAI 兼容接口。推理模型输出的 `<think>` 会自动去掉。翻译失败时聊天栏会显示红字原因。
+- **国内 AI 接口**：内置 DeepSeek、通义千问、智谱、Kimi、硅基流动、火山方舟预设，选好填密钥即可；中转站等 OpenAI 兼容接口也能手动填。推理模型输出的 `<think>` 会自动去掉。翻译失败时聊天栏会显示红字原因。
 - **自定义提示词**：默认已写好 SkyBlock 背景说明，可以自己改。
 - **数字占位缓存**：翻译前把数字换成占位符，存的是句子模板。数字、价格、倒计时变了也不用重新翻，也不会一闪一闪。
 
@@ -57,15 +57,23 @@
 
 游戏里输入 `/translate` 打开设置，或者在 ModMenu 里点本模组的设置按钮。
 
-**接入 AI（以 DeepSeek 为例）**：在「API → 自定义 API」里填：
+**接入 AI**：按 **Z** 或输入 `/translate` 打开设置，在「API → 自定义 API」里：
 
-| 项目 | 示例 |
-|---|---|
-| Base URL | `https://api.deepseek.com/v1`（会自动补 `/chat/completions`） |
-| API Key | 你的密钥 |
-| 模型名 | `deepseek-chat` |
+1. 「服务商」选一个，Base URL 和推荐模型会自动填好；
+2. 填入在该平台申请的 API Key，保存即可。
 
-再把「聊天翻译引擎」和「自动翻译使用的引擎」都选成 **Custom API**。
+| 服务商 | Base URL | 推荐模型（以服务商文档为准） |
+|---|---|---|
+| DeepSeek 深度求索 | `https://api.deepseek.com/v1` | `deepseek-flash` |
+| 阿里云百炼（通义千问） | `https://dashscope.aliyuncs.com/compatible-mode/v1` | `qwen-plus` |
+| 智谱 GLM | `https://open.bigmodel.cn/api/paas/v4` | `glm-5.3` |
+| Kimi 月之暗面 | `https://api.moonshot.cn/v1` | `kimi-k2.6` |
+| 硅基流动 | `https://api.siliconflow.cn/v1` | `deepseek-ai/DeepSeek-V3` |
+| 火山方舟（豆包） | `https://ark.cn-beijing.volces.com/api/v3` | 填方舟控制台里的模型 ID |
+
+中转站、ClinePass 等其他 OpenAI 兼容接口选「其他」手动填写。Base URL 会自动补 `/chat/completions`。
+
+本模组只使用这一类接口；原版的 Google 翻译、Gemini、Groq、Mistral、OpenRouter 在国内无法直连，已经移除。
 
 **常用开关**（都在设置里）：检查更新、固定短语库、翻译侧边栏、翻译悬浮文字、翻译其他模组的提示文字、记住已翻译的物品、打开菜单自动整页翻译、自动显示已存的聊天译文、附魔副标题（关闭 / 按住 Shift / 一直显示）。
 
@@ -78,7 +86,7 @@
 | `/translate forget 关键词` | 删掉这些译文，下次出现时重新翻译 |
 | `/translate DeleteDict` | 清空整个词典 |
 | `/translate debug` | 开/关调试日志：其他模组提示行的处理过程写进 `logs/latest.log`，排查「某行没翻译」用 |
-| N | 翻译鼠标指着的物品（自定义 API） |
+| N | 翻译鼠标指着的物品 |
 | Shift + N 或 Ctrl + N | 丢掉这个物品的旧译文，跳过短语库重新翻译 |
 | M | 整页翻译：翻译当前菜单里的所有物品 |
 | V | 恢复物品原文，并且不再自动翻译这个物品 |

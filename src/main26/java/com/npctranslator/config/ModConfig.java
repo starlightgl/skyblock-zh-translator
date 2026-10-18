@@ -32,7 +32,17 @@ public class ModConfig {
     }
 
     public void validate() {
-        if (chatTranslationProvider == null) chatTranslationProvider = TranslationProvider.GOOGLE;
+        // 中文增强版：只用国内能直连的自定义（OpenAI 兼容）接口；Google / Gemini / Groq / Mistral / OpenRouter 不再使用
+        chatTranslationProvider = TranslationProvider.CUSTOM;
+        autoItemProvider = TranslationProvider.CUSTOM;
+        enableGoogleItem = false;
+        enableGeminiItem = false;
+        enableGroqItem = false;
+        enableMistralItem = false;
+        enableOpenRouterItem = false;
+        enableCustomItem = true;
+        autoFallbackOnLimit = false;
+        if (customPreset == null) customPreset = ApiPreset.CUSTOM;
         if (mistralModel == null) mistralModel = MistralModel.MISTRAL_LARGE_2512;
         if (openRouterModel == null) openRouterModel = OpenRouterModel.OPENROUTER_FREE;
         if (groqModel == null) groqModel = GroqModel.LLAMA_3_3_70B;
@@ -50,7 +60,6 @@ public class ModConfig {
         if (customModel == null) customModel = "";
         if (customPrompt == null) customPrompt = DEFAULT_CUSTOM_PROMPT;
         if (customTimeoutSeconds < 5) customTimeoutSeconds = 60;
-        if (autoItemProvider == null) autoItemProvider = TranslationProvider.GOOGLE;
     }
 
     public static void save() {
@@ -69,13 +78,15 @@ public class ModConfig {
     public boolean enabled = true;
     /** 中文增强版：进服时检查 GitHub 上有没有新版本 */
     public boolean checkUpdates = true;
-    public TranslationProvider chatTranslationProvider = TranslationProvider.GOOGLE;
-    public boolean enableGoogleItem = true;
-    public boolean enableGeminiItem = true;
-    public boolean enableGroqItem = true;
-    public boolean enableMistralItem = true;
-    public boolean enableOpenRouterItem = true;
-    public boolean autoFallbackOnLimit = true;
+    public TranslationProvider chatTranslationProvider = TranslationProvider.CUSTOM;
+    public boolean enableGoogleItem = false;
+    public boolean enableGeminiItem = false;
+    public boolean enableGroqItem = false;
+    public boolean enableMistralItem = false;
+    public boolean enableOpenRouterItem = false;
+    public boolean autoFallbackOnLimit = false;
+    /** 中文增强版：自定义 API 的服务商预设（选了会自动填 Base URL 和模型名） */
+    public ApiPreset customPreset = ApiPreset.CUSTOM;
     public String groqApiKey = "";
     public String geminiApiKey = "";
     
@@ -124,7 +135,7 @@ public class ModConfig {
     /** Original mod deleted the dictionary on every disconnect; now opt-in. */
     public boolean clearDictOnDisconnect = false;
     /** Provider used by "auto translate items" (original was hardcoded to Google). */
-    public TranslationProvider autoItemProvider = TranslationProvider.GOOGLE;
+    public TranslationProvider autoItemProvider = TranslationProvider.CUSTOM;
 
     /** Fixed translations from config/npc_translator_phrasebook.json (no API call). */
     public boolean usePhrasebook = true;
@@ -217,6 +228,29 @@ public class ModConfig {
         }
     }
 
+
+    /** 国内能直连的 OpenAI 兼容服务商。模型名会随服务商更新，以服务商文档为准。 */
+    public enum ApiPreset {
+        DEEPSEEK("DeepSeek 深度求索", "https://api.deepseek.com/v1", "deepseek-flash", "https://platform.deepseek.com/api_keys"),
+        QWEN("阿里云百炼（通义千问）", "https://dashscope.aliyuncs.com/compatible-mode/v1", "qwen-plus", "https://bailian.console.aliyun.com/"),
+        ZHIPU("智谱 GLM", "https://open.bigmodel.cn/api/paas/v4", "glm-5.3", "https://bigmodel.cn/"),
+        KIMI("Kimi 月之暗面", "https://api.moonshot.cn/v1", "kimi-k2.6", "https://platform.moonshot.cn/"),
+        SILICONFLOW("硅基流动", "https://api.siliconflow.cn/v1", "deepseek-ai/DeepSeek-V3", "https://cloud.siliconflow.cn/"),
+        VOLCENGINE("火山方舟（豆包）", "https://ark.cn-beijing.volces.com/api/v3", "", "https://console.volcengine.com/ark"),
+        CUSTOM("其他 / 中转站（手动填写）", "", "", "");
+
+        public final String displayName, baseUrl, model, keyPage;
+
+        ApiPreset(String displayName, String baseUrl, String model, String keyPage) {
+            this.displayName = displayName;
+            this.baseUrl = baseUrl;
+            this.model = model;
+            this.keyPage = keyPage;
+        }
+
+        @Override
+        public String toString() { return displayName; }
+    }
 
     public enum TranslationProvider {
         GOOGLE("Google Translate"),

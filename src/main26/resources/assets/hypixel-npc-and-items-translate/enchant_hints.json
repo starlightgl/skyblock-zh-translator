@@ -1,15 +1,15 @@
 {
- "_说明": "附魔副标题数据：en=英文名，zh=中文名，hint=简短功能。可自由修改，保存后重进游戏生效。",
+ "_说明": "附魔说明数据：en=英文原名，zh=中文名，hint=简短功能。可自由修改，重进游戏生效。",
  "enchants": [
   {
    "en": "Absorb",
-   "zh": "伐木成长",
+   "zh": "吸纳",
    "hint": "砍原木攒林业智慧与时运",
    "ultimate": false
   },
   {
    "en": "Angler",
-   "zh": "海怪几率",
+   "zh": "垂钓者",
    "hint": "+海洋生物几率",
    "ultimate": false
   },
@@ -27,13 +27,13 @@
   },
   {
    "en": "Bank",
-   "zh": "死亡保币",
+   "zh": "银行",
    "hint": "死亡时保住部分硬币，击杀多掉硬币",
    "ultimate": true
   },
   {
    "en": "Big Brain",
-   "zh": "法力强化",
+   "zh": "最强大脑",
    "hint": "+法力（头盔）",
    "ultimate": false
   },
@@ -45,13 +45,13 @@
   },
   {
    "en": "Blessing",
-   "zh": "宝藏品质",
+   "zh": "海神祝福",
    "hint": "宝藏渔获更易出好品质",
    "ultimate": false
   },
   {
    "en": "Bobbin' Time",
-   "zh": "群钓加成",
+   "zh": "浮漂时光",
    "hint": "周围鱼漂越多钓鱼属性越高",
    "ultimate": true
   },
@@ -63,25 +63,25 @@
   },
   {
    "en": "Cayenne",
-   "zh": "饰品血防",
+   "zh": "卡宴辣椒",
    "hint": "按饰品之力位数加生命和真实防御",
    "ultimate": false
   },
   {
    "en": "Champion",
-   "zh": "战斗成长",
+   "zh": "冠军",
    "hint": "战斗经验加成，击杀攒经验升级",
    "ultimate": false
   },
   {
    "en": "Chance",
-   "zh": "弓箭抢夺",
+   "zh": "机缘",
    "hint": "弓箭击杀掉落几率提升",
    "ultimate": false
   },
   {
    "en": "Charm",
-   "zh": "奖杯鱼品质",
+   "zh": "鱼魅",
    "hint": "更易钓到高阶奖杯鱼",
    "ultimate": false
   },
@@ -93,13 +93,13 @@
   },
   {
    "en": "Cleave",
-   "zh": "溅射",
+   "zh": "顺劈斩",
    "hint": "伤害波及周围怪物",
    "ultimate": false
   },
   {
    "en": "Combo",
-   "zh": "连杀增伤",
+   "zh": "连击",
    "hint": "短时间内连续击杀叠加伤害",
    "ultimate": true
   },
@@ -111,13 +111,13 @@
   },
   {
    "en": "Corruption",
-   "zh": "腐化海怪",
+   "zh": "腐化",
    "hint": "几率生成腐化海洋生物",
    "ultimate": false
   },
   {
    "en": "Counter-Strike",
-   "zh": "受击加防",
+   "zh": "反击",
    "hint": "受到首次攻击后短时加防御",
    "ultimate": false
   },
@@ -135,19 +135,19 @@
   },
   {
    "en": "Cultivating",
-   "zh": "耕作成长",
+   "zh": "耕耘",
    "hint": "收割作物攒农业智慧与时运",
    "ultimate": false
   },
   {
    "en": "Dedication",
-   "zh": "里程碑时运",
+   "zh": "专注",
    "hint": "按花园作物里程碑+农业时运",
    "ultimate": false
   },
   {
    "en": "Delicate",
-   "zh": "保护幼苗",
+   "zh": "轻柔",
    "hint": "不破坏茎和未成熟作物",
    "ultimate": false
   },
@@ -159,7 +159,7 @@
   },
   {
    "en": "Divine Gift",
-   "zh": "寻宝加成",
+   "zh": "神赐",
    "hint": "+魔法寻宝",
    "ultimate": false
   },
@@ -171,13 +171,13 @@
   },
   {
    "en": "Drain",
-   "zh": "活力汲取",
+   "zh": "汲取",
    "hint": "命中回复活力",
    "ultimate": false
   },
   {
    "en": "Duplex",
-   "zh": "双箭",
+   "zh": "双发",
    "hint": "额外射出一支伤害较低的箭",
    "ultimate": true
   },
@@ -207,19 +207,19 @@
   },
   {
    "en": "Expertise",
-   "zh": "钓鱼成长",
+   "zh": "精通",
    "hint": "击杀海洋生物攒钓鱼智慧",
    "ultimate": false
   },
   {
    "en": "Fatal Tempo",
-   "zh": "叠加凶暴",
+   "zh": "致命节奏",
    "hint": "连续攻击叠加凶暴",
    "ultimate": true
   },
   {
    "en": "Feast",
-   "zh": "绽放加成",
+   "zh": "盛宴",
    "hint": "+过度绽放",
    "ultimate": false
   },
@@ -243,13 +243,13 @@
   },
   {
    "en": "First Impression",
-   "zh": "首砍增益",
+   "zh": "第一印象",
    "hint": "近战砍树加横扫，每棵树首砍额外收益",
    "ultimate": true
   },
   {
    "en": "First Strike",
-   "zh": "首击增伤",
+   "zh": "先发制人",
    "hint": "对每只怪的第一击增伤",
    "ultimate": false
   },
@@ -261,13 +261,13 @@
   },
   {
    "en": "Flash",
-   "zh": "瞬间上钩",
+   "zh": "闪现",
    "hint": "几率立刻钓到鱼",
    "ultimate": true
   },
   {
    "en": "Flowstate",
-   "zh": "连挖加速",
+   "zh": "心流",
    "hint": "连续挖掘叠加挖掘速度",
    "ultimate": true
   },
@@ -279,7 +279,7 @@
   },
   {
    "en": "Frail",
-   "zh": "海怪减血",
+   "zh": "虚弱",
    "hint": "海洋生物出生时血量降低",
    "ultimate": false
   },
@@ -297,31 +297,31 @@
   },
   {
    "en": "Gravity",
-   "zh": "对空杀手",
+   "zh": "引力",
    "hint": "对飞行生物增伤",
    "ultimate": false
   },
   {
    "en": "Green Thumb",
-   "zh": "访客时运",
+   "zh": "绿手指",
    "hint": "按招待过的访客数+农业时运",
    "ultimate": false
   },
   {
    "en": "Growth",
-   "zh": "生命强化",
+   "zh": "成长",
    "hint": "+生命（盔甲）",
    "ultimate": false
   },
   {
    "en": "Habanero Tactics",
-   "zh": "猎手战术",
+   "zh": "哈瓦那战术",
    "hint": "魔杖治疗更多，对猎手Boss增伤",
    "ultimate": true
   },
   {
    "en": "Hardened Vitality",
-   "zh": "活力转防御",
+   "zh": "坚韧活力",
    "hint": "消耗活力转化为防御",
    "ultimate": false
   },
@@ -333,13 +333,13 @@
   },
   {
    "en": "Hecatomb",
-   "zh": "地牢成长",
+   "zh": "百牲祭",
    "hint": "地牢与职业经验加成，通关攒经验升级",
    "ultimate": false
   },
   {
    "en": "Ice Cold",
-   "zh": "抗寒加成",
+   "zh": "御寒",
    "hint": "+抗寒",
    "ultimate": false
   },
@@ -351,19 +351,19 @@
   },
   {
    "en": "Inferno",
-   "zh": "第十击爆发",
+   "zh": "炼狱",
    "hint": "每第十击召唤炼狱火造成大量伤害",
    "ultimate": true
   },
   {
    "en": "Infinite Quiver",
-   "zh": "省箭",
+   "zh": "无尽箭袋",
    "hint": "几率不消耗箭矢",
    "ultimate": false
   },
   {
    "en": "Karma",
-   "zh": "树礼双倍",
+   "zh": "福报",
    "hint": "树之礼物几率双倍战利品",
    "ultimate": false
   },
@@ -375,19 +375,19 @@
   },
   {
    "en": "Lapidary",
-   "zh": "宝石挖掘",
+   "zh": "琢玉",
    "hint": "挖宝石时+宝石时运和挖掘速度",
    "ultimate": false
   },
   {
    "en": "Last Stand",
-   "zh": "残血加防",
+   "zh": "背水一战",
    "hint": "低血量时防御提高",
    "ultimate": true
   },
   {
    "en": "Legion",
-   "zh": "组队加成",
+   "zh": "军团",
    "hint": "周围玩家越多全属性越高",
    "ultimate": true
   },
@@ -399,7 +399,7 @@
   },
   {
    "en": "Life Steal",
-   "zh": "命中回血",
+   "zh": "生命窃取",
    "hint": "每次命中回复生命",
    "ultimate": false
   },
@@ -429,7 +429,7 @@
   },
   {
    "en": "Magnet",
-   "zh": "钓鱼经验",
+   "zh": "磁吸",
    "hint": "钓到鱼额外经验球",
    "ultimate": false
   },
@@ -441,19 +441,19 @@
   },
   {
    "en": "Missile",
-   "zh": "投斧强化",
+   "zh": "导弹",
    "hint": "减少投掷斧的原木惩罚",
    "ultimate": true
   },
   {
    "en": "No Pain No Gain",
-   "zh": "受击得经验",
+   "zh": "无痛无获",
    "hint": "被怪物攻击时获得经验球",
    "ultimate": true
   },
   {
    "en": "One For All",
-   "zh": "独占增伤",
+   "zh": "孤注一掷",
    "hint": "移除其他所有附魔，武器伤害+500%",
    "ultimate": true
   },
@@ -465,19 +465,19 @@
   },
   {
    "en": "Paleontologist",
-   "zh": "化石寻获",
+   "zh": "古生物学家",
    "hint": "冰川矿井更易找到可疑碎片",
    "ultimate": false
   },
   {
    "en": "Pesterminator",
-   "zh": "害虫加成",
+   "zh": "灭虫大师",
    "hint": "+农业时运，害虫出现几率提升",
    "ultimate": false
   },
   {
    "en": "Petalfall",
-   "zh": "砍伐加成",
+   "zh": "落英",
    "hint": "+整树砍伐",
    "ultimate": false
   },
@@ -489,7 +489,7 @@
   },
   {
    "en": "Piscary",
-   "zh": "钓鱼速度",
+   "zh": "疾钓",
    "hint": "+钓鱼速度",
    "ultimate": false
   },
@@ -501,7 +501,7 @@
   },
   {
    "en": "Prismatic",
-   "zh": "纯净加成",
+   "zh": "棱彩",
    "hint": "+纯净（宝石品质）",
    "ultimate": false
   },
@@ -513,13 +513,13 @@
   },
   {
    "en": "Prosecute",
-   "zh": "高血增伤",
+   "zh": "问罪",
    "hint": "目标剩余血量越多伤害越高",
    "ultimate": false
   },
   {
    "en": "Prosperity",
-   "zh": "生命增益",
+   "zh": "兴旺",
    "hint": "+生命",
    "ultimate": false
   },
@@ -537,7 +537,7 @@
   },
   {
    "en": "Pyroclasm",
-   "zh": "熔岩杀手",
+   "zh": "火山之怒",
    "hint": "对岩浆系生物增伤",
    "ultimate": false
   },
@@ -549,7 +549,7 @@
   },
   {
    "en": "Quick Bite",
-   "zh": "快速咬钩",
+   "zh": "速咬",
    "hint": "鱼游向鱼漂更快",
    "ultimate": false
   },
@@ -561,25 +561,25 @@
   },
   {
    "en": "Refrigerate",
-   "zh": "法力转防御",
+   "zh": "冰封",
    "hint": "消耗法力转化为防御",
    "ultimate": true
   },
   {
    "en": "Rejuvenate",
-   "zh": "回复强化",
+   "zh": "回春",
    "hint": "+生命回复",
    "ultimate": false
   },
   {
    "en": "Rend",
-   "zh": "拔箭伤害",
+   "zh": "撕裂",
    "hint": "拔出敌人身上的箭造成伤害",
    "ultimate": true
   },
   {
    "en": "Replenish",
-   "zh": "自动补种",
+   "zh": "补种",
    "hint": "收割后自动补种",
    "ultimate": false
   },
@@ -591,13 +591,13 @@
   },
   {
    "en": "Respite",
-   "zh": "脱战回复",
+   "zh": "休憩",
    "hint": "脱离战斗时+生命回复",
    "ultimate": false
   },
   {
    "en": "Scavenger",
-   "zh": "搜刮",
+   "zh": "拾荒者",
    "hint": "击杀按怪物等级掉硬币",
    "ultimate": false
   },
@@ -615,19 +615,19 @@
   },
   {
    "en": "Small Brain",
-   "zh": "法力换真防",
+   "zh": "小脑瓜",
    "hint": "-法力，+真实防御",
    "ultimate": false
   },
   {
    "en": "Smarty Pants",
-   "zh": "法力增益",
+   "zh": "机灵鬼",
    "hint": "+法力（护腿）",
    "ultimate": false
   },
   {
    "en": "Smelting Touch",
-   "zh": "自动熔炼",
+   "zh": "熔炼之触",
    "hint": "挖到的方块直接熔炼",
    "ultimate": false
   },
@@ -639,61 +639,61 @@
   },
   {
    "en": "Smoldering",
-   "zh": "炼狱杀手",
+   "zh": "阴燃",
    "hint": "对炼狱系生物增伤",
    "ultimate": false
   },
   {
    "en": "Snipe",
-   "zh": "远射增伤",
+   "zh": "狙击",
    "hint": "箭飞得越远伤害越高",
    "ultimate": false
   },
   {
    "en": "Soul Eater",
-   "zh": "吞噬伤害",
+   "zh": "噬魂",
    "hint": "下一击继承上一只被杀怪物的伤害",
    "ultimate": true
   },
   {
    "en": "Spiked Hook",
-   "zh": "钓竿增伤",
+   "zh": "倒刺钩",
    "hint": "钓竿对怪物伤害提高",
    "ultimate": false
   },
   {
    "en": "Strong Vitality",
-   "zh": "活力转力量",
+   "zh": "强健活力",
    "hint": "消耗活力转化为力量",
    "ultimate": false
   },
   {
    "en": "Sugar Rush",
-   "zh": "速度加成",
+   "zh": "糖分冲刺",
    "hint": "+速度",
    "ultimate": false
   },
   {
    "en": "Sunset",
-   "zh": "昼夜花园",
+   "zh": "日落",
    "hint": "白天+过度绽放，夜晚访客冷却缩短",
    "ultimate": true
   },
   {
    "en": "Swarm",
-   "zh": "群敌增伤",
+   "zh": "蜂群",
    "hint": "周围敌人越多伤害越高",
    "ultimate": true
   },
   {
    "en": "Tabasco",
-   "zh": "无龙增伤",
+   "zh": "塔巴斯科",
    "hint": "未装备龙宠物时加武器伤害",
    "ultimate": false
   },
   {
    "en": "The One",
-   "zh": "收藏加成",
+   "zh": "天选",
    "hint": "每个满级收藏+生命与力量",
    "ultimate": true
   },
@@ -705,19 +705,19 @@
   },
   {
    "en": "Thunderbolt",
-   "zh": "连锁雷击",
+   "zh": "雷霆一击",
    "hint": "每三击闪电波及多个怪物",
    "ultimate": false
   },
   {
    "en": "Thunderlord",
-   "zh": "雷击",
+   "zh": "雷霆领主",
    "hint": "每三击召唤闪电",
    "ultimate": false
   },
   {
    "en": "Tidal",
-   "zh": "抗海怪",
+   "zh": "潮汐",
    "hint": "对海洋生物+防御",
    "ultimate": false
   },
@@ -729,13 +729,13 @@
   },
   {
    "en": "Toxophilite",
-   "zh": "弓手成长",
+   "zh": "箭术家",
    "hint": "战斗经验加成与暴击率，击杀攒经验升级",
    "ultimate": false
   },
   {
    "en": "Transylvanian",
-   "zh": "群敌回血",
+   "zh": "血族",
    "hint": "周围敌人越多回血越快",
    "ultimate": false
   },
@@ -753,79 +753,79 @@
   },
   {
    "en": "Turbo-Cacti",
-   "zh": "仙人掌时运",
+   "zh": "极速仙人掌",
    "hint": "+仙人掌时运",
    "ultimate": false
   },
   {
    "en": "Turbo-Cane",
-   "zh": "甘蔗时运",
+   "zh": "极速甘蔗",
    "hint": "+甘蔗时运",
    "ultimate": false
   },
   {
    "en": "Turbo-Carrot",
-   "zh": "胡萝卜时运",
+   "zh": "极速胡萝卜",
    "hint": "+胡萝卜时运",
    "ultimate": false
   },
   {
    "en": "Turbo-Cocoa",
-   "zh": "可可豆时运",
+   "zh": "极速可可豆",
    "hint": "+可可豆时运",
    "ultimate": false
   },
   {
    "en": "Turbo-Melon",
-   "zh": "西瓜时运",
+   "zh": "极速西瓜",
    "hint": "+西瓜时运",
    "ultimate": false
   },
   {
    "en": "Turbo-Moonflower",
-   "zh": "月光花时运",
+   "zh": "极速月光花",
    "hint": "+月光花时运",
    "ultimate": false
   },
   {
    "en": "Turbo-Mushrooms",
-   "zh": "蘑菇时运",
+   "zh": "极速蘑菇",
    "hint": "+蘑菇时运",
    "ultimate": false
   },
   {
    "en": "Turbo-Potato",
-   "zh": "马铃薯时运",
+   "zh": "极速马铃薯",
    "hint": "+马铃薯时运",
    "ultimate": false
   },
   {
    "en": "Turbo-Pumpkin",
-   "zh": "南瓜时运",
+   "zh": "极速南瓜",
    "hint": "+南瓜时运",
    "ultimate": false
   },
   {
    "en": "Turbo-Rose",
-   "zh": "野玫瑰时运",
+   "zh": "极速野玫瑰",
    "hint": "+野玫瑰时运",
    "ultimate": false
   },
   {
    "en": "Turbo-Sunflower",
-   "zh": "向日葵时运",
+   "zh": "极速向日葵",
    "hint": "+向日葵时运",
    "ultimate": false
   },
   {
    "en": "Turbo-Warts",
-   "zh": "下界疣时运",
+   "zh": "极速下界疣",
    "hint": "+下界疣时运",
    "ultimate": false
   },
   {
    "en": "Turbo-Wheat",
-   "zh": "小麦时运",
+   "zh": "极速小麦",
    "hint": "+小麦时运",
    "ultimate": false
   },
@@ -837,13 +837,13 @@
   },
   {
    "en": "Vampiric Vitality",
-   "zh": "活力转治疗",
+   "zh": "嗜血活力",
    "hint": "按消耗的活力回血",
    "ultimate": false
   },
   {
    "en": "Vampirism",
-   "zh": "击杀回血",
+   "zh": "吸血鬼",
    "hint": "击杀怪物回复生命",
    "ultimate": false
   },
@@ -855,19 +855,19 @@
   },
   {
    "en": "Vicious",
-   "zh": "凶暴加成",
+   "zh": "凶残",
    "hint": "+凶暴",
    "ultimate": false
   },
   {
    "en": "Vivacious Vitality",
-   "zh": "活力转攻速",
+   "zh": "灵动活力",
    "hint": "消耗活力转化为攻击速度",
    "ultimate": false
   },
   {
    "en": "Wisdom",
-   "zh": "经验转法力",
+   "zh": "博学",
    "hint": "身上经验等级越高法力越高",
    "ultimate": true
   }

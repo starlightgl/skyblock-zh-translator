@@ -2,12 +2,15 @@
 	"schemaVersion": 1,
 	"id": "hypixel-npc-and-items-translate",
 	"version": "${version}",
-	"name": "NPC & Items Translator (SkyBlock 中文增强)",
-	"description": "Translate NPC chat messages, item tooltips and GUI text in Hypixel SkyBlock and more. Supports Google Translate (free) and Groq AI. Client-side only. Fork: custom OpenAI-compatible API, custom prompt, glossary, number-placeholder cache.",
+	"name": "SkyBlock 中文翻译 (SkyBlock ZH Translator)",
+	"description": "Hypixel SkyBlock 中文翻译：NPC 对话、物品描述、侧边栏、悬浮文字和其他模组提示。支持任意 OpenAI 兼容 AI 接口、固定短语库、术语表、附魔说明，数字与倒计时自动套用缓存。基于 KALPSIZ__ 的 NPC & Items Translator（MIT）。",
 	"authors": [
-		"KALPSIZ__"
+		"KALPSIZ__",
+		"starlightgl"
 	],
-	"contact": {},
+	"contact": {
+		"sources": "https://github.com/starlightgl/skyblock-zh-translator"
+	},
 	"license": "MIT",
 	"icon": "assets/hypixel-npc-and-items-translate/icon.png",
 	"environment": "client",

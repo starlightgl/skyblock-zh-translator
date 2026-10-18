@@ -1,125 +1,126 @@
-[🇺🇸 English](https://github.com/knutolof06/hypixel-skyblock-npc-and-items-translate/blob/main/README.md) | [🇹🇷 Türkçe](https://github.com/knutolof06/hypixel-skyblock-npc-and-items-translate/blob/main/README_tr.md) | [🇷🇺 Русский](https://github.com/knutolof06/hypixel-skyblock-npc-and-items-translate/blob/main/README_ru.md) | [🇩🇪 Deutsch](https://github.com/knutolof06/hypixel-skyblock-npc-and-items-translate/blob/main/README_de.md) | [🇨🇳 中文](https://github.com/knutolof06/hypixel-skyblock-npc-and-items-translate/blob/main/README_zh.md)
+**中文增强版** | [English](README_en.md) | [Türkçe](README_tr.md) | [Русский](README_ru.md) | [Deutsch](README_de.md) | [原版中文说明](README_zh.md)
 
 ---
 
-# 🌍 NPC & Items Translator for Hypixel Skyblock & More
+# SkyBlock 中文翻译（SkyBlock ZH Translator）
 
-Language barriers should never hold you back from enjoying your favorite Minecraft servers. **NPC & Items Translator** is a fully customizable, intelligent client-side Fabric mod that seamlessly translates NPC dialogues, item descriptions, and GUI tooltips into your preferred language with AI-powered accuracy, overhead speech bubbles, and realistic voice narration (TTS)!
+一个纯客户端的 Fabric 模组，把 Hypixel SkyBlock 里的 NPC 对话、物品描述、侧边栏、悬浮文字和各类提示翻译成中文。
 
-Built especially with heavy RPG/MMO game modes like **Hypixel SkyBlock** in mind, it flawlessly handles complex color codes, dynamic lore (such as live Bazaar prices), interactive chat actions, and full multi-language UI localization.
+基于 [KALPSIZ__ 的 NPC & Items Translator](https://github.com/knutolof06/hypixel-skyblock-npc-and-items-translate)（MIT 协议）修改，针对中文玩家做了大量增强：可以接入任意 OpenAI 兼容的 AI 接口，内置固定译文和术语表，能识别数字和倒计时，尽量少调 AI、少花钱。
 
----
-
-## ✨ Core Features
-
-### 🗨️ Natural Floating Chat Bubbles (Overhead Dialogue)
-Read NPC dialogue where you're already looking! Translated messages appear directly above character heads in the 3D world:
-- **Stacked Dialogue (Comic/RPG Style):** When an NPC speaks multiple lines rapidly, previous lines don't vanish! Earlier sentences slide upward into an elegant vertical stack so you can read everything in chronological order.
-- **Dynamic Reading Duration:** Bubble display time dynamically calculates based on message length (`4s + 65ms per character`). When translation completes, extra reading time is automatically added so you never run out of time before finishing a sentence.
-- **Modern Rounded Aesthetic:** Sleek rounded comic-balloon boxes with dark slate backdrop, sky blue borders, amber gold speaker titles, and a directional pointer tail pointing down to the character.
-- **Full Control in Settings:** Toggle On/Off, adjust base display duration (3s - 15s), restrict to NPCs only, and adjust max visibility distance (6m - 32m).
-
-### 💬 Interactive Chat Translation
-Tired of copying text to your browser? A clean **[Translate]** button appears automatically next to chat messages.  
-Click it to instantly translate dialogue into your language!
-
-- **Customizable Button Position:** Place the `[Translate]` button at the **Beginning** (default) or **End** of chat messages, or hide it completely.
-- **Auto-Translate Option:** Automatically translate all incoming chat messages without clicking.
-- **Only Translate NPCs:** Only translate NPC dialogue while leaving regular player chat untouched.
-- **Safe & Reversible:** Click the language tag (e.g. `[TR]`, `[EN]`) anytime to revert the text back to its original version. All interactive click events (*"Click to open Auction House"*, etc.) are completely preserved!
-
-### 🗣️ Built-in Text-to-Speech (TTS) Voice Narration
-Hear NPC dialogue spoken out loud in your language!
-- **Natural Voice Output:** Automatically narrates translated NPC dialogue or chat messages using high-quality Google TTS.
-- **Full Customization:** Adjust **Speech Speed** (0.25x - 2.00x) and **Voice Pitch / Tone** (0.60x - 1.40x) directly in the settings menu.
-- **Cross-Platform & Safe (Zero PowerShell):**
-  - **Windows:** 100% in-memory native Windows Multimedia (`winmm.dll`) playback. No PowerShell, no external command scripts, and zero antivirus false positives.
-  - **macOS (MacBook / iMac):** Native Apple CoreAudio (`/usr/bin/afplay`) player with real-time speed control (`-r`). Works seamlessly out of the box with zero setup.
-  - **Linux:** Automatic native audio pipeline routing (`ffplay`, `mpv`, `play`).
-- **Smart Queueing:** High-speed dialogue queue ensures smooth sequential playback without stutter or overlapping audio.
-
-### 📦 On-Demand Item Tooltip Translation
-Hover over any item and press customizable hotkeys to translate item lore with your preferred engine:
-- **`G`** — Translate via **Google Translate** (Free, Instant)
-- **`X`** — Translate via **Gemini AI** (Smart, High quality)
-- **`C`** — Translate via **Groq AI** (Ultra-fast LLM)
-- **`[Configurable]`** — Translate via **Mistral AI** *(Assign key in Controls)*
-- **`[Configurable]`** — Translate via **OpenRouter AI** *(Assign key in Controls)*
-- **`V`** — Revert translation back to original
-
-*Note: Pressing the same translation key twice acts as a toggle to revert.*
-
-### 🎨 Flawless Color Code Preservation
-Unlike basic translators that break Minecraft formatting, this mod extracts `§` color codes, translates the raw meaning, and accurately reapplies the original colors.  
-Your **Epic** items stay purple, and your **Legendary** items remain orange!
-
-### 🛡️ Smart Error Handling & Automatic Model Fallback
-- If an API key is missing or invalid, an in-game warning will appear directly in the tooltip or chat.
-- **Auto-Fallback on Rate Limit:** If an AI model hits rate limits (429), the mod silently and automatically retries using the next available model from the same provider!
+- **支持版本**：Minecraft 26.2 / 26.3，Fabric
+- **前置模组**：Fabric API、YetAnotherConfigLib、ModMenu
+- 本模组与 Hypixel、Mojang 无关，非官方作品。
 
 ---
 
-## 🌐 17 Supported Languages (UI & Translation)
+## 主要功能
 
-The mod includes complete UI localization and translation support for **17 major languages**:
+### 翻译引擎
+- **自定义 AI 接口**：填 Base URL、API Key、模型名即可，支持 DeepSeek、ClinePass、各类中转站等 OpenAI 兼容接口。推理模型输出的 `<think>` 会自动去掉。翻译失败时聊天栏会显示红字原因。
+- **自定义提示词**：默认已写好 SkyBlock 背景说明，可以自己改。
+- **数字占位缓存**：翻译前把数字换成占位符，存的是句子模板。数字、价格、倒计时变了也不用重新翻，也不会一闪一闪。
 
-| Language | Code | Native Name |
-| :--- | :--- | :--- |
-| 🇬🇧 English | `en_us` | English |
-| 🇹🇷 Turkish | `tr_tr` | Türkçe |
-| 🇨🇳 Chinese (Simplified) | `zh_cn` | 简体中文 |
-| 🇪🇸 Spanish | `es_es` | Español |
-| 🇮🇳 Hindi | `hi_in` | हिन्दी |
-| 🇸🇦 Arabic | `ar_sa` | العربية |
-| 🇫🇷 French | `fr_fr` | Français |
-| 🇷🇺 Russian | `ru_ru` | Русский |
-| 🇧🇷 Portuguese (Brazil) | `pt_br` | Português (Brasil) |
-| 🇮🇩 Indonesian | `id_id` | Bahasa Indonesia |
-| 🇩🇪 German | `de_de` | Deutsch |
-| 🇯🇵 Japanese | `ja_jp` | 日本語 |
-| 🇰🇷 Korean | `ko_kr` | 한국어 |
-| 🇻🇳 Vietnamese | `vi_vn` | Tiếng Việt |
-| 🇮🇹 Italian | `it_it` | Italiano |
-| 🇵🇱 Polish | `pl_pl` | Polski |
-| 🇺🇦 Ukrainian | `uk_ua` | Українська |
+### 固定译文与术语
+- **固定短语库**：可导入 SkyBlockZH 社区语料（约 4.3 万条）。命中的句子直接显示中文，不调用 AI。一行里有多个「标签: 数值」的，会逐段翻译。
+- **术语表**：保证物品名、属性名前后统一，修改后即时生效。
+- **附魔词库与附魔说明**：145 个附魔（含全部终极附魔）都有统一译名。按住 Shift 时，每个附魔下方会显示「中文名 英文原名 一句话功能」。
+
+### 物品描述
+- 按翻译键（默认 **N**）翻译鼠标指着的物品，按 **V** 恢复原文，按 **Ctrl+N** 丢掉旧译文重新翻译。
+- 逐行替换：Skyblocker、SkyHanni 等模组加的最低价、均价这些行会原样保留。
+- 按 Shift 出现的详情会在后台自动补翻；关掉菜单再打开，翻译过的物品会自动显示译文。
+- 其他模组加在物品描述里的行，以及 Skyblocker 快捷导航这类按钮的悬停提示，也会翻译。
+
+### 世界与界面
+- 侧边栏计分板、切换物品时物品栏上方的物品名。
+- NPC 头顶的名字和副标题、全息文字、文字展示实体（真实玩家的名字不会动）。
+
+### 聊天
+- 系统提示、NPC 对话命中短语库时直接显示中文。
+- 翻译过的固定格式消息（比如 SkyHanni 的「获得了 X 硬币」）再出现时，直接用存好的译文显示。
+- 带多个可点选项的对话按选项分段翻译，点哪个就是哪个。
+- NPC 一段长话被拆成几条消息时，会带上前后句一起翻，避免意思翻错。
+- 点译文前面的 `[翻译]` 看原文，点后面的 `↻` 重新翻译。
 
 ---
 
-## ⚙️ Translation Engines
+## 安装
 
-You have full control over the translation backend through the configuration menu (`/translate` or via ModMenu, or by pressing **Z**).
+1. 安装 Fabric Loader 和前置模组：Fabric API、YetAnotherConfigLib、ModMenu。
+2. 到 [Releases](../../releases) 下载和游戏版本一致的 jar（文件名带 `mc26.2` 或 `mc26.3`），放进 `mods` 文件夹。
+3. 如果装过原版 NPC & Items Translator，要先删掉，两者的模组 ID 相同。
 
-| Engine | Description |
+## 配置
+
+游戏里输入 `/translate` 打开设置，或者在 ModMenu 里点本模组的设置按钮。
+
+**接入 AI（以 DeepSeek 为例）**：在「API → 自定义 API」里填：
+
+| 项目 | 示例 |
 |---|---|
-| 🤖 **Gemini AI** | Google's latest Gemini models (e.g. Gemini 2.5 Flash, Flash-Lite). Excellent contextual understanding and formatting retention. Get a free API key at [Google AI Studio](https://aistudio.google.com). |
-| ⚡ **Groq AI** | Ultra-fast LLMs (Llama 3.3 70B, Qwen3) to contextually understand Minecraft and MMO terminology. Get a free API key at [console.groq.com](https://console.groq.com). |
-| 🌪️ **Mistral AI** | Mistral's powerful models (Mistral Large, Ministral). Reliable and high quality. Get a free API key at [console.mistral.ai](https://console.mistral.ai). |
-| 🌍 **OpenRouter AI** | Access a wide variety of LLMs (Claude, Llama, Qwen, DeepSeek, etc.) through a single unified API. Get a key at [openrouter.ai](https://openrouter.ai). |
-| 🌐 **Google Translate** | No API key required! Enjoy unlimited, fast, and completely free translations with zero setup. |
+| Base URL | `https://api.deepseek.com/v1`（会自动补 `/chat/completions`） |
+| API Key | 你的密钥 |
+| 模型名 | `deepseek-chat` |
+
+再把「聊天翻译引擎」和「自动翻译使用的引擎」都选成 **Custom API**。
+
+**常用开关**（都在设置里）：固定短语库、翻译侧边栏、翻译悬浮文字、翻译其他模组的提示文字、记住已翻译的物品、自动显示已存的聊天译文、附魔副标题（关闭 / 按住 Shift / 一直显示）。
+
+## 指令与按键
+
+| 指令 / 按键 | 作用 |
+|---|---|
+| `/translate` | 打开设置 |
+| `/translate find 关键词` | 查看词典里包含关键词的已存译文 |
+| `/translate forget 关键词` | 删掉这些译文，下次出现时重新翻译 |
+| `/translate DeleteDict` | 清空整个词典 |
+| N | 翻译鼠标指着的物品（自定义 API） |
+| Ctrl + N | 丢掉这个物品的旧译文，跳过短语库重新翻译 |
+| V | 恢复物品原文，并且不再自动翻译这个物品 |
+| Shift | 查看附魔说明 |
+
+按键都可以在游戏的按键设置里改。
+
+## 数据文件（游戏目录 `config` 文件夹）
+
+| 文件 | 内容 |
+|---|---|
+| `npc_translator.json` | 模组设置（含 API Key，不要分享给别人） |
+| `npc_translator_dict.json` | 翻译词典，AI 翻译过的内容都存在这里 |
+| `npc_translator_glossary.json` | 术语表，左英文右中文，保存后即时生效 |
+| `npc_translator_phrasebook.json` | 固定短语库（需自行导出，见下文） |
+| `npc_translator_enchants.json` | 附魔说明：中文名、英文名、一句话功能，可自行修改 |
+
+**导出短语库和术语表**：先下载 [SkyBlockZH](https://github.com/BingKKni/SkyBlockZH) 仓库，再运行
+
+```
+python tools/export_skyblockzh.py <SkyBlockZH 文件夹> <输出文件夹>
+```
+
+把生成的两个 JSON 放进游戏的 `config` 文件夹。
+
+## 自己编译
+
+双击 `一键编译.bat`：
+
+- 没有 JDK 25 会自动下载一个便携版，放在 `jdk` 文件夹里，不影响系统。
+- 依次编译 26.2 和 26.3 两个版本，成功后 jar 会复制到上一级文件夹。
+- 只编一个版本：`gradlew.bat build -PmcTarget=26.2`
+
+## 常见问题
+
+**会被 Hypixel 封号吗？**
+这个模组只在你自己的客户端上翻译文字，不发包、不自动操作游戏，属于 Hypixel 一般允许的那类显示类模组。但规则以 Hypixel 官方为准，请自行判断。
+
+**会花很多 API 费用吗？**
+固定短语库和词典命中的内容不调用 AI。同一句话只翻一次，数字变了也不用重翻，所以玩一阵子后基本不花钱。
 
 ---
 
-## 🔧 Configuration & Commands
+## 致谢与许可
 
-- **In-game GUI:** `/translate` command, **`Z`** keybind, or `ESC → Mods → NPC & Items Translator`
-- **Dynamic Language:** Translate to your Minecraft Client Language automatically, or choose a specific Target Language.
-- **Keybinds:** `Options → Controls → Key Binds → NPC & Items Translator`
-- **Dictionary Reset:** `/translate DeleteDict` or via the in-game Hub menu.
-
----
-
-## 📦 Compatibility & Requirements
-
-- **Loader:** Fabric
-- **Supported Minecraft Versions:** `1.21.11`, `26.1`, `26.2`, `26.3`
-- **Dependencies:** 
-  - [Fabric API](https://modrinth.com/mod/fabric-api)
-  - [YetAnotherConfigLib (YACL)](https://modrinth.com/mod/yacl)
-  - [ModMenu](https://modrinth.com/mod/modmenu)
-- **Side:** Client-side ONLY — 100% safe to use on multiplayer servers including Hypixel!
-
----
-
-## 📄 License
-
-MIT License
+- 原模组：[KALPSIZ__ / NPC & Items Translator](https://github.com/knutolof06/hypixel-skyblock-npc-and-items-translate)，MIT 协议。本项目的代码同样以 MIT 协议发布，见 [LICENSE](LICENSE)。
+- 固定短语库和术语表的数据来自 [SkyBlockZH](https://github.com/BingKKni/SkyBlockZH)，GPL-3.0 协议。本仓库只包含导出脚本，不包含这份数据；如果你分发导出的数据，请遵守 GPL-3.0 并注明出处。
+- 附魔译名参考了 Minecraft 官方中文译名和 [Hypixel 空岛生存中文维基](https://hypixel-skyblock.fandom.com/zh/wiki/%E9%99%84%E9%AD%94)。
+- Hypixel、Hypixel SkyBlock 是 Hypixel Inc. 的商标；Minecraft 是 Mojang Studios 的商标。本项目与它们无关。

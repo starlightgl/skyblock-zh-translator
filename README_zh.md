@@ -1,4 +1,4 @@
-[🇺🇸 English](https://github.com/knutolof06/hypixel-skyblock-npc-and-items-translate/blob/main/README.md) | [🇹🇷 Türkçe](https://github.com/knutolof06/hypixel-skyblock-npc-and-items-translate/blob/main/README_tr.md) | [🇷🇺 Русский](https://github.com/knutolof06/hypixel-skyblock-npc-and-items-translate/blob/main/README_ru.md) | [🇩🇪 Deutsch](https://github.com/knutolof06/hypixel-skyblock-npc-and-items-translate/blob/main/README_de.md) | [🇨🇳 中文](https://github.com/knutolof06/hypixel-skyblock-npc-and-items-translate/blob/main/README_zh.md)
+[🇨🇳 中文增强版](README.md) | [🇺🇸 English](README_en.md) | [🇹🇷 Türkçe](README_tr.md) | [🇷🇺 Русский](README_ru.md) | [🇩🇪 Deutsch](README_de.md) | [🇨🇳 中文](README_zh.md)
 
 ---
 

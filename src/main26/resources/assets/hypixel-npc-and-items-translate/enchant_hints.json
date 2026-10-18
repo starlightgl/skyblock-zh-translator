@@ -1,0 +1,875 @@
+{
+ "_说明": "附魔副标题数据：en=英文名，zh=中文名，hint=简短功能。可自由修改，保存后重进游戏生效。",
+ "enchants": [
+  {
+   "en": "Absorb",
+   "zh": "伐木成长",
+   "hint": "砍原木攒林业智慧与时运",
+   "ultimate": false
+  },
+  {
+   "en": "Angler",
+   "zh": "海怪几率",
+   "hint": "+海洋生物几率",
+   "ultimate": false
+  },
+  {
+   "en": "Aqua Affinity",
+   "zh": "水下速掘",
+   "hint": "水下挖掘不减速",
+   "ultimate": false
+  },
+  {
+   "en": "Bane of Arthropods",
+   "zh": "节肢杀手",
+   "hint": "对节肢生物增伤",
+   "ultimate": false
+  },
+  {
+   "en": "Bank",
+   "zh": "死亡保币",
+   "hint": "死亡时保住部分硬币，击杀多掉硬币",
+   "ultimate": true
+  },
+  {
+   "en": "Big Brain",
+   "zh": "法力强化",
+   "hint": "+法力（头盔）",
+   "ultimate": false
+  },
+  {
+   "en": "Blast Protection",
+   "zh": "爆炸保护",
+   "hint": "防御爆炸伤害",
+   "ultimate": false
+  },
+  {
+   "en": "Blessing",
+   "zh": "宝藏品质",
+   "hint": "宝藏渔获更易出好品质",
+   "ultimate": false
+  },
+  {
+   "en": "Bobbin' Time",
+   "zh": "群钓加成",
+   "hint": "周围鱼漂越多钓鱼属性越高",
+   "ultimate": true
+  },
+  {
+   "en": "Caster",
+   "zh": "省饵",
+   "hint": "几率不消耗鱼饵",
+   "ultimate": false
+  },
+  {
+   "en": "Cayenne",
+   "zh": "饰品血防",
+   "hint": "按饰品之力位数加生命和真实防御",
+   "ultimate": false
+  },
+  {
+   "en": "Champion",
+   "zh": "战斗成长",
+   "hint": "战斗经验加成，击杀攒经验升级",
+   "ultimate": false
+  },
+  {
+   "en": "Chance",
+   "zh": "弓箭抢夺",
+   "hint": "弓箭击杀掉落几率提升",
+   "ultimate": false
+  },
+  {
+   "en": "Charm",
+   "zh": "奖杯鱼品质",
+   "hint": "更易钓到高阶奖杯鱼",
+   "ultimate": false
+  },
+  {
+   "en": "Chimera",
+   "zh": "奇美拉",
+   "hint": "复制当前宠物的属性",
+   "ultimate": true
+  },
+  {
+   "en": "Cleave",
+   "zh": "溅射",
+   "hint": "伤害波及周围怪物",
+   "ultimate": false
+  },
+  {
+   "en": "Combo",
+   "zh": "连杀增伤",
+   "hint": "短时间内连续击杀叠加伤害",
+   "ultimate": true
+  },
+  {
+   "en": "Compact",
+   "zh": "压缩",
+   "hint": "挖矿成长，几率直接掉附魔物品",
+   "ultimate": false
+  },
+  {
+   "en": "Corruption",
+   "zh": "腐化海怪",
+   "hint": "几率生成腐化海洋生物",
+   "ultimate": false
+  },
+  {
+   "en": "Counter-Strike",
+   "zh": "受击加防",
+   "hint": "受到首次攻击后短时加防御",
+   "ultimate": false
+  },
+  {
+   "en": "Critical",
+   "zh": "暴击",
+   "hint": "暴击伤害提升",
+   "ultimate": false
+  },
+  {
+   "en": "Cubism",
+   "zh": "立方杀手",
+   "hint": "对史莱姆/岩浆怪/苦力怕增伤",
+   "ultimate": false
+  },
+  {
+   "en": "Cultivating",
+   "zh": "耕作成长",
+   "hint": "收割作物攒农业智慧与时运",
+   "ultimate": false
+  },
+  {
+   "en": "Dedication",
+   "zh": "里程碑时运",
+   "hint": "按花园作物里程碑+农业时运",
+   "ultimate": false
+  },
+  {
+   "en": "Delicate",
+   "zh": "保护幼苗",
+   "hint": "不破坏茎和未成熟作物",
+   "ultimate": false
+  },
+  {
+   "en": "Depth Strider",
+   "zh": "深海探索者",
+   "hint": "水中移动更快",
+   "ultimate": false
+  },
+  {
+   "en": "Divine Gift",
+   "zh": "寻宝加成",
+   "hint": "+魔法寻宝",
+   "ultimate": false
+  },
+  {
+   "en": "Dragon Tracer",
+   "zh": "追龙",
+   "hint": "箭矢自动追踪末影龙",
+   "ultimate": false
+  },
+  {
+   "en": "Drain",
+   "zh": "活力汲取",
+   "hint": "命中回复活力",
+   "ultimate": false
+  },
+  {
+   "en": "Duplex",
+   "zh": "双箭",
+   "hint": "额外射出一支伤害较低的箭",
+   "ultimate": true
+  },
+  {
+   "en": "Efficiency",
+   "zh": "效率",
+   "hint": "挖掘速度提升",
+   "ultimate": false
+  },
+  {
+   "en": "Ender Slayer",
+   "zh": "末影杀手",
+   "hint": "对末影生物增伤",
+   "ultimate": false
+  },
+  {
+   "en": "Execute",
+   "zh": "斩杀",
+   "hint": "目标损失血量越多伤害越高",
+   "ultimate": false
+  },
+  {
+   "en": "Experience",
+   "zh": "经验",
+   "hint": "怪物/矿石双倍经验几率",
+   "ultimate": false
+  },
+  {
+   "en": "Expertise",
+   "zh": "钓鱼成长",
+   "hint": "击杀海洋生物攒钓鱼智慧",
+   "ultimate": false
+  },
+  {
+   "en": "Fatal Tempo",
+   "zh": "叠加凶暴",
+   "hint": "连续攻击叠加凶暴",
+   "ultimate": true
+  },
+  {
+   "en": "Feast",
+   "zh": "绽放加成",
+   "hint": "+过度绽放",
+   "ultimate": false
+  },
+  {
+   "en": "Feather Falling",
+   "zh": "摔落缓冲",
+   "hint": "减少摔落伤害",
+   "ultimate": false
+  },
+  {
+   "en": "Fire Aspect",
+   "zh": "火焰附加",
+   "hint": "点燃目标持续伤害",
+   "ultimate": false
+  },
+  {
+   "en": "Fire Protection",
+   "zh": "火焰保护",
+   "hint": "防御火焰与岩浆伤害",
+   "ultimate": false
+  },
+  {
+   "en": "First Impression",
+   "zh": "首砍增益",
+   "hint": "近战砍树加横扫，每棵树首砍额外收益",
+   "ultimate": true
+  },
+  {
+   "en": "First Strike",
+   "zh": "首击增伤",
+   "hint": "对每只怪的第一击增伤",
+   "ultimate": false
+  },
+  {
+   "en": "Flame",
+   "zh": "火矢",
+   "hint": "箭矢点燃目标",
+   "ultimate": false
+  },
+  {
+   "en": "Flash",
+   "zh": "瞬间上钩",
+   "hint": "几率立刻钓到鱼",
+   "ultimate": true
+  },
+  {
+   "en": "Flowstate",
+   "zh": "连挖加速",
+   "hint": "连续挖掘叠加挖掘速度",
+   "ultimate": true
+  },
+  {
+   "en": "Fortune",
+   "zh": "时运",
+   "hint": "+挖掘时运",
+   "ultimate": false
+  },
+  {
+   "en": "Frail",
+   "zh": "海怪减血",
+   "hint": "海洋生物出生时血量降低",
+   "ultimate": false
+  },
+  {
+   "en": "Frost Walker",
+   "zh": "冰霜行者",
+   "hint": "水面结冰行走",
+   "ultimate": false
+  },
+  {
+   "en": "Giant Killer",
+   "zh": "巨人杀手",
+   "hint": "目标血量上限比你高时增伤",
+   "ultimate": false
+  },
+  {
+   "en": "Gravity",
+   "zh": "对空杀手",
+   "hint": "对飞行生物增伤",
+   "ultimate": false
+  },
+  {
+   "en": "Green Thumb",
+   "zh": "访客时运",
+   "hint": "按招待过的访客数+农业时运",
+   "ultimate": false
+  },
+  {
+   "en": "Growth",
+   "zh": "生命强化",
+   "hint": "+生命（盔甲）",
+   "ultimate": false
+  },
+  {
+   "en": "Habanero Tactics",
+   "zh": "猎手战术",
+   "hint": "魔杖治疗更多，对猎手Boss增伤",
+   "ultimate": true
+  },
+  {
+   "en": "Hardened Vitality",
+   "zh": "活力转防御",
+   "hint": "消耗活力转化为防御",
+   "ultimate": false
+  },
+  {
+   "en": "Harvesting",
+   "zh": "丰收",
+   "hint": "+农业时运",
+   "ultimate": false
+  },
+  {
+   "en": "Hecatomb",
+   "zh": "地牢成长",
+   "hint": "地牢与职业经验加成，通关攒经验升级",
+   "ultimate": false
+  },
+  {
+   "en": "Ice Cold",
+   "zh": "抗寒加成",
+   "hint": "+抗寒",
+   "ultimate": false
+  },
+  {
+   "en": "Impaling",
+   "zh": "穿刺",
+   "hint": "对水生生物增伤",
+   "ultimate": false
+  },
+  {
+   "en": "Inferno",
+   "zh": "第十击爆发",
+   "hint": "每第十击召唤炼狱火造成大量伤害",
+   "ultimate": true
+  },
+  {
+   "en": "Infinite Quiver",
+   "zh": "省箭",
+   "hint": "几率不消耗箭矢",
+   "ultimate": false
+  },
+  {
+   "en": "Karma",
+   "zh": "树礼双倍",
+   "hint": "树之礼物几率双倍战利品",
+   "ultimate": false
+  },
+  {
+   "en": "Knockback",
+   "zh": "击退",
+   "hint": "击退距离增加",
+   "ultimate": false
+  },
+  {
+   "en": "Lapidary",
+   "zh": "宝石挖掘",
+   "hint": "挖宝石时+宝石时运和挖掘速度",
+   "ultimate": false
+  },
+  {
+   "en": "Last Stand",
+   "zh": "残血加防",
+   "hint": "低血量时防御提高",
+   "ultimate": true
+  },
+  {
+   "en": "Legion",
+   "zh": "组队加成",
+   "hint": "周围玩家越多全属性越高",
+   "ultimate": true
+  },
+  {
+   "en": "Lethality",
+   "zh": "破甲",
+   "hint": "近战削减目标防御，可叠加",
+   "ultimate": false
+  },
+  {
+   "en": "Life Steal",
+   "zh": "命中回血",
+   "hint": "每次命中回复生命",
+   "ultimate": false
+  },
+  {
+   "en": "Looting",
+   "zh": "抢夺",
+   "hint": "怪物掉落几率提升",
+   "ultimate": false
+  },
+  {
+   "en": "Luck",
+   "zh": "幸运",
+   "hint": "怪物掉落盔甲几率提升",
+   "ultimate": false
+  },
+  {
+   "en": "Luck of the Sea",
+   "zh": "海之眷顾",
+   "hint": "+宝藏几率",
+   "ultimate": false
+  },
+  {
+   "en": "Lure",
+   "zh": "饵钓",
+   "hint": "上钩更快",
+   "ultimate": false
+  },
+  {
+   "en": "Magnet",
+   "zh": "钓鱼经验",
+   "hint": "钓到鱼额外经验球",
+   "ultimate": false
+  },
+  {
+   "en": "Mana Steal",
+   "zh": "法力窃取",
+   "hint": "命中回复法力值",
+   "ultimate": false
+  },
+  {
+   "en": "Missile",
+   "zh": "投斧强化",
+   "hint": "减少投掷斧的原木惩罚",
+   "ultimate": true
+  },
+  {
+   "en": "No Pain No Gain",
+   "zh": "受击得经验",
+   "hint": "被怪物攻击时获得经验球",
+   "ultimate": true
+  },
+  {
+   "en": "One For All",
+   "zh": "独占增伤",
+   "hint": "移除其他所有附魔，武器伤害+500%",
+   "ultimate": true
+  },
+  {
+   "en": "Overload",
+   "zh": "过载",
+   "hint": "暴击率超过100%的部分转为额外暴击",
+   "ultimate": false
+  },
+  {
+   "en": "Paleontologist",
+   "zh": "化石寻获",
+   "hint": "冰川矿井更易找到可疑碎片",
+   "ultimate": false
+  },
+  {
+   "en": "Pesterminator",
+   "zh": "害虫加成",
+   "hint": "+农业时运，害虫出现几率提升",
+   "ultimate": false
+  },
+  {
+   "en": "Petalfall",
+   "zh": "砍伐加成",
+   "hint": "+整树砍伐",
+   "ultimate": false
+  },
+  {
+   "en": "Piercing",
+   "zh": "穿透",
+   "hint": "箭矢穿透敌人",
+   "ultimate": false
+  },
+  {
+   "en": "Piscary",
+   "zh": "钓鱼速度",
+   "hint": "+钓鱼速度",
+   "ultimate": false
+  },
+  {
+   "en": "Power",
+   "zh": "强弓",
+   "hint": "弓箭伤害提升",
+   "ultimate": false
+  },
+  {
+   "en": "Prismatic",
+   "zh": "纯净加成",
+   "hint": "+纯净（宝石品质）",
+   "ultimate": false
+  },
+  {
+   "en": "Projectile Protection",
+   "zh": "弹射物保护",
+   "hint": "防御弹射物伤害",
+   "ultimate": false
+  },
+  {
+   "en": "Prosecute",
+   "zh": "高血增伤",
+   "hint": "目标剩余血量越多伤害越高",
+   "ultimate": false
+  },
+  {
+   "en": "Prosperity",
+   "zh": "生命增益",
+   "hint": "+生命",
+   "ultimate": false
+  },
+  {
+   "en": "Protection",
+   "zh": "保护",
+   "hint": "+防御",
+   "ultimate": false
+  },
+  {
+   "en": "Punch",
+   "zh": "冲击",
+   "hint": "箭矢击退增加",
+   "ultimate": false
+  },
+  {
+   "en": "Pyroclasm",
+   "zh": "熔岩杀手",
+   "hint": "对岩浆系生物增伤",
+   "ultimate": false
+  },
+  {
+   "en": "Quantum",
+   "zh": "量子",
+   "hint": "工作日+活力，周末+随机智慧",
+   "ultimate": false
+  },
+  {
+   "en": "Quick Bite",
+   "zh": "快速咬钩",
+   "hint": "鱼游向鱼漂更快",
+   "ultimate": false
+  },
+  {
+   "en": "Reflection",
+   "zh": "反射",
+   "hint": "加法力与真实防御，被箭射中时反伤",
+   "ultimate": false
+  },
+  {
+   "en": "Refrigerate",
+   "zh": "法力转防御",
+   "hint": "消耗法力转化为防御",
+   "ultimate": true
+  },
+  {
+   "en": "Rejuvenate",
+   "zh": "回复强化",
+   "hint": "+生命回复",
+   "ultimate": false
+  },
+  {
+   "en": "Rend",
+   "zh": "拔箭伤害",
+   "hint": "拔出敌人身上的箭造成伤害",
+   "ultimate": true
+  },
+  {
+   "en": "Replenish",
+   "zh": "自动补种",
+   "hint": "收割后自动补种",
+   "ultimate": false
+  },
+  {
+   "en": "Respiration",
+   "zh": "水下呼吸",
+   "hint": "水下憋气更久",
+   "ultimate": false
+  },
+  {
+   "en": "Respite",
+   "zh": "脱战回复",
+   "hint": "脱离战斗时+生命回复",
+   "ultimate": false
+  },
+  {
+   "en": "Scavenger",
+   "zh": "搜刮",
+   "hint": "击杀按怪物等级掉硬币",
+   "ultimate": false
+  },
+  {
+   "en": "Sharpness",
+   "zh": "锋利",
+   "hint": "近战伤害提升",
+   "ultimate": false
+  },
+  {
+   "en": "Silk Touch",
+   "zh": "精准采集",
+   "hint": "方块掉落本身",
+   "ultimate": false
+  },
+  {
+   "en": "Small Brain",
+   "zh": "法力换真防",
+   "hint": "-法力，+真实防御",
+   "ultimate": false
+  },
+  {
+   "en": "Smarty Pants",
+   "zh": "法力增益",
+   "hint": "+法力（护腿）",
+   "ultimate": false
+  },
+  {
+   "en": "Smelting Touch",
+   "zh": "自动熔炼",
+   "hint": "挖到的方块直接熔炼",
+   "ultimate": false
+  },
+  {
+   "en": "Smite",
+   "zh": "亡灵杀手",
+   "hint": "对亡灵/凋零/骷髅增伤",
+   "ultimate": false
+  },
+  {
+   "en": "Smoldering",
+   "zh": "炼狱杀手",
+   "hint": "对炼狱系生物增伤",
+   "ultimate": false
+  },
+  {
+   "en": "Snipe",
+   "zh": "远射增伤",
+   "hint": "箭飞得越远伤害越高",
+   "ultimate": false
+  },
+  {
+   "en": "Soul Eater",
+   "zh": "吞噬伤害",
+   "hint": "下一击继承上一只被杀怪物的伤害",
+   "ultimate": true
+  },
+  {
+   "en": "Spiked Hook",
+   "zh": "钓竿增伤",
+   "hint": "钓竿对怪物伤害提高",
+   "ultimate": false
+  },
+  {
+   "en": "Strong Vitality",
+   "zh": "活力转力量",
+   "hint": "消耗活力转化为力量",
+   "ultimate": false
+  },
+  {
+   "en": "Sugar Rush",
+   "zh": "速度加成",
+   "hint": "+速度",
+   "ultimate": false
+  },
+  {
+   "en": "Sunset",
+   "zh": "昼夜花园",
+   "hint": "白天+过度绽放，夜晚访客冷却缩短",
+   "ultimate": true
+  },
+  {
+   "en": "Swarm",
+   "zh": "群敌增伤",
+   "hint": "周围敌人越多伤害越高",
+   "ultimate": true
+  },
+  {
+   "en": "Tabasco",
+   "zh": "无龙增伤",
+   "hint": "未装备龙宠物时加武器伤害",
+   "ultimate": false
+  },
+  {
+   "en": "The One",
+   "zh": "收藏加成",
+   "hint": "每个满级收藏+生命与力量",
+   "ultimate": true
+  },
+  {
+   "en": "Thorns",
+   "zh": "荆棘",
+   "hint": "几率反弹受到的伤害",
+   "ultimate": false
+  },
+  {
+   "en": "Thunderbolt",
+   "zh": "连锁雷击",
+   "hint": "每三击闪电波及多个怪物",
+   "ultimate": false
+  },
+  {
+   "en": "Thunderlord",
+   "zh": "雷击",
+   "hint": "每三击召唤闪电",
+   "ultimate": false
+  },
+  {
+   "en": "Tidal",
+   "zh": "抗海怪",
+   "hint": "对海洋生物+防御",
+   "ultimate": false
+  },
+  {
+   "en": "Titan Killer",
+   "zh": "泰坦杀手",
+   "hint": "目标防御越高伤害越高",
+   "ultimate": false
+  },
+  {
+   "en": "Toxophilite",
+   "zh": "弓手成长",
+   "hint": "战斗经验加成与暴击率，击杀攒经验升级",
+   "ultimate": false
+  },
+  {
+   "en": "Transylvanian",
+   "zh": "群敌回血",
+   "hint": "周围敌人越多回血越快",
+   "ultimate": false
+  },
+  {
+   "en": "Triple-Strike",
+   "zh": "三连击",
+   "hint": "对每只怪的前三击增伤",
+   "ultimate": false
+  },
+  {
+   "en": "True Protection",
+   "zh": "真实保护",
+   "hint": "+真实防御",
+   "ultimate": false
+  },
+  {
+   "en": "Turbo-Cacti",
+   "zh": "仙人掌时运",
+   "hint": "+仙人掌时运",
+   "ultimate": false
+  },
+  {
+   "en": "Turbo-Cane",
+   "zh": "甘蔗时运",
+   "hint": "+甘蔗时运",
+   "ultimate": false
+  },
+  {
+   "en": "Turbo-Carrot",
+   "zh": "胡萝卜时运",
+   "hint": "+胡萝卜时运",
+   "ultimate": false
+  },
+  {
+   "en": "Turbo-Cocoa",
+   "zh": "可可豆时运",
+   "hint": "+可可豆时运",
+   "ultimate": false
+  },
+  {
+   "en": "Turbo-Melon",
+   "zh": "西瓜时运",
+   "hint": "+西瓜时运",
+   "ultimate": false
+  },
+  {
+   "en": "Turbo-Moonflower",
+   "zh": "月光花时运",
+   "hint": "+月光花时运",
+   "ultimate": false
+  },
+  {
+   "en": "Turbo-Mushrooms",
+   "zh": "蘑菇时运",
+   "hint": "+蘑菇时运",
+   "ultimate": false
+  },
+  {
+   "en": "Turbo-Potato",
+   "zh": "马铃薯时运",
+   "hint": "+马铃薯时运",
+   "ultimate": false
+  },
+  {
+   "en": "Turbo-Pumpkin",
+   "zh": "南瓜时运",
+   "hint": "+南瓜时运",
+   "ultimate": false
+  },
+  {
+   "en": "Turbo-Rose",
+   "zh": "野玫瑰时运",
+   "hint": "+野玫瑰时运",
+   "ultimate": false
+  },
+  {
+   "en": "Turbo-Sunflower",
+   "zh": "向日葵时运",
+   "hint": "+向日葵时运",
+   "ultimate": false
+  },
+  {
+   "en": "Turbo-Warts",
+   "zh": "下界疣时运",
+   "hint": "+下界疣时运",
+   "ultimate": false
+  },
+  {
+   "en": "Turbo-Wheat",
+   "zh": "小麦时运",
+   "hint": "+小麦时运",
+   "ultimate": false
+  },
+  {
+   "en": "Ultimate Wise",
+   "zh": "终极智慧",
+   "hint": "降低武器技能的法力消耗",
+   "ultimate": true
+  },
+  {
+   "en": "Vampiric Vitality",
+   "zh": "活力转治疗",
+   "hint": "按消耗的活力回血",
+   "ultimate": false
+  },
+  {
+   "en": "Vampirism",
+   "zh": "击杀回血",
+   "hint": "击杀怪物回复生命",
+   "ultimate": false
+  },
+  {
+   "en": "Venomous",
+   "zh": "剧毒",
+   "hint": "命中减速并持续掉血",
+   "ultimate": false
+  },
+  {
+   "en": "Vicious",
+   "zh": "凶暴加成",
+   "hint": "+凶暴",
+   "ultimate": false
+  },
+  {
+   "en": "Vivacious Vitality",
+   "zh": "活力转攻速",
+   "hint": "消耗活力转化为攻击速度",
+   "ultimate": false
+  },
+  {
+   "en": "Wisdom",
+   "zh": "经验转法力",
+   "hint": "身上经验等级越高法力越高",
+   "ultimate": true
+  }
+ ]
+}

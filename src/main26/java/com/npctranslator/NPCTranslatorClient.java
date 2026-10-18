@@ -1649,11 +1649,48 @@ public class NPCTranslatorClient implements ClientModInitializer {
 
         if (config.translateModTooltips) translateForeignLines(stack, tooltip);
         handleTooltipStateAndRender(tooltip, cacheKey);
+        appendEnchantHints(tooltip);
 
         Set<String> known = new HashSet<>();
         for (Component c : tooltip) known.add(c.getString());
         lastItemLines = known;
         lastItemLinesAt = System.currentTimeMillis();
+    }
+
+    // ── 中文增强版：附魔副标题 ─────────────────────────────────────────
+    private static void appendEnchantHints(List<Component> tooltip) {
+        ModConfig.EnchantHintMode mode = config.enchantHintMode != null ? config.enchantHintMode : ModConfig.EnchantHintMode.SHIFT;
+        if (mode == ModConfig.EnchantHintMode.OFF) return;
+        List<EnchantHints.Entry> found = EnchantHints.find(tooltip);
+        if (found.isEmpty()) return;
+        if (mode == ModConfig.EnchantHintMode.SHIFT && !isShiftDown()) {
+            tooltip.add(Component.translatable("npctranslator.enchant_hint.press_shift").withStyle(ChatFormatting.DARK_GRAY));
+            return;
+        }
+        tooltip.add(Component.empty());
+        tooltip.add(Component.translatable("npctranslator.enchant_hint.header").withStyle(ChatFormatting.GRAY));
+        int shown = 0;
+        for (EnchantHints.Entry e : found) {
+            if (++shown > 20) break;
+            tooltip.add(EnchantHints.line(e));
+        }
+    }
+
+    private static boolean isShiftDown() {
+        Minecraft client = Minecraft.getInstance();
+        if (client == null) return false;
+        for (int code : new int[]{340, 344}) { // GLFW left / right shift
+            try {
+                try {
+                    java.lang.reflect.Method m = InputConstants.class.getMethod("isKeyDown", int.class);
+                    if ((boolean) m.invoke(null, code)) return true;
+                } catch (NoSuchMethodException e) {
+                    java.lang.reflect.Method m = InputConstants.class.getMethod("isKeyDown", com.mojang.blaze3d.platform.Window.class, int.class);
+                    if (client.getWindow() != null && (boolean) m.invoke(null, client.getWindow(), code)) return true;
+                }
+            } catch (Exception ignored) {}
+        }
+        return false;
     }
 
     // ── 中文增强版：其他模组加进提示框的文字（价格行、按钮提示等） ──────────

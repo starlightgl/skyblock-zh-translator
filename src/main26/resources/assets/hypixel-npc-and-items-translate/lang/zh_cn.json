@@ -188,5 +188,12 @@
   "text.autoconfig.npc_translator.option.translateModTooltips": "翻译其他模组的提示文字",
   "text.autoconfig.npc_translator.option.translateModTooltips.tooltip": "翻译其他模组加在物品描述里的行（最低 BIN、几日均价、集市价格等），以及 Skyblocker 快捷导航这类按钮的悬停提示。先查短语库和词典，没有的在后台交给“自动翻译使用的引擎”，数字会自动套用，价格变了也不用重新翻。",
   "text.autoconfig.npc_translator.option.autoShowStoredChat": "自动显示已存的聊天译文",
-  "text.autoconfig.npc_translator.option.autoShowStoredChat.tooltip": "翻译过的聊天消息（文字相同，数字不同也算）再出现时直接用词典里的译文显示，不调用 AI。比如 SkyHanni 的“获得了 X 硬币”这类固定格式提示。点前面的 [翻译] 可以看原文。"
+  "text.autoconfig.npc_translator.option.autoShowStoredChat.tooltip": "翻译过的聊天消息（文字相同，数字不同也算）再出现时直接用词典里的译文显示，不调用 AI。比如 SkyHanni 的“获得了 X 硬币”这类固定格式提示。点前面的 [翻译] 可以看原文。",
+  "text.autoconfig.npc_translator.option.enchantHintMode": "附魔副标题",
+  "text.autoconfig.npc_translator.option.enchantHintMode.tooltip": "在物品描述下方逐个列出附魔：中文名、英文原名和一句话功能。内容可以在 config/npc_translator_enchants.json 里改。",
+  "npctranslator.config.enchant_hint.off": "关闭",
+  "npctranslator.config.enchant_hint.shift": "按住 Shift 显示",
+  "npctranslator.config.enchant_hint.always": "一直显示",
+  "npctranslator.enchant_hint.header": "附魔说明：",
+  "npctranslator.enchant_hint.press_shift": "按住 Shift 查看附魔说明"
 }

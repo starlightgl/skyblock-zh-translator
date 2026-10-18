@@ -136,8 +136,22 @@ public class ModConfig {
     public boolean translateWorldText = true;
     /** Translate lines other mods add to tooltips (prices etc.) and widget/button tooltips. */
     public boolean translateModTooltips = true;
+    /** Grey subtitle per enchantment ("中文名 English - function") under item tooltips. */
+    public EnchantHintMode enchantHintMode = EnchantHintMode.SHIFT;
     /** Let sidebar lines / item names without a known translation be sent to the AI (auto-translate provider). */
     public boolean hudUseAI = true;
+
+    public enum EnchantHintMode {
+        OFF("npctranslator.config.enchant_hint.off"),
+        SHIFT("npctranslator.config.enchant_hint.shift"),
+        ALWAYS("npctranslator.config.enchant_hint.always");
+
+        public final String key;
+
+        EnchantHintMode(String key) {
+            this.key = key;
+        }
+    }
 
     public enum ButtonPosition {
         START("npctranslator.config.button_position.start"),

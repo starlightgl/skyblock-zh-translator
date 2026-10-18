@@ -1395,11 +1395,22 @@ public class NPCTranslatorClient implements ClientModInitializer {
                         // Replace only the lines we translated. Lines added by other mods (prices, etc.)
                         // or lines that changed since the translation stay exactly as they are.
                         List<Component> rebuilt = new ArrayList<>(tooltip.size());
+                        List<String> unmatched = null;
                         for (Component line : tooltip) {
-                            List<Component> repl = lineMap.get(toFormattedString(line).trim());
-                            if (repl == null) rebuilt.add(line);
-                            else rebuilt.addAll(repl);
+                            String key = toFormattedString(line).trim();
+                            List<Component> repl = lineMap.get(key);
+                            if (repl == null) {
+                                rebuilt.add(line);
+                                // e.g. the extra lines shown while holding Shift, or price lines from other mods
+                                if (WORD.matcher(TranslationUtil.stripColorCodes(key)).find()) {
+                                    if (unmatched == null) unmatched = new ArrayList<>();
+                                    unmatched.add(key);
+                                }
+                            } else {
+                                rebuilt.addAll(repl);
+                            }
                         }
+                        if (unmatched != null) translateExtraLines(cacheKey, unmatched, provider);
                         tooltip.clear();
                         tooltip.addAll(rebuilt);
                     } else {
@@ -1497,6 +1508,75 @@ public class NPCTranslatorClient implements ClientModInitializer {
             if (n.isEmpty() || n.equals("-") || n.equals("NONE")) return def;
             return n;
         } catch (Exception e) { return def; }
+    }
+
+    private static final java.util.regex.Pattern WORD = java.util.regex.Pattern.compile("[A-Za-z]{2,}");
+    private static final Set<String> EXTRA_PENDING = Collections.newSetFromMap(new ConcurrentHashMap<>());
+    private static final Map<String, Long> EXTRA_LAST = new ConcurrentHashMap<>();
+
+    /**
+     * Lines that show up after an item was translated (Shift details, other mods' price lines,
+     * changed lore) are translated in the background and added to that item's line map.
+     */
+    private static void translateExtraLines(String cacheKey, List<String> lines, ModConfig.TranslationProvider provider) {
+        Map<String, List<Component>> lineMap = ITEM_LINE_MAP.get(cacheKey);
+        if (lineMap == null || lineMap.size() > 400) return;
+        long now = System.currentTimeMillis();
+        Long last = EXTRA_LAST.get(cacheKey);
+        if (last != null && now - last < 1500L) return;
+        if (!EXTRA_PENDING.add(cacheKey)) return;
+        EXTRA_LAST.put(cacheKey, now);
+        if (EXTRA_LAST.size() > 2000) EXTRA_LAST.clear();
+        List<String> todo = new ArrayList<>(new LinkedHashSet<>(lines));
+        CompletableFuture.runAsync(() -> {
+            try {
+                String providerName = provider.name();
+                String langCode = getEffectiveLanguageCode();
+                String targetLang = config.useGameLanguage ? ("the language for locale code: " + langCode) : config.targetLanguage.englishName;
+                Map<String, String> done = new HashMap<>();
+                List<String> missing = new ArrayList<>();
+                for (String line : todo) {
+                    String fixedTr = config.usePhrasebook ? PhraseBook.translate(line) : null;
+                    if (fixedTr != null) { done.put(line, fixedTr); continue; }
+                    TranslationUtil.Template t = config.normalizeNumbers ? TranslationUtil.normalize(line) : TranslationUtil.Template.raw(line);
+                    String tr = TranslationDictionary.get(t.text, providerName);
+                    if (tr != null && !tr.isEmpty()) done.put(line, TranslationUtil.restore(tr, t.numbers));
+                    else if (!missing.contains(t.text)) missing.add(t.text);
+                }
+                if (!missing.isEmpty()) {
+                    Map<Integer, String> result = translateBatch(missing, langCode, targetLang, provider);
+                    boolean changed = false;
+                    for (Map.Entry<Integer, String> e : result.entrySet()) {
+                        String template = missing.get(e.getKey());
+                        if (TranslationUtil.placeholdersMatch(template, e.getValue())) {
+                            TranslationDictionary.put(template, e.getValue(), providerName);
+                            changed = true;
+                        }
+                    }
+                    if (changed) TranslationDictionary.save();
+                    for (String line : todo) {
+                        if (done.containsKey(line)) continue;
+                        TranslationUtil.Template t = config.normalizeNumbers ? TranslationUtil.normalize(line) : TranslationUtil.Template.raw(line);
+                        String tr = TranslationDictionary.get(t.text, providerName);
+                        if (tr != null && !tr.isEmpty()) done.put(line, TranslationUtil.restore(tr, t.numbers));
+                    }
+                }
+                Map<String, List<Component>> map = ITEM_LINE_MAP.get(cacheKey);
+                if (map != null) {
+                    for (Map.Entry<String, String> e : done.entrySet()) {
+                        List<Component> out = new ArrayList<>();
+                        for (String wrapped : PhraseMatcher.wrap(e.getValue(), 64)) out.add(parseColorCodes(wrapped));
+                        map.put(e.getKey(), out);
+                    }
+                    // Lines that could not be translated are remembered as-is so they are not retried every frame.
+                    for (String line : todo) map.putIfAbsent(line, List.of(parseColorCodes(line)));
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                EXTRA_PENDING.remove(cacheKey);
+            }
+        });
     }
 
     private static void triggerTranslation(List<Component> tooltip, String cacheKey, ModConfig.TranslationProvider provider) {
@@ -1597,7 +1677,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 }
 
                 List<Component> translatedTooltip = new ArrayList<>();
-                Map<String, List<Component>> lineMap = new HashMap<>();
+                Map<String, List<Component>> lineMap = new ConcurrentHashMap<>();
                 for (int i = 0; i < n; i++) {
                     String original = allLinesOriginal.get(i);
                     if (fixed[i] == PhraseMatcher.MERGED) {

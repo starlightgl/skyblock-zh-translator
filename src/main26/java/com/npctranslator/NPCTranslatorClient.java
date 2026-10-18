@@ -1867,6 +1867,15 @@ public class NPCTranslatorClient implements ClientModInitializer {
                             String key = toFormattedString(line).trim();
                             List<Component> repl = lineMap.get(key);
                             if (repl == null) {
+                                // Countdowns / changing numbers: the line text is new every second, but its
+                                // number-free template is already in the dictionary -> use it right away.
+                                String byTemplate = templateTranslation(key, provider);
+                                if (byTemplate != null) {
+                                    List<Component> c = List.of(parseColorCodes(byTemplate));
+                                    if (lineMap.size() < 400) lineMap.put(key, c);
+                                    rebuilt.addAll(c);
+                                    continue;
+                                }
                                 rebuilt.add(line);
                                 if (MOD_TRANSLATED.contains(line)) continue;
                                 // e.g. the extra lines shown while holding Shift, or price lines from other mods
@@ -1986,6 +1995,16 @@ public class NPCTranslatorClient implements ClientModInitializer {
     }
 
     private static final java.util.regex.Pattern WORD = java.util.regex.Pattern.compile("[A-Za-z]{2,}");
+
+    /** Dictionary translation of a line via its number-free template, or null. */
+    private static String templateTranslation(String formatted, ModConfig.TranslationProvider provider) {
+        if (formatted.isEmpty() || provider == null || !config.normalizeNumbers) return null;
+        TranslationUtil.Template t = TranslationUtil.normalize(formatted);
+        if (!t.hasNumbers()) return null;
+        String tr = TranslationDictionary.get(t.text, provider.name());
+        if (tr == null || tr.isEmpty() || !TranslationUtil.placeholdersMatch(t.text, tr)) return null;
+        return TranslationUtil.restore(tr, t.numbers);
+    }
     private static final Set<String> EXTRA_PENDING = Collections.newSetFromMap(new ConcurrentHashMap<>());
     private static final Map<String, Long> EXTRA_LAST = new ConcurrentHashMap<>();
 

@@ -106,7 +106,7 @@ public final class EnchantHints {
     public static Component line(Entry e) {
         String color = e.ultimate ? "§d" : "§9";
         String zh = e.zh == null || e.zh.isEmpty() ? e.en : e.zh;
-        String text = " " + color + zh + " §8" + e.en + (e.hint == null || e.hint.isEmpty() ? "" : " §7- " + e.hint);
+        String text = " §8\u25b8 " + color + zh + " §8" + e.en + (e.hint == null || e.hint.isEmpty() ? "" : " §7" + e.hint);
         return NPCTranslatorClient.parseColorCodes(text);
     }
 }

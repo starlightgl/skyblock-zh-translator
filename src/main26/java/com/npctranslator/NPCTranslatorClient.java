@@ -1658,21 +1658,30 @@ public class NPCTranslatorClient implements ClientModInitializer {
     }
 
     // ── 中文增强版：附魔副标题 ─────────────────────────────────────────
+    /** Puts each enchantment's note right under the line where that enchantment appears. */
     private static void appendEnchantHints(List<Component> tooltip) {
         ModConfig.EnchantHintMode mode = config.enchantHintMode != null ? config.enchantHintMode : ModConfig.EnchantHintMode.SHIFT;
         if (mode == ModConfig.EnchantHintMode.OFF) return;
-        List<EnchantHints.Entry> found = EnchantHints.find(tooltip);
-        if (found.isEmpty()) return;
-        if (mode == ModConfig.EnchantHintMode.SHIFT && !isShiftDown()) {
-            tooltip.add(Component.translatable("npctranslator.enchant_hint.press_shift").withStyle(ChatFormatting.DARK_GRAY));
-            return;
+        boolean show = mode == ModConfig.EnchantHintMode.ALWAYS || isShiftDown();
+        List<EnchantHints.Entry> seen = new ArrayList<>();
+        int lastEnchantLine = -1;
+        for (int i = 0; i < tooltip.size(); i++) {
+            List<EnchantHints.Entry> here = EnchantHints.find(List.of(tooltip.get(i)));
+            here.removeAll(seen);
+            if (here.isEmpty()) continue;
+            seen.addAll(here);
+            lastEnchantLine = i;
+            if (!show) continue;
+            int at = i + 1;
+            for (EnchantHints.Entry e : here) {
+                tooltip.add(at++, EnchantHints.line(e));
+            }
+            i = at - 1;
+            lastEnchantLine = i;
+            if (seen.size() > 30) break;
         }
-        tooltip.add(Component.empty());
-        tooltip.add(Component.translatable("npctranslator.enchant_hint.header").withStyle(ChatFormatting.GRAY));
-        int shown = 0;
-        for (EnchantHints.Entry e : found) {
-            if (++shown > 20) break;
-            tooltip.add(EnchantHints.line(e));
+        if (!show && lastEnchantLine >= 0) {
+            tooltip.add(lastEnchantLine + 1, Component.translatable("npctranslator.enchant_hint.press_shift").withStyle(ChatFormatting.DARK_GRAY));
         }
     }
 

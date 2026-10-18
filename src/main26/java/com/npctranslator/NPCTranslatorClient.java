@@ -311,6 +311,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
             String msgId = String.valueOf(messageCounter.incrementAndGet());
             String encodedText = Base64.getEncoder().encodeToString(rawText.getBytes(java.nio.charset.StandardCharsets.UTF_8));
             ORIGINAL_MESSAGES.put(msgId, text.copy());
+            rememberNpcLine(msgId, rawText);
             MESSAGE_ID_TO_BASE64.put(msgId, encodedText);
 
             String cachedTranslation = TRANSLATION_MEMORY_CACHE.get(rawText);
@@ -699,7 +700,40 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 final String formattedInput = tempFormattedInput;
                 final ClickEvent finalClickEvent = tempClickEvent;
 
-                String translatedText = translateChatCached(formattedInput, displayLanguageCode, targetLangName, config.chatTranslationProvider);
+                // Messages with several clickable options ([Yes] [No], dialogue choices) are translated
+                // piece by piece so every option keeps its own click/hover action and position.
+                List<ChatSegment> segments = originalMsg != null ? splitByEvents(originalMsg) : null;
+                if (segments != null && countClickEvents(segments) > 1) {
+                    MutableComponent body = Component.empty();
+                    StringBuilder joined = new StringBuilder();
+                    for (ChatSegment seg : segments) {
+                        String tr = translateSegment(seg.formatted, displayLanguageCode, targetLangName, config.chatTranslationProvider);
+                        joined.append(tr);
+                        MutableComponent part = formattedStringToText(tr);
+                        if (seg.click != null || seg.hover != null) {
+                            final ClickEvent ce = seg.click;
+                            final HoverEvent he = seg.hover;
+                            part = Component.empty().append(part).withStyle(st -> st.withClickEvent(ce).withHoverEvent(he));
+                        }
+                        body.append(part);
+                    }
+                    com.npctranslator.chatbubble.ChatBubbleManager.onTranslationComplete(msgId, joined.toString());
+                    MutableComponent prefix = Component.translatable("npctranslator.translated", displayLanguageCode.toUpperCase())
+                        .withStyle(style -> style.withColor(ChatFormatting.GREEN)
+                            .withClickEvent(new ClickEvent.RunCommand("/revert_npc " + msgId))
+                            .withHoverEvent(new HoverEvent.ShowText(Component.translatable("npctranslator.hover_revert"))));
+                    MutableComponent translatedMessage = Component.empty().append(prefix).append(body);
+                    client.execute(() -> replaceMessageInChat(client, searchMarker, translatedMessage));
+                    return;
+                }
+
+                String translatedText;
+                CHAT_CONTEXT.set(npcContext(msgId));
+                try {
+                    translatedText = translateChatCached(formattedInput, displayLanguageCode, targetLangName, config.chatTranslationProvider);
+                } finally {
+                    CHAT_CONTEXT.remove();
+                }
                 com.npctranslator.chatbubble.ChatBubbleManager.onTranslationComplete(msgId, translatedText);
 
                 if (config.enableTts) {
@@ -727,6 +761,132 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 notifyTranslationError(e);
             }
         });
+    }
+
+    // ── 中文增强版：NPC 长对话被拆成多条消息时，带上前后文 ─────────────
+    private record NpcLine(String id, long time, String speaker, String text) {}
+    private static final Deque<NpcLine> RECENT_NPC_LINES = new ArrayDeque<>();
+    private static final ThreadLocal<String> CHAT_CONTEXT = new ThreadLocal<>();
+
+    private static void rememberNpcLine(String msgId, String rawText) {
+        String plain = TranslationUtil.stripColorCodes(rawText).trim();
+        int npc = plain.indexOf("[NPC] ");
+        if (npc < 0) return;
+        int colon = plain.indexOf(": ", npc);
+        if (colon < 0) return;
+        String speaker = plain.substring(npc + 6, colon).trim();
+        String text = plain.substring(colon + 2).trim();
+        if (text.isEmpty()) return;
+        synchronized (RECENT_NPC_LINES) {
+            RECENT_NPC_LINES.addLast(new NpcLine(msgId, System.currentTimeMillis(), speaker, text));
+            while (RECENT_NPC_LINES.size() > 60) RECENT_NPC_LINES.removeFirst();
+        }
+    }
+
+    /** Up to two lines before and after this one from the same NPC within 20 s, or null. */
+    private static String npcContext(String msgId) {
+        List<NpcLine> lines;
+        synchronized (RECENT_NPC_LINES) {
+            lines = new ArrayList<>(RECENT_NPC_LINES);
+        }
+        int idx = -1;
+        for (int i = 0; i < lines.size(); i++) {
+            if (lines.get(i).id.equals(msgId)) { idx = i; break; }
+        }
+        if (idx < 0) return null;
+        NpcLine self = lines.get(idx);
+        List<String> before = new ArrayList<>();
+        for (int i = idx - 1; i >= 0 && before.size() < 2; i--) {
+            NpcLine l = lines.get(i);
+            if (!l.speaker.equals(self.speaker) || self.time - l.time > 20_000L) break;
+            before.add(0, l.text);
+        }
+        List<String> after = new ArrayList<>();
+        for (int i = idx + 1; i < lines.size() && after.size() < 2; i++) {
+            NpcLine l = lines.get(i);
+            if (!l.speaker.equals(self.speaker) || l.time - self.time > 20_000L) break;
+            after.add(l.text);
+        }
+        if (before.isEmpty() && after.isEmpty()) return null;
+        StringBuilder sb = new StringBuilder();
+        for (String b : before) sb.append("Previous line: ").append(b).append('\n');
+        sb.append("Line to translate: ").append(self.text).append('\n');
+        for (String a : after) sb.append("Next line: ").append(a).append('\n');
+        return sb.toString().trim();
+    }
+
+    // ── 中文增强版：带多个点击选项的聊天消息按片段翻译 ─────────────────
+    private record ChatSegment(String formatted, ClickEvent click, HoverEvent hover) {}
+
+    /** Consecutive text pieces with the same click/hover action form one segment. */
+    private static List<ChatSegment> splitByEvents(Component msg) {
+        List<ChatSegment> out = new ArrayList<>();
+        StringBuilder cur = new StringBuilder();
+        ClickEvent[] click = {null};
+        HoverEvent[] hover = {null};
+        boolean[] started = {false};
+        msg.visit((style, string) -> {
+            if (string.isEmpty()) return java.util.Optional.empty();
+            ClickEvent ce = style.getClickEvent();
+            HoverEvent he = style.getHoverEvent();
+            if (started[0] && (!Objects.equals(ce, click[0]) || !Objects.equals(he, hover[0]))) {
+                out.add(new ChatSegment(cur.toString(), click[0], hover[0]));
+                cur.setLength(0);
+            }
+            started[0] = true;
+            click[0] = ce;
+            hover[0] = he;
+            appendFormatted(cur, style, string);
+            return java.util.Optional.empty();
+        }, Style.EMPTY);
+        if (started[0]) out.add(new ChatSegment(cur.toString(), click[0], hover[0]));
+        return out;
+    }
+
+    private static int countClickEvents(List<ChatSegment> segments) {
+        List<ClickEvent> seen = new ArrayList<>();
+        for (ChatSegment seg : segments) {
+            if (seg.click != null && !seen.contains(seg.click)) seen.add(seg.click);
+        }
+        return seen.size();
+    }
+
+    /** Phrase book first, then the chat cache / AI. Keeps leading and trailing spaces. */
+    private static String translateSegment(String formatted, String langCode, String langName, ModConfig.TranslationProvider provider) {
+        String plain = TranslationUtil.stripColorCodes(formatted);
+        if (!WORD.matcher(plain).find()) return formatted;
+        String tr = null;
+        try {
+            if (config.usePhrasebook) tr = PhraseBook.translate(formatted.trim());
+            if (tr == null) tr = translateChatCached(formatted.trim(), langCode, langName, provider);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (tr == null || tr.isEmpty()) return formatted;
+        String trPlain = TranslationUtil.stripColorCodes(tr);
+        int lead = 0;
+        while (lead < plain.length() && plain.charAt(lead) == ' ') lead++;
+        int trail = 0;
+        while (trail < plain.length() - lead && plain.charAt(plain.length() - 1 - trail) == ' ') trail++;
+        if (lead > 0 && !trPlain.startsWith(" ")) tr = " ".repeat(lead) + tr;
+        if (trail > 0 && !trPlain.endsWith(" ")) tr = tr + " ".repeat(trail);
+        return tr;
+    }
+
+    private static void appendFormatted(StringBuilder sb, Style style, String string) {
+        if (style != null && style.getColor() != null) {
+            Character c = COLOR_TO_CODE.get(style.getColor().getValue() & 0xFFFFFF);
+            if (c != null) sb.append('\u00A7').append(c);
+        }
+        if (style != null) {
+            if (style.isBold()) sb.append("\u00A7l");
+            if (style.isItalic()) sb.append("\u00A7o");
+            if (style.isUnderlined()) sb.append("\u00A7n");
+            if (style.isStrikethrough()) sb.append("\u00A7m");
+            if (style.isObfuscated()) sb.append("\u00A7k");
+        }
+        sb.append(string);
+        sb.append("\u00A7r");
     }
 
     // ── 中文增强版：辅助方法 ─────────────────────────────────────────
@@ -872,7 +1032,15 @@ public class NPCTranslatorClient implements ClientModInitializer {
         Map<String, String> hits = config.useGlossary
                 ? Glossary.index().hits(content, 80)
                 : Collections.emptyMap();
-        return TranslationUtil.buildSystemPrompt(isTooltip, langName, config.customPrompt, hits);
+        String prompt = TranslationUtil.buildSystemPrompt(isTooltip, langName, config.customPrompt, hits);
+        String ctx = isTooltip ? null : CHAT_CONTEXT.get();
+        if (ctx != null) {
+            prompt += "\nSPLIT DIALOGUE:\nThis NPC line is one part of a longer speech that Hypixel split over several chat lines. "
+                    + "The neighbouring lines are given ONLY so you understand the meaning; do NOT translate or output them. "
+                    + "Translate only the given line, so that it reads naturally as that part of the whole sentence.\n"
+                    + ctx + "\n";
+        }
+        return prompt;
     }
 
     /** Chat translation with number-normalised dictionary cache. */

@@ -18,6 +18,7 @@ public class ItemStackMixin {
 
     @Inject(method = "getTooltipLines", at = @At("RETURN"), cancellable = true)
     private void onGetTooltip(Item.TooltipContext context, Player player, TooltipFlag type, CallbackInfoReturnable<List<Component>> cir) {
+        if (!NPCTranslatorClient.COLLECTING.get()) NPCTranslatorClient.collectTooltip(cir.getReturnValue());
         if (NPCTranslatorClient.isItemTranslationEnabled() && !NPCTranslatorClient.COLLECTING.get()) {
             List<Component> tooltip = new java.util.ArrayList<>(cir.getReturnValue());
             NPCTranslatorClient.handleItemTooltip((ItemStack) (Object) this, tooltip);

@@ -39,12 +39,16 @@ public final class TextCollector {
     public static final String ACTION_BAR = "动作栏";
     public static final String BOSS_BAR = "Boss血条";
     public static final String CHAT = "聊天";
+    public static final String WORLD = "名称与悬浮文字";
+    public static final String MOD_TEXT = "其他模组提示";
+    public static final String PRICE_TABLE = "价格表格";
 
     public static final File FILE = new File(FabricLoader.getInstance().getConfigDir().toFile(), "npc_translator_text.tsv");
     /** File of 1.5.1-zh.3-beta.5, which only held menu items. Converted on first load. */
     private static final File OLD_FILE = new File(FabricLoader.getInstance().getConfigDir().toFile(), "npc_translator_menu_text.tsv");
     private static final String HEADER = "类别\t位置\t英文（数字为 {0}）\t原文示例\t当前译文\n";
     private static final int LIMIT = 200000;
+    private static final Pattern CJK = Pattern.compile("[\\u4e00-\\u9fff]");
 
     /** category + template already written. */
     private static final Set<String> SEEN = ConcurrentHashMap.newKeySet();
@@ -77,16 +81,43 @@ public final class TextCollector {
         loaded = true;
         if (!FILE.exists() && OLD_FILE.exists()) migrate();
         if (!FILE.exists()) return;
+        List<String> kept = new ArrayList<>();
+        boolean changed = false;
         try (BufferedReader r = new BufferedReader(new InputStreamReader(new FileInputStream(FILE), StandardCharsets.UTF_8))) {
             String line;
             boolean first = true;
             while ((line = r.readLine()) != null) {
                 if (first) { first = false; if (line.startsWith("类别")) continue; }
                 String[] p = line.split("\t", -1);
-                if (p.length >= 3 && SEEN.add(p[0] + "\t" + p[2])) count(TOTAL, p[0]);
+                if (p.length < 3) continue;
+                // rows written by earlier versions: drop this mod's own Chinese output, hide the player's name
+                if (CJK.matcher(p[2]).find()) { changed = true; continue; }
+                String clean = anonymize(line);
+                if (!clean.equals(line)) { changed = true; p = clean.split("\t", -1); }
+                if (SEEN.add(p[0] + "\t" + p[2])) {
+                    count(TOTAL, p[0]);
+                    kept.add(clean);
+                } else {
+                    changed = true;
+                }
             }
         } catch (Exception e) {
             System.err.println("[NPCTranslator] text file: " + e.getMessage());
+            return;
+        }
+        if (changed) {
+            try {
+                java.nio.file.Files.copy(FILE.toPath(), new File(FILE.getPath() + ".bak").toPath(), java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+            } catch (Exception e) {
+                System.err.println("[NPCTranslator] text file backup: " + e.getMessage());
+                return;
+            }
+            try (Writer w = new OutputStreamWriter(new FileOutputStream(FILE), StandardCharsets.UTF_8)) {
+                w.write(HEADER);
+                for (String row : kept) w.write(row + "\n");
+            } catch (Exception e) {
+                System.err.println("[NPCTranslator] text file: " + e.getMessage());
+            }
         }
     }
 
@@ -140,6 +171,8 @@ public final class TextCollector {
 
         String plain = anonymize(TranslationUtil.stripColorCodes(formatted).trim());
         if (plain.isEmpty() || !TranslationUtil.needsTranslation(plain)) return;
+        // lines that already contain Chinese are this mod's own output (translations, hints), not source text
+        if (CJK.matcher(plain).find()) return;
         if (type.equals(CHAT) && !plain.startsWith("[NPC]") && PLAYER_CHAT.matcher(plain).find()) return;
         load();
         String template = TranslationUtil.normalize(plain).text;

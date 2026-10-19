@@ -32,6 +32,8 @@
   "key.category.npctranslator.keys": "NPC & 物品翻译器",
   "category.npctranslator.chat": "聊天翻译",
   "category.npctranslator.item": "物品翻译",
+  "category.npctranslator.collect": "原文收集",
+  "category.npctranslator.collect.tooltip": "记录游戏中显示的英文，用于补充术语表",
   "text.autoconfig.npc_translator.title": "NPC & 物品翻译器设置",
   "text.autoconfig.npc_translator.option.enabled": "启用 Mod",
   "text.autoconfig.npc_translator.option.enabled.tooltip": "完全启用或禁用翻译 Mod",
@@ -218,5 +220,5 @@
   "npctranslator.tooltip.subtitle.aliases": "别称",
   "npctranslator.tooltip.footer.local_translate": "[%s] 翻译 · [%s] 翻译设置",
   "text.autoconfig.npc_translator.option.collectMenuText": "收集游戏原文",
-  "text.autoconfig.npc_translator.option.collectMenuText.tooltip": "把游戏中显示的英文（物品名称与描述、菜单标题、侧边栏、Tab 列表、屏幕标题、动作栏、Boss 血条、聊天、头顶名字等）连同当前译文记录到 config/npc_translator_text.tsv，用于补充术语表。不记录玩家聊天。只写本地文件，不上传。"
+  "text.autoconfig.npc_translator.option.collectMenuText.tooltip": "把游戏中显示的英文（物品名称与描述、菜单标题、侧边栏、Tab 列表、屏幕标题、动作栏、Boss 血条、聊天、头顶名字、其他模组提示等）连同当前译文记录到 config/npc_translator_text.tsv，用于补充术语表。只受这一个开关控制，与翻译相关的设置无关。玩家本人的游戏名记录为 {玩家}，不记录玩家聊天。只写本地文件，不上传。"
 }

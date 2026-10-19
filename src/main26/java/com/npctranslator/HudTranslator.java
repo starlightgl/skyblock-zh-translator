@@ -80,6 +80,7 @@ public final class HudTranslator {
 
     public static MutableComponent sidebarRow(Team team, Component name) {
         MutableComponent original = PlayerTeam.formatNameForTeam(team, name);
+        TextCollector.record(TextCollector.SIDEBAR, "", original);
         ModConfig c = cfg();
         if (c == null || !c.enabled || !c.translateSidebar) return original;
         try {
@@ -92,6 +93,7 @@ public final class HudTranslator {
 
     public static Component sidebarTitle(Objective objective) {
         Component original = objective.getDisplayName();
+        TextCollector.record(TextCollector.SIDEBAR, "标题", original);
         ModConfig c = cfg();
         if (c == null || !c.enabled || !c.translateSidebar) return original;
         try {
@@ -123,7 +125,6 @@ public final class HudTranslator {
             }
         }
         Coverage.record(formatted, out != null, "侧边栏");
-        TextCollector.record(TextCollector.SIDEBAR, "", formatted, out != null ? out : "");
         return remember(formatted, out);
     }
 
@@ -149,6 +150,7 @@ public final class HudTranslator {
      * land in the dictionary and are picked up then).
      */
     public static Component worldText(Component original) {
+        TextCollector.record(TextCollector.WORLD, "", original);
         ModConfig c = cfg();
         if (c == null || !c.enabled || !c.translateWorldText || original == null) return null;
         WHERE.set("名称与悬浮文字");
@@ -161,6 +163,7 @@ public final class HudTranslator {
 
     /** Text added by other mods (price lines, button tooltips); same lookup as floating text. */
     public static Component modText(Component original) {
+        collectModText(original);
         ModConfig c = cfg();
         if (c == null || !c.enabled || !c.translateModTooltips || original == null) return null;
         WHERE.set("其他模组提示");
@@ -199,6 +202,24 @@ public final class HudTranslator {
             gridBroken = true;
             debugLog("grid line not supported: " + t);
             return false;
+        }
+    }
+
+    /** Records a mod tooltip line; price table rows are recorded cell by cell. */
+    @SuppressWarnings("unchecked")
+    public static void collectModText(Component line) {
+        if (line == null || !TextCollector.enabled()) return;
+        try {
+            if (isGrid(line)) {
+                for (Component cell : (List<Component>) gridCells.invoke(line.getContents())) {
+                    if (cell == null) continue;
+                    if (isGrid(cell)) collectModText(cell);
+                    else TextCollector.record(TextCollector.PRICE_TABLE, "", cell);
+                }
+            } else {
+                TextCollector.record(TextCollector.MOD_TEXT, "", line);
+            }
+        } catch (Throwable ignored) {
         }
     }
 
@@ -276,7 +297,6 @@ public final class HudTranslator {
     private static String lookupLine(String formatted) {
         String out = lookupLine0(formatted);
         Coverage.record(formatted, out != null, WHERE.get());
-        TextCollector.record(WHERE.get() != null ? WHERE.get() : "其他文字", "", formatted, out != null ? out : "");
         return out;
     }
 

@@ -272,6 +272,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
         KeyMappingHelper.registerKeyMapping(menuKey);
 
         ClientReceiveMessageEvents.MODIFY_GAME.register((text, overlay) -> {
+            if (!overlay) TextCollector.record(TextCollector.CHAT, "", text); // action bar is recorded by the Hud hook
             if (!config.enabled) return text;
             if (overlay) return text;
             String rawText = text.getString();
@@ -497,7 +498,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                     .executes(context -> {
                         TextCollector.flush();
                         Minecraft mc = Minecraft.getInstance();
-                        mc.player.sendSystemMessage(Component.literal("[原文收集] " + (config.collectMenuText ? "已开启" : "已关闭（设置 → 物品翻译 → 收集游戏原文）")
+                        mc.player.sendSystemMessage(Component.literal("[原文收集] " + (config.collectMenuText ? "已开启" : "已关闭（设置 → 原文收集）")
                                 + "，共 " + TextCollector.total() + " 条").withStyle(ChatFormatting.YELLOW));
                         for (Map.Entry<String, int[]> e : TextCollector.summary().entrySet()) {
                             int[] v = e.getValue();
@@ -1303,7 +1304,6 @@ public class NPCTranslatorClient implements ClientModInitializer {
             result = PhraseBook.translate(formatted);
         }
         Coverage.record(formatted, result != null, "聊天");
-        TextCollector.record(TextCollector.CHAT, "", formatted, result != null ? result : "");
         if (result == null) return null;
         MutableComponent comp = formattedStringToText(result);
         final ClickEvent ce = clicks.isEmpty() ? null : clicks.get(0);
@@ -1738,7 +1738,6 @@ public class NPCTranslatorClient implements ClientModInitializer {
         if (client == null) return;
         
         String cacheKey = itemCacheKey(stack);
-        collectTooltip(tooltip);
 
         if (config.translateModTooltips) translateForeignLines(stack, tooltip);
         handleTooltipStateAndRender(tooltip, cacheKey);
@@ -1913,16 +1912,16 @@ public class NPCTranslatorClient implements ClientModInitializer {
         boolean down = isKeyCurrentlyDown(keyTranslatePage);
         boolean pressed = down && !lastPageState;
         lastPageState = down;
-        if (config == null || !config.enabled) return;
-        boolean scan = config.autoTranslatePage && ++pageScanTick % 10 == 0;
-        boolean collect = collectEnabled() && ++collectTick % 20 == 0;
-        if (collect) {
+        // text collection does not depend on any translation setting
+        if (config != null && collectEnabled() && ++collectTick % 20 == 0) {
             try {
                 if (getScreen(client) instanceof net.minecraft.client.gui.screens.inventory.AbstractContainerScreen<?> cs) collectMenu(client, cs);
             } catch (Throwable t) {
                 HudTranslator.debugLog("menu collect: " + t);
             }
         }
+        if (config == null || !config.enabled) return;
+        boolean scan = config.autoTranslatePage && ++pageScanTick % 10 == 0;
         if (!pressed && !scan) return;
         if (!(getScreen(client) instanceof net.minecraft.client.gui.screens.inventory.AbstractContainerScreen<?> screen)
                 || client.player == null || client.level == null) {
@@ -1954,14 +1953,35 @@ public class NPCTranslatorClient implements ClientModInitializer {
      * Hovered items are recorded whether or not they get translated (item translation by key only,
      * shown in English with Z, ...). Already-seen lines cost one set lookup.
      */
-    private static void collectTooltip(List<Component> tooltip) {
-        if (!collectEnabled() || tooltip.isEmpty()) return;
+    public static void collectTooltip(List<Component> tooltip) {
+        if (!collectEnabled() || tooltip == null || tooltip.isEmpty()) return;
         try {
+            Set<String> seen = new HashSet<>();
+            for (Component c : tooltip) seen.add(c.getString());
+            lastCollectedItemLines = seen;
+            lastCollectedItemAt = System.currentTimeMillis();
             String menu = currentMenu();
             String where = menu != null ? menu : "背包";
             for (int i = 0; i < tooltip.size(); i++) {
                 String f = toFormattedString(tooltip.get(i)).trim();
                 if (!f.isEmpty()) TextCollector.record(i == 0 ? TextCollector.ITEM_NAME : TextCollector.ITEM_LINE, where, f, null);
+            }
+        } catch (Throwable ignored) {
+        }
+    }
+
+    private static volatile Set<String> lastCollectedItemLines = Collections.emptySet();
+    private static volatile long lastCollectedItemAt = 0;
+
+    /** Tooltip lines drawn on screen that are not the hovered item's own lines (other mods' text). */
+    private static void collectRenderedTooltip(List<Component> components) {
+        if (components == null || components.isEmpty() || !collectEnabled()) return;
+        try {
+            Set<String> item = System.currentTimeMillis() - lastCollectedItemAt < 250 ? lastCollectedItemLines : Collections.emptySet();
+            for (Component line : components) {
+                if (MOD_TRANSLATED.contains(line)) continue;
+                if (!HudTranslator.isGrid(line) && item.contains(line.getString())) continue;
+                HudTranslator.collectModText(line);
             }
         } catch (Throwable ignored) {
         }
@@ -2155,6 +2175,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                     .append(Component.translatable("npctranslator.tooltip.subtitle.aliases").withStyle(ChatFormatting.DARK_GRAY))
                     .append(Component.literal(" " + String.join(" / ", aliases)).withStyle(ChatFormatting.GRAY));
             }
+            MOD_TRANSLATED.add(line); // our own line: not other mods' text, not to be translated or collected
             tooltip.add(1, line);
         } catch (Exception ignored) {}
     }
@@ -2244,6 +2265,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
      * by mods that run later) or tooltips that are not item tooltips at all are translated here.
      */
     public static List<Component> processRenderedTooltip(List<Component> components) {
+        collectRenderedTooltip(components);
         if (config == null || !config.enabled || components == null || components.isEmpty()) return components;
         boolean processed = PROCESSED_TOOLTIPS.containsKey(components);
         List<Component> out = components;

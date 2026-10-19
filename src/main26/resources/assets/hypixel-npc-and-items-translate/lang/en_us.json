@@ -32,6 +32,8 @@
   "key.category.npctranslator.keys": "NPC & Item Translator",
   "category.npctranslator.chat": "Chat Translation",
   "category.npctranslator.item": "Item Translation",
+  "category.npctranslator.collect": "Text Collection",
+  "category.npctranslator.collect.tooltip": "Record English text shown in game for extending the term table",
   "text.autoconfig.npc_translator.title": "NPC & Items Translator Settings",
   "text.autoconfig.npc_translator.option.enabled": "Mod Enabled",
   "text.autoconfig.npc_translator.option.enabled.tooltip": "Enable or disable the translation mod entirely",
@@ -218,5 +220,5 @@
   "npctranslator.tooltip.subtitle.aliases": "aka",
   "npctranslator.tooltip.footer.local_translate": "[%s] Translate · [%s] Translator settings",
   "text.autoconfig.npc_translator.option.collectMenuText": "Collect game text",
-  "text.autoconfig.npc_translator.option.collectMenuText.tooltip": "Record all English text the game shows (item names and descriptions, menu titles, sidebar, Tab list, titles, action bar, boss bars, chat, name tags) with the current translation to config/npc_translator_text.tsv, for extending the term table. Player chat is skipped. Local file only."
+  "text.autoconfig.npc_translator.option.collectMenuText.tooltip": "Record all English text the game shows (item names and descriptions, menu titles, sidebar, Tab list, titles, action bar, boss bars, chat, name tags, other mods' tooltips) with the current translation to config/npc_translator_text.tsv, for extending the term table. Controlled only by this switch, independent of the translation settings. Your own name is written as {玩家}; player chat is skipped. Local file only."
 }

@@ -253,16 +253,12 @@ public final class ItemLines {
                 }
                 Coverage.record(original, has, i == 0 ? "物品名称" : where);
             }
-            String collectType = i == 0 ? TextCollector.ITEM_NAME : TextCollector.ITEM_LINE;
-            String collectWhere = menu != null ? menu : "背包";
             if (p.fixed[i] == PhraseMatcher.MERGED || p.joined[i]) {
-                TextCollector.record(collectType, collectWhere, original, "（与上一行合并翻译）");
                 lineMap.putIfAbsent(original, List.of());
                 changed = true;
                 continue;
             }
             if (p.fixed[i] != null) {
-                TextCollector.record(collectType, collectWhere, original, p.fixed[i]);
                 List<Component> wrapped = wrap(p.fixed[i]);
                 translated.addAll(wrapped);
                 lineMap.put(original, wrapped);
@@ -279,7 +275,6 @@ public final class ItemLines {
                 String tr = NPCTranslatorClient.dictGet(t.text, provider, menu);
                 if (tr != null && !tr.isEmpty()) out = TranslationUtil.restore(tr, t.numbers);
             }
-            TextCollector.record(collectType, collectWhere, original, out != null ? out : "");
             if (out != null && !out.isEmpty()) {
                 boolean multi = t != null && i + 1 < n && p.joined[i + 1];
                 List<Component> comps = multi ? wrap(out) : List.of(NPCTranslatorClient.parseColorCodes(out));

@@ -206,5 +206,15 @@
   "npctranslator.tooltip.footer.more": "[%s] Translate whole menu · [%s] Translator settings",
   "npctranslator.tooltip.footer.setup": "No AI service set up yet: press [%s] → API",
   "text.autoconfig.npc_translator.option.customPreset": "Provider",
-  "text.autoconfig.npc_translator.option.customPreset.tooltip": "Pick a provider to fill in its Base URL and a suggested model (both stay editable). Model names change over time; check the provider docs. Choose \"Other\" for relays and anything else."
+  "text.autoconfig.npc_translator.option.customPreset.tooltip": "Pick a provider to fill in its Base URL and a suggested model (both stay editable). Model names change over time; check the provider docs. Choose \"Other\" for relays and anything else.",
+  "text.autoconfig.npc_translator.option.translationSource": "Translation source",
+  "text.autoconfig.npc_translator.option.translationSource.tooltip": "Table only: just the bundled, proofread SkyBlock term table; anything else stays in English and no AI is used. Table + corpus: also the SkyBlockZH community corpus. Table + corpus + AI: the rest is translated by the AI.",
+  "npctranslator.config.source.table": "Table only",
+  "npctranslator.config.source.table_corpus": "Table + corpus",
+  "npctranslator.config.source.full": "Table + corpus + AI",
+  "text.autoconfig.npc_translator.option.nameSubtitleMode": "Original name and aliases",
+  "text.autoconfig.npc_translator.option.nameSubtitleMode.tooltip": "Show the English name and common community nicknames under translated item names.",
+  "npctranslator.tooltip.footer.local": "[%s] Show original · [%s] Translator settings",
+  "npctranslator.tooltip.subtitle.aliases": "aka",
+  "npctranslator.tooltip.footer.local_translate": "[%s] Translate · [%s] Translator settings"
 }

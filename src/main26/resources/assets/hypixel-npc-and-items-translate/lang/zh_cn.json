@@ -206,5 +206,15 @@
   "npctranslator.tooltip.footer.more": "[%s] 翻译整页菜单 · [%s] 翻译设置",
   "npctranslator.tooltip.footer.setup": "还没设置 AI 接口：按 [%s] 打开翻译设置 → API",
   "text.autoconfig.npc_translator.option.customPreset": "服务商",
-  "text.autoconfig.npc_translator.option.customPreset.tooltip": "选一个国内能直连的服务商，会自动填好 Base URL 和推荐模型（都可以再改）。模型名会随服务商更新，以服务商文档为准；中转站、ClinePass 等选「其他」手动填写。"
+  "text.autoconfig.npc_translator.option.customPreset.tooltip": "选一个国内能直连的服务商，会自动填好 Base URL 和推荐模型（都可以再改）。模型名会随服务商更新，以服务商文档为准；中转站、ClinePass 等选「其他」手动填写。",
+  "text.autoconfig.npc_translator.option.translationSource": "译文来源",
+  "text.autoconfig.npc_translator.option.translationSource.tooltip": "仅校对表：只使用内置的 SkyBlock 术语表（物品名、描述、宠物、区域等），表里没有的内容保持英文，不调用 AI。校对表 + 社区语料：再加上 SkyBlockZH 社区语料。校对表 + 社区语料 + AI：其余内容交给 AI 翻译。",
+  "npctranslator.config.source.table": "仅校对表",
+  "npctranslator.config.source.table_corpus": "校对表 + 社区语料",
+  "npctranslator.config.source.full": "校对表 + 社区语料 + AI",
+  "text.autoconfig.npc_translator.option.nameSubtitleMode": "物品原名与别称",
+  "text.autoconfig.npc_translator.option.nameSubtitleMode.tooltip": "在物品名下方显示英文原名和社区常用别称（如「海伯利安」下方显示 Hyperion · 别称 神剑）。",
+  "npctranslator.tooltip.footer.local": "[%s] 恢复原文 · [%s] 翻译设置",
+  "npctranslator.tooltip.subtitle.aliases": "别称",
+  "npctranslator.tooltip.footer.local_translate": "[%s] 翻译 · [%s] 翻译设置"
 }

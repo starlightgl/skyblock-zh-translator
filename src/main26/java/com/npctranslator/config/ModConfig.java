@@ -43,6 +43,8 @@ public class ModConfig {
         enableCustomItem = true;
         autoFallbackOnLimit = false;
         if (customPreset == null) customPreset = ApiPreset.CUSTOM;
+        if (translationSource == null) translationSource = TranslationSource.TABLE_ONLY;
+        if (nameSubtitleMode == null) nameSubtitleMode = EnchantHintMode.ALWAYS;
         if (mistralModel == null) mistralModel = MistralModel.MISTRAL_LARGE_2512;
         if (openRouterModel == null) openRouterModel = OpenRouterModel.OPENROUTER_FREE;
         if (groqModel == null) groqModel = GroqModel.LLAMA_3_3_70B;
@@ -153,8 +155,25 @@ public class ModConfig {
     public boolean translateModTooltips = true;
     /** Grey subtitle per enchantment ("中文名 English - function") under item tooltips. */
     public EnchantHintMode enchantHintMode = EnchantHintMode.SHIFT;
+    /** 译文来源：仅校对表 / 校对表 + 社区语料 / 再加 AI */
+    public TranslationSource translationSource = TranslationSource.TABLE_ONLY;
+    /** 物品名下方显示英文原名与社区别称 */
+    public EnchantHintMode nameSubtitleMode = EnchantHintMode.ALWAYS;
     /** Let sidebar lines / item names without a known translation be sent to the AI (auto-translate provider). */
     public boolean hudUseAI = true;
+
+    /** 中文增强版：译文从哪里来 */
+    public enum TranslationSource {
+        TABLE_ONLY("npctranslator.config.source.table"),
+        TABLE_AND_CORPUS("npctranslator.config.source.table_corpus"),
+        FULL("npctranslator.config.source.full");
+
+        public final String key;
+
+        TranslationSource(String key) {
+            this.key = key;
+        }
+    }
 
     public enum EnchantHintMode {
         OFF("npctranslator.config.enchant_hint.off"),

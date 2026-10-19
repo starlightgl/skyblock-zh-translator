@@ -41,6 +41,8 @@ public class TranslationDictionary {
     }
 
     public static String get(String original, String provider) {
+        // 仅校对表 / 校对表 + 社区语料：不使用以前 AI 翻译的结果
+        if (!"ITEM_SEEN".equals(provider) && !NPCTranslatorClient.aiAllowed()) return null;
         return TermFixes.apply(dictionary.get(provider + ":" + original));
     }
 

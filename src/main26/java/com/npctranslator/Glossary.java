@@ -83,7 +83,7 @@ public final class Glossary {
     private static synchronized Map<String, String> builtIn() {
         if (builtIn != null) return builtIn;
         Map<String, String> m = new LinkedHashMap<>();
-        try (java.io.InputStream in = Glossary.class.getResourceAsStream("/assets/hypixel-npc-and-items-translate/defaults/npc_translator_glossary.json")) {
+        if (NPCTranslatorClient.corpusAllowed()) try (java.io.InputStream in = Glossary.class.getResourceAsStream("/assets/hypixel-npc-and-items-translate/defaults/npc_translator_glossary.json")) {
             if (in != null) {
                 Type type = new TypeToken<LinkedHashMap<String, String>>() {}.getType();
                 Map<String, String> raw = GSON.fromJson(new InputStreamReader(in, StandardCharsets.UTF_8), type);
@@ -97,9 +97,16 @@ public final class Glossary {
         } catch (Exception e) {
             System.err.println("[NPCTranslator] Failed to read built-in glossary: " + e.getMessage());
         }
-        m.putAll(TermFixes.glossary()); // 中文增强版的修正（如宝石名）覆盖社区语料
+        if (NPCTranslatorClient.corpusAllowed()) m.putAll(TermFixes.glossary()); // 修正（如宝石名）覆盖社区语料
+        m.putAll(TableNames.all()); // 校对表优先
         builtIn = Collections.unmodifiableMap(m);
         return builtIn;
+    }
+
+    /** Drops the built-in data so it is rebuilt for the current translation source. */
+    public static synchronized void invalidate() {
+        builtIn = null;
+        loadedModified = Long.MIN_VALUE;
     }
 
     /** Pre-built index for fast matching (rebuilt when the file changes). */

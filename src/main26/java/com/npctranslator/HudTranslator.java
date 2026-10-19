@@ -122,8 +122,12 @@ public final class HudTranslator {
                 enqueue(t.text);
             }
         }
+        Coverage.record(formatted, out != null, "侧边栏");
         return remember(formatted, out);
     }
+
+    /** Where the text being looked up is shown, for the coverage report. */
+    private static final ThreadLocal<String> WHERE = new ThreadLocal<>();
 
     private static Component remember(String formatted, String out) {
         if (out == null) return null;
@@ -146,15 +150,28 @@ public final class HudTranslator {
     public static Component worldText(Component original) {
         ModConfig c = cfg();
         if (c == null || !c.enabled || !c.translateWorldText || original == null) return null;
-        return lookupComponent(original);
+        WHERE.set("名称与悬浮文字");
+        try {
+            return lookupComponent(original);
+        } finally {
+            WHERE.remove();
+        }
     }
 
     /** Text added by other mods (price lines, button tooltips); same lookup as floating text. */
     public static Component modText(Component original) {
         ModConfig c = cfg();
         if (c == null || !c.enabled || !c.translateModTooltips || original == null) return null;
-        if (isGrid(original)) return gridText(original);
-        return lookupComponent(original);
+        WHERE.set("其他模组提示");
+        try {
+            if (isGrid(original)) {
+                WHERE.set("价格表格");
+                return gridText(original);
+            }
+            return lookupComponent(original);
+        } finally {
+            WHERE.remove();
+        }
     }
 
     // ── Skyblocker 的表格行（价格等）：内容放在 GridComponent$Contents 里，getString() 是空的 ──
@@ -255,8 +272,14 @@ public final class HudTranslator {
         return worldText(original) != null;
     }
 
-    /** Phrase book, then dictionary; unknown lines are queued for the background AI batch. */
     private static String lookupLine(String formatted) {
+        String out = lookupLine0(formatted);
+        Coverage.record(formatted, out != null, WHERE.get());
+        return out;
+    }
+
+    /** Phrase book, then dictionary; unknown lines are queued for the background AI batch. */
+    private static String lookupLine0(String formatted) {
         if (formatted.isEmpty()) return null;
         if (!TranslationUtil.needsTranslation(formatted)) { debugLog("skip (no English): " + formatted); return null; }
         ModConfig c = cfg();
@@ -308,6 +331,8 @@ public final class HudTranslator {
         if (!TranslationUtil.needsTranslation(formatted)) return null;
 
         ModConfig c = cfg();
+        String named = TableNames.translateName(formatted);
+        if (named != null) return remember(formatted, named);
         TranslationUtil.Template t = c.normalizeNumbers ? TranslationUtil.normalize(formatted) : TranslationUtil.Template.raw(formatted);
         // 1) dictionary written by tooltip translation (preferred provider first, then any provider)
         String tr = TranslationDictionary.get(t.text, provider().name());
@@ -341,6 +366,7 @@ public final class HudTranslator {
     // ── Background batch translation ─────────────────────────────────────────
 
     private static void enqueue(String template) {
+        if (!NPCTranslatorClient.aiAllowed()) return;
         Long failedAt = FAILED.get(template);
         if (failedAt != null && System.currentTimeMillis() - failedAt < 120_000L) return;
         if (PENDING.add(template)) QUEUE.add(template);
@@ -350,7 +376,7 @@ public final class HudTranslator {
         List<String> batch = new ArrayList<>();
         try {
             ModConfig c = cfg();
-            if (c == null || !c.enabled || QUEUE.isEmpty()) return;
+            if (c == null || !c.enabled || QUEUE.isEmpty() || !NPCTranslatorClient.aiAllowed()) return;
             ModConfig.TranslationProvider p = provider();
             if (!NPCTranslatorClient.isProviderUsable(p)) return;
             String s;

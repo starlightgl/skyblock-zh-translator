@@ -69,6 +69,7 @@ public final class ItemLines {
             String rule = parsed.isEmpty() ? null : PatternRules.translate(parsed);
             if (rule != null && p.fixed[i] != PhraseMatcher.MERGED) p.fixed[i] = rule;
             if (p.fixed[i] == null && !parsed.isEmpty()) p.fixed[i] = EnchantHints.translateList(parsed);
+            if (p.fixed[i] == null && !parsed.isEmpty() && i == 0) p.fixed[i] = TableNames.translateName(parsed);
             if (p.fixed[i] == null && !parsed.isEmpty()) p.fixed[i] = glossaryName(parsed);
             ai[i] = !parsed.isEmpty() && p.fixed[i] == null && TranslationUtil.needsTranslation(parsed);
         }
@@ -78,7 +79,8 @@ public final class ItemLines {
             if (!ai[i]) { i++; continue; }
             int j = i;
             int len = plain(lines.get(i)).length();
-            while (j + 1 < n && j - i < 5 && ai[j + 1] && continues(lines.get(j), lines.get(j + 1)) && len < 300) {
+            // wrapped sentences are only joined for the AI; without it every line is looked up on its own
+            while (NPCTranslatorClient.aiAllowed() && j + 1 < n && j - i < 5 && ai[j + 1] && continues(lines.get(j), lines.get(j + 1)) && len < 300) {
                 j++;
                 len += plain(lines.get(j)).length();
             }
@@ -188,7 +190,7 @@ public final class ItemLines {
                                        int batchSize, int parallel, java.util.function.IntConsumer progress,
                                        String menu) throws Exception {
         List<String> all = new ArrayList<>(new LinkedHashSet<>(missing));
-        if (all.isEmpty()) return 0;
+        if (all.isEmpty() || !NPCTranslatorClient.aiAllowed()) return 0;
         String langCode = NPCTranslatorClient.getEffectiveLanguageCode();
         String targetLang = NPCTranslatorClient.targetLanguageName(langCode);
         String ns = NPCTranslatorClient.dictNs(provider, menu);
@@ -239,8 +241,18 @@ public final class ItemLines {
         List<Component> translated = new ArrayList<>();
         Map<String, List<Component>> lineMap = new ConcurrentHashMap<>();
         boolean changed = false;
+        String where = menu != null ? menu : "物品";
         for (int i = 0; i < n; i++) {
             String original = p.lines.get(i);
+            if (p.fixed[i] != PhraseMatcher.MERGED && !p.joined[i]) {
+                boolean has = p.fixed[i] != null;
+                if (!has && p.templates[i] != null) {
+                    String tr = rawOverride != null && rawOverride[i] != null ? rawOverride[i]
+                            : NPCTranslatorClient.dictGet(p.templates[i].text, provider, menu);
+                    has = tr != null && !tr.isEmpty();
+                }
+                Coverage.record(original, has, i == 0 ? "物品名称" : where);
+            }
             if (p.fixed[i] == PhraseMatcher.MERGED || p.joined[i]) {
                 lineMap.putIfAbsent(original, List.of());
                 changed = true;

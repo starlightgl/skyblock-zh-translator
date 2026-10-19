@@ -55,14 +55,24 @@ public final class PhraseBook {
                 System.err.println("[NPCTranslator] Failed to read phrasebook: " + e.getMessage());
             }
         }
-        // 中文增强版的修正（如宝石名）排在社区语料前面
-        for (java.util.Map.Entry<String, String> f : TermFixes.glossary().entrySet()) {
-            entries.add(new String[]{f.getKey(), f.getValue()});
+        // 校对表（物品名等 + 物品描述）排在最前，其次是修正和社区语料
+        for (java.util.Map.Entry<String, String> n : TableNames.all().entrySet()) {
+            entries.add(new String[]{n.getKey(), n.getValue()});
         }
-        try (java.io.InputStream in = PhraseBook.class.getResourceAsStream("/assets/hypixel-npc-and-items-translate/defaults/npc_translator_phrasebook.json")) {
+        try (java.io.InputStream in = PhraseBook.class.getResourceAsStream("/assets/hypixel-npc-and-items-translate/defaults/table_lines.json")) {
             if (in != null) readEntries(new InputStreamReader(in, StandardCharsets.UTF_8), entries);
         } catch (Exception e) {
-            System.err.println("[NPCTranslator] Failed to read built-in phrasebook: " + e.getMessage());
+            System.err.println("[NPCTranslator] Failed to read table lines: " + e.getMessage());
+        }
+        if (NPCTranslatorClient.corpusAllowed()) {
+            for (java.util.Map.Entry<String, String> f : TermFixes.glossary().entrySet()) {
+                entries.add(new String[]{f.getKey(), f.getValue()});
+            }
+            try (java.io.InputStream in = PhraseBook.class.getResourceAsStream("/assets/hypixel-npc-and-items-translate/defaults/npc_translator_phrasebook.json")) {
+                if (in != null) readEntries(new InputStreamReader(in, StandardCharsets.UTF_8), entries);
+            } catch (Exception e) {
+                System.err.println("[NPCTranslator] Failed to read built-in phrasebook: " + e.getMessage());
+            }
         }
         if (entries.isEmpty()) {
             matcher = null;

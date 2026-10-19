@@ -4,35 +4,35 @@
   {
    "en": "Absorb",
    "zh": "吸纳",
-   "hint": "砍原木攒林业智慧与时运",
+   "hint": "提供 +1 林业智慧和 +2 林业时运。砍伐 1k 根原木可从 I 级提升到 II 级。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Angler",
    "zh": "垂钓者",
-   "hint": "+海洋生物几率",
+   "hint": "提供 +1 海洋生物几率。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Aqua Affinity",
    "zh": "水下速掘",
-   "hint": "水下挖掘不减速",
+   "hint": "提高你在水下的挖掘速度。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Bane of Arthropods",
    "zh": "节肢杀手",
-   "hint": "对节肢生物增伤",
+   "hint": "对节肢动物类生物造成的伤害提高 5%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Bank",
    "zh": "银行",
-   "hint": "死亡时保住部分硬币，击杀多掉硬币",
+   "hint": "死亡时保留 10% 的硬币。此外，击杀敌人时敌人额外掉落 +0.5 硬币。",
    "ultimate": true,
    "aliases": [
     "Ultimate Bank"
@@ -41,28 +41,28 @@
   {
    "en": "Big Brain",
    "zh": "最强大脑",
-   "hint": "+法力（头盔）",
+   "hint": "提供 +15 智力。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Blast Protection",
    "zh": "爆炸保护",
-   "hint": "防御爆炸伤害",
+   "hint": "提供 +30 防御，仅对爆炸伤害生效。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Blessing",
    "zh": "海神祝福",
-   "hint": "宝藏渔获更易出好品质",
+   "hint": "使宝藏渔获成为 GREAT 或 OUTSTANDING 的几率提高 2%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Bobbin' Time",
    "zh": "浮漂时光",
-   "hint": "周围鱼漂越多钓鱼属性越高",
+   "hint": "每有一个位于 30 格范围内的钓鱼浮标，使所有钓鱼属性和魔法寻宝提高 +0.6%，最多计入 5 个浮标。",
    "ultimate": true,
    "aliases": [
     "Ultimate Bobbin Time",
@@ -72,42 +72,42 @@
   {
    "en": "Caster",
    "zh": "省饵",
-   "hint": "几率不消耗鱼饵",
+   "hint": "有 5% 几率不消耗鱼饵。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Cayenne",
    "zh": "卡宴辣椒",
-   "hint": "按饰品之力位数加生命和真实防御",
+   "hint": "你的饰品之力每有 1 位数字，提供 +0.8 生命和 +0.4 真实防御。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Champion",
    "zh": "冠军",
-   "hint": "战斗经验加成，击杀攒经验升级",
+   "hint": "获得 3% 额外战斗经验。对生物的第 2 次命中提供 +1.4 硬币和 +7 经验球。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Chance",
    "zh": "机缘",
-   "hint": "弓箭击杀掉落几率提升",
+   "hint": "使怪物掉落物品的几率提高 15%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Charm",
    "zh": "鱼魅",
-   "hint": "更易钓到高阶奖杯鱼",
+   "hint": "钓到更高品质奖杯鱼的几率提高 2%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Chimera",
    "zh": "奇美拉",
-   "hint": "复制当前宠物的属性",
+   "hint": "复制你当前激活宠物 20% 的属性。",
    "ultimate": true,
    "aliases": [
     "Ultimate Chimera"
@@ -116,14 +116,14 @@
   {
    "en": "Cleave",
    "zh": "顺劈斩",
-   "hint": "伤害波及周围怪物",
+   "hint": "对目标周围 3.3 格内的其他怪物造成你造成伤害的 5%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Combo",
    "zh": "连击",
-   "hint": "短时间内连续击杀叠加伤害",
+   "hint": "在 2 秒内，每击杀 1 只怪物使你的伤害提高 +1%，最多计入 2 次击杀。",
    "ultimate": true,
    "aliases": [
     "Ultimate Combo"
@@ -132,21 +132,21 @@
   {
    "en": "Compact",
    "zh": "压缩",
-   "hint": "挖矿成长，几率直接掉附魔物品",
+   "hint": "获得 +1 挖掘智慧，并有 0.25% 概率掉落一个附魔物品。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Corruption",
    "zh": "腐化",
-   "hint": "几率生成腐化海洋生物",
+   "hint": "有 1% 概率生成一只腐化海洋生物。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Counter-Strike",
    "zh": "反击",
-   "hint": "受到首次攻击后短时加防御",
+   "hint": "首次被敌人击中时，获得 +10 防御，持续 7 秒。",
    "ultimate": false,
    "aliases": [
     "Counter Strike"
@@ -155,56 +155,56 @@
   {
    "en": "Critical",
    "zh": "暴击",
-   "hint": "暴击伤害提升",
+   "hint": "增加 10% 暴击伤害。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Cubism",
    "zh": "立方杀手",
-   "hint": "对史莱姆/岩浆怪/苦力怕增伤",
+   "hint": "对立方体怪物造成的伤害提高 5%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Cultivating",
    "zh": "耕耘",
-   "hint": "收割作物攒农业智慧与时运",
+   "hint": "获得 +1 农业智慧 和 +2 农业时运。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Dedication",
    "zh": "专注",
-   "hint": "按花园作物里程碑+农业时运",
+   "hint": "为作物提供 0.5 农业时运，数值乘以你在花园中该作物的里程碑。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Delicate",
    "zh": "轻柔",
-   "hint": "不破坏茎和未成熟作物",
+   "hint": "避免破坏作物茎秆和未成熟作物。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Depth Strider",
    "zh": "深海探索者",
-   "hint": "水中移动更快",
+   "hint": "将你在水中的减速程度降低 33%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Divine Gift",
    "zh": "神赐",
-   "hint": "+魔法寻宝",
+   "hint": "提供 +2 魔法寻宝。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Dragon Tracer",
    "zh": "追龙",
-   "hint": "箭矢自动追踪末影龙",
+   "hint": "箭矢与龙相距 2 格以内时，会自动追踪龙。",
    "ultimate": false,
    "aliases": [
     "Aiming"
@@ -213,7 +213,7 @@
   {
    "en": "Drain",
    "zh": "汲取",
-   "hint": "命中回复活力",
+   "hint": "每次击中怪物时回复 +0.5 活力（1 秒冷却）。",
    "ultimate": false,
    "aliases": [
     "Syphon"
@@ -222,7 +222,7 @@
   {
    "en": "Duplex",
    "zh": "双发",
-   "hint": "额外射出一支伤害较低的箭",
+   "hint": "射出第二支箭，造成第一支箭伤害的 4%。被命中的目标在 60 秒内受到 1.1 倍火焰伤害。",
    "ultimate": true,
    "aliases": [
     "Reiterate",
@@ -233,42 +233,42 @@
   {
    "en": "Efficiency",
    "zh": "效率",
-   "hint": "挖掘速度提升",
+   "hint": "提高工具破坏方块的速度。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Ender Slayer",
    "zh": "末影杀手",
-   "hint": "对末影生物增伤",
+   "hint": "对末影生物造成的伤害提高 5%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Execute",
    "zh": "斩杀",
-   "hint": "目标损失血量越多伤害越高",
+   "hint": "目标每损失 1% 生命，你造成的伤害提高 0.2%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Experience",
    "zh": "经验",
-   "hint": "怪物/矿石双倍经验几率",
+   "hint": "生物和矿石有 12.5% 几率掉落双倍经验。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Expertise",
    "zh": "精通",
-   "hint": "击杀海洋生物攒钓鱼智慧",
+   "hint": "提供 +0.6 海洋生物几率和 +2 钓鱼智慧（击杀海洋生物时获得经验的加成）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Fatal Tempo",
    "zh": "致命节奏",
-   "hint": "连续攻击叠加凶暴",
+   "hint": "攻击时每次命中使你的凶暴提高 10%，最多提高至 200%；该效果在你最后一次攻击后持续 3 秒。",
    "ultimate": true,
    "aliases": [
     "Ultimate Fatal Tempo"
@@ -277,35 +277,35 @@
   {
    "en": "Feast",
    "zh": "盛宴",
-   "hint": "+过度绽放",
+   "hint": "获得 +2 过度绽放。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Feather Falling",
    "zh": "摔落缓冲",
-   "hint": "减少摔落伤害",
+   "hint": "你在受到摔落伤害前可下落的高度增加 1 格，并减少 5% 摔落伤害。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Fire Aspect",
    "zh": "火焰附加",
-   "hint": "点燃目标持续伤害",
+   "hint": "使敌人燃烧 3 秒，每秒造成相当于你伤害 3% 的伤害。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Fire Protection",
    "zh": "火焰保护",
-   "hint": "防御火焰与岩浆伤害",
+   "hint": "获得 +2 真实防御，仅对火焰和熔岩伤害生效。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "First Impression",
    "zh": "第一印象",
-   "hint": "近战砍树加横扫，每棵树首砍额外收益",
+   "hint": "近战破坏原木时获得 +1 横扫，且你在一棵树上首次近战破坏原木时获得 +2 横扫。",
    "ultimate": true,
    "aliases": [
     "Ultimate First Impression"
@@ -314,21 +314,21 @@
   {
    "en": "First Strike",
    "zh": "先发制人",
-   "hint": "对每只怪的第一击增伤",
+   "hint": "对生物的第一击造成的近战伤害提高 25%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Flame",
    "zh": "火矢",
-   "hint": "箭矢点燃目标",
+   "hint": "箭矢使敌人燃烧 3 秒。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Flash",
-   "zh": "闪现",
-   "hint": "几率立刻钓到鱼",
+   "zh": "瞬钓",
+   "hint": "有 1% 几率立即引来一条鱼。",
    "ultimate": true,
    "aliases": [
     "Ultimate Flash"
@@ -337,7 +337,7 @@
   {
    "en": "Flowstate",
    "zh": "心流",
-   "hint": "连续挖掘叠加挖掘速度",
+   "hint": "连续破坏方块时，每破坏一个方块获得 +1 挖掘速度；停止挖掘 10 秒后效果结束，最多计算 200 个方块。",
    "ultimate": true,
    "aliases": [
     "Ultimate Flowstate"
@@ -346,35 +346,35 @@
   {
    "en": "Fortune",
    "zh": "时运",
-   "hint": "+挖掘时运",
+   "hint": "获得 +10  挖掘时运，这会提高你获得多份掉落的几率。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Frail",
-   "zh": "虚弱",
-   "hint": "海洋生物出生时血量降低",
+   "zh": "脆弱",
+   "hint": "海洋生物生成时的初始生命减少 2.5%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Frost Walker",
    "zh": "冰霜行者",
-   "hint": "水面结冰行走",
+   "hint": "当你在水面上方行走时，会在你下方半径 1 格内生成冰块。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Giant Killer",
    "zh": "巨人杀手",
-   "hint": "目标血量上限比你高时增伤",
+   "hint": "目标每比你多 1% 生命值，你造成的伤害提高 0.1%，最多提高 5%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Gravity",
    "zh": "引力",
-   "hint": "对飞行生物增伤",
+   "hint": "对  空中生物造成的伤害提高 5%。",
    "ultimate": false,
    "aliases": [
     "Dragon Hunter"
@@ -383,21 +383,21 @@
   {
    "en": "Green Thumb",
    "zh": "绿手指",
-   "hint": "按招待过的访客数+农业时运",
+   "hint": "每招待过一位不同的访客，提供 0.05 农业时运。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Growth",
    "zh": "成长",
-   "hint": "+生命（盔甲）",
+   "hint": "获得 +15 生命值。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Habanero Tactics",
-   "zh": "哈瓦那战术",
-   "hint": "魔杖治疗更多，对猎手Boss增伤",
+   "zh": "哈瓦那辣椒战术",
+   "hint": "治疗魔杖的治疗量提高 6%。使用猎手（Slayer）武器时，对猎手首领的伤害提高 20%，并获得 +2.5 战斗智慧。具有 Smoldering Polarization（阴燃极化，暂译）效果时，猎手武器额外获得 +10 魔法寻宝。",
    "ultimate": true,
    "aliases": [
     "Ultimate Habanero Tactics"
@@ -406,7 +406,7 @@
   {
    "en": "Hardened Vitality",
    "zh": "坚韧活力",
-   "hint": "消耗活力转化为防御",
+   "hint": "将所消耗活力的 4% 转化为防御，持续 10 秒，最多获得 25 防御。",
    "ultimate": false,
    "aliases": [
     "Hardened Mana"
@@ -415,35 +415,35 @@
   {
    "en": "Harvesting",
    "zh": "丰收",
-   "hint": "+农业时运",
+   "hint": "获得 +12.5  农业时运，这会提高你获得多份作物的几率。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Hecatomb",
    "zh": "百牲祭",
-   "hint": "地牢与职业经验加成，通关攒经验升级",
+   "hint": "地下墓穴经验提高 0.28%，职业经验提高 0.56%；S+ 评价通关时这两项加成翻倍。每 10 级地下墓穴等级额外提供 2.6 生命。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Ice Cold",
    "zh": "御寒",
-   "hint": "+抗寒",
+   "hint": "提供 +1 抗寒。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Impaling",
    "zh": "穿刺",
-   "hint": "对水生生物增伤",
+   "hint": "对  水生生物造成的伤害提高 5%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Inferno",
    "zh": "炼狱",
-   "hint": "每第十击召唤炼狱火造成大量伤害",
+   "hint": "对生物每第 10 次命中会生成一片炼狱，困住该生物并造成你上一次命中的 125% 伤害。",
    "ultimate": true,
    "aliases": [
     "Ultimate Inferno"
@@ -452,35 +452,35 @@
   {
    "en": "Infinite Quiver",
    "zh": "无尽箭袋",
-   "hint": "几率不消耗箭矢",
+   "hint": "使用弓射击时有 3% 的几率节省箭。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Karma",
-   "zh": "福报",
-   "hint": "树之礼物几率双倍战利品",
+   "zh": "因果",
+   "hint": "用斧类工具砍树时，树礼物有 1% 的几率掉落双倍战利品。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Knockback",
    "zh": "击退",
-   "hint": "击退距离增加",
+   "hint": "攻击时将目标击退的距离增加 3 格。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Lapidary",
    "zh": "琢玉",
-   "hint": "挖宝石时+宝石时运和挖掘速度",
+   "hint": "挖掘宝石时，获得 +10 宝石时运和 +20 挖掘速度。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Last Stand",
    "zh": "背水一战",
-   "hint": "低血量时防御提高",
+   "hint": "当生命低于 40% 时：获得 +2.5% 防御，持续 10 秒；并回复 2 活力。冷却时间：30 秒。",
    "ultimate": true,
    "aliases": [
     "Ultimate Last Stand"
@@ -489,7 +489,7 @@
   {
    "en": "Legion",
    "zh": "军团",
-   "hint": "周围玩家越多全属性越高",
+   "hint": "你周围 30 格内每有一名玩家，就使你所有战斗属性和魔法寻宝提高 0.07%，最多计算 20 名玩家。",
    "ultimate": true,
    "aliases": [
     "Ultimate Legion"
@@ -498,63 +498,63 @@
   {
    "en": "Lethality",
    "zh": "破甲",
-   "hint": "近战削减目标防御，可叠加",
+   "hint": "每次近战命中目标时，使其防御降低 1.2%，持续 4 秒，最多叠加 4 次。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Life Steal",
    "zh": "生命窃取",
-   "hint": "每次命中回复生命",
+   "hint": "每次命中生物时回复 2.4 生命。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Looting",
    "zh": "抢夺",
-   "hint": "怪物掉落几率提升",
+   "hint": "使怪物掉落物品的几率提高 15%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Luck",
    "zh": "幸运",
-   "hint": "怪物掉落盔甲几率提升",
+   "hint": "使怪物掉落自身护甲的几率提高 5%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Luck of the Sea",
    "zh": "海之眷顾",
-   "hint": "+宝藏几率",
+   "hint": "获得 +0.5 宝藏几率，可提高钓到宝藏的几率。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Lure",
    "zh": "饵钓",
-   "hint": "上钩更快",
+   "hint": "将钓鱼时最长上钩等待时间缩短 5%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Magnet",
    "zh": "磁吸",
-   "hint": "钓到鱼额外经验球",
+   "hint": "每次成功钓到鱼时，额外获得 1 个经验球。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Mana Steal",
    "zh": "法力窃取",
-   "hint": "命中回复法力值",
+   "hint": "命中时回复自身 0.25% 的法力。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Missile",
    "zh": "导弹",
-   "hint": "减少投掷斧的原木惩罚",
+   "hint": "投掷斧的原木惩罚降低 10%。",
    "ultimate": true,
    "aliases": [
     "Ultimate Missile"
@@ -563,7 +563,7 @@
   {
    "en": "No Pain No Gain",
    "zh": "无痛无获",
-   "hint": "被怪物攻击时获得经验球",
+   "hint": "每次被生物击中时，有 20% 的几率获得 2 个经验球。",
    "ultimate": true,
    "aliases": [
     "Ultimate No Pain No Gain"
@@ -572,7 +572,7 @@
   {
    "en": "One For All",
    "zh": "孤注一掷",
-   "hint": "移除其他所有附魔，武器伤害+500%",
+   "hint": "移除所有其他附魔，但使你的武器伤害提高 500%。",
    "ultimate": true,
    "aliases": [
     "Ultimate One For All"
@@ -581,56 +581,56 @@
   {
    "en": "Overload",
    "zh": "过载",
-   "hint": "暴击率超过100%的部分转为额外暴击",
+   "hint": "暴击伤害提高 1%，暴击几率提高 1%。暴击几率超过 100% 时，有几率触发“超级暴击”，造成额外 10% 伤害。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Paleontologist",
    "zh": "古生物学家",
-   "hint": "冰川矿井更易找到可疑碎片",
+   "hint": "在冰川矿井（Glacite Mineshafts）挖掘时，发现可疑碎片的几率提高 2.5%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Pesterminator",
    "zh": "灭虫大师",
-   "hint": "+农业时运，害虫出现几率提升",
+   "hint": "提供 +2 农业时运和 +1 额外害虫几率；额外害虫几率会提高你在花园中生成额外害虫的几率。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Petalfall",
    "zh": "落英",
-   "hint": "+整树砍伐",
+   "hint": "提供 +0.2 整树砍伐。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Piercing",
    "zh": "穿透",
-   "hint": "箭矢穿透敌人",
+   "hint": "箭矢会穿透敌人。被额外命中的目标受到 25% 的伤害。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Piscary",
    "zh": "疾钓",
-   "hint": "+钓鱼速度",
+   "hint": "提供 +1 钓鱼速度。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Power",
-   "zh": "强弓",
-   "hint": "弓箭伤害提升",
+   "zh": "力量",
+   "hint": "使弓的伤害提高 8%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Prismatic",
    "zh": "棱彩",
-   "hint": "+纯净（宝石品质）",
+   "hint": "提供 +0.5 纯净；纯净会提高掉落的宝石提升品质的几率。",
    "ultimate": false,
    "aliases": [
     "Pristine"
@@ -639,42 +639,42 @@
   {
    "en": "Projectile Protection",
    "zh": "弹射物保护",
-   "hint": "防御弹射物伤害",
+   "hint": "提供 +7 对弹射物的防御力。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Prosecute",
    "zh": "问罪",
-   "hint": "目标剩余血量越多伤害越高",
+   "hint": "目标每拥有 1% 生命值，你造成的伤害提高 0.1%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Prosperity",
    "zh": "兴旺",
-   "hint": "+生命",
+   "hint": "提供 +3 生命值。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Protection",
    "zh": "保护",
-   "hint": "+防御",
+   "hint": "提供 +4 防御力。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Punch",
    "zh": "冲击",
-   "hint": "箭矢击退增加",
+   "hint": "使箭矢的击退距离增加 3 格。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Pyroclasm",
    "zh": "火山之怒",
-   "hint": "对岩浆系生物增伤",
+   "hint": "对  熔岩类生物造成的伤害提高 10%。",
    "ultimate": false,
    "aliases": [
     "Magmarizer"
@@ -683,28 +683,28 @@
   {
    "en": "Quantum",
    "zh": "量子",
-   "hint": "工作日+活力，周末+随机智慧",
+   "hint": "工作日提供 +1 活力，周末提供 +1.2 的随机智慧属性。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Quick Bite",
    "zh": "速咬",
-   "hint": "鱼游向鱼漂更快",
+   "hint": "使鱼朝你的浮漂游动的速度提高 5%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Reflection",
    "zh": "反射",
-   "hint": "加法力与真实防御，被箭射中时反伤",
+   "hint": "提供 +2 智力。提供 +1 真实防御。被箭矢伤害时，对射箭者造成相当于你智力 2 倍的伤害。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Refrigerate",
-   "zh": "冰封",
-   "hint": "消耗法力转化为防御",
+   "zh": "冷藏",
+   "hint": "将所消耗法力的 3% 转化为防御，持续 10 秒。（最多 150 防御）",
    "ultimate": true,
    "aliases": [
     "Ultimate Refrigerate"
@@ -713,14 +713,14 @@
   {
    "en": "Rejuvenate",
    "zh": "回春",
-   "hint": "+生命回复",
+   "hint": "提供 +1 生命回复。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Rend",
    "zh": "撕裂",
-   "hint": "拔出敌人身上的箭造成伤害",
+   "hint": "使用左键技能从附近敌人身上拔出你的箭矢。每支箭造成你对该目标上一次暴击射击伤害的 5%，最多 5 支箭。冷却 2 秒。",
    "ultimate": true,
    "aliases": [
     "Ultimate Rend"
@@ -729,91 +729,91 @@
   {
    "en": "Replenish",
    "zh": "补种",
-   "hint": "收割后自动补种",
+   "hint": "破坏作物、下界疣、可可豆、野玫瑰或向日葵时，自动用你物品栏中的材料重新种植。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Respiration",
    "zh": "水下呼吸",
-   "hint": "水下憋气更久",
+   "hint": "提供 +15 水下呼吸，延长你在水下停留的时间。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Respite",
    "zh": "休憩",
-   "hint": "脱离战斗时+生命回复",
+   "hint": "脱离战斗时提供 +3 生命回复。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Scavenger",
    "zh": "拾荒者",
-   "hint": "击杀按怪物等级掉硬币",
+   "hint": "击杀时，按怪物等级每级获得 0.3 硬币。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Sharpness",
    "zh": "锋利",
-   "hint": "近战伤害提升",
+   "hint": "造成的近战伤害提高 5%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Silk Touch",
    "zh": "精准采集",
-   "hint": "方块掉落本身",
+   "hint": "可以采集通常无法直接获得的方块掉落物。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Small Brain",
    "zh": "小脑瓜",
-   "hint": "-法力，+真实防御",
+   "hint": "提供 -5 智力 和 +1 真实防御。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Smarty Pants",
    "zh": "机灵鬼",
-   "hint": "+法力（护腿）",
+   "hint": "提供 +5 智力。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Smelting Touch",
    "zh": "熔炼之触",
-   "hint": "挖到的方块直接熔炼",
+   "hint": "自动将破坏的方块熔炼为其熔炼产物。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Smite",
    "zh": "亡灵杀手",
-   "hint": "对亡灵/凋零/骷髅增伤",
+   "hint": "对凋零、亡灵和骷髅类生物造成的伤害提高 5%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Smoldering",
    "zh": "阴燃",
-   "hint": "对炼狱系生物增伤",
+   "hint": "对炼狱类怪物造成的伤害提高5%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Snipe",
    "zh": "狙击",
-   "hint": "箭飞得越远伤害越高",
+   "hint": "箭矢每飞行10格，伤害+1%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Soul Eater",
    "zh": "噬魂",
-   "hint": "下一击继承上一只被杀怪物的伤害",
+   "hint": "武器获得最近一次击杀怪物的 2 倍伤害值，追加到你的下一次暴击伤害计算末尾；地牢外上限为 1M（100 万）。",
    "ultimate": true,
    "aliases": [
     "Ultimate Soul Eater"
@@ -822,14 +822,14 @@
   {
    "en": "Spiked Hook",
    "zh": "倒刺钩",
-   "hint": "钓竿对怪物伤害提高",
+   "hint": "钓鱼竿对怪物造成的伤害提高5%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Strong Vitality",
    "zh": "强健活力",
-   "hint": "消耗活力转化为力量",
+   "hint": "将所消耗活力的 2% 转化为力量，持续 10 秒，最多获得 30 力量。",
    "ultimate": false,
    "aliases": [
     "Strong Mana"
@@ -838,14 +838,14 @@
   {
    "en": "Sugar Rush",
    "zh": "糖分冲刺",
-   "hint": "+速度",
+   "hint": "获得+2速度。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Sunset",
    "zh": "日落",
-   "hint": "白天+过度绽放，夜晚访客冷却缩短",
+   "hint": "白天时，+1过度绽放。夜晚时，访客冷却时间减少1%。",
    "ultimate": true,
    "aliases": [
     "Ultimate Sunset"
@@ -854,7 +854,7 @@
   {
    "en": "Swarm",
    "zh": "蜂群",
-   "hint": "周围敌人越多伤害越高",
+   "hint": "10格范围内每有一名敌人，你的伤害提高2%。最多计10名敌人。",
    "ultimate": true,
    "aliases": [
     "Ultimate Swarm"
@@ -863,14 +863,14 @@
   {
    "en": "Tabasco",
    "zh": "塔巴斯科",
-   "hint": "未装备龙宠物时加武器伤害",
+   "hint": "若未装备龙宠物，获得+2武器伤害。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "The One",
    "zh": "天选",
-   "hint": "每个满级收藏+生命与力量",
+   "hint": "每种满级收藏提供 +0.5 生命和 +0.1 力量。原始样例账号已有 73 种满级收藏（此数字随玩家变化）。",
    "ultimate": true,
    "aliases": [
     "Ultimate The One"
@@ -879,56 +879,56 @@
   {
    "en": "Thorns",
    "zh": "荆棘",
-   "hint": "几率反弹受到的伤害",
+   "hint": "有 50% 几率向攻击者反弹相当于其造成伤害 3% 的伤害。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Thunderbolt",
    "zh": "雷霆一击",
-   "hint": "每三击闪电波及多个怪物",
+   "hint": "每对怪物命中3次，召唤闪电，对2格范围内至多10只怪物造成该次命中伤害的4%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Thunderlord",
    "zh": "雷霆领主",
-   "hint": "每三击召唤闪电",
+   "hint": "每对怪物命中3次，召唤闪电，造成该次命中伤害的8%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Tidal",
    "zh": "潮汐",
-   "hint": "对海洋生物+防御",
+   "hint": "面对海洋生物时，你的防御+5%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Titan Killer",
    "zh": "泰坦杀手",
-   "hint": "目标防御越高伤害越高",
+   "hint": "使你对目标造成的伤害提高：目标每有100点防御，伤害提高2%，最多提高6%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Toxophilite",
    "zh": "箭术家",
-   "hint": "战斗经验加成与暴击率，击杀攒经验升级",
+   "hint": "获得3%额外战斗经验；提供 +3.7 暴击几率；需要50k战斗经验升阶！",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Transylvanian",
    "zh": "血族",
-   "hint": "周围敌人越多回血越快",
+   "hint": "10 格范围内每有一个敌人，每秒恢复 2 生命，上限为每秒恢复 20 生命。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Triple-Strike",
    "zh": "三连击",
-   "hint": "对每只怪的前三击增伤",
+   "hint": "对同一怪物进行的前三次近战命中，造成的近战伤害提高10%。",
    "ultimate": false,
    "aliases": [
     "Triple Strike"
@@ -937,14 +937,14 @@
   {
    "en": "True Protection",
    "zh": "真实保护",
-   "hint": "+真实防御",
+   "hint": "提供 +5 真实防御。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Turbo-Cacti",
    "zh": "极速仙人掌",
-   "hint": "+仙人掌时运",
+   "hint": "提供 +5 仙人掌时运。",
    "ultimate": false,
    "aliases": [
     "Turbo Cactus",
@@ -954,7 +954,7 @@
   {
    "en": "Turbo-Cane",
    "zh": "极速甘蔗",
-   "hint": "+甘蔗时运",
+   "hint": "提供 +5 甘蔗时运。",
    "ultimate": false,
    "aliases": [
     "Turbo Cane"
@@ -963,7 +963,7 @@
   {
    "en": "Turbo-Carrot",
    "zh": "极速胡萝卜",
-   "hint": "+胡萝卜时运",
+   "hint": "提供 +5 胡萝卜时运。",
    "ultimate": false,
    "aliases": [
     "Turbo Carrot"
@@ -972,7 +972,7 @@
   {
    "en": "Turbo-Cocoa",
    "zh": "极速可可豆",
-   "hint": "+可可豆时运",
+   "hint": "提供 +5 可可豆时运。",
    "ultimate": false,
    "aliases": [
     "Turbo Coco",
@@ -982,7 +982,7 @@
   {
    "en": "Turbo-Melon",
    "zh": "极速西瓜",
-   "hint": "+西瓜时运",
+   "hint": "提供 +5 西瓜片时运。",
    "ultimate": false,
    "aliases": [
     "Turbo Melon"
@@ -991,7 +991,7 @@
   {
    "en": "Turbo-Moonflower",
    "zh": "极速月光花",
-   "hint": "+月光花时运",
+   "hint": "提供 +5 月光花时运。",
    "ultimate": false,
    "aliases": [
     "Turbo Moonflower"
@@ -1000,7 +1000,7 @@
   {
    "en": "Turbo-Mushrooms",
    "zh": "极速蘑菇",
-   "hint": "+蘑菇时运",
+   "hint": "提供 +5 蘑菇时运。",
    "ultimate": false,
    "aliases": [
     "Turbo Mushrooms"
@@ -1009,7 +1009,7 @@
   {
    "en": "Turbo-Potato",
    "zh": "极速马铃薯",
-   "hint": "+马铃薯时运",
+   "hint": "提供 +5 马铃薯时运。",
    "ultimate": false,
    "aliases": [
     "Turbo Potato"
@@ -1018,7 +1018,7 @@
   {
    "en": "Turbo-Pumpkin",
    "zh": "极速南瓜",
-   "hint": "+南瓜时运",
+   "hint": "提供 +5 南瓜时运。",
    "ultimate": false,
    "aliases": [
     "Turbo Pumpkin"
@@ -1027,7 +1027,7 @@
   {
    "en": "Turbo-Rose",
    "zh": "极速野玫瑰",
-   "hint": "+野玫瑰时运",
+   "hint": "提供 +5 野玫瑰时运。",
    "ultimate": false,
    "aliases": [
     "Turbo Rose"
@@ -1036,7 +1036,7 @@
   {
    "en": "Turbo-Sunflower",
    "zh": "极速向日葵",
-   "hint": "+向日葵时运",
+   "hint": "获得 +5 向日葵时运。",
    "ultimate": false,
    "aliases": [
     "Turbo Sunflower"
@@ -1045,7 +1045,7 @@
   {
    "en": "Turbo-Warts",
    "zh": "极速下界疣",
-   "hint": "+下界疣时运",
+   "hint": "获得 +5 下界疣时运。",
    "ultimate": false,
    "aliases": [
     "Turbo Warts"
@@ -1054,7 +1054,7 @@
   {
    "en": "Turbo-Wheat",
    "zh": "极速小麦",
-   "hint": "+小麦时运",
+   "hint": "获得 +5 小麦时运。",
    "ultimate": false,
    "aliases": [
     "Turbo Wheat"
@@ -1063,14 +1063,14 @@
   {
    "en": "Ultimate Wise",
    "zh": "终极智慧",
-   "hint": "降低武器技能的法力消耗",
+   "hint": "使该物品的技能法力消耗降低 10%。",
    "ultimate": true,
    "aliases": []
   },
   {
    "en": "Vampiric Vitality",
    "zh": "嗜血活力",
-   "hint": "按消耗的活力回血",
+   "hint": "每消耗 1 活力，恢复 0.6 生命。",
    "ultimate": false,
    "aliases": [
     "Mana Vampire"
@@ -1079,28 +1079,28 @@
   {
    "en": "Vampirism",
    "zh": "吸血鬼",
-   "hint": "击杀怪物回复生命",
+   "hint": "每次击杀生物时恢复 5 生命，冷却 0.5 秒。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Venomous",
    "zh": "剧毒",
-   "hint": "命中减速并持续掉血",
+   "hint": "使目标行走速度降低 2%，并且每次命中额外每秒造成你伤害的 +0.2%，全局叠加最多 40 次命中。持续 5 秒。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Vicious",
    "zh": "凶残",
-   "hint": "+凶暴",
+   "hint": "获得 +3 凶暴。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Vivacious Vitality",
    "zh": "灵动活力",
-   "hint": "消耗活力转化为攻击速度",
+   "hint": "将所消耗活力的 1% 转化为攻击速度，持续 10 秒，最多获得 5 攻击速度。",
    "ultimate": false,
    "aliases": [
     "Ferocious Mana"
@@ -1109,7 +1109,7 @@
   {
    "en": "Wisdom",
    "zh": "博学",
-   "hint": "身上经验等级越高法力越高",
+   "hint": "你当前每有 5 级经验，获得 1 点智力。上限为 20 点智力。",
    "ultimate": true,
    "aliases": [
     "Ultimate Wisdom"
@@ -1118,7 +1118,7 @@
   {
    "en": "Ultimate enchant",
    "zh": "终极附魔",
-   "hint": "统称：任选一种终极附魔，每件装备只能有一个",
+   "hint": "终极附魔是一类特殊附魔。一件物品同时只能具有一种；施加另一种会覆盖原有终极附魔。",
    "ultimate": true,
    "generic": true,
    "aliases": [
@@ -1127,6 +1127,83 @@
     "Ultimate Enchantment",
     "ultimate enchant"
    ]
+  },
+  {
+   "en": "Bug Blender",
+   "zh": "碎虫",
+   "hint": "用吸尘器吸取害虫时，提供 +20 农业时运。",
+   "ultimate": false,
+   "aliases": []
+  },
+  {
+   "en": "Crop Fever",
+   "zh": "作物狂热",
+   "hint": "破坏作物时，有 0.001% 几率触发持续 60 秒的作物狂热：获得额外的作物掉落判定、+15 过度绽放和 +100 农业时运。",
+   "ultimate": true,
+   "aliases": []
+  },
+  {
+   "en": "Forest Pledge",
+   "zh": "森林誓约",
+   "hint": "获得 +6 林业时运。",
+   "ultimate": false,
+   "aliases": []
+  },
+  {
+   "en": "Great Spook",
+   "zh": "大惊吓",
+   "hint": "装备在 Great Spook（大惊吓，暂译）系列盔甲上时，提供 +1 恐惧。",
+   "ultimate": false,
+   "aliases": []
+  },
+  {
+   "en": "Rainbow",
+   "zh": "彩虹",
+   "hint": "剪羊毛时，使羊掉落随机颜色的羊毛。",
+   "ultimate": false,
+   "aliases": []
+  },
+  {
+   "en": "Scuba",
+   "zh": "潜水",
+   "hint": "提供 +1 抗压。",
+   "ultimate": false,
+   "aliases": []
+  },
+  {
+   "en": "Stealth",
+   "zh": "潜行",
+   "hint": "胆怯的怪物有 10% 概率保持原地不动，而不是逃跑。",
+   "ultimate": false,
+   "aliases": []
+  },
+  {
+   "en": "Sunder",
+   "zh": "劈裂",
+   "hint": "提供 +12.5  农业时运，这会提高你获得多份作物的概率。",
+   "ultimate": false,
+   "aliases": []
+  },
+  {
+   "en": "Telekinesis",
+   "zh": "念力",
+   "hint": "方块和怪物的掉落物会直接进入你的物品栏。",
+   "ultimate": false,
+   "aliases": []
+  },
+  {
+   "en": "Ultimate Jerry",
+   "zh": "终极杰瑞",
+   "hint": "使 Aspect of the Jerry 的基础伤害提高 1000%。",
+   "ultimate": true,
+   "aliases": []
+  },
+  {
+   "en": "Woodsplitter",
+   "zh": "劈木",
+   "hint": "对  林地怪物造成的伤害提高 10%。",
+   "ultimate": false,
+   "aliases": []
   }
  ]
 }

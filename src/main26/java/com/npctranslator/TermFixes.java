@@ -35,6 +35,8 @@ public final class TermFixes {
     private static Map<String, String> output = Collections.emptyMap();
     private static Pattern withGem, word, qualitySpace;
     private static final Map<String, String> CACHE = new ConcurrentHashMap<>();
+    /** Wording decisions applied to every translated line. */
+    private static final Map<String, String> ZH_REPLACE = Map.of("爪牙", "小人");
 
     private TermFixes() {}
 
@@ -92,11 +94,14 @@ public final class TermFixes {
     public static String apply(String translated) {
         if (translated == null || translated.isEmpty()) return translated;
         load();
-        if (word == null || !CJK.matcher(translated).find()) return translated;
+        if (!CJK.matcher(translated).find()) return translated;
         String cached = CACHE.get(translated);
         if (cached != null) return cached;
         String out = translated;
-        if (word.matcher(out).find()) {
+        for (Map.Entry<String, String> r : ZH_REPLACE.entrySet()) {
+            if (out.contains(r.getKey())) out = out.replace(r.getKey(), r.getValue());
+        }
+        if (word != null && word.matcher(out).find()) {
             out = replace(withGem, out);
             out = replace(word, out);
             out = qualitySpace.matcher(out).replaceAll("$1$2$3");

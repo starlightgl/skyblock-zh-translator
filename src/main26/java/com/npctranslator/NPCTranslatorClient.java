@@ -181,6 +181,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
         ModConfig.load();
         config = ModConfig.INSTANCE;
         Glossary.ensureFile();
+        dataSource = source();
         PhraseBook.loadAsync();
         HudTranslator.init();
         startTtsRunner();
@@ -490,6 +491,25 @@ public class NPCTranslatorClient implements ClientModInitializer {
                             int n = TranslationDictionary.removeMenu(kw);
                             clearRuntimeCaches();
                             mc.player.sendSystemMessage(Component.literal("[翻译] 已清除菜单名含「" + kw + "」的 " + n + " 条译文，下次打开会重新翻译").withStyle(ChatFormatting.GREEN));
+                            return 1;
+                        })))
+                .then(com.mojang.brigadier.builder.LiteralArgumentBuilder.literal("coverage")
+                    .executes(context -> {
+                        Minecraft mc = Minecraft.getInstance();
+                        Coverage.saveNow();
+                        int ok = Coverage.covered(), miss = Coverage.missing();
+                        int pct = ok + miss == 0 ? 0 : Math.round(ok * 100f / (ok + miss));
+                        mc.player.sendSystemMessage(Component.literal("[翻译覆盖率] 本次游戏看到的文本：已翻译 " + ok + " 条，未覆盖 " + miss + " 条（" + pct + "%）").withStyle(ChatFormatting.YELLOW));
+                        for (String s : Coverage.summary(6)) {
+                            mc.player.sendSystemMessage(Component.literal(" 未覆盖 · " + s).withStyle(ChatFormatting.GRAY));
+                        }
+                        mc.player.sendSystemMessage(Component.literal("未覆盖的原文已记录到 config/" + Coverage.FILE.getName() + "，可补进术语表").withStyle(ChatFormatting.DARK_GRAY));
+                        return 1;
+                    })
+                    .then(com.mojang.brigadier.builder.LiteralArgumentBuilder.literal("reset")
+                        .executes(context -> {
+                            Coverage.reset();
+                            Minecraft.getInstance().player.sendSystemMessage(Component.literal("[翻译覆盖率] 已重新开始统计").withStyle(ChatFormatting.GREEN));
                             return 1;
                         })))
                 .then(com.mojang.brigadier.builder.LiteralArgumentBuilder.literal("debug")
@@ -1263,6 +1283,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
         } else {
             result = PhraseBook.translate(formatted);
         }
+        Coverage.record(formatted, result != null, "聊天");
         if (result == null) return null;
         MutableComponent comp = formattedStringToText(result);
         final ClickEvent ce = clicks.isEmpty() ? null : clicks.get(0);
@@ -1348,6 +1369,9 @@ public class NPCTranslatorClient implements ClientModInitializer {
     }
 
     private static String getTranslatedTextRaw(String content, String langCode, String langName, boolean isTooltip, ModConfig.TranslationProvider provider) throws Exception {
+        if (!aiAllowed()) {
+            throw new IllegalStateException("当前译文来源不含 AI（设置 → 译文来源），未调用 AI");
+        }
         if (provider == ModConfig.TranslationProvider.GOOGLE) {
             String cacheKey = langCode + ":" + content;
             String cached = TRANSLATION_MEMORY_CACHE.get(cacheKey);
@@ -1697,6 +1721,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
 
         if (config.translateModTooltips) translateForeignLines(stack, tooltip);
         handleTooltipStateAndRender(tooltip, cacheKey);
+        appendNameSubtitle(stack, tooltip);
         appendEnchantHints(tooltip);
 
         Set<String> known = new HashSet<>();
@@ -1724,6 +1749,38 @@ public class NPCTranslatorClient implements ClientModInitializer {
         String menu = currentMenu();
         return stack.getItem().toString() + "_" + Integer.toHexString(h) + "_" + getEffectiveLanguageCode()
                 + (menu == null ? "" : "@" + menu);
+    }
+
+    // ── 中文增强版：译文来源 ───────────────────────────────────────────
+    private static volatile ModConfig.TranslationSource dataSource = null;
+
+    public static ModConfig.TranslationSource source() {
+        ModConfig c = ModConfig.INSTANCE;
+        return c == null || c.translationSource == null ? ModConfig.TranslationSource.TABLE_ONLY : c.translationSource;
+    }
+
+    /** AI translation (and its saved results) is used only with the "table + corpus + AI" source. */
+    public static boolean aiAllowed() {
+        return source() == ModConfig.TranslationSource.FULL;
+    }
+
+    /** SkyBlockZH community corpus and the extra local rules. */
+    public static boolean corpusAllowed() {
+        return source() != ModConfig.TranslationSource.TABLE_ONLY;
+    }
+
+    /** Source the built-in data was last loaded for. */
+    public static ModConfig.TranslationSource loadedSource() {
+        return dataSource != null ? dataSource : source();
+    }
+
+    /** Rebuild glossary and phrase book after the translation source changed. */
+    public static void reloadData() {
+        dataSource = source();
+        Glossary.invalidate();
+        PhraseBook.loadAsync();
+        clearRuntimeCaches();
+        Coverage.reset();
     }
 
     // ── 中文增强版：按菜单分类保存译文 ──────────────────────────────────
@@ -1990,6 +2047,27 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 pageRunning = false;
             }
         });
+    }
+
+    /** "Hyperion · 别称 神剑 / Hype" under a translated item name. */
+    private static void appendNameSubtitle(ItemStack stack, List<Component> tooltip) {
+        ModConfig.EnchantHintMode mode = config.nameSubtitleMode != null ? config.nameSubtitleMode : ModConfig.EnchantHintMode.ALWAYS;
+        if (mode == ModConfig.EnchantHintMode.OFF || tooltip.isEmpty()) return;
+        if (mode == ModConfig.EnchantHintMode.SHIFT && !isShiftDown()) return;
+        try {
+            String en = TranslationUtil.stripColorCodes(toFormattedString(stack.getHoverName())).trim();
+            String base = TableNames.baseName(en);
+            if (base == null) return;
+            if (tooltip.get(0).getString().trim().equals(en)) return; // the name is still in English
+            MutableComponent line = Component.literal(en).withStyle(ChatFormatting.DARK_GRAY);
+            List<String> aliases = TableNames.aliases(base);
+            if (!aliases.isEmpty()) {
+                line.append(Component.literal(" · ").withStyle(ChatFormatting.DARK_GRAY))
+                    .append(Component.translatable("npctranslator.tooltip.subtitle.aliases").withStyle(ChatFormatting.DARK_GRAY))
+                    .append(Component.literal(" " + String.join(" / ", aliases)).withStyle(ChatFormatting.GRAY));
+            }
+            tooltip.add(1, line);
+        } catch (Exception ignored) {}
     }
 
     // ── 中文增强版：附魔副标题 ─────────────────────────────────────────
@@ -2293,8 +2371,8 @@ public class NPCTranslatorClient implements ClientModInitializer {
                         tooltip.clear();
                         tooltip.addAll(translated);
                     }
-                    tooltip.add(Component.empty());
-                    tooltip.add(Component.translatable(
+                    if (aiAllowed()) tooltip.add(Component.empty());
+                    if (aiAllowed()) tooltip.add(Component.translatable(
                         provider == ModConfig.TranslationProvider.GOOGLE ? "npctranslator.tooltip.translated.google" :
                         provider == ModConfig.TranslationProvider.GEMINI ? "npctranslator.tooltip.translated.gemini" :
                         provider == ModConfig.TranslationProvider.MISTRAL ? "npctranslator.tooltip.translated.mistral" :
@@ -2330,7 +2408,8 @@ public class NPCTranslatorClient implements ClientModInitializer {
             ACTIVE_TRANSLATED_ITEMS.add(cacheKey);
             TRANSLATED_PROVIDER_CACHE.put(cacheKey, remembered);
             triggerTranslation(tooltip, cacheKey, remembered);
-        } else if (config.autoTranslateItems && !REVERTED_ITEMS.contains(cacheKey) && !ACTIVE_TRANSLATED_ITEMS.contains(cacheKey)) {
+        } else if ((config.autoTranslateItems || !aiAllowed()) && !REVERTED_ITEMS.contains(cacheKey) && !ACTIVE_TRANSLATED_ITEMS.contains(cacheKey)) {
+            // without AI the translation is local and free: every item is translated automatically
             // Auto translate items logic
             ModConfig.TranslationProvider autoProvider = config.autoItemProvider != null ? config.autoItemProvider : ModConfig.TranslationProvider.CUSTOM;
             ACTIVE_TRANSLATED_ITEMS.add(cacheKey);
@@ -2350,6 +2429,12 @@ public class NPCTranslatorClient implements ClientModInitializer {
         try {
             if (isPending) return;
             String tk = getKeyName(keyTranslateCustom, "N");
+            if (!aiAllowed()) {
+                tooltip.add(Component.empty());
+                tooltip.add(Component.translatable(isTranslated ? "npctranslator.tooltip.footer.local" : "npctranslator.tooltip.footer.local_translate",
+                        isTranslated ? getKeyName(keyRevertTranslation, "V") : tk, getKeyName(menuKey, "Z")).withStyle(ChatFormatting.DARK_GRAY));
+                return;
+            }
             tooltip.add(Component.empty());
             if (isTranslated) {
                 tooltip.add(Component.translatable("npctranslator.tooltip.footer.translated",
@@ -2418,7 +2503,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                     if (tr != null && !tr.isEmpty()) done.put(line, TranslationUtil.restore(tr, t.numbers));
                     else if (!missing.contains(t.text)) missing.add(t.text);
                 }
-                if (!missing.isEmpty()) {
+                if (!missing.isEmpty() && aiAllowed()) {
                     Map<Integer, String> result = translateBatch(missing, langCode, targetLang, provider);
                     boolean changed = false;
                     for (Map.Entry<Integer, String> e : result.entrySet()) {
@@ -2467,7 +2552,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
             ITEM_CACHE.put(cacheKey, List.of(Component.translatable("npctranslator.error.config").withStyle(ChatFormatting.RED, ChatFormatting.BOLD)));
             return;
         }
-        if (provider == ModConfig.TranslationProvider.CUSTOM && !isCustomConfigured()) {
+        if (provider == ModConfig.TranslationProvider.CUSTOM && !isCustomConfigured() && aiAllowed()) {
             ACTIVE_TRANSLATED_ITEMS.remove(cacheKey);
             ITEM_CACHE.put(cacheKey, List.of(Component.translatable("npctranslator.error.custom_config").withStyle(ChatFormatting.RED, ChatFormatting.BOLD)));
             return;
@@ -2484,7 +2569,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
         List<Component> tooltipSnapshot = new ArrayList<>(tooltip);
         final String menu = currentMenu();
 
-        CompletableFuture.runAsync(() -> {
+        Runnable task = () -> {
             try {
                 String providerName = provider.name(); // e.g. "GOOGLE", "GEMINI", "CUSTOM"
                 List<String> allLinesOriginal = new ArrayList<>();
@@ -2517,7 +2602,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                         retryIdx.add(i);
                     }
                 }
-                if (!retryLines.isEmpty()) {
+                if (!retryLines.isEmpty() && aiAllowed()) {
                     try {
                         Map<Integer, String> retry = translateBatch(retryLines, langCode, targetLang, provider);
                         for (Map.Entry<Integer, String> e : retry.entrySet()) {
@@ -2549,7 +2634,10 @@ public class NPCTranslatorClient implements ClientModInitializer {
             } finally {
                 PENDING_ITEMS.remove(cacheKey);
             }
-        });
+        };
+        // local data only (no AI): fast enough to do right away, so no "translating…" flash
+        if (!aiAllowed() && PhraseBook.isReady()) task.run();
+        else CompletableFuture.runAsync(task);
     }
 
     public static String toFormattedString(Component text) {

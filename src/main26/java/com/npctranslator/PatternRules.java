@@ -30,7 +30,7 @@ public final class PatternRules {
 
     /** §-formatted Chinese line, or null when no rule applies. */
     public static String translate(String formatted) {
-        if (formatted == null || formatted.length() < 10) return null;
+        if (formatted == null || formatted.length() < 10 || !NPCTranslatorClient.corpusAllowed()) return null;
         String plain = TranslationUtil.stripColorCodes(formatted).replaceAll("\\s+", " ").trim();
         Matcher m = HISTORY.matcher(plain);
         if (!m.matches()) return null;

@@ -14,6 +14,7 @@
 - 物品名称支持修饰词前缀、星级后缀与宠物等级的组合（如「英勇海伯利安 ✪✪✪✪✪」「[Lv.100] 黄金龙」）。
 - 新增 `/translate coverage` 命令，显示本次游戏中所见文本的翻译覆盖率，并将未覆盖的原文记录到 `config/npc_translator_missing.tsv`；`/translate coverage reset` 重新统计。
 - 译文来源不含 AI 时，所有物品自动使用本地数据翻译，无需按键。
+- 收集菜单原文：打开菜单时，将菜单中物品的名称与描述记录到 `config/npc_translator_menu_text.tsv`，用于补充术语表（可在设置中关闭）；`/translate collect` 查看收集数量。导入脚本支持「菜单」工作表。
 - 译文按菜单分类保存：在容器菜单中翻译的内容记录在该菜单名下（如「Bazaar ➜ Mining」）。翻译时优先使用当前菜单的译文，未命中时使用通用译文。
 - 新增 `/translate menus` 命令，列出各菜单已保存的条目数；新增 `/translate forgetmenu <菜单名>` 命令，清除指定菜单的译文。
 - `Shift` / `Ctrl` + `M`：清除当前菜单的已存译文并重新翻译整页。

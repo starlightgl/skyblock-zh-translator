@@ -216,5 +216,7 @@
   "text.autoconfig.npc_translator.option.nameSubtitleMode.tooltip": "在物品名下方显示英文原名和社区常用别称（如「海伯利安」下方显示 Hyperion · 别称 神剑）。",
   "npctranslator.tooltip.footer.local": "[%s] 恢复原文 · [%s] 翻译设置",
   "npctranslator.tooltip.subtitle.aliases": "别称",
-  "npctranslator.tooltip.footer.local_translate": "[%s] 翻译 · [%s] 翻译设置"
+  "npctranslator.tooltip.footer.local_translate": "[%s] 翻译 · [%s] 翻译设置",
+  "text.autoconfig.npc_translator.option.collectMenuText": "收集菜单原文",
+  "text.autoconfig.npc_translator.option.collectMenuText.tooltip": "打开菜单时，把菜单里物品的名称和描述（英文原文与当前译文）记录到 config/npc_translator_menu_text.tsv，用于补充术语表。只写本地文件，不上传。"
 }

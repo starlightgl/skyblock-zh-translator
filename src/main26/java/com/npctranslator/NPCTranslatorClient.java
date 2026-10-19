@@ -493,6 +493,15 @@ public class NPCTranslatorClient implements ClientModInitializer {
                             mc.player.sendSystemMessage(Component.literal("[翻译] 已清除菜单名含「" + kw + "」的 " + n + " 条译文，下次打开会重新翻译").withStyle(ChatFormatting.GREEN));
                             return 1;
                         })))
+                .then(com.mojang.brigadier.builder.LiteralArgumentBuilder.literal("collect")
+                    .executes(context -> {
+                        MenuCollector.flush();
+                        Minecraft mc = Minecraft.getInstance();
+                        mc.player.sendSystemMessage(Component.literal("[菜单原文收集] " + (config.collectMenuText ? "已开启" : "已关闭（设置 → 物品 → 收集菜单原文）")
+                                + "：共记录 " + MenuCollector.total() + " 条，本次新增 " + MenuCollector.addedThisSession() + " 条").withStyle(ChatFormatting.YELLOW));
+                        mc.player.sendSystemMessage(Component.literal("文件：config/" + MenuCollector.FILE.getName() + "，多打开几个菜单后发给维护者整理进术语表").withStyle(ChatFormatting.DARK_GRAY));
+                        return 1;
+                    }))
                 .then(com.mojang.brigadier.builder.LiteralArgumentBuilder.literal("coverage")
                     .executes(context -> {
                         Minecraft mc = Minecraft.getInstance();
@@ -1889,6 +1898,14 @@ public class NPCTranslatorClient implements ClientModInitializer {
         lastPageState = down;
         if (config == null || !config.enabled) return;
         boolean scan = config.autoTranslatePage && ++pageScanTick % 10 == 0;
+        boolean collect = config.collectMenuText && ++collectTick % 20 == 0;
+        if (collect) {
+            try {
+                if (getScreen(client) instanceof net.minecraft.client.gui.screens.inventory.AbstractContainerScreen<?> cs) collectMenu(client, cs);
+            } catch (Throwable t) {
+                HudTranslator.debugLog("menu collect: " + t);
+            }
+        }
         if (!pressed && !scan) return;
         if (!(getScreen(client) instanceof net.minecraft.client.gui.screens.inventory.AbstractContainerScreen<?> screen)
                 || client.player == null || client.level == null) {
@@ -1914,6 +1931,43 @@ public class NPCTranslatorClient implements ClientModInitializer {
             return;
         }
         if (scan) translatePage(client, screen, false);
+    }
+
+    private static int collectTick = 0;
+    private static int lastCollectSignature = 0;
+
+    /** Writes the names and descriptions of the items in an open menu to the menu text file. */
+    private static void collectMenu(Minecraft client, net.minecraft.client.gui.screens.inventory.AbstractContainerScreen<?> screen) {
+        String menu = menuKey(screen);
+        if (menu == null || client.player == null || client.level == null) return;
+        int signature = menu.hashCode();
+        List<net.minecraft.world.inventory.Slot> slots = new ArrayList<>();
+        for (net.minecraft.world.inventory.Slot slot : screen.getMenu().slots) {
+            if (!slot.hasItem() || slot.container instanceof net.minecraft.world.entity.player.Inventory) continue;
+            slots.add(slot);
+            signature = signature * 31 + itemCacheKey(slot.getItem()).hashCode();
+        }
+        if (slots.isEmpty() || signature == lastCollectSignature) return;
+        lastCollectSignature = signature;
+        net.minecraft.world.item.Item.TooltipContext ctx = net.minecraft.world.item.Item.TooltipContext.of(client.level);
+        for (net.minecraft.world.inventory.Slot slot : slots) {
+            List<Component> tooltip;
+            COLLECTING.set(Boolean.TRUE);
+            try {
+                tooltip = slot.getItem().getTooltipLines(ctx, client.player, net.minecraft.world.item.TooltipFlag.NORMAL);
+            } catch (Throwable t) {
+                continue;
+            } finally {
+                COLLECTING.set(Boolean.FALSE);
+            }
+            for (int i = 0; i < tooltip.size(); i++) {
+                String f = toFormattedString(tooltip.get(i)).trim();
+                if (f.isEmpty()) continue;
+                String current = i == 0 ? TableNames.translateName(f) : null;
+                if (current == null) current = PhraseBook.translate(f);
+                MenuCollector.record(menu, i == 0, f, current);
+            }
+        }
     }
 
     private static void pageMessage(Minecraft client, String text, ChatFormatting color) {

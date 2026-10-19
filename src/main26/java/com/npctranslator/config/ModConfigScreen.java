@@ -220,6 +220,12 @@ public class ModConfigScreen {
                                         .build())
 
                                 .option(Option.<Boolean>createBuilder()
+                                        .name(Component.translatable("text.autoconfig.npc_translator.option.collectMenuText"))
+                                        .description(OptionDescription.of(Component.translatable("text.autoconfig.npc_translator.option.collectMenuText.tooltip")))
+                                        .binding(true, () -> config.collectMenuText, val -> config.collectMenuText = val)
+                                        .controller(TickBoxControllerBuilder::create)
+                                        .build())
+                                .option(Option.<Boolean>createBuilder()
                                         .name(Component.translatable("text.autoconfig.npc_translator.option.autoTranslatePage"))
                                         .description(OptionDescription.of(Component.translatable("text.autoconfig.npc_translator.option.autoTranslatePage.tooltip")))
                                         .binding(false, () -> config.autoTranslatePage, val -> config.autoTranslatePage = val)

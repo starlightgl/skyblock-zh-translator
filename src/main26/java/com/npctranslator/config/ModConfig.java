@@ -108,6 +108,8 @@ public class ModConfig {
     public boolean autoTranslateItems = false;
     /** 中文增强版：打开菜单时在后台把整页物品一次翻完 */
     public boolean autoTranslatePage = false;
+    /** 中文增强版：把打开过的菜单文字记录到 config/npc_translator_menu_text.tsv，用来补术语表 */
+    public boolean collectMenuText = true;
     /** Items you translated once are shown translated again automatically (e.g. after reopening a menu). */
     public boolean rememberTranslatedItems = true;
 

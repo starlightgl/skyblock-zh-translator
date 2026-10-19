@@ -216,5 +216,7 @@
   "text.autoconfig.npc_translator.option.nameSubtitleMode.tooltip": "Show the English name and common community nicknames under translated item names.",
   "npctranslator.tooltip.footer.local": "[%s] Show original · [%s] Translator settings",
   "npctranslator.tooltip.subtitle.aliases": "aka",
-  "npctranslator.tooltip.footer.local_translate": "[%s] Translate · [%s] Translator settings"
+  "npctranslator.tooltip.footer.local_translate": "[%s] Translate · [%s] Translator settings",
+  "text.autoconfig.npc_translator.option.collectMenuText": "Collect menu text",
+  "text.autoconfig.npc_translator.option.collectMenuText.tooltip": "Record the names and descriptions of items in opened menus (English and current translation) to config/npc_translator_menu_text.tsv, for extending the term table. Local file only."
 }

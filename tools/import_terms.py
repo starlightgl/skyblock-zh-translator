@@ -105,6 +105,13 @@ for sheet in NAME_SHEETS:
             zh_base = re.sub(r"\s*[（(](NPC|怪物|动物)[)）]$", "", zh)
             names.setdefault(m.group(1), zh_base)
 
+# menu tables (from config/npc_translator_menu_text.tsv): 类型 名称 = button name, 描述 = description line
+menu_rows = [r for b in books for name in b.sheetnames if name.startswith("菜单") for r in rows(b[name])]
+for r in menu_rows:
+    en, zh = (r.get("英文") or "").strip(), final(r)
+    if en and zh and r.get("类型") == "名称" and "{" not in en:
+        names.setdefault(en, zh)
+
 reforges = {}
 for r in rows(wb["修饰词"]):
     en, zh = (r.get("英文") or "").strip(), final(r)
@@ -114,6 +121,7 @@ for r in rows(wb["修饰词"]):
 lines = []
 seen = set()
 desc_rows = [r for b in books for name in b.sheetnames if name.startswith("物品描述") for r in rows(b[name])]
+desc_rows += [r for r in menu_rows if r.get("类型") != "名称" or "{" in (r.get("英文") or "")]
 for r in desc_rows:
     en, zh = (r.get("英文") or "").strip(), final(r)
     if not en or not zh or en in seen:

@@ -1,6 +1,7 @@
 """Import the proofread term table (data/SkyBlock术语表.xlsx) into the mod's built-in data.
 
-Usage: python tools/import_terms.py [path/to/SkyBlock术语表.xlsx]
+Usage: python tools/import_terms.py [主表.xlsx] [补充表.xlsx ...]
+       (默认：data/SkyBlock术语表.xlsx，以及存在时的 data/SkyBlock术语表-补充描述.xlsx)
 
 Writes, under src/main26/resources/assets/hypixel-npc-and-items-translate/defaults/:
   - table_names.json   names of items, pets, mobs, areas, reforges and enchantments
@@ -16,7 +17,8 @@ from openpyxl import load_workbook
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEFAULTS = os.path.join(ROOT, "src/main26/resources/assets/hypixel-npc-and-items-translate/defaults")
-SRC = sys.argv[1] if len(sys.argv) > 1 else os.path.join(ROOT, "data/SkyBlock术语表.xlsx")
+SRCS = sys.argv[1:] or [p for p in (os.path.join(ROOT, "data/SkyBlock术语表.xlsx"),
+                                    os.path.join(ROOT, "data/SkyBlock术语表-补充描述.xlsx")) if os.path.exists(p)]
 
 # earlier sheets win when the same English name appears twice
 NAME_SHEETS = ["物品名称", "宠物", "生物", "区域", "修饰词", "附魔"]
@@ -74,7 +76,8 @@ def placeholders(s):
     return re.sub(r"\{(\d+)\}", lambda m: "%" + str(int(m.group(1)) + 1) + "$s", s)
 
 
-wb = load_workbook(SRC, data_only=True)
+books = [load_workbook(p, data_only=True) for p in SRCS]
+wb = books[0]
 
 names = {}
 alias = {}
@@ -101,7 +104,8 @@ for r in rows(wb["修饰词"]):
 
 lines = []
 seen = set()
-for r in rows(wb["物品描述"]):
+desc_rows = [r for b in books for name in b.sheetnames if name.startswith("物品描述") for r in rows(b[name])]
+for r in desc_rows:
     en, zh = (r.get("英文") or "").strip(), final(r)
     if not en or not zh or en in seen:
         continue

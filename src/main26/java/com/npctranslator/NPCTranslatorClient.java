@@ -1738,6 +1738,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
         if (client == null) return;
         
         String cacheKey = itemCacheKey(stack);
+        collectTooltip(tooltip);
 
         if (config.translateModTooltips) translateForeignLines(stack, tooltip);
         handleTooltipStateAndRender(tooltip, cacheKey);
@@ -1947,6 +1948,23 @@ public class NPCTranslatorClient implements ClientModInitializer {
             return;
         }
         if (scan) translatePage(client, screen, false);
+    }
+
+    /**
+     * Hovered items are recorded whether or not they get translated (item translation by key only,
+     * shown in English with Z, ...). Already-seen lines cost one set lookup.
+     */
+    private static void collectTooltip(List<Component> tooltip) {
+        if (!collectEnabled() || tooltip.isEmpty()) return;
+        try {
+            String menu = currentMenu();
+            String where = menu != null ? menu : "背包";
+            for (int i = 0; i < tooltip.size(); i++) {
+                String f = toFormattedString(tooltip.get(i)).trim();
+                if (!f.isEmpty()) TextCollector.record(i == 0 ? TextCollector.ITEM_NAME : TextCollector.ITEM_LINE, where, f, null);
+            }
+        } catch (Throwable ignored) {
+        }
     }
 
     private static int collectTick = 0;

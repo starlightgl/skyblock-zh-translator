@@ -23,8 +23,17 @@ SRCS = sys.argv[1:] or [p for p in (os.path.join(ROOT, "data/SkyBlock术语表.x
 # earlier sheets win when the same English name appears twice
 NAME_SHEETS = ["物品名称", "宠物", "生物", "区域", "修饰词", "附魔"]
 
-# wording decisions applied to every translation
-REPLACE = {"爪牙": "小人"}
+# wording decisions applied to every translation; also corrected place/mob names whose old
+# translation is still used inside other entries (the table fixed 水晶残核 → 水晶洞窟 for the area,
+# but some descriptions and item names still carried the old word). Order matters.
+REPLACE = {
+    "爪牙": "小人",
+    "水晶残核": "水晶洞窟",
+    "残核": "洞窟",
+    "热土豆书": "熏制土豆书",
+    "Kada 骑士": "卡达骑士",
+    "Kuudra 追随者": "库德拉追随者",
+}
 
 ALIAS_RE = re.compile(r"(?:社区常称|社区俗称|社区简称|社区亦称|俗称|简称|亦称|别称|别名|又称)\s*[：:]?\s*([^（(。；;【]+)")
 ABBR_RE = re.compile(r"\b([A-Z][A-Za-z]{1,6})\s*可作(?:英文)?缩写")

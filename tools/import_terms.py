@@ -86,6 +86,100 @@ def placeholders(s):
     return re.sub(r"\{(\d+)\}", lambda m: "%" + str(int(m.group(1)) + 1) + "$s", s)
 
 
+# merged rows of the supplement ("合并行数" > 1) that are really separate "Label: value" lines
+# (stat lists, "Time Between Actions: …  Max Storage: …") are split back into one entry per line,
+# otherwise the game would show them as one long line
+UNITS = "秒级层点个次倍格"
+
+
+def renumber(en, zh):
+    order = []
+    for m in re.findall(r"\{(\d+)\}", en):
+        if m not in order:
+            order.append(m)
+    mp = {old: str(i) for i, old in enumerate(order)}
+    f = lambda m: "{" + mp.get(m.group(1), m.group(1)) + "}"
+    return re.sub(r"\{(\d+)\}", f, en), re.sub(r"\{(\d+)\}", f, zh)
+
+
+def split_en(en):
+    """Cut before every label after the first: "A: {0}s Max Storage: {1}" → ["A: {0}s", "Max Storage: {1}"]."""
+    cols = [m.start() for m in re.finditer(r":", en)]
+    if len(cols) < 2:
+        return None
+    cuts = [0]
+    for c in cols[1:]:
+        i = c
+        while i > 0 and re.match(r"[A-Za-z'\u2019 \-]", en[i - 1]):
+            i -= 1
+        while i < c and not re.match(r"[A-Z\u2600-\u2bff]", en[i]):  # "{0}s Max" → "Max"
+            i += 1
+        if i <= cuts[-1] or i >= c or en[i - 1] != " ":
+            return None
+        cuts.append(i)
+    cuts.append(len(en))
+    return [en[a:b].strip() for a, b in zip(cuts, cuts[1:])]
+
+
+def split_bullets(en, zh):
+    """"- Bazaar (I-V) - Experiments (VI-VII)" (merged "- " list lines) → one entry per line."""
+    if not en.startswith("- ") or not zh.lstrip().startswith("-"):
+        return None
+    ens = [p.strip() for p in re.split(r" (?=- )", en)]
+    zhs = [p.strip() for p in re.split(r"\s+(?=-\s)", zh.strip())]
+    if len(ens) < 2 or len(ens) != len(zhs):
+        return None
+    out = []
+    for e, z in zip(ens, zhs):
+        if set(re.findall(r"\{[^}]*\}", e)) != set(re.findall(r"\{[^}]*\}", z)):
+            return None
+        out.append(renumber(e, z))
+    return out
+
+
+ROMAN_GROUP = re.compile(r"\(([IVXLC]+(?:-[IVXLC]+)?)\)")
+
+
+def generalize_roman(en, zh):
+    """"- Bazaar (I-V)" → "- Bazaar ({0})" so every tier range uses one entry; None when not applicable."""
+    groups = ROMAN_GROUP.findall(en)
+    if not groups or any(zh.count("(" + g + ")") != 1 for g in groups) or len(set(groups)) != len(groups):
+        return None
+    k = max([int(x) for x in re.findall(r"\{(\d+)\}", en)] + [-1]) + 1
+    for g in groups:
+        en = en.replace("(" + g + ")", "({%d})" % k, 1)
+        zh = zh.replace("(" + g + ")", "({%d})" % k, 1)
+        k += 1
+    return en, zh
+
+
+def split_list(en, zh):
+    parts = split_en(en)
+    if not parts:
+        return split_bullets(en, zh)
+    cols = [m.start() for m in re.finditer(r"[:：]", zh)]
+    if len(cols) != len(parts):
+        return None
+    cuts = [0]
+    for c in cols[1:]:
+        i = c
+        while i > 0 and not re.match(r"[\s}%)\]+\-\d]", zh[i - 1]):
+            i -= 1
+        if i > 0 and zh[i - 1] == "}" and zh[i] in UNITS:  # "{0}秒" keeps its unit
+            i += 1
+        if i <= cuts[-1]:
+            return None
+        cuts.append(i)
+    cuts.append(len(zh))
+    zhs = [zh[a:b].strip() for a, b in zip(cuts, cuts[1:])]
+    out = []
+    for e, z in zip(parts, zhs):
+        if not z or set(re.findall(r"\{[^}]*\}", e)) != set(re.findall(r"\{[^}]*\}", z)):
+            return None
+        out.append(renumber(e.strip(), z))
+    return out
+
+
 books = [load_workbook(p, data_only=True) for p in SRCS]
 wb = books[0]
 
@@ -132,14 +226,29 @@ lines = []
 seen = set()
 desc_rows = [r for b in books for name in b.sheetnames if name.startswith("物品描述") for r in rows(b[name])]
 desc_rows += [r for r in menu_rows if r.get("类型") != "名称" or "{" in (r.get("英文") or "")]
+expanded = []
+split_count = 0
 for r in desc_rows:
     en, zh = (r.get("英文") or "").strip(), final(r)
+    parts = split_list(en, zh) if en and zh and (r.get("合并行数") or 1) > 1 else None
+    if parts:
+        split_count += 1
+        expanded += [{"英文": e, "校对译名": z} for e, z in parts]
+    else:
+        expanded.append(r)
+for r in expanded:
+    en, zh = (r.get("英文") or "").strip(), final(r)
     if not en or not zh or en in seen:
+        continue
+    if re.search(r"\{[A-Z_]+\}", en):  # NEU stat templates ({STRENGTH}); the game shows numbers
         continue
     if set(re.findall(r"\{\d+\}", en)) != set(re.findall(r"\{\d+\}", zh)):
         print("skipped (placeholders differ):", en)
         continue
     seen.add(en)
+    gen = generalize_roman(en, zh)
+    if gen and gen[0] not in seen and placeholders(gen[0]) not in {l["en"] for l in lines[-1:]}:
+        expanded.append({"英文": gen[0], "校对译名": gen[1]})
     # "{物品}" (an item name folded by the text collector) becomes one more placeholder; the mod
     # translates the captured name with the term table
     if "{物品}" in en:
@@ -183,4 +292,5 @@ with open(enchant_path, "w", encoding="utf-8") as f:
     json.dump(enchants, f, ensure_ascii=False, indent=1)
 
 print(f"aliases: {len(alias)}")
+print(f"merged list rows split into lines: {split_count}")
 print(f"names: {len(names)}, description lines: {len(lines)}, enchantments: {len(enchants['enchants'])} (+{added})")

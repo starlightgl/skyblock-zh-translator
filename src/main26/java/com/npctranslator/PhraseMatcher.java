@@ -94,7 +94,8 @@ public final class PhraseMatcher {
         // "%s: %s" would match everything; a literal needs a real word or a non-ASCII symbol ("⏣ %s").
         // Too-generic templates ("You %s", "Your %s") would swallow unrelated sentences.
         boolean symbol = literal.chars().anyMatch(ch -> ch > 0x7F);
-        boolean label = literal.matches("[A-Za-z][A-Za-z '\\-]*:");
+        // "Speed: +%s", "Fear: %s": a template that starts with its own label is specific enough
+        boolean label = literal.matches("[A-Za-z][A-Za-z '\\-]*:[\\s+\\-%x]*");
         int letters = literal.replaceAll("[^A-Za-z]", "").length();
         if (!symbol && !label && letters < 6) return;
         Template t = new Template(Pattern.compile(re.toString()), renumber(key, zh));

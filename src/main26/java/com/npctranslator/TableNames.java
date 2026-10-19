@@ -23,6 +23,11 @@ import java.util.regex.Pattern;
 public final class TableNames {
 
     private static final String RESOURCE = "/assets/hypixel-npc-and-items-translate/defaults/table_names.json";
+    private static final String FIXES = "/assets/hypixel-npc-and-items-translate/defaults/npc_translator_fixes.json";
+    /** "Big Brain III", "Absorb 1-4": a name followed by a tier. */
+    private static final Pattern TIER = Pattern.compile("^(.+?) ([IVXLCDM]+|\\d+(?:-\\d+)?)$");
+    /** "2x Fire Spiral Rune I": a count in front of the name. */
+    private static final Pattern COUNT = Pattern.compile("^((?:§[0-9a-fk-or])*)(\\d[\\d,]*x )(.+)$");
     private static final String VANILLA = "/assets/hypixel-npc-and-items-translate/defaults/vanilla_names.json";
     private static volatile boolean loaded = false;
     private static Map<String, String> names = Collections.emptyMap();
@@ -65,6 +70,19 @@ public final class TableNames {
         } catch (Exception e) {
             System.err.println("[NPCTranslator] table names: " + e.getMessage());
         }
+        // gemstone names ("Topaz" alone, as in the Gemstones collection) from the bundled fixes
+        try (InputStream in = TableNames.class.getResourceAsStream(FIXES)) {
+            if (in != null) {
+                JsonObject root = JsonParser.parseReader(new InputStreamReader(in, StandardCharsets.UTF_8)).getAsJsonObject();
+                if (root.has("output")) {
+                    for (Map.Entry<String, JsonElement> e : root.getAsJsonObject("output").entrySet()) {
+                        if (!e.getKey().startsWith("_")) n.putIfAbsent(e.getKey(), e.getValue().getAsString());
+                    }
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("[NPCTranslator] fixes names: " + e.getMessage());
+        }
         // official names of vanilla items and blocks take priority over the table
         try (InputStream in = TableNames.class.getResourceAsStream(VANILLA)) {
             if (in != null) {
@@ -105,6 +123,13 @@ public final class TableNames {
         String zh = names.get(plain);
         if (zh != null) return lead + zh;
 
+        Matcher cnt = COUNT.matcher(formatted.trim());
+        if (cnt.matches()) {
+            String rest = translateName(cnt.group(1) + cnt.group(3));
+            if (rest == null || !rest.startsWith(cnt.group(1))) return rest;
+            return cnt.group(1) + cnt.group(2) + rest.substring(cnt.group(1).length());
+        }
+
         Matcher pet = PET.matcher(plain);
         if (pet.matches()) {
             String p = names.get(pet.group(2));
@@ -126,6 +151,13 @@ public final class TableNames {
             if (sp > 0) {
                 reforge = reforges.get(core.substring(0, sp));
                 if (reforge != null) base = names.get(core.substring(sp + 1));
+            }
+        }
+        if (base == null) {
+            Matcher tier = TIER.matcher(core);
+            if (tier.matches()) {
+                String b = names.get(tier.group(1));
+                if (b != null) base = b + " " + tier.group(2);
             }
         }
         if (base == null) return null;

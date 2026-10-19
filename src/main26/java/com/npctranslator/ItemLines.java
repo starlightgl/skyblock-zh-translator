@@ -71,6 +71,8 @@ public final class ItemLines {
             if (p.fixed[i] == null && !parsed.isEmpty()) p.fixed[i] = EnchantHints.translateList(parsed);
             if (p.fixed[i] == null && !parsed.isEmpty() && i == 0) p.fixed[i] = TableNames.translateName(parsed);
             if (p.fixed[i] == null && !parsed.isEmpty()) p.fixed[i] = glossaryName(parsed);
+            // a line that is just a name, maybe with a bullet or a tier: "▶ Enchanted Ink Sac", "Missile IV"
+            if (p.fixed[i] == null && i > 0 && !parsed.isEmpty()) p.fixed[i] = bulletName(parsed);
             ai[i] = !parsed.isEmpty() && p.fixed[i] == null && TranslationUtil.needsTranslation(parsed);
         }
         // Wrapped sentences: join consecutive AI lines that continue the previous one.
@@ -99,6 +101,19 @@ public final class ItemLines {
             i = j + 1;
         }
         return p;
+    }
+
+    private static final java.util.regex.Pattern BULLET =
+            java.util.regex.Pattern.compile("^((?:§[0-9a-fk-or])*\\s*(?:[▶•‣›◆➜→\\-]\\s*(?:§[0-9a-fk-or])*)?)(.+)$");
+
+    /** "▶ Enchanted Ink Sac" / "Missile IV": a name from the term table, keeping the bullet. */
+    static String bulletName(String formatted) {
+        String plain = TranslationUtil.stripColorCodes(formatted).trim();
+        if (plain.length() < 3 || plain.length() > 48) return null;
+        java.util.regex.Matcher m = BULLET.matcher(formatted);
+        if (!m.matches()) return null;
+        String zh = TableNames.translateName(m.group(2));
+        return zh == null ? null : m.group(1) + zh;
     }
 
     /** A line that is exactly one glossary term (an item or material name): its fixed translation. */

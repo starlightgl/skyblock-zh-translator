@@ -311,6 +311,8 @@ public final class HudTranslator {
         if (out != null) { debugLog("phrasebook: " + formatted + " => " + out); return out; }
         out = EnchantHints.translateList(formatted);
         if (out != null) { debugLog("enchant list: " + formatted + " => " + out); return out; }
+        out = ItemLines.bulletName(formatted);
+        if (out != null) { debugLog("name: " + formatted + " => " + out); return out; }
         TranslationUtil.Template t = c.normalizeNumbers ? TranslationUtil.normalize(formatted) : TranslationUtil.Template.raw(formatted);
         String tr = TranslationDictionary.get(t.text, provider().name());
         if (tr != null && !tr.isEmpty()) { debugLog("dictionary: " + t.text + " => " + tr); return TranslationUtil.restore(tr, t.numbers); }

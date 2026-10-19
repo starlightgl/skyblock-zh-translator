@@ -217,6 +217,6 @@
   "npctranslator.tooltip.footer.local": "[%s] 恢复原文 · [%s] 翻译设置",
   "npctranslator.tooltip.subtitle.aliases": "别称",
   "npctranslator.tooltip.footer.local_translate": "[%s] 翻译 · [%s] 翻译设置",
-  "text.autoconfig.npc_translator.option.collectMenuText": "收集菜单原文",
-  "text.autoconfig.npc_translator.option.collectMenuText.tooltip": "打开菜单时，把菜单里物品的名称和描述（英文原文与当前译文）记录到 config/npc_translator_menu_text.tsv，用于补充术语表。只写本地文件，不上传。"
+  "text.autoconfig.npc_translator.option.collectMenuText": "收集游戏原文",
+  "text.autoconfig.npc_translator.option.collectMenuText.tooltip": "把游戏中显示的英文（物品名称与描述、菜单标题、侧边栏、Tab 列表、屏幕标题、动作栏、Boss 血条、聊天、头顶名字等）连同当前译文记录到 config/npc_translator_text.tsv，用于补充术语表。不记录玩家聊天。只写本地文件，不上传。"
 }

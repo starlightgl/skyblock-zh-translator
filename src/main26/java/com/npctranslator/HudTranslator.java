@@ -123,6 +123,7 @@ public final class HudTranslator {
             }
         }
         Coverage.record(formatted, out != null, "侧边栏");
+        TextCollector.record(TextCollector.SIDEBAR, "", formatted, out != null ? out : "");
         return remember(formatted, out);
     }
 
@@ -275,6 +276,7 @@ public final class HudTranslator {
     private static String lookupLine(String formatted) {
         String out = lookupLine0(formatted);
         Coverage.record(formatted, out != null, WHERE.get());
+        TextCollector.record(WHERE.get() != null ? WHERE.get() : "其他文字", "", formatted, out != null ? out : "");
         return out;
     }
 

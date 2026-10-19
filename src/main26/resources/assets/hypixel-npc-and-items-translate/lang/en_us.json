@@ -217,6 +217,6 @@
   "npctranslator.tooltip.footer.local": "[%s] Show original · [%s] Translator settings",
   "npctranslator.tooltip.subtitle.aliases": "aka",
   "npctranslator.tooltip.footer.local_translate": "[%s] Translate · [%s] Translator settings",
-  "text.autoconfig.npc_translator.option.collectMenuText": "Collect menu text",
-  "text.autoconfig.npc_translator.option.collectMenuText.tooltip": "Record the names and descriptions of items in opened menus (English and current translation) to config/npc_translator_menu_text.tsv, for extending the term table. Local file only."
+  "text.autoconfig.npc_translator.option.collectMenuText": "Collect game text",
+  "text.autoconfig.npc_translator.option.collectMenuText.tooltip": "Record all English text the game shows (item names and descriptions, menu titles, sidebar, Tab list, titles, action bar, boss bars, chat, name tags) with the current translation to config/npc_translator_text.tsv, for extending the term table. Player chat is skipped. Local file only."
 }

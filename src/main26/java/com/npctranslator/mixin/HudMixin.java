@@ -10,7 +10,10 @@ import net.minecraft.world.scores.Objective;
 import net.minecraft.world.scores.Team;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import com.npctranslator.TextCollector;
 
 /**
  * 26.2+ split the HUD out of Gui into Hud. Hook points (sidebar title / sidebar rows / the item
@@ -42,5 +45,22 @@ public abstract class HudMixin {
     @Redirect(method = "extractSelectedItemName", at = @At(value = "INVOKE", target = TEXT_WITH_BACKDROP), require = 0)
     private void npctranslator$selectedItemName(GuiGraphicsExtractor graphics, Font font, Component text, int x, int y, int width, int color) {
         HudTranslator.selectedItemName(graphics, font, text, x, y, width, color);
+    }
+
+    // ---- text collection: titles, subtitles, action bar ----
+
+    @Inject(method = "setTitle", at = @At("HEAD"), require = 0)
+    private void npctranslator$collectTitle(Component title, CallbackInfo ci) {
+        TextCollector.record(TextCollector.TITLE, "", title);
+    }
+
+    @Inject(method = "setSubtitle", at = @At("HEAD"), require = 0)
+    private void npctranslator$collectSubtitle(Component subtitle, CallbackInfo ci) {
+        TextCollector.record(TextCollector.SUBTITLE, "", subtitle);
+    }
+
+    @Inject(method = "setOverlayMessage", at = @At("HEAD"), require = 0)
+    private void npctranslator$collectActionBar(Component message, boolean animate, CallbackInfo ci) {
+        TextCollector.record(TextCollector.ACTION_BAR, "", message);
     }
 }

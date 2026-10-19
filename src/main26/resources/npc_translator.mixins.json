@@ -13,7 +13,9 @@
     "HudMixin",
     "EntityRendererMixin",
     "TextDisplayMixin",
-    "WidgetTooltipMixin"
+    "WidgetTooltipMixin",
+    "TabListMixin",
+    "BossEventMixin"
   ],
   "injectors": {
     "defaultRequire": 1

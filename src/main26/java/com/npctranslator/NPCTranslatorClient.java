@@ -495,13 +495,23 @@ public class NPCTranslatorClient implements ClientModInitializer {
                         })))
                 .then(com.mojang.brigadier.builder.LiteralArgumentBuilder.literal("collect")
                     .executes(context -> {
-                        MenuCollector.flush();
+                        TextCollector.flush();
                         Minecraft mc = Minecraft.getInstance();
-                        mc.player.sendSystemMessage(Component.literal("[菜单原文收集] " + (config.collectMenuText ? "已开启" : "已关闭（设置 → 物品 → 收集菜单原文）")
-                                + "：共记录 " + MenuCollector.total() + " 条，本次新增 " + MenuCollector.addedThisSession() + " 条").withStyle(ChatFormatting.YELLOW));
-                        mc.player.sendSystemMessage(Component.literal("文件：config/" + MenuCollector.FILE.getName() + "，多打开几个菜单后发给维护者整理进术语表").withStyle(ChatFormatting.DARK_GRAY));
+                        mc.player.sendSystemMessage(Component.literal("[原文收集] " + (config.collectMenuText ? "已开启" : "已关闭（设置 → 物品 → 收集游戏原文）")
+                                + "，共 " + TextCollector.total() + " 条").withStyle(ChatFormatting.YELLOW));
+                        for (Map.Entry<String, int[]> e : TextCollector.summary().entrySet()) {
+                            int[] v = e.getValue();
+                            mc.player.sendSystemMessage(Component.literal("  " + e.getKey() + "：" + v[0] + " 条" + (v[1] > 0 ? "（本次新增 " + v[1] + "）" : "")).withStyle(ChatFormatting.GRAY));
+                        }
+                        mc.player.sendSystemMessage(Component.literal("文件：config/" + TextCollector.FILE.getName() + "，玩一段时间后发给维护者整理进术语表；/translate collect reset 清空重新收集").withStyle(ChatFormatting.DARK_GRAY));
                         return 1;
-                    }))
+                    })
+                    .then(com.mojang.brigadier.builder.LiteralArgumentBuilder.literal("reset")
+                        .executes(context -> {
+                            TextCollector.reset();
+                            Minecraft.getInstance().player.sendSystemMessage(Component.literal("[原文收集] 已清空，重新开始收集").withStyle(ChatFormatting.GREEN));
+                            return 1;
+                        })))
                 .then(com.mojang.brigadier.builder.LiteralArgumentBuilder.literal("coverage")
                     .executes(context -> {
                         Minecraft mc = Minecraft.getInstance();
@@ -1293,6 +1303,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
             result = PhraseBook.translate(formatted);
         }
         Coverage.record(formatted, result != null, "聊天");
+        TextCollector.record(TextCollector.CHAT, "", formatted, result != null ? result : "");
         if (result == null) return null;
         MutableComponent comp = formattedStringToText(result);
         final ClickEvent ce = clicks.isEmpty() ? null : clicks.get(0);
@@ -1797,6 +1808,11 @@ public class NPCTranslatorClient implements ClientModInitializer {
     public static final ThreadLocal<String> MENU_CONTEXT = new ThreadLocal<>();
 
     /** Title of the open container menu ("Bazaar ➜ Mining"), numbers folded; null outside menus. */
+    /** Whether game text is being recorded (setting "收集游戏原文"). */
+    public static boolean collectEnabled() {
+        return config == null || config.collectMenuText;
+    }
+
     public static String currentMenu() {
         try {
             return menuKey(getScreen(Minecraft.getInstance()));
@@ -1898,7 +1914,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
         lastPageState = down;
         if (config == null || !config.enabled) return;
         boolean scan = config.autoTranslatePage && ++pageScanTick % 10 == 0;
-        boolean collect = config.collectMenuText && ++collectTick % 20 == 0;
+        boolean collect = collectEnabled() && ++collectTick % 20 == 0;
         if (collect) {
             try {
                 if (getScreen(client) instanceof net.minecraft.client.gui.screens.inventory.AbstractContainerScreen<?> cs) collectMenu(client, cs);
@@ -1949,6 +1965,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
         }
         if (slots.isEmpty() || signature == lastCollectSignature) return;
         lastCollectSignature = signature;
+        TextCollector.record(TextCollector.MENU_TITLE, menu, screen.getTitle());
         net.minecraft.world.item.Item.TooltipContext ctx = net.minecraft.world.item.Item.TooltipContext.of(client.level);
         for (net.minecraft.world.inventory.Slot slot : slots) {
             List<Component> tooltip;
@@ -1965,7 +1982,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 if (f.isEmpty()) continue;
                 String current = i == 0 ? TableNames.translateName(f) : null;
                 if (current == null) current = PhraseBook.translate(f);
-                MenuCollector.record(menu, i == 0, f, current);
+                TextCollector.record(i == 0 ? TextCollector.ITEM_NAME : TextCollector.ITEM_LINE, menu, f, current);
             }
         }
     }

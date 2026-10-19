@@ -26,6 +26,7 @@
   "key.npctranslator.translate.mistral": "翻译物品 (Mistral)",
   "key.npctranslator.translate.openrouter": "翻译物品 (OpenRouter)",
   "key.npctranslator.translate.revert": "移除物品翻译",
+  "key.npctranslator.report": "反馈翻译问题（记录当前物品的原文与显示内容）",
   "key.npctranslator.menu": "打开翻译菜单",
   "category.npctranslator.general": "通用设置",
   "category.npctranslator.api": "API 设置",
@@ -205,7 +206,7 @@
   "text.autoconfig.npc_translator.option.checkUpdates.tooltip": "进服时到 GitHub 查一次有没有新的正式版，有的话在聊天栏提示并给出下载链接。",
   "npctranslator.tooltip.footer.translate": "[%s] 翻译 · [Shift/Ctrl+%s] 强制重新翻译",
   "npctranslator.tooltip.footer.translated": "[%s] 恢复原文 · [Shift/Ctrl+%s] 强制重新翻译",
-  "npctranslator.tooltip.footer.more": "[%s] 翻译整页菜单 · [%s] 翻译设置",
+  "npctranslator.tooltip.footer.more": "[%s] 翻译整页菜单 · [%s] 翻译设置 · [%s] 反馈翻译问题",
   "npctranslator.tooltip.footer.setup": "还没设置 AI 接口：按 [%s] 打开翻译设置 → API",
   "text.autoconfig.npc_translator.option.customPreset": "服务商",
   "text.autoconfig.npc_translator.option.customPreset.tooltip": "选一个国内能直连的服务商，会自动填好 Base URL 和推荐模型（都可以再改）。模型名会随服务商更新，以服务商文档为准；中转站、ClinePass 等选「其他」手动填写。",
@@ -216,9 +217,9 @@
   "npctranslator.config.source.full": "校对表 + 社区语料 + AI",
   "text.autoconfig.npc_translator.option.nameSubtitleMode": "物品原名与别称",
   "text.autoconfig.npc_translator.option.nameSubtitleMode.tooltip": "在物品名下方显示英文原名和社区常用别称（如「海伯利安」下方显示 Hyperion · 别称 神剑）。",
-  "npctranslator.tooltip.footer.local": "[%s] 恢复原文 · [%s] 翻译设置",
+  "npctranslator.tooltip.footer.local": "[%s] 恢复原文 · [%s] 翻译设置 · [%s] 反馈翻译问题",
   "npctranslator.tooltip.subtitle.aliases": "别称",
-  "npctranslator.tooltip.footer.local_translate": "[%s] 翻译 · [%s] 翻译设置",
+  "npctranslator.tooltip.footer.local_translate": "[%s] 翻译 · [%s] 翻译设置 · [%s] 反馈翻译问题",
   "text.autoconfig.npc_translator.option.collectMenuText": "收集游戏原文",
   "text.autoconfig.npc_translator.option.collectMenuText.tooltip": "把游戏中显示的英文（物品名称与描述、菜单标题、侧边栏、Tab 列表、屏幕标题、动作栏、Boss 血条、聊天、头顶名字、其他模组提示等）连同当前译文记录到 config/npc_translator_text.tsv，用于补充术语表。只受这一个开关控制，与翻译相关的设置无关。玩家本人的游戏名记录为 {玩家}，不记录玩家聊天。只写本地文件，不上传。"
 }

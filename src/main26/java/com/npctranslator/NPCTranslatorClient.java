@@ -264,6 +264,13 @@ public class NPCTranslatorClient implements ClientModInitializer {
         );
         KeyMappingHelper.registerKeyMapping(keyTranslatePage);
 
+        keyReport = new KeyMapping(
+                "key.npctranslator.report",
+                InputConstants.KEY_F8,
+                finalCategory
+        );
+        KeyMappingHelper.registerKeyMapping(keyReport);
+
         menuKey = new KeyMapping(
                 "key.npctranslator.menu",
                 InputConstants.KEY_Z,
@@ -530,6 +537,16 @@ public class NPCTranslatorClient implements ClientModInitializer {
                         .executes(context -> {
                             Coverage.reset();
                             Minecraft.getInstance().player.sendSystemMessage(Component.literal("[翻译覆盖率] 已重新开始统计").withStyle(ChatFormatting.GREEN));
+                            return 1;
+                        })))
+                .then(com.mojang.brigadier.builder.LiteralArgumentBuilder.literal("report")
+                    .executes(context -> {
+                        report(Minecraft.getInstance(), null);
+                        return 1;
+                    })
+                    .then(com.mojang.brigadier.builder.RequiredArgumentBuilder.argument("note", com.mojang.brigadier.arguments.StringArgumentType.greedyString())
+                        .executes(context -> {
+                            report(Minecraft.getInstance(), context.getArgument("note", String.class));
                             return 1;
                         })))
                 .then(com.mojang.brigadier.builder.LiteralArgumentBuilder.literal("debug")
@@ -1849,6 +1866,18 @@ public class NPCTranslatorClient implements ClientModInitializer {
     /** Set while we read tooltips ourselves (page translation): the item hook must not touch them. */
     public static final ThreadLocal<Boolean> COLLECTING = ThreadLocal.withInitial(() -> Boolean.FALSE);
     private static KeyMapping keyTranslatePage;
+    private static KeyMapping keyReport;
+    private static boolean lastReportState = false;
+
+    private static void report(Minecraft client, String note) {
+        if (client.player == null) return;
+        String name = TranslationReport.write(note);
+        if (name == null) {
+            client.player.sendSystemMessage(Component.literal("[翻译反馈] 还没有可记录的物品：先把鼠标停在有问题的物品上，再按 F8 或输入 /translate report").withStyle(ChatFormatting.RED));
+        } else {
+            client.player.sendSystemMessage(Component.literal("[翻译反馈] 已记录「" + name + "」的原文与显示内容 → config/" + TranslationReport.FILE.getName()).withStyle(ChatFormatting.GREEN));
+        }
+    }
     private static boolean lastPageState = false;
     private static boolean lastMenuState = false;
     private static volatile boolean pageRunning = false;
@@ -1909,6 +1938,9 @@ public class NPCTranslatorClient implements ClientModInitializer {
     }
 
     private static void tickPageTranslation(Minecraft client) {
+        boolean reportDown = keyReport != null && isKeyCurrentlyDown(keyReport);
+        if (reportDown && !lastReportState) report(client, null);
+        lastReportState = reportDown;
         boolean down = isKeyCurrentlyDown(keyTranslatePage);
         boolean pressed = down && !lastPageState;
         lastPageState = down;
@@ -2265,6 +2297,12 @@ public class NPCTranslatorClient implements ClientModInitializer {
      * by mods that run later) or tooltips that are not item tooltips at all are translated here.
      */
     public static List<Component> processRenderedTooltip(List<Component> components) {
+        List<Component> out = processRenderedTooltip0(components);
+        TranslationReport.shown(out);
+        return out;
+    }
+
+    private static List<Component> processRenderedTooltip0(List<Component> components) {
         collectRenderedTooltip(components);
         if (config == null || !config.enabled || components == null || components.isEmpty()) return components;
         boolean processed = PROCESSED_TOOLTIPS.containsKey(components);
@@ -2543,7 +2581,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
             if (!aiAllowed()) {
                 tooltip.add(Component.empty());
                 tooltip.add(Component.translatable(isTranslated ? "npctranslator.tooltip.footer.local" : "npctranslator.tooltip.footer.local_translate",
-                        isTranslated ? getKeyName(keyRevertTranslation, "V") : tk, getKeyName(menuKey, "Z")).withStyle(ChatFormatting.DARK_GRAY));
+                        isTranslated ? getKeyName(keyRevertTranslation, "V") : tk, getKeyName(menuKey, "Z"), getKeyName(keyReport, "F8")).withStyle(ChatFormatting.DARK_GRAY));
                 return;
             }
             tooltip.add(Component.empty());
@@ -2556,7 +2594,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 tooltip.add(Component.translatable("npctranslator.tooltip.footer.setup", getKeyName(menuKey, "Z")).withStyle(ChatFormatting.DARK_GRAY));
             }
             tooltip.add(Component.translatable("npctranslator.tooltip.footer.more",
-                    getKeyName(keyTranslatePage, "M"), getKeyName(menuKey, "Z")).withStyle(ChatFormatting.DARK_GRAY));
+                    getKeyName(keyTranslatePage, "M"), getKeyName(menuKey, "Z"), getKeyName(keyReport, "F8")).withStyle(ChatFormatting.DARK_GRAY));
         } catch (Exception ignored) {}
     }
 

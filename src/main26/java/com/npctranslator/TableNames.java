@@ -23,6 +23,7 @@ import java.util.regex.Pattern;
 public final class TableNames {
 
     private static final String RESOURCE = "/assets/hypixel-npc-and-items-translate/defaults/table_names.json";
+    private static final String VANILLA = "/assets/hypixel-npc-and-items-translate/defaults/vanilla_names.json";
     private static volatile boolean loaded = false;
     private static Map<String, String> names = Collections.emptyMap();
     private static Map<String, List<String>> aliases = Collections.emptyMap();
@@ -63,6 +64,17 @@ public final class TableNames {
             }
         } catch (Exception e) {
             System.err.println("[NPCTranslator] table names: " + e.getMessage());
+        }
+        // official names of vanilla items and blocks take priority over the table
+        try (InputStream in = TableNames.class.getResourceAsStream(VANILLA)) {
+            if (in != null) {
+                JsonObject root = JsonParser.parseReader(new InputStreamReader(in, StandardCharsets.UTF_8)).getAsJsonObject();
+                for (Map.Entry<String, JsonElement> e : root.getAsJsonObject("names").entrySet()) {
+                    if (!r.containsKey(e.getKey())) n.put(e.getKey(), e.getValue().getAsString());
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("[NPCTranslator] vanilla names: " + e.getMessage());
         }
         names = n;
         aliases = a;

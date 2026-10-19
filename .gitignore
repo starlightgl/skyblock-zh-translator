@@ -45,3 +45,4 @@ class-info.txt
 
 # local JDK downloaded by build.ps1
 jdk/
+data/vanilla/

@@ -26,6 +26,7 @@
   "key.npctranslator.translate.mistral": "Translate Item (Mistral)",
   "key.npctranslator.translate.openrouter": "Translate Item (OpenRouter)",
   "key.npctranslator.translate.revert": "Remove Item Translation",
+  "key.npctranslator.report": "Report translation problem (records the hovered item)",
   "key.npctranslator.menu": "Open Translator Menu",
   "category.npctranslator.general": "General Settings",
   "category.npctranslator.api": "API Settings",
@@ -205,7 +206,7 @@
   "text.autoconfig.npc_translator.option.checkUpdates.tooltip": "On joining a server, check GitHub once for a newer release and post a download link in chat.",
   "npctranslator.tooltip.footer.translate": "[%s] Translate · [Shift/Ctrl+%s] Force re-translate",
   "npctranslator.tooltip.footer.translated": "[%s] Show original · [Shift/Ctrl+%s] Force re-translate",
-  "npctranslator.tooltip.footer.more": "[%s] Translate whole menu · [%s] Translator settings",
+  "npctranslator.tooltip.footer.more": "[%s] Translate whole menu · [%s] Translator settings · [%s] Report translation",
   "npctranslator.tooltip.footer.setup": "No AI service set up yet: press [%s] → API",
   "text.autoconfig.npc_translator.option.customPreset": "Provider",
   "text.autoconfig.npc_translator.option.customPreset.tooltip": "Pick a provider to fill in its Base URL and a suggested model (both stay editable). Model names change over time; check the provider docs. Choose \"Other\" for relays and anything else.",
@@ -216,9 +217,9 @@
   "npctranslator.config.source.full": "Table + corpus + AI",
   "text.autoconfig.npc_translator.option.nameSubtitleMode": "Original name and aliases",
   "text.autoconfig.npc_translator.option.nameSubtitleMode.tooltip": "Show the English name and common community nicknames under translated item names.",
-  "npctranslator.tooltip.footer.local": "[%s] Show original · [%s] Translator settings",
+  "npctranslator.tooltip.footer.local": "[%s] Show original · [%s] Translator settings · [%s] Report translation",
   "npctranslator.tooltip.subtitle.aliases": "aka",
-  "npctranslator.tooltip.footer.local_translate": "[%s] Translate · [%s] Translator settings",
+  "npctranslator.tooltip.footer.local_translate": "[%s] Translate · [%s] Translator settings · [%s] Report translation",
   "text.autoconfig.npc_translator.option.collectMenuText": "Collect game text",
   "text.autoconfig.npc_translator.option.collectMenuText.tooltip": "Record all English text the game shows (item names and descriptions, menu titles, sidebar, Tab list, titles, action bar, boss bars, chat, name tags, other mods' tooltips) with the current translation to config/npc_translator_text.tsv, for extending the term table. Controlled only by this switch, independent of the translation settings. Your own name is written as {玩家}; player chat is skipped. Local file only."
 }

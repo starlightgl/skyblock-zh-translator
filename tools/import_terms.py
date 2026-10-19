@@ -140,6 +140,14 @@ for r in desc_rows:
         print("skipped (placeholders differ):", en)
         continue
     seen.add(en)
+    # "{物品}" (an item name folded by the text collector) becomes one more placeholder; the mod
+    # translates the captured name with the term table
+    if "{物品}" in en:
+        if en.count("{物品}") != zh.count("{物品}"):
+            print("skipped ({物品} differs):", en)
+            continue
+        k = max([int(x) for x in re.findall(r"\{(\d+)\}", en)] + [-1]) + 1
+        en, zh = en.replace("{物品}", "{%d}" % k), zh.replace("{物品}", "{%d}" % k)
     lines.append({"en": placeholders(en), "zh": placeholders(zh)})
 
 enchant_path = os.path.join(DEFAULTS, "npc_translator_enchants.json")

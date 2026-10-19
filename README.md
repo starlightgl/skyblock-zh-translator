@@ -134,6 +134,7 @@ Hypixel SkyBlock 中文翻译模组，适用于 Fabric（Minecraft 26.2 / 26.3�
 | `/translate DeleteDict` | 清空翻译词典 |
 | `/translate collect` | 按类别查看已收集的游戏原文条数（记录在 `config/npc_translator_text.tsv`） |
 | `/translate collect reset` | 清空已收集的原文，重新收集 |
+| `/translate report [备注]` | 记录最近悬停物品的原文与实际显示内容到 `config/npc_translator_reports.txt`，用于反馈翻译问题（快捷键 `F8`） |
 | `/translate coverage` | 显示本次游戏中所见文本的翻译覆盖率，未覆盖的原文记录到 `config/npc_translator_missing.tsv`；加 `reset` 重新统计 |
 | `/translate debug` | 开启或关闭调试日志，记录其他模组提示行的处理过程（输出至 `logs/latest.log`） |
 

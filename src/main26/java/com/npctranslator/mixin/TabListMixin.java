@@ -29,6 +29,8 @@ public abstract class TabListMixin {
     @Inject(method = "getNameForDisplay", at = @At("RETURN"), require = 0)
     private void npctranslator$collectEntry(PlayerInfo info, CallbackInfoReturnable<Component> cir) {
         try {
+            // without a display name the entry just shows a profile name, which is not game text
+            if (info.getTabListDisplayName() == null) return;
             // real players have version-4 UUIDs; the server's info columns use fake profiles
             UUID id = info.getProfile().id();
             if (id != null && id.version() == 4) return;

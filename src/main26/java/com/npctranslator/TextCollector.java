@@ -91,9 +91,16 @@ public final class TextCollector {
                 String[] p = line.split("\t", -1);
                 if (p.length < 3) continue;
                 // rows written by earlier versions: drop this mod's own Chinese output, hide the player's name
-                if (CJK.matcher(p[2]).find()) { changed = true; continue; }
+                if (hasChinese(p[2])) { changed = true; continue; }
+                if (p[0].equals(TAB) && p.length > 3 && RANDOM_NAME.matcher(p[3]).matches()) { changed = true; continue; }
                 String clean = anonymize(line);
                 if (!clean.equals(line)) { changed = true; p = clean.split("\t", -1); }
+                String folded = foldItems(p[2]);
+                if (!folded.equals(p[2])) {
+                    changed = true;
+                    p[2] = folded;
+                    clean = String.join("\t", p);
+                }
                 if (SEEN.add(p[0] + "\t" + p[2])) {
                     count(TOTAL, p[0]);
                     kept.add(clean);
@@ -172,10 +179,10 @@ public final class TextCollector {
         String plain = anonymize(TranslationUtil.stripColorCodes(formatted).trim());
         if (plain.isEmpty() || !TranslationUtil.needsTranslation(plain)) return;
         // lines that already contain Chinese are this mod's own output (translations, hints), not source text
-        if (CJK.matcher(plain).find()) return;
+        if (hasChinese(plain)) return;
         if (type.equals(CHAT) && !plain.startsWith("[NPC]") && PLAYER_CHAT.matcher(plain).find()) return;
         load();
-        String template = TranslationUtil.normalize(plain).text;
+        String template = foldItems(TranslationUtil.normalize(plain).text);
         if (SEEN.size() > LIMIT || !SEEN.add(type + "\t" + template)) return;
         String cur = current;
         if (cur == null) cur = lookup(type, formatted.trim());
@@ -200,6 +207,51 @@ public final class TextCollector {
             return out;
         } catch (Throwable t) {
             return null;
+        }
+    }
+
+    /** Profile names Hypixel gives to fake Tab entries (e.g. "7s8ju6w488"). */
+    private static final Pattern RANDOM_NAME = Pattern.compile("(?=.*\\d)(?=.*[a-z])[a-z0-9]{8,12}");
+    private static final Pattern NAME_END = Pattern.compile("$|[!.,:;)\\]]| (?:for|to|from|at|each|in|and|with|was|has|have|is)\\b");
+    private static final Pattern COUNT_X = Pattern.compile("\\{\\d+\\}x ");
+
+    private static boolean hasChinese(String s) {
+        return CJK.matcher(s.replace("{玩家}", "").replace("{物品}", "")).find();
+    }
+
+    /**
+     * "Instant Sell of {1}x Enchanted Raw Salmon" → "Instant Sell of {1}x {物品}" when the words after
+     * the count are an item name from the term table, so bazaar / auction lines are recorded once per
+     * pattern instead of once per item.
+     */
+    static String foldItems(String template) {
+        if (template == null || template.indexOf("x ") < 0) return template;
+        try {
+            java.util.regex.Matcher m = COUNT_X.matcher(template);
+            StringBuilder sb = new StringBuilder();
+            int last = 0;
+            while (m.find()) {
+                if (m.start() < last) continue;
+                int start = m.end();
+                String rest = template.substring(start);
+                String[] words = rest.split(" ", 8);
+                int n = Math.min(6, words.length);
+                for (int k = n; k >= 1; k--) {
+                    String cand = String.join(" ", java.util.Arrays.copyOf(words, k));
+                    String trimmed = cand.replaceAll("[!.,:]+$", "");
+                    if (trimmed.isEmpty() || TableNames.exact(trimmed) == null) continue;
+                    // the name must end the phrase ("… for", "!", end of line), not be a prefix like "Fine"
+                    if (!NAME_END.matcher(rest.substring(trimmed.length())).lookingAt()) continue;
+                    sb.append(template, last, start).append("{物品}");
+                    last = start + trimmed.length();
+                    break;
+                }
+            }
+            if (last == 0) return template;
+            sb.append(template.substring(last));
+            return sb.toString();
+        } catch (Throwable t) {
+            return template;
         }
     }
 

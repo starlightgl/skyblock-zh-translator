@@ -39,6 +39,8 @@ public final class TextCollector {
     public static final String ACTION_BAR = "动作栏";
     public static final String BOSS_BAR = "Boss血条";
     public static final String CHAT = "聊天";
+    /** A description sentence wrapped over several lines, joined: translated as one entry. */
+    public static final String ITEM_SENTENCE = "物品描述（整句）";
     public static final String WORLD = "名称与悬浮文字";
     public static final String MOD_TEXT = "其他模组提示";
     public static final String PRICE_TABLE = "价格表格";
@@ -148,6 +150,25 @@ public final class TextCollector {
             for (String row : rows) w.write(row + "\n");
         } catch (Exception e) {
             System.err.println("[NPCTranslator] text file: " + e.getMessage());
+        }
+    }
+
+    /** Records each wrapped sentence of a tooltip (lines 1..n) as one joined entry. */
+    public static void recordSentences(String where, List<String> lines) {
+        if (lines == null || lines.size() < 3 || !enabled()) return;
+        try {
+            int i = 1;
+            while (i < lines.size()) {
+                int j = i;
+                while (j + 1 < lines.size() && j - i < 7 && PhraseMatcher.continuesLine(lines.get(j), lines.get(j + 1))) j++;
+                if (j > i) {
+                    StringBuilder sb = new StringBuilder(lines.get(i).trim());
+                    for (int k = i + 1; k <= j; k++) sb.append(' ').append(lines.get(k).trim());
+                    record(ITEM_SENTENCE, where, sb.toString(), null);
+                }
+                i = j + 1;
+            }
+        } catch (Throwable ignored) {
         }
     }
 

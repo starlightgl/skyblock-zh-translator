@@ -48,6 +48,9 @@ public final class PhraseMatcher {
     }
 
     private final Map<String, String> exact = new HashMap<>();
+    /** "Speed" -> "速度": labels of "Label: value" lines, taken from the entries. */
+    private final Map<String, String> labels = new HashMap<>();
+    private final Map<String, Map<String, Integer>> labelVotes = new HashMap<>();
     private final Map<String, List<Template>> buckets = new HashMap<>();
     private final Map<String, String> cache = new ConcurrentHashMap<>();
     private static final String MISS = "\u0000";
@@ -59,6 +62,13 @@ public final class PhraseMatcher {
             if (e == null || e.length < 2 || e[0] == null || e[1] == null) continue;
             add(e[0], e[1]);
         }
+        for (Map.Entry<String, Map<String, Integer>> v : labelVotes.entrySet()) {
+            String best = null;
+            int n = -1;
+            for (Map.Entry<String, Integer> c : v.getValue().entrySet()) if (c.getValue() > n) { best = c.getKey(); n = c.getValue(); }
+            if (best != null) labels.put(v.getKey(), best);
+        }
+        labelVotes.clear();
         // "Grants +%s ❤ Health." before "Grants %1$s %2$s %3$s." (stable: earlier user entries still win ties)
         for (List<Template> list : buckets.values()) list.sort((x, y) -> Integer.compare(y.literal, x.literal));
     }
@@ -71,9 +81,26 @@ public final class PhraseMatcher {
 
     public int size() { return size; }
 
+    private static final Pattern EN_LABEL_ENTRY = Pattern.compile("^([A-Z][A-Za-z' \\-]{0,30}):(.*)$");
+    private static final Pattern ZH_LABEL_ENTRY = Pattern.compile("^((?:§.)*)([^:：]{1,20}?)\\s*[:：](.*)$");
+
+    /** Collect "Label: value" → "标签: value" so stat lines can be translated label-only. */
+    private void voteLabel(String key, String zh) {
+        Matcher e = EN_LABEL_ENTRY.matcher(key);
+        if (!e.matches()) return;
+        // the value part must be a value, not words ("Damage: 5 per second" is not a stat line)
+        if (e.group(2).replaceAll("%(?:\\d+\\$)?s", "").matches(".*[A-Za-z]{2,}.*")) return;
+        Matcher z = ZH_LABEL_ENTRY.matcher(zh.trim());
+        if (!z.matches()) return;
+        String label = CODE.matcher(z.group(2)).replaceAll("").trim();
+        if (label.isEmpty() || label.matches(".*[A-Za-z]{2,}.*")) return;
+        labelVotes.computeIfAbsent(e.group(1).trim(), k -> new HashMap<>()).merge(label, 1, Integer::sum);
+    }
+
     private void add(String en, String zh) {
         String key = normalize(en);
         if (key.length() < 2 || zh.isEmpty()) return;
+        voteLabel(key, zh);
         Matcher m = PH.matcher(key);
         if (!m.find()) {
             exact.putIfAbsent(key, zh);
@@ -167,9 +194,25 @@ public final class PhraseMatcher {
         return result;
     }
 
+    /** A stat line "§7Speed: §f+1 §9(+1)": its label, translated, with the value part left exactly as it is. */
+    private static final Pattern STAT_LINE = Pattern.compile("^([\\s  ]*(?:§[0-9a-fk-or])*)([A-Z][A-Za-z' \\-]{0,30}?)((?:§[0-9a-fk-or])*):(.*)$");
+
+    private String statLine(String formatted) {
+        Matcher m = STAT_LINE.matcher(formatted);
+        if (!m.matches()) return null;
+        String rest = m.group(4);
+        // only values, symbols and colour codes after the label: no words to translate
+        if (CODE.matcher(rest).replaceAll("").matches(".*[A-Za-z]{2,}.*")) return null;
+        String zh = labels.get(m.group(2).trim());
+        if (zh == null) return null;
+        return m.group(1) + zh + m.group(3) + ":" + rest;
+    }
+
     private String doTranslate(String formatted) {
         String key = normalize(formatted);
         if (key.length() < 2) return null;
+        String stat = statLine(formatted);
+        if (stat != null) return stat;
         Matcher lead = LEADING_CODES.matcher(formatted.replaceFirst("^[\\s ]+", ""));
         String baseCodes = lead.find() ? lead.group(1) : "";
         String zh = exact.get(key);
@@ -356,6 +399,26 @@ public final class PhraseMatcher {
      * Result[i] is the translated line, {@link #MERGED} for a line absorbed by the line above,
      * or null when nothing matched.
      */
+    /** A whole-entry match only (no field-by-field fallback): used when joining wrapped lines. */
+    private String translateStrict(String formatted) {
+        String key = normalize(formatted);
+        if (key.length() < 2) return null;
+        if (exact.containsKey(key)) return translate(formatted);
+        Matcher lead = LEADING_CODES.matcher(formatted.replaceFirst("^[\\s ]+", ""));
+        String baseCodes = lead.find() ? lead.group(1) : "";
+        String zh = matchTemplates(buckets.get(bucketKey(key)), key, formatted, baseCodes);
+        if (zh == null) zh = matchTemplates(buckets.get("*"), key, formatted, baseCodes);
+        return zh == null ? null : translate(formatted);
+    }
+
+    /** A line that starts with its own "Label:" is a new field, never the continuation of the line above. */
+    private static final Pattern STARTS_FIELD = Pattern.compile("^[\\s  ]*(?:§[0-9a-fk-or])*[A-Z][A-Za-z' \\-]{0,30}(?:§[0-9a-fk-or])*:(?:\\s|$)");
+
+    /** Whether {@code next} continues the sentence of {@code prev} (same rules as the line joining). */
+    public static boolean continuesLine(String prev, String next) {
+        return !isBlank(prev) && !isBlank(next) && sameParagraph(prev, next) && !STARTS_FIELD.matcher(next).find();
+    }
+
     public String[] translateLines(List<String> lines, int maxJoin) {
         int n = lines.size();
         String[] out = new String[n];
@@ -368,12 +431,13 @@ public final class PhraseMatcher {
                 // stop at a blank line (paragraph boundary) or where the colour changes
                 // ("§fSnow Block" + "§8Common Commodity" are two different things)
                 for (int k = i + 1; k <= maxJ; k++) {
-                    if (isBlank(lines.get(k)) || !sameParagraph(lines.get(k - 1), lines.get(k))) { maxJ = k - 1; break; }
+                    if (isBlank(lines.get(k)) || !sameParagraph(lines.get(k - 1), lines.get(k))
+                            || STARTS_FIELD.matcher(lines.get(k)).find()) { maxJ = k - 1; break; }
                 }
                 for (int j = maxJ; j > i; j--) {
                     StringBuilder joined = new StringBuilder(lines.get(i));
                     for (int k = i + 1; k <= j; k++) joined.append(' ').append(lines.get(k));
-                    String hit = translate(joined.toString());
+                    String hit = translateStrict(joined.toString());
                     if (hit != null) {
                         out[i] = hit;
                         for (int k = i + 1; k <= j; k++) out[k] = MERGED;
@@ -397,6 +461,10 @@ public final class PhraseMatcher {
     static boolean sameParagraph(String prev, String next) {
         String lead = leadColour(next);
         if (lead.isEmpty()) return true;
+        // a sentence that has not ended yet wraps onto the next line even when that line starts with a
+        // highlighted word ("…traps it for" + "§c5s §7and deals …")
+        String p = normalize(prev);
+        if (!p.isEmpty() && !p.matches(".*[.!?。！？:：)\\]]$") && !p.matches(".*\\d$")) return true;
         if (lead.equalsIgnoreCase(leadColour(prev))) return true;
         Matcher m = COLOUR.matcher(prev);
         String last = "";

@@ -1994,10 +1994,13 @@ public class NPCTranslatorClient implements ClientModInitializer {
             lastCollectedItemAt = System.currentTimeMillis();
             String menu = currentMenu();
             String where = menu != null ? menu : "背包";
+            List<String> lines = new ArrayList<>(tooltip.size());
             for (int i = 0; i < tooltip.size(); i++) {
                 String f = toFormattedString(tooltip.get(i)).trim();
+                lines.add(f);
                 if (!f.isEmpty()) TextCollector.record(i == 0 ? TextCollector.ITEM_NAME : TextCollector.ITEM_LINE, where, f, null);
             }
+            TextCollector.recordSentences(where, lines);
         } catch (Throwable ignored) {
         }
     }
@@ -2047,13 +2050,16 @@ public class NPCTranslatorClient implements ClientModInitializer {
             } finally {
                 COLLECTING.set(Boolean.FALSE);
             }
+            List<String> lines = new ArrayList<>(tooltip.size());
             for (int i = 0; i < tooltip.size(); i++) {
                 String f = toFormattedString(tooltip.get(i)).trim();
+                lines.add(f);
                 if (f.isEmpty()) continue;
                 String current = i == 0 ? TableNames.translateName(f) : null;
                 if (current == null) current = PhraseBook.translate(f);
                 TextCollector.record(i == 0 ? TextCollector.ITEM_NAME : TextCollector.ITEM_LINE, menu, f, current);
             }
+            TextCollector.recordSentences(menu, lines);
         }
     }
 

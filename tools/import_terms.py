@@ -1,6 +1,7 @@
 """Import the proofread term table (data/SkyBlock术语表.xlsx) into the mod's built-in data.
 
 Usage: python tools/import_terms.py [主表.xlsx] [补充表.xlsx ...]
+       补充表可以是 tools/merge_collected.py 生成的收集汇总（读取「收集-*」工作表中已填写校对译名的行）
        (默认：data/SkyBlock术语表.xlsx，以及存在时的 data/SkyBlock术语表-补充描述.xlsx)
 
 Writes, under src/main26/resources/assets/hypixel-npc-and-items-translate/defaults/:
@@ -107,6 +108,15 @@ for sheet in NAME_SHEETS:
 
 # menu tables (from config/npc_translator_menu_text.tsv): 类型 名称 = button name, 描述 = description line
 menu_rows = [r for b in books for name in b.sheetnames if name.startswith("菜单") for r in rows(b[name])]
+# merged player collections (tools/merge_collected.py): only rows with a proofread translation;
+# 当前译名 there is whatever the game showed (possibly AI) and is not imported
+for b in books:
+    for name in b.sheetnames:
+        if name.startswith("收集"):
+            for r in rows(b[name]):
+                zh = r.get("校对译名")
+                if isinstance(zh, str) and zh.strip():
+                    menu_rows.append({"英文": r.get("英文"), "类型": r.get("类型"), "校对译名": zh})
 for r in menu_rows:
     en, zh = (r.get("英文") or "").strip(), final(r)
     if en and zh and r.get("类型") == "名称" and "{" not in en:

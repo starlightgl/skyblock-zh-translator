@@ -157,6 +157,13 @@ Hypixel SkyBlock 中文翻译模组，适用于 Fabric（Minecraft 26.2 / 26.3�
 python tools/import_terms.py data/SkyBlock术语表.xlsx
 ```
 
+汇总玩家收集的游戏原文（参与方式见 [docs/COLLECTING.md](docs/COLLECTING.md)）：
+
+```
+python tools/merge_collected.py <收集文件夹> -o data/收集汇总.xlsx
+python tools/import_terms.py data/SkyBlock术语表.xlsx data/收集汇总.xlsx
+```
+
 使用新版 SkyBlockZH 语料重新生成内置数据：
 
 ```

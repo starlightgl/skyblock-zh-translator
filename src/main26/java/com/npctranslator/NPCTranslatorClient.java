@@ -497,7 +497,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                     .executes(context -> {
                         TextCollector.flush();
                         Minecraft mc = Minecraft.getInstance();
-                        mc.player.sendSystemMessage(Component.literal("[原文收集] " + (config.collectMenuText ? "已开启" : "已关闭（设置 → 物品 → 收集游戏原文）")
+                        mc.player.sendSystemMessage(Component.literal("[原文收集] " + (config.collectMenuText ? "已开启" : "已关闭（设置 → 物品翻译 → 收集游戏原文）")
                                 + "，共 " + TextCollector.total() + " 条").withStyle(ChatFormatting.YELLOW));
                         for (Map.Entry<String, int[]> e : TextCollector.summary().entrySet()) {
                             int[] v = e.getValue();

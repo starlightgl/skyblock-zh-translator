@@ -99,7 +99,7 @@ public final class TextCollector {
                 String[] p = line.split("\t", -1);
                 if (p.length < 5 || p[0].equals("菜单")) continue;
                 String type = p[1].equals("名称") ? ITEM_NAME : ITEM_LINE;
-                rows.add(type + "\t" + p[0] + "\t" + p[2] + "\t" + p[3] + "\t" + p[4]);
+                rows.add(anonymize(type + "\t" + p[0] + "\t" + p[2] + "\t" + p[3] + "\t" + p[4]));
             }
         } catch (Exception e) {
             System.err.println("[NPCTranslator] old menu text file: " + e.getMessage());
@@ -138,7 +138,7 @@ public final class TextCollector {
         if (RAW.size() > 50000) RAW.clear();
         RAW.add(rawKey);
 
-        String plain = TranslationUtil.stripColorCodes(formatted).trim();
+        String plain = anonymize(TranslationUtil.stripColorCodes(formatted).trim());
         if (plain.isEmpty() || !TranslationUtil.needsTranslation(plain)) return;
         if (type.equals(CHAT) && !plain.startsWith("[NPC]") && PLAYER_CHAT.matcher(plain).find()) return;
         load();
@@ -146,9 +146,9 @@ public final class TextCollector {
         if (SEEN.size() > LIMIT || !SEEN.add(type + "\t" + template)) return;
         String cur = current;
         if (cur == null) cur = lookup(type, formatted.trim());
-        cur = cur == null ? "" : TranslationUtil.stripColorCodes(cur).trim();
+        cur = cur == null ? "" : anonymize(TranslationUtil.stripColorCodes(cur).trim());
         if (cur.equals(plain)) cur = "";
-        PENDING.add(type + "\t" + clean(where) + "\t" + clean(template) + "\t" + clean(plain) + "\t" + clean(cur));
+        PENDING.add(type + "\t" + clean(anonymize(where)) + "\t" + clean(template) + "\t" + clean(plain) + "\t" + clean(cur));
         count(TOTAL, type);
         count(ADDED, type);
         long now = System.currentTimeMillis();
@@ -168,6 +168,26 @@ public final class TextCollector {
         } catch (Throwable t) {
             return null;
         }
+    }
+
+    private static volatile Pattern selfName;
+    private static volatile boolean selfNameLooked = false;
+
+    /** The player's own name is written as {玩家}, so files can be shared without it. */
+    static String anonymize(String text) {
+        if (!selfNameLooked) {
+            try {
+                String name = net.minecraft.client.Minecraft.getInstance().getUser().getName();
+                if (name != null && name.length() >= 2) {
+                    selfName = Pattern.compile("(?<![A-Za-z0-9_])" + Pattern.quote(name) + "(?![A-Za-z0-9_])", Pattern.CASE_INSENSITIVE);
+                }
+            } catch (Throwable ignored) {
+            }
+            selfNameLooked = true;
+        }
+        Pattern p = selfName;
+        if (p == null || text == null || text.isEmpty()) return text;
+        return p.matcher(text).replaceAll("{玩家}");
     }
 
     private static void count(Map<String, AtomicInteger> map, String type) {

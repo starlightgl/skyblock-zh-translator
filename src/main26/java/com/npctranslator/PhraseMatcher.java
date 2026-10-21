@@ -416,10 +416,69 @@ public final class PhraseMatcher {
 
     /** Whether {@code next} continues the sentence of {@code prev} (same rules as the line joining). */
     public static boolean continuesLine(String prev, String next) {
-        return !isBlank(prev) && !isBlank(next) && sameParagraph(prev, next) && !STARTS_FIELD.matcher(next).find();
+        return !isBlank(prev) && !isBlank(next) && sameParagraph(prev, next) && !STARTS_FIELD.matcher(next).find()
+                && !STARTS_BULLET.matcher(next).find();
     }
 
+    /** A list item ("▶ Growth VI", "- Bazaar (I-V)", "• …") never continues the line above. */
+    private static final Pattern STARTS_BULLET = Pattern.compile("^[\\s  ]*(?:§[0-9a-fk-or])*[▶•‣›◆∙➜→]");
+
+    /** "0→+5", "§80%§8§l→§a+2%": a value before and after the next level. */
+    private static final Pattern PROGRESSION = Pattern.compile(
+            "(?:(?<=§[0-9a-fk-or])|(?<![§\\d.,]))([-+]?\\d[\\d,.]*%?)((?:§[0-9a-fk-or])*)→((?:§[0-9a-fk-or])*)([-+]?\\d[\\d,.]*%?)");
+
+    /**
+     * Translate tooltip lines. Level progressions ("Grants 0→+5 Block Fortune.") are matched as the
+     * plain next-level line ("Grants +5 Block Fortune.") and the "0→" is put back in front of the value.
+     */
     public String[] translateLines(List<String> lines, int maxJoin) {
+        List<String> collapsed = null;
+        List<List<String[]>> progressions = null;
+        for (int i = 0; i < lines.size(); i++) {
+            Matcher m = PROGRESSION.matcher(lines.get(i));
+            if (!m.find()) continue;
+            if (collapsed == null) {
+                collapsed = new ArrayList<>(lines);
+                progressions = new ArrayList<>();
+                for (int k = 0; k < lines.size(); k++) progressions.add(new ArrayList<>());
+            }
+            m.reset();
+            StringBuilder sb = new StringBuilder();
+            while (m.find()) {
+                progressions.get(i).add(new String[]{m.group(1), m.group(4)});
+                m.appendReplacement(sb, Matcher.quoteReplacement(m.group(3) + m.group(4)));
+            }
+            m.appendTail(sb);
+            collapsed.set(i, sb.toString());
+        }
+        if (collapsed == null) return translateLines0(lines, maxJoin);
+        String[] out = translateLines0(collapsed, maxJoin);
+        int head = -1;
+        for (int i = 0; i < out.length; i++) {
+            if (out[i] != null && out[i] != MERGED) head = i;
+            if (out[i] == null || progressions.get(i).isEmpty() || head < 0) continue;
+            String t = out[head];
+            for (String[] p : progressions.get(i)) {
+                // put "0→" in front of the value it belongs to: the first matching number without one yet
+                String num = p[1].replaceAll("[^\\d.,]", "");
+                Matcher v = Pattern.compile("(?:(?<=§[0-9a-fk-or])|(?<![\\d.,]))" + Pattern.quote(num) + "(?![\\d.,])").matcher(t);
+                int at = -1;
+                while (v.find()) {
+                    int b = v.start();
+                    while (b >= 2 && t.charAt(b - 2) == '§') b -= 2;   // colour codes in front of the number
+                    if (b >= 1 && (t.charAt(b - 1) == '+' || t.charAt(b - 1) == '-')) b--;
+                    if (b >= 1 && t.charAt(b - 1) == '→') continue;
+                    at = b;
+                    break;
+                }
+                if (at >= 0) t = t.substring(0, at) + p[0] + "→" + t.substring(at);
+            }
+            out[head] = t;
+        }
+        return out;
+    }
+
+    private String[] translateLines0(List<String> lines, int maxJoin) {
         int n = lines.size();
         String[] out = new String[n];
         int i = 0;
@@ -432,7 +491,7 @@ public final class PhraseMatcher {
                 // ("§fSnow Block" + "§8Common Commodity" are two different things)
                 for (int k = i + 1; k <= maxJ; k++) {
                     if (isBlank(lines.get(k)) || !sameParagraph(lines.get(k - 1), lines.get(k))
-                            || STARTS_FIELD.matcher(lines.get(k)).find()) { maxJ = k - 1; break; }
+                            || STARTS_FIELD.matcher(lines.get(k)).find() || STARTS_BULLET.matcher(lines.get(k)).find()) { maxJ = k - 1; break; }
                 }
                 for (int j = maxJ; j > i; j--) {
                     StringBuilder joined = new StringBuilder(lines.get(i));

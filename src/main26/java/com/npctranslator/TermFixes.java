@@ -41,7 +41,6 @@ public final class TermFixes {
         ZH_REPLACE.put("爪牙", "小人");
         ZH_REPLACE.put("水晶残核", "水晶洞窟"); // Crystal Hollows；“残核”是与 Crystal Nucleus 混淆的旧译
         ZH_REPLACE.put("残核", "洞窟");
-        ZH_REPLACE.put("热土豆书", "熏制土豆书");
     }
 
     private TermFixes() {}

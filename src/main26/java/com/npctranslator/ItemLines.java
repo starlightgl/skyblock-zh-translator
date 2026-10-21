@@ -107,9 +107,42 @@ public final class ItemLines {
             java.util.regex.Pattern.compile("^((?:§[0-9a-fk-or])*\\s*(?:[▶•‣›◆➜→\\-]\\s*(?:§[0-9a-fk-or])*)?)(.+)$");
 
     /** "▶ Enchanted Ink Sac" / "Missile IV": a name from the term table, keeping the bullet. */
+    /** "§6Mossy Box §8(Mining)": a name followed by its category in brackets. */
+    private static final java.util.regex.Pattern CATEGORY = java.util.regex.Pattern.compile(
+            "^(.*?\\S)(\\s*(?:§[0-9a-fk-or])*\\s*\\((?:§[0-9a-fk-or])*)([A-Za-z]+)((?:§[0-9a-fk-or])*\\))\\s*$");
+    private static final java.util.Map<String, String> CATEGORIES = java.util.Map.ofEntries(
+            java.util.Map.entry("Global", "全局"), java.util.Map.entry("Combat", "战斗"), java.util.Map.entry("Mining", "挖矿"),
+            java.util.Map.entry("Foraging", "伐木"), java.util.Map.entry("Farming", "农业"), java.util.Map.entry("Fishing", "钓鱼"),
+            java.util.Map.entry("Hunting", "狩猎"), java.util.Map.entry("Enchanting", "附魔"), java.util.Map.entry("Alchemy", "炼药"),
+            java.util.Map.entry("Taming", "驯养"), java.util.Map.entry("Carpentry", "木工"), java.util.Map.entry("Runecrafting", "符文"),
+            java.util.Map.entry("Social", "社交"), java.util.Map.entry("Dungeoneering", "地牢"), java.util.Map.entry("Forest", "森林"),
+            java.util.Map.entry("Water", "水域"));
+
+    private static final java.util.regex.Pattern TO_NAME =
+            java.util.regex.Pattern.compile("^((?:§[0-9a-fk-or])*)To ((?:§[0-9a-fk-or])*)(.+)$");
+    private static final java.util.regex.Pattern LEVEL_NAME =
+            java.util.regex.Pattern.compile("^((?:§[0-9a-fk-or])*)\\[Lv(\\d+)\\] ?(.+)$");
+
     static String bulletName(String formatted) {
         String plain = TranslationUtil.stripColorCodes(formatted).trim();
-        if (plain.length() < 3 || plain.length() > 48) return null;
+        if (plain.length() < 3 || plain.length() > 60) return null;
+        java.util.regex.Matcher c = CATEGORY.matcher(formatted);
+        if (c.matches() && CATEGORIES.containsKey(c.group(3))) {
+            String name = bulletName(c.group(1));
+            if (name != null) return name + c.group(2) + CATEGORIES.get(c.group(3)) + c.group(4);
+        }
+        if (plain.length() > 48) return null;
+        // "To Coal" (back button of a bazaar / collection page) and "[Lv70] Rock" (a mob's name tag)
+        java.util.regex.Matcher to = TO_NAME.matcher(formatted);
+        if (to.matches()) {
+            String zh = TableNames.translateName(to.group(3));
+            if (zh != null) return to.group(1) + "返回" + to.group(2) + zh.replaceFirst("^(?:§[0-9a-fk-or])*", "");
+        }
+        java.util.regex.Matcher lv = LEVEL_NAME.matcher(formatted);
+        if (lv.matches()) {
+            String zh = TableNames.translateName(lv.group(3));
+            if (zh != null) return lv.group(1) + "[等级 " + lv.group(2) + "] " + zh;
+        }
         java.util.regex.Matcher m = BULLET.matcher(formatted);
         if (!m.matches()) return null;
         String zh = TableNames.translateName(m.group(2));

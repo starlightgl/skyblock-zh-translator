@@ -2,7 +2,7 @@
 
 Usage: python tools/import_terms.py [主表.xlsx] [补充表.xlsx ...]
        补充表可以是 tools/merge_collected.py 生成的收集汇总（读取「收集-*」工作表中已填写校对译名的行）
-       (默认：data/SkyBlock术语表.xlsx，以及存在时的 data/SkyBlock术语表-补充描述.xlsx)
+       (默认：data/SkyBlock术语表-社区版.xlsx)
 
 Writes, under src/main26/resources/assets/hypixel-npc-and-items-translate/defaults/:
   - table_names.json   names of items, pets, mobs, areas, reforges and enchantments
@@ -18,8 +18,7 @@ from openpyxl import load_workbook
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEFAULTS = os.path.join(ROOT, "src/main26/resources/assets/hypixel-npc-and-items-translate/defaults")
-SRCS = sys.argv[1:] or [p for p in (os.path.join(ROOT, "data/SkyBlock术语表.xlsx"),
-                                    os.path.join(ROOT, "data/SkyBlock术语表-补充描述.xlsx")) if os.path.exists(p)]
+SRCS = sys.argv[1:] or [os.path.join(ROOT, "data/SkyBlock术语表-社区版.xlsx")]
 
 # earlier sheets win when the same English name appears twice
 NAME_SHEETS = ["物品名称", "宠物", "生物", "区域", "修饰词", "附魔"]
@@ -31,7 +30,6 @@ REPLACE = {
     "爪牙": "小人",
     "水晶残核": "水晶洞窟",
     "残核": "洞窟",
-    "热土豆书": "熏制土豆书",
     "Kada 骑士": "卡达骑士",
     "Kuudra 追随者": "库德拉追随者",
 }

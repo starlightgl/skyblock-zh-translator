@@ -3,36 +3,36 @@
  "enchants": [
   {
    "en": "Absorb",
-   "zh": "吸纳",
-   "hint": "提供 +1 林业智慧和 +2 林业时运。砍伐 1k 根原木可从 I 级提升到 II 级。",
+   "zh": "林木汲取",
+   "hint": "斧附魔，提供伐木智慧与伐木时运，数值随等级提高；砍伐原木累计达标后自动升级。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Angler",
    "zh": "垂钓者",
-   "hint": "提供 +1 海洋生物几率。",
+   "hint": "钓鱼竿附魔，每级提供 +1 海怪几率（最高 VI 级 +6）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Aqua Affinity",
    "zh": "水下速掘",
-   "hint": "提高你在水下的挖掘速度。",
+   "hint": "头盔附魔，提高你在水中挖掘方块的速度（仅 I 级）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Bane of Arthropods",
    "zh": "节肢杀手",
-   "hint": "对节肢动物类生物造成的伤害提高 5%。",
+   "hint": "武器附魔：对节肢类生物增伤，I～VII 级依次为 +5%/+10%/+15%/+20%/+30%/+40%/+50%。2025-08-14 起可与锋利和其他针对生物的增伤附魔共存。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Bank",
    "zh": "银行",
-   "hint": "死亡时保留 10% 的硬币。此外，击杀敌人时敌人额外掉落 +0.5 硬币。",
+   "hint": "终极附魔：死亡时每级多保留 10% 硬币，击杀敌人时每级额外掉落 +0.5 硬币。",
    "ultimate": true,
    "aliases": [
     "Ultimate Bank"
@@ -40,29 +40,29 @@
   },
   {
    "en": "Big Brain",
-   "zh": "最强大脑",
-   "hint": "提供 +15 智力。",
+   "zh": "智者之冠",
+   "hint": "头盔附魔，提供智力，III~V 级为 +15/+20/+25（每级 +5）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Blast Protection",
    "zh": "爆炸保护",
-   "hint": "提供 +30 防御，仅对爆炸伤害生效。",
+   "hint": "盔甲附魔，每级提供 +30 防御，仅对爆炸伤害生效。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Blessing",
    "zh": "海神祝福",
-   "hint": "使宝藏渔获成为 GREAT 或 OUTSTANDING 的几率提高 2%。",
+   "hint": "宝藏渔获评为 GREAT 或 OUTSTANDING 的几率每级 +2%（最高 12%）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Bobbin' Time",
    "zh": "浮漂时光",
-   "hint": "每有一个位于 30 格范围内的钓鱼浮标，使所有钓鱼属性和魔法寻宝提高 +0.6%，最多计入 5 个浮标。",
+   "hint": "终极附魔：30 格内每个浮漂使所有钓鱼属性与魔法寻宝 +0.6%~1%，最多 5 个。",
    "ultimate": true,
    "aliases": [
     "Ultimate Bobbin Time",
@@ -72,42 +72,42 @@
   {
    "en": "Caster",
    "zh": "省饵",
-   "hint": "有 5% 几率不消耗鱼饵。",
+   "hint": "钓鱼竿附魔，每级有 5% 几率不消耗鱼饵（最高 VI 级 30%）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Cayenne",
-   "zh": "卡宴辣椒",
-   "hint": "你的饰品之力每有 1 位数字，提供 +0.8 生命和 +0.4 真实防御。",
+   "zh": "赤椒护佑",
+   "hint": "装备附魔（项链、披风、腰带、手套等）：根据饰品之力（旧称魔法威力）的十进制位数提供生命值与真实防御，IV/V 级每位分别 +0.8/+1 生命值、+0.4/+0.5 真实防御。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Champion",
-   "zh": "冠军",
-   "hint": "获得 3% 额外战斗经验。对生物的第 2 次命中提供 +1.4 硬币和 +7 经验球。",
+   "zh": "百战勇士",
+   "hint": "获得额外战斗经验，对生物的第 2 次命中额外给予硬币和经验球，数值随等级提高。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Chance",
-   "zh": "机缘",
-   "hint": "使怪物掉落物品的几率提高 15%。",
+   "zh": "幸运之箭",
+   "hint": "弓附魔，使怪物掉落物品的几率每级提高 15%（最高 75%）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Charm",
-   "zh": "鱼魅",
-   "hint": "钓到更高品质奖杯鱼的几率提高 2%。",
+   "zh": "珍鱼眷顾",
+   "hint": "钓到更高品质奖杯鱼的几率每级提高 2%（最高 VI 级 12%）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Chimera",
    "zh": "奇美拉",
-   "hint": "复制你当前激活宠物 20% 的属性。",
+   "hint": "终极附魔：复制你当前激活宠物的属性，每级 20%，V 级复制 100%。",
    "ultimate": true,
    "aliases": [
     "Ultimate Chimera"
@@ -116,14 +116,14 @@
   {
    "en": "Cleave",
    "zh": "顺劈斩",
-   "hint": "对目标周围 3.3 格内的其他怪物造成你造成伤害的 5%。",
+   "hint": "近战武器附魔：将对当前目标造成伤害的每级 5% 波及周围其他怪物；范围由 I 级 3.5 格逐级增加至 VI 级 6 格。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Combo",
    "zh": "连击",
-   "hint": "在 2 秒内，每击杀 1 只怪物使你的伤害提高 +1%，最多计入 2 次击杀。",
+   "hint": "终极附魔：每次击杀使伤害每级 +1%，叠加上限与持续时间为每级 2 次、2 秒。",
    "ultimate": true,
    "aliases": [
     "Ultimate Combo"
@@ -131,22 +131,22 @@
   },
   {
    "en": "Compact",
-   "zh": "压缩",
-   "hint": "获得 +1 挖掘智慧，并有 0.25% 概率掉落一个附魔物品。",
+   "zh": "矿物压缩",
+   "hint": "挖掘工具附魔：提供挖掘智慧，并有几率掉落附魔物品；数值随等级提高，不可铁砧合并。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Corruption",
-   "zh": "腐化",
-   "hint": "有 1% 概率生成一只腐化海洋生物。",
+   "zh": "腐化之钩",
+   "hint": "钓鱼时每级有 1% 几率生成腐化海洋生物（最高 V 级 5%）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Counter-Strike",
-   "zh": "反击",
-   "hint": "首次被敌人击中时，获得 +10 防御，持续 7 秒。",
+   "zh": "迎击",
+   "hint": "胸甲附魔：首次被敌人击中时获得 +10 防御，持续 7 秒（V 级）。",
    "ultimate": false,
    "aliases": [
     "Counter Strike"
@@ -155,56 +155,56 @@
   {
    "en": "Critical",
    "zh": "暴击",
-   "hint": "增加 10% 暴击伤害。",
+   "hint": "提高暴击伤害，I~V 级每级 +10%，VI/VII 级为 +70%/+100%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Cubism",
    "zh": "立方杀手",
-   "hint": "对立方体怪物造成的伤害提高 5%。",
+   "hint": "对立方类生物造成的伤害提高，I~VI 级为 +5%~+40%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Cultivating",
    "zh": "耕耘",
-   "hint": "获得 +1 农业智慧 和 +2 农业时运。",
+   "hint": "农具附魔，提供农业智慧与农业时运，数值随等级提高，不可铁砧合并升级。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Dedication",
-   "zh": "专注",
-   "hint": "为作物提供 0.5 农业时运，数值乘以你在花园中该作物的里程碑。",
+   "zh": "奉献",
+   "hint": "每种作物提供农业时运，数值为每级系数（0.5~2）乘以该作物的花园里程碑。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Delicate",
-   "zh": "轻柔",
-   "hint": "避免破坏作物茎秆和未成熟作物。",
+   "zh": "护苗",
+   "hint": "农具附魔，收割时不会破坏茎秆和未成熟的作物（V 级）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Depth Strider",
    "zh": "深海探索者",
-   "hint": "将你在水中的减速程度降低 33%。",
+   "hint": "靴子附魔，每级减少你在水中受到的减速约 33%，III 级完全抵消。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Divine Gift",
-   "zh": "神赐",
-   "hint": "提供 +2 魔法寻宝。",
+   "zh": "神之馈赠",
+   "hint": "武器附魔，每级提供 +2 魔法寻宝（最高 III 级 +6）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Dragon Tracer",
-   "zh": "追龙",
-   "hint": "箭矢与龙相距 2 格以内时，会自动追踪龙。",
+   "zh": "追龙箭",
+   "hint": "弓附魔：龙处于箭矢每级 2 格范围内时，箭矢自动追踪龙（最高 10 格）。",
    "ultimate": false,
    "aliases": [
     "Aiming"
@@ -212,8 +212,8 @@
   },
   {
    "en": "Drain",
-   "zh": "汲取",
-   "hint": "每次击中怪物时回复 +0.5 活力（1 秒冷却）。",
+   "zh": "活力汲取",
+   "hint": "近战武器附魔：命中怪物恢复活力（Vitality），每秒最多触发一次；I～V 级每次分别恢复 0.5/1/1.5/2/2.5 点活力（2026-08-06 调整）。",
    "ultimate": false,
    "aliases": [
     "Syphon"
@@ -221,8 +221,8 @@
   },
   {
    "en": "Duplex",
-   "zh": "双发",
-   "hint": "射出第二支箭，造成第一支箭伤害的 4%。被命中的目标在 60 秒内受到 1.1 倍火焰伤害。",
+   "zh": "火焰双发",
+   "hint": "终极弓附魔：额外射出伤害为首箭每级 4% 的箭，命中目标 60 秒内受火焰伤害提高。",
    "ultimate": true,
    "aliases": [
     "Reiterate",
@@ -233,42 +233,42 @@
   {
    "en": "Efficiency",
    "zh": "效率",
-   "hint": "提高工具破坏方块的速度。",
+   "hint": "工具附魔，提高工具破坏方块的速度，等级越高越快（I~V 级）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Ender Slayer",
    "zh": "末影杀手",
-   "hint": "对末影生物造成的伤害提高 5%。",
+   "hint": "对末影类生物造成的伤害提高，I~VII 级为 +5%~+50%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Execute",
    "zh": "斩杀",
-   "hint": "目标每损失 1% 生命，你造成的伤害提高 0.2%。",
+   "hint": "目标每损失 1% 生命值，你的伤害提高每级 0.2%（VI 级 1.25%）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Experience",
    "zh": "经验",
-   "hint": "生物和矿石有 12.5% 几率掉落双倍经验。",
+   "hint": "怪物与矿石有几率掉落双倍经验，几率每级 +12.5%（最高 62.5%）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Expertise",
-   "zh": "精通",
-   "hint": "提供 +0.6 海洋生物几率和 +2 钓鱼智慧（击杀海洋生物时获得经验的加成）。",
+   "zh": "海洋专长",
+   "hint": "钓鱼竿附魔，提供海怪几率与击杀海洋生物时的钓鱼智慧，数值随等级提高。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Fatal Tempo",
    "zh": "致命节奏",
-   "hint": "攻击时每次命中使你的凶暴提高 10%，最多提高至 200%；该效果在你最后一次攻击后持续 3 秒。",
+   "hint": "终极附魔：每次命中使残暴提高每级 10%，上限 200%，最后一次攻击后持续 3 秒。",
    "ultimate": true,
    "aliases": [
     "Ultimate Fatal Tempo"
@@ -276,36 +276,36 @@
   },
   {
    "en": "Feast",
-   "zh": "盛宴",
-   "hint": "获得 +2 过度绽放。",
+   "zh": "作物盛宴",
+   "hint": "农具附魔，每级提供 +2 过度绽放（Overbloom），最高 V 级 +10。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Feather Falling",
    "zh": "摔落缓冲",
-   "hint": "你在受到摔落伤害前可下落的高度增加 1 格，并减少 5% 摔落伤害。",
+   "hint": "靴子附魔，每级使不受摔伤的高度 +1 格、摔落伤害 -5%（最高 X 级）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Fire Aspect",
    "zh": "火焰附加",
-   "hint": "使敌人燃烧 3 秒，每秒造成相当于你伤害 3% 的伤害。",
+   "hint": "点燃敌人，每秒造成你伤害的每级 3%；I 级燃烧 3 秒，II~III 级 4 秒。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Fire Protection",
    "zh": "火焰保护",
-   "hint": "获得 +2 真实防御，仅对火焰和熔岩伤害生效。",
+   "hint": "盔甲附魔，每级提供 +2 真实防御，仅对火焰和熔岩伤害生效。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "First Impression",
-   "zh": "先声夺人",
-   "hint": "近战破坏原木时获得 +1 横扫，且你在一棵树上首次近战破坏原木时获得 +2 横扫。",
+   "zh": "初斧之威",
+   "hint": "终极斧附魔：近战破坏原木时每级 +1 横扫，每棵树首次近战破坏改为每级 +2。",
    "ultimate": true,
    "aliases": [
     "Ultimate First Impression"
@@ -313,22 +313,22 @@
   },
   {
    "en": "First Strike",
-   "zh": "先发制人",
-   "hint": "对生物的第一击造成的近战伤害提高 25%。",
+   "zh": "先攻",
+   "hint": "对每只怪物的第一击，近战伤害每级提高 25%（最高 V 级 125%）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Flame",
    "zh": "火矢",
-   "hint": "箭矢使敌人燃烧 3 秒。",
+   "hint": "弓附魔，射出的箭会点燃敌人，I 级燃烧 3 秒，II 级 4 秒。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Flash",
    "zh": "瞬钓",
-   "hint": "有 1% 几率立即引来一条鱼。",
+   "hint": "终极钓鱼竿附魔：每级有 1% 几率立即引来一条鱼（最高 5%）。",
    "ultimate": true,
    "aliases": [
     "Ultimate Flash"
@@ -337,7 +337,7 @@
   {
    "en": "Flowstate",
    "zh": "心流",
-   "hint": "连续破坏方块时，每破坏一个方块获得 +1 挖掘速度；停止挖掘 10 秒后效果结束，最多计算 200 个方块。",
+   "hint": "终极附魔：连续破坏方块时每块 +1 挖掘速度×等级，最多 200 块，停挖 10 秒重置。",
    "ultimate": true,
    "aliases": [
     "Ultimate Flowstate"
@@ -346,35 +346,35 @@
   {
    "en": "Fortune",
    "zh": "时运",
-   "hint": "获得 +10  挖掘时运，这会提高你获得多份掉落的几率。",
+   "hint": "采矿工具附魔：提供挖掘时运以提高多倍掉落几率，I～IV 级分别为 +10/+20/+30/+45；与精准采集互斥。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Frail",
-   "zh": "脆弱",
-   "hint": "海洋生物生成时的初始生命减少 2.5%。",
+   "zh": "弱化之钩",
+   "hint": "海洋生物生成时的初始生命值每级降低 2.5%（最高 VII 级 17.5%）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Frost Walker",
    "zh": "冰霜行者",
-   "hint": "当你在水面上方行走时，会在你下方半径 1 格内生成冰块。",
+   "hint": "靴子附魔（已移除）：过去在水面行走时生成冰块；当前不能正常获取/使用，保留为历史术语。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Giant Killer",
    "zh": "巨人杀手",
-   "hint": "目标每比你多 1% 生命值，你造成的伤害提高 0.1%，最多提高 5%。",
+   "hint": "目标生命值每比你高 1%，伤害提高 0.1%~1.2%（随等级），上限 5%~65%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Gravity",
-   "zh": "引力",
-   "hint": "对  空中生物造成的伤害提高 5%。",
+   "zh": "重力压制",
+   "hint": "对空中类生物造成的伤害提高，I~VI 级为 +5%~+40%。",
    "ultimate": false,
    "aliases": [
     "Dragon Hunter"
@@ -382,22 +382,22 @@
   },
   {
    "en": "Green Thumb",
-   "zh": "绿手指",
-   "hint": "每招待过一位不同的访客，提供 0.05 农业时运。",
+   "zh": "园艺妙手",
+   "hint": "装备附魔，每招待过一位不同的花园访客，提供每级 0.05 农业时运。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Growth",
    "zh": "成长",
-   "hint": "获得 +15 生命值。",
+   "hint": "盔甲附魔，每级提供 +15 生命值（最高 VII 级 +105）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Habanero Tactics",
-   "zh": "哈瓦那辣椒战术",
-   "hint": "治疗魔杖的治疗量提高 6%。使用猎手（Slayer）武器时，对猎手首领的伤害提高 20%，并获得 +2.5 战斗智慧。具有 Smoldering Polarization（阴燃极化，暂译）效果时，猎手武器额外获得 +10 魔法寻宝。",
+   "zh": "赤椒战术",
+   "hint": "终极附魔：提高魔杖治疗量，猎手武器对首领增伤并加战斗智慧，特定条件下加魔法寻宝。",
    "ultimate": true,
    "aliases": [
     "Ultimate Habanero Tactics"
@@ -405,8 +405,8 @@
   },
   {
    "en": "Hardened Vitality",
-   "zh": "坚韧活力",
-   "hint": "将所消耗活力的 4% 转化为防御，持续 10 秒，最多获得 25 防御。",
+   "zh": "活力坚韧",
+   "hint": "盔甲附魔：自身消耗活力后，将每级 4% 的所耗活力转为防御，持续 10 秒；单件上限 +25 防御（X 级转化 40%）。",
    "ultimate": false,
    "aliases": [
     "Hardened Mana"
@@ -415,35 +415,35 @@
   {
    "en": "Harvesting",
    "zh": "丰收",
-   "hint": "获得 +12.5  农业时运，这会提高你获得多份作物的几率。",
+   "hint": "农具附魔，每级提供 +12.5 农业时运，提高多倍作物掉落几率（最高 +75）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Hecatomb",
-   "zh": "百牲祭",
-   "hint": "地下墓穴经验提高 0.28%，职业经验提高 0.56%；S+ 评价通关时这两项加成翻倍。每 10 级地下墓穴等级额外提供 2.6 生命。",
+   "zh": "百战加冕",
+   "hint": "头盔附魔：提高地下墓穴与职业经验（S+ 评价翻倍），并按地下墓穴等级提供生命值。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Ice Cold",
    "zh": "御寒",
-   "hint": "提供 +1 抗寒。",
+   "hint": "盔甲附魔，每级提供 +1 抗寒属性（最高 V 级 +5）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Impaling",
    "zh": "穿刺",
-   "hint": "对  水生生物造成的伤害提高 5%。",
+   "hint": "对水生类生物造成的伤害提高，I~V 级为 +5%~+30%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Inferno",
-   "zh": "炼狱",
-   "hint": "对生物每第 10 次命中会生成一片炼狱，困住该生物并造成你上一次命中的 125% 伤害。",
+   "zh": "炼狱一击",
+   "hint": "终极附魔：每第 10 次命中召唤炼狱困住怪物，造成上一击 125%~225% 的伤害。",
    "ultimate": true,
    "aliases": [
     "Ultimate Inferno"
@@ -452,35 +452,35 @@
   {
    "en": "Infinite Quiver",
    "zh": "无尽箭袋",
-   "hint": "使用弓射击时有 3% 的几率节省箭。",
+   "hint": "用弓射击时有几率不消耗箭矢，每级 3%（最高 X 级 30%）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Karma",
-   "zh": "因果",
-   "hint": "用斧类工具砍树时，树礼物有 1% 的几率掉落双倍战利品。",
+   "zh": "林间福报",
+   "hint": "斧附魔，树木馈赠有几率包含双倍战利品，每级 1%（最高 5%）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Knockback",
    "zh": "击退",
-   "hint": "攻击时将目标击退的距离增加 3 格。",
+   "hint": "近战武器附魔，攻击时的击退距离每级增加 3 格（最高 II 级）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Lapidary",
-   "zh": "琢玉",
-   "hint": "挖掘宝石时，获得 +10 宝石时运和 +20 挖掘速度。",
+   "zh": "宝石精琢",
+   "hint": "挖掘宝石时每级提供 +10 宝石时运与 +20 挖掘速度（最高 V 级）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Last Stand",
    "zh": "背水一战",
-   "hint": "当生命低于 40% 时：获得 +2.5% 防御，持续 10 秒；并回复 2 活力。冷却时间：30 秒。",
+   "hint": "盔甲终极附魔：生命值首次降至 40% 以下时触发，防御提高每级 2.5% 并回复每级 2 点活力，持续 10 秒，冷却 30 秒；不要求整个持续期间始终低于 40%。",
    "ultimate": true,
    "aliases": [
     "Ultimate Last Stand"
@@ -488,8 +488,8 @@
   },
   {
    "en": "Legion",
-   "zh": "军团",
-   "hint": "你周围 30 格内每有一名玩家，就使你所有战斗属性和魔法寻宝提高 0.07%，最多计算 20 名玩家。",
+   "zh": "军团之力",
+   "hint": "终极附魔：30 格内每名玩家使所有战斗属性与魔法寻宝每级 +0.07%，最多 20 人。",
    "ultimate": true,
    "aliases": [
     "Ultimate Legion"
@@ -498,63 +498,63 @@
   {
    "en": "Lethality",
    "zh": "破甲",
-   "hint": "每次近战命中目标时，使其防御降低 1.2%，持续 4 秒，最多叠加 4 次。",
+   "hint": "每次近战命中降低目标防御 1.2%~9%（随等级），持续 4 秒，最多叠 4 层。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Life Steal",
-   "zh": "生命窃取",
-   "hint": "每次命中生物时回复 2.4 生命。",
+   "zh": "吸血",
+   "hint": "近战武器附魔：每次命中生物直接恢复生命值，每级恢复 2.4 生命值（V 级为 12）；2026-07-22 治疗系统重做后采用固定回复量。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Looting",
    "zh": "抢夺",
-   "hint": "使怪物掉落物品的几率提高 15%。",
+   "hint": "怪物掉落物品的几率每级提高 15%（最高 V 级 75%）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Luck",
    "zh": "幸运",
-   "hint": "使怪物掉落自身护甲的几率提高 5%。",
+   "hint": "怪物掉落自身盔甲的几率每级提高 5%（最高 VII 级 35%）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Luck of the Sea",
    "zh": "海之眷顾",
-   "hint": "获得 +0.5 宝藏几率，可提高钓到宝藏的几率。",
+   "hint": "钓鱼竿附魔，每级提供 +0.5 宝藏几率，提高钓到宝藏的几率。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Lure",
    "zh": "饵钓",
-   "hint": "将钓鱼时最长上钩等待时间缩短 5%。",
+   "hint": "钓鱼时最长上钩等待时间每级缩短 5%（最高 VI 级 30%）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Magnet",
-   "zh": "磁吸",
-   "hint": "每次成功钓到鱼时，额外获得 1 个经验球。",
+   "zh": "经验磁钩",
+   "hint": "每次成功钓到鱼时额外获得经验球，每级 +1 个（最高 6 个）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Mana Steal",
    "zh": "法力窃取",
-   "hint": "命中时回复自身 0.25% 的法力。",
+   "hint": "命中时回复你一定比例的法力，每级 0.25%（最高 III 级 0.75%）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Missile",
-   "zh": "导弹",
-   "hint": "投掷斧的原木惩罚降低 10%。",
+   "zh": "破空飞斧",
+   "hint": "终极斧附魔：投掷斧的原木惩罚每级降低 10%（最高 50%）。",
    "ultimate": true,
    "aliases": [
     "Ultimate Missile"
@@ -562,8 +562,8 @@
   },
   {
    "en": "No Pain No Gain",
-   "zh": "无痛无获",
-   "hint": "每次被生物击中时，有 20% 的几率获得 2 个经验球。",
+   "zh": "苦痛馈赠",
+   "hint": "终极附魔：受到怪物攻击时有几率获得经验球，几率每级 20%（V 级必定）。",
    "ultimate": true,
    "aliases": [
     "Ultimate No Pain No Gain"
@@ -571,8 +571,8 @@
   },
   {
    "en": "One For All",
-   "zh": "孤注一掷",
-   "hint": "移除所有其他附魔，但使你的武器伤害提高 500%。",
+   "zh": "万法归一",
+   "hint": "武器终极附魔：移除同一武器上的其他附魔，以换取 +500% 武器伤害；因此与其他武器附魔无法共存。",
    "ultimate": true,
    "aliases": [
     "Ultimate One For All"
@@ -580,57 +580,57 @@
   },
   {
    "en": "Overload",
-   "zh": "过载",
-   "hint": "暴击伤害提高 1%，暴击几率提高 1%。暴击几率超过 100% 时，有几率触发“超级暴击”，造成额外 10% 伤害。",
+   "zh": "极限箭击",
+   "hint": "弓附魔：每级 +1% 暴击伤害与暴击率；暴击率超过 100% 时可触发超级暴击。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Paleontologist",
    "zh": "古生物学家",
-   "hint": "在冰川矿井（Glacite Mineshafts）挖掘时，发现可疑碎片的几率提高 2.5%。",
+   "hint": "在冰川矿井挖掘时，发现可疑碎片的几率每级提高 2.5%（最高 12.5%）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Pesterminator",
    "zh": "灭虫大师",
-   "hint": "提供 +2 农业时运和 +1 额外害虫几率；额外害虫几率会提高你在花园中生成额外害虫的几率。",
+   "hint": "盔甲附魔，每级提供 +2 农业时运与 +1 额外害虫几率（花园中生成额外害虫）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Petalfall",
-   "zh": "落英",
-   "hint": "提供 +0.2 整树砍伐。",
+   "zh": "飞花断木",
+   "hint": "斧附魔，每级提供 +0.2 整树砍伐（Timber）属性，最高 V 级 +1。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Piercing",
    "zh": "穿透",
-   "hint": "箭矢会穿透敌人。被额外命中的目标受到 25% 的伤害。",
+   "hint": "弓附魔，箭矢可穿透敌人，额外命中的目标受到 25% 的伤害。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Piscary",
    "zh": "疾钓",
-   "hint": "提供 +1 钓鱼速度。",
+   "hint": "钓鱼竿附魔，每级提供 +1 钓鱼速度（最高 VII 级 +7）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Power",
    "zh": "力量",
-   "hint": "使弓的伤害提高 8%。",
+   "hint": "弓的伤害提高，I~V 级每级 +8%，VI/VII 级为 +50%/+65%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Prismatic",
-   "zh": "棱彩",
-   "hint": "提供 +0.5 纯净；纯净会提高掉落的宝石提升品质的几率。",
+   "zh": "宝石采掘",
+   "hint": "挖掘工具附魔，每级提供 +0.5 纯净，提高掉落宝石品质提升的几率。",
    "ultimate": false,
    "aliases": [
     "Pristine"
@@ -639,42 +639,42 @@
   {
    "en": "Projectile Protection",
    "zh": "弹射物保护",
-   "hint": "提供 +7 对弹射物的防御力。",
+   "hint": "盔甲附魔，每级提供 +7 防御，仅对弹射物伤害生效。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Prosecute",
-   "zh": "问罪",
-   "hint": "目标每拥有 1% 生命值，你造成的伤害提高 0.1%。",
+   "zh": "先机裁决",
+   "hint": "目标当前每有 1% 生命值，你的伤害提高 0.1%~1%（随等级）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Prosperity",
-   "zh": "兴旺",
-   "hint": "提供 +3 生命值。",
+   "zh": "繁盛",
+   "hint": "装备附魔（项链、斗篷等），每级提供 +3 生命值（最高 +15）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Protection",
    "zh": "保护",
-   "hint": "提供 +4 防御力。",
+   "hint": "盔甲附魔，提供防御，I~V 级每级 +4，VI/VII 级 +25/+30。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Punch",
    "zh": "冲击",
-   "hint": "使箭矢的击退距离增加 3 格。",
+   "hint": "弓附魔，箭矢的击退距离每级增加 3 格（最高 II 级）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Pyroclasm",
    "zh": "火山之怒",
-   "hint": "对  熔岩类生物造成的伤害提高 10%。",
+   "hint": "对熔岩类生物造成的伤害提高，I~VI 级为 +10%~+80%。",
    "ultimate": false,
    "aliases": [
     "Magmarizer"
@@ -682,29 +682,29 @@
   },
   {
    "en": "Quantum",
-   "zh": "量子",
-   "hint": "工作日提供 +1 活力，周末提供 +1.2 的随机智慧属性。",
+   "zh": "量子态",
+   "hint": "项链附魔：工作日提供活力，周末提供随机一项智慧属性，数值随等级提高。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Quick Bite",
    "zh": "速咬",
-   "hint": "使鱼朝你的浮漂游动的速度提高 5%。",
+   "hint": "鱼游向你浮漂的速度每级提高 5%（最高 V 级 25%）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Reflection",
-   "zh": "反射",
-   "hint": "提供 +2 智力。提供 +1 真实防御。被箭矢伤害时，对射箭者造成相当于你智力 2 倍的伤害。",
+   "zh": "箭矢反伤",
+   "hint": "胸甲附魔：每级增加 +2 智力、+1 真实防御；被箭矢命中时按智力对射手反伤，V 级反伤为智力的 30 倍；与荆棘互斥。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Refrigerate",
-   "zh": "冷藏",
-   "hint": "将所消耗法力的 3% 转化为防御，持续 10 秒。（最多 150 防御）",
+   "zh": "魔力冰甲",
+   "hint": "盔甲终极附魔：将消耗魔力的 3%～6% 转为持续 10 秒的防御；单件盔甲最多 +150 防御，四件合计上限 +600（2026-07-22 更新）。",
    "ultimate": true,
    "aliases": [
     "Ultimate Refrigerate"
@@ -713,14 +713,14 @@
   {
    "en": "Rejuvenate",
    "zh": "回春",
-   "hint": "提供 +1 生命回复。",
+   "hint": "盔甲附魔：提供生命恢复（Health Regen），每级 +1（V 级 +5）；2026-07-22 治疗改版后的数值。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Rend",
-   "zh": "撕裂",
-   "hint": "使用左键技能从附近敌人身上拔出你的箭矢。每支箭造成你对该目标上一次暴击射击伤害的 5%，最多 5 支箭。冷却 2 秒。",
+   "zh": "万箭归宗",
+   "hint": "终极弓附魔：左键拔出附近敌人身上的箭，每支造成上次暴击射击每级 5% 的伤害。",
    "ultimate": true,
    "aliases": [
     "Ultimate Rend"
@@ -729,91 +729,91 @@
   {
    "en": "Replenish",
    "zh": "补种",
-   "hint": "破坏作物、下界疣、可可豆、野玫瑰或向日葵时，自动用你物品栏中的材料重新种植。",
+   "hint": "破坏作物、下界疣、可可豆等时，自动用物品栏中的材料重新种植。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Respiration",
    "zh": "水下呼吸",
-   "hint": "提供 +15 水下呼吸，延长你在水下停留的时间。",
+   "hint": "头盔附魔，每级提供 +15 水下呼吸属性，延长水下停留时间。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Respite",
    "zh": "休憩",
-   "hint": "脱离战斗时提供 +3 生命回复。",
+   "hint": "盔甲附魔：仅在脱离战斗时增加生命恢复，每级 +3（V 级 +15）；与回春互斥。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Scavenger",
-   "zh": "拾荒者",
-   "hint": "击杀时，按怪物等级每级获得 0.3 硬币。",
+   "zh": "拾荒",
+   "hint": "击杀怪物时按怪物等级获得硬币，每级附魔为每怪物等级 0.3 硬币。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Sharpness",
    "zh": "锋利",
-   "hint": "造成的近战伤害提高 5%。",
+   "hint": "近战武器附魔：提高近战伤害，I～VII 级依次为 +5%/+10%/+15%/+20%/+30%/+40%/+50%；2025-08-14 起可与亡灵杀手、节肢杀手等特定生物增伤附魔共存。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Silk Touch",
    "zh": "精准采集",
-   "hint": "可以采集通常无法直接获得的方块掉落物。",
+   "hint": "工具附魔：使部分方块以方块本体形式掉落，仅 I 级；与时运互斥。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Small Brain",
-   "zh": "小脑瓜",
-   "hint": "提供 -5 智力 和 +1 真实防御。",
+   "zh": "头铁无脑",
+   "hint": "头盔附魔：每级 -5 智力、+1 真实防御（III~V 级）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Smarty Pants",
-   "zh": "机灵鬼",
-   "hint": "提供 +5 智力。",
+   "zh": "聪明绝腿",
+   "hint": "护腿附魔，每级提供 +5 智力（最高 V 级 +25）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Smelting Touch",
-   "zh": "熔炼之触",
-   "hint": "自动将破坏的方块熔炼为其熔炼产物。",
+   "zh": "自动熔炼",
+   "hint": "自动将破坏的方块熔炼为其熔炼产物，可用于镐、斧、铲等工具。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Smite",
    "zh": "亡灵杀手",
-   "hint": "对凋零、亡灵和骷髅类生物造成的伤害提高 5%。",
+   "hint": "武器附魔：对亡灵、凋灵、骷髅类生物增伤，I～VII 级为 +5%/+10%/+15%/+20%/+30%/+40%/+50%；现可与锋利等增伤附魔共存。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Smoldering",
-   "zh": "阴燃",
-   "hint": "对炼狱类怪物造成的伤害提高5%。",
+   "zh": "炼狱杀手",
+   "hint": "对炼狱类生物造成的伤害提高，I~V 级为 +5%~+30%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Snipe",
    "zh": "狙击",
-   "hint": "箭矢每飞行10格，伤害+1%。",
+   "hint": "弓附魔，箭矢每飞行 10 格，伤害提高每级 1%（最高 IV 级）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Soul Eater",
    "zh": "噬魂",
-   "hint": "武器获得最近一次击杀怪物的 2 倍伤害值，追加到你的下一次暴击伤害计算末尾；地牢外上限为 1M（100 万）。",
+   "hint": "武器终极附魔：击杀怪物后，将该怪物的伤害属性按附魔等级折算为下次暴击的额外伤害（每级 2 倍）；2026-01-12 起地牢内取消伤害上限，地牢外仍受上限限制。",
    "ultimate": true,
    "aliases": [
     "Ultimate Soul Eater"
@@ -822,14 +822,14 @@
   {
    "en": "Spiked Hook",
    "zh": "倒刺钩",
-   "hint": "钓鱼竿对怪物造成的伤害提高5%。",
+   "hint": "钓鱼竿对怪物造成的伤害每级提高 5%（最高 VII 级 35%）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Strong Vitality",
    "zh": "强健活力",
-   "hint": "将所消耗活力的 2% 转化为力量，持续 10 秒，最多获得 30 力量。",
+   "hint": "盔甲附魔：自身消耗活力后，将每级 2% 的所耗活力转为力量，持续 10 秒；单件上限 +30 力量（X 级转化 20%）。",
    "ultimate": false,
    "aliases": [
     "Strong Mana"
@@ -838,14 +838,14 @@
   {
    "en": "Sugar Rush",
    "zh": "糖分冲刺",
-   "hint": "获得+2速度。",
+   "hint": "靴子附魔，每级提供 +2 速度（最高 III 级 +6）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Sunset",
-   "zh": "日落",
-   "hint": "白天时，+1过度绽放。夜晚时，访客冷却时间减少1%。",
+   "zh": "落日丰收",
+   "hint": "终极附魔：白天每级 +1 过度绽放，夜晚访客冷却时间每级减少 1%。",
    "ultimate": true,
    "aliases": [
     "Ultimate Sunset"
@@ -853,8 +853,8 @@
   },
   {
    "en": "Swarm",
-   "zh": "蜂群",
-   "hint": "10格范围内每有一名敌人，你的伤害提高2%。最多计10名敌人。",
+   "zh": "以一敌众",
+   "hint": "终极附魔：10 格内每有一名敌人，伤害每级提高 2%，最多计 10 名。",
    "ultimate": true,
    "aliases": [
     "Ultimate Swarm"
@@ -862,15 +862,15 @@
   },
   {
    "en": "Tabasco",
-   "zh": "塔巴斯科",
-   "hint": "若未装备龙宠物，获得+2武器伤害。",
+   "zh": "辣椒仔",
+   "hint": "未装备龙类宠物时提供武器伤害，II 级 +2、III 级 +3。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "The One",
-   "zh": "天选",
-   "hint": "每种满级收藏提供 +0.5 生命和 +0.1 力量。原始样例账号已有 73 种满级收藏（此数字随玩家变化）。",
+   "zh": "集大成者",
+   "hint": "终极项链附魔：每种满级收藏提供生命值与力量，IV 级 +0.5/+0.1，V 级翻倍。",
    "ultimate": true,
    "aliases": [
     "Ultimate The One"
@@ -879,56 +879,56 @@
   {
    "en": "Thorns",
    "zh": "荆棘",
-   "hint": "有 50% 几率向攻击者反弹相当于其造成伤害 3% 的伤害。",
+   "hint": "受击时有 50% 几率将伤害的每级 3% 反弹给攻击者（最高 IV 级）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Thunderbolt",
    "zh": "雷霆一击",
-   "hint": "每对怪物命中3次，召唤闪电，对2格范围内至多10只怪物造成该次命中伤害的4%。",
+   "hint": "每命中同一怪物 3 次召唤闪电，对 2 格内至多 10 只怪物造成该击 4%~30% 伤害。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Thunderlord",
    "zh": "雷霆领主",
-   "hint": "每对怪物命中3次，召唤闪电，造成该次命中伤害的8%。",
+   "hint": "每命中同一怪物 3 次召唤闪电，造成该次命中伤害的 8%~60%（随等级）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Tidal",
-   "zh": "潮汐",
-   "hint": "面对海洋生物时，你的防御+5%。",
+   "zh": "潮汐护卫",
+   "hint": "护腿附魔，面对海洋生物时防御每级提高 5%（最高 15%）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Titan Killer",
    "zh": "泰坦杀手",
-   "hint": "使你对目标造成的伤害提高：目标每有100点防御，伤害提高2%，最多提高6%。",
+   "hint": "目标每有 100 点防御，伤害提高 2%~20%（随等级），上限 6%~80%。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Toxophilite",
    "zh": "箭术家",
-   "hint": "获得3%额外战斗经验；提供 +3.7 暴击几率；需要50k战斗经验升阶！",
+   "hint": "弓附魔：获得额外战斗经验并提供暴击率，获取 5 万战斗经验后升级。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Transylvanian",
-   "zh": "血族",
-   "hint": "10 格范围内每有一个敌人，每秒恢复 2 生命，上限为每秒恢复 20 生命。",
+   "zh": "血族之冠",
+   "hint": "头盔附魔：10 格内每名敌人提高最大生命值，IV/V 级分别 +12/+15 最大生命值/敌人；最多计 10 名敌人（IV 最多 +120，V 最多 +150）。2026-07-22 已取消旧版持续回血效果。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Triple-Strike",
-   "zh": "三连击",
-   "hint": "对同一怪物进行的前三次近战命中，造成的近战伤害提高10%。",
+   "zh": "先手三击",
+   "hint": "对每只怪物的前三次命中，近战伤害每级提高 10%（最高 V 级 50%）。",
    "ultimate": false,
    "aliases": [
     "Triple Strike"
@@ -937,14 +937,14 @@
   {
    "en": "True Protection",
    "zh": "真实保护",
-   "hint": "提供 +5 真实防御。",
+   "hint": "胸甲附魔，提供 +5 真实防御属性，该附魔仅有 I 级。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Turbo-Cacti",
    "zh": "极速仙人掌",
-   "hint": "提供 +5 仙人掌时运。",
+   "hint": "农具附魔，每级提供 +5 仙人掌时运（最高 VII 级 +35），只对该作物生效。",
    "ultimate": false,
    "aliases": [
     "Turbo Cactus",
@@ -954,7 +954,7 @@
   {
    "en": "Turbo-Cane",
    "zh": "极速甘蔗",
-   "hint": "提供 +5 甘蔗时运。",
+   "hint": "农具附魔，每级提供 +5 甘蔗时运（最高 VII 级 +35），只对该作物生效。",
    "ultimate": false,
    "aliases": [
     "Turbo Cane"
@@ -963,7 +963,7 @@
   {
    "en": "Turbo-Carrot",
    "zh": "极速胡萝卜",
-   "hint": "提供 +5 胡萝卜时运。",
+   "hint": "农具附魔，每级提供 +5 胡萝卜时运（最高 VII 级 +35），只对该作物生效。",
    "ultimate": false,
    "aliases": [
     "Turbo Carrot"
@@ -972,7 +972,7 @@
   {
    "en": "Turbo-Cocoa",
    "zh": "极速可可豆",
-   "hint": "提供 +5 可可豆时运。",
+   "hint": "农具附魔，每级提供 +5 可可豆时运（最高 VII 级 +35），只对该作物生效。",
    "ultimate": false,
    "aliases": [
     "Turbo Coco",
@@ -982,7 +982,7 @@
   {
    "en": "Turbo-Melon",
    "zh": "极速西瓜",
-   "hint": "提供 +5 西瓜片时运。",
+   "hint": "农具附魔，每级提供 +5 西瓜片时运（最高 VII 级 +35），只对该作物生效。",
    "ultimate": false,
    "aliases": [
     "Turbo Melon"
@@ -991,7 +991,7 @@
   {
    "en": "Turbo-Moonflower",
    "zh": "极速月光花",
-   "hint": "提供 +5 月光花时运。",
+   "hint": "农具附魔，每级提供 +5 月光花时运（最高 VII 级 +35），只对该作物生效。",
    "ultimate": false,
    "aliases": [
     "Turbo Moonflower"
@@ -1000,7 +1000,7 @@
   {
    "en": "Turbo-Mushrooms",
    "zh": "极速蘑菇",
-   "hint": "提供 +5 蘑菇时运。",
+   "hint": "农具附魔，每级提供 +5 蘑菇时运（最高 VII 级 +35），只对该作物生效。",
    "ultimate": false,
    "aliases": [
     "Turbo Mushrooms"
@@ -1009,7 +1009,7 @@
   {
    "en": "Turbo-Potato",
    "zh": "极速马铃薯",
-   "hint": "提供 +5 马铃薯时运。",
+   "hint": "农具附魔，每级提供 +5 马铃薯时运（最高 VII 级 +35），只对该作物生效。",
    "ultimate": false,
    "aliases": [
     "Turbo Potato"
@@ -1018,7 +1018,7 @@
   {
    "en": "Turbo-Pumpkin",
    "zh": "极速南瓜",
-   "hint": "提供 +5 南瓜时运。",
+   "hint": "农具附魔，每级提供 +5 南瓜时运（最高 VII 级 +35），只对该作物生效。",
    "ultimate": false,
    "aliases": [
     "Turbo Pumpkin"
@@ -1027,7 +1027,7 @@
   {
    "en": "Turbo-Rose",
    "zh": "极速野玫瑰",
-   "hint": "提供 +5 野玫瑰时运。",
+   "hint": "农具附魔，每级提供 +5 野玫瑰时运（最高 VII 级 +35），只对该作物生效。",
    "ultimate": false,
    "aliases": [
     "Turbo Rose"
@@ -1036,7 +1036,7 @@
   {
    "en": "Turbo-Sunflower",
    "zh": "极速向日葵",
-   "hint": "获得 +5 向日葵时运。",
+   "hint": "农具附魔，每级提供 +5 向日葵时运（最高 VII 级 +35），只对该作物生效。",
    "ultimate": false,
    "aliases": [
     "Turbo Sunflower"
@@ -1045,7 +1045,7 @@
   {
    "en": "Turbo-Warts",
    "zh": "极速下界疣",
-   "hint": "获得 +5 下界疣时运。",
+   "hint": "农具附魔，每级提供 +5 下界疣时运（最高 VII 级 +35），只对该作物生效。",
    "ultimate": false,
    "aliases": [
     "Turbo Warts"
@@ -1054,7 +1054,7 @@
   {
    "en": "Turbo-Wheat",
    "zh": "极速小麦",
-   "hint": "获得 +5 小麦时运。",
+   "hint": "农具附魔，每级提供 +5 小麦时运（最高 VII 级 +35），只对该作物生效。",
    "ultimate": false,
    "aliases": [
     "Turbo Wheat"
@@ -1063,14 +1063,14 @@
   {
    "en": "Ultimate Wise",
    "zh": "终极智慧",
-   "hint": "使该物品的技能法力消耗降低 10%。",
+   "hint": "终极附魔：本物品技能的法力消耗每级降低 10%（V 级 50%）。",
    "ultimate": true,
    "aliases": []
   },
   {
    "en": "Vampiric Vitality",
    "zh": "嗜血活力",
-   "hint": "每消耗 1 活力，恢复 0.6 生命。",
+   "hint": "盔甲附魔：自身每消耗 1 点活力，恢复一定量生命值；I～X 级每点约恢复 0.6～1 生命值。",
    "ultimate": false,
    "aliases": [
     "Mana Vampire"
@@ -1078,29 +1078,29 @@
   },
   {
    "en": "Vampirism",
-   "zh": "吸血鬼",
-   "hint": "每次击杀生物时恢复 5 生命，冷却 0.5 秒。",
+   "zh": "嗜血",
+   "hint": "武器附魔：击杀怪物时恢复生命值；2026-07-22 起每级回复 7 生命值，VI 级回复 42，不再按已损失生命值百分比回复。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Venomous",
    "zh": "剧毒",
-   "hint": "使目标行走速度降低 2%，并且每次命中额外每秒造成你伤害的 +0.2%，全局叠加最多 40 次命中。持续 5 秒。",
+   "hint": "每次命中使目标减速并每秒受到你伤害的一定比例，全局最多叠 40 次，持续 5 秒。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Vicious",
    "zh": "凶残",
-   "hint": "获得 +3 凶暴。",
+   "hint": "武器附魔，提供残暴，III~V 级为 +3/+4/+5（每级 +1）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Vivacious Vitality",
-   "zh": "灵动活力",
-   "hint": "将所消耗活力的 1% 转化为攻击速度，持续 10 秒，最多获得 5 攻击速度。",
+   "zh": "活力迅击",
+   "hint": "盔甲附魔：自身消耗活力后，将每级 1% 的所耗活力转为攻击速度，持续 10 秒；单件上限 +5 攻速（X 级转化 10%）。",
    "ultimate": false,
    "aliases": [
     "Ferocious Mana"
@@ -1108,8 +1108,8 @@
   },
   {
    "en": "Wisdom",
-   "zh": "博学",
-   "hint": "你当前每有 5 级经验，获得 1 点智力。上限为 20 点智力。",
+   "zh": "智慧",
+   "hint": "终极附魔：身上每有 5 级经验提供每级 +1 智力，上限每级 20。",
    "ultimate": true,
    "aliases": [
     "Ultimate Wisdom"
@@ -1118,7 +1118,7 @@
   {
    "en": "Ultimate enchant",
    "zh": "终极附魔",
-   "hint": "终极附魔是一类特殊附魔。一件物品同时只能具有一种；施加另一种会覆盖原有终极附魔。",
+   "hint": "附魔类别统称，名称以粉色粗体显示，一件物品同时只能有一种终极附魔。",
    "ultimate": true,
    "generic": true,
    "aliases": [
@@ -1131,77 +1131,77 @@
   {
    "en": "Bug Blender",
    "zh": "碎虫",
-   "hint": "用吸尘器吸取害虫时，提供 +20 农业时运。",
+   "hint": "吸尘器附魔，吸取害虫时每级提供 +20 农业时运（最高 V 级 +100）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Crop Fever",
    "zh": "作物狂热",
-   "hint": "破坏作物时，有 0.001% 几率触发持续 60 秒的作物狂热：获得额外的作物掉落判定、+15 过度绽放和 +100 农业时运。",
+   "hint": "终极附魔：破坏作物时小概率触发 60 秒狂热，获得额外作物判定、过度绽放和农业时运。",
    "ultimate": true,
    "aliases": []
   },
   {
    "en": "Forest Pledge",
    "zh": "森林誓约",
-   "hint": "获得 +6 林业时运。",
+   "hint": "盔甲附魔，每级提供 +2 伐木时运，III~VI 级为 +6~+12。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Great Spook",
    "zh": "大惊吓",
-   "hint": "装备在 Great Spook（大惊吓，暂译）系列盔甲上时，提供 +1 恐惧。",
+   "hint": "仅在 Great Spook 盔甲上生效，提供 +1 恐惧属性（仅 I 级）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Rainbow",
-   "zh": "彩虹",
-   "hint": "剪羊毛时，使羊掉落随机颜色的羊毛。",
+   "zh": "彩虹羊毛",
+   "hint": "剪羊毛时掉落随机颜色羊毛；II/III 级另有 50%/80% 几率使羊变色。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Scuba",
    "zh": "潜水",
-   "hint": "提供 +1 抗压。",
+   "hint": "盔甲附魔，每级提供 +1 抗压（Pressure Resistance）属性。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Stealth",
-   "zh": "潜行",
-   "hint": "胆怯的怪物有 10% 概率保持原地不动，而不是逃跑。",
+   "zh": "隐匿",
+   "hint": "靴子附魔：胆小生物有几率原地不动而不逃跑，几率每级 10%（最高 60%）。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Sunder",
    "zh": "劈裂",
-   "hint": "提供 +12.5  农业时运，这会提高你获得多份作物的概率。",
+   "hint": "斧附魔（已移除）：旧效果为每级 +12.5 农业时运；保留为历史术语，当前不可作为有效新附魔使用。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Telekinesis",
    "zh": "念力",
-   "hint": "方块和怪物的掉落物会直接进入你的物品栏。",
+   "hint": "旧版工具/武器附魔（已移除）：使方块、怪物掉落物自动进入物品栏；功能已由游戏内自动拾取机制取代。",
    "ultimate": false,
    "aliases": []
   },
   {
    "en": "Ultimate Jerry",
    "zh": "终极杰瑞",
-   "hint": "使 Aspect of the Jerry 的基础伤害提高 1000%。",
+   "hint": "终极附魔：仅提高 Aspect of the Jerry 的基础伤害，每级 +1000%。",
    "ultimate": true,
    "aliases": []
   },
   {
    "en": "Woodsplitter",
-   "zh": "劈木",
-   "hint": "对  林地怪物造成的伤害提高 10%。",
+   "zh": "林地杀手",
+   "hint": "斧附魔，对林地类生物造成的伤害提高，I~VI 级为 +10%~+80%。",
    "ultimate": false,
    "aliases": []
   }

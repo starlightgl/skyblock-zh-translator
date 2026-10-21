@@ -461,11 +461,16 @@ public final class PhraseMatcher {
     static boolean sameParagraph(String prev, String next) {
         String lead = leadColour(next);
         if (lead.isEmpty()) return true;
-        // a sentence that has not ended yet wraps onto the next line even when that line starts with a
+        String prevLead = leadColour(prev);
+        boolean prevBody = prevLead.isEmpty() || prevLead.equalsIgnoreCase("§7");
+        // a coloured heading ("§9Growth V", "§6Full Set Bonus: …", "§9Renowned Bonus") is followed by its
+        // grey description: that is a new paragraph
+        if (!prevBody && lead.equalsIgnoreCase("§7")) return false;
+        // a grey sentence that has not ended yet wraps onto the next line even when that line starts with a
         // highlighted word ("…traps it for" + "§c5s §7and deals …")
         String p = normalize(prev);
-        if (!p.isEmpty() && !p.matches(".*[.!?。！？:：)\\]]$") && !p.matches(".*\\d$")) return true;
-        if (lead.equalsIgnoreCase(leadColour(prev))) return true;
+        if (prevBody && !p.isEmpty() && !p.matches(".*[.!?。！？:：)\\]]$") && !p.matches(".*\\d$")) return true;
+        if (lead.equalsIgnoreCase(prevLead)) return true;
         Matcher m = COLOUR.matcher(prev);
         String last = "";
         while (m.find()) last = m.group();

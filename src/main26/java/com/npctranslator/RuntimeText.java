@@ -40,6 +40,8 @@ public final class RuntimeText {
    String part=parts[i],s=part;boolean quote=s.startsWith("\"");if(quote)s=s.substring(1);boolean close=s.endsWith("\"");if(close)s=s.substring(0,s.length()-1);
    String icon="";Matcher iconMatch=Pattern.compile("^([^A-Za-z]+)(.+)$").matcher(s);if(iconMatch.matches()){icon=iconMatch.group(1);s=iconMatch.group(2);}
    String z=known(s);String root=parts[0].replaceFirst("^\\(\\d+/\\d+\\) ","");
+   // "To Stats ➜ Health": a back button names the menu it returns to
+   if(z==null&&i==0&&s.startsWith("To ")){String back=known(s.substring(3));if(back==null)back=TableNames.exact(s.substring(3));if(back!=null)z="返回"+back;}
    // The complete parent identifies an enchantment truncated by a native menu title.
    if(z==null&&i==parts.length-1&&t.length()>=29&&s.length()>=5&&ENCHANTS.containsKey(root)&&root.startsWith(s))z=ENCHANTS.get(root);
    if(z==null&&i==parts.length-1&&t.length()>=29&&s.length()>=5){

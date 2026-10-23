@@ -296,6 +296,12 @@ line_index = {l["en"]: l for l in lines}
 for group in overrides.get("lines", {}).values():
     for en, zh in group.items():
         l = line_index.get(en)
+        if not zh:  # null / "": drop a bad generated line (e.g. a wrapped fragment turned into a template)
+            if l is not None:
+                lines.remove(l)
+                del line_index[en]
+                fixed_lines += 1
+            continue
         if l is None:
             l = {"en": en, "zh": zh}
             lines.append(l)

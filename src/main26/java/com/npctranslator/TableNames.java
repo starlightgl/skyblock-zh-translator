@@ -111,6 +111,18 @@ public final class TableNames {
     }
 
     /**
+     * Chinese name of a chat speaker ("[NPC] Kelly: ..."): its "Name (NPC)" entry first, then the plain name,
+     * except where the plain name is a reforge (Sunny 阳光 is not the NPC 桑尼). Null when unknown.
+     */
+    public static String npcName(String en) {
+        load();
+        String zh = names.get(en + " (NPC)");
+        if (zh != null) return zh.replaceFirst("\\s*[（(]NPC[)）]$", "");
+        if (reforges.containsKey(en)) return null;
+        return names.get(en);
+    }
+
+    /**
      * Translation of an item name line (§-formatted): exact name, "[Lvl 100] Pet", "Reforge Name ✪✪✪".
      * Returns null when the table has no entry for the base name.
      */

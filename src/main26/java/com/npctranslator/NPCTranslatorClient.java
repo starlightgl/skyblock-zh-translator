@@ -1317,7 +1317,13 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 String speaker = TranslationUtil.stripColorCodes(formatted.substring(0, idx)).trim().substring(6).trim();
                 String tb = ContextText.npcDialogue(speaker, formatted.substring(idx + 2));
                 if (tb == null) tb = PhraseBook.translate(formatted.substring(idx + 2));
-                if (tb != null) result = formatted.substring(0, idx + 2) + tb;
+                if (tb != null) {
+                    // the speaker gets its Chinese name too ("[NPC] Kelly: " -> "[NPC] 凯莉: ")
+                    String prefix = formatted.substring(0, idx + 2);
+                    String zhName = TableNames.npcName(speaker);
+                    if (zhName != null && !zhName.isEmpty() && prefix.contains(speaker)) prefix = prefix.replace(speaker, zhName);
+                    result = prefix + tb;
+                }
             }
         } else {
             result = PhraseBook.translate(formatted);

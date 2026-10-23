@@ -251,7 +251,10 @@
     "Foraging": "伐木",
     "Fishing": "钓鱼",
     "Farming": "农业",
-    "Mining": "挖矿"
+    "Mining": "挖矿",
+    "GOLD medals": "金牌",
+    "SILVER medals": "银牌",
+    "BRONZE medals": "铜牌"
   },
   "values": {
     "Arachne's Burrow": "阿拉克涅巢穴",
@@ -521,7 +524,7 @@
     "GOBLIN RAID": "哥布林突袭",
     "MITHRIL GOURMAND": "秘银美食家",
     "The Great Spook": "惊吓盛典",
-    "Hoppity's Hunt": "霍皮蒂寻兔",
+    "Hoppity's Hunt": "霍皮提寻兔",
     "Pineapple": "菠萝",
     "Players": "玩家",
     "Guests": "访客",
@@ -1466,6 +1469,10 @@
     {
       "en": "Plot - {0}  x{1}",
       "zh": "地块 - {0}  x{1}"
+    },
+    {
+      "en": "NOT ENOUGH MANA",
+      "zh": "法力不足"
     }
   ],
   "objectives": {

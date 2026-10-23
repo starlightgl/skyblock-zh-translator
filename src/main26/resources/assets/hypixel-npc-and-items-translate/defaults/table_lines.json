@@ -62051,7 +62051,7 @@
 },
 {
 "en": "Hoppity's Hunt has begun! Help Hoppity find his Chocolate Rabbit Eggs across SkyBlock each day during the Spring!",
-"zh": "霍皮提狩猎开始了！在春季的每一天，帮助霍皮提在空岛各处寻找他的巧克力兔子蛋！"
+"zh": "霍皮提寻兔开始了！春季期间，每天都可以在空岛各地帮霍皮提寻找他的巧克力兔子彩蛋！"
 },
 {
 "en": "%1$sx Block of Quartz",
@@ -64339,7 +64339,7 @@
 },
 {
 "en": "Show Jeff a Specialized Farming Tool",
-"zh": "向杰夫展示一件专用农业工具"
+"zh": "向杰夫展示一件专精农业工具"
 },
 {
 "en": "Teleported you to The Barn!",
@@ -73076,6 +73076,54 @@
 {
 "en": "- Old Shaman Nyko (%1$s)",
 "zh": "- 老萨满尼科 (%1$s)"
+},
+{
+"en": "Hey hey! Did Charlie send you?",
+"zh": "嘿嘿！是查理让你来的吗？"
+},
+{
+"en": "Awesome!",
+"zh": "太棒了！"
+},
+{
+"en": "Now I can take this all back to Charlie, and say I did it!",
+"zh": "现在我可以把这些都带回去给查理，说这全是我干的！"
+},
+{
+"en": "Hi!",
+"zh": "嗨！"
+},
+{
+"en": "I'm just a placeholder because there is no Minister this election.",
+"zh": "这次选举没有大臣，我只是来占个位置的。"
+},
+{
+"en": "Go spray a plot with that Sprayonator!",
+"zh": "去用那台喷雾器给一块地块喷洒吧！"
+},
+{
+"en": "Be sure it's on the Tasty Cheese setting so that you can attract a Rat Pest!",
+"zh": "记得把它调到「美味奶酪」档位，这样才能引来老鼠害虫！"
+},
+{
+"en": "You can store Bait in your inventory or Bait Sacks, which are unlocked at Raw Cod Collection III.",
+"zh": "鱼饵可以放在物品栏或鱼饵收纳袋里，鱼饵收纳袋在生鳕鱼收集 III 解锁。"
+},
+{
+"en": "Mrrp",
+"zh": "喵呜"
+},
+{
+"en": "Hey %1$s!!!",
+"zh": "嘿，%1$s！！！"
+},
+{
+"en": "Hey there! My name's Jeff...",
+"zh": "嘿！我叫杰夫……"
+},
+{
+"en": "If not, no worries! They each have their own unlock requirements, which you can see inside the SkyMart Shop.",
+"zh": "还没有也没关系！每一件都有各自的解锁条件，可以在天空超市商店里查看。"
 }
 ]
 }

@@ -89,6 +89,20 @@
       "Battle Experience": "实战经验",
       "Learn Power From Stones": "从能力石学习能力",
       "No Power": "未选择能力"
+    },
+    "NPC 名字补全（2026-10-23，GPT 漏译清单）：聊天说话人和悬浮名牌里仍是英文的 NPC；Sunny 作 NPC 是桑尼，重铸 Sunny 仍是阳光": {
+      "Kelly": "凯莉",
+      "Jeff": "杰夫",
+      "Phillip": "菲利普",
+      "Nancy": "南希",
+      "Pesthunter Pamela": "害虫猎人帕梅拉",
+      "Sunny (NPC)": "桑尼 (NPC)",
+      "Campfire Initiate": "营火新人",
+      "Campfire Adept": "营火行家",
+      "Campfire Cultist": "营火信徒",
+      "Campfire Scion": "营火传人",
+      "SLAYER BOSS": "猎手首领",
+      "Abiphones & Co.": "阿比手机公司"
     }
   },
   "lines": {
@@ -111,6 +125,22 @@
       "Complete Campf§jire Trials": "完成营火试炼",
       "Rosetta's Armor": "罗塞塔的盔甲",
       "Green Thumb %1$s-%2$s": "园艺妙手 %1$s-%2$s"
+    },
+    "NPC 对话与公告补译（2026-10-23，GPT 漏译清单）：聊天按冒号后的正文匹配，说话人名字由模组另行换成中文": {
+      "Hey hey! Did Charlie send you?": "嘿嘿！是查理让你来的吗？",
+      "Awesome!": "太棒了！",
+      "Now I can take this all back to Charlie, and say I did it!": "现在我可以把这些都带回去给查理，说这全是我干的！",
+      "Hi!": "嗨！",
+      "I'm just a placeholder because there is no Minister this election.": "这次选举没有大臣，我只是来占个位置的。",
+      "Go spray a plot with that Sprayonator!": "去用那台喷雾器给一块地块喷洒吧！",
+      "Be sure it's on the Tasty Cheese setting so that you can attract a Rat Pest!": "记得把它调到「美味奶酪」档位，这样才能引来老鼠害虫！",
+      "You can store Bait in your inventory or Bait Sacks, which are unlocked at Raw Cod Collection III.": "鱼饵可以放在物品栏或鱼饵收纳袋里，鱼饵收纳袋在生鳕鱼收集 III 解锁。",
+      "Mrrp": "喵呜",
+      "Hey %1$s!!!": "嘿，%1$s！！！",
+      "Hey there! My name's Jeff...": "嘿！我叫杰夫……",
+      "If not, no worries! They each have their own unlock requirements, which you can see inside the SkyMart Shop.": "还没有也没关系！每一件都有各自的解锁条件，可以在天空超市商店里查看。",
+      "Show Jeff a Specialized Farming Tool": "向杰夫展示一件专精农业工具",
+      "Hoppity's Hunt has begun! Help Hoppity find his Chocolate Rabbit Eggs across SkyBlock each day during the Spring!": "霍皮提寻兔开始了！春季期间，每天都可以在空岛各地帮霍皮提寻找他的巧克力兔子彩蛋！"
     }
   }
 }

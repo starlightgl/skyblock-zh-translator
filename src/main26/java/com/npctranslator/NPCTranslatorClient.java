@@ -1314,7 +1314,9 @@ public class NPCTranslatorClient implements ClientModInitializer {
         if (plain.startsWith("[NPC] ")) {
             int idx = formatted.indexOf(": ");
             if (idx > 0) {
-                String tb = PhraseBook.translate(formatted.substring(idx + 2));
+                String speaker = TranslationUtil.stripColorCodes(formatted.substring(0, idx)).trim().substring(6).trim();
+                String tb = ContextText.npcDialogue(speaker, formatted.substring(idx + 2));
+                if (tb == null) tb = PhraseBook.translate(formatted.substring(idx + 2));
                 if (tb != null) result = formatted.substring(0, idx + 2) + tb;
             }
         } else {
@@ -1777,7 +1779,9 @@ public class NPCTranslatorClient implements ClientModInitializer {
             StringBuilder sb = new StringBuilder();
             sb.append(toFormattedString(stack.getHoverName()));
             net.minecraft.world.item.component.ItemLore lore = stack.get(net.minecraft.core.component.DataComponents.LORE);
-            if (lore != null) for (Component l : lore.lines()) sb.append('\n').append(toFormattedString(l));
+            if (lore != null) for (Component l : lore.lines()) {
+                sb.append('\n').append(OrderBookText.cacheLine(toFormattedString(l)));
+            }
             // numbers left out: Bazaar prices and countdowns change all the time, the item stays the same;
             // except for shards, whose effect values change with the level (see ShardTooltipTranslator)
             h = ShardTooltipTranslator.cacheTemplate(sb.toString()).text.hashCode();
@@ -2056,9 +2060,8 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 String f = toFormattedString(tooltip.get(i)).trim();
                 lines.add(f);
                 if (f.isEmpty()) continue;
-                String current = i == 0 ? TableNames.translateName(f) : null;
-                if (current == null) current = PhraseBook.translate(f);
-                TextCollector.record(i == 0 ? TextCollector.ITEM_NAME : TextCollector.ITEM_LINE, menu, f, current);
+                // Deduplication and the first translation lookup happen on the collector worker.
+                TextCollector.record(i == 0 ? TextCollector.ITEM_NAME : TextCollector.ITEM_LINE, menu, f, null);
             }
             TextCollector.recordSentences(menu, lines);
         }
@@ -2361,11 +2364,19 @@ public class NPCTranslatorClient implements ClientModInitializer {
 
         // Create a cache key from the tooltip content itself since we don't have an ItemStack
         StringBuilder content = new StringBuilder();
-        for (Component t : tooltip) content.append(t.getString());
+        StringBuilder marketContent = new StringBuilder();
+        boolean market = false;
+        for (Component t : tooltip) {
+            String text = t.getString(); content.append(text);
+            market |= OrderBookText.collectionTemplate(text) != null;
+            marketContent.append('\n').append(OrderBookText.cacheLine(text));
+        }
         if (content.length() < 10) return; // Too short to be an item lore usually
 
         String lang = getEffectiveLanguageCode();
-        String cacheKey = "gen_" + Integer.toHexString(content.toString().hashCode()) + "_" + lang;
+        String visibleKey = market ? TranslationUtil.normalize(marketContent.toString()).text : content.toString();
+        String menu = market ? currentMenu() : null;
+        String cacheKey = "gen_" + Integer.toHexString(visibleKey.hashCode()) + "_" + lang + (menu == null ? "" : "@" + menu);
 
         handleTooltipStateAndRender(tooltip, cacheKey);
     }
@@ -2498,6 +2509,11 @@ public class NPCTranslatorClient implements ClientModInitializer {
                         List<String> unmatched = null;
                         for (Component line : tooltip) {
                             String key = toFormattedString(line).trim();
+                            String priceLevel = OrderBookText.translate(key);
+                            if (priceLevel != null) {
+                                rebuilt.add(parseColorCodes(priceLevel));
+                                continue;
+                            }
                             List<Component> repl = lineMap.get(key);
                             if (repl == null) {
                                 // Countdowns / changing numbers: the line text is new every second, but its
@@ -2573,6 +2589,14 @@ public class NPCTranslatorClient implements ClientModInitializer {
             triggerTranslation(tooltip, cacheKey, autoProvider);
         }
 
+        // Market values can be shown in Chinese on the first hover while the rest loads off-thread.
+        if (!isTranslated && config.usePhrasebook && ACTIVE_TRANSLATED_ITEMS.contains(cacheKey)
+                && !REVERTED_ITEMS.contains(cacheKey)) {
+            for (int i = 0; i < tooltip.size(); i++) {
+                String level = OrderBookText.translate(toFormattedString(tooltip.get(i)));
+                if (level != null) tooltip.set(i, parseColorCodes(level));
+            }
+        }
         renderShortcutsFooter(tooltip, isTranslated, PENDING_ITEMS.contains(cacheKey), cacheKey);
     }
 
@@ -2791,9 +2815,8 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 PENDING_ITEMS.remove(cacheKey);
             }
         };
-        // local data only (no AI): fast enough to do right away, so no "translating…" flash
-        if (!aiAllowed() && PhraseBook.isReady()) task.run();
-        else CompletableFuture.runAsync(task);
+        // A cold local lookup can still scan many templates; never run it on the render thread.
+        CompletableFuture.runAsync(task);
     }
 
     public static String toFormattedString(Component text) {

@@ -16,28 +16,45 @@ public final class RuntimeText {
  }
  private static String replace(String raw,String re,java.util.function.Function<Matcher,String> f){var v=new View(raw);var m=Pattern.compile(re).matcher(v.text);var spans=new ArrayList<int[]>();var values=new ArrayList<String>();while(m.find()){String s=f.apply(m);if(s!=null){spans.add(new int[]{m.start(),m.end()});values.add(s);}}for(int i=spans.size()-1;i>=0;i--){int[] p=spans.get(i);raw=new View(raw).replace(p[0],p[1],values.get(i));}return raw;}
  private static String units(String raw){return replace(raw,"(?<=\\d)([dhms])(?=\\b)",m->Map.of("d","天","h","小时","m","分钟","s","秒").get(m.group(1)));}
- private static String known(String s){String z=MENU.get(s);if(z!=null)return z;Matcher m=Pattern.compile("^(.+?) ([IVXLCDM]+)$").matcher(s);if(m.matches()&&ENCHANTS.containsKey(m.group(1)))return ENCHANTS.get(m.group(1))+" "+m.group(2);return null;}
+ private static String known(String s){
+  String z=MENU.get(s);if(z!=null)return z;
+  Matcher page=Pattern.compile("^(\\(\\d+/\\d+\\) )(.+)$").matcher(s);
+  if(page.matches()){z=known(page.group(2));return z==null?null:page.group(1)+z;}
+  Matcher slot=Pattern.compile("^(.+) \\((?:Slot #(\\d+)|(\\d+/\\d+))\\)$").matcher(s);
+  if(slot.matches()){z=MENU.get(slot.group(1));return z==null?null:z+" ("+(slot.group(2)!=null?"槽位 #"+slot.group(2):slot.group(3))+")";}
+  Matcher minion=Pattern.compile("^(.+) Minion ([IVXLCDM]+)$").matcher(s);
+  if(minion.matches()){z=TableNames.exact(minion.group(1));return z==null?null:z+"小人 "+minion.group(2);}
+  Matcher m=Pattern.compile("^(.+?) ([IVXLCDM]+)$").matcher(s);
+  if(m.matches()&&ENCHANTS.containsKey(m.group(1)))return ENCHANTS.get(m.group(1))+" "+m.group(2);
+  return null;
+ }
+ static String enchantment(String name){return ENCHANTS.get(name);}
  public static String menu(String raw){
   var v=new View(raw);String t=v.text.trim();
   if(CONTEXT.containsKey(t))return v.replace(v.text.indexOf(t),v.text.indexOf(t)+t.length(),CONTEXT.get(t));
   Matcher page=Pattern.compile("^\\((\\d+)/(\\d+)\\) Garden ➜ Mutations$").matcher(t);
   if(page.matches())return v.replace(v.text.indexOf(t),v.text.indexOf(t)+t.length(),"("+page.group(1)+"/"+page.group(2)+") 花园 ➜ 突变植物");
-  if(!t.contains(" ➜ ")){String z=MENU.get(t);return z==null?null:v.replace(v.text.indexOf(t),v.text.indexOf(t)+t.length(),z);}
+  if(!t.contains(" ➜ ")){String z=known(t);return z==null?null:v.replace(v.text.indexOf(t),v.text.indexOf(t)+t.length(),z);}
   String[] parts=t.split(" ➜ ",-1);String[] translated=new String[parts.length];boolean changed=false;
   for(int i=0;i<parts.length;i++){
    String part=parts[i],s=part;boolean quote=s.startsWith("\"");if(quote)s=s.substring(1);boolean close=s.endsWith("\"");if(close)s=s.substring(0,s.length()-1);
    String icon="";Matcher iconMatch=Pattern.compile("^([^A-Za-z]+)(.+)$").matcher(s);if(iconMatch.matches()){icon=iconMatch.group(1);s=iconMatch.group(2);}
-   String z=known(s);
+   String z=known(s);String root=parts[0].replaceFirst("^\\(\\d+/\\d+\\) ","");
+   // The complete parent identifies an enchantment truncated by a native menu title.
+   if(z==null&&i==parts.length-1&&t.length()>=29&&s.length()>=5&&ENCHANTS.containsKey(root)&&root.startsWith(s))z=ENCHANTS.get(root);
    if(z==null&&i==parts.length-1&&t.length()>=29&&s.length()>=5){
     Set<String> candidates=new LinkedHashSet<>();for(var e:MENU.entrySet()){
      if(!e.getKey().startsWith(s)||e.getKey().equals(s))continue;
-     if(parts[0].contains("Griffin Upgrade")&&!e.getKey().contains("Griffin Upgrade"))continue;
-     if(parts[0].contains("Enchantments")&&!ENCHANTS.containsKey(e.getKey()))continue;
-     if(!parts[0].contains("Enchantments")&&!PRODUCTS.contains(e.getKey()))continue;
+     if(root.contains("Griffin Upgrade")&&!e.getKey().contains("Griffin Upgrade"))continue;
+     boolean category=Set.of("Normal Enchantments","Ultimate Enchantments","Mountain Rabbits","Country Rabbits","City Rabbits","Beach Rabbits","Forest Rabbits","Water Rabbits").contains(e.getKey());
+     if(root.contains("Enchantments")&&!ENCHANTS.containsKey(e.getKey())&&!category)continue;
+     if(!root.contains("Enchantments")&&!PRODUCTS.contains(e.getKey())&&!category)continue;
      if(!e.getValue().replaceAll("\\b[IVXLCDM]+\\b", "").matches(".*[A-Za-z]{2,}.*"))candidates.add(e.getValue());
     }if(candidates.size()==1)z=candidates.iterator().next();
     else if(candidates.size()>1){String common=candidates.iterator().next();for(String c:candidates){int n=0;while(n<common.length()&&n<c.length()&&common.charAt(n)==c.charAt(n))n++;common=common.substring(0,n);}if(common.matches("[\\p{IsHan}]{2,}"))z=common+"…";}
    }
+   // Product names can contain an inner quote instead of a pair of outer quotes.
+   if(z==null&&i==parts.length-1&&t.length()>=29){Set<String> q=new LinkedHashSet<>();for(String product:PRODUCTS)if(product.startsWith(part)&&MENU.containsKey(product))q.add(MENU.get(product));if(q.size()==1){z=q.iterator().next();quote=false;close=false;icon="";}}
    translated[i]=z==null?part:(quote?"\"":"")+icon+z+(close?"\"":"");changed|=z!=null&&!part.equals(translated[i]);
   }
   return changed?v.replace(v.text.indexOf(t),v.text.indexOf(t)+t.length(),String.join(" ➜ ",translated)):null;

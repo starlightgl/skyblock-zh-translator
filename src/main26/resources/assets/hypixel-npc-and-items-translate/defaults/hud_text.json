@@ -143,7 +143,7 @@
     "Terry's Shack": "特里的小屋",
     "Thaumaturgist": "调律师居所",
     "The Barn": "谷仓",
-    "The Bastion": "壁垒",
+    "The Bastion": "堡垒",
     "The Dukedom": "公爵领",
     "The End": "末地",
     "The Farming Islands": "农业岛",
@@ -222,7 +222,7 @@
     "Year": "年份",
     "Garden Level": "花园等级",
     "Copper": "铜",
-    "Sowdust": "播种尘",
+    "Sowdust": "播尘",
     "Farming Fortune": "农业时运",
     "Bonus Pest Chance": "额外害虫几率",
     "Composter": "堆肥机",
@@ -438,7 +438,7 @@
     "SKYBLOCK": "空岛",
     "Area: The Park": "区域: 公园",
     "Rain: No rain!": "降雨: 没有下雨！",
-    "Profile: Pineapple": "存档: 菠萝",
+    "Profile: Pineapple": "存档：菠萝",
     "Pet:": "宠物:",
     "Collection:": "收集:",
     "Event: The Great Spook": "活动: 大惊吓",
@@ -548,7 +548,7 @@
     "Titanium Miner": "钛矿工",
     "Raffle": "抽奖",
     "Goblin Raid": "哥布林突袭",
-    "Sowdust": "播种尘",
+    "Sowdust": "播尘",
     "Lazy Miner": "懒惰矿工",
     "Arthur": "亚瑟",
     "Gwendolyn": "格温多林",
@@ -581,7 +581,7 @@
     "Election Over!": "选举结束！",
     "Election Booth Opens": "选举投票开放",
     "Traveling Zoo": "巡回动物园",
-    "Mining Fiesta": "采矿嘉年华",
+    "Mining Fiesta": "挖矿嘉年华",
     "Dark Auction": "暗黑拍卖",
     "Starlyn Contests": "星琳竞赛",
     "Jacob's Farming Contest": "雅各布农业竞赛",
@@ -685,7 +685,7 @@
     },
     {
       "en": "Profile: Pineapple",
-      "zh": "存档: 菠萝"
+      "zh": "存档：菠萝"
     },
     {
       "en": "SB Level: [{0}] {1}/{2} XP",

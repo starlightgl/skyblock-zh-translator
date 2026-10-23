@@ -186,9 +186,12 @@ public final class PhraseMatcher {
      */
     public String translate(String formatted) {
         if (formatted == null || formatted.isEmpty()) return null;
+        String priceLevel = OrderBookText.translate(formatted);
+        if (priceLevel != null) return priceLevel;
         String cached = cache.get(formatted);
         if (cached != null) return cached == MISS ? null : cached;
         String dynamic = RuntimeText.event(formatted);
+        if (dynamic == null) dynamic = ContextText.requirement(formatted);
         if (dynamic == null && (formatted.contains(" ➜ ") || formatted.matches(".*Garden ➜ Mutations.*"))) dynamic = RuntimeText.menu(formatted);
         if (dynamic == null) dynamic = TableNames.translateReforgedName(formatted);
         if (dynamic != null) { if (cache.size() > 8000) cache.clear(); cache.put(formatted, dynamic); return dynamic; }
@@ -428,6 +431,7 @@ public final class PhraseMatcher {
 
     /** Whether {@code next} continues the sentence of {@code prev} (same rules as the line joining). */
     public static boolean continuesLine(String prev, String next) {
+        if (OrderBookText.isBoundary(prev) || OrderBookText.isBoundary(next)) return false;
         return !isBlank(prev) && !isBlank(next) && sameParagraph(prev, next) && !STARTS_FIELD.matcher(next).find()
                 && !STARTS_BULLET.matcher(next).find();
     }
@@ -495,6 +499,8 @@ public final class PhraseMatcher {
         String[] out = new String[n];
         int i = 0;
         while (i < n) {
+            String priceLevel = OrderBookText.translate(lines.get(i));
+            if (priceLevel != null) { out[i++] = priceLevel; continue; }
             boolean done = false;
             // the first line is the item name: never merge it with the description below it
             if (i > 0 && !isBlank(lines.get(i))) {
@@ -502,7 +508,7 @@ public final class PhraseMatcher {
                 // stop at a blank line (paragraph boundary) or where the colour changes
                 // ("§fSnow Block" + "§8Common Commodity" are two different things)
                 for (int k = i + 1; k <= maxJ; k++) {
-                    if (isBlank(lines.get(k)) || !sameParagraph(lines.get(k - 1), lines.get(k))
+                    if (OrderBookText.isBoundary(lines.get(k)) || isBlank(lines.get(k)) || !sameParagraph(lines.get(k - 1), lines.get(k))
                             || STARTS_FIELD.matcher(lines.get(k)).find() || STARTS_BULLET.matcher(lines.get(k)).find()) { maxJ = k - 1; break; }
                 }
                 for (int j = maxJ; j > i; j--) {

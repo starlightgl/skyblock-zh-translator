@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 /** A proper rabbit name is resolved only inside a verified faction-rabbit tooltip. */
 public final class FactionRabbitNames {
     private static final Map<String,String> NAMES = new HashMap<>();
-    private static final Pattern FACTION = Pattern.compile("\\b(?:City|Mountain|Country|Beach) Faction Rabbit\\b");
+    private static final Pattern FACTION = Pattern.compile("\\b(?:City|Mountain|Country|Beach|Forest|Water) Faction Rabbit\\b");
     static {
         try (InputStream in=FactionRabbitNames.class.getResourceAsStream("/assets/hypixel-npc-and-items-translate/defaults/faction_rabbit_names.json")) {
             if(in!=null) for(var e:JsonParser.parseReader(new InputStreamReader(in,StandardCharsets.UTF_8)).getAsJsonObject().getAsJsonObject("names").entrySet()) NAMES.put(e.getKey(),e.getValue().getAsString());

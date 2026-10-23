@@ -1,0 +1,164 @@
+{
+  "_scope": "Ryan dialogue only; complete requirement shapes only. Names come from current reviewed table_names.",
+  "crops": {
+    "Wheat": "小麦",
+    "Carrot": "胡萝卜",
+    "Potato": "马铃薯",
+    "Nether Wart": "下界疣",
+    "Cocoa Beans": "可可豆",
+    "Mushroom": "蘑菇",
+    "Pumpkin": "南瓜",
+    "Melon Slice": "西瓜片",
+    "Sugar Cane": "甘蔗",
+    "Cactus": "仙人掌",
+    "Sunflower": "向日葵",
+    "Moonflower": "月光花",
+    "Wild Rose": "野玫瑰"
+  },
+  "ryan": [
+    {
+      "en": "Hey, you're not part of our Cult! Get out of here!",
+      "zh": "喂，你不是我们教团的人！快离开这里！"
+    },
+    {
+      "en": "AAAHHHHH! Don't startle me like that bro!",
+      "zh": "啊啊啊！兄弟，别这么吓我！"
+    },
+    {
+      "en": "Y'know, someone as stealthy as you could be a useful member of the Campfire Cult.",
+      "zh": "你知道吗，像你这样身手隐秘的人，加入营火教团一定能派上用场。"
+    },
+    {
+      "en": "What do you say to that?",
+      "zh": "你觉得怎么样？"
+    },
+    {
+      "en": "Cool! Anyways, there's just one thing you have to do before you can join.",
+      "zh": "好极了！不过，加入之前你得先做一件事。"
+    },
+    {
+      "en": "Stand in the CAMPFIRE!",
+      "zh": "站进营火里！"
+    },
+    {
+      "en": "Yeah don't worry, it's not as hot as it looks.",
+      "zh": "放心吧，它没看上去那么烫。"
+    },
+    {
+      "en": "If you can last for %s seconds while standing in the campfire, I'll give you a reward!",
+      "zh": "只要你站在营火里坚持 %s 秒，我就给你奖励！"
+    },
+    {
+      "en": "Wow, you did it!",
+      "zh": "哇，你做到了！"
+    },
+    {
+      "en": "Nice job, hotshot! I'd give you the Campfire Initiate Badge I right now, but I'm out of wood to make one with...",
+      "zh": "干得漂亮，小能手！我本想现在就给你营火新人徽章 I，可惜制作徽章的木材用完了……"
+    },
+    {
+      "en": "Sorry about that...",
+      "zh": "真不好意思……"
+    },
+    {
+      "en": "I need to keep watch and make sure nobody blows out the Campfire, but if you can grab me %s Dark Oak Logs, I'll make one for ya!",
+      "zh": "我得守在这里，确保没人把营火吹灭。你给我带来 %s 个深色橡木原木，我就给你做一枚！"
+    },
+    {
+      "en": "Thanks for the wood! Here's your badge, as promised!",
+      "zh": "谢谢你带来的木材！这是答应给你的徽章！"
+    },
+    {
+      "en": "A Campfire Initiate Badge I, for our latest initiate, %s!",
+      "zh": "这枚营火新人徽章 I，送给我们的新成员 %s！"
+    },
+    {
+      "en": "I can upgrade that badge for you as you survive more Campfire Trials, you know?",
+      "zh": "你知道吗，只要通过更多营火试炼，我就能帮你升级徽章。"
+    },
+    {
+      "en": "Simply stand in the campfire whenever you think you're ready!",
+      "zh": "准备好了就站进营火里吧！"
+    },
+    {
+      "en": "But be careful, though, as each trial burns a little hotter than the last!",
+      "zh": "不过要小心，每次试炼都会比上一次烧得更旺！"
+    },
+    {
+      "en": "Wow! You survived the campfire!",
+      "zh": "哇！你从营火里撑过来了！"
+    },
+    {
+      "en": "The campfire deals both normal damage and true damage.",
+      "zh": "营火会同时造成普通伤害和真实伤害。"
+    },
+    {
+      "en": "Normal damage can be reduced by  Defense.",
+      "zh": "普通伤害可以通过  防御降低。"
+    },
+    {
+      "en": "And true damage can be reduced by  True Defense.",
+      "zh": "而真实伤害可以通过  真实防御降低。"
+    },
+    {
+      "en": "Try to survive the Trial of Fire %s and I'll give you the Campfire Initiate Badge!",
+      "zh": "试着通过烈焰试炼 %s，我就给你营火新人徽章！"
+    },
+    {
+      "en": "Next step is the Trial of Fire %s! (%s damage)",
+      "zh": "下一关是烈焰试炼 %1$s！（承受 %2$s 点伤害）"
+    },
+    {
+      "en": "Step into the campfire to start the trial and survive for %ss!",
+      "zh": "走进营火开始试炼，坚持 %s 秒！"
+    },
+    {
+      "en": "Incredible! Seems like you got the spark for this!",
+      "zh": "真厉害！看来你很有这方面的天赋！"
+    },
+    {
+      "en": "Here's your Campfire Initiate Badge!",
+      "zh": "这是你的营火新人徽章！"
+    },
+    {
+      "en": "Complete the Trial of Fire %s and I'll upgrade your badge!",
+      "zh": "完成烈焰试炼 %s，我就帮你升级徽章！"
+    },
+    {
+      "en": "I need you to hold your %s so I can upgrade it!",
+      "zh": "把 %s 拿在手上，我才能帮你升级！"
+    },
+    {
+      "en": "Your %s has been upgraded to a %s!",
+      "zh": "你的 %1$s 已升级为 %2$s！"
+    },
+    {
+      "en": "Try the Trial of Fire Trial %s for a greater challenge!",
+      "zh": "想挑战更高难度，就来试试烈焰试炼 %s！"
+    },
+    {
+      "en": "The rarity of your item will be upgraded in %s trials!",
+      "zh": "再完成 %s 次试炼，你的物品稀有度就会提升！"
+    },
+    {
+      "en": "The rarity of your item will be upgraded on the next trial!",
+      "zh": "完成下一次试炼，你的物品稀有度就会提升！"
+    },
+    {
+      "en": "Congrats on completing tier %s!",
+      "zh": "恭喜你完成第 %s 级试炼！"
+    },
+    {
+      "en": "You are ready for the next badge rarity!",
+      "zh": "你已经可以将徽章的稀有度再提升一级了！"
+    },
+    {
+      "en": "To receive it, we require %s x%s!",
+      "zh": "想要领取它，需要 %2$s 个%1$s！"
+    },
+    {
+      "en": "Congrats! Your %s was upgraded to a %s!",
+      "zh": "恭喜！你的 %1$s 已升级为 %2$s！"
+    }
+  ]
+}

@@ -147,13 +147,15 @@ public final class TableNames {
         String base = names.get(core);
         String reforge = null;
         if (base == null) {
-            int sp = core.indexOf(' ');
+            String prefix = reforgePrefix(core);
+            int sp = prefix == null ? -1 : prefix.length();
             if (sp > 0) {
                 reforge = reforges.get(core.substring(0, sp));
                 if (reforge != null) base = names.get(core.substring(sp + 1));
             }
         }
         if (base == null) {
+            reforge = null; // A bare enchantment + level is not a reforge followed by an item.
             Matcher tier = TIER.matcher(core);
             if (tier.matches()) {
                 String b = names.get(tier.group(1));
@@ -169,8 +171,9 @@ public final class TableNames {
         load();
         if (formatted == null) return null;
         String plain = TranslationUtil.stripColorCodes(formatted).trim();
-        int sp = plain.indexOf(' ');
-        if (sp <= 0 || !reforges.containsKey(plain.substring(0, sp))) return null;
+        String prefix = reforgePrefix(plain);
+        if (prefix == null) return null;
+        int sp = prefix.length();
         String body = translateName(plain.substring(sp + 1));
         if (body == null) return null;
         Matcher lm = LEAD.matcher(formatted);
@@ -193,7 +196,8 @@ public final class TableNames {
         Matcher sm = SUFFIX.matcher(plain);
         String core = sm.matches() ? sm.group(1).trim() : plain;
         if (names.containsKey(core)) return core;
-        int sp = core.indexOf(' ');
+        String prefix = reforgePrefix(core);
+        int sp = prefix == null ? -1 : prefix.length();
         if (sp > 0 && reforges.containsKey(core.substring(0, sp)) && names.containsKey(core.substring(sp + 1))) {
             return core.substring(sp + 1);
         }
@@ -204,6 +208,15 @@ public final class TableNames {
         load();
         List<String> a = aliases.get(en);
         return a == null ? List.of() : a;
+    }
+
+    /** Longest complete prefix, including multi-word reforges such as Green Thumb. */
+    private static String reforgePrefix(String text) {
+        for (int at = text.lastIndexOf(' '); at > 0; at = text.lastIndexOf(' ', at - 1)) {
+            String prefix = text.substring(0, at);
+            if (reforges.containsKey(prefix)) return prefix;
+        }
+        return null;
     }
 
     /** Index in the formatted string right after the first {@code plainLen} visible characters (leading spaces ignored). */

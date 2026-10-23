@@ -175,7 +175,7 @@
 },
 {
 "en": "Reforge Stone Combinable in Anvil",
-"zh": "洗练石 可在铁砧中合成"
+"zh": "重铸石 可在铁砧中合成"
 },
 {
 "en": "Grants the following stats that scale with the item's rarity:",
@@ -427,7 +427,7 @@
 },
 {
 "en": "RARE REFORGE STONE",
-"zh": "稀有洗练石"
+"zh": "稀有重铸石"
 },
 {
 "en": "Apply this rune to boots or fuse two together at the Runic Pedestal!",
@@ -587,7 +587,7 @@
 },
 {
 "en": "EPIC REFORGE STONE",
-"zh": "史诗洗练石"
+"zh": "史诗重铸石"
 },
 {
 "en": "COMMON HELMET",
@@ -1239,7 +1239,7 @@
 },
 {
 "en": "UNCOMMON REFORGE STONE",
-"zh": "罕见洗练石"
+"zh": "罕见重铸石"
 },
 {
 "en": "COMMON ORE",
@@ -1863,7 +1863,7 @@
 },
 {
 "en": "RARE POWER STONE",
-"zh": "稀有力量石"
+"zh": "稀有能力石"
 },
 {
 "en": "❣ Requires Garden Level %1$s. ❣ Requires Farming Skill %2$s.",
@@ -2515,7 +2515,7 @@
 },
 {
 "en": "LEGENDARY POWER STONE",
-"zh": "传说力量石"
+"zh": "传说能力石"
 },
 {
 "en": "Only appears during The Carnival Event when Foxy is Mayor.",
@@ -2835,7 +2835,7 @@
 },
 {
 "en": "Grants special buffs to the island owners when powered by Power Crystals obtained from the forge in the Dwarven Mines.",
-"zh": "由矮人矿洞锻造厂制作的力量水晶供能时，为岛主提供特殊增益。"
+"zh": "由矮人矿洞锻造厂制作的信标水晶供能时，为岛主提供特殊增益。"
 },
 {
 "en": "❣ Requires Any of the following: - Heart of the Mountain Tier %1$s - Stranded Profile .",
@@ -2931,7 +2931,7 @@
 },
 {
 "en": "LEGENDARY REFORGE STONE",
-"zh": "传说洗练石"
+"zh": "传说重铸石"
 },
 {
 "en": "LEGENDARY DUNGEON LONGSWORD",
@@ -3067,7 +3067,7 @@
 },
 {
 "en": "Some say that when harnessed properly, it can give its owner extra  Pristine.",
-"zh": "据说只要运用得当，它就能为持有者提供额外的 纯净。"
+"zh": "据说只要运用得当，它就能为持有者提供额外的 纯净度。"
 },
 {
 "en": "This skin can be applied to Shadow Assassin Helmet and  Shadow Assassin Helmet.",
@@ -5259,7 +5259,7 @@
 },
 {
 "en": "UNCOMMON POWER STONE",
-"zh": "罕见力量石"
+"zh": "罕见能力石"
 },
 {
 "en": "LEGENDARY NECKLACE",
@@ -5475,7 +5475,7 @@
 },
 {
 "en": "EPIC POWER STONE",
-"zh": "史诗力量石"
+"zh": "史诗能力石"
 },
 {
 "en": "Stampede Mob kills grant a stack of +%1$s  Speed and +%2$s  Strength for 5s.",
@@ -6343,7 +6343,7 @@
 },
 {
 "en": "Furnace Grants +%1$s Pristine while in the Magma Fields.",
-"zh": "熔炉 在岩浆地带时提供 +%1$s 纯净。"
+"zh": "熔炉 在岩浆地带时提供 +%1$s 纯净度。"
 },
 {
 "en": "Dispersion While in the Crystal Hollows, killing mobs reduces your  Heat by %2$s.",
@@ -8099,7 +8099,7 @@
 },
 {
 "en": "Combine x%1$s of this item at the Thaumaturgist in the Hub to unlock the Forceful power.",
-"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「强力」力量。"
+"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「强力」能力。"
 },
 {
 "en": "+%1$s Health +%2$s Strength +%3$s Crit Damage",
@@ -8975,7 +8975,7 @@
 },
 {
 "en": "Deep Technique I Each block you mine has a +%1$s% chance to grant %2$s extra  Pristine for that block.",
-"zh": "深层技法 I 你挖掘的每个方块有 +%1$s% 几率为该方块额外提供 %2$s  纯净。"
+"zh": "深层技法 I 你挖掘的每个方块有 +%1$s% 几率为该方块额外提供 %2$s  纯净度。"
 },
 {
 "en": "Devouring Spread I Grants +%1$s  Gemstone Spread.",
@@ -10323,7 +10323,7 @@
 },
 {
 "en": "Combine x%1$s of this item at the Thaumaturgist in the Hub to unlock the Bloody power.",
-"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「血腥」力量。"
+"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「血腥」能力。"
 },
 {
 "en": "+%1$s Strength +%2$s Crit Damage +%3$s Intelligence",
@@ -11003,7 +11003,7 @@
 },
 {
 "en": "Combine x%1$s of this item at the Thaumaturgist in the Hub to unlock the Bubba power.",
-"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「布巴」力量。"
+"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「布巴」能力。"
 },
 {
 "en": "+%1$s Health -%2$s Defense +%3$s True Defense +%4$s Strength +%5$s Crit Chance +%6$s Crit Damage +%7$s Attack Speed",
@@ -11559,7 +11559,7 @@
 },
 {
 "en": "Grants +%1$s Pristine while in Glacite Mineshafts.",
-"zh": "在极冰矿井中时提供 +%1$s 纯净。"
+"zh": "在极冰矿井中时提供 +%1$s 纯净度。"
 },
 {
 "en": "Can be used at SkyMart to upgrade the InfiniVacuum™ to the InfiniVacuum™ Hooverius, which applies the Stereo Harmony ability.",
@@ -11583,7 +11583,7 @@
 },
 {
 "en": "Combine x%1$s of this item at the Thaumaturgist in the Hub to unlock the Crumbly power.",
-"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「酥脆」力量。"
+"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「酥脆」能力。"
 },
 {
 "en": "+%1$s Health +%2$s True Defense +%3$s Crit Chance +%4$s Attack Speed +%5$s Intelligence",
@@ -12231,7 +12231,7 @@
 },
 {
 "en": "Combine x%1$s of this item at the Thaumaturgist in the Hub to unlock the Shaded power.",
-"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「暗影」力量。"
+"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「阴翳」能力。"
 },
 {
 "en": "Assassins use it, apparently.",
@@ -12623,7 +12623,7 @@
 },
 {
 "en": "Mythological Ritual Mayor Diana will sell the Griffin Pet, which lets you find Mythological Creatures and tons of unique items.",
-"zh": "神话庆典 戴安娜市长将出售狮鹫宠物，它能让你找到神话生物和大量独特物品。"
+"zh": "神话庆典 戴安娜市长将出售狮鹫宠物，它能让你找到神话庆典生物和大量独特物品。"
 },
 {
 "en": "Pet XP Buff Gain %1$s% more pet XP.",
@@ -12703,7 +12703,7 @@
 },
 {
 "en": "Combine x%1$s of this item at the Thaumaturgist in the Hub to unlock the Sanguisuge power.",
-"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「吸血蛭」力量。"
+"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「吸血蛭」能力。"
 },
 {
 "en": "+%1$s Health +%2$s Strength +%3$s Crit Chance +%4$s Crit Damage",
@@ -12767,7 +12767,7 @@
 },
 {
 "en": "Grants +%1$s Pristine and +%2$s Gemstone Spread while inside the Glacite Mineshafts.",
-"zh": "在极冰矿井中时提供 +%1$s 纯净和 +%2$s 宝石蔓延。"
+"zh": "在极冰矿井中时提供 +%1$s 纯净度和 +%2$s 宝石蔓延。"
 },
 {
 "en": "An item treasured by the greatest Dwarf who ever lived. Why would he leave it behind?",
@@ -13343,7 +13343,7 @@
 },
 {
 "en": "Combine x%1$s of this item at the Thaumaturgist in the Hub to unlock the Bizarre power.",
-"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「怪异」力量。"
+"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「怪异」能力。"
 },
 {
 "en": "-%1$s Strength -%2$s Crit Damage +%3$s Intelligence",
@@ -13767,7 +13767,7 @@
 },
 {
 "en": "Combine x%1$s of this item at the Thaumaturgist in the Hub to unlock the Sighted power.",
-"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「洞察」力量。"
+"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「洞察」能力。"
 },
 {
 "en": "* Co-op Soulbound * EPIC NECKLACE",
@@ -13863,7 +13863,7 @@
 },
 {
 "en": "Combine x%1$s of this item at the Thaumaturgist in the Hub to unlock the Adept power.",
-"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「熟练」力量。"
+"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「熟练」能力。"
 },
 {
 "en": "+%1$s Health +%2$s Defense +%3$s Intelligence",
@@ -15555,7 +15555,7 @@
 },
 {
 "en": "Combine x%1$s of this item at the Thaumaturgist in the Hub to unlock the Itchy power.",
-"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「瘙痒」力量。"
+"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「瘙痒」能力。"
 },
 {
 "en": "+%1$s Strength +%2$s Crit Damage +%3$s Attack Speed +%4$s Speed",
@@ -15575,7 +15575,7 @@
 },
 {
 "en": "The Gaia Construct is a Mythological Creature that can be found by using a rare or higher Griffin Pet. It deals True Knockback and ignores anti-knockback capabilities like Dwarf Turtle Shelmet. It has three stages upon spawning:",
-"zh": "盖亚构造体是一种神话生物，使用稀有或更高稀有度的狮鹫宠物时可以找到。它会造成真实击退，并无视矮人海龟壳盔等防击退效果。它生成后有三个阶段:"
+"zh": "盖亚构造体是一种神话庆典生物，使用稀有或更高稀有度的狮鹫宠物时可以找到。它会造成真实击退，并无视矮人海龟壳盔等防击退效果。它生成后有三个阶段:"
 },
 {
 "en": "Stage %1$s: Damaged once every %2$s hits, summons a little lightning.",
@@ -15939,7 +15939,7 @@
 },
 {
 "en": "▶ Keeps track of every Pristine Proc obtained wearing this skin.",
-"zh": "▶ 记录穿戴此皮肤时获得的每一次纯净触发。"
+"zh": "▶ 记录穿戴此皮肤时获得的每一次纯净度触发。"
 },
 {
 "en": "▶ Displays a special particle effect when you have Cold.",
@@ -15975,7 +15975,7 @@
 },
 {
 "en": "Frozen Perfection Gain +%3$s  Pristine for every Frozen Corpse you've looted in the current Glacite Mineshaft.",
-"zh": "冰封完美 你在当前极冰矿井中每搜刮过一具冰冻尸体，获得 +%3$s  纯净。"
+"zh": "冰封完美 你在当前极冰矿井中每搜刮过一具冰冻尸体，获得 +%3$s  纯净度。"
 },
 {
 "en": "It is said that there is a lost village made of Glacite, deep under the Dwarven Mines.",
@@ -15995,7 +15995,7 @@
 },
 {
 "en": "Combine x%1$s of this item at the Thaumaturgist in the Hub to unlock the Frozen power.",
-"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「冰冻」力量。"
+"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「冰冻」能力。"
 },
 {
 "en": "Has to be handled with gloves- or the user will quickly develop frostbite.",
@@ -16755,7 +16755,7 @@
 },
 {
 "en": "Combine x%1$s of this item at the Thaumaturgist in the Hub to unlock the Slender power.",
-"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「瘦长」力量。"
+"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「瘦长」能力。"
 },
 {
 "en": "+%1$s Health +%2$s Defense +%3$s Strength +%4$s Crit Damage +%5$s Attack Speed +%6$s Intelligence +%7$s Speed",
@@ -16843,7 +16843,7 @@
 },
 {
 "en": "Ability: Mega Frenzy Gains %1$s Sweep every %2$s Logs cut on Galatea. (max %3$s)",
-"zh": "技能: 超级狂热 在加拉蒂亚每砍伐 %2$s 块原木，获得 %1$s 横扫。（最多 %3$s）"
+"zh": "技能: 极度狂热 在加拉蒂亚每砍伐 %2$s 块原木，获得 %1$s 横扫。（最多 %3$s）"
 },
 {
 "en": "A particularly resilient type of log that, should they not know the secret to cutting it, will outlast most foragers.",
@@ -17019,7 +17019,7 @@
 },
 {
 "en": "Combine x%1$s of this item at the Thaumaturgist in the Hub to unlock the Demonic power.",
-"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「恶魔」力量。"
+"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「恶魔」能力。"
 },
 {
 "en": "+%1$s Strength +%2$s Intelligence",
@@ -18507,7 +18507,7 @@
 },
 {
 "en": "Combine x%1$s of this item at the Thaumaturgist in the Hub to unlock the Silky power.",
-"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「丝滑」力量。"
+"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「丝滑」能力。"
 },
 {
 "en": "Older Spiders often make better quality string. It is said that female ones are even more sturdy, but it was never proven.",
@@ -18643,7 +18643,7 @@
 },
 {
 "en": "Combine x%1$s of this item at the Thaumaturgist in the Hub to unlock the Hurtful power.",
-"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「伤害」力量。"
+"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「伤害」能力。"
 },
 {
 "en": "Consume to unwrap the bundle containing %1$sx Magma Urchin.",
@@ -18759,7 +18759,7 @@
 },
 {
 "en": "Combine x%1$s of this item at the Thaumaturgist in the Hub to unlock the Strong power.",
-"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「强壮」力量。"
+"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「强壮」能力。"
 },
 {
 "en": "Mangroves' finest gift, a shard echoing with tales of brine and bristle.",
@@ -19227,7 +19227,7 @@
 },
 {
 "en": "The Minos Hunter is the most common mob in the Mythological Ritual. It is relatively easy to kill if you have the right weapons, though it can be challenging for early-game players. It will attack with a sword, dealing damage and knockback if you get hit. It's the only Mythological Creature that can be damaged without having a Griffin Pet.",
-"zh": "米诺斯猎人是神话庆典中最常见的怪物。只要有合适的武器，它相对容易击杀，不过对游戏初期的玩家来说可能有些挑战。它会用剑攻击，被击中时会受到伤害和击退。它是唯一一种不需要狮鹫宠物也能造成伤害的神话生物。"
+"zh": "米诺斯猎人是神话庆典中最常见的怪物。只要有合适的武器，它相对容易击杀，不过对游戏初期的玩家来说可能有些挑战。它会用剑攻击，被击中时会受到伤害和击退。它是唯一一种不需要狮鹫宠物也能造成伤害的神话庆典生物。"
 },
 {
 "en": "Mob Types: ✿ Mythological, ༕ Undead ❤",
@@ -19827,7 +19827,7 @@
 },
 {
 "en": "Combine x%1$s of this item at the Thaumaturgist in the Hub to unlock the Mythical power.",
-"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「神话」力量。"
+"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「神话」能力。"
 },
 {
 "en": "+%1$s Health +%2$s Defense +%3$s Strength +%4$s Crit Chance +%5$s Crit Damage +%6$s Intelligence +%7$s Speed",
@@ -20531,7 +20531,7 @@
 },
 {
 "en": "▶ Modifies the look of your Mythological Creatures!",
-"zh": "▶ 改变你的神话生物的外观！"
+"zh": "▶ 改变你的神话庆典生物的外观！"
 },
 {
 "en": "This skin will allow you to swap between %1$s biome themed frogs!",
@@ -21899,7 +21899,7 @@
 },
 {
 "en": "Combine x%1$s of this item at the Thaumaturgist in the Hub to unlock the Pleasant power.",
-"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「愉悦」力量。"
+"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「愉悦」能力。"
 },
 {
 "en": "Can be given to Professor Robot to complete the Sapphire Crystal Quest.",
@@ -22067,23 +22067,23 @@
 },
 {
 "en": "Prismatic I Grants +%1$s  Pristine, which increases the chance to improve the quality of dropped Gemstones.",
-"zh": "宝石采掘 I 提供 +%1$s  纯净，提高掉落宝石品质提升的几率。"
+"zh": "宝石采掘 I 提供 +%1$s  纯净度，提高掉落宝石品质提升的几率。"
 },
 {
 "en": "Prismatic II Grants +%1$s  Pristine, which increases the chance to improve the quality of dropped Gemstones.",
-"zh": "宝石采掘 II 提供 +%1$s  纯净，提高掉落宝石品质提升的几率。"
+"zh": "宝石采掘 II 提供 +%1$s  纯净度，提高掉落宝石品质提升的几率。"
 },
 {
 "en": "Prismatic III Grants +%1$s  Pristine, which increases the chance to improve the quality of dropped Gemstones.",
-"zh": "宝石采掘 III 提供 +%1$s  纯净，提高掉落宝石品质提升的几率。"
+"zh": "宝石采掘 III 提供 +%1$s  纯净度，提高掉落宝石品质提升的几率。"
 },
 {
 "en": "Prismatic IV Grants +%1$s  Pristine, which increases the chance to improve the quality of dropped Gemstones.",
-"zh": "宝石采掘 IV 提供 +%1$s  纯净，提高掉落宝石品质提升的几率。"
+"zh": "宝石采掘 IV 提供 +%1$s  纯净度，提高掉落宝石品质提升的几率。"
 },
 {
 "en": "Prismatic V Grants +%1$s  Pristine, which increases the chance to improve the quality of dropped Gemstones.",
-"zh": "宝石采掘 V 提供 +%1$s  纯净，提高掉落宝石品质提升的几率。"
+"zh": "宝石采掘 V 提供 +%1$s  纯净度，提高掉落宝石品质提升的几率。"
 },
 {
 "en": "The Professor is the boss of Floor %1$s of the Catacombs. He is a 'Professor' and has three phases. In the %2$sst he spawns %3$s Guardians and creates a barrier. After they are killed, he attacks the player. Once he is at %4$s% health, he will merge with his guardians and continue to fight.",
@@ -22703,7 +22703,7 @@
 },
 {
 "en": "This item has had its functionality merged with Anvils. Apply Reforge Stones and other items with an Anvil!",
-"zh": "此物品的功能已合并到铁砧中。用铁砧来应用洗练石和其他物品吧！"
+"zh": "此物品的功能已合并到铁砧中。用铁砧来应用重铸石和其他物品吧！"
 },
 {
 "en": "Can be sold in Shops for %1$s Coins!",
@@ -23107,7 +23107,7 @@
 },
 {
 "en": "Combine x%1$s of this item at the Thaumaturgist in the Hub to unlock the Sweet power.",
-"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「甜蜜」力量。"
+"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「甜蜜」能力。"
 },
 {
 "en": "Accessories have never tasted so sweet.",
@@ -23507,7 +23507,7 @@
 },
 {
 "en": "Combine x%1$s of this item at the Thaumaturgist in the Hub to unlock the Scorching power.",
-"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「灼热」力量。"
+"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「灼热」能力。"
 },
 {
 "en": "+%1$s Strength +%2$s Crit Damage +%3$s Attack Speed",
@@ -23515,7 +23515,7 @@
 },
 {
 "en": "MYTHIC POWER STONE",
-"zh": "神话力量石"
+"zh": "神话能力石"
 },
 {
 "en": "Sometimes, well-done just isn't enough.",
@@ -23523,7 +23523,7 @@
 },
 {
 "en": "Adds +%1$s% minion speed buff and +%2$s% profile stats to beacons fueled by this power crystal!",
-"zh": "为以此力量水晶供能的信标增加 +%1$s% 小人速度增益和 +%2$s% 档案属性！"
+"zh": "为以此信标水晶供能的信标增加 +%1$s% 小人速度增益和 +%2$s% 档案属性！"
 },
 {
 "en": "The perfect balance between sweetness and bitterness, with a strange bite to it.",
@@ -25167,7 +25167,7 @@
 },
 {
 "en": "Combine x%1$s of this item at the Thaumaturgist in the Hub to unlock the Buttery power.",
-"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「黄油」力量。"
+"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「黄油」能力。"
 },
 {
 "en": "+%1$s Attack Speed +%2$s Speed",
@@ -26083,7 +26083,7 @@
 },
 {
 "en": "Ability: Park Enthusiast Gain +%1$s Foraging Fortune while in The Park.",
-"zh": "技能: 公园爱好者 在公园中时获得 +%1$s 伐木时运。"
+"zh": "技能: 公园狂热者 在公园中时获得 +%1$s 伐木时运。"
 },
 {
 "en": "Fish grow on trees.",
@@ -27447,7 +27447,7 @@
 },
 {
 "en": "Combine x%1$s of this item at the Thaumaturgist in the Hub to unlock the Healthy power.",
-"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「健康」力量。"
+"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「健康」能力。"
 },
 {
 "en": "Power Stone",
@@ -27455,7 +27455,7 @@
 },
 {
 "en": "Combine %1$sx of this stone at Maxwell to permanently unlock the Unhealthy power.",
-"zh": "在麦克斯韦处合成 %1$s 个此石头，以永久解锁「不健康」力量。"
+"zh": "在麦克斯韦处合成 %1$s 个此石头，以永久解锁「不健康」能力。"
 },
 {
 "en": "Requires Combat Skill Level MCCXII!",
@@ -29359,7 +29359,7 @@
 },
 {
 "en": "Each block you mine has a +%1$s% chance to grant %2$s extra  Pristine for that block.",
-"zh": "你挖掘的每个方块有 +%1$s% 几率为该方块额外提供 %2$s  纯净。"
+"zh": "你挖掘的每个方块有 +%1$s% 几率为该方块额外提供 %2$s  纯净度。"
 },
 {
 "en": "Devouring Spread I",
@@ -31367,7 +31367,7 @@
 },
 {
 "en": "Grants +%1$s Pristine while in the Magma Fields.",
-"zh": "在岩浆地带时提供 +%1$s 纯净。"
+"zh": "在岩浆地带时提供 +%1$s 纯净度。"
 },
 {
 "en": "Dispersion",
@@ -31547,7 +31547,7 @@
 },
 {
 "en": "Grants special buffs to the island owners when powered by Power Crystals obtained from the forge in",
-"zh": "由力量水晶供能时，为岛主提供特殊增益。力量水晶来自锻造厂，位于"
+"zh": "由信标水晶供能时，为岛主提供特殊增益。信标水晶来自锻造厂，位于"
 },
 {
 "en": "the Dwarven Mines.",
@@ -32519,7 +32519,7 @@
 },
 {
 "en": "Mining Fiesta",
-"zh": "挖矿狂欢"
+"zh": "挖矿嘉年华"
 },
 {
 "en": "Gain +%1$s☯ Mining Wisdom, +%2$s%  Mining Fortune, and collect Refined Minerals and Glossy Gemstones",
@@ -32879,7 +32879,7 @@
 },
 {
 "en": "Shaded power.",
-"zh": "「暗影」力量。"
+"zh": "「阴翳」能力。"
 },
 {
 "en": "Ability: Meownar RIGHT CLICK",
@@ -33003,7 +33003,7 @@
 },
 {
 "en": "Mythological Creatures and tons",
-"zh": "神话生物和大量"
+"zh": "神话庆典生物和大量"
 },
 {
 "en": "of unique items.",
@@ -33099,7 +33099,7 @@
 },
 {
 "en": "Grants +%1$s Pristine and +%2$s Gemstone Spread while inside the",
-"zh": "提供 +%1$s 纯净和 +%2$s 宝石蔓延，限于"
+"zh": "提供 +%1$s 纯净度和 +%2$s 宝石蔓延，限于"
 },
 {
 "en": "Glacite Mineshafts.",
@@ -33967,7 +33967,7 @@
 },
 {
 "en": " Pristine.",
-"zh": " 纯净。"
+"zh": " 纯净度。"
 },
 {
 "en": "Pest Eradicator",
@@ -34791,7 +34791,7 @@
 },
 {
 "en": "Gain +%3$s  Pristine for every Frozen Corpse you've looted in the",
-"zh": "你每搜刮过一具冰冻尸体，获得 +%3$s  纯净，"
+"zh": "你每搜刮过一具冰冻尸体，获得 +%3$s  纯净度，"
 },
 {
 "en": "current Glacite Mineshaft.",
@@ -35419,7 +35419,7 @@
 },
 {
 "en": "Ability: Mega Frenzy",
-"zh": "技能: 超级狂热"
+"zh": "技能: 极度狂热"
 },
 {
 "en": "Ability: Hellstorm RIGHT CLICK",
@@ -37359,7 +37359,7 @@
 },
 {
 "en": "Mythological Creatures!",
-"zh": "神话生物的外观！"
+"zh": "神话庆典生物的外观！"
 },
 {
 "en": "variants, unlocked from Golden Dragon Pet Levels!",
@@ -37731,7 +37731,7 @@
 },
 {
 "en": "Grants +%1$s  Pristine, which increases the chance to improve the quality of dropped Gemstones.",
-"zh": "提供 +%1$s  纯净，提高掉落宝石品质提升的几率。"
+"zh": "提供 +%1$s  纯净度，提高掉落宝石品质提升的几率。"
 },
 {
 "en": "Grants +%1$s  Defense against projectiles.",
@@ -39839,7 +39839,7 @@
 },
 {
 "en": "Ability: Park Enthusiast",
-"zh": "技能: 公园爱好者"
+"zh": "技能: 公园狂热者"
 },
 {
 "en": "Ability: Thwack RIGHT CLICK",
@@ -41083,11 +41083,11 @@
 },
 {
 "en": "Unique Power Bonus: %1$s",
-"zh": "独有力量加成: %1$s"
+"zh": "独有能力加成: %1$s"
 },
 {
 "en": "Unique Power Bonus:",
-"zh": "独有力量加成:"
+"zh": "独有能力加成："
 },
 {
 "en": "Health Regen: %1$s",
@@ -41507,11 +41507,11 @@
 },
 {
 "en": "Pristine: %1$s",
-"zh": "纯净: %1$s"
+"zh": "纯净度: %1$s"
 },
 {
 "en": "Pristine:",
-"zh": "纯净:"
+"zh": "纯净度:"
 },
 {
 "en": "Demons damage: %1$s",
@@ -42743,7 +42743,7 @@
 },
 {
 "en": "Profile: Pineapple",
-"zh": "存档: 菠萝"
+"zh": "存档：菠萝"
 },
 {
 "en": "SB Level: [%1$s] %2$s/%3$s XP",
@@ -43439,23 +43439,23 @@
 },
 {
 "en": "Horns of Torment Power Stone",
-"zh": "折磨之角力量石"
+"zh": "折磨之角能力石"
 },
 {
 "en": "Bubba Blister Power Stone",
-"zh": "大块水泡力量石"
+"zh": "大块水泡能力石"
 },
 {
 "en": "Eccentric Painting Power Stone",
-"zh": "古怪画作力量石"
+"zh": "古怪画作能力石"
 },
 {
 "en": "Magma Urchin Power Stone",
-"zh": "岩浆海胆力量石"
+"zh": "岩浆海胆能力石"
 },
 {
 "en": "Precious Pearl Power Stone",
-"zh": "珍贵珍珠力量石"
+"zh": "珍贵珍珠能力石"
 },
 {
 "en": "UNLOCKED",
@@ -43475,7 +43475,7 @@
 },
 {
 "en": "Scorched Books Power Stone",
-"zh": "烧焦的书力量石"
+"zh": "烧焦的书能力石"
 },
 {
 "en": "Warrior XXXVII",
@@ -43539,15 +43539,15 @@
 },
 {
 "en": "Mandraa Power Stone",
-"zh": "曼德拉力量石"
+"zh": "曼德拉能力石"
 },
 {
 "en": "Hazmat Enderman Power Stone",
-"zh": "防化末影人力量石"
+"zh": "防化末影人能力石"
 },
 {
 "en": "Vitamin Death Power Stone",
-"zh": "死亡维生素力量石"
+"zh": "死亡维生素能力石"
 },
 {
 "en": "Warrior XXXI",
@@ -44275,7 +44275,7 @@
 },
 {
 "en": "Pristine: +%1$s",
-"zh": "纯净: +%1$s"
+"zh": "纯净度: +%1$s"
 },
 {
 "en": "Gemstone Fortune: +%1$s",
@@ -45411,7 +45411,7 @@
 },
 {
 "en": "Complete Campf§jire Trials",
-"zh": "完成营火§j试炼"
+"zh": "完成营火试炼"
 },
 {
 "en": "Storage",
@@ -47263,7 +47263,7 @@
 },
 {
 "en": "Reforge Stones",
-"zh": "洗练石"
+"zh": "重铸石"
 },
 {
 "en": "Forge new reforges for your mining",
@@ -59163,7 +59163,7 @@
 },
 {
 "en": "Grants +%1$s Pristine.",
-"zh": "提供 +%1$s 纯净。"
+"zh": "提供 +%1$s 纯净度。"
 },
 {
 "en": "Gain a +%1$s% chance to spawn +%2$s",
@@ -63795,7 +63795,7 @@
 },
 {
 "en": "ACTIVE",
-"zh": "进行中"
+"zh": "运行中"
 },
 {
 "en": "○ Moonflower",
@@ -66579,7 +66579,7 @@
 },
 {
 "en": "Instantly sell all Reforge Stones derivatives in your inventory.",
-"zh": "即时出售物品栏中所有洗练石衍生品。"
+"zh": "即时出售物品栏中所有重铸石衍生品。"
 },
 {
 "en": "Instantly sell all Wheat & Seeds derivatives in your inventory.",
@@ -66675,7 +66675,7 @@
 },
 {
 "en": "Instantly sell all Power Stones derivatives in your inventory.",
-"zh": "即时出售物品栏中所有力量石衍生品。"
+"zh": "即时出售物品栏中所有能力石衍生品。"
 },
 {
 "en": "Instantly sell all Pet Upgrades derivatives in your inventory.",
@@ -68155,7 +68155,7 @@
 },
 {
 "en": "COSMETIC SHOP",
-"zh": "装饰品商店"
+"zh": "外观商店"
 },
 {
 "en": "◆ Explosifall Rune III",
@@ -68303,7 +68303,7 @@
 },
 {
 "en": "SHIP NAVIGATOR",
-"zh": "船只领航员"
+"zh": "航海领航员"
 },
 {
 "en": "Click to travel!",
@@ -68547,7 +68547,7 @@
 },
 {
 "en": "Rosetta's Armor",
-"zh": "罗塞塔盔甲"
+"zh": "罗塞塔的盔甲"
 },
 {
 "en": "Glacite Armor",
@@ -68795,7 +68795,7 @@
 },
 {
 "en": "✔ Ability Chat ✔ Ability Cooldown Chat ✔ Pristine Chat ✔ Compact Chat ✔ Auto-Recombobulator Chat ✔ Sack Notifications ✔ Fire Sale Notifications",
-"zh": "✔ 技能聊天消息 ✔ 技能冷却聊天消息 ✔ 纯净聊天消息 ✔ 压缩聊天消息 ✔ 自动重组器聊天消息 ✔ 收纳袋通知 ✔ 限时特卖通知"
+"zh": "✔ 技能聊天消息 ✔ 技能冷却聊天消息 ✔ 纯净度聊天消息 ✔ 压缩聊天消息 ✔ 自动重组器聊天消息 ✔ 收纳袋通知 ✔ 限时特卖通知"
 },
 {
 "en": "General settings related to your experience.",
@@ -69991,7 +69991,7 @@
 },
 {
 "en": "Query: Power Crystal",
-"zh": "查询: 力量水晶"
+"zh": "查询: 信标水晶"
 },
 {
 "en": "Query: Reaper Pepper",
@@ -70379,7 +70379,7 @@
 },
 {
 "en": "Starter Power",
-"zh": "入门力量"
+"zh": "入门能力"
 },
 {
 "en": "You have: %1$s Accessory Power",
@@ -70391,11 +70391,11 @@
 },
 {
 "en": "Advanced Stone Power",
-"zh": "高级力量石力量"
+"zh": "高阶能力石能力"
 },
 {
 "en": "Power is selected!",
-"zh": "已选择此力量！"
+"zh": "已选择此能力！"
 },
 {
 "en": "Accessory Bag Thaumaturgy",
@@ -70435,7 +70435,7 @@
 },
 {
 "en": "Combine %1$sx identical Power Stones that you may find across SkyBlock to permanently unlock their power.",
-"zh": "合成 %1$s 个你在空岛各处找到的相同力量石，即可永久解锁它们的力量。"
+"zh": "合成 %1$s 个你在空岛各处找到的相同能力石，即可永久解锁它们的力量。"
 },
 {
 "en": "Every %1$s AP grants %2$s Tuning Point.",
@@ -71203,7 +71203,7 @@
 },
 {
 "en": "Horns of Torment Power Stone Bubba Blister Power Stone Eccentric Painting Power Stone Magma Urchin Power Stone Precious Pearl Power Stone UNLOCKED",
-"zh": "折磨之角力量石大块水泡力量石古怪画作力量石岩浆海胆力量石珍贵珍珠力量石已解锁"
+"zh": "折磨之角能力石大块水泡能力石古怪画作能力石岩浆海胆能力石珍贵珍珠能力石已解锁"
 },
 {
 "en": "+Access to Crimson Isle Warrior XXII",
@@ -71211,7 +71211,7 @@
 },
 {
 "en": "Mandraa Power Stone Hazmat Enderman Power Stone Vitamin Death Power Stone",
-"zh": "曼德拉力量石防化末影人力量石死亡维生素力量石"
+"zh": "曼德拉能力石防化末影人能力石死亡维生素能力石"
 },
 {
 "en": "The Bestiary is a compendium of mobs in SkyBlock. It contains detailed information on loot drops, your mob stats, and more!",
@@ -72763,7 +72763,7 @@
 },
 {
 "en": "Advanced Stone Power Power is selected!",
-"zh": "高级力量石力量已选择此力量！"
+"zh": "高阶能力石能力已选择此能力！"
 },
 {
 "en": "+%1$s Garden Experience Lazy Miner will leave your Garden and maybe come back later.",

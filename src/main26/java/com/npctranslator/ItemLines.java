@@ -173,6 +173,7 @@ public final class ItemLines {
 
     /** Whether {@code next} is the wrapped continuation of the sentence in {@code prev}. */
     static boolean continues(String prev, String next) {
+        if (OrderBookText.isBoundary(prev) || OrderBookText.isBoundary(next)) return false;
         String a = plain(prev), b = plain(next);
         if (a.length() < 18 || b.isEmpty()) return false;
         if (SENTENCE_END.matcher(a).matches()) return false;

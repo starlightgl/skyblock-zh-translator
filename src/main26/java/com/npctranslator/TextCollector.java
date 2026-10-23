@@ -61,6 +61,19 @@ public final class TextCollector {
     private static final ConcurrentLinkedQueue<String> PENDING = new ConcurrentLinkedQueue<>();
     private static volatile boolean loaded = false;
     private static volatile long lastFlush = 0;
+    private static final java.util.concurrent.atomic.AtomicLong CAPTURE_GENERATION = new java.util.concurrent.atomic.AtomicLong();
+    private static final java.util.concurrent.ThreadPoolExecutor CAPTURES = new java.util.concurrent.ThreadPoolExecutor(
+            1, 1, 0L, java.util.concurrent.TimeUnit.MILLISECONDS,
+            new java.util.concurrent.ArrayBlockingQueue<>(8192), r -> {
+                Thread t = new Thread(r, "NPCTranslator-TextCapture"); t.setDaemon(true); return t;
+            });
+    private static final java.util.concurrent.ScheduledExecutorService FLUSHER = java.util.concurrent.Executors.newSingleThreadScheduledExecutor(r -> {
+        Thread t = new Thread(r, "NPCTranslator-TextFlush"); t.setDaemon(true); return t;
+    });
+    static {
+        // Persist the last few captures even after the player stops hovering new text.
+        FLUSHER.scheduleWithFixedDelay(TextCollector::flush, 2, 2, java.util.concurrent.TimeUnit.SECONDS);
+    }
 
     /** Player chat, private messages and channel messages are not game text and are not recorded. */
     private static final Pattern PLAYER_CHAT = Pattern.compile(
@@ -97,7 +110,8 @@ public final class TextCollector {
                 if (p[0].equals(TAB) && p.length > 3 && RANDOM_NAME.matcher(p[3]).matches()) { changed = true; continue; }
                 String clean = anonymize(line);
                 if (!clean.equals(line)) { changed = true; p = clean.split("\t", -1); }
-                String folded = foldItems(p[2]);
+                String level = OrderBookText.collectionTemplate(p[2]);
+                String folded = level == null ? foldItems(p[2]) : level;
                 if (!folded.equals(p[2])) {
                     changed = true;
                     p[2] = folded;
@@ -192,10 +206,21 @@ public final class TextCollector {
      */
     public static void record(String type, String where, String formatted, String current) {
         if (formatted == null || type == null || !enabled()) return;
-        String rawKey = type + "\t" + formatted;
-        if (RAW.contains(rawKey)) return;
+        if (hasChinese(formatted)) return; // Reject translated output before it can occupy the worker queue.
+        String level = OrderBookText.collectionTemplate(formatted);
+        String rawKey = type + "\t" + (level == null ? formatted : level);
         if (RAW.size() > 50000) RAW.clear();
-        RAW.add(rawKey);
+        if (!RAW.add(rawKey)) return;
+        long generation = CAPTURE_GENERATION.get();
+        try {
+            CAPTURES.execute(() -> recordCaptured(type, where, formatted, current, generation));
+        } catch (java.util.concurrent.RejectedExecutionException full) {
+            RAW.remove(rawKey); // Retry on the next display; never block or grow an unbounded queue.
+        }
+    }
+
+    private static synchronized void recordCaptured(String type, String where, String formatted, String current, long generation) {
+        if (generation != CAPTURE_GENERATION.get()) return;
 
         String plain = anonymize(TranslationUtil.stripColorCodes(formatted).trim());
         if (plain.isEmpty() || !TranslationUtil.needsTranslation(plain)) return;
@@ -203,7 +228,8 @@ public final class TextCollector {
         if (hasChinese(plain)) return;
         if (type.equals(CHAT) && !plain.startsWith("[NPC]") && PLAYER_CHAT.matcher(plain).find()) return;
         load();
-        String template = foldItems(TranslationUtil.normalize(plain).text);
+        String level = OrderBookText.collectionTemplate(plain);
+        String template = level == null ? foldItems(TranslationUtil.normalize(plain).text) : level;
         if (SEEN.size() > LIMIT || !SEEN.add(type + "\t" + template)) return;
         String cur = current;
         if (cur == null) cur = lookup(type, formatted.trim());
@@ -215,14 +241,14 @@ public final class TextCollector {
         long now = System.currentTimeMillis();
         if (now - lastFlush > 5000) {
             lastFlush = now;
-            Thread t = new Thread(TextCollector::flush, "NPCTranslator-TextCollector");
-            t.setDaemon(true);
-            t.start();
+            flush();
         }
     }
 
     private static String lookup(String type, String formatted) {
         try {
+            String priceLevel = OrderBookText.translate(formatted);
+            if (priceLevel != null) return priceLevel;
             String out = type.equals(ITEM_NAME) ? TableNames.translateName(formatted) : null;
             if (out == null) out = PhraseBook.translate(formatted);
             return out;
@@ -318,6 +344,8 @@ public final class TextCollector {
 
     /** Deletes the file and starts over. */
     public static synchronized void reset() {
+        CAPTURE_GENERATION.incrementAndGet();
+        CAPTURES.getQueue().clear();
         load();
         PENDING.clear();
         SEEN.clear();

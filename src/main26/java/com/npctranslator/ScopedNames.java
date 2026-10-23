@@ -63,7 +63,7 @@ public final class ScopedNames {
             out=v.replace(offset+m.start(2),offset+m.end(2),LEVELS.get(m.group(2)));
             return new View(out).replace(offset+1,offset+3,"等级 ");
         }
-        if(t.matches("Cost: [0-9,.]+ Gems"))return replace(replace(raw,"^Cost:","价格："),"Gems$","宝石");
+        if(t.matches("Cost: [0-9,.]+ Gems"))return replace(replace(raw,"^Cost:","价格："),"Gems$","宝石币");
         if(t.matches("Year \\d+"))return replace(raw,"^Year ","年份：");
         if(t.matches("Time left: (?:\\d+[dhms] ?)+")) {
             out=replace(raw,"^Time left:","剩余时间：");

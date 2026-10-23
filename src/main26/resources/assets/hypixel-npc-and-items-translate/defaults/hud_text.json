@@ -254,7 +254,8 @@
     "Mining": "挖矿",
     "GOLD medals": "金牌",
     "SILVER medals": "银牌",
-    "BRONZE medals": "铜牌"
+    "BRONZE medals": "铜牌",
+    "Minister": "大臣"
   },
   "values": {
     "Arachne's Burrow": "阿拉克涅巢穴",
@@ -599,7 +600,18 @@
     "Election: Over!": "选举：已结束！",
     "Cocoa Beans": "可可豆",
     "Nether Wart": "下界疣",
-    "Melon Slice": "西瓜片"
+    "Melon Slice": "西瓜片",
+    "Aatrox": "亚托克斯",
+    "Cole": "科尔",
+    "Dante": "但丁",
+    "Derpy": "德皮",
+    "Diana": "戴安娜",
+    "Diaz": "迪亚兹",
+    "Finnegan": "芬尼根",
+    "Foxy": "福克西",
+    "Marina": "玛丽娜",
+    "Paul": "保罗",
+    "Scorpius": "斯科皮乌斯"
   },
   "entries": [
     {

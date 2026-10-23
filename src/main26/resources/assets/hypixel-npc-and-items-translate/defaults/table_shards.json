@@ -3764,7 +3764,7 @@
     },
     {
       "en": "Battle Experience I",
-      "zh": "战斗经验 I",
+      "zh": "实战经验 I",
       "source": {
         "kind": "table shard ability with preserved level",
         "item": "Falcon Shard"
@@ -3772,7 +3772,7 @@
     },
     {
       "en": "Battle Experience II",
-      "zh": "战斗经验 II",
+      "zh": "实战经验 II",
       "source": {
         "kind": "table shard ability with preserved level",
         "item": "Falcon Shard"
@@ -3780,7 +3780,7 @@
     },
     {
       "en": "Battle Experience III",
-      "zh": "战斗经验 III",
+      "zh": "实战经验 III",
       "source": {
         "kind": "table shard ability with preserved level",
         "item": "Falcon Shard"
@@ -3788,7 +3788,7 @@
     },
     {
       "en": "Battle Experience IV",
-      "zh": "战斗经验 IV",
+      "zh": "实战经验 IV",
       "source": {
         "kind": "table shard ability with preserved level",
         "item": "Falcon Shard"
@@ -3796,7 +3796,7 @@
     },
     {
       "en": "Battle Experience V",
-      "zh": "战斗经验 V",
+      "zh": "实战经验 V",
       "source": {
         "kind": "table shard ability with preserved level",
         "item": "Falcon Shard"
@@ -3804,7 +3804,7 @@
     },
     {
       "en": "Battle Experience VI",
-      "zh": "战斗经验 VI",
+      "zh": "实战经验 VI",
       "source": {
         "kind": "table shard ability with preserved level",
         "item": "Falcon Shard"
@@ -3812,7 +3812,7 @@
     },
     {
       "en": "Battle Experience VII",
-      "zh": "战斗经验 VII",
+      "zh": "实战经验 VII",
       "source": {
         "kind": "table shard ability with preserved level",
         "item": "Falcon Shard"
@@ -3820,7 +3820,7 @@
     },
     {
       "en": "Battle Experience VIII",
-      "zh": "战斗经验 VIII",
+      "zh": "实战经验 VIII",
       "source": {
         "kind": "table shard ability with preserved level",
         "item": "Falcon Shard"
@@ -3828,7 +3828,7 @@
     },
     {
       "en": "Battle Experience IX",
-      "zh": "战斗经验 IX",
+      "zh": "实战经验 IX",
       "source": {
         "kind": "table shard ability with preserved level",
         "item": "Falcon Shard"
@@ -3836,7 +3836,7 @@
     },
     {
       "en": "Battle Experience X",
-      "zh": "战斗经验 X",
+      "zh": "实战经验 X",
       "source": {
         "kind": "table shard ability with preserved level",
         "item": "Falcon Shard"
@@ -3844,7 +3844,7 @@
     },
     {
       "en": "Battle Experience (Global)",
-      "zh": "战斗经验 (全局)",
+      "zh": "实战经验 (全局)",
       "source": {
         "kind": "table heading and scope",
         "item": "Falcon Shard"
@@ -3852,7 +3852,7 @@
     },
     {
       "en": "Battle Experience (Mining)",
-      "zh": "战斗经验 (挖矿)",
+      "zh": "实战经验 (挖矿)",
       "source": {
         "kind": "table heading and scope",
         "item": "Falcon Shard"
@@ -3860,7 +3860,7 @@
     },
     {
       "en": "Battle Experience (Combat)",
-      "zh": "战斗经验 (战斗)",
+      "zh": "实战经验 (战斗)",
       "source": {
         "kind": "table heading and scope",
         "item": "Falcon Shard"
@@ -3868,7 +3868,7 @@
     },
     {
       "en": "Battle Experience (Foraging)",
-      "zh": "战斗经验 (伐木)",
+      "zh": "实战经验 (伐木)",
       "source": {
         "kind": "table heading and scope",
         "item": "Falcon Shard"
@@ -3876,7 +3876,7 @@
     },
     {
       "en": "Battle Experience (Fishing)",
-      "zh": "战斗经验 (钓鱼)",
+      "zh": "实战经验 (钓鱼)",
       "source": {
         "kind": "table heading and scope",
         "item": "Falcon Shard"
@@ -3884,7 +3884,7 @@
     },
     {
       "en": "Battle Experience (Hunting)",
-      "zh": "战斗经验 (狩猎)",
+      "zh": "实战经验 (狩猎)",
       "source": {
         "kind": "table heading and scope",
         "item": "Falcon Shard"
@@ -11253,7 +11253,7 @@
     },
     {
       "en": "Each block you mine has a +%1$s% chance to grant %2$s extra  Pristine for that block.",
-      "zh": "你挖掘的每个方块有 +%1$s% 几率为该方块额外提供 %2$s  纯净。",
+      "zh": "你挖掘的每个方块有 +%1$s% 几率为该方块额外提供 %2$s  纯净度。",
       "source": {
         "kind": "canonical full effect",
         "item": "Bal Shard",
@@ -31363,7 +31363,7 @@
     },
     {
       "en": "Mutations have a +%1$s% chance to instantly re-mutate at their first growth phase when harvested.",
-      "zh": "收获突变作物时，有 +%1$s% 几率使其在第一个生长阶段立即重新突变。",
+      "zh": "收获突变植物时，有 +%1$s% 几率使其在第一个生长阶段立即重新突变。",
       "source": {
         "kind": "canonical full effect",
         "item": "Zombuddy Shard",
@@ -37481,7 +37481,7 @@
     },
     {
       "en": "Placing recombobulated Summoning Eyes increases your chance of spawning a Superior Dragon.",
-      "zh": "放置已重组的召唤之眼可提高生成卓越龙的几率。",
+      "zh": "放置已重组的召唤之眼可提高生成卓越巨龙的几率。",
       "source": {
         "kind": "canonical effect component",
         "item": "Special Zealot Shard",
@@ -37491,7 +37491,7 @@
     },
     {
       "en": "Summoning Eyes you drop have a +%1$s% chance to be recombobulated. Placing recombobulated Summoning Eyes increases your chance of spawning a Superior Dragon.",
-      "zh": "你掉落的召唤之眼有 +%1$s% 几率已被重组。 放置已重组的召唤之眼可提高生成卓越龙的几率。",
+      "zh": "你掉落的召唤之眼有 +%1$s% 几率已被重组。 放置已重组的召唤之眼可提高生成卓越巨龙的几率。",
       "source": {
         "kind": "canonical full effect",
         "item": "Special Zealot Shard",
@@ -49592,7 +49592,7 @@
     },
     {
       "en": "Despite its unassuming size, it has a ferocious temperament and will pick fights with creatures many multitudes larger than itself.",
-      "zh": "别看它个头不起眼，脾气却十分凶暴，会去挑衅比自己大好多倍的生物。",
+      "zh": "别看它个头不起眼，脾气却十分残暴，会去挑衅比自己大好多倍的生物。",
       "source": {
         "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
         "item": "Murkbat Shard"

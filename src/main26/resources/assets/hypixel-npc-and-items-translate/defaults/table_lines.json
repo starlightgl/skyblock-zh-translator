@@ -2559,7 +2559,7 @@
 },
 {
 "en": "Mob Types: ☽ Spooky, ⛨ Shielded ❤",
-"zh": "生物种族: ☽ 诡异, ⛨ 护盾 ❤"
+"zh": "生物种族: ☽ 惊魂, ⛨ 护盾 ❤"
 },
 {
 "en": "Ability: Farmer's Grace Grants immunity to trampling crops.",
@@ -2603,7 +2603,7 @@
 },
 {
 "en": "Purchased from Ant in Torrhus Springs.",
-"zh": "从托鲁斯温泉的蚂蚁处购买。"
+"zh": "从托鲁斯温泉的安特处购买。"
 },
 {
 "en": "COMMON FARMING TOOL",
@@ -4171,7 +4171,7 @@
 },
 {
 "en": "Odyssey %1$s types of  Mythological mobs can spawn from Griffin Burrows. Their stats scale with your Griffin’s rarity.",
-"zh": "奥德赛 狮鹫洞穴中可生成 %1$s 种 神话怪物。它们的属性随你狮鹫的稀有度提升。"
+"zh": "奥德赛 狮鹫洞穴中可生成 %1$s 种神话怪物。它们的属性随你狮鹫的稀有度提升。"
 },
 {
 "en": "Sacred Strength Gain +%1$s%  Strength when above 85%  Health.",
@@ -4391,7 +4391,7 @@
 },
 {
 "en": "Grants +%1$s% more Coins from killing  Mythological mobs.",
-"zh": "击杀 神话怪物获得的硬币 +%1$s%。"
+"zh": "击杀神话怪物获得的硬币 +%1$s%。"
 },
 {
 "en": "Tiered Bonus: Familiarity (%1$s/%2$s)",
@@ -5359,7 +5359,7 @@
 },
 {
 "en": "Mob Types: ♆ Magmatic, ☮ Animal ❤",
-"zh": "生物种族: ♆ 岩浆, ☮ 动物 ❤"
+"zh": "生物种族: ♆ 熔岩, ☮ 动物 ❤"
 },
 {
 "en": "Inferno arrows!",
@@ -6539,7 +6539,7 @@
 },
 {
 "en": "Mob Types: ✰ Humanoid, ⛏ Subterranean ❤",
-"zh": "生物种族: ✰ 人形, ⛏ 地下 ❤"
+"zh": "生物种族: ✰ 人形, ⛏ 地底 ❤"
 },
 {
 "en": "Can be fished up during the Year of the Seal.",
@@ -6739,7 +6739,7 @@
 },
 {
 "en": "Obtained from killing Maxor, Storm, Goldor, and Necron in The Catacombs lots of times. Grants %1$sx stats on The Catacombs Floor VII.",
-"zh": "在地下墓穴中多次击杀梅克索尔、风暴、戈尔多和耐克伦后获得。在地下墓穴第 VII 层获得 %1$s 倍属性。"
+"zh": "在地下墓穴中多次击杀马克索、斯托姆、戈尔多和耐克伦后获得。在地下墓穴第 VII 层获得 %1$s 倍属性。"
 },
 {
 "en": "Disciples of the Wither King. Inherited the Catacombs eons ago. Never defeated, feared by anything living AND dead.",
@@ -7151,7 +7151,7 @@
 },
 {
 "en": "Mob Types: ⚓ Aquatic, ☽ Spooky, ❃ Elusive ❤",
-"zh": "生物种族: ⚓ 水生、☽ 幽灵、❃ 隐匿 ❤"
+"zh": "生物种族: ⚓ 水生、☽ 惊魂、❃ 隐匿 ❤"
 },
 {
 "en": "Mana Pool Regenerate %3$s% extra mana, doubled when near or in water",
@@ -9563,7 +9563,7 @@
 },
 {
 "en": "Mythological Fortune I Grants +%1$s  Magic Find against  Mythological mobs.",
-"zh": " 神话时运 I 对神话庆典生物提供 +%1$s 魔法寻宝。"
+"zh": "神话时运 I 对 神话庆典生物提供 +%1$s 魔法寻宝。"
 },
 {
 "en": "Mythological Resistance I Grants +%1$s  Defense against ✿ Mythological mobs.",
@@ -9571,7 +9571,7 @@
 },
 {
 "en": "Mythological Ruler I Grants +%1$s% more  Damage against  Mythological mobs.",
-"zh": " 神话统御 I 对神话庆典生物多造成 +%1$s%  伤害。"
+"zh": "神话统御 I 对 神话庆典生物多造成 +%1$s%  伤害。"
 },
 {
 "en": "Nature Elemental I Grants +%1$s  Health.",
@@ -11915,7 +11915,7 @@
 },
 {
 "en": "Mob Types: ✿ Mythological, ☮ Animal",
-"zh": "生物种族: ✿ 神话、☮ 动物"
+"zh": "生物种族: ✿ 神话庆典、☮ 动物"
 },
 {
 "en": "This skin is swappable between %1$s creepy variants!",
@@ -13039,7 +13039,7 @@
 },
 {
 "en": "Mob Types:  Subterranean,  Critter",
-"zh": "生物种族:  地下、 小动物"
+"zh": "生物种族:  地底、 小动物"
 },
 {
 "en": "They burrow under the sand to keep cool",
@@ -15591,7 +15591,7 @@
 },
 {
 "en": "Mob Types: ✿ Mythological, ⚙ Construct ❤",
-"zh": "生物种族: ✿ 神话、⚙ 构造体 ❤"
+"zh": "生物种族: ✿ 神话庆典、⚙ 构造体 ❤"
 },
 {
 "en": "Health: [Griffin/Griffin] %1$s ❤ [Griffin] %2$s ❤ [Griffin] %3$s ❤",
@@ -16695,7 +16695,7 @@
 },
 {
 "en": "Mob Types: ✿ Mythological, ✰ Humanoid, ☮ Animal",
-"zh": "生物种族: ✿ 神话、✰ 人形、☮ 动物"
+"zh": "生物种族: ✿ 神话庆典、✰ 人形、☮ 动物"
 },
 {
 "en": "Harvesting I Grants +%1$s ☘ Farming Fortune, which increases your chance for multiple crops.",
@@ -16771,7 +16771,7 @@
 },
 {
 "en": "Mob Types: ☽ Spooky, 🦴 Skeletal, ☮ Animal ❤",
-"zh": "生物种族: ☽ 诡异、🦴 骷髅、☮ 动物 ❤"
+"zh": "生物种族: ☽ 惊魂、🦴 骷髅、☮ 动物 ❤"
 },
 {
 "en": "This Minion skin changes your minion's appearance to a Beheaded.",
@@ -17743,7 +17743,7 @@
 },
 {
 "en": "Mob Types: ༕ Undead, ⛏ Subterranean ❤",
-"zh": "生物种族: ༕ 亡灵、⛏ 地下 ❤"
+"zh": "生物种族: ༕ 亡灵、⛏ 地底 ❤"
 },
 {
 "en": "Hold this item in your inventory to use the soul in the infested house.",
@@ -17763,7 +17763,7 @@
 },
 {
 "en": "Mob Types: ✿ Mythological, ✰ Humanoid, ❃ Elusive ❤",
-"zh": "生物种族: ✿ 神话、✰ 人形、❃ 隐匿 ❤"
+"zh": "生物种族: ✿ 神话庆典、✰ 人形、❃ 隐匿 ❤"
 },
 {
 "en": "Health: [Griffin] %1$s ❤",
@@ -18783,7 +18783,7 @@
 },
 {
 "en": "Mob Types: ✿ Mythological, ☮ Animal, ❃ Elusive ❤",
-"zh": "生物种族: ✿ 神话、☮ 动物、❃ 隐匿 ❤"
+"zh": "生物种族: ✿ 神话庆典、☮ 动物、❃ 隐匿 ❤"
 },
 {
 "en": "Applies the Mantid reforge when combined with Armor.",
@@ -19219,7 +19219,7 @@
 },
 {
 "en": "Mob Types: ✿ Mythological, ✰ Humanoid ❤",
-"zh": "生物种族: ✿ 神话、✰ 人形 ❤"
+"zh": "生物种族: ✿ 神话庆典、✰ 人形 ❤"
 },
 {
 "en": "Health: [Griffin] %1$s ❤ [Griffin] %2$s ❤",
@@ -19231,7 +19231,7 @@
 },
 {
 "en": "Mob Types: ✿ Mythological, ༕ Undead ❤",
-"zh": "生物种族: ✿ 神话、༕ 亡灵 ❤"
+"zh": "生物种族: ✿ 神话庆典、༕ 亡灵 ❤"
 },
 {
 "en": "Health: [No Pet/Griffin] %1$s ❤ [Griffin] %2$s ❤ [Griffin] %3$s ❤ [Griffin] %4$s ❤ [Griffin] %5$s ❤ [Griffin] %6$s ❤",
@@ -19247,7 +19247,7 @@
 },
 {
 "en": "Mob Types: ✿ Mythological, ✰ Humanoid, ♣ Elusive ❤",
-"zh": "生物种族: ✿ 神话、✰ 人形、♣ 隐匿 ❤"
+"zh": "生物种族: ✿ 神话庆典、✰ 人形、♣ 隐匿 ❤"
 },
 {
 "en": "The Minotaur is a rare mob in the Mythological Ritual. It will attack at melee range, and can throw an axe at you, temporarily slowing down your healing speed. It has a special mechanic called Bleed that allows it to do more damage. It increases by %1$s every time it hits you, and increases by %2$s every time its axe hits you.",
@@ -20859,7 +20859,7 @@
 },
 {
 "en": "Mob Types: ♆ Magmatic, ❃ Elusive, ☮ Animal ❤",
-"zh": "生物种族: ♆ 岩浆、❃ 隐匿、☮ 动物 ❤"
+"zh": "生物种族: ♆ 熔岩、❃ 隐匿、☮ 动物 ❤"
 },
 {
 "en": "Right-click while on a plot to instantly clean it, saving you the trouble of doing it yourself! However, the Plot Eraser gets comsumed in the process.",
@@ -22435,7 +22435,7 @@
 },
 {
 "en": "Mob Types: ♆ Magmatic, 🦴 Skeletal, ❃ Elusive ❤",
-"zh": "生物种族: ♆ 岩浆、🦴 骷髅、❃ 隐匿 ❤"
+"zh": "生物种族: ♆ 熔岩、🦴 骷髅、❃ 隐匿 ❤"
 },
 {
 "en": "Can be placed.",
@@ -23943,7 +23943,7 @@
 },
 {
 "en": "Mob Types: ✿ Mythological, ☮ Animal ❤",
-"zh": "生物种族: ✿ 神话、☮ 动物 ❤"
+"zh": "生物种族: ✿ 神话庆典、☮ 动物 ❤"
 },
 {
 "en": "Health: [Griffin/Griffin] %1$s × %2$s ❤ [Griffin/Griffin] %3$s × %4$s ❤ [Griffin] %5$s × %6$s ❤",
@@ -25019,7 +25019,7 @@
 },
 {
 "en": "Mob Types: ✿ Mythological, ⚓ Aquatic, ✰ Humanoid",
-"zh": "生物种族: ✿ 神话、⚓ 水生、✰ 人形"
+"zh": "生物种族: ✿ 神话庆典、⚓ 水生、✰ 人形"
 },
 {
 "en": "A forceful Gold Axe which can break a large amount of logs in a single hit! Only available for Stranded players.",
@@ -32943,7 +32943,7 @@
 },
 {
 "en": "Obtained from killing Maxor, Storm, Goldor, and Necron in The Catacombs",
-"zh": "在地下墓穴中多次击杀梅克索尔、风暴、戈尔多和耐克伦"
+"zh": "在地下墓穴中多次击杀马克索、斯托姆、戈尔多和耐克伦"
 },
 {
 "en": "lots of times. Grants %1$sx stats on The Catacombs Floor VII.",

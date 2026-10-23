@@ -13,14 +13,19 @@
 - 「To X」返回按钮译为「返回X」，生物名牌「[Lv70] X」译为「[等级 70] X」。
 - Boss 血条：任务导航「Objective: …」（如「目标: 找到凯莉 ⬉」）与矮人矿洞活动（如「活动 哥布林突袭 正在远方矿藏进行，剩余 12:34」）按固定格式翻译，方向箭头与进度「(3/64)」保持原样。
 - 菜单中被拆成多行的句子按整段匹配（约 500 段），只在上下文中才有意义的短片段（如单独一行的「Bazaar.」）不再单独套用，避免在其他菜单中出现错误的译文。
-- 收集到的菜单、NPC 对话后界面（如调律师的饰品力量菜单）、怪物名牌等零散原文约 1,500 条补译。
+- 收集到的菜单、NPC 对话后界面（如调律师的饰品能力菜单）、怪物名牌等零散原文约 1,500 条补译。
+- 碎片背景介绍（灰色斜体段落）补译 281 种，集市中出现过的碎片基本都有译文。
+- NPC 对话的说话人显示中文名（如「[NPC] 凯莉: 太棒了！」）；补译凯莉、南希、害虫猎人帕梅拉、垂钓者安格斯等 NPC 的对话，侧边栏金 / 银 / 铜牌、动作栏「法力不足」。
+- 集市订单簿每档价格单独翻译，翻译与收集移到后台，打开订单簿不再卡顿；新增菜单标题与路径词、13 种作物竞赛奖牌条件、附魔等级条件、瑞安营火任务对话。
 
 ### 统一译名
 
-- 同一英文在各处只用一个译名：Inventory 物品栏（背包 专指 Backpack）、Armor 盔甲、Mining Tool 挖矿工具、Farming Tool 农业工具、Combine 合成、Instant Buy / Instant Sell 即时购买 / 即时出售、Buy Order 收购订单、Sell Offer 出售挂单、Tiered Bonus 阶梯加成、Vacuum Bag 吸尘袋、Mycelium 菌丝体、Lushlilac 繁茂丁香、Fragment 残片（巨龙碎片除外；Shard 为碎片）、Dark Auction 暗黑拍卖、Mutations 突变植物、调律师的饰品 Power 力量（与力量石一致）。
+- 同一英文在各处只用一个译名：Inventory 物品栏（背包 专指 Backpack）、Armor 盔甲、Mining Tool 挖矿工具、Farming Tool 农业工具、Combine 合成、Instant Buy / Instant Sell 即时购买 / 即时出售、Buy Order 收购订单、Sell Offer 出售挂单、Tiered Bonus 阶梯加成、Vacuum Bag 吸尘袋、Mycelium 菌丝体、Lushlilac 繁茂丁香、Fragment 残片（巨龙碎片除外；Shard 为碎片）、Dark Auction 暗黑拍卖、Mutations 突变植物、Reforge Stone 重铸石、Mining Fiesta 挖矿嘉年华、Campfire 营火、Pristine 纯净度（Pure 重铸为纯净）。
+- 调律师的饰品 Power 译「能力」：能力石、「X」能力、入门能力（Strength 属性与 Power 附魔仍为「力量」）；Power Crystal 信标水晶（Energy Crystal 为能量水晶）；神话庆典中的生物为「神话庆典生物」（稀有度 MYTHIC 仍为「神话」）。
 - 修饰词名与附魔名全部按校对稿（如 Fabled 传世、Withered 枯萎、Bountiful 丰饶），菜单、头顶名字、侧边栏等内置数据与术语表同步。
 - 两个不同事物共用一个译名的，改译未校对的一方：Cold Breeze 冷风 / Icy Wind 冰风（Mistral 寒风）、Stomp 重踏（Trample 践踏）、Abundant Harvest 大丰收、Fruitful Bonus 硕果加成、Wallet 皮夹、Garland 花彩、Hyper Cleaver 超能屠刀、Vermin Trap 害兽陷阱、Rock 宠物 岩石、Praying Mantis 祈祷螳螂、The Bastion 堡垒、Deep Root 深根地带。
 - 功能性 NPC 按职能统一：钓鱼商人、农场商人、战斗商人、炼金术士、附魔书呆子、调律师。
+- 撞名拆分：Shaded 阴翳、Dayswitch 昼之开关 / Nightswitch 夜之开关、Spike（生物）尖刺怪、Battle Experience 实战经验、Mega Frenzy 极度狂热、Park Enthusiast 公园狂热者、Hypixel Ranks Hypixel 会员头衔、Green Thumb 附魔园艺妙手（重铸仍为园艺）。
 - 拍卖记录「Auction #… Bid #… August 2025」中的数字为年份，译为「2025 年 8 月」。
 
 - 内置 SkyBlock 术语表（`data/SkyBlock术语表.xlsx`，以 NotEnoughUpdates 物品库为基础整理并校对）：物品名称 7,739 条、物品描述 5,309 条、宠物 89 条、修饰词 136 条、区域 169 条、生物 255 条、附魔 157 条。

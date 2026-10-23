@@ -90,7 +90,7 @@
     "Terra Shard": "泰拉碎片",
     "Iguana Shard": "鬣蜥碎片",
     "Cuboa Shard": "方蟒碎片",
-    "Goldolot Shard": "金蝾螈碎片",
+    "Goldolot Shard": "黄金蝾螈碎片",
     "Tiamat Shard": "提亚马特碎片",
     "Starborn Shard": "星裔碎片",
     "Komodo Dragon Shard": "科莫多龙碎片",
@@ -39955,7 +39955,7 @@
     },
     {
       "en": "Grants +%1$s  Tracking towards Wiki Tiki.",
-      "zh": "对维基提基提供 +%1$s 追踪。",
+      "zh": "对维基提基魔像提供 +%1$s 追踪。",
       "source": {
         "kind": "canonical full effect",
         "item": "Sneaky Tiki Shard",

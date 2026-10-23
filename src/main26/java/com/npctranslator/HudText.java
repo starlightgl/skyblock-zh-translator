@@ -124,6 +124,10 @@ public final class HudText {
         String zh=null;
         if(core.startsWith("Objective: ")) {
             String goal=OBJECTIVES.get(core.substring(11).trim());
+            if(goal==null) { // "Mine 64 Amethyst": a number in the goal is kept as it is
+                Matcher num=Pattern.compile("\\d[\\d,.]*").matcher(core.substring(11).trim());
+                if(num.find()) { String g=OBJECTIVES.get(core.substring(11).trim().substring(0,num.start())+"{0}"+core.substring(11).trim().substring(num.end())); if(g!=null) goal=g.replace("{0}",num.group()); }
+            }
             if(goal!=null) zh="目标: "+v.style(a+11)+goal;
         }
         if(zh==null) {

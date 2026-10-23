@@ -161,7 +161,7 @@ public final class HudText {
         String region=regions(raw);
         if("LOCATION".equals(surface)) return region.equals(raw)?null:region;
         if(!region.equals(raw)) {
-            region=replaceLiteral(region,"Drill Fuel","钻头燃料");region=replaceLiteral(region,"SkyBlock XP","空岛经验");region=replaceLiteral(region,"HOTM Progression","山之心进度");return region;
+            region=replaceLiteral(region,"Drill Fuel","钻头燃料");region=replaceLiteral(region,"SkyBlock XP","空岛经验");region=replaceLiteral(region,"HOTM Progression","山之心进度");region=replaceLiteral(region,"HOTF Progression","森林之心进度");return region;
         }
         // Restrict overlay handling to its own known messages/segments. Health/mana stays untouched.
         for(Rule rule:RULES) {
@@ -172,7 +172,7 @@ public final class HudText {
             return v.replace(offset,offset+text.length(),rendered.toString());
         }
         if("OVERLAY".equals(surface)) {
-            String out=replaceLiteral(raw,"Drill Fuel","钻头燃料");out=replaceLiteral(out,"SkyBlock XP","空岛经验");out=replaceLiteral(out,"HOTM Progression","山之心进度");return out.equals(raw)?null:out;
+            String out=replaceLiteral(raw,"Drill Fuel","钻头燃料");out=replaceLiteral(out,"SkyBlock XP","空岛经验");out=replaceLiteral(out,"HOTM Progression","山之心进度");out=replaceLiteral(out,"HOTF Progression","森林之心进度");return out.equals(raw)?null:out;
         }
         Matcher field=Pattern.compile("^([^A-Za-z]*)([A-Za-z][A-Za-z' ]{0,45}):\\s*(.*)$").matcher(v.text);
         if(field.matches()) {
@@ -183,8 +183,9 @@ public final class HudText {
                 return new View(out).replace(field.start(2),field.end(2),label);
             }
         }
-        Matcher skill=Pattern.compile("^(Combat|Foraging|Fishing|Farming|Mining) (\\d+:.*)$").matcher(text);
-        if(skill.matches())return v.replace(v.text.indexOf(text),v.text.indexOf(text)+skill.group(1).length(),LABELS.get(skill.group(1)));
+        // Tab skill lines "Carpentry 25: 21.7%": any skill that has a label
+        Matcher skill=Pattern.compile("^([A-Z][a-z]+) (\\d+:.*)$").matcher(text);
+        if(skill.matches() && LABELS.containsKey(skill.group(1)))return v.replace(v.text.indexOf(text),v.text.indexOf(text)+skill.group(1).length(),LABELS.get(skill.group(1)));
         Matcher clock=Pattern.compile("^(\\d{1,2}):(\\d{2})(am|pm)(.*)$").matcher(text);
         if(clock.matches())return v.style(0)+(clock.group(3).equals("am")?"上午 ":"下午 ")+clock.group(1)+":"+clock.group(2)+clock.group(4);
         Matcher season=Pattern.compile("^(Early |Late )?(Spring|Summer|Autumn|Winter) (\\d+)(?:st|nd|rd|th)$").matcher(text);

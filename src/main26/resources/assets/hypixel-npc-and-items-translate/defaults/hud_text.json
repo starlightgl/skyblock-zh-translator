@@ -182,7 +182,14 @@
     "Foraging Camp": "伐木营地",
     "Weather Station": "气象站",
     "Trade Center": "交易中心",
-    "Security Hall": "安保大厅"
+    "Security Hall": "安保大厅",
+    "Galatea": "加拉蒂亚",
+    "Tangleburg": "缠结镇",
+    "Tangleburg's Path": "缠结镇小径",
+    "North Reaches": "北部远野",
+    "West Reaches": "西部远野",
+    "South Reaches": "南部远野",
+    "Moonglade's Edge": "月光林缘"
   },
   "labels": {
     "Info": "信息",
@@ -255,7 +262,25 @@
     "GOLD medals": "金牌",
     "SILVER medals": "银牌",
     "BRONZE medals": "铜牌",
-    "Minister": "大臣"
+    "Minister": "大臣",
+    "Carpentry": "木工",
+    "Hunting": "狩猎",
+    "Alchemy": "炼金",
+    "Enchanting": "附魔",
+    "Taming": "驯养",
+    "Runecrafting": "符文工艺",
+    "Social": "社交",
+    "Foraging Fortune": "伐木时运",
+    "Sweep": "横扫",
+    "Respiration": "水下呼吸",
+    "Pressure Resistance": "压力抵抗",
+    "Pressure": "水压",
+    "Forest Whispers": "森林低语",
+    "Moonglade Beacon": "月光信标",
+    "Fire Sales": "限时特卖",
+    "Thunderstorm": "雷暴",
+    "Lushlilac": "繁茂丁香",
+    "Salts": "盐"
   },
   "values": {
     "Arachne's Burrow": "阿拉克涅巢穴",
@@ -611,7 +636,8 @@
     "Foxy": "福克西",
     "Marina": "玛丽娜",
     "Paul": "保罗",
-    "Scorpius": "斯科皮乌斯"
+    "Scorpius": "斯科皮乌斯",
+    "AVAILABLE": "可用"
   },
   "entries": [
     {
@@ -1485,6 +1511,90 @@
     {
       "en": "NOT ENOUGH MANA",
       "zh": "法力不足"
+    },
+    {
+      "en": "Talk to Xavier",
+      "zh": "与泽维尔交谈"
+    },
+    {
+      "en": "Check on Melody",
+      "zh": "去看看梅洛迪"
+    },
+    {
+      "en": "Collect Acacia Logs",
+      "zh": "收集金合欢原木"
+    },
+    {
+      "en": "Give Melody Acacia Logs",
+      "zh": "把金合欢原木交给梅洛迪"
+    },
+    {
+      "en": "Talk to Molbert",
+      "zh": "与莫尔伯特交谈"
+    },
+    {
+      "en": "Collect Jungle Logs",
+      "zh": "收集丛林原木"
+    },
+    {
+      "en": "Give Molbert Jungle Logs",
+      "zh": "把丛林原木交给莫尔伯特"
+    },
+    {
+      "en": "Leave the area",
+      "zh": "离开该区域"
+    },
+    {
+      "en": "Talk to Hina",
+      "zh": "与希娜交谈"
+    },
+    {
+      "en": "Talk to Swoop",
+      "zh": "与斯伍普交谈"
+    },
+    {
+      "en": "Collect the Berry",
+      "zh": "收集浆果"
+    },
+    {
+      "en": "Cut a Fig Tree",
+      "zh": "砍一棵无花果树"
+    },
+    {
+      "en": "Talk to David Hunterborough",
+      "zh": "与大卫·亨特伯勒交谈"
+    },
+    {
+      "en": "Talk to David H.",
+      "zh": "与大卫·亨特伯勒交谈"
+    },
+    {
+      "en": "Run the race in {0}s",
+      "zh": "在 {0} 秒内跑完比赛"
+    },
+    {
+      "en": "Trunk {0}%",
+      "zh": "树干 {0}%"
+    },
+    {
+      "en": "Branch {0}%",
+      "zh": "树枝 {0}%"
+    },
+    {
+      "en": "+{0} Fig Fortune",
+      "zh": "+{0} 无花果时运"
+    },
+    {
+      "en": "+{0} Mangrove Fortune",
+      "zh": "+{0} 红树时运"
+    },
+    {
+      "en": "You are AFK",
+      "zh": "你已进入挂机状态"
+    },
+    {
+      "en": "Move around to return to the lobby.",
+      "zh": "移动一下即可返回大厅。"
     }
   ],
   "objectives": {
@@ -1501,7 +1611,20 @@
     "Travel to the Savanna Woodland": "前往热带草原林地",
     "Complete Campfire Trials": "完成营火试炼",
     "Talk to Jeff in your Barn": "与谷仓里的杰夫交谈",
-    "Show Jeff a Specialized Farming Tool": "向杰夫展示一件专用农业工具"
+    "Show Jeff a Specialized Farming Tool": "向杰夫展示一件专用农业工具",
+    "Talk to Xavier": "与泽维尔交谈",
+    "Check on Melody": "去看看梅洛迪",
+    "Collect Acacia Logs": "收集金合欢原木",
+    "Give Melody Acacia Logs": "把金合欢原木交给梅洛迪",
+    "Talk to Molbert": "与莫尔伯特交谈",
+    "Collect Jungle Logs": "收集丛林原木",
+    "Give Molbert Jungle Logs": "把丛林原木交给莫尔伯特",
+    "Leave the area": "离开该区域",
+    "Talk to Hina": "与希娜交谈",
+    "Talk to Swoop": "与斯伍普交谈",
+    "Collect the Berry": "收集浆果",
+    "Cut a Fig Tree": "砍一棵无花果树",
+    "Talk to David Hunterborough": "与大卫·亨特伯勒交谈"
   },
   "boss_events": {
     "GOBLIN RAID": "哥布林突袭",
@@ -1523,6 +1646,10 @@
     {
       "en": "HALLOWEEN STORE SALE - UP TO {0}% OFF - {1}d {2}h {3}m {4}s",
       "zh": "万圣节商店特卖 - 最高 {0}% 折扣 - {1} 天 {2} 小时 {3} 分 {4} 秒"
+    },
+    {
+      "en": "Objective: Run the race in {0}s",
+      "zh": "目标: 在 {0} 秒内跑完比赛"
     }
   ]
 }

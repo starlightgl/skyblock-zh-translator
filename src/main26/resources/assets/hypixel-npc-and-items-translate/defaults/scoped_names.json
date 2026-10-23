@@ -563,6 +563,8 @@
     "Trade Center": "交易中心",
     "Election Room": "选举室",
     "Security Hall": "安保大厅",
-    "Canvas Room": "画布室"
+    "Canvas Room": "画布室",
+    "You are AFK": "你已进入挂机状态",
+    "Move around to return to the lobby.": "移动一下即可返回大厅。"
   }
 }

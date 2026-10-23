@@ -185,7 +185,7 @@
     "Matcho Shard": "火柴怪碎片",
     "Magma Slug Shard": "岩浆蛞蝓碎片",
     "Earthworm Shard": "蚯蚓碎片",
-    "Praying Mantis Shard": "螳螂碎片",
+    "Praying Mantis Shard": "祈祷螳螂碎片",
     "Kiwi Shard": "几维鸟碎片",
     "King Minos Shard": "米诺斯王碎片",
     "Hideondra Shard": "匿库虫碎片",
@@ -229,7 +229,7 @@
     "Phanpyre Shard": "幻夜蝠碎片",
     "Blue Crab Shard": "蓝蟹碎片",
     "Boreal Owl Shard": "北方猫头鹰碎片",
-    "Spike Shard": "尖刺碎片",
+    "Spike Shard": "尖刺怪碎片",
     "Moth Shard": "飞蛾碎片",
     "Cricket Shard": "蟋蟀碎片",
     "Field Mouse Shard": "田鼠碎片",
@@ -47524,6 +47524,2254 @@
         "row": 6314,
         "supplemental_original": "somehow.",
         "note": "完整原文来自本地采集；原表仅有第一行"
+      }
+    },
+    {
+      "en": "These undead creatures are known for their resilience, shrugging off attacks that would fell lesser creatures.",
+      "zh": "这些亡灵生物以顽强著称，足以击倒弱小生物的攻击，它们根本不放在眼里。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Tank Zombie Shard"
+      }
+    },
+    {
+      "en": "These intelligent birds are known for their problem-solving abilities and their eerie, echoing calls.",
+      "zh": "这些聪明的鸟以善于解决难题著称，叫声诡异，回响不绝。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Crow Shard"
+      }
+    },
+    {
+      "en": "Coralots have a unique ability to regenerate lost limbs, making them resilient survivors in their colorful habitat.",
+      "zh": "珊瑚蝾螈拥有再生断肢的独特本领，因此能在色彩斑斓的栖息地里顽强生存。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Coralot Shard"
+      }
+    },
+    {
+      "en": "Tepids can only survive in waters of a very specific temperature, hence them being exclusive to the Critter Safari's lake.",
+      "zh": "温热者只能在温度非常特定的水中生存，所以只出现在小动物游猎场的湖里。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Tepid Shard"
+      }
+    },
+    {
+      "en": "Once no more than an offering intended be sacrificed, the Cretan Bull now roams free, headbutting whomever it pleases.",
+      "zh": "克里特公牛曾经只是一头准备献祭的祭品，如今却自由游荡，想撞谁就撞谁。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Cretan Bull Shard"
+      }
+    },
+    {
+      "en": "Ants are incredibly strong, being able to carry around 20x their own body weight.",
+      "zh": "蚂蚁力大无穷，能搬动约为自身体重 20 倍的东西。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Ant Shard"
+      }
+    },
+    {
+      "en": "Cavernfish stick to the quiet caves due to the solace they offer from predators and other unwanted visitors.",
+      "zh": "洞穴鱼常待在幽静的洞穴里，因为那里能让它们躲开捕食者和其他不速之客。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Cavernfish Shard"
+      }
+    },
+    {
+      "en": "Strongarms live for the thrill of a midwinter snowball fight.",
+      "zh": "壮臂活着就是为了仲冬时节那场刺激的雪球大战。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Strongarm Shard"
+      }
+    },
+    {
+      "en": "Hideonsun's bullets reflect the blinding light of the sun, making them harder to dodge.",
+      "zh": "匿日虫的子弹会反射刺眼的阳光，让人更难躲开。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Hideonsun Shard"
+      }
+    },
+    {
+      "en": "Seemingly still sentient despite having spent years as nothing but a husk.",
+      "zh": "明明早已沦为一具空壳多年，却似乎仍保有意识。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Haggard Shard"
+      }
+    },
+    {
+      "en": "The Honeyhog only thinks about honey. Nothing else goes through its brain.",
+      "zh": "蜜猪满脑子只有蜂蜜，别的什么都不想。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Honeyhog Shard"
+      }
+    },
+    {
+      "en": "Shyworms are immensely afraid of all other living organisms, even fellow Shyworms, and tend to prefer dark places because most other critters don't.",
+      "zh": "羞怯蠕虫极度害怕其他一切生物，连同类也不例外；它们偏爱黑暗的地方，因为别的小动物大多不去那里。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Shyworm Shard"
+      }
+    },
+    {
+      "en": "A freak mutation of sorts granted this particular species of Nautilus strange powers.",
+      "zh": "某种怪异的突变让这一种鹦鹉螺获得了奇特的本领。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Brineling Shard"
+      }
+    },
+    {
+      "en": "Their ears droop like melted chocolate, and their paws leave behind sugary footprints.",
+      "zh": "它们的耳朵像融化的巧克力一样耷拉着，爪子会留下甜甜的脚印。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Chocobun Shard"
+      }
+    },
+    {
+      "en": "Their eyes glow with an intense heat, allowing them to see clearly even on the darkest of nights.",
+      "zh": "它们的眼睛散发着炽热的光芒，即使在最黑的夜里也能看得一清二楚。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Firefox Shard"
+      }
+    },
+    {
+      "en": "A Groundhog's teeth never stop growing throughout their entire lives.",
+      "zh": "土拨鼠的牙齿终生都在不停生长。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Groundhog Shard"
+      }
+    },
+    {
+      "en": "With so many predators around, they have evolved to fear absolutely everything.",
+      "zh": "周围的捕食者太多，它们进化得对一切都怕得要命。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Timil Shard"
+      }
+    },
+    {
+      "en": "Capable of imitating a hawk to ward off predators, though it doesn't always work.",
+      "zh": "能模仿鹰的叫声吓退捕食者，不过并不总是管用。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Blue Jay Shard"
+      }
+    },
+    {
+      "en": "They hop aimlessly around Torrhus. They don't have any natural predators on account of their cuteness.",
+      "zh": "它们在托鲁斯漫无目的地蹦来蹦去。因为长得太可爱，它们没有任何天敌。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Bunbun Shard"
+      }
+    },
+    {
+      "en": "They will defend their colony - and its honey - resolutely.",
+      "zh": "它们会坚决保卫自己的蜂群，还有蜂群的蜂蜜。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Honeybuzz Shard"
+      }
+    },
+    {
+      "en": "Their wings beat rapidly, producing a melodic hum that resonates throughout the mesa.",
+      "zh": "它们的翅膀振动得飞快，发出悠扬的嗡鸣，在整片台地间回荡。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Pollendart Shard"
+      }
+    },
+    {
+      "en": "Bramble elementals have a strong connection to forests, often serving as their guardians.",
+      "zh": "荆棘元素与森林有着紧密的联系，常常担任森林的守护者。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Bramble Shard"
+      }
+    },
+    {
+      "en": "Their presence can soothe and calm, much like the gentle lapping of waves on a shore.",
+      "zh": "它们的存在能抚慰人心，就像海浪轻轻拍打着海岸。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Tide Shard"
+      }
+    },
+    {
+      "en": "Quake elementals are steadfast protectors, using their strength to shield the land.",
+      "zh": "地震元素是坚定的守护者，用自己的力量护卫大地。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Quake Shard"
+      }
+    },
+    {
+      "en": "Their keen eyes can spot the tiniest seeds, making them adept foragers.",
+      "zh": "它们目光敏锐，能发现最细小的种子，是觅食好手。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Sparrow Shard"
+      }
+    },
+    {
+      "en": "Goldfins shimmer through the water, their golden scales reflecting light like precious jewels beneath the surface.",
+      "zh": "金鳍鱼在水中闪闪发光，金色的鳞片在水面下像珍贵的宝石一样反射光芒。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Goldfin Shard"
+      }
+    },
+    {
+      "en": "Troglobytes skulk through the darkest caverns, their pale, sightless eyes adapted to the perpetual darkness of their subterranean world.",
+      "zh": "穴居虫在最黑暗的洞穴中潜行，苍白而失明的眼睛早已适应了地下世界永恒的黑暗。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Troglobyte Shard"
+      }
+    },
+    {
+      "en": "Hideoncave camouflages itself within the rocky walls of caverns, its gray shell blending perfectly with the stone.",
+      "zh": "匿洞虫把自己伪装在洞穴的岩壁里，灰色的外壳与石头完美融为一体。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Hideoncave Shard"
+      }
+    },
+    {
+      "en": "Salamanders thrive in volcanic regions, their bodies glowing with an inner heat that can ignite their surroundings.",
+      "zh": "火蜥蜴在火山地带繁衍生息，身体散发着内在的热量，足以点燃周围的一切。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Salamander Shard"
+      }
+    },
+    {
+      "en": "Their bodies are adorned with geometric patterns that pulse with a mystical energy.",
+      "zh": "它们身上布满几何图案，图案随神秘的能量明灭跳动。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Cuboa Shard"
+      }
+    },
+    {
+      "en": "Their keen senses allow them to detect food sources from great distances, making them persistent and hard to eradicate.",
+      "zh": "它们感官敏锐，能从很远的地方察觉食物来源，因此生命力顽强，难以根除。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Field Mouse Shard"
+      }
+    },
+    {
+      "en": "These frogs are agile jumpers, leaping gracefully between lily pads and submerged roots in search of insects.",
+      "zh": "这些青蛙是敏捷的跳跃高手，会在睡莲叶和水下根须之间优雅地跳跃，寻找昆虫。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Mossybit Shard"
+      }
+    },
+    {
+      "en": "Rain Slimes appear during heavy downpours, their translucent bodies shimmering with absorbed raindrops.",
+      "zh": "雨水史莱姆会在倾盆大雨时出现，半透明的身体里吸满了雨滴，闪闪发亮。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Rain Slime Shard"
+      }
+    },
+    {
+      "en": "How does the chicken breathe underwater? Is it a special chicken?",
+      "zh": "这只鸡是怎么在水下呼吸的？它是一只特别的鸡吗？",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Wetwing Shard"
+      }
+    },
+    {
+      "en": "Herons are often solitary, their silent, deliberate movements making them masterful stalkers in wetlands and marshes.",
+      "zh": "苍鹭通常独来独往，动作安静而从容，是湿地与沼泽中的潜行高手。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Heron Shard"
+      }
+    },
+    {
+      "en": "Be weary if you spot a Sea Witch lurking just beneath the surface, for trouble is surely brewing.",
+      "zh": "如果你看到海女巫潜伏在水面下，可要当心了，麻烦肯定正在酝酿。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Sea Witch Shard"
+      }
+    },
+    {
+      "en": "These formidable guardians remain still until provoked, then spring into action with incredible swiftness and strength.",
+      "zh": "这些可怕的守卫在被激怒前一动不动，一旦被激怒，就会以惊人的速度和力量展开攻击。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Obsidian Defender Shard"
+      }
+    },
+    {
+      "en": "They chirp both to attract mates and to defend their territory.",
+      "zh": "它们鸣叫既是为了吸引配偶，也是为了保卫领地。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Cricket Shard"
+      }
+    },
+    {
+      "en": "Their scales can detect the slightest changes in water pressure, helping them avoid predators and obstacles.",
+      "zh": "它们的鳞片能察觉水压最细微的变化，帮助它们避开捕食者和障碍物。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Salmon Shard"
+      }
+    },
+    {
+      "en": "Vipers can reach lengths of up to 2 meters.",
+      "zh": "蝰蛇身长可达 2 米。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Viper Shard"
+      }
+    },
+    {
+      "en": "Their heads can rotate nearly 180 degrees, giving them an unparalleled field of vision to spot potential meals or threats.",
+      "zh": "它们的头几乎能转动 180 度，视野无与伦比，能发现潜在的猎物或威胁。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Praying Mantis Shard"
+      }
+    },
+    {
+      "en": "Lotums spend most of their days atop lotuses, basking in the sun.",
+      "zh": "莲栖兽每天大部分时间都待在莲花上晒太阳。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Lotum Shard"
+      }
+    },
+    {
+      "en": "Zombie Soldiers march tirelessly through the catacombs, their decayed bodies clad in ancient, rusting armor.",
+      "zh": "僵尸士兵在地下墓穴中不知疲倦地行军，腐朽的身体上穿着古老而生锈的盔甲。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Zombie Soldier Shard"
+      }
+    },
+    {
+      "en": "This gentle giant is often seen lounging lazily among the bamboo, munching on leaves with a contented expression.",
+      "zh": "这位温和的大块头常常懒洋洋地躺在竹林里，一脸满足地嚼着竹叶。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Bambuleaf Shard"
+      }
+    },
+    {
+      "en": "Once dwarves. Now, driven mad by greed, they are nothing but impulsive.",
+      "zh": "他们曾经是矮人，如今被贪婪逼疯，只剩下一时冲动。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Treasure Hoarder Shard"
+      }
+    },
+    {
+      "en": "Sycophants are twisted, undead servants, their decayed forms clad in tattered remnants of finery.",
+      "zh": "谄媚者是扭曲的亡灵仆从，腐朽的身躯上还裹着华服的破烂残片。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Sycophant Shard"
+      }
+    },
+    {
+      "en": "Ents can communicate with all plant life.",
+      "zh": "树人能与所有植物交流。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Ent Shard"
+      }
+    },
+    {
+      "en": "Its howl can freeze the hearts of those who hear it, instilling fear and hesitation in its prey.",
+      "zh": "它的嚎叫能让听者的心为之冻结，让猎物心生恐惧、犹豫不前。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Soul of the Alpha Shard"
+      }
+    },
+    {
+      "en": "Its thick, velvety fur not only provides warmth but also gives Mochibear a cuddly appearance.",
+      "zh": "它浓密柔软的毛不仅保暖，还让麻薯熊看起来软萌可抱。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Mochibear Shard"
+      }
+    },
+    {
+      "en": "Magma Slugs are highly resistant to extreme temperatures, thriving in environments where few others can survive.",
+      "zh": "岩浆蛞蝓极能耐受极端温度，在少有生物能生存的环境中也能繁衍生息。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Magma Slug Shard"
+      }
+    },
+    {
+      "en": "Their glowing eyes and burning fangs make them a nightmarish sight.",
+      "zh": "它们发光的眼睛和燃烧的毒牙，看起来就像一场噩梦。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Flaming Spider Shard"
+      }
+    },
+    {
+      "en": "Kiwis are about the size of a chicken, with a body length ranging from 45 to 50 centimeters.",
+      "zh": "几维鸟大约和鸡一样大，体长 45 到 50 厘米。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Kiwi Shard"
+      }
+    },
+    {
+      "en": "These elite Zealots are fiercely loyal to the Ender Dragons, guarding their domains with unmatched strength.",
+      "zh": "这些精英狂热者对末影龙忠心耿耿，以无可匹敌的力量守卫着它们的领地。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Zealot Bruiser Shard"
+      }
+    },
+    {
+      "en": "These eerie duos combine the relentless nature of the drowned with the agility of the strider.",
+      "zh": "这对诡异的组合兼具溺尸的锲而不舍和炽足兽的灵活。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Stridersurfer Shard"
+      }
+    },
+    {
+      "en": "These combat frogs are known for their aggressive behavior, fiercely defending their territory from any intruders.",
+      "zh": "这些好斗的青蛙以攻击性强著称，会凶猛地保卫自己的领地，驱赶任何入侵者。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Rana Shard"
+      }
+    },
+    {
+      "en": "You're never truly alone in your Garden with these guys burrowing around.",
+      "zh": "有这些家伙在地下钻来钻去，你在花园里永远不会真正孤单。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Earthworm Shard"
+      }
+    },
+    {
+      "en": "Sometimes spends entire days turning in circles.",
+      "zh": "有时会一整天都在原地打转。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Flipflopper Shard"
+      }
+    },
+    {
+      "en": "Polaris are very territorial, opting to attack first and ask questions later.",
+      "zh": "波拉里斯领地意识极强，向来先动手再问话。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Polaris Shard"
+      }
+    },
+    {
+      "en": "Treefrogs have specialized toe pads to aid with climbing and jumping. Some can even camouflage!",
+      "zh": "树蛙有特化的趾垫，便于攀爬和跳跃。有些甚至还会伪装！",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Treefrog Shard"
+      }
+    },
+    {
+      "en": "Brimming with junk, the Bayou Sludge creation of the Bayou itself.",
+      "zh": "河岸污泥史莱姆满身都是垃圾，是河岸本身的造物。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Bayou Sludge Shard"
+      }
+    },
+    {
+      "en": "The Areita are a strange species of arachnid that are only known to inhabit one other mansion.",
+      "zh": "阿蕾塔是一种奇怪的蛛形生物，已知只在另一座宅邸里出没过。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Areita Shard"
+      }
+    },
+    {
+      "en": "Contrary to popular opinion, Bluebirds are not actually blue.",
+      "zh": "和大多数人想的不一样，蓝鸲其实并不是蓝色的。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Bluebird Shard"
+      }
+    },
+    {
+      "en": "They live only in the deepest, darkest depths, typically feeding on whalefall.",
+      "zh": "它们只生活在最深、最黑暗的海底，通常以鲸落为食。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Osedax Shard"
+      }
+    },
+    {
+      "en": "The Duplico mimics its surroundings to stay out of sight of its targets. Staying near a Duplico for a prolonged period can evoke feelings of dread and paranoia.",
+      "zh": "复刻怪会模仿周围的环境，以免被目标发现。在复刻怪附近待久了，会让人心生恐惧、疑神疑鬼。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Duplico Shard"
+      }
+    },
+    {
+      "en": "Litterbugs tend to live in dark, quiet areas with plenty of rubbish to chow down upon.",
+      "zh": "垃圾虫喜欢住在阴暗安静、有大量垃圾可以大快朵颐的地方。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Litterbug Shard"
+      }
+    },
+    {
+      "en": "When threatened, it tends to either regurgitate its previous meal or release a foul-smelling odor.",
+      "zh": "受到威胁时，它往往会吐出上一顿吃的东西，或者释放难闻的气味。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Water Snake Shard"
+      }
+    },
+    {
+      "en": "Nothing is known about the Gazer, save for the fact that it detests light.",
+      "zh": "人们对凝视者一无所知，只知道它厌恶光。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Gazer Shard"
+      }
+    },
+    {
+      "en": "Honeybugs are social creatures, with each beehive containing a massive colony of them. When the hive is disturbed, the worker honeybugs will attack.",
+      "zh": "蜜虫是群居生物，每个蜂巢里都住着一大群。蜂巢受到打扰时，工蜜虫就会发起攻击。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Honeybug Shard"
+      }
+    },
+    {
+      "en": "Shuddersquids live only in the deepest waters of the coldest regions. They use the light that emanates from their bodies to guide the way and spot other Shuddersquids from afar, though this trait also makes them an easy target for predators.",
+      "zh": "颤栗鱿鱼只生活在最寒冷地区的最深水域。它们用身体发出的光来引路，也借此远远认出其他颤栗鱿鱼；不过这一特点也让它们很容易成为捕食者的目标。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Shuddersquid Shard"
+      }
+    },
+    {
+      "en": "Solsnatchers tend to loiter idly throughout the day but grow in confidence during the night.",
+      "zh": "夺日者白天往往无所事事地闲逛，到了夜里却越来越胆大。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Solsnatcher Shard"
+      }
+    },
+    {
+      "en": "The coloring of the Sepialot helps it blend in with its surroundings and avoid attacks from above.",
+      "zh": "墨鱼蝾螈的体色帮助它融入周围环境，躲开来自上方的攻击。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Sepialot Shard"
+      }
+    },
+    {
+      "en": "Their thick skin makes them incredibly resistant to most forms of attack, snake bite included.",
+      "zh": "它们皮糙肉厚，几乎不怕大多数攻击，连蛇咬也不例外。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Honey Badger Shard"
+      }
+    },
+    {
+      "en": "It drifts around aimlessly, going wherever the wind takes it.",
+      "zh": "它漫无目的地四处漂流，风把它吹到哪里，它就去哪里。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Driftling Shard"
+      }
+    },
+    {
+      "en": "For frog-hungry creatures such as Tewtils, the Lotus Atoll is an all-you-can-eat buffet.",
+      "zh": "对幼龟这种爱吃青蛙的生物来说，莲花环礁就是一场吃到饱的自助餐。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Tewtil Shard"
+      }
+    },
+    {
+      "en": "Minos creatures charge into battle with bull-like ferocity, capable of demolishing anything in their path.",
+      "zh": "米诺斯生物会像公牛一样凶猛地冲入战斗，足以摧毁挡在路上的一切。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Minos Hunter Shard"
+      }
+    },
+    {
+      "en": "Gets great levels of enjoyment out of bombarding tourists with heavy logs.",
+      "zh": "最喜欢拿沉重的原木砸游客取乐。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Woodchucker Shard"
+      }
+    },
+    {
+      "en": "Solars are energized by light and thus tend to stay near the surface.",
+      "zh": "日耀鱼靠光获得能量，所以常常待在水面附近。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Solar Shard"
+      }
+    },
+    {
+      "en": "Having initially died of thirst, it now endlessly roams the land in search of sustenance for its rapidly decomposing body.",
+      "zh": "它最初死于干渴，如今在大地上无尽游荡，为自己迅速腐烂的身体寻找养分。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Parched Shard"
+      }
+    },
+    {
+      "en": "Swoops down on unsuspecting creatures and sinks its fangs in deep.",
+      "zh": "它会俯冲向毫无防备的生物，把獠牙深深刺进去。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Bloodbat Shard"
+      }
+    },
+    {
+      "en": "Their distinctive croaks can be heard from a great distance.",
+      "zh": "它们独特的呱呱声在很远的地方都能听到。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Bullfrog Shard"
+      }
+    },
+    {
+      "en": "Their ability to hide in crevices and burrows makes them elusive and difficult to catch.",
+      "zh": "它们善于躲进缝隙和洞穴，所以行踪难觅，很难捕捉。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Eel Shard"
+      }
+    },
+    {
+      "en": "Its splendid coloring, though magnificent, makes it an easy target.",
+      "zh": "它的体色华丽夺目，却也让它很容易成为目标。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Goldolot Shard"
+      }
+    },
+    {
+      "en": "These legendary amphibians are both feared and revered, known for their immense size and territorial nature.",
+      "zh": "这些传奇两栖生物既令人畏惧又受人敬仰，以体型巨大、领地意识强著称。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Fenlord Shard"
+      }
+    },
+    {
+      "en": "Moray Eels can grow up to 3 meters in length, their muscular bodies enabling quick bursts of speed.",
+      "zh": "海鳝体长可达 3 米，强健的肌肉让它们能瞬间爆发出极快的速度。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Moray Eel Shard"
+      }
+    },
+    {
+      "en": "They are known for their feisty behavior, often flaring their fins and displaying their colors when threatened.",
+      "zh": "它们以脾气火爆著称，受到威胁时常常张开鳍、展示身上的颜色。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Fire Eel Shard"
+      }
+    },
+    {
+      "en": "Sea Serpents can reach lengths of over 20 meters, making them some of the largest creatures in the sea.",
+      "zh": "海蛇体长可超过 20 米，是海洋中体型最大的生物之一。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Sea Serpent Shard"
+      }
+    },
+    {
+      "en": "Their dual nature as both serpent and human makes them fascinating and fearsome,",
+      "zh": "它们兼具蛇与人的双重本性，既迷人又可怕，",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Naga Shard"
+      }
+    },
+    {
+      "en": "Their solitary nature and imposing presence makes them symbols of freedom and strength in the wild.",
+      "zh": "它们独来独往、气势逼人，在野外是自由与力量的象征。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Hawk Shard"
+      }
+    },
+    {
+      "en": "Their bald heads and powerful beaks are perfectly adapted for their scavenging lifestyle, allowing them to feed efficiently on carcasses.",
+      "zh": "它们光秃的头和强有力的喙完美适应了食腐的生活方式，能高效地啃食动物尸体。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Vulture Shard"
+      }
+    },
+    {
+      "en": "Its wings beat so quickly that they leave streaks of color in the air, like brushstrokes on the wind.",
+      "zh": "它的翅膀扇动得极快，在空中留下道道彩色的痕迹，就像风中的笔触。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Hummingbird Shard"
+      }
+    },
+    {
+      "en": "Peregrine Falcons, the fastest animals in the world, can reach diving speeds of over 386 kilometers per hour.",
+      "zh": "游隼是世界上速度最快的动物，俯冲速度可超过每小时 386 公里。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Falcon Shard"
+      }
+    },
+    {
+      "en": "Parakeets are extremely social creatures - if one is near, more will usually follow.",
+      "zh": "长尾鹦鹉非常爱群居：附近有一只，通常就会跟来更多只。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Parakeet Shard"
+      }
+    },
+    {
+      "en": "Their beaks are surprisingly lightweight, made of a spongy, hollow bone structure that helps them stay agile.",
+      "zh": "它们的喙出奇地轻，由海绵状的中空骨质构成，帮助它们保持灵活。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Toucan Shard"
+      }
+    },
+    {
+      "en": "Macaws mate for life, with pairs of them quickly becoming inseparable and accompanying each other on their travels.",
+      "zh": "金刚鹦鹉终生只有一个伴侣，一对配偶很快就会形影不离，结伴同行。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Macaw Shard"
+      }
+    },
+    {
+      "en": "Ananke's talons are capable of tearing through the toughest armor, and it strikes with the speed of lightning, leaving destruction in its wake.",
+      "zh": "阿南刻的利爪能撕裂最坚固的盔甲，出击快如闪电，所到之处一片狼藉。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Ananke Shard"
+      }
+    },
+    {
+      "en": "Condors have wingspans that can exceed 3 meters, making them some of the largest flying birds in the world.",
+      "zh": "神鹰的翼展可超过 3 米，是世界上体型最大的飞鸟之一。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Condor Shard"
+      }
+    },
+    {
+      "en": "These extinct birds once roamed the forests with little fear. Their shards can still be obtained through the magic of Fusions.",
+      "zh": "这种已经灭绝的鸟曾经无忧无虑地在森林里漫步。如今仍可通过融合的魔力获得它们的碎片。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Dodo Shard"
+      }
+    },
+    {
+      "en": "They use gills to breathe and have a protective exoskeleton.",
+      "zh": "它们用鳃呼吸，身上有一层起保护作用的外骨骼。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Woodlouse Shard"
+      }
+    },
+    {
+      "en": "So long as the Queen Ant survives, the colony can rebuild.",
+      "zh": "只要蚁后还活着，蚁群就能重建。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Queen Ant Shard"
+      }
+    },
+    {
+      "en": "Notoriously clumsy fliers that are most commonly found during the summer.",
+      "zh": "出了名的笨拙飞行者，最常在夏天出现。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "June Bug Shard"
+      }
+    },
+    {
+      "en": "The world's strongest insect, and perhaps also one of the grossest.",
+      "zh": "世界上最强壮的昆虫，也许还是最恶心的昆虫之一。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Dung Beetle Shard"
+      }
+    },
+    {
+      "en": "Flutters with speed but without elegance.",
+      "zh": "飞得很快，但毫无优雅可言。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Moth Shard"
+      }
+    },
+    {
+      "en": "Always looking to gorge itself on the blood of other creatures.",
+      "zh": "总想着饱吸其他生物的血。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Mosquito Shard"
+      }
+    },
+    {
+      "en": "These bugs are drawn to the concentrated energy of beacons, feeding off the light and using it to fuel their rapid, darting movements.",
+      "zh": "这些虫子会被信标聚集的能量吸引，以光为食，并借此快速飞窜。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Beaconmite Shard"
+      }
+    },
+    {
+      "en": "These tiny bugs are so well-camouflaged that they can move undetected even in broad daylight, blending seamlessly with their surroundings.",
+      "zh": "这些小虫子伪装得极好，即使在光天化日之下也能与周围融为一体，悄无声息地移动。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Invisibug Shard"
+      }
+    },
+    {
+      "en": "These insects are known for their strong mandibles, which they use to cut through plant stems and leaves.",
+      "zh": "这些昆虫以强壮的上颚著称，用它来切断植物的茎和叶。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Beetle Shard"
+      }
+    },
+    {
+      "en": "Their shimmering wings and bright color make them a rare and captivating sight, often sought after by collectors.",
+      "zh": "它们闪闪发光的翅膀和明亮的颜色十分罕见、迷人，常受到收藏家的追捧。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Bitbug Shard"
+      }
+    },
+    {
+      "en": "These tiny guardians of the Garden are known for their insatiable appetite for Pests, keeping the ecosystem in balance.",
+      "zh": "这些花园里的小小守护者以对害虫的贪婪胃口著称，维持着生态平衡。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Ladybug Shard"
+      }
+    },
+    {
+      "en": "There is lots to be said about maggots, but not many people want to hear about them.",
+      "zh": "关于蛆虫可说的事情很多，但没多少人想听。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Maggot Shard"
+      }
+    },
+    {
+      "en": "Many Rockmites go their entire lives without seeing the light of day, instead opting to live a solitary life in cavernous regions.",
+      "zh": "许多岩螨一辈子都见不到阳光，而是选择在洞穴地带独自生活。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Rockmite Shard"
+      }
+    },
+    {
+      "en": "Giant Water Bugs are able to breathe underwater through the use of a snorkel-like appendage, and boast a painful bite.",
+      "zh": "巨型田鳖能用一种像呼吸管的附肢在水下呼吸，咬起来还特别疼。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Giant Water Bug Shard"
+      }
+    },
+    {
+      "en": "These beautiful insects are drawn to moonlit areas, where they perform delicate, aerial dances that captivate onlookers.",
+      "zh": "这些美丽的昆虫会被月光照耀的地方吸引，在那里跳起精致的空中舞蹈，令观者着迷。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Lunar Moth Shard"
+      }
+    },
+    {
+      "en": "Fireflies illuminate the night with their fiery glow, their small bodies engulfed in a flickering flame.",
+      "zh": "萤火虫用炽热的光芒照亮夜空，小小的身体被闪烁的火焰包裹。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Firefly Shard"
+      }
+    },
+    {
+      "en": "Dragonflies soar through the air with the grace and power of their mythical namesakes.",
+      "zh": "蜻蜓在空中翱翔，优雅而有力，宛如传说中的飞龙。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Dragonfly Shard"
+      }
+    },
+    {
+      "en": "Queen Bees can produce upwards of 3,000 eggs in a single day in order to support the growth of the colony.",
+      "zh": "蜂后一天能产下 3,000 多枚卵，以支持蜂群壮大。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Queen Bee Shard"
+      }
+    },
+    {
+      "en": "The Beeheemoth is thousands of times larger than it ought to be, though nobody quite knows why.",
+      "zh": "巨蜂兽的体型比正常大了几千倍，但没人知道为什么。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Beeheemoth Shard"
+      }
+    },
+    {
+      "en": "These insects feed on the sap of warts, their specialized mouthparts designed to pierce and extract the nutritious liquid..",
+      "zh": "这些昆虫以下界疣的汁液为食，特化的口器专门用来刺穿下界疣、吸取营养丰富的汁液。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Wartybug Shard"
+      }
+    },
+    {
+      "en": "A creature the size of a speck in a sea of chocolate, it would have been satiated for its entire existence.",
+      "zh": "它只是巧克力海洋中一粒微尘大小的生物，本该一辈子都吃得饱饱的。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Cocoaleech Shard"
+      }
+    },
+    {
+      "en": "It collects shiny things, such as gemstones, and attempts to bring them back to its nest.",
+      "zh": "它会收集亮闪闪的东西，比如宝石，并想办法把它们带回窝里。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Packrat Shard"
+      }
+    },
+    {
+      "en": "Capable of phasing through solid rock, Thysts can disappear in a flash, leaving behind a trail of sparkling amethyst dust.",
+      "zh": "紫晶螨能穿透坚硬的岩石，一眨眼就消失不见，只留下一串闪闪发光的紫水晶粉尘。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Thyst Shard"
+      }
+    },
+    {
+      "en": "Its growl echoes through the cavernous depths, a chilling sound that signals imminent danger to any who dare enter its territory.",
+      "zh": "它的低吼在洞穴深处回荡，令人不寒而栗，警告任何胆敢闯入其领地的人：危险迫在眉睫。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Quartzfang Shard"
+      }
+    },
+    {
+      "en": "Its presence chills the air around it, turning the cave into a frozen tomb as it relentlessly pursues intruders.",
+      "zh": "它所到之处寒气逼人，把洞穴变成冰封的坟墓，并对入侵者穷追不舍。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Stalagmight Shard"
+      }
+    },
+    {
+      "en": "This enigmatic creature resembles a humanoid mushroom, with a cap that drips luminescent spores and tendrils that root into the cavern floor, allowing it to sense vibrations from afar.",
+      "zh": "这种神秘的生物形似人形蘑菇，菌盖上滴落着发光的孢子，卷须扎根在洞穴地面里，让它能感知远处的震动。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Fungloom Shard"
+      }
+    },
+    {
+      "en": "Tries everything else in order to avoid a fight but, when pushed to it, it usually wins.",
+      "zh": "它会想尽一切办法避免打架，但真被逼到那份上，通常是它赢。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Scrappy Shard"
+      }
+    },
+    {
+      "en": "Its tough skin and strong teeth allow it to burrow through stone as if it were sand.",
+      "zh": "它坚韧的皮肤和锋利的牙齿让它在石头里钻行就像在沙子里一样。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Stoneworm Shard"
+      }
+    },
+    {
+      "en": "You need to make it out at the first signs or you'll never make it out.",
+      "zh": "一看到苗头就得赶紧离开，不然你就再也出不去了。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Abyssal Miner Shard"
+      }
+    },
+    {
+      "en": "Bal, the colossal magma cube, resides deep within the earth's fiery core, its immense form pulsing with molten energy.",
+      "zh": "巴尔是一只巨大的岩浆怪，栖身于地心炽热的深处，庞大的身躯随熔岩般的能量搏动。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Bal Shard"
+      }
+    },
+    {
+      "en": "Ghosts possess immense strength, capable of unleashing powerful explosions that leave devastation in their wake.",
+      "zh": "幽灵力大无穷，能释放强大的爆炸，所过之处一片废墟。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Ghost Shard"
+      }
+    },
+    {
+      "en": "Cavernshade slinks through the darkest corners of the caves, its shadowy form barely visible as it blends with the surrounding darkness.",
+      "zh": "洞影在洞穴最黑暗的角落里潜行，阴影般的身形与周围的黑暗融为一体，几乎无法看清。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Cavernshade Shard"
+      }
+    },
+    {
+      "en": "Gemzie are both immensely stealthy and incredibly greedy - large quantities of gems in one place are usually enough to coax them from their hiding spots.",
+      "zh": "宝石仔既极其隐秘又无比贪婪：只要一处堆着大量宝石，通常就足以把它们从藏身处引出来。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Gemzie Shard"
+      }
+    },
+    {
+      "en": "It will attempt to consume anything remotely resembling a gemstone.",
+      "zh": "任何长得稍微像宝石的东西，它都想吞下去。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Scatha Shard"
+      }
+    },
+    {
+      "en": "The Nilbog is a crafty trickster spirit that will only let its guard down when presented with riches.",
+      "zh": "林布哥是一种狡猾的恶作剧精灵，只有在看到财宝时才会放松警惕。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Nilbog Shard"
+      }
+    },
+    {
+      "en": "It slumbers for prolonged periods, usually being awakened when an unknowing passerby tries to play with it.",
+      "zh": "它会长时间沉睡，通常是有不知情的路人想跟它玩时才会被吵醒。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Sneaky Tiki Shard"
+      }
+    },
+    {
+      "en": "It enjoys letting out a shrill shriek before turning into its dormant state in order to confuse those nearby.",
+      "zh": "它喜欢先发出一声刺耳的尖叫，再进入休眠状态，好让附近的人摸不着头脑。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Shrieky Tiki Shard"
+      }
+    },
+    {
+      "en": "It remains unclear as to how the Wiki Tiki gained sentience, or who made it that way.",
+      "zh": "至今仍不清楚维基提基魔像是怎么获得意识的，也不知道是谁让它变成这样的。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Wiki Tiki Shard"
+      }
+    },
+    {
+      "en": "The embodiment of raw power, his massive jaws are capable of crushing through the hardest of shells and stone.",
+      "zh": "他是纯粹力量的化身，巨大的颚能咬碎最坚硬的甲壳和岩石。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Lord Jawbus Shard"
+      }
+    },
+    {
+      "en": "The favorite cat of the Rabbit Godfather. He believes it brings him good luck.",
+      "zh": "兔子教父最喜欢的猫。他相信这只猫能给他带来好运。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Rabbit Cat Shard"
+      }
+    },
+    {
+      "en": "It's not quite clear as to how they got roped into this entire operation.",
+      "zh": "谁也说不清它们是怎么被卷进这整件事里来的。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Rabbit Neighbor Shard"
+      }
+    },
+    {
+      "en": "Her chocolate chip cookies were Hoppity’s first taste of the world of chocolate.",
+      "zh": "霍皮提第一次尝到巧克力世界的滋味，就是她做的巧克力豆曲奇。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Rabbit Godmother Shard"
+      }
+    },
+    {
+      "en": "Despite being the chairman of the family, he's more than willing to get his hands dirty.",
+      "zh": "虽然身为家族之首，他却非常乐意亲自动手。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Rabbit Godfather Shard"
+      }
+    },
+    {
+      "en": "Crocodiles lurk silently in the murky waters, their eyes and nostrils barely visible above the surface as they wait for unsuspecting prey.",
+      "zh": "鳄鱼静静潜伏在浑浊的水中，只把眼睛和鼻孔露出水面，等待毫无防备的猎物。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Crocodile Shard"
+      }
+    },
+    {
+      "en": "These formidable predators are recognized by their broad snouts and powerful tails, which they use to propel themselves swiftly through the water.",
+      "zh": "这些可怕的捕食者以宽阔的吻部和强壮的尾巴著称，它们用尾巴推动自己在水中快速前进。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Alligator Shard"
+      }
+    },
+    {
+      "en": "Their keen senses and swift reflexes make them adept hunters, capable of catching a variety of prey, from fish to small mammals.",
+      "zh": "它们感官敏锐、反应迅速，是捕猎好手，从鱼到小型哺乳动物都能捉到。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Caiman Shard"
+      }
+    },
+    {
+      "en": "Tiamat reigns supreme in the deepest, darkest waters, its multi-headed form and colossal size striking fear into all who encounter it.",
+      "zh": "提亚马特称霸最深最暗的水域，多头的身形和庞大的体型让所有遇见它的人都心生恐惧。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Tiamat Shard"
+      }
+    },
+    {
+      "en": "Their molten cores pulse with searing energy, and their burning eyes seem to bore into the souls of their enemies.",
+      "zh": "它们熔融的核心涌动着灼热的能量，燃烧的双眼仿佛要看穿敌人的灵魂。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Inferno Demonlord Shard"
+      }
+    },
+    {
+      "en": "Though a novice, Bonzo is particularly eager to prove himself as worthy to his peers. Guarding the very first dungeon floor, he seeks to snuff things out before they become a problem - and has fun doing it!",
+      "zh": "邦佐虽是新手，却特别渴望向同伴证明自己。他镇守着地牢第一层，力求把问题扼杀在萌芽状态，而且乐在其中！",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Bonzo Shard"
+      }
+    },
+    {
+      "en": "Legends speak of Kuudra's origins from the heart of a cataclysmic eruption, its rage fueled by the sulfurous magma that courses through its veins, causing it to grow into one of the most feared and powerful beings in existence.",
+      "zh": "传说库德拉诞生于一场毁天灭地的火山喷发的中心，血管中奔涌的硫磺岩浆助长了它的怒火，让它成长为世上最令人畏惧、最强大的存在之一。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Kraken Shard"
+      }
+    },
+    {
+      "en": "Its very presence warps reality around it, bending the laws of nature to its will and spreading chaos and despair wherever it treads.",
+      "zh": "它的存在本身就会扭曲周围的现实，让自然法则屈从于它的意志，所到之处尽是混乱与绝望。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Daemon Shard"
+      }
+    },
+    {
+      "en": "This demon fish is covered in jagged, molten scales that can melt through steel, and it leaves a trail of boiling water in its wake.",
+      "zh": "这种恶魔鱼浑身覆盖着锯齿状的熔融鳞片，能熔穿钢铁，游过之处会留下一道沸腾的水痕。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Moltenfish Shard"
+      }
+    },
+    {
+      "en": "Pulled into this world through a sacred ritual, there may be no way to send it back.",
+      "zh": "它是通过一场神圣仪式被拉进这个世界的，也许再也没有办法把它送回去了。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Doomspiral Shard"
+      }
+    },
+    {
+      "en": "These creatures are rarely seen in full, as they remain hidden within the fiery depths, only revealing their writhing appendages.",
+      "zh": "人们很少能看到这些生物的全貌，因为它们总是藏在炽热的深处，只露出扭动的触肢。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Hellwisp Shard"
+      }
+    },
+    {
+      "en": "Jormung's breath is a torrent of fire and magma, incinerating everything in its path with unrelenting fury.",
+      "zh": "耶梦的吐息是一股火焰与岩浆的洪流，以毫不留情的狂怒焚尽路上的一切。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Jormung Shard"
+      }
+    },
+    {
+      "en": "This ethereal dragon wields the power of the afterlife, its breath a chilling mist that drains the life force of anything it touches.",
+      "zh": "这条空灵之龙掌握着来世的力量，它的吐息是一团寒冷的雾气，会吸干所触及之物的生命力。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Etherdrake Shard"
+      }
+    },
+    {
+      "en": "This terrifying creature is covered in obsidian scales that crackle with dark energy, and its eyes burn with an intense, unholy fire.",
+      "zh": "这种可怕的生物浑身覆盖着黑曜石鳞片，鳞片上噼啪作响着黑暗的能量，双眼燃烧着强烈而邪恶的火焰。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Molthorn Shard"
+      }
+    },
+    {
+      "en": "Harnessing the power of the End Crystals, the Draconics can regenerate their formidable strength, making them near-unstoppable forces.",
+      "zh": "龙裔能借助末影水晶的力量恢复强大的实力，几乎无人能挡。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Draconic Shard"
+      }
+    },
+    {
+      "en": "Power's roars shake the very earth, its fiery breath capable of melting the toughest armor and incinerating anything in its path.",
+      "zh": "力量龙的咆哮能撼动大地，它炽热的吐息足以熔化最坚固的盔甲，焚尽路上的一切。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Power Dragon Shard"
+      }
+    },
+    {
+      "en": "With unmatched agility and strength, Apex can strike down its enemies with devastating precision, leaving nothing but ruin and despair in its wake.",
+      "zh": "巅峰龙拥有无可匹敌的敏捷和力量，能以毁灭性的精准击倒敌人，身后只留下废墟与绝望。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Apex Dragon Shard"
+      }
+    },
+    {
+      "en": "These undead creatures were once villagers, now cursed to an eternal life beneath the waves.",
+      "zh": "这些亡灵生物曾经是村民，如今被诅咒在海浪之下永世存活。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Drowned Shard"
+      }
+    },
+    {
+      "en": "Cascade elementals bring power and energy, revitalizing the lands they pass through.",
+      "zh": "瀑流元素带来力量与能量，让所经过的土地重焕生机。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Cascade Shard"
+      }
+    },
+    {
+      "en": "Sylvan elementals are the spirit of the forest, their forms merging with trees and foliage.",
+      "zh": "森灵元素是森林之灵，身形与树木和枝叶融为一体。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Sylvan Shard"
+      }
+    },
+    {
+      "en": "Those elementals can summon lightning strikes, channeling immense power from the skies.",
+      "zh": "这些元素能召唤雷击，引导来自天空的巨大力量。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Bolt Shard"
+      }
+    },
+    {
+      "en": "Terras can shape the land, forming mountains and valleys with their power.",
+      "zh": "泰拉能塑造大地，用自己的力量造出山峦与河谷。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Terra Shard"
+      }
+    },
+    {
+      "en": "They can freeze their surroundings, creating icy landscapes and snowstorms.",
+      "zh": "它们能冰冻周围的一切，创造出冰天雪地和暴风雪。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Cryo Shard"
+      }
+    },
+    {
+      "en": "Aeros can control the wind, summoning gales and breezes at will.",
+      "zh": "气流能操控风，随意召唤狂风与微风。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Aero Shard"
+      }
+    },
+    {
+      "en": "They can manipulate darkness, creating areas of deep shadow and obscurity.",
+      "zh": "它们能操纵黑暗，制造出深沉的阴影与晦暗地带。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Tenebris Shard"
+      }
+    },
+    {
+      "en": "They are storms of snow and ice, their forms swirling with flurries.",
+      "zh": "它们是冰雪的风暴，身形中飞雪盘旋。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Blizzard Shard"
+      }
+    },
+    {
+      "en": "Tempests bring power and chaos, their presence a force of nature to be reckoned with.",
+      "zh": "风暴带来力量与混乱，它们的存在是一股不容小觑的自然之力。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Tempest Shard"
+      }
+    },
+    {
+      "en": "Starborns radiate with the light of distant stars, their forms shimmering with cosmic energy.",
+      "zh": "星裔散发着遥远星辰的光芒，身形闪烁着宇宙的能量。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Starborn Shard"
+      }
+    },
+    {
+      "en": "These resilient frogs are adept at burrowing into the cool sand to escape the scorching heat of the day.",
+      "zh": "这些坚韧的青蛙擅长钻进凉爽的沙子里，躲避白天的酷热。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Dustybit Shard"
+      }
+    },
+    {
+      "en": "Toads can grow up to 15 centimeters in length, their powerful hind legs enabling them to make surprisingly long leaps.",
+      "zh": "蟾蜍体长可达 15 厘米，强健的后腿让它们能跳出惊人的距离。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Toad Shard"
+      }
+    },
+    {
+      "en": "Lapis Skeletons can channel the mystical properties of lapis, enhancing their arrows with a magical glow.",
+      "zh": "青金石骷髅能引导青金石的神秘特性，让箭矢泛起魔法光芒。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Lapis Skeleton Shard"
+      }
+    },
+    {
+      "en": "These explosive creatures are as dangerous as they are mesmerizing.",
+      "zh": "这些会爆炸的生物既危险又迷人。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Lapis Creeper Shard"
+      }
+    },
+    {
+      "en": "Lizard Kings have a natural affinity for leadership, often seen leading groups of lesser lizards.",
+      "zh": "蜥蜴王天生具有领袖气质，常常带领着一群较弱小的蜥蜴。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Lizard King Shard"
+      }
+    },
+    {
+      "en": "Chuckwallas cram themselves into the smallest of crevices to avoid predators, inflating their lungs to make themselves harder to dislodge.",
+      "zh": "叩壁蜥会把自己塞进最小的缝隙里躲避捕食者，还会鼓起肺让自己更难被拽出来。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Chuckwalla Shard"
+      }
+    },
+    {
+      "en": "Leviathans rule the ocean depths, their colossal bodies undulating through the dark waters with grace.",
+      "zh": "利维坦统治着深海，庞大的身躯在黑暗的海水中优雅地起伏游动。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Leviathan Shard"
+      }
+    },
+    {
+      "en": "Though capable of eating meat, they prefer the taste of bamboo and other plant matter.",
+      "zh": "它们虽然能吃肉，却更喜欢竹子和其他植物的味道。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Red Panda Shard"
+      }
+    },
+    {
+      "en": "This unique panda is often mistaken for a part of the bamboo itself, only revealing its true form when it moves or begins to feed.",
+      "zh": "这只独特的熊猫常被误认为竹子的一部分，只有在移动或开始进食时才会露出真身。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Bambloom Shard"
+      }
+    },
+    {
+      "en": "Nothing, except for a good nap, will get in the way of a Fluffling and its next meal.",
+      "zh": "除了好好睡一觉，什么也挡不住绒绒去吃下一顿饭。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Fluffling Shard"
+      }
+    },
+    {
+      "en": "This regal creature is adorned with a unique blend of shimmering fur that changes color with the seasons.",
+      "zh": "这种高贵的生物有着一身独特的闪亮皮毛，颜色随季节变化。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Pandarai Shard"
+      }
+    },
+    {
+      "en": "A silent guardian of the night sky, its vast wings are a tranquil spectacle, often seen soaring high above with a serene grace.",
+      "zh": "它是夜空沉默的守护者，宽大的双翼是一道宁静的风景，常常可以看到它从容地在高空翱翔。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Dreadwing Shard"
+      }
+    },
+    {
+      "en": "Murderwings reside high above the clouds. Their vision is so good that, even on the cloudiest of nights, they can spot prey on the forest floor far below.",
+      "zh": "凶翼栖息在云层之上。它们的视力极好，即使在云层最厚的夜晚，也能发现远在下方森林地面上的猎物。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Murderwing Shard"
+      }
+    },
+    {
+      "en": "Pucks are mischievous forest spirits. If you see one, it's probably serving as a distraction.",
+      "zh": "帕克是爱恶作剧的森林精灵。如果你看到一只，它多半是在声东击西。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Puck Shard"
+      }
+    },
+    {
+      "en": "It pesters other inhabitants of the lake it decides to call its home until they take their business elsewhere.",
+      "zh": "它一旦认定某片湖是自己的家，就会不停骚扰湖里的其他居民，直到它们另寻去处。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Torrid Shard"
+      }
+    },
+    {
+      "en": "These cunning creatures can spring to life in an instant, revealing sharp fangs and a ravenous appetite for anything that approaches.",
+      "zh": "这些狡猾的生物会在一瞬间活过来，露出锋利的獠牙，对任何靠近的东西都胃口大开。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Mimic Shard"
+      }
+    },
+    {
+      "en": "Capable of temporarily taking on the form of creatures that make contact with it.",
+      "zh": "能暂时变成与它接触过的生物的样子。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Timestalk Clone Shard"
+      }
+    },
+    {
+      "en": "These snakes rely on their incredible strength to overpower their victims, wrapping around them with crushing force.",
+      "zh": "这些蛇依靠惊人的力量制服猎物，用碾压般的力量把猎物死死缠住。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Python Shard"
+      }
+    },
+    {
+      "en": "Their impressive size and striking appearance command respect.",
+      "zh": "它们体型硕大、外表醒目，令人肃然起敬。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "King Cobra Shard"
+      }
+    },
+    {
+      "en": "Geckos scurry up vertical surfaces with ease, their specialized toe pads allowing them to cling to almost any material.",
+      "zh": "壁虎能轻松爬上垂直的表面，特化的趾垫让它们几乎能吸附在任何材料上。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Gecko Shard"
+      }
+    },
+    {
+      "en": "These serpents are said to possess a deadly gaze that can petrify any creature that meets their eyes.",
+      "zh": "据说这些蛇拥有致命的目光，任何与它对视的生物都会被石化。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Basilisk Shard"
+      }
+    },
+    {
+      "en": "Iguanas are herbivorous, feeding on leaves, flowers, and fruits.",
+      "zh": "鬣蜥是植食动物，以叶子、花和果实为食。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Iguana Shard"
+      }
+    },
+    {
+      "en": "Their keen sense of smell allows them to detect carrion from kilometers away, guiding them to their next meal.",
+      "zh": "它们嗅觉灵敏，能在几公里外察觉到腐肉，循着气味找到下一顿饭。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Komodo Dragon Shard"
+      }
+    },
+    {
+      "en": "These turtles are often seen meditating near tranquil waters.",
+      "zh": "人们常看到这些乌龟在宁静的水边冥想。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Shellwise Shard"
+      }
+    },
+    {
+      "en": "Their diet primarily consists of jellyfish, and their specialized jaws allow them to consume their gelatinous prey with ease.",
+      "zh": "它们主要以水母为食，特化的颚让它们能轻松吞下这些胶状的猎物。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Leatherback Shard"
+      }
+    },
+    {
+      "en": "Chameleons navigate the forest canopy with extraordinary agility, their prehensile tails and zygodactylous feet allowing for effortless climbing.",
+      "zh": "变色龙在森林树冠间灵活自如地穿行，能缠绕的尾巴和对趾足让它们攀爬起来毫不费力。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Chameleon Shard"
+      }
+    },
+    {
+      "en": "Sightings of Nessie are occasionally reported by residents of the Moonglade Marsh, but she is believed by most to be nothing but a myth.",
+      "zh": "月光沼泽的居民偶尔会报告目击到尼斯湖水怪，但大多数人认为她只是个传说。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Nessie Shard"
+      }
+    },
+    {
+      "en": "Wyverns soar through the skies with majestic wings, their draconic forms casting shadows over the land below.",
+      "zh": "双足飞龙展开雄伟的翅膀翱翔天际，龙形的身影在下方的大地上投下阴影。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Wyvern Shard"
+      }
+    },
+    {
+      "en": "Tortoises can live for over 100 years, their long lifespans making them symbols of resilience and endurance.",
+      "zh": "陆龟能活 100 多年，长寿让它们成为坚韧与持久的象征。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Tortoise Shard"
+      }
+    },
+    {
+      "en": "These legendary creatures are said to be as old as the mountains, their massive forms blending seamlessly with rocky landscapes.",
+      "zh": "据说这些传奇生物和山一样古老，庞大的身躯与岩石地貌完美融为一体。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Megalith Shard"
+      }
+    },
+    {
+      "en": "Being semi-aquatic, these snakes love to bask on branches above the water's surface.",
+      "zh": "这些蛇是半水栖的，最喜欢在水面上方的树枝上晒太阳。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Queen Snake Shard"
+      }
+    },
+    {
+      "en": "The largest species of snake ever proved to exist, it eats a variety of large fish, alligators, and other snakes.",
+      "zh": "它是已证实存在过的最大的蛇类，会吃各种大鱼、短吻鳄和其他蛇。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Titanoboa Shard"
+      }
+    },
+    {
+      "en": "Hideongeon blends into the stone and moss of ancient dungeons, its dark green shell camouflaging perfectly.",
+      "zh": "匿牢虫融入古老地牢的石头和苔藓中，深绿色的外壳伪装得天衣无缝。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Hideongeon Shard"
+      }
+    },
+    {
+      "en": "Hideondra's projectiles are fiery and fierce, mirroring the power of Kuudra.",
+      "zh": "匿库虫的弹丸炽热而凶猛，映照出库德拉的力量。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Hideondra Shard"
+      }
+    },
+    {
+      "en": "Its disguise makes it an alluring but dangerous threat among hoarded treasures.",
+      "zh": "它的伪装让它在堆积的宝藏中显得诱人，却也十分危险。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Hideonring Shard"
+      }
+    },
+    {
+      "en": "You walk past many Hideonfloors on a daily basis, though you'll never know until you step on one.",
+      "zh": "你每天都会从许多匿地虫身边走过，只是不踩上去，你永远不会知道。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Hideonfloor Shard"
+      }
+    },
+    {
+      "en": "Hideonwalls are somehow capable of intangibility, allowing for them to live within walls. Yes - they are in your walls.",
+      "zh": "匿墙虫不知怎么能变得无形，所以可以住在墙里。没错，它们就在你家墙里。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Hideonwall Shard"
+      }
+    },
+    {
+      "en": "This shulker hides among storage areas.",
+      "zh": "这种潜影贝藏身于储物区之间。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Hideonsack Shard"
+      }
+    },
+    {
+      "en": "Hideonbox masterfully camouflages itself as an ordinary wooden crate.",
+      "zh": "匿盒虫能把自己巧妙地伪装成一个普通的木箱。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Hideonbox Shard"
+      }
+    },
+    {
+      "en": "You might not feel the bite of a Black Widow, but you'll feel the deadly symptoms very quickly afterwards.",
+      "zh": "被黑寡妇咬一口你可能毫无感觉，但很快就会出现致命的症状。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Black Widow Shard"
+      }
+    },
+    {
+      "en": "Little is known about the Primordials or the world from which they came, except that they persist.",
+      "zh": "人们对原初者和它们所来自的世界几乎一无所知，只知道它们一直延续至今。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Primordial Shard"
+      }
+    },
+    {
+      "en": "Legends speak of entire islands lit up by schools of Seashines.",
+      "zh": "传说有一整座岛屿都被成群的海耀鱼照亮。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Seashine Shard"
+      }
+    },
+    {
+      "en": "Their glowing tentacles can attract small fish, luring prey close enough to be caught in a swift strike.",
+      "zh": "它们发光的触手能吸引小鱼，把猎物引到足够近的地方，再迅速出击捕获。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Lumisquid Shard"
+      }
+    },
+    {
+      "en": "As slow as it is, it seems pretty agile when compared to a snail.",
+      "zh": "虽然很慢，但和蜗牛比起来，它好像还挺灵活的。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Keeled Slug Shard"
+      }
+    },
+    {
+      "en": "In open waters, Piranhas swim in tight schools, peacefully coexisting until threatened.",
+      "zh": "在开阔水域，食人鱼会结成密集的鱼群，平时和平共处，直到受到威胁。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Piranha Shard"
+      }
+    },
+    {
+      "en": "These fish have developed a powerful bite to break through the rock, searching for mineral-rich algae.",
+      "zh": "这些鱼练出了能咬穿岩石的强大咬合力，以寻找富含矿物质的藻类。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Silentdepth Shard"
+      }
+    },
+    {
+      "en": "Snowfins have developed an antifreeze protein in their blood, preventing them from freezing in sub-zero temperatures.",
+      "zh": "雪鳍鱼的血液中进化出了一种抗冻蛋白，让它们在零下的温度里也不会被冻住。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Snowfin Shard"
+      }
+    },
+    {
+      "en": "These koi are often seen basking near lava flows, absorbing the heat into their vibrant scales.",
+      "zh": "人们常看到这些锦鲤在熔岩流附近取暖，把热量吸进鲜艳的鳞片里。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Inferno Koi Shard"
+      }
+    },
+    {
+      "en": "The Gimmiegold is drawn to riches - particularly gold. Once its amassed its horde, it will guard it with its life, both from foes and from other Gimmiegold.",
+      "zh": "讨金怪对财富着迷，尤其是黄金。一旦攒够了宝藏，它就会拼死守护，无论是面对敌人还是其他讨金怪。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Gimmiegold Shard"
+      }
+    },
+    {
+      "en": "Stingrays can sense vibrations through the sand, detecting the approach of both predators and prey from great distances.",
+      "zh": "黄貂鱼能通过沙子感知震动，从很远的地方察觉捕食者和猎物的接近。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Stingray Shard"
+      }
+    },
+    {
+      "en": "Comes complete with seven sets of legs and four jaws - a true abomination.",
+      "zh": "足足有七对腿和四副颚，真是个怪物。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Giant Isopod Shard"
+      }
+    },
+    {
+      "en": "These crafty crabs are able to communicate in a number of unexpected ways, such as through rubbing their legs together.",
+      "zh": "这些狡猾的螃蟹能用许多意想不到的方式交流，比如互相摩擦腿。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Ghost Crab Shard"
+      }
+    },
+    {
+      "en": "Though the name of Littlefoot is relatively unknown compared to that of his elder brother, he is determined to make a name for himself through any means necessary.",
+      "zh": "虽然小脚怪的名气远不如他的哥哥，但他决心不择手段为自己闯出名堂。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Littlefoot Shard"
+      }
+    },
+    {
+      "en": "The Wumpa is incredibly territorial. Attacks anything that moves, until it stops moving for good.",
+      "zh": "乌帕领地意识极强，会攻击任何会动的东西，直到它再也不动为止。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Wumpa Shard"
+      }
+    },
+    {
+      "en": "Seems to have been frozen for a prolonged period of time.",
+      "zh": "似乎被冰封了很长一段时间。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Troodon Shard"
+      }
+    },
+    {
+      "en": "Contrary to popular belief, these creatures are highly intelligent.",
+      "zh": "和大多数人想的不一样，这些生物其实非常聪明。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Wild Hog Shard"
+      }
+    },
+    {
+      "en": "Able to glide through both the water and the skies with an eerie silence. It uses this stealth to sneak up on smaller animals that it deems its prey.",
+      "zh": "它能在水中和空中悄无声息地滑行，令人毛骨悚然，并利用这种隐秘接近它视为猎物的小动物。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Sprawl Shard"
+      }
+    },
+    {
+      "en": "Not much is known about Star Sentries, in fact, nothing is known.",
+      "zh": "人们对星辰哨兵知之甚少，事实上，根本一无所知。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Star Sentry Shard"
+      }
+    },
+    {
+      "en": "It's covered entirely in a set of armored scales, except for its soft underbelly, which it curls into a ball to protect.",
+      "zh": "它全身覆盖着一层盔甲般的鳞片，只有柔软的腹部除外，它会蜷成一个球来保护腹部。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Pangolin Shard"
+      }
+    },
+    {
+      "en": "Despite its uncompromising appearance, Drybarks are actually particularly ferocious predators.",
+      "zh": "别看它外表古板僵硬，枯皮树精其实是特别凶猛的捕食者。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Drybark Shard"
+      }
+    },
+    {
+      "en": "Sometimes a simple question is all that lies between a long, fulfilling life and an imminent death.",
+      "zh": "有时候，漫长而充实的一生与近在眼前的死亡之间，只隔着一个简单的问题。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Sphinx Shard"
+      }
+    },
+    {
+      "en": "Their presence turns the surrounding area into a hazardous inferno.",
+      "zh": "它们所在之处会变成一片危险的火海。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Lava Flame Shard"
+      }
+    },
+    {
+      "en": "Their eerie wails and spectral presence make them a terrifying sight.",
+      "zh": "它们诡异的哀嚎和幽灵般的身影令人毛骨悚然。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Wither Spectre Shard"
+      }
+    },
+    {
+      "en": "The Folf is not particularly smart, agile, or anything else for that matter. It's smaller than a wolf, and dumber than a fox.",
+      "zh": "狐狼既不聪明，也不灵活，其他方面也一无是处。它比狼小，又比狐狸笨。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Folf Shard"
+      }
+    },
+    {
+      "en": "Having studied under The Professor himself, Scarf's particular interest in necromancy stemmed from a single wish.",
+      "zh": "斯卡夫曾师从教授本人，他对死灵术的特别兴趣源于一个心愿。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Scarf Shard"
+      }
+    },
+    {
+      "en": "The parasitic Lava Leech is so hot that it will eventually burn a hole in whatever it attaches itself to.",
+      "zh": "寄生的熔岩水蛭温度极高，最终会把它附着的任何东西烧穿一个洞。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Lava Leech Shard"
+      }
+    },
+    {
+      "en": "Its large nose functions as a vacuum of sorts, allowing it to hoover up any unaware critters in its path.",
+      "zh": "它的大鼻子就像一台吸尘器，能把路上毫无察觉的小动物统统吸进去。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Hewver Shard"
+      }
+    },
+    {
+      "en": "Legends say Skeletor was once a powerful knight, now cursed to guard the Catacombs for eternity, attacking any intruders with relentless fury.",
+      "zh": "传说骷髅督军曾是一位强大的骑士，如今被诅咒永世守卫地下墓穴，以无情的怒火攻击一切入侵者。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Skeletor Shard"
+      }
+    },
+    {
+      "en": "This powerful entity conjures devastating spells and summons minions to do his bidding, his eerie chants echoing through the dungeon's corridors.",
+      "zh": "这个强大的存在能施放毁灭性的法术，召唤仆从听他差遣，诡异的吟唱在地牢的走廊中回荡。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Thorn Shard"
+      }
+    },
+    {
+      "en": "The Hideyho is capable of perfectly imitating any living creature it comes into contact with, and often uses this unique ability to cause mischief.",
+      "zh": "匿呦虫能完美模仿任何与它接触过的生物，还常常利用这种独特的本领恶作剧。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Hideyho Shard"
+      }
+    },
+    {
+      "en": "The Loch Emperor commands the depths with an imposing presence, a skeletal overlord perched atop a formidable guardian.",
+      "zh": "湖皇以威严的姿态统领深水，它是一位骷髅霸主，高坐在一头强大的守护兽之上。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Loch Emperor Shard"
+      }
+    },
+    {
+      "en": "Their scales shimmer with a iridescent blue-green hue, blending seamlessly with the deep waters they call home.",
+      "zh": "它们的鳞片闪烁着蓝绿色的虹彩，与它们栖身的深水完美融为一体。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Water Hydra Shard"
+      }
+    },
+    {
+      "en": "Though Anteaters are toothless, their long claws are more than enough for fending off would-be predators.",
+      "zh": "食蚁兽虽然没有牙齿，但长长的爪子足以击退来犯的捕食者。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Anteater Shard"
+      }
+    },
+    {
+      "en": "This spirit of plant diversity takes form whenever a mutation is analyzed, carrying the memory of every unique crop it has ever known.",
+      "zh": "这位植物多样性之灵会在每次分析突变植物时现身，承载着它所知道的每一种独特作物的记忆。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Flora Shard"
+      }
+    },
+    {
+      "en": "It serves as a lookout of sorts for the forest in which it resides, moving so fast that it can detect and warn of imminent threats before it's even spotted.",
+      "zh": "它是所在森林的哨兵，移动速度快到能在被发现之前就察觉并预警即将到来的威胁。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Silkbreeze Shard"
+      }
+    },
+    {
+      "en": "The Billygoat stands alone atop the summit of the tallest mountain. Nothing else comes close and, should it try to, it'll be sent back to earth courtesy of a particularly harsh headbutt.",
+      "zh": "公山羊独自站在最高的山巅。没有谁能靠近它；要是有谁敢试，就会被它狠狠一记头槌送回地面。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Billygoat Shard"
+      }
+    },
+    {
+      "en": "Embers are used by some divers to navigate their way through the darkness.",
+      "zh": "一些潜水员会借助余烬鱼在黑暗中辨认方向。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Ember Shard"
+      }
+    },
+    {
+      "en": "Nobody quite knows why they do what they do.",
+      "zh": "没人知道它们为什么要这么做。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Dive Ghast Shard"
+      }
+    },
+    {
+      "en": "These undead creatures have a touch capable of freezing anything solid.",
+      "zh": "这些亡灵生物一碰就能把任何东西冻得结结实实。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Glacite Walker Shard"
+      }
+    },
+    {
+      "en": "Revered by some and despised by others, Minos attempts to rule over all things mythological.",
+      "zh": "有人敬仰他，有人憎恶他，米诺斯试图统治一切神话之物。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "King Minos Shard"
+      }
+    },
+    {
+      "en": "These mounted fighters are surprisingly agile, using their mobility to outmaneuver and strike their enemies with precision.",
+      "zh": "这些骑兵出人意料地灵活，利用机动性迂回包抄，精准打击敌人。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Kada Knight Shard"
+      }
+    },
+    {
+      "en": "These fiery creatures are born from the ashes of volcanic regions, their bodies glowing with a constant, smoldering heat.",
+      "zh": "这些火焰生物诞生于火山地带的灰烬，身体始终散发着阴燃的热量。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Cinderbat Shard"
+      }
+    },
+    {
+      "en": "When Exe encounters its counterparts, it instinctively moves towards them, beginning the process of merging into a more powerful entity.",
+      "zh": "当 Exe 遇到它的同伴时，会本能地向它们靠近，开始融合成一个更强大的存在。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "XYZ Shard"
+      }
+    },
+    {
+      "en": "This formidable duo combines the strength of the bull and the agility of the pig, making them an unexpected and dangerous pair.",
+      "zh": "这对可怕的组合兼具公牛的力量和猪的灵活，是一对出人意料又危险的搭档。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Taurus Shard"
+      }
+    },
+    {
+      "en": "Honeymites burrow inside of Beehives, consuming all of the honey, and the colony, from the inside-out.",
+      "zh": "蜜螨会钻进蜂巢，从里到外把蜂蜜连同整个蜂群吃个精光。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Honeymite Shard"
+      }
+    },
+    {
+      "en": "Just wants to give you a warm hug for the rest of eternity.",
+      "zh": "它只想给你一个温暖的拥抱，一直抱到永远。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Zombuddy Shard"
+      }
+    },
+    {
+      "en": "Having been mistreated its entire life, the Minotaur opts to lash out preemptively rather than risk being hurt again.",
+      "zh": "米诺陶洛斯一生都受尽虐待，宁愿先发制人，也不愿冒再次受伤的风险。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Minotaur Shard"
+      }
+    },
+    {
+      "en": "When startled, these fish inflate rapidly, transforming into spiked balls that deter predators with their sharp quills and toxic skin.",
+      "zh": "受惊时，这些鱼会迅速膨胀成一个刺球，用锋利的棘刺和有毒的皮肤吓退捕食者。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Spike Shard"
+      }
+    },
+    {
+      "en": "Legends say that the Carrot King's presence brings bountiful harvests and vibrant marine life to the waters he inhabits.",
+      "zh": "传说胡萝卜国王所到之处会带来丰收，他所居住的水域也会生机勃勃。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Carrot King Shard"
+      }
+    },
+    {
+      "en": "These undead crypt monsters are the reanimated remains of ancient royalty, brought back to life by dark magic.",
+      "zh": "这些亡灵墓穴怪物是古代王室的遗骸，被黑暗魔法复活。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Prince Shard"
+      }
+    },
+    {
+      "en": "Despite its unassuming size, it has a ferocious temperament and will pick fights with creatures many multitudes larger than itself.",
+      "zh": "别看它个头不起眼，脾气却十分凶暴，会去挑衅比自己大好多倍的生物。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Murkbat Shard"
+      }
+    },
+    {
+      "en": "One always needs a bit of perfection to be the most powerful of one's kind.",
+      "zh": "想成为同类中最强大的，总得有那么一点完美。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Paragon Shard"
+      }
+    },
+    {
+      "en": "Famed for taking out creatures considerably larger than it, the Wolverine bites first and asks questions later.",
+      "zh": "狼獾以能干掉比自己大得多的生物而闻名，向来先咬再问。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Wolverine Shard"
+      }
+    },
+    {
+      "en": "Though actually native to forests, Snoozles often end up deep underground as a result of seeking out the quietest place possible before they enter a hibernative state often spanning several years.",
+      "zh": "瞌睡怪其实原产于森林，但它们在进入往往长达数年的冬眠前，会去寻找最安静的地方，结果常常跑到地下深处。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Snoozle Shard"
+      }
+    },
+    {
+      "en": "These goats are remarkable climbers, residing far above most would-be predators.",
+      "zh": "这些山羊是攀爬高手，住在大多数捕食者够不到的高处。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Mountain Goat Shard"
+      }
+    },
+    {
+      "en": "Special Zealots boast a particular affinity with the void, though it is currently unclear as to why.",
+      "zh": "特殊狂热者与虚空有着特别的亲和力，但目前还不清楚原因。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Special Zealot Shard"
+      }
+    },
+    {
+      "en": "This fearsome spider queen commands an army of smaller spiders, her web-covered lair a deadly trap for any who dare enter.",
+      "zh": "这位可怕的蜘蛛女王统领着一支小蜘蛛大军，她那布满蛛网的巢穴对任何胆敢闯入者都是致命陷阱。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Arachne Shard"
+      }
+    },
+    {
+      "en": "All they ever think about is cheese, no matter how hungry or satiated they are in the moment.",
+      "zh": "无论当下多饿或多饱，它们满脑子都只有奶酪。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Rat Shard"
+      }
+    },
+    {
+      "en": "Sun Fish blaze through the ocean with an intense, golden glow, their bodies radiating warmth like the sun itself.",
+      "zh": "太阳鱼带着强烈的金色光芒在海洋中疾驰，身体像太阳一样散发着温暖。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Sun Fish Shard"
+      }
+    },
+    {
+      "en": "Touching Thunder with your bare hands would be enough to fry you - even this shard is enough to make you flinch.",
+      "zh": "徒手碰一下雷霆就足以把你电焦，就连这块碎片都会让你忍不住缩手。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Thunder Shard"
+      }
+    },
+    {
+      "en": "Though they primarily attack when defending their cubs or themselves, it's never unwise to keep your distance.",
+      "zh": "它们主要在保护幼崽或自己时才会攻击，但保持距离总归不会错。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Grizzly Bear Shard"
+      }
+    },
+    {
+      "en": "Their presence in the water is like watching a piece of the universe come to life, as they move with the grace and majesty of celestial beings.",
+      "zh": "它们在水中的身影宛如一片宇宙活了过来，游动时带着天体般的优雅与庄严。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Galaxy Fish Shard"
+      }
+    },
+    {
+      "en": "Revenants emit an aura of death and decay, sapping the life force of those who dare to confront them.",
+      "zh": "亡魂散发着死亡与腐朽的气息，会吸取胆敢与之对抗者的生命力。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Revenant Shard"
+      }
+    },
+    {
+      "en": "Nozzlenoses spend their time swimming around in the icy water, hunting Tepid.",
+      "zh": "长吻怪整天在冰冷的水中游来游去，捕猎温热者。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Nozzlenose Shard"
+      }
+    },
+    {
+      "en": "Once a noble Piglin, Duke X has gone berserk, his mind consumed by rage and his strength multiplied tenfold.",
+      "zh": "野蛮人公爵 X 曾是一位高贵的猪灵，如今却陷入狂暴，心智被怒火吞噬，力量也暴增了十倍。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Barbarian Duke X Shard"
+      }
+    },
+    {
+      "en": "A punch from one of these little guys is going to hurt - best to keep out of their way when diving.",
+      "zh": "被这些小家伙打一拳可不好受，潜水时最好离它们远点。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Mantis Shrimp Shard"
+      }
+    },
+    {
+      "en": "A single Blue Crab can carry millions of her eggs at once.",
+      "zh": "一只蓝蟹一次能携带数百万枚卵。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Blue Crab Shard"
+      }
+    },
+    {
+      "en": "The Badger has a terrific sense of smell, allowing it to locate food and other badgers with ease.",
+      "zh": "獾的嗅觉极其灵敏，能轻松找到食物和其他獾。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Badger Shard"
+      }
+    },
+    {
+      "en": "Capable of igniting the air itself, Flare can generate intense heat waves, making the very atmosphere around it shimmer and distort.",
+      "zh": "耀焰能点燃空气本身，释放出强烈的热浪，让周围的空气都闪烁扭曲。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Flare Shard"
+      }
+    },
+    {
+      "en": "This exuberant dolphin is known for its acrobatic displays.",
+      "zh": "这只活泼的海豚以杂技表演著称。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Joydive Shard"
+      }
+    },
+    {
+      "en": "Their radiant appearance makes them prized by collectors, but their elusive nature ensures they remain a rare and treasured find.",
+      "zh": "它们光彩夺目的外表深受收藏家青睐，但行踪难觅的天性让它们始终是稀有珍贵的发现。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Shinyfish Shard"
+      }
+    },
+    {
+      "en": "Uses its long tentacles to uproot entire beehives before flying away with them.",
+      "zh": "它用长长的触手把整个蜂巢连根拔起，然后带着蜂巢飞走。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Hivethief Shard"
+      }
+    },
+    {
+      "en": "Matchos are quick to ignite, their volatile nature making them dangerous to approach.",
+      "zh": "火柴怪一点就着，性情多变，靠近它们十分危险。",
+      "source": {
+        "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
+        "item": "Matcho Shard"
       }
     }
   ],

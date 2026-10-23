@@ -73,17 +73,44 @@
     "附魔 Sunset（2026-10-22 同词异义修复）：终极附魔菜单里的 Sunset 是附魔落日丰收，不是兔子日落": {
       "Ultimate Enchantments ➜ Sunset": "终极附魔 ➜ 落日丰收"
     },
-    "其他语义冲突（2026-10-22）：Light 指光明元素，Power Crystal/Stone 是能量水晶与能力石，不是力量": {
+    "其他语义冲突（2026-10-22，10-23 更新）：Light 指光明元素；Power Crystal 是信标水晶（Energy Crystal 才是能量水晶），Power Stone 是能力石，都不是力量": {
       "Light Bait": "光明鱼饵",
-      "Power Crystal": "能量水晶",
-      "Scorched Power Crystal": "焦灼能量水晶",
+      "Power Crystal": "信标水晶",
+      "Scorched Power Crystal": "焦灼信标水晶",
       "Power Stones": "能力石",
       "Power Stone": "能力石"
+    },
+    "撞名拆分（2026-10-23，GPT beta.14-orderbook1 按用户决定处理，从生成文件搬回源头）：同一个中文不能指两样东西": {
+      "Dayswitch": "昼之开关",
+      "Nightswitch": "夜之开关",
+      "Spike": "尖刺怪",
+      "Hypixel Ranks": "Hypixel 会员头衔",
+      "Green Thumb": "园艺妙手",
+      "Battle Experience": "实战经验",
+      "Learn Power From Stones": "从能力石学习能力",
+      "No Power": "未选择能力"
     }
   },
   "lines": {
     "附魔 Sunset（2026-10-22 同词异义修复）：附魔书等级范围行用附魔名落日丰收，不用兔子名日落": {
       "Sunset %1$s-%2$s": "落日丰收 %1$s-%2$s"
+    },
+    "调律师饰品能力（2026-10-23）：饰品 Power 一律译「能力」，Strength 属性与 Power 附魔才是「力量」": {
+      "Starter Power": "入门能力",
+      "Power is selected!": "已选择此能力！",
+      "Advanced Stone Power": "高阶能力石能力",
+      "Advanced Stone Power Power is selected!": "高阶能力石能力已选择此能力！",
+      "Unique Power Bonus:": "独有能力加成:",
+      "Unique Power Bonus: %1$s": "独有能力加成: %1$s",
+      "Combine %1$sx identical Power Stones that you may find across SkyBlock to permanently unlock their power.": "合成 %1$s 个你在空岛各处找到的相同能力石，即可永久解锁它们的能力。",
+      "Click to combine stones!": "点击合成能力石！"
+    },
+    "零散修正（2026-10-23，GPT menuquest1 从生成文件搬回源头）": {
+      "ACTIVE": "运行中",
+      "COSMETIC SHOP": "外观商店",
+      "Complete Campf§jire Trials": "完成营火试炼",
+      "Rosetta's Armor": "罗塞塔的盔甲",
+      "Green Thumb %1$s-%2$s": "园艺妙手 %1$s-%2$s"
     }
   }
 }

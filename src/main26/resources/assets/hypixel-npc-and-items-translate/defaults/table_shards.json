@@ -16624,7 +16624,7 @@
     },
     {
       "en": "Grants +%1$s  Gemstone Fortune while Mayor Cole's Mining Fiesta perk is active.",
-      "zh": "市长科尔的挖矿狂欢福利生效期间，提供 +%1$s 宝石时运。",
+      "zh": "市长科尔的挖矿嘉年华福利生效期间，提供 +%1$s 宝石时运。",
       "source": {
         "kind": "canonical full effect",
         "item": "Packrat Shard",
@@ -22052,7 +22052,7 @@
     },
     {
       "en": "Increases your chance of finding Glossy Gemstones during Mining Fiestas by +%1$s%. Effects are doubled if you have a Fiesta Flask active!",
-      "zh": "挖矿狂欢期间找到光亮宝石的几率提高 +%1$s%。若你有狂欢烧瓶生效，效果翻倍！",
+      "zh": "挖矿嘉年华期间找到光亮宝石的几率提高 +%1$s%。若你有狂欢烧瓶生效，效果翻倍！",
       "source": {
         "kind": "canonical full effect",
         "item": "Scatha Shard",
@@ -31639,7 +31639,7 @@
     },
     {
       "en": "Grants +%1$s  Magic Find against  Mythological mobs.",
-      "zh": "对 神话生物提供 +%1$s  魔法寻宝。",
+      "zh": "对 神话庆典生物提供 +%1$s  魔法寻宝。",
       "source": {
         "kind": "canonical full effect",
         "item": "Minotaur Shard",
@@ -31777,7 +31777,7 @@
     },
     {
       "en": "Grants +%1$s  Defense against ✿ Mythological mobs.",
-      "zh": "对 ✿ 神话生物提供 +%1$s 防御。",
+      "zh": "对 ✿ 神话庆典生物提供 +%1$s 防御。",
       "source": {
         "kind": "canonical full effect",
         "item": "Cretan Bull Shard",
@@ -31915,7 +31915,7 @@
     },
     {
       "en": "Grants +%1$s% more  Damage against  Mythological mobs.",
-      "zh": "对 神话生物多造成 +%1$s%  伤害。",
+      "zh": "对 神话庆典生物多造成 +%1$s%  伤害。",
       "source": {
         "kind": "canonical full effect",
         "item": "Minos Hunter Shard",
@@ -34847,7 +34847,7 @@
     },
     {
       "en": "Increases your chance of finding Refined Minerals during Mining Fiestas by +%1$s%. Effects are doubled if you have a Fiesta Flask active!",
-      "zh": "挖矿狂欢期间找到精炼矿物的几率提高 +%1$s%。若你有狂欢烧瓶生效，效果翻倍！",
+      "zh": "挖矿嘉年华期间找到精炼矿物的几率提高 +%1$s%。若你有狂欢烧瓶生效，效果翻倍！",
       "source": {
         "kind": "canonical full effect",
         "item": "Stoneworm Shard",

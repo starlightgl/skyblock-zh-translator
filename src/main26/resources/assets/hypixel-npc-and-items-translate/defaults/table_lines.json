@@ -1039,7 +1039,7 @@
 },
 {
 "en": "Reduces damage taken from  Mythological mobs by %1$s%.",
-"zh": "受到 神话生物的伤害降低 %1$s%。"
+"zh": "受到 神话庆典生物的伤害降低 %1$s%。"
 },
 {
 "en": "* Co-op Soulbound * EPIC",
@@ -2843,7 +2843,7 @@
 },
 {
 "en": "Gains stats based on how many  Mythological mobs and Minos followers you've slain.",
-"zh": "根据你击杀的 神话生物和米诺斯追随者数量获得属性。"
+"zh": "根据你击杀的 神话庆典生物和米诺斯追随者数量获得属性。"
 },
 {
 "en": "* Soulbound * X Rift-Transferable X Works while in Accessory Bag!",
@@ -3143,7 +3143,7 @@
 },
 {
 "en": "Grants +%1$s Magic Find on  Mythological mobs.",
-"zh": "对 神话生物提供 +%1$s 魔法寻宝。"
+"zh": "对 神话庆典生物提供 +%1$s 魔法寻宝。"
 },
 {
 "en": "❣ Requires Expert Trophy Fisher.",
@@ -6667,11 +6667,11 @@
 },
 {
 "en": "Ability: Overindulgence  Mythological mobs deal %1$sx damage.",
-"zh": "技能: 放纵  神话生物造成的伤害变为 %1$s 倍。"
+"zh": "技能: 放纵  神话庆典生物造成的伤害变为 %1$s 倍。"
 },
 {
 "en": "Grants +%1$s Magic Find against  Mythological mobs and deal +%2$sx Damage for each digit of Coins consumed.",
-"zh": "对 神话生物提供 +%1$s 魔法寻宝，并且所消耗硬币的位数每有一位，造成的 伤害 +%2$s 倍。"
+"zh": "对 神话庆典生物提供 +%1$s 魔法寻宝，并且所消耗硬币的位数每有一位，造成的 伤害 +%2$s 倍。"
 },
 {
 "en": "+%1$sx Damage +%2$s Magic Find ",
@@ -6695,11 +6695,11 @@
 },
 {
 "en": "Grants +%1$s%  Damage and +%2$s Magic Find on  Mythological mobs per Bestiary tier you have across all of them.",
-"zh": "你在所有 神话生物上每拥有一级怪物图鉴等级，对神话生物提供 +%1$s% 伤害和 +%2$s 魔法寻宝。"
+"zh": "你在所有 神话庆典生物上每拥有一级怪物图鉴等级，对神话庆典生物提供 +%1$s% 伤害和 +%2$s 魔法寻宝。"
 },
 {
 "en": " Mythological Bestiary Tiers: %1$s",
-"zh": " 神话生物怪物图鉴等级: %1$s"
+"zh": " 神话庆典生物怪物图鉴等级: %1$s"
 },
 {
 "en": "+%1$s%  Damage +%2$s Magic Find",
@@ -7143,11 +7143,11 @@
 },
 {
 "en": "Odyssey %1$s types of ✿ Mythological mobs can spawn from Griffin Burrows. Their stats scale with your Griffin’s rarity.",
-"zh": "奥德赛 狮鹫洞穴中可刷出 %1$s 种 ✿ 神话生物，它们的属性随你的狮鹫稀有度提升。"
+"zh": "奥德赛 狮鹫洞穴中可刷出 %1$s 种 ✿ 神话庆典生物，它们的属性随你的狮鹫稀有度提升。"
 },
 {
 "en": "King of Kings Grants +%2$s Magic Find on  Mythological mobs.",
-"zh": "王中之王 对 神话生物提供 +%2$s 魔法寻宝。"
+"zh": "王中之王 对 神话庆典生物提供 +%2$s 魔法寻宝。"
 },
 {
 "en": "Mob Types: ⚓ Aquatic, ☽ Spooky, ❃ Elusive ❤",
@@ -8767,7 +8767,7 @@
 },
 {
 "en": "Battle Experience I Pets gain +%1$s% more EXP from Combat.",
-"zh": "战斗经验 I 宠物从战斗中获得的经验增加 +%1$s%。"
+"zh": "实战经验 I 宠物从战斗中获得的经验增加 +%1$s%。"
 },
 {
 "en": "Battle Frog I Your Frog Pet gains +%1$s  Strength.",
@@ -9127,7 +9127,7 @@
 },
 {
 "en": "Fiesta Fortune I Grants +%1$s  Gemstone Fortune while Mayor Cole's Mining Fiesta perk is active.",
-"zh": "狂欢时运 I 市长科尔的挖矿狂欢福利生效期间，提供 +%1$s 宝石时运。"
+"zh": "狂欢时运 I 市长科尔的挖矿嘉年华福利生效期间，提供 +%1$s 宝石时运。"
 },
 {
 "en": "Fig Collector I Grants +%1$s  Fig Fortune for every digit in your Fig Log collection. (Max %2$sM collection)",
@@ -9287,7 +9287,7 @@
 },
 {
 "en": "Glossy Fortune I Increases your chance of finding Glossy Gemstones during Mining Fiestas by +%1$s%. Effects are doubled if you have a Fiesta Flask active!",
-"zh": "光亮时运 I 挖矿狂欢期间找到光亮宝石的几率提高 +%1$s%。若你有狂欢烧瓶生效，效果翻倍！"
+"zh": "光亮时运 I 挖矿嘉年华期间找到光亮宝石的几率提高 +%1$s%。若你有狂欢烧瓶生效，效果翻倍！"
 },
 {
 "en": "Golden Frog I Trophy Frogs are +%1$s% more likely to be GOLD.",
@@ -9563,15 +9563,15 @@
 },
 {
 "en": "Mythological Fortune I Grants +%1$s  Magic Find against  Mythological mobs.",
-"zh": " 神话时运 I 对神话生物提供 +%1$s 魔法寻宝。"
+"zh": " 神话时运 I 对神话庆典生物提供 +%1$s 魔法寻宝。"
 },
 {
 "en": "Mythological Resistance I Grants +%1$s  Defense against ✿ Mythological mobs.",
-"zh": "神话抗性 I 对 ✿ 神话生物提供 +%1$s 防御。"
+"zh": "神话抗性 I 对 ✿ 神话庆典生物提供 +%1$s 防御。"
 },
 {
 "en": "Mythological Ruler I Grants +%1$s% more  Damage against  Mythological mobs.",
-"zh": " 神话统御 I 对神话生物多造成 +%1$s%  伤害。"
+"zh": " 神话统御 I 对神话庆典生物多造成 +%1$s%  伤害。"
 },
 {
 "en": "Nature Elemental I Grants +%1$s  Health.",
@@ -9655,7 +9655,7 @@
 },
 {
 "en": "Refined Luck I Increases your chance of finding Refined Minerals during Mining Fiestas by +%1$s%. Effects are doubled if you have a Fiesta Flask active!",
-"zh": "精炼幸运 I 挖矿狂欢期间找到精炼矿物的几率提高 +%1$s%。若你有狂欢烧瓶生效，效果翻倍！"
+"zh": "精炼幸运 I 挖矿嘉年华期间找到精炼矿物的几率提高 +%1$s%。若你有狂欢烧瓶生效，效果翻倍！"
 },
 {
 "en": "Rekindle I Killing a Bat has a +%1$s% chance to add %2$s Bonus Score to your Dungeon Run.",
@@ -11715,7 +11715,7 @@
 },
 {
 "en": "Mining Fiesta Gain +%1$s☯ Mining Wisdom, +%2$s%  Mining Fortune, and collect Refined Minerals and Glossy Gemstones from mining!",
-"zh": "挖矿狂欢 获得 +%1$s☯ 挖矿智慧和 +%2$s% 挖掘时运，并在挖矿时收集精炼矿物和光亮宝石！"
+"zh": "挖矿嘉年华 获得 +%1$s☯ 挖矿智慧和 +%2$s% 挖掘时运，并在挖矿时收集精炼矿物和光亮宝石！"
 },
 {
 "en": "Molten Forge Decrease the time it takes to forge items by %1$s%.",
@@ -11963,7 +11963,7 @@
 },
 {
 "en": "You gain %1$sx Coins from Griffin Burrows and  Mythological mobs, but they are consumed by this helmet.",
-"zh": "你从狮鹫洞穴和 神话生物处获得的硬币变为 %1$s 倍，但这些硬币会被这顶头盔吞噬。"
+"zh": "你从狮鹫洞穴和 神话庆典生物处获得的硬币变为 %1$s 倍，但这些硬币会被这顶头盔吞噬。"
 },
 {
 "en": "(Perk changes at %1$sB Coins consumed)",
@@ -11971,7 +11971,7 @@
 },
 {
 "en": "You gain %1$sx Coins from Griffin Burrows and  Mythological mobs.",
-"zh": "你从狮鹫洞穴和 神话生物处获得的硬币变为 %1$s 倍。"
+"zh": "你从狮鹫洞穴和 神话庆典生物处获得的硬币变为 %1$s 倍。"
 },
 {
 "en": "This skin can be applied to Crown of Avarice.",
@@ -11983,7 +11983,7 @@
 },
 {
 "en": "Ability: Indulgence Gain %1$sx Coins from Griffin Burrows and +%2$s Magic Find on  Mythological mobs, but you take %3$sx damage from them.",
-"zh": "技能: 放纵 从狮鹫洞穴获得的硬币变为 %1$s 倍，并对 神话生物获得 +%2$s 魔法寻宝，但你受到它们的伤害变为 %3$s 倍。"
+"zh": "技能: 放纵 从狮鹫洞穴获得的硬币变为 %1$s 倍，并对 神话庆典生物获得 +%2$s 魔法寻宝，但你受到它们的伤害变为 %3$s 倍。"
 },
 {
 "en": "Created by Inferno minions, use to feed Wisp pets or tier up into Fuel Gabagool.",
@@ -14599,7 +14599,7 @@
 },
 {
 "en": "Grants +%1$s%  Mining Fortune while Mayor Cole's Mining Fiesta perk is active.",
-"zh": "市长科尔的挖矿狂欢福利生效期间，提供 +%1$s%  挖掘时运。"
+"zh": "市长科尔的挖矿嘉年华福利生效期间，提供 +%1$s%  挖掘时运。"
 },
 {
 "en": "Upgrade a Dungeon Item's Master Stars from ➍➜➎, increasing all stats by an additional +%1$s% in Master Mode!",
@@ -15271,7 +15271,7 @@
 },
 {
 "en": "Extra Event Schedules an extra Fishing Festival, Mining Fiesta or Spooky Festival event during the year.",
-"zh": "额外活动 每年额外安排一次钓鱼节、挖矿狂欢或惊魂节活动。"
+"zh": "额外活动 每年额外安排一次钓鱼节、挖矿嘉年华或惊魂节活动。"
 },
 {
 "en": "Trickery Gain +%1$s Mana Regen per soul piece found.",
@@ -16019,7 +16019,7 @@
 },
 {
 "en": "Lustrous Bonus Grants +%1$s Mining Spread while Mayor Cole's Mining Fiesta perk is active.",
-"zh": "光泽加成 市长科尔的挖矿狂欢福利生效期间，提供 +%1$s 挖掘蔓延。"
+"zh": "光泽加成 市长科尔的挖矿嘉年华福利生效期间，提供 +%1$s 挖掘蔓延。"
 },
 {
 "en": "Heavy and strange, it seems to carry a hidden weight.",
@@ -25335,7 +25335,7 @@
 },
 {
 "en": "Deals %1$sx damage to  Mythological mobs and grants +%2$s Magic Find on them.",
-"zh": "对  神话生物造成 %1$s 倍伤害，并在对其作战时提供 +%2$s 魔法寻宝。"
+"zh": "对  神话庆典生物造成 %1$s 倍伤害，并在对其作战时提供 +%2$s 魔法寻宝。"
 },
 {
 "en": "Ability: Synthesis Analyzing a mutation in the Crop Analyzer gives %1$s% more Copper per Chip Level!",
@@ -28323,7 +28323,7 @@
 },
 {
 "en": "Forceful power.",
-"zh": "「强力」力量。"
+"zh": "「强力」能力。"
 },
 {
 "en": "Full Set Bonus: Efficient training (%1$s/%2$s)",
@@ -28927,7 +28927,7 @@
 },
 {
 "en": "Battle Experience I",
-"zh": "战斗经验 I"
+"zh": "实战经验 I"
 },
 {
 "en": "Pets gain +%1$s% more EXP from Combat.",
@@ -29667,7 +29667,7 @@
 },
 {
 "en": "Grants +%1$s  Gemstone Fortune while Mayor Cole's Mining Fiesta perk is",
-"zh": "提供 +%1$s  宝石时运，需市长科尔的挖矿狂欢福利"
+"zh": "提供 +%1$s  宝石时运，需市长科尔的挖矿嘉年华福利"
 },
 {
 "en": "active.",
@@ -29963,7 +29963,7 @@
 },
 {
 "en": "Increases your chance of finding Glossy Gemstones during Mining Fiestas by +%1$s%. Effects are doubled",
-"zh": "挖矿狂欢期间找到光亮宝石的几率提高 +%1$s%。若你有狂欢烧瓶生效，"
+"zh": "挖矿嘉年华期间找到光亮宝石的几率提高 +%1$s%。若你有狂欢烧瓶生效，"
 },
 {
 "en": "if you have a Fiesta Flask active!",
@@ -30527,7 +30527,7 @@
 },
 {
 "en": "Grants +%1$s  Magic Find against  Mythological mobs.",
-"zh": "对 神话生物提供 +%1$s  魔法寻宝。"
+"zh": "对 神话庆典生物提供 +%1$s  魔法寻宝。"
 },
 {
 "en": "Mythological Resistance I",
@@ -30535,7 +30535,7 @@
 },
 {
 "en": "Grants +%1$s  Defense against ✿ Mythological mobs.",
-"zh": "对 ✿ 神话生物提供 +%1$s  防御。"
+"zh": "对 ✿ 神话庆典生物提供 +%1$s  防御。"
 },
 {
 "en": "Mythological Ruler I",
@@ -30543,7 +30543,7 @@
 },
 {
 "en": "Grants +%1$s% more  Damage against  Mythological mobs.",
-"zh": "对 神话生物多造成 +%1$s%  伤害。"
+"zh": "对 神话庆典生物多造成 +%1$s%  伤害。"
 },
 {
 "en": "Nature Elemental I",
@@ -30703,7 +30703,7 @@
 },
 {
 "en": "Increases your chance of finding Refined Minerals during Mining Fiestas by +%1$s%. Effects are doubled",
-"zh": "挖矿狂欢期间找到精炼矿物的几率提高 +%1$s%。若你有狂欢烧瓶生效，"
+"zh": "挖矿嘉年华期间找到精炼矿物的几率提高 +%1$s%。若你有狂欢烧瓶生效，"
 },
 {
 "en": "Rekindle I",
@@ -31571,7 +31571,7 @@
 },
 {
 "en": "Gains stats based on how many  Mythological mobs and Minos",
-"zh": "根据你击杀的  神话生物和米诺斯"
+"zh": "根据你击杀的  神话庆典生物和米诺斯"
 },
 {
 "en": "followers you've slain.",
@@ -31579,7 +31579,7 @@
 },
 {
 "en": "Bloody power.",
-"zh": "「血腥」力量。"
+"zh": "「血腥」能力。"
 },
 {
 "en": "+%1$s Strength",
@@ -32167,7 +32167,7 @@
 },
 {
 "en": "Bubba power.",
-"zh": "「布巴」力量。"
+"zh": "「布巴」能力。"
 },
 {
 "en": "-%1$s Defense",
@@ -32467,7 +32467,7 @@
 },
 {
 "en": "Crumbly power.",
-"zh": "「酥脆」力量。"
+"zh": "「酥脆」能力。"
 },
 {
 "en": "+%1$s Crit Chance",
@@ -32707,11 +32707,11 @@
 },
 {
 "en": " Mythological mobs deal %1$sx",
-"zh": " 神话生物造成 %1$s 倍"
+"zh": " 神话庆典生物造成 %1$s 倍"
 },
 {
 "en": "You gain %1$sx Coins from Griffin Burrows and  Mythological mobs,",
-"zh": "你从狮鹫洞穴和  神话生物处获得的硬币变为 %1$s 倍，"
+"zh": "你从狮鹫洞穴和  神话庆典生物处获得的硬币变为 %1$s 倍，"
 },
 {
 "en": "but they are consumed by this helmet.",
@@ -32719,7 +32719,7 @@
 },
 {
 "en": "Grants +%1$s Magic Find against  Mythological mobs and deal +%2$sx Damage for each digit of Coins",
-"zh": "对  神话生物提供 +%1$s 魔法寻宝，并造成 +%2$s 倍 伤害，数值乘以已"
+"zh": "对  神话庆典生物提供 +%1$s 魔法寻宝，并造成 +%2$s 倍 伤害，数值乘以已"
 },
 {
 "en": "consumed.",
@@ -32739,7 +32739,7 @@
 },
 {
 "en": "Gain %1$sx Coins from Griffin Burrows and +%2$s Magic Find on  Mythological mobs,",
-"zh": "从狮鹫洞穴获得的硬币变为 %1$s 倍，并对  神话生物获得 +%2$s 魔法寻宝，"
+"zh": "从狮鹫洞穴获得的硬币变为 %1$s 倍，并对  神话庆典生物获得 +%2$s 魔法寻宝，"
 },
 {
 "en": "but you take %1$sx damage from them.",
@@ -32795,7 +32795,7 @@
 },
 {
 "en": "Grants +%1$s%  Damage and +%2$s Magic Find on  Mythological mobs",
-"zh": "对  神话生物提供 +%1$s%  伤害和 +%2$s 魔法寻宝，按你在所有神话生物上"
+"zh": "对  神话庆典生物提供 +%1$s%  伤害和 +%2$s 魔法寻宝，按你在所有神话庆典生物上"
 },
 {
 "en": "per Bestiary tier you have across all of them.",
@@ -33083,7 +33083,7 @@
 },
 {
 "en": "Sanguisuge power.",
-"zh": "「吸血蛭」力量。"
+"zh": "「吸血蛭」能力。"
 },
 {
 "en": "Ability: Copycat RIGHT CLICK",
@@ -33287,7 +33287,7 @@
 },
 {
 "en": "Bizarre power.",
-"zh": "「怪异」力量。"
+"zh": "「怪异」能力。"
 },
 {
 "en": "-%1$s Strength",
@@ -33611,7 +33611,7 @@
 },
 {
 "en": "Sighted power.",
-"zh": "「洞察」力量。"
+"zh": "「洞察」能力。"
 },
 {
 "en": "Increases damage dealt to  Ender mobs by %1$s%.",
@@ -33635,7 +33635,7 @@
 },
 {
 "en": "Adept power.",
-"zh": "「熟练」力量。"
+"zh": "「熟练」能力。"
 },
 {
 "en": "Ability: Extreme Focus RIGHT CLICK",
@@ -33839,7 +33839,7 @@
 },
 {
 "en": "Grants +%1$s%  Mining Fortune while Mayor Cole's Mining Fiesta perk is",
-"zh": "提供 +%1$s%  挖掘时运，限市长科尔的挖矿狂欢福利"
+"zh": "提供 +%1$s%  挖掘时运，限市长科尔的挖矿嘉年华福利"
 },
 {
 "en": "Upgrade a Dungeon Item's Master Stars from ➍➜➎, increasing all",
@@ -34271,7 +34271,7 @@
 },
 {
 "en": "Schedules an extra Fishing Festival, Mining Fiesta or Spooky Festival",
-"zh": "每年额外安排一次钓鱼节、挖矿狂欢或惊魂节"
+"zh": "每年额外安排一次钓鱼节、挖矿嘉年华或惊魂节"
 },
 {
 "en": "event during the year.",
@@ -34511,7 +34511,7 @@
 },
 {
 "en": "Itchy power.",
-"zh": "「瘙痒」力量。"
+"zh": "「瘙痒」能力。"
 },
 {
 "en": "Stage %1$s: Damaged once every %2$s hits,",
@@ -34807,7 +34807,7 @@
 },
 {
 "en": "Frozen power.",
-"zh": "「冰冻」力量。"
+"zh": "「冰冻」能力。"
 },
 {
 "en": "Lustrous Bonus",
@@ -34815,7 +34815,7 @@
 },
 {
 "en": "Grants +%1$s Mining Spread while Mayor Cole's Mining Fiesta perk is",
-"zh": "市长科尔的挖矿狂欢福利生效期间，提供 +%1$s 挖掘蔓延"
+"zh": "市长科尔的挖矿嘉年华福利生效期间，提供 +%1$s 挖掘蔓延"
 },
 {
 "en": "Ability: Life Tap LEFT CLICK",
@@ -35191,7 +35191,7 @@
 },
 {
 "en": "%1$s types of  Mythological mobs can",
-"zh": "%1$s 种  神话生物可从"
+"zh": "%1$s 种  神话庆典生物可从"
 },
 {
 "en": "spawn from Griffin Burrows. Their stats scale with your Griffin’s rarity.",
@@ -35199,7 +35199,7 @@
 },
 {
 "en": "%1$s types of ✿ Mythological mobs can",
-"zh": "%1$s 种 ✿ 神话生物可从"
+"zh": "%1$s 种 ✿ 神话庆典生物可从"
 },
 {
 "en": "Sacred Strength",
@@ -35215,7 +35215,7 @@
 },
 {
 "en": "Grants +%2$s Magic Find on  Mythological mobs.",
-"zh": "对  神话生物提供 +%2$s 魔法寻宝。"
+"zh": "对  神话庆典生物提供 +%2$s 魔法寻宝。"
 },
 {
 "en": "Ancient Earth",
@@ -35351,7 +35351,7 @@
 },
 {
 "en": "Slender power.",
-"zh": "「瘦长」力量。"
+"zh": "「瘦长」能力。"
 },
 {
 "en": "Ability: Succulence RIGHT CLICK",
@@ -35515,7 +35515,7 @@
 },
 {
 "en": "Demonic power.",
-"zh": "「恶魔」力量。"
+"zh": "「恶魔」能力。"
 },
 {
 "en": "High Stride",
@@ -36367,7 +36367,7 @@
 },
 {
 "en": "Silky power.",
-"zh": "「丝滑」力量。"
+"zh": "「丝滑」能力。"
 },
 {
 "en": "Ability: Rapid Fire RIGHT CLICK",
@@ -36451,7 +36451,7 @@
 },
 {
 "en": "Hurtful power.",
-"zh": "「伤人」力量。"
+"zh": "「伤人」能力。"
 },
 {
 "en": "Grants %1$s additional experience orb every time you successfully catch a fish.",
@@ -36503,7 +36503,7 @@
 },
 {
 "en": "Strong power.",
-"zh": "「强壮」力量。"
+"zh": "「强壮」能力。"
 },
 {
 "en": "Ability: Chimeric Core",
@@ -37047,7 +37047,7 @@
 },
 {
 "en": "Mythical power.",
-"zh": "「神话」力量。"
+"zh": "「神话」能力。"
 },
 {
 "en": "Foraging Wisdom Boost",
@@ -37603,7 +37603,7 @@
 },
 {
 "en": "Pleasant power.",
-"zh": "「愉悦」力量。"
+"zh": "「愉悦」能力。"
 },
 {
 "en": "This pet can have Drone Mods applied to it, which allows you to modify its Perks to your liking.",
@@ -38235,7 +38235,7 @@
 },
 {
 "en": "Sweet power.",
-"zh": "「甜蜜」力量。"
+"zh": "「甜蜜」能力。"
 },
 {
 "en": "Auspicious Bonus",
@@ -38459,7 +38459,7 @@
 },
 {
 "en": "Scorching power.",
-"zh": "「灼热」力量。"
+"zh": "「灼热」能力。"
 },
 {
 "en": "Bribe",
@@ -39399,7 +39399,7 @@
 },
 {
 "en": "Buttery power.",
-"zh": "「黄油」力量。"
+"zh": "「黄油」能力。"
 },
 {
 "en": "Ability: Sparkle RIGHT CLICK",
@@ -40343,7 +40343,7 @@
 },
 {
 "en": "Healthy power.",
-"zh": "「健康」力量。"
+"zh": "「健康」能力。"
 },
 {
 "en": "Malevolent Hitshield",
@@ -41087,7 +41087,7 @@
 },
 {
 "en": "Unique Power Bonus:",
-"zh": "独有能力加成："
+"zh": "独有能力加成:"
 },
 {
 "en": "Health Regen: %1$s",
@@ -42743,7 +42743,7 @@
 },
 {
 "en": "Profile: Pineapple",
-"zh": "存档：菠萝"
+"zh": "存档: 菠萝"
 },
 {
 "en": "SB Level: [%1$s] %2$s/%3$s XP",
@@ -55407,7 +55407,7 @@
 },
 {
 "en": "Green Thumb %1$s-%2$s",
-"zh": "绿手指 %1$s-%2$s"
+"zh": "园艺妙手 %1$s-%2$s"
 },
 {
 "en": "▶ Green Thumb I",
@@ -64807,7 +64807,7 @@
 },
 {
 "en": "Battle Experience I Pets gain +%1$s% more EXP from Combat. You can Syphon this shard from your Hunting Box.",
-"zh": "战斗经验 I 宠物从战斗中获得的经验增加 +%1$s%。你可以从狩猎箱中汲取此碎片。"
+"zh": "实战经验 I 宠物从战斗中获得的经验增加 +%1$s%。你可以从狩猎箱中汲取此碎片。"
 },
 {
 "en": "Materials",
@@ -66859,7 +66859,7 @@
 },
 {
 "en": "Drops rarely from Gemstones while Mayor Cole's Mining Fiesta is active.",
-"zh": "科尔市长的挖矿狂欢生效期间，从宝石中稀有掉落。"
+"zh": "科尔市长的挖矿嘉年华生效期间，从宝石中稀有掉落。"
 },
 {
 "en": "Instantly sell all Coupons derivatives in your inventory.",
@@ -68303,7 +68303,7 @@
 },
 {
 "en": "SHIP NAVIGATOR",
-"zh": "航海领航员"
+"zh": "船只领航员"
 },
 {
 "en": "Click to travel!",
@@ -70431,11 +70431,11 @@
 },
 {
 "en": "Click to combine stones!",
-"zh": "点击合成力量石！"
+"zh": "点击合成能力石！"
 },
 {
 "en": "Combine %1$sx identical Power Stones that you may find across SkyBlock to permanently unlock their power.",
-"zh": "合成 %1$s 个你在空岛各处找到的相同能力石，即可永久解锁它们的力量。"
+"zh": "合成 %1$s 个你在空岛各处找到的相同能力石，即可永久解锁它们的能力。"
 },
 {
 "en": "Every %1$s AP grants %2$s Tuning Point.",

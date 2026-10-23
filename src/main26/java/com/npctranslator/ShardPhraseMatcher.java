@@ -447,7 +447,8 @@ public final class ShardPhraseMatcher {
 
     /** Whether {@code next} continues the sentence of {@code prev} (same rules as the line joining). */
     public static boolean continuesLine(String prev, String next) {
-        return !isBlank(prev) && !isBlank(next) && sameParagraph(prev, next) && !STARTS_FIELD.matcher(next).find();
+        return !isBlank(prev) && !isBlank(next) && sameParagraph(prev, next) && !STARTS_FIELD.matcher(next).find()
+                && !PhraseMatcher.isBar(prev) && !PhraseMatcher.isBar(next) && !PhraseMatcher.STARTS_BULLET.matcher(next).find();
     }
 
     public String[] translateLines(List<String> lines, int maxJoin) {
@@ -457,13 +458,14 @@ public final class ShardPhraseMatcher {
         while (i < n) {
             boolean done = false;
             // the first line is the item name: never merge it with the description below it
-            if (i > 0 && !isBlank(lines.get(i))) {
+            if (i > 0 && !isBlank(lines.get(i)) && !PhraseMatcher.isBar(lines.get(i))) {
                 int maxJ = Math.min(n - 1, i + Math.max(0, maxJoin - 1));
                 // stop at a blank line (paragraph boundary) or where the colour changes
-                // ("§fSnow Block" + "§8Common Commodity" are two different things)
+                // ("§fSnow Block" + "§8Common Commodity" are two different things); bars and list items stay apart
                 for (int k = i + 1; k <= maxJ; k++) {
                     if (isBlank(lines.get(k)) || !sameParagraph(lines.get(k - 1), lines.get(k))
-                            || STARTS_FIELD.matcher(lines.get(k)).find()) { maxJ = k - 1; break; }
+                            || STARTS_FIELD.matcher(lines.get(k)).find() || PhraseMatcher.isBar(lines.get(k))
+                            || PhraseMatcher.STARTS_BULLET.matcher(lines.get(k)).find()) { maxJ = k - 1; break; }
                 }
                 for (int j = maxJ; j > i; j--) {
                     StringBuilder joined = new StringBuilder(lines.get(i));

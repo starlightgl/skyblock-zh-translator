@@ -2290,7 +2290,7 @@
 "Icefur": "冰毛",
 "Iris": "鸢尾",
 "Juniper": "杜松",
-"Lagoon": "泻湖",
+"Lagoon": "潟湖",
 "Lavender": "薰衣草",
 "Marigold": "金盏花",
 "Mayor": "市长",
@@ -2634,7 +2634,7 @@
 "Portal to The Forge": "通往锻造厂的传送门",
 "Travel Scroll to the Dwarven Forge": "矮人锻造厂传送卷轴",
 "Fossil Excavator (NPC)": "化石挖掘者 (NPC)",
-"Fossil Excavator": "化石挖掘者",
+"Fossil Excavator": "化石挖掘机",
 "Fossil Muncher (NPC)": "化石啃食者 (NPC)",
 "Fossil Muncher": "化石啃食者",
 "Fossil Muncher Minion Skin": "化石啃食者小人皮肤",
@@ -3511,7 +3511,7 @@
 "Intimidation Relic": "威慑遗物",
 "Intimidation Ring": "威慑戒指",
 "Intimidation Talisman": "威慑护符",
-"Inverted Sirius (Rift NPC)": "倒转天狼星 (裂隙 NPC)",
+"Inverted Sirius (Rift NPC)": "倒转西里乌斯 (裂隙 NPC)",
 "IQ Point": "智商点",
 "Iridium": "铱",
 "Iron Axe": "铁斧",
@@ -9893,7 +9893,7 @@
 "Jumpin' Jack": "蹦跳杰克",
 "Worker Xavier": "工人泽维尔",
 "Melody ♫": "梅洛迪 ♫",
-"Starlyn": "斯塔琳",
+"Starlyn": "星林",
 "Swoop's Instructions": "斯伍普的指导",
 "David's Hunting Lessons": "大卫的狩猎课",
 "Weakling": "孱弱者",
@@ -11984,7 +11984,9 @@
 "Stun": "眩晕",
 "True Resistance": "真实抗性",
 "Water Breathing": "水下呼吸",
-"Wisp's Ice-Flavored Water": "鬼火冰味水"
+"Wisp's Ice-Flavored Water": "鬼火冰味水",
+"RIGHT CLICK": "右键",
+"LEFT CLICK": "左键"
 },
 "aliases": {
 "Rezar® Abicase": [

@@ -174,6 +174,7 @@ public final class ItemLines {
     /** Whether {@code next} is the wrapped continuation of the sentence in {@code prev}. */
     static boolean continues(String prev, String next) {
         if (OrderBookText.isBoundary(prev) || OrderBookText.isBoundary(next)) return false;
+        if (PhraseMatcher.isBar(prev) || PhraseMatcher.isBar(next)) return false;
         String a = plain(prev), b = plain(next);
         if (a.length() < 18 || b.isEmpty()) return false;
         if (SENTENCE_END.matcher(a).matches()) return false;
@@ -299,6 +300,8 @@ public final class ItemLines {
         Map<String, List<Component>> lineMap = new ConcurrentHashMap<>();
         boolean changed = false;
         String where = menu != null ? menu : "物品";
+        int tooltipPx = 0;
+        for (String l : p.lines) tooltipPx = Math.max(tooltipPx, PhraseMatcher.widthPx(l));
         for (int i = 0; i < n; i++) {
             String original = p.lines.get(i);
             if (p.fixed[i] != PhraseMatcher.MERGED && !p.joined[i]) {
@@ -316,7 +319,11 @@ public final class ItemLines {
                 continue;
             }
             if (p.fixed[i] != null) {
-                List<Component> wrapped = wrap(p.fixed[i]);
+                List<String> source = new ArrayList<>();
+                source.add(original);
+                for (int k = i + 1; k < n && p.fixed[k] == PhraseMatcher.MERGED; k++) source.add(p.lines.get(k));
+                List<Component> wrapped = new ArrayList<>();
+                for (String w : PhraseMatcher.layout(p.fixed[i], source, tooltipPx)) wrapped.add(NPCTranslatorClient.parseColorCodes(w));
                 translated.addAll(wrapped);
                 lineMap.put(original, wrapped);
                 changed = true;

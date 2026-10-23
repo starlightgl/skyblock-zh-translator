@@ -2514,6 +2514,14 @@
             "True Resistance": "真实抗性",
             "Water Breathing": "水下呼吸",
             "Wisp's Ice-Flavored Water": "鬼火冰味水"
+        },
+        "排版与一致性检查（2026-10-24）：一词一译、按键词统一、名称统一（用户要求检查一致性与一词多义）": {
+            "RIGHT CLICK": "右键",
+            "LEFT CLICK": "左键",
+            "Starlyn": "星林",
+            "Lagoon": "潟湖",
+            "Inverted Sirius (Rift NPC)": "倒转西里乌斯 (裂隙 NPC)",
+            "Fossil Excavator": "化石挖掘机"
         }
     },
     "lines": {
@@ -21096,6 +21104,720 @@
             "Your auction has %1$s bid totaling %2$s coins.": "你的拍卖有 %1$s 次出价，共计 %2$s 硬币。",
             "Click to reset ALL %1$s settings!": "点击重置%1$s的全部设置！",
             "Reset all %1$s Tablist Widget settings back to their default.": "将%1$s的所有 Tab 列表组件设置恢复为默认值。"
+        },
+        "排版与一致性检查（2026-10-24）：一词一译、按键词统一、名称统一（用户要求检查一致性与一词多义）": {
+            "SNEAK RIGHT CLICK": "潜行右键",
+            "SNEAK LEFT CLICK": "潜行左键",
+            "HOLD RIGHT CLICK": "按住右键",
+            "SNEAK": "潜行",
+            "ON SHOOT": "射击时",
+            "Recipe Book Unlocked: %1$s%": "已解锁配方书: %1$s%",
+            "Recipes Unlocked: %1$s%": "已解锁配方: %1$s%"
         }
-    }
+    },
+    "unify": [
+        {
+            "en": "Starlyn",
+            "to": "星林",
+            "from": [
+                "斯塔琳"
+            ]
+        },
+        {
+            "en": "Enigma Soul",
+            "to": "谜魂",
+            "from": [
+                "谜之魂"
+            ]
+        },
+        {
+            "en": "Glacite Tunnels",
+            "to": "极冰矿道",
+            "from": [
+                "极冰隧道"
+            ]
+        },
+        {
+            "en": "Lagoon",
+            "to": "潟湖",
+            "from": [
+                "泻湖"
+            ]
+        },
+        {
+            "en": "Trophy Frog",
+            "to": "奖杯蛙",
+            "from": [
+                "奖杯青蛙"
+            ]
+        },
+        {
+            "en": "Minister",
+            "to": "大臣",
+            "from": [
+                "部长"
+            ]
+        },
+        {
+            "en": "Gerald",
+            "to": "杰拉德",
+            "from": [
+                "杰拉尔德"
+            ]
+        },
+        {
+            "en": "Inverted Sirius",
+            "to": "倒转西里乌斯",
+            "from": [
+                "倒转天狼星"
+            ]
+        },
+        {
+            "en": "Tyashoi",
+            "to": "蒂亚肖伊",
+            "from": [
+                "提亚肖伊"
+            ]
+        },
+        {
+            "en": "Ramero",
+            "to": "拉梅罗",
+            "from": [
+                "拉密欧"
+            ]
+        },
+        {
+            "en": "Reality Hopper",
+            "to": "现实跃迁者",
+            "from": [
+                "现实跳蛙"
+            ]
+        },
+        {
+            "en": "Pocket Black Hole",
+            "to": "口袋黑洞",
+            "from": [
+                "袖珍黑洞"
+            ]
+        },
+        {
+            "en": "Flyfish",
+            "to": "飞鳍鱼",
+            "from": [
+                "飞鱼"
+            ]
+        },
+        {
+            "en": "Motes Grubber",
+            "to": "微尘蛴螬",
+            "from": [
+                "微尘大胃王"
+            ]
+        },
+        {
+            "en": "Rabbit Cousin",
+            "to": "兔子表哥",
+            "from": [
+                "兔子表亲"
+            ]
+        },
+        {
+            "en": "Rabbit Uncle",
+            "to": "兔子叔叔",
+            "from": [
+                "兔叔叔"
+            ]
+        },
+        {
+            "en": "Mountain Rabbits",
+            "to": "山地兔子",
+            "from": [
+                "高山兔子"
+            ]
+        },
+        {
+            "en": "Faction Rabbits",
+            "to": "派系兔子",
+            "from": [
+                "阵营兔子"
+            ]
+        },
+        {
+            "en": "Fossil Excavator",
+            "to": "化石挖掘机",
+            "from": [
+                "化石挖掘者"
+            ]
+        },
+        {
+            "en": "Pet Score",
+            "to": "宠物评分",
+            "from": [
+                "宠物分数"
+            ]
+        },
+        {
+            "en": "Spirit Bow",
+            "to": "灵魂长弓",
+            "from": [
+                "灵魂弓"
+            ]
+        },
+        {
+            "en": "Magma Boss",
+            "to": "岩浆巨怪",
+            "from": [
+                "岩浆怪首领",
+                "岩浆首领"
+            ]
+        },
+        {
+            "en": "Weakling",
+            "to": "孱弱者",
+            "from": [
+                "(?<!孱)弱者"
+            ]
+        },
+        {
+            "en": "Pitfighter",
+            "to": "斗坑拳手",
+            "from": [
+                "角斗士"
+            ]
+        },
+        {
+            "en": "Fireslinger",
+            "to": "投火手",
+            "from": [
+                "投火者"
+            ]
+        },
+        {
+            "en": "Frozen Adventurer",
+            "to": "冰冻冒险家",
+            "from": [
+                "冰封冒险者"
+            ]
+        },
+        {
+            "en": "Helix Log",
+            "to": "螺旋树原木",
+            "from": [
+                "螺旋原木"
+            ]
+        },
+        {
+            "en": "Core of the Mountain",
+            "to": "山之核心",
+            "from": [
+                "山之核(?!心)"
+            ]
+        },
+        {
+            "en": "Essence Shop",
+            "to": "精粹商店",
+            "from": [
+                "精华商店"
+            ]
+        },
+        {
+            "en": "Ice Essence",
+            "to": "寒冰精粹",
+            "from": [
+                "冰之精华",
+                "(?<!寒)冰精粹"
+            ]
+        },
+        {
+            "en": "Scary Jerry",
+            "to": "恐怖杰瑞",
+            "from": [
+                "惊魂杰瑞",
+                "吓人杰瑞"
+            ]
+        },
+        {
+            "en": "Great Spook",
+            "to": "大惊吓",
+            "from": [
+                "大惊魂",
+                "惊吓盛典"
+            ]
+        },
+        {
+            "en": "Honeycomb",
+            "to": "蜜脾",
+            "from": [
+                "蜂巢(?!罐)"
+            ],
+            "where": "^(?!.*Honeyhive)"
+        },
+        {
+            "en": "Titanium Ore",
+            "to": "钛矿石",
+            "from": [
+                "钛矿(?![石工])"
+            ]
+        },
+        {
+            "en": "Mithril Ore",
+            "to": "秘银矿石",
+            "from": [
+                "秘银矿(?![石物洞])"
+            ]
+        },
+        {
+            "en": "Dwarven Metals?",
+            "to": "矮人金属",
+            "from": [
+                "矮人矿物"
+            ]
+        },
+        {
+            "en": "Mining Fortune",
+            "to": "挖掘时运",
+            "from": [
+                "挖矿时运"
+            ]
+        },
+        {
+            "en": "SkyMart",
+            "to": "天空超市",
+            "from": [
+                "空岛商城"
+            ]
+        },
+        {
+            "en": "Spelunker",
+            "to": "洞穴探险者",
+            "from": [
+                "洞穴探险家"
+            ]
+        },
+        {
+            "en": "Archery",
+            "to": "箭术",
+            "from": [
+                "射箭"
+            ],
+            "where": "^Archery [IVX]+ \\("
+        },
+        {
+            "en": "Regeneration",
+            "to": "生命恢复",
+            "from": [
+                "再生"
+            ],
+            "where": "^Regeneration [IVX]+ \\("
+        },
+        {
+            "en": "Collections?",
+            "to": "收集",
+            "from": [
+                "收藏品"
+            ]
+        },
+        {
+            "en": "Next Tier",
+            "to": "下一级",
+            "from": [
+                "下一等级"
+            ]
+        },
+        {
+            "en": "Undercover Agent",
+            "to": "卧底特工",
+            "from": [
+                "卧底(?!特工)"
+            ]
+        },
+        {
+            "en": "Glacite Mineshafts?",
+            "to": "极冰矿井",
+            "from": [
+                "极冰矿道"
+            ],
+            "where": "^(?!.*Tunnels)"
+        },
+        {
+            "en": "Arachnids",
+            "to": "蛛形生物",
+            "from": [
+                "节肢生物"
+            ]
+        },
+        {
+            "en": "Rock",
+            "to": "岩石",
+            "from": [
+                "石头"
+            ],
+            "where": "(Rock pet|\\] Rock\\b|Rock Pet)"
+        },
+        {
+            "en": "Hardened\\ Vitality",
+            "to": "活力坚韧",
+            "from": [
+                "坚韧活力"
+            ],
+            "where": "^(?:▲ Hardened\\ Vitality cannot be combined!|Hardened\\ Vitality %1\\$s(?:-%2\\$s)?|Instantly sell all Hardened\\ Vitality derivatives.*|- Hardened\\ Vitality(?: \\(.*\\))?|Hardened\\ Vitality ➜ .*|.*➜ Hardened\\ Vitality(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Vivacious\\ Vitality",
+            "to": "活力迅击",
+            "from": [
+                "灵动活力"
+            ],
+            "where": "^(?:▲ Vivacious\\ Vitality cannot be combined!|Vivacious\\ Vitality %1\\$s(?:-%2\\$s)?|Instantly sell all Vivacious\\ Vitality derivatives.*|- Vivacious\\ Vitality(?: \\(.*\\))?|Vivacious\\ Vitality ➜ .*|.*➜ Vivacious\\ Vitality(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Prosecute",
+            "to": "先机裁决",
+            "from": [
+                "问罪"
+            ],
+            "where": "^(?:▲ Prosecute cannot be combined!|Prosecute %1\\$s(?:-%2\\$s)?|Instantly sell all Prosecute derivatives.*|- Prosecute(?: \\(.*\\))?|Prosecute ➜ .*|.*➜ Prosecute(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Triple\\-Strike",
+            "to": "先手三击",
+            "from": [
+                "三连击"
+            ],
+            "where": "^(?:▲ Triple\\-Strike cannot be combined!|Triple\\-Strike %1\\$s(?:-%2\\$s)?|Instantly sell all Triple\\-Strike derivatives.*|- Triple\\-Strike(?: \\(.*\\))?|Triple\\-Strike ➜ .*|.*➜ Triple\\-Strike(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Reflection",
+            "to": "箭矢反伤",
+            "from": [
+                "反射"
+            ],
+            "where": "^(?:▲ Reflection cannot be combined!|Reflection %1\\$s(?:-%2\\$s)?|Instantly sell all Reflection derivatives.*|- Reflection(?: \\(.*\\))?|Reflection ➜ .*|.*➜ Reflection(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Small\\ Brain",
+            "to": "头铁无脑",
+            "from": [
+                "小脑瓜"
+            ],
+            "where": "^(?:▲ Small\\ Brain cannot be combined!|Small\\ Brain %1\\$s(?:-%2\\$s)?|Instantly sell all Small\\ Brain derivatives.*|- Small\\ Brain(?: \\(.*\\))?|Small\\ Brain ➜ .*|.*➜ Small\\ Brain(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Big\\ Brain",
+            "to": "智者之冠",
+            "from": [
+                "最强大脑"
+            ],
+            "where": "^(?:▲ Big\\ Brain cannot be combined!|Big\\ Brain %1\\$s(?:-%2\\$s)?|Instantly sell all Big\\ Brain derivatives.*|- Big\\ Brain(?: \\(.*\\))?|Big\\ Brain ➜ .*|.*➜ Big\\ Brain(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Champion",
+            "to": "百战勇士",
+            "from": [
+                "冠军"
+            ],
+            "where": "^(?:▲ Champion cannot be combined!|Champion %1\\$s(?:-%2\\$s)?|Instantly sell all Champion derivatives.*|- Champion(?: \\(.*\\))?|Champion ➜ .*|.*➜ Champion(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Compact",
+            "to": "矿物压缩",
+            "from": [
+                "压缩"
+            ],
+            "where": "^(?:▲ Compact cannot be combined!|Compact %1\\$s(?:-%2\\$s)?|Instantly sell all Compact derivatives.*|- Compact(?: \\(.*\\))?|Compact ➜ .*|.*➜ Compact(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Delicate",
+            "to": "护苗",
+            "from": [
+                "轻柔"
+            ],
+            "where": "^(?:▲ Delicate cannot be combined!|Delicate %1\\$s(?:-%2\\$s)?|Instantly sell all Delicate derivatives.*|- Delicate(?: \\(.*\\))?|Delicate ➜ .*|.*➜ Delicate(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Expertise",
+            "to": "海洋专长",
+            "from": [
+                "精通"
+            ],
+            "where": "^(?:▲ Expertise cannot be combined!|Expertise %1\\$s(?:-%2\\$s)?|Instantly sell all Expertise derivatives.*|- Expertise(?: \\(.*\\))?|Expertise ➜ .*|.*➜ Expertise(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Hecatomb",
+            "to": "百战加冕",
+            "from": [
+                "百牲祭"
+            ],
+            "where": "^(?:▲ Hecatomb cannot be combined!|Hecatomb %1\\$s(?:-%2\\$s)?|Instantly sell all Hecatomb derivatives.*|- Hecatomb(?: \\(.*\\))?|Hecatomb ➜ .*|.*➜ Hecatomb(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Smelting\\ Touch",
+            "to": "自动熔炼",
+            "from": [
+                "熔炼之触"
+            ],
+            "where": "^(?:▲ Smelting\\ Touch cannot be combined!|Smelting\\ Touch %1\\$s(?:-%2\\$s)?|Instantly sell all Smelting\\ Touch derivatives.*|- Smelting\\ Touch(?: \\(.*\\))?|Smelting\\ Touch ➜ .*|.*➜ Smelting\\ Touch(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "One\\ For\\ All",
+            "to": "万法归一",
+            "from": [
+                "孤注一掷"
+            ],
+            "where": "^(?:▲ One\\ For\\ All cannot be combined!|One\\ For\\ All %1\\$s(?:-%2\\$s)?|Instantly sell all One\\ For\\ All derivatives.*|- One\\ For\\ All(?: \\(.*\\))?|One\\ For\\ All ➜ .*|.*➜ One\\ For\\ All(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Dedication",
+            "to": "奉献",
+            "from": [
+                "专注"
+            ],
+            "where": "^(?:▲ Dedication cannot be combined!|Dedication %1\\$s(?:-%2\\$s)?|Instantly sell all Dedication derivatives.*|- Dedication(?: \\(.*\\))?|Dedication ➜ .*|.*➜ Dedication(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Cayenne",
+            "to": "赤椒护佑",
+            "from": [
+                "卡宴辣椒"
+            ],
+            "where": "^(?:▲ Cayenne cannot be combined!|Cayenne %1\\$s(?:-%2\\$s)?|Instantly sell all Cayenne derivatives.*|- Cayenne(?: \\(.*\\))?|Cayenne ➜ .*|.*➜ Cayenne(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Corruption",
+            "to": "腐化之钩",
+            "from": [
+                "腐化(?!之)"
+            ],
+            "where": "^(?:▲ Corruption cannot be combined!|Corruption %1\\$s(?:-%2\\$s)?|Instantly sell all Corruption derivatives.*|- Corruption(?: \\(.*\\))?|Corruption ➜ .*|.*➜ Corruption(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Counter\\-Strike",
+            "to": "迎击",
+            "from": [
+                "反击"
+            ],
+            "where": "^(?:▲ Counter\\-Strike cannot be combined!|Counter\\-Strike %1\\$s(?:-%2\\$s)?|Instantly sell all Counter\\-Strike derivatives.*|- Counter\\-Strike(?: \\(.*\\))?|Counter\\-Strike ➜ .*|.*➜ Counter\\-Strike(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Divine\\ Gift",
+            "to": "神之馈赠",
+            "from": [
+                "神赐"
+            ],
+            "where": "^(?:▲ Divine\\ Gift cannot be combined!|Divine\\ Gift %1\\$s(?:-%2\\$s)?|Instantly sell all Divine\\ Gift derivatives.*|- Divine\\ Gift(?: \\(.*\\))?|Divine\\ Gift ➜ .*|.*➜ Divine\\ Gift(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Frail",
+            "to": "弱化之钩",
+            "from": [
+                "脆弱"
+            ],
+            "where": "^(?:▲ Frail cannot be combined!|Frail %1\\$s(?:-%2\\$s)?|Instantly sell all Frail derivatives.*|- Frail(?: \\(.*\\))?|Frail ➜ .*|.*➜ Frail(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Lapidary",
+            "to": "宝石精琢",
+            "from": [
+                "琢玉"
+            ],
+            "where": "^(?:▲ Lapidary cannot be combined!|Lapidary %1\\$s(?:-%2\\$s)?|Instantly sell all Lapidary derivatives.*|- Lapidary(?: \\(.*\\))?|Lapidary ➜ .*|.*➜ Lapidary(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Magnet",
+            "to": "经验磁钩",
+            "from": [
+                "磁吸"
+            ],
+            "where": "^(?:▲ Magnet cannot be combined!|Magnet %1\\$s(?:-%2\\$s)?|Instantly sell all Magnet derivatives.*|- Magnet(?: \\(.*\\))?|Magnet ➜ .*|.*➜ Magnet(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Overload",
+            "to": "极限箭击",
+            "from": [
+                "过载"
+            ],
+            "where": "^(?:▲ Overload cannot be combined!|Overload %1\\$s(?:-%2\\$s)?|Instantly sell all Overload derivatives.*|- Overload(?: \\(.*\\))?|Overload ➜ .*|.*➜ Overload(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Petalfall",
+            "to": "飞花断木",
+            "from": [
+                "落英"
+            ],
+            "where": "^(?:▲ Petalfall cannot be combined!|Petalfall %1\\$s(?:-%2\\$s)?|Instantly sell all Petalfall derivatives.*|- Petalfall(?: \\(.*\\))?|Petalfall ➜ .*|.*➜ Petalfall(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Prismatic",
+            "to": "宝石采掘",
+            "from": [
+                "棱彩"
+            ],
+            "where": "^(?:▲ Prismatic cannot be combined!|Prismatic %1\\$s(?:-%2\\$s)?|Instantly sell all Prismatic derivatives.*|- Prismatic(?: \\(.*\\))?|Prismatic ➜ .*|.*➜ Prismatic(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Prosperity",
+            "to": "繁盛",
+            "from": [
+                "兴旺"
+            ],
+            "where": "^(?:▲ Prosperity cannot be combined!|Prosperity %1\\$s(?:-%2\\$s)?|Instantly sell all Prosperity derivatives.*|- Prosperity(?: \\(.*\\))?|Prosperity ➜ .*|.*➜ Prosperity(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Smarty\\ Pants",
+            "to": "聪明绝腿",
+            "from": [
+                "机灵鬼"
+            ],
+            "where": "^(?:▲ Smarty\\ Pants cannot be combined!|Smarty\\ Pants %1\\$s(?:-%2\\$s)?|Instantly sell all Smarty\\ Pants derivatives.*|- Smarty\\ Pants(?: \\(.*\\))?|Smarty\\ Pants ➜ .*|.*➜ Smarty\\ Pants(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Smoldering",
+            "to": "炼狱杀手",
+            "from": [
+                "阴燃"
+            ],
+            "where": "^(?:▲ Smoldering cannot be combined!|Smoldering %1\\$s(?:-%2\\$s)?|Instantly sell all Smoldering derivatives.*|- Smoldering(?: \\(.*\\))?|Smoldering ➜ .*|.*➜ Smoldering(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Tabasco",
+            "to": "辣椒仔",
+            "from": [
+                "塔巴斯科辣椒"
+            ],
+            "where": "^(?:▲ Tabasco cannot be combined!|Tabasco %1\\$s(?:-%2\\$s)?|Instantly sell all Tabasco derivatives.*|- Tabasco(?: \\(.*\\))?|Tabasco ➜ .*|.*➜ Tabasco(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Tidal",
+            "to": "潮汐护卫",
+            "from": [
+                "潮汐(?!护)"
+            ],
+            "where": "^(?:▲ Tidal cannot be combined!|Tidal %1\\$s(?:-%2\\$s)?|Instantly sell all Tidal derivatives.*|- Tidal(?: \\(.*\\))?|Tidal ➜ .*|.*➜ Tidal(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Transylvanian",
+            "to": "血族之冠",
+            "from": [
+                "血族(?!之)"
+            ],
+            "where": "^(?:▲ Transylvanian cannot be combined!|Transylvanian %1\\$s(?:-%2\\$s)?|Instantly sell all Transylvanian derivatives.*|- Transylvanian(?: \\(.*\\))?|Transylvanian ➜ .*|.*➜ Transylvanian(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Vampirism",
+            "to": "嗜血",
+            "from": [
+                "吸血鬼"
+            ],
+            "where": "^(?:▲ Vampirism cannot be combined!|Vampirism %1\\$s(?:-%2\\$s)?|Instantly sell all Vampirism derivatives.*|- Vampirism(?: \\(.*\\))?|Vampirism ➜ .*|.*➜ Vampirism(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Woodsplitter",
+            "to": "林地杀手",
+            "from": [
+                "劈木"
+            ],
+            "where": "^(?:▲ Woodsplitter cannot be combined!|Woodsplitter %1\\$s(?:-%2\\$s)?|Instantly sell all Woodsplitter derivatives.*|- Woodsplitter(?: \\(.*\\))?|Woodsplitter ➜ .*|.*➜ Woodsplitter(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Rend",
+            "to": "万箭归宗",
+            "from": [
+                "撕裂"
+            ],
+            "where": "^(?:▲ Rend cannot be combined!|Rend %1\\$s(?:-%2\\$s)?|Instantly sell all Rend derivatives.*|- Rend(?: \\(.*\\))?|Rend ➜ .*|.*➜ Rend(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Refrigerate",
+            "to": "魔力冰甲",
+            "from": [
+                "冷藏"
+            ],
+            "where": "^(?:▲ Refrigerate cannot be combined!|Refrigerate %1\\$s(?:-%2\\$s)?|Instantly sell all Refrigerate derivatives.*|- Refrigerate(?: \\(.*\\))?|Refrigerate ➜ .*|.*➜ Refrigerate(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "First\\ Impression",
+            "to": "初斧之威",
+            "from": [
+                "先声夺人"
+            ],
+            "where": "^(?:▲ First\\ Impression cannot be combined!|First\\ Impression %1\\$s(?:-%2\\$s)?|Instantly sell all First\\ Impression derivatives.*|- First\\ Impression(?: \\(.*\\))?|First\\ Impression ➜ .*|.*➜ First\\ Impression(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Duplex",
+            "to": "火焰双发",
+            "from": [
+                "双发"
+            ],
+            "where": "^(?:▲ Duplex cannot be combined!|Duplex %1\\$s(?:-%2\\$s)?|Instantly sell all Duplex derivatives.*|- Duplex(?: \\(.*\\))?|Duplex ➜ .*|.*➜ Duplex(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Habanero\\ Tactics",
+            "to": "赤椒战术",
+            "from": [
+                "哈瓦那辣椒战术"
+            ],
+            "where": "^(?:▲ Habanero\\ Tactics cannot be combined!|Habanero\\ Tactics %1\\$s(?:-%2\\$s)?|Instantly sell all Habanero\\ Tactics derivatives.*|- Habanero\\ Tactics(?: \\(.*\\))?|Habanero\\ Tactics ➜ .*|.*➜ Habanero\\ Tactics(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "Legion",
+            "to": "军团之力",
+            "from": [
+                "军团(?!之)"
+            ],
+            "where": "^(?:▲ Legion cannot be combined!|Legion %1\\$s(?:-%2\\$s)?|Instantly sell all Legion derivatives.*|- Legion(?: \\(.*\\))?|Legion ➜ .*|.*➜ Legion(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "No\\ Pain\\ No\\ Gain",
+            "to": "苦痛馈赠",
+            "from": [
+                "无痛无获"
+            ],
+            "where": "^(?:▲ No\\ Pain\\ No\\ Gain cannot be combined!|No\\ Pain\\ No\\ Gain %1\\$s(?:-%2\\$s)?|Instantly sell all No\\ Pain\\ No\\ Gain derivatives.*|- No\\ Pain\\ No\\ Gain(?: \\(.*\\))?|No\\ Pain\\ No\\ Gain ➜ .*|.*➜ No\\ Pain\\ No\\ Gain(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "The\\ One",
+            "to": "集大成者",
+            "from": [
+                "天选"
+            ],
+            "where": "^(?:▲ The\\ One cannot be combined!|The\\ One %1\\$s(?:-%2\\$s)?|Instantly sell all The\\ One derivatives.*|- The\\ One(?: \\(.*\\))?|The\\ One ➜ .*|.*➜ The\\ One(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
+        },
+        {
+            "en": "(?:RIGHT|LEFT) CLICK",
+            "to": "右键",
+            "from": [
+                "右键点击"
+            ],
+            "where": "^Ability: .*RIGHT CLICK"
+        },
+        {
+            "en": "(?:RIGHT|LEFT) CLICK",
+            "to": "左键",
+            "from": [
+                "左键点击"
+            ],
+            "where": "^Ability: .*LEFT CLICK"
+        },
+        {
+            "en": ".",
+            "to": "矿物压缩",
+            "from": [
+                "矿物矿物压缩"
+            ]
+        },
+        {
+            "en": ".",
+            "to": "活力汲取",
+            "from": [
+                "活力活力汲取"
+            ]
+        },
+        {
+            "en": ".",
+            "to": "火焰双发",
+            "from": [
+                "火焰火焰双发"
+            ]
+        }
+    ]
 }

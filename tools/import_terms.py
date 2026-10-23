@@ -311,6 +311,12 @@ for group in overrides.get("lines", {}).values():
             l["zh"] = zh
             fixed_lines += 1
 
+# layout and consistency: one spelling per name, multi-line glue and progress-bar joins dropped,
+# list rows split, "%1$sM" kept, Chinese / Latin spacing (tools/layout_fixes.py)
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import layout_fixes
+layout_stats, _ = layout_fixes.post_process(lines, names, overrides.get("unify", []))
+
 with open(os.path.join(DEFAULTS, "table_names.json"), "w", encoding="utf-8") as f:
     json.dump({"_说明": "由 tools/import_terms.py 从 data/SkyBlock术语表.xlsx 生成，请勿手动修改。", "names": names, "aliases": alias,
                "reforges": reforges},
@@ -322,6 +328,7 @@ with open(enchant_path, "w", encoding="utf-8") as f:
     json.dump(enchants, f, ensure_ascii=False, indent=1)
 
 print(f"corrections from {os.path.basename(OVERRIDES)}: {fixed_names} names, {fixed_lines} lines")
+print("layout / consistency:", layout_stats)
 print(f"aliases: {len(alias)}")
 print(f"merged list rows split into lines: {split_count}")
 print(f"names: {len(names)}, description lines: {len(lines)}, enchantments: {len(enchants['enchants'])} (+{added})")

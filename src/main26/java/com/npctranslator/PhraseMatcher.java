@@ -224,6 +224,13 @@ public final class PhraseMatcher {
     private String doTranslate(String formatted) {
         String key = normalize(formatted);
         if (key.length() < 2) return null;
+        String segments = translateSegments(formatted);
+        return segments != null ? segments : translateWhole(formatted);
+    }
+
+    private String translateWhole(String formatted) {
+        String key = normalize(formatted);
+        if (key.length() < 2) return null;
         String stat = statLine(formatted);
         if (stat != null) return stat;
         Matcher lead = LEADING_CODES.matcher(formatted.replaceFirst("^[\\s ]+", ""));
@@ -246,6 +253,119 @@ public final class PhraseMatcher {
             return leadingSpace + zh;
         }
         return leadingSpace + baseCodes + zh;
+    }
+
+    /** Two or more spaces between visible text: the server lays out columns ("Ability: Soulcry  RIGHT CLICK"). */
+    private static final Pattern GAP = Pattern.compile("\\S((?:§[0-9a-fk-orA-FK-OR])*[ \u00A0]{2,})(?=\\S)");
+
+    /**
+     * A line made of parts separated by wide gaps ("§6Ability: Splash  §e§lSNEAK",
+     * "§b+100❤ Intelligence  §b+3✯ Magic Find"): each part is translated on its own and the gaps are kept,
+     * so the columns and each part's colour stay as they were. Null when a part with words has no translation.
+     */
+    private String translateSegments(String formatted) {
+        // cut points in the formatted string: [gapStart, gapEnd) contains only codes and spaces
+        List<int[]> gaps = new ArrayList<>();
+        int i = 0, n = formatted.length();
+        int lastVisible = -1;
+        while (i < n) {
+            char c = formatted.charAt(i);
+            if (c == '§' && i + 1 < n) { i += 2; continue; }
+            if (c == ' ' || c == '\u00A0') {
+                int j = i, spaces = 0, firstSpace = i;
+                while (j < n) {
+                    char d = formatted.charAt(j);
+                    if (d == '§' && j + 1 < n) { j += 2; continue; }
+                    if (d == ' ' || d == '\u00A0') { spaces++; j++; continue; }
+                    break;
+                }
+                if (spaces >= 2 && lastVisible >= 0 && j < n) {
+                    // the codes right before the next part belong to it
+                    int end = j;
+                    while (end - 2 >= firstSpace && formatted.charAt(end - 2) == '§') end -= 2;
+                    int trimEnd = end;
+                    while (trimEnd > firstSpace && (formatted.charAt(trimEnd - 1) == ' ' || formatted.charAt(trimEnd - 1) == '\u00A0')) trimEnd--;
+                    gaps.add(new int[]{firstSpace, end});
+                }
+                i = j;
+                continue;
+            }
+            lastVisible = i;
+            i++;
+        }
+        if (gaps.isEmpty()) return null;
+        StringBuilder out = new StringBuilder();
+        int from = 0;
+        String active = "";
+        int parts = 0;
+        for (int k = 0; k <= gaps.size(); k++) {
+            int to = k < gaps.size() ? gaps.get(k)[0] : n;
+            String part = formatted.substring(from, to);
+            String withCodes = (k == 0 ? "" : active) + part;
+            String plain = CODE.matcher(part).replaceAll("").trim();
+            String tr;
+            if (!plain.matches(".*[A-Za-z]{2,}.*")) tr = part;                // numbers, icons, "(0/1k)"
+            else {
+                tr = translate(withCodes.trim().isEmpty() ? part : withCodes);
+                if (tr == null) return k == gaps.size() && k > 0 ? lastPartOnly(formatted, gaps.get(k - 1), null) : lastPartFallback(formatted, gaps);
+                parts++;
+            }
+            out.append(tr);
+            active = activeCodes(formatted.substring(0, to), active);
+            if (k < gaps.size()) {
+                String gap = formatted.substring(gaps.get(k)[0], gaps.get(k)[1]);
+                out.append(gap);
+                active = activeCodes(gap, active);
+                from = gaps.get(k)[1];
+            }
+        }
+        return parts > 0 ? out.toString() : null;
+    }
+
+
+    /**
+     * Some part has no translation of its own, but the whole line has one ("Ability: Deploy  §e§lRIGHT CLICK"
+     * → "技能: 部署 右键"): use it, and if it ends with the last part's translation put that part back after
+     * the original gap with its own colour ("技能: 部署  §e§l右键").
+     */
+    private String lastPartFallback(String formatted, List<int[]> gaps) {
+        return lastPartOnly(formatted, gaps.get(gaps.size() - 1), null);
+    }
+
+    private String lastPartOnly(String formatted, int[] gap, String unused) {
+        String whole = translateWhole(formatted);
+        if (whole == null) return null;
+        String lastPart = formatted.substring(gap[1]);
+        String lastPlain = CODE.matcher(lastPart).replaceAll("").trim();
+        if (!lastPlain.matches(".*[A-Za-z]{2,}.*")) return whole;
+        String lastZh = translate(activeCodes(formatted.substring(0, gap[1]), "") + lastPart);
+        if (lastZh == null) return whole;
+        String lastZhPlain = CODE.matcher(lastZh).replaceAll("").trim();
+        String wholePlain = CODE.matcher(whole).replaceAll("");
+        if (lastZhPlain.isEmpty() || !wholePlain.replaceAll("\\s+$", "").endsWith(" " + lastZhPlain)) return whole;
+        // cut the whole translation before its last part (codes included) and append the original gap + part
+        int keep = wholePlain.replaceAll("\\s+$", "").length() - lastZhPlain.length() - 1;
+        StringBuilder head = new StringBuilder();
+        int seen = 0;
+        for (int i = 0; i < whole.length() && seen < keep; i++) {
+            char c = whole.charAt(i);
+            if (c == '§' && i + 1 < whole.length()) { head.append(c).append(whole.charAt(++i)); continue; }
+            head.append(c);
+            seen++;
+        }
+        return head + formatted.substring(gap[0], gap[1]).replaceAll("§.", "") + lastZh;
+    }
+    /** Colour / format codes in effect after {@code text}, starting from {@code start}. */
+    private static String activeCodes(String text, String start) {
+        String act = start;
+        for (int i = 0; i + 1 < text.length(); i++) {
+            if (text.charAt(i) != '§') continue;
+            char code = Character.toLowerCase(text.charAt(i + 1));
+            if ((code >= '0' && code <= '9') || (code >= 'a' && code <= 'f') || code == 'r') act = "";
+            if (code != 'r') act += "§" + text.charAt(i + 1);
+            i++;
+        }
+        return act;
     }
 
     private static final Pattern LABEL_INSIDE = Pattern.compile("[A-Za-z]{2,}:(\\s|$)");
@@ -330,21 +450,120 @@ public final class PhraseMatcher {
                             // "Soulflow Cost: %s" must not swallow "1 Mana Cost: 90": a value never holds another "Label:"
                             || LABEL_INSIDE.matcher(v).find()) { ok = false; break; }
                     String tv = valueTranslator.apply(v);
-                    // Zh templates without their own colours: keep the value's original colour.
-                    if (t.zh.indexOf('§') < 0) {
-                        String vc = codesBefore(formatted, v);
-                        if (!vc.isEmpty() && !vc.equals(baseCodes)) {
-                            tv = vc + tv + (baseCodes.isEmpty() ? "§r" : baseCodes);
-                        }
-                    }
+                    // Zh templates without their own colours: keep the value's original colour (marked here,
+                    // coloured after filling so the colour can also cover the sign, icon and stat name)
+                    if (t.zh.indexOf('§') < 0) tv = MARK_START + String.valueOf((char) ('0' + i)) + tv + MARK_END;
                     values.add(tv);
                 }
-                if (ok) return fill(t.zh, values);
+                if (ok) return t.zh.indexOf('§') < 0 ? colourValues(fill(t.zh, values), formatted, m, baseCodes) : fill(t.zh, values);
             }
         }
         return null;
     }
 
+
+    private static final char MARK_START = '\u0010', MARK_END = '\u0012';
+
+    /**
+     * Give each filled value the colour it had in the original line. When the original coloured the whole
+     * stat ("§c+8❁ Strength"), the colour also covers the sign, icon and stat name in the translation
+     * ("§c+8❁ 力量§7") instead of only the number.
+     */
+    private String colourValues(String filled, String formatted, Matcher m, String baseCodes) {
+        StringBuilder out = new StringBuilder();
+        int i = 0;
+        String back = baseCodes.isEmpty() ? "§r" : baseCodes;
+        while (i < filled.length()) {
+            int ms = filled.indexOf(MARK_START, i);
+            if (ms < 0) { out.append(filled.substring(i)); break; }
+            int me = filled.indexOf(MARK_END, ms);
+            if (me < 0) { out.append(filled.substring(i).replace(String.valueOf(MARK_START), "")); break; }
+            int group = filled.charAt(ms + 1) - '0';
+            String value = filled.substring(ms + 2, me);
+            String[] run = group <= m.groupCount() ? colourRun(formatted, m.group(group)) : null;
+            String before = filled.substring(i, ms);
+            String codes = run == null ? "" : run[0];
+            if (codes.isEmpty() || codes.equals(baseCodes)) {
+                out.append(before).append(value);
+                i = me + 1;
+                continue;
+            }
+            // sign right before the value ("+", "-")
+            String sign = run[1];
+            int cut = before.length();
+            if (!sign.isEmpty() && before.endsWith(sign)) cut -= sign.length();
+            out.append(before, 0, cut).append(codes).append(before.substring(cut)).append(value);
+            // icon and stat name right after it
+            String rest = filled.substring(me + 1);
+            int take = suffixLength(rest, run[2]);
+            // back to the colour the original used after the value, or the line's own colour
+            out.append(rest, 0, take).append(run[3].isEmpty() || run[3].equals(codes) ? back : run[3]);
+            i = me + 1 + take;
+        }
+        return out.toString();
+    }
+
+    /** {codes, sign before the value, text after it} of the coloured run that holds {@code value}. */
+    private static String[] colourRun(String formatted, String value) {
+        StringBuilder plain = new StringBuilder();
+        List<String> codesAt = new ArrayList<>();
+        String active = "";
+        for (int i = 0; i < formatted.length(); i++) {
+            char c = formatted.charAt(i);
+            if (c == '§' && i + 1 < formatted.length()) {
+                char code = Character.toLowerCase(formatted.charAt(i + 1));
+                if ((code >= '0' && code <= '9') || (code >= 'a' && code <= 'f') || code == 'r') active = "";
+                if (code != 'r') active += "§" + formatted.charAt(i + 1);
+                i++;
+                continue;
+            }
+            Character g = GLYPHS.get(c);
+            plain.append(g != null ? g : c);
+            codesAt.add(active);
+        }
+        // the value as it appears in the normalised key (spaces collapsed)
+        String text = plain.toString();
+        int at = text.indexOf(value);
+        if (at < 0) return null;
+        String codes = codesAt.get(at);
+        int a = at, b = at + value.length();
+        while (a > 0 && codesAt.get(a - 1).equals(codes)) a--;
+        while (b < text.length() && codesAt.get(b).equals(codes)) b++;
+        // a value whose colour starts inside it ("+§c8") only colours what the original coloured
+        for (int k = at; k < at + value.length() && k < codesAt.size(); k++) if (!codesAt.get(k).equals(codes)) return new String[]{codes, "", "", ""};
+        String sign = text.substring(a, at).trim();
+        if (!sign.matches("[+\\-x#]?")) sign = "";
+        String after = b < codesAt.size() ? codesAt.get(b) : "";
+        return new String[]{codes, sign, text.substring(at + value.length(), b).replaceAll("\\s+", " "), after};
+    }
+
+    /** How much of {@code rest} (the translation after a value) corresponds to the original coloured {@code suffix}. */
+    private int suffixLength(String rest, String suffix) {
+        if (suffix == null || suffix.isEmpty() || suffix.trim().isEmpty()) return 0;
+        Matcher sm = Pattern.compile("^(\\s*[^A-Za-z\\s]*)\\s*(.*?)[.,!?:;]?\\s*$").matcher(suffix);
+        if (!sm.matches()) return 0;
+        String sym = sm.group(1).trim(), words = sm.group(2).trim();
+        // only a percent sign, a multiplier or stat icons travel with the value, never brackets or punctuation
+        if (!sym.matches("[%x]?[^\\sA-Za-z0-9()\\[\\]{}<>（）「」『』【】，。！？：；、,.!?:;\\p{IsHan}]*")) return 0;
+        int pos = 0;
+        if (!sym.isEmpty()) {
+            if (!fold(rest).startsWith(fold(sym))) return 0;
+            pos += sym.length();
+        }
+        if (words.isEmpty()) return pos;
+        String wordsZh = valueTranslator.apply(words);
+        if (wordsZh == null || wordsZh.equals(words)) wordsZh = words;
+        int p2 = pos;
+        while (p2 < rest.length() && rest.charAt(p2) == ' ') p2++;
+        if (rest.startsWith(wordsZh, p2)) return p2 + wordsZh.length();
+        return pos;
+    }
+
+    private static String fold(String s) {
+        StringBuilder sb = new StringBuilder(s.length());
+        for (int i = 0; i < s.length(); i++) { Character g = GLYPHS.get(s.charAt(i)); sb.append(g != null ? g : s.charAt(i)); }
+        return sb.toString();
+    }
     /** Colour/format codes active right before the first occurrence of {@code value} in a formatted line. */
     static String codesBefore(String formatted, String value) {
         StringBuilder plain = new StringBuilder();
@@ -371,7 +590,7 @@ public final class PhraseMatcher {
     static String fill(String zh, List<String> values) {
         Matcher m = PH.matcher(zh);
         StringBuilder sb = new StringBuilder();
-        int seq = 0;
+        int seq = 0, last = 0;
         while (m.find()) {
             int idx = m.group(1) != null ? Integer.parseInt(m.group(1)) - 1 : seq++;
             String v = idx >= 0 && idx < values.size() ? values.get(idx) : "";
@@ -379,12 +598,67 @@ public final class PhraseMatcher {
             int after = m.end();
             while (after < zh.length() && zh.charAt(after) == ' ') after++;
             if (after < zh.length() && (zh.charAt(after) == '日' || zh.charAt(after) == '号')) {
-                v = v.replaceAll("(\\d+)(st|nd|rd|th)(?=$|§)", "$1");
+                v = v.replaceAll("(\\d+)(st|nd|rd|th)(?=$|§|\u0012)", "$1");
             }
-            m.appendReplacement(sb, Matcher.quoteReplacement(v));
+            // literal text before the placeholder (a space dropped after a Chinese value is skipped)
+            sb.append(zh, last, m.start());
+            // spacing between Chinese and the value: "获得 5 次", "与凯莉交谈", "Partshade 的宠物"
+            char vFirst = firstVisible(v, true), vLast = firstVisible(v, false);
+            char before = lastVisible(sb, sb.length());
+            if (before != 0 && vFirst != 0) {
+                if (han(before) && latinStart(vFirst)) sb.append(' ');
+                else if (han(vFirst) && sb.length() > 0 && sb.charAt(sb.length() - 1) == ' '
+                        && han(lastVisible(sb, sb.length() - 1))) sb.setLength(sb.length() - 1);
+            }
+            sb.append(v);
+            last = m.end();
+            char nextChar = last < zh.length() ? firstVisible(zh.substring(last), true) : 0;
+            if (vLast != 0 && nextChar != 0) {
+                if (latinEnd(vLast) && han(nextChar) && zh.charAt(last) != ' ') sb.append(' ');
+                else if (han(vLast) && zh.charAt(last) == ' ' && last + 1 < zh.length() && han(zh.charAt(last + 1))) last++;
+            }
         }
-        m.appendTail(sb);
+        sb.append(zh.substring(last));
         return sb.toString();
+    }
+
+    /** A Chinese character (not punctuation, not an icon). */
+    private static boolean han(char c) { return (c >= 0x4E00 && c <= 0x9FFF) || (c >= 0x3400 && c <= 0x4DBF); }
+
+    private static boolean latinStart(char c) { return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9') || c == '+' || c == '#'; }
+    private static boolean latinEnd(char c) { return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9') || c == '%'; }
+
+    /** First (or last) visible character of a filled value, skipping colour codes and colour markers. */
+    private static char firstVisible(String v, boolean first) {
+        if (first) {
+            for (int i = 0; i < v.length(); i++) {
+                char c = v.charAt(i);
+                if (c == '§') { i++; continue; }
+                if (c == MARK_START) { i++; continue; }
+                if (c == MARK_END) continue;
+                return c;
+            }
+        } else {
+            for (int i = v.length() - 1; i >= 0; i--) {
+                char c = v.charAt(i);
+                if (c == MARK_END || c == MARK_START) continue;
+                if (i > 0 && v.charAt(i - 1) == '§') { i--; continue; }
+                if (i > 0 && v.charAt(i - 1) == MARK_START) { i--; continue; }
+                return c;
+            }
+        }
+        return 0;
+    }
+
+    private static char lastVisible(CharSequence sb, int end) {
+        for (int i = end - 1; i >= 0; i--) {
+            char c = sb.charAt(i);
+            if (c == MARK_END || c == MARK_START) continue;
+            if (i > 0 && sb.charAt(i - 1) == '§') { i--; continue; }
+            if (i > 0 && sb.charAt(i - 1) == MARK_START) { i--; continue; }
+            return c;
+        }
+        return 0;
     }
 
     /** Put back the server's private-use icon where the corpus used the generic symbol. */
@@ -432,12 +706,29 @@ public final class PhraseMatcher {
     /** Whether {@code next} continues the sentence of {@code prev} (same rules as the line joining). */
     public static boolean continuesLine(String prev, String next) {
         if (OrderBookText.isBoundary(prev) || OrderBookText.isBoundary(next)) return false;
+        if (isBar(prev) || isBar(next)) return false;
         return !isBlank(prev) && !isBlank(next) && sameParagraph(prev, next) && !STARTS_FIELD.matcher(next).find()
                 && !STARTS_BULLET.matcher(next).find();
     }
 
-    /** A list item ("▶ Growth VI", "- Bazaar (I-V)", "• …") never continues the line above. */
-    private static final Pattern STARTS_BULLET = Pattern.compile("^[\\s  ]*(?:§[0-9a-fk-or])*[▶•‣›◆∙➜→]");
+    /** A list item ("▶ Growth VI", "- Bazaar (I-V)", "■ Talk to Kelly", "✔ Tier II") never continues the line above. */
+    static final Pattern STARTS_BULLET = Pattern.compile("^[\\s  ]*(?:§[0-9a-fk-or])*(?:[▶•‣›◆∙➜→■✔✖✘✓☐☑★❖◇◈❣☠⚠]|[-–](?:§[0-9a-fk-or])* (?:§[0-9a-fk-or])*[A-Z0-9+(\\[])");
+
+    private static final Pattern BAR_CHARS = Pattern.compile("[━▬■▌▊█░▒▓|=\\-]{5,}");
+
+    /**
+     * A progress bar line ("§2§l§m          §f§l§m     §r §e1,021§6/§e3k", "§a■■■■■§7■■■■■"): it is drawn with
+     * struck-through spaces or bar characters and must stay on its own line, exactly as it is.
+     */
+    public static boolean isBar(String formatted) {
+        if (formatted == null) return false;
+        if (formatted.contains("§m") || formatted.contains("§M")) {
+            // the struck-through part is blank: a bar, not struck-through words
+            Matcher m = Pattern.compile("§[mM]((?:§[0-9a-fk-orA-FK-OR])*)([^§]*)").matcher(formatted);
+            while (m.find()) if (!m.group(2).isEmpty() && m.group(2).trim().isEmpty()) return true;
+        }
+        return BAR_CHARS.matcher(CODE.matcher(formatted).replaceAll("")).find();
+    }
 
     /** "0→+5", "§80%§8§l→§a+2%": a value before and after the next level. */
     private static final Pattern PROGRESSION = Pattern.compile(
@@ -503,13 +794,15 @@ public final class PhraseMatcher {
             if (priceLevel != null) { out[i++] = priceLevel; continue; }
             boolean done = false;
             // the first line is the item name: never merge it with the description below it
-            if (i > 0 && !isBlank(lines.get(i))) {
+            if (i > 0 && !isBlank(lines.get(i)) && !isBar(lines.get(i))) {
                 int maxJ = Math.min(n - 1, i + Math.max(0, maxJoin - 1));
                 // stop at a blank line (paragraph boundary) or where the colour changes
-                // ("§fSnow Block" + "§8Common Commodity" are two different things)
+                // ("§fSnow Block" + "§8Common Commodity" are two different things); a progress bar or
+                // a list item is always a line of its own
                 for (int k = i + 1; k <= maxJ; k++) {
                     if (OrderBookText.isBoundary(lines.get(k)) || isBlank(lines.get(k)) || !sameParagraph(lines.get(k - 1), lines.get(k))
-                            || STARTS_FIELD.matcher(lines.get(k)).find() || STARTS_BULLET.matcher(lines.get(k)).find()) { maxJ = k - 1; break; }
+                            || STARTS_FIELD.matcher(lines.get(k)).find() || STARTS_BULLET.matcher(lines.get(k)).find()
+                            || isBar(lines.get(k))) { maxJ = k - 1; break; }
                 }
                 for (int j = maxJ; j > i; j--) {
                     StringBuilder joined = new StringBuilder(lines.get(i));
@@ -571,42 +864,200 @@ public final class PhraseMatcher {
     }
 
     /**
-     * Soft-wrap a §-formatted line. Width units: CJK = 2, everything else = 1. Breaks after
-     * Chinese punctuation when possible and repeats the active colour codes on the next line.
+     * Soft-wrap a §-formatted line. Width units: CJK = 2, everything else = 1 (about 4.5 px per unit).
+     * Kept for callers that have no tooltip to measure; see {@link #wrapPx}.
      */
     public static List<String> wrap(String formatted, int maxUnits) {
-        List<String> lines = new ArrayList<>();
-        if (formatted == null) return lines;
-        StringBuilder cur = new StringBuilder();
-        String activeCodes = "";
-        int units = 0, lastBreak = -1;
-        String codesAtBreak = "";
+        return wrapPx(formatted, maxUnits * 9 / 2);
+    }
+
+    /** Approximate advance of a character in the default Minecraft font, in GUI pixels (1 px spacing included). */
+    static int charPx(char c) {
+        if (c >= 0x2E80 || (c >= 0xE000 && c <= 0xF8FF)) return 9;   // CJK, full-width punctuation, server icons
+        switch (c) {
+            case 'i': case '!': case '.': case ',': case ':': case ';': case '|': case '\'': return 2;
+            case 'l': case '`': return 3;
+            case 'I': case 't': case '[': case ']': case ' ': case '(': case ')': case '"': case '*': return 4;
+            case 'f': case 'k': case '<': case '>': case '{': case '}': return 5;
+            case '@': case '~': return 7;
+            default: return c < 0x80 ? 6 : 8;
+        }
+    }
+
+    /** Visible width of a §-formatted line in GUI pixels (bold adds 1 px per character). */
+    public static int widthPx(String formatted) {
+        if (formatted == null) return 0;
+        int w = 0;
+        boolean bold = false;
         for (int i = 0; i < formatted.length(); i++) {
             char c = formatted.charAt(i);
             if (c == '\u00A7' && i + 1 < formatted.length()) {
-                char code = Character.toLowerCase(formatted.charAt(i + 1));
-                if ((code >= '0' && code <= '9') || (code >= 'a' && code <= 'f') || code == 'r') activeCodes = "";
-                activeCodes += "\u00A7" + formatted.charAt(i + 1);
-                cur.append(c).append(formatted.charAt(i + 1));
+                char code = Character.toLowerCase(formatted.charAt(++i));
+                if (code == 'l') bold = true;
+                else if ((code >= '0' && code <= '9') || (code >= 'a' && code <= 'f') || code == 'r') bold = false;
+                continue;
+            }
+            w += charPx(c) + (bold ? 1 : 0);
+        }
+        return w;
+    }
+
+    private static boolean cjk(char c) { return c >= 0x2E80 && c != '\u3000'; }
+    /** Characters a line must not start with (they belong to the text before them). */
+    private static final String CLOSING = "，。！？；、：）」』】》〉…%,.!?;:)]}";
+    /** Characters a line must not end with (they belong to the text after them). */
+    private static final String OPENING = "（「『【《〈([{";
+    private static final String CJK_BREAK_AFTER = "，。！？；、：）」』】》…";
+    /** Function words: breaking after (or before) them keeps the words around them whole. */
+    private static final String SOFT_AFTER = "的和与或及并而但在把被将对给从向以于时后中上内了着过个次即可就也都";
+    private static final String SOFT_BEFORE = "的和与或及并而但在把被将对给从向以于即可就也都";
+
+    /**
+     * Soft-wrap a §-formatted line to at most {@code maxPx} pixels per line. Lines are balanced (no short
+     * last line), never split inside a word or a number ("1,000", "1.5", "+20%"), never start with closing
+     * punctuation, and repeat the active colour codes on the next line.
+     */
+    public static List<String> wrapPx(String formatted, int maxPx) {
+        List<String> out = new ArrayList<>();
+        if (formatted == null) return out;
+        // visible characters with the codes active before each of them
+        StringBuilder vis = new StringBuilder();
+        List<String> codesBefore = new ArrayList<>();   // raw text (codes) that precedes visible char i
+        List<String> active = new ArrayList<>();        // codes active at visible char i
+        List<Integer> px = new ArrayList<>();
+        StringBuilder pending = new StringBuilder();
+        String act = "";
+        boolean bold = false;
+        for (int i = 0; i < formatted.length(); i++) {
+            char c = formatted.charAt(i);
+            if (c == '\u00A7' && i + 1 < formatted.length()) {
+                char raw = formatted.charAt(i + 1), code = Character.toLowerCase(raw);
+                if ((code >= '0' && code <= '9') || (code >= 'a' && code <= 'f') || code == 'r') { act = ""; bold = false; }
+                if (code == 'l') bold = true;
+                act += "\u00A7" + raw;
+                pending.append(c).append(raw);
                 i++;
                 continue;
             }
-            cur.append(c);
-            units += (c >= 0x2E80) ? 2 : 1;
-            if ("，。！？；、,.!?; ".indexOf(c) >= 0) { lastBreak = cur.length(); codesAtBreak = activeCodes; }
-            if (units > maxUnits) {
-                int cut = lastBreak > 0 ? lastBreak : cur.length();
-                String head = cur.substring(0, cut);
-                String tail = cur.substring(cut);
-                lines.add(head.replaceAll("\\s+$", ""));
-                String carry = lastBreak > 0 ? codesAtBreak : activeCodes;
-                cur = new StringBuilder(carry).append(tail.replaceAll("^\\s+", ""));
-                units = visibleUnits(cur.toString());
-                lastBreak = -1;
-            }
+            vis.append(c);
+            codesBefore.add(pending.toString());
+            pending.setLength(0);
+            active.add(act);
+            px.add(charPx(c) + (bold ? 1 : 0));
         }
-        if (normalize(cur.toString()).length() > 0 || lines.isEmpty()) lines.add(cur.toString());
-        return lines;
+        String tail = pending.toString();
+        int n = vis.length();
+        int total = 0;
+        for (int w : px) total += w;
+        if (total <= maxPx || n == 0) { out.add(formatted); return out; }
+        // break opportunities: before visible char i (the text is cut between i-1 and i); 0 = none
+        int[] prio = new int[n + 1];
+        for (int i = 1; i < n; i++) {
+            char p = vis.charAt(i - 1), c = vis.charAt(i);
+            if (CLOSING.indexOf(c) >= 0 || OPENING.indexOf(p) >= 0) continue;
+            if (c == ' ' || p == ' ') {                                 // cut at the space (it is dropped)
+                // "60,000 - 225,000", "+5 ❤": a range or a value with its icon stays together
+                String around = vis.substring(Math.max(0, i - 2), Math.min(n, i + 2));
+                prio[i] = around.matches(".*\\d ?[-~/] ?\\d.*|.*[-~/] .*|.* [-~/].*") ? 0 : 2;
+                continue;
+            }
+            if (CJK_BREAK_AFTER.indexOf(p) >= 0) { prio[i] = 3; continue; }
+            if (cjk(p) && cjk(c)) { prio[i] = SOFT_AFTER.indexOf(p) >= 0 || SOFT_BEFORE.indexOf(c) >= 0 ? 2 : 1; continue; }
+            if (cjk(p) != cjk(c) && (cjk(p) ? isWordStart(c) : isWordEnd(p))) prio[i] = 1; // 生命值 / +20
+        }
+        int[] best = null;
+        int bestScore = Integer.MAX_VALUE;
+        int lines0 = -1;
+        int k0 = (total + maxPx - 1) / maxPx;
+        for (int target = Math.max(40, total / (k0 + 2)); target <= maxPx; target += 3) {
+            int[] cuts = greedy(px, prio, target, maxPx);
+            int count = cuts.length + 1;
+            if (lines0 < 0) lines0 = count;
+            if (count > lines0) continue;
+            if (count < lines0) { lines0 = count; bestScore = Integer.MAX_VALUE; }
+            int score = score(px, cuts, prio);
+            if (score < bestScore) { bestScore = score; best = cuts; }
+        }
+        if (best == null) best = greedy(px, prio, maxPx, maxPx);
+        int from = 0;
+        for (int k = 0; k <= best.length; k++) {
+            int to = k < best.length ? best[k] : n;
+            StringBuilder line = new StringBuilder();
+            if (k > 0) line.append(active.get(from));
+            for (int i = from; i < to; i++) {
+                if (i > from || k == 0) line.append(codesBefore.get(i));
+                line.append(vis.charAt(i));
+            }
+            if (k == best.length) line.append(tail);
+            String l = line.toString();
+            if (k > 0) l = l.replaceFirst("^((?:\u00A7.)*)[ \u00A0]+", "$1");
+            out.add(l.replaceAll("[ \u00A0]+((?:\u00A7.)*)$", "$1"));
+            from = to;
+        }
+        return out;
+    }
+
+    /**
+     * Lines for one translated tooltip line: {@code source} are the original lines it replaces (one line, or
+     * a wrapped paragraph), {@code tooltipPx} is the width of the widest original line. A paragraph is
+     * wrapped no wider than the tooltip already is; a single line only when it would make the tooltip
+     * clearly wider.
+     */
+    public static List<String> layout(String zh, List<String> source, int tooltipPx) {
+        int src = 0;
+        for (String l : source) src = Math.max(src, widthPx(l));
+        int limit = source.size() > 1 ? Math.max(140, Math.max(src, Math.min(tooltipPx, 300)))
+                : Math.max(160, Math.max(src, tooltipPx) * 11 / 10 + 10);
+        return wrapPx(zh, limit);
+    }
+
+    private static boolean isWordStart(char c) { return Character.isLetterOrDigit(c) || c == '+' || c == '-' || c == '#' || c == '/'; }
+    private static boolean isWordEnd(char c) { return Character.isLetterOrDigit(c) || c == '%' || c == ')' ; }
+
+    /** Greedy line breaking at the best opportunity once a line would exceed {@code target}. */
+    private static int[] greedy(List<Integer> px, int[] prio, int target, int maxPx) {
+        List<Integer> cuts = new ArrayList<>();
+        int n = px.size(), start = 0, w = 0;
+        for (int i = 0; i < n; i++) {
+            if (w + px.get(i) > target && i > start) {
+                int cut = -1, cutPrio = 0, run = 0;
+                // the best place in the last 40% of the line; failing that, anywhere past its first third
+                for (int pass = 0; pass < 2 && cut < 0; pass++) {
+                    run = 0;
+                    for (int j = start + 1; j <= i; j++) {
+                        run += px.get(j - 1);
+                        boolean far = pass == 0 ? run * 5 >= target * 3 : run * 3 >= target;
+                        if (prio[j] > 0 && far && prio[j] >= cutPrio) { cut = j; cutPrio = prio[j]; }
+                    }
+                }
+                if (cut < 0 && w + px.get(i) <= maxPx) { w += px.get(i); continue; }   // no place to break yet
+                if (cut < 0) cut = i;                                                       // hard cut
+                cuts.add(cut);
+                w = 0;
+                for (int j = cut; j <= i; j++) w += px.get(j);
+                start = cut;
+                continue;
+            }
+            w += px.get(i);
+        }
+        int[] r = new int[cuts.size()];
+        for (int k = 0; k < r.length; k++) r[k] = cuts.get(k);
+        return r;
+    }
+
+    /** Lower is better: balanced line widths, breaks at punctuation, no near-empty last line. */
+    private static int score(List<Integer> px, int[] cuts, int[] prio) {
+        int n = px.size(), from = 0, max = 0, min = Integer.MAX_VALUE, s = 0;
+        for (int k = 0; k <= cuts.length; k++) {
+            int to = k < cuts.length ? cuts[k] : n, w = 0;
+            for (int i = from; i < to; i++) w += px.get(i);
+            max = Math.max(max, w);
+            min = Math.min(min, w);
+            if (k < cuts.length) s += prio[cuts[k]] >= 3 ? 0 : prio[cuts[k]] == 2 ? 10 : 30;
+            if (k == cuts.length && w * 3 < max) s += 120;   // a short last line
+            from = to;
+        }
+        return s + (max - min);
     }
 
     private static int visibleUnits(String formatted) {

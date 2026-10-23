@@ -89,6 +89,8 @@ public final class PhraseBook {
     private static final java.util.regex.Pattern VALUE_CORE =
             java.util.regex.Pattern.compile("^([^A-Za-z]*?)([A-Za-z](?:[A-Za-z' -]*[A-Za-z])?)([^A-Za-z]*)$");
 
+    private static final java.util.regex.Pattern TIERED = java.util.regex.Pattern.compile("^(.*[A-Za-z].*?) ([IVXLCDM]+|\\d+)$");
+
     /** A placeholder value: glossary term as a whole, or its words with numbers/icons around them ("+75 ❤ Health"). */
     static String translateValue(String v) {
         TranslationUtil.GlossaryIndex g = Glossary.index();
@@ -98,6 +100,12 @@ public final class PhraseBook {
         if (m.matches()) {
             String core = g.exact(m.group(2));
             if (core != null) return m.group(1) + core + m.group(3);
+        }
+        // "Coal IX", "Farming 25": a name with its tier or level
+        java.util.regex.Matcher t = TIERED.matcher(v);
+        if (t.matches()) {
+            String head = translateValue(t.group(1));
+            if (!head.equals(t.group(1))) return head + " " + t.group(2);
         }
         return v;
     }

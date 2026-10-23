@@ -943,7 +943,7 @@
 },
 {
 "en": "Mob Types: ⚓ Aquatic, ☮ Animal ❤",
-"zh": "生物种族: ⚓ 水生, ☮ 动物 ❤"
+"zh": "生物种族: ⚓ 水生、☮ 动物 ❤"
 },
 {
 "en": "Health: %1$s",
@@ -1719,7 +1719,7 @@
 },
 {
 "en": "Archer: +%1$s Crit Chance, +%2$s Crit Damage",
-"zh": "弓箭手: +%1$s 暴击率, +%2$s 暴击伤害"
+"zh": "弓箭手: +%1$s 暴击率，+%2$s 暴击伤害"
 },
 {
 "en": "COMMON BOOTS",
@@ -1935,7 +1935,7 @@
 },
 {
 "en": "Healer: +%1$s Mending, +%2$s Health",
-"zh": "治疗: +%1$s 修补, +%2$s 生命值"
+"zh": "治疗: +%1$s 修补，+%2$s 生命值"
 },
 {
 "en": "Tank: +%1$s Defense and reduces damage taken by %2$s% for each piece you have equipped if you are hit by the same monster within %3$s seconds.",
@@ -1947,7 +1947,7 @@
 },
 {
 "en": "Mob Types: ⚓ Aquatic, ☮ Animal, ❃ Elusive ❤",
-"zh": "生物种族: ⚓ 水生, ☮ 动物, ❃ 隐匿 ❤"
+"zh": "生物种族: ⚓ 水生、☮ 动物、❃ 隐匿 ❤"
 },
 {
 "en": "Tiered Bonus: Depth Champion (%1$s/%2$s)",
@@ -2527,7 +2527,7 @@
 },
 {
 "en": "Mob Types: ☽ Spooky, ⛨ Shielded ❤",
-"zh": "生物种族: ☽ 惊魂, ⛨ 护盾 ❤"
+"zh": "生物种族: ☽ 惊魂、⛨ 护盾 ❤"
 },
 {
 "en": "Ability: Farmer's Grace Grants immunity to trampling crops.",
@@ -4267,7 +4267,7 @@
 },
 {
 "en": "Mob Types: ✰ Humanoid, ⛨ Shielded ❤",
-"zh": "生物种族: ✰ 人形, ⛨ 护盾 ❤"
+"zh": "生物种族: ✰ 人形、⛨ 护盾 ❤"
 },
 {
 "en": "Health: %1$s ❁",
@@ -4975,7 +4975,7 @@
 },
 {
 "en": "Mob Types:  Airborne,  Critter",
-"zh": "生物种族:  空中,  小动物"
+"zh": "生物种族:  空中、 小动物"
 },
 {
 "en": "- Small Brain",
@@ -5107,7 +5107,7 @@
 },
 {
 "en": "Mob Types:  Construct,  Woodland",
-"zh": "生物种族:  构造体,  林地"
+"zh": "生物种族:  构造体、 林地"
 },
 {
 "en": "They lie dormant but aware, looking to spook fatigued explorers.",
@@ -5223,11 +5223,11 @@
 },
 {
 "en": "Mob Type: ⸙ Woodland, ✈ Airborne ❤",
-"zh": "生物种族: ⸙ 林地, ✈ 空中 ❤"
+"zh": "生物种族: ⸙ 林地、✈ 空中 ❤"
 },
 {
 "en": "Mob Types:  Woodland,  Animal,  Critter",
-"zh": "生物种族:  林地,  动物,  小动物"
+"zh": "生物种族:  林地、 动物、 小动物"
 },
 {
 "en": "Seer of the Skies Grants +%1$s☯ Hunting Wisdom while in the Critter Safari.",
@@ -5251,7 +5251,7 @@
 },
 {
 "en": "Mob Types:  Aquatic,  Critter",
-"zh": "生物种族:  水生,  小动物"
+"zh": "生物种族:  水生、 小动物"
 },
 {
 "en": "Right-click to open this bundle containing %1$s enchanted books.",
@@ -5287,7 +5287,7 @@
 },
 {
 "en": "Mob Types: ♆ Magmatic, ☮ Animal ❤",
-"zh": "生物种族: ♆ 熔岩, ☮ 动物 ❤"
+"zh": "生物种族: ♆ 熔岩、☮ 动物 ❤"
 },
 {
 "en": "Inferno arrows!",
@@ -5347,7 +5347,7 @@
 },
 {
 "en": "Mob Types: ❄ Glacial, ✰ Humanoid ❤",
-"zh": "生物种族: ❄ 冰川, ✰ 人形 ❤"
+"zh": "生物种族: ❄ 冰川、✰ 人形 ❤"
 },
 {
 "en": "Iceborn Gain +%2$s  Mining Fortune while in the Glacite Mineshafts.",
@@ -5419,7 +5419,7 @@
 },
 {
 "en": "Mob Types: ☮ Animal, ♃ Arcane ❤",
-"zh": "生物种族: ☮ 动物, ♃ 奥术 ❤"
+"zh": "生物种族: ☮ 动物、♃ 奥术 ❤"
 },
 {
 "en": "What happens if you open it? The answer may shock you.",
@@ -5435,7 +5435,7 @@
 },
 {
 "en": "Mob Types: ⸙ Woodland, ⚓ Aquatic, ༕ Undead ❤",
-"zh": "生物种族: ⸙ 林地, ⚓ 水生, ༕ 亡灵 ❤"
+"zh": "生物种族: ⸙ 林地、⚓ 水生、༕ 亡灵 ❤"
 },
 {
 "en": "Your arrows are icy cold!",
@@ -6155,11 +6155,11 @@
 },
 {
 "en": "Healer: +%1$s Health, +%2$s Mending",
-"zh": "治疗: +%1$s 生命值, +%2$s 修补"
+"zh": "治疗: +%1$s 生命值，+%2$s 修补"
 },
 {
 "en": "Tank: +%1$s Health, +%2$s Defense",
-"zh": "坦克: +%1$s 生命值, +%2$s 防御"
+"zh": "坦克: +%1$s 生命值，+%2$s 防御"
 },
 {
 "en": "EPIC DUNGEON BELT",
@@ -6275,7 +6275,7 @@
 },
 {
 "en": "Mob Types: ⚓ Aquatic, ✰ Humanoid ❤",
-"zh": "生物种族: ⚓ 水生, ✰ 人形 ❤"
+"zh": "生物种族: ⚓ 水生、✰ 人形 ❤"
 },
 {
 "en": "Ate too much Sulphur.",
@@ -6451,7 +6451,7 @@
 },
 {
 "en": "Mob Types: ✰ Humanoid, ⛏ Subterranean ❤",
-"zh": "生物种族: ✰ 人形, ⛏ 地底 ❤"
+"zh": "生物种族: ✰ 人形、⛏ 地底 ❤"
 },
 {
 "en": "Can be fished up during the Year of the Seal.",
@@ -65503,7 +65503,7 @@
 },
 {
 "en": "Portal Hub, Themed, Parkour",
-"zh": "传送门中心, 主题, 跑酷"
+"zh": "传送门中心，主题，跑酷"
 },
 {
 "en": "/visit prtl%1$s - Online Hub (feat. %2$sClover) Click",
@@ -65511,19 +65511,19 @@
 },
 {
 "en": "Portal Hub, Museum, Parkour",
-"zh": "传送门中心, 博物馆, 跑酷"
+"zh": "传送门中心，博物馆，跑酷"
 },
 {
 "en": "Pixel Art, Portal Hub",
-"zh": "像素画, 传送门中心"
+"zh": "像素画，传送门中心"
 },
 {
 "en": "Replica, Ancient",
-"zh": "复刻, 古代"
+"zh": "复刻，古代"
 },
 {
 "en": "Medieval, Portal Hub",
-"zh": "中世纪, 传送门中心"
+"zh": "中世纪，传送门中心"
 },
 {
 "en": "%1$sD%2$s Store",
@@ -65531,7 +65531,7 @@
 },
 {
 "en": "Museum, Portal Hub, Parkour",
-"zh": "博物馆, 传送门中心, 跑酷"
+"zh": "博物馆，传送门中心，跑酷"
 },
 {
 "en": "Tags: None",
@@ -69975,7 +69975,7 @@
 },
 {
 "en": "Pixel Art, Portal Hub Replica, Ancient",
-"zh": "像素画, 传送门中心复刻, 古代"
+"zh": "像素画，传送门中心复刻，古代"
 },
 {
 "en": "Generow's Gift Milestones Frozen Treasure Lily Pad Collection VI",
@@ -118143,7 +118143,7 @@
 },
 {
 "en": "We're not done yet though; This time I'll need 512 Redstone - that's 8 stacks! It's quite a lot, but I know you can do it.",
-"zh": "还没结束呢; 这次我需要 512 个红石——也就是 8 组！数量不少，但我知道你能做到。"
+"zh": "还没结束呢；这次我需要 512 个红石——也就是 8 组！数量不少，但我知道你能做到。"
 },
 {
 "en": "This time I'll need 512 Redstone - that's 8 stacks! It's quite a lot, but I know you can do it.",

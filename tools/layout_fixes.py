@@ -8,7 +8,7 @@
   a line of its own
 - list rows joined into one entry ("❣ Requires A. ❣ Requires B.") also give each row its own entry
 - "%1$sM" stays "%1$sM" (not "%1$s 百万"), like "%1$sk"
-- a space between Chinese and Latin letters / digits in the literal text
+- a space between Chinese and Latin letters / digits in the literal text; ", " after Chinese becomes "，"
 """
 import re
 from functools import lru_cache
@@ -56,6 +56,10 @@ def spacing(zh):
         masks.append(m.group(0))
         return "\u0000%d\u0001" % (len(masks) - 1)
     t = re.sub(r"%\d+\$s|%s|§.|\{\d+\}", mask, zh)
+    # half-width list punctuation after Chinese: "水生, 动物" -> "水生、动物", "暴击率, +15" -> "暴击率，+15"
+    sep = "、" if t.lstrip().startswith("生物种族") else "，"
+    t = re.sub(r"(" + CJK + r"(?:\u0000\d+\u0001)?), ", lambda m: m.group(1) + sep, t)
+    t = re.sub(r"(" + CJK + r"); ", r"\1；", t)
     t = re.sub(r"(" + CJK + r")(?=[A-Za-z0-9])", r"\1 ", t)
     t = re.sub(r"(?<=[A-Za-z0-9])(" + CJK + r")", r" \1", t)
     return re.sub(r"\u0000(\d+)\u0001", lambda m: masks[int(m.group(1))], t)

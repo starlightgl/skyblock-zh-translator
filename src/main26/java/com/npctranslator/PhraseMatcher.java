@@ -188,6 +188,10 @@ public final class PhraseMatcher {
         if (formatted == null || formatted.isEmpty()) return null;
         String cached = cache.get(formatted);
         if (cached != null) return cached == MISS ? null : cached;
+        String dynamic = RuntimeText.event(formatted);
+        if (dynamic == null && (formatted.contains(" ➜ ") || formatted.matches(".*Garden ➜ Mutations.*"))) dynamic = RuntimeText.menu(formatted);
+        if (dynamic == null) dynamic = TableNames.translateReforgedName(formatted);
+        if (dynamic != null) { if (cache.size() > 8000) cache.clear(); cache.put(formatted, dynamic); return dynamic; }
         String result = doTranslate(formatted);
         if (cache.size() > 8000) cache.clear();
         cache.put(formatted, result == null ? MISS : result);
@@ -201,6 +205,12 @@ public final class PhraseMatcher {
         Matcher m = STAT_LINE.matcher(formatted);
         if (!m.matches()) return null;
         String rest = m.group(4);
+        // Countdown suffixes are units to translate, not immutable stat symbols.
+        String field = m.group(2).trim();
+        if (field.equals("Starts In") || field.equals("Ends In") || field.equals("Time Left")) {
+            String countdown = HudText.translate(formatted, "TAB");
+            if (countdown != null) return countdown;
+        }
         // only values, symbols and colour codes after the label: no words to translate
         if (CODE.matcher(rest).replaceAll("").matches(".*[A-Za-z]{2,}.*")) return null;
         String zh = labels.get(m.group(2).trim());
@@ -401,6 +411,8 @@ public final class PhraseMatcher {
      */
     /** A whole-entry match only (no field-by-field fallback): used when joining wrapped lines. */
     private String translateStrict(String formatted) {
+        String dynamic=RuntimeText.event(formatted);
+        if(dynamic!=null)return dynamic;
         String key = normalize(formatted);
         if (key.length() < 2) return null;
         if (exact.containsKey(key)) return translate(formatted);

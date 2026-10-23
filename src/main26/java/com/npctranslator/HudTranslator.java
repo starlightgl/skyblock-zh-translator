@@ -108,6 +108,8 @@ public final class HudTranslator {
     private static Component translateLine(Component original) {
         String formatted = NPCTranslatorClient.toFormattedString(original);
         if (formatted.isEmpty()) return null;
+        String deterministic = cHudTranslation(formatted, "SIDEBAR");
+        if (deterministic != null) return remember(formatted, deterministic);
         Component cached = CACHE.get(formatted);
         if (cached != null) return cached;
         if (!TranslationUtil.needsTranslation(formatted)) return null;
@@ -126,6 +128,42 @@ public final class HudTranslator {
         }
         Coverage.record(formatted, out != null, "侧边栏");
         return remember(formatted, out);
+    }
+
+    private static String cHudTranslation(String formatted, String surface) {
+        ModConfig c = cfg();
+        return c != null && c.usePhrasebook ? HudText.translate(formatted, surface) : null;
+    }
+
+    /** Player identities are excluded by the Tab hook before reaching this method. */
+    public static Component tabText(Component original) { return hudText(original, "TAB"); }
+    public static Component overlayText(Component original) { return hudText(original, "OVERLAY"); }
+    public static Component regionText(Component original) { return hudText(original, "REGION"); }
+    public static Component screenTitle(Component original) { return hudText(original, "TITLE"); }
+    public static Component containerTitle(Component original) {
+        ModConfig c=cfg();
+        if(original==null || c==null || !c.enabled || !c.usePhrasebook)return original;
+        String raw=NPCTranslatorClient.toFormattedString(original), key="MENU:"+raw;
+        Component cached=WORLD_CACHE.get(key);if(cached!=null)return cached;
+        String out=RuntimeText.event(raw);
+        if(out==null)out=RuntimeText.menu(raw);
+        Component shown=out==null?original:NPCTranslatorClient.parseColorCodes(out);
+        if(WORLD_CACHE.size()>3000)WORLD_CACHE.clear();WORLD_CACHE.put(key,shown);return shown;
+    }
+    private static Component hudText(Component original, String surface) {
+        ModConfig c = cfg();
+        if (original == null || c == null || !c.enabled || !c.usePhrasebook) return original;
+        String formatted = NPCTranslatorClient.toFormattedString(original);
+        String key = "HUD:" + surface + ":" + formatted;
+        Component cached = WORLD_CACHE.get(key);
+        if (cached != null) return cached;
+        String out = HudText.translate(formatted, surface);
+        Coverage.record(formatted, out != null, surface);
+        if (out == null) return original;
+        Component translated = NPCTranslatorClient.parseColorCodes(out);
+        if (WORLD_CACHE.size() > 3000) WORLD_CACHE.clear();
+        WORLD_CACHE.put(key, translated);
+        return translated;
     }
 
     /** Where the text being looked up is shown, for the coverage report. */
@@ -253,10 +291,11 @@ public final class HudTranslator {
         try {
             String formatted = NPCTranslatorClient.toFormattedString(original);
             if (formatted.isEmpty()) return null;
-            Component cached = WORLD_CACHE.get(formatted);
+            String contextKey = String.valueOf(WHERE.get()) + ":" + formatted;
+            Component cached = WORLD_CACHE.get(contextKey);
             if (cached != null) return cached;
             long now = System.currentTimeMillis();
-            Long missAt = WORLD_MISS.get(formatted);
+            Long missAt = WORLD_MISS.get(contextKey);
             if (missAt != null && now - missAt < 2000L) return null;
 
             String out;
@@ -276,13 +315,13 @@ public final class HudTranslator {
             }
             if (out == null) {
                 if (WORLD_MISS.size() > 5000) WORLD_MISS.clear();
-                WORLD_MISS.put(formatted, now);
+                WORLD_MISS.put(contextKey, now);
                 return null;
             }
-            WORLD_MISS.remove(formatted);
+            WORLD_MISS.remove(contextKey);
             Component comp = NPCTranslatorClient.parseColorCodes(out);
             if (WORLD_CACHE.size() > 3000) WORLD_CACHE.clear();
-            WORLD_CACHE.put(formatted, comp);
+            WORLD_CACHE.put(contextKey, comp);
             return comp;
         } catch (Exception e) {
             return null;
@@ -305,6 +344,12 @@ public final class HudTranslator {
         if (formatted.isEmpty()) return null;
         if (!TranslationUtil.needsTranslation(formatted)) { debugLog("skip (no English): " + formatted); return null; }
         ModConfig c = cfg();
+        if (c.usePhrasebook && "名称与悬浮文字".equals(WHERE.get())) {
+            String name = ScopedNames.world(formatted);
+            if (name != null) return name;
+        }
+        String region = cHudTranslation(formatted, "LOCATION");
+        if (region != null) return region;
         String rule = PatternRules.translate(formatted);
         if (rule != null) return rule;
         String out = c.usePhrasebook ? PhraseBook.translate(formatted) : null;

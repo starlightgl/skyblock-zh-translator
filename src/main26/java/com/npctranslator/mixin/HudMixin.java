@@ -9,6 +9,7 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.scores.Objective;
 import net.minecraft.world.scores.Team;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
@@ -22,6 +23,9 @@ import com.npctranslator.TextCollector;
  */
 @Mixin(Hud.class)
 public abstract class HudMixin {
+    @Shadow private Component title;
+    @Shadow private Component subtitle;
+    @Shadow private Component overlayMessageString;
 
     private static final String TEXT_WITH_BACKDROP =
             "Lnet/minecraft/client/gui/GuiGraphicsExtractor;textWithBackdrop(Lnet/minecraft/client/gui/Font;Lnet/minecraft/network/chat/Component;IIII)V";
@@ -49,18 +53,33 @@ public abstract class HudMixin {
 
     // ---- text collection: titles, subtitles, action bar ----
 
-    @Inject(method = "setTitle", at = @At("HEAD"), require = 0)
-    private void npctranslator$collectTitle(Component title, CallbackInfo ci) {
+    @Inject(method = "setTitle", at = @At("HEAD"), require = 1)
+    private void npctranslator$title(Component title, CallbackInfo ci) {
         TextCollector.record(TextCollector.TITLE, "", title);
     }
 
-    @Inject(method = "setSubtitle", at = @At("HEAD"), require = 0)
-    private void npctranslator$collectSubtitle(Component subtitle, CallbackInfo ci) {
+    @Inject(method = "setSubtitle", at = @At("HEAD"), require = 1)
+    private void npctranslator$subtitle(Component subtitle, CallbackInfo ci) {
         TextCollector.record(TextCollector.SUBTITLE, "", subtitle);
     }
 
-    @Inject(method = "setOverlayMessage", at = @At("HEAD"), require = 0)
-    private void npctranslator$collectActionBar(Component message, boolean animate, CallbackInfo ci) {
+    @Redirect(method = "extractTitle", at = @At(value = "FIELD", target = "Lnet/minecraft/client/gui/Hud;title:Lnet/minecraft/network/chat/Component;", opcode = 180), require = 1)
+    private Component npctranslator$displayTitle(Hud hud) {
+        return HudTranslator.screenTitle(title);
+    }
+
+    @Redirect(method = "extractTitle", at = @At(value = "FIELD", target = "Lnet/minecraft/client/gui/Hud;subtitle:Lnet/minecraft/network/chat/Component;", opcode = 180), require = 1)
+    private Component npctranslator$displaySubtitle(Hud hud) {
+        return HudTranslator.screenTitle(subtitle);
+    }
+
+    @Inject(method = "setOverlayMessage", at = @At("HEAD"), require = 1)
+    private void npctranslator$actionBar(Component message, boolean animateColor, CallbackInfo ci) {
         TextCollector.record(TextCollector.ACTION_BAR, "", message);
+    }
+
+    @Redirect(method = "extractOverlayMessage", at = @At(value = "FIELD", target = "Lnet/minecraft/client/gui/Hud;overlayMessageString:Lnet/minecraft/network/chat/Component;", opcode = 180), require = 1)
+    private Component npctranslator$displayActionBar(Hud hud) {
+        return HudTranslator.overlayText(overlayMessageString);
     }
 }

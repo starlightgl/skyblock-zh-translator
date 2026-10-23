@@ -1,0 +1,127 @@
+[
+  {
+    "id": "sort",
+    "titles": [
+      "Sort"
+    ],
+    "options": {
+      "Default": "默认",
+      "Missing Enchantments First": "缺少的附魔优先",
+      "Rarity": "稀有度",
+      "A to Z": "A 到 Z",
+      "Z to A": "Z 到 A",
+      "Pet Exp": "宠物经验",
+      "Skill": "技能",
+      "Highest Price": "价格从高到低",
+      "Lowest Price": "价格从低到高",
+      "Ending soon": "即将结束",
+      "Random": "随机",
+      "Highest Bid": "最高出价",
+      "Lowest Bid": "最低出价",
+      "Most Bids": "出价最多"
+    },
+    "texts": {
+      "Change how Enchantments are sorted.": "更改附魔的排序方式。"
+    }
+  },
+  {
+    "id": "rarity",
+    "titles": [
+      "Item Tier",
+      "Filter"
+    ],
+    "options": {
+      "No filter": "不限",
+      "Common": "普通",
+      "Uncommon": "罕见",
+      "Rare": "稀有",
+      "Epic": "史诗",
+      "Legendary": "传说",
+      "Mythic": "神话",
+      "Divine": "神圣",
+      "Special": "特殊",
+      "Very Special": "非常特殊",
+      "Ultimate": "终极"
+    }
+  },
+  {
+    "id": "bin",
+    "titles": [
+      "BIN Filter"
+    ],
+    "options": {
+      "Show All": "显示全部",
+      "BIN Only": "仅一口价",
+      "Auctions Only": "仅竞拍"
+    }
+  },
+  {
+    "id": "visibility",
+    "titles": [
+      "Pet visibility"
+    ],
+    "options": {
+      "Show all pets": "显示所有宠物",
+      "Hide all pets": "隐藏所有宠物",
+      "Only your pet": "仅显示你的宠物"
+    },
+    "texts": {
+      "Pet name tags: Enabled": "宠物名牌: 启用",
+      "Pet name tags: Disabled": "宠物名牌: 禁用"
+    }
+  },
+  {
+    "id": "commissions",
+    "titles": [
+      "Filter"
+    ],
+    "options": {
+      "Dwarven Mines": "矮人矿洞",
+      "Crystal Hollows": "水晶洞窟",
+      "Glacite Tunnels": "极冰矿道"
+    }
+  },
+  {
+    "id": "family",
+    "titles": [
+      "Filter"
+    ],
+    "options": {
+      "None": "无",
+      "Amphibian": "两栖",
+      "Axolotl": "美西螈",
+      "Bird": "鸟类",
+      "Bug": "虫类",
+      "Cave Dweller": "洞穴居民",
+      "Creation": "造物",
+      "Crime": "罪犯",
+      "Croco": "鳄鱼",
+      "Demon": "恶魔",
+      "Dragon": "巨龙",
+      "Drowned": "溺尸",
+      "Eel": "鳗鱼",
+      "Elemental": "元素",
+      "Fox": "狐狸",
+      "Frog": "青蛙",
+      "Lapis": "青金石",
+      "Lizard": "蜥蜴",
+      "Panda": "熊猫",
+      "Phantom": "幻翼",
+      "Poltergeist": "骚灵",
+      "Reptile": "爬行类",
+      "Scaled": "鳞甲",
+      "Serpent": "蛇类",
+      "Shulker": "潜影贝",
+      "Spider": "蜘蛛",
+      "Squid": "鱿鱼",
+      "Trash Lover": "垃圾爱好者",
+      "Treasure Fish": "宝藏鱼",
+      "Tropical Fish": "热带鱼",
+      "Turtle": "海龟",
+      "Crustacean": "甲壳类",
+      "Arctic": "极地",
+      "Dinosaur": "恐龙",
+      "Miracle": "奇迹"
+    }
+  }
+]

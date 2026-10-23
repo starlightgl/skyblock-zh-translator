@@ -161,7 +161,25 @@ public final class TableNames {
             }
         }
         if (base == null) return null;
-        return lead + (reforge != null ? reforge : "") + base + suffix;
+        return lead + (reforge != null ? reforge + " " : "") + base + suffix;
+    }
+
+    /** Explicit reforge prefix wins over a stale whole-name sentence cache. */
+    public static String translateReforgedName(String formatted) {
+        load();
+        if (formatted == null) return null;
+        String plain = TranslationUtil.stripColorCodes(formatted).trim();
+        int sp = plain.indexOf(' ');
+        if (sp <= 0 || !reforges.containsKey(plain.substring(0, sp))) return null;
+        String body = translateName(plain.substring(sp + 1));
+        if (body == null) return null;
+        Matcher lm = LEAD.matcher(formatted);
+        String lead = lm.find() ? lm.group(1) : "";
+        // The normal name path keeps star colours and suffix decorations intact.
+        String regular = translateName(formatted);
+        String joined = lead + reforges.get(plain.substring(0, sp)) + " ";
+        if (regular != null && regular.startsWith(joined)) return regular;
+        return joined + body;
     }
 
     /** English name without reforge/stars/pet level, as used for the alias lookup. */

@@ -1,0 +1,1471 @@
+{
+  "regions": {
+    "Arachne's Burrow": "阿拉克涅巢穴",
+    "Arachne's Sanctuary": "阿拉克涅圣所",
+    "Archaeologist's Camp": "考古学家营地",
+    "Archery Range": "射箭场",
+    "Aristocrat Passage": "贵族通道",
+    "Auction House": "拍卖行",
+    "Aura's Lab": "奥拉的实验室",
+    "Backwater Bayou": "死水河岸",
+    "Barbarian Outpost": "野蛮人前哨站",
+    "Barracks of Heroes": "英雄兵营",
+    "Bazaar Alley": "集市巷",
+    "Belly of the Beast": "巨兽之腹",
+    "Birch Park": "白桦公园",
+    "Blacksmith": "铁匠铺",
+    "Blazing Volcano": "炽焰火山",
+    "Builder's House": "建筑师之家",
+    "Burning Desert": "烈焰沙漠",
+    "C&C Minecarts Co.": "C&C 矿车公司",
+    "Canvas Room": "画布室",
+    "Catacombs Entrance": "地下墓穴入口",
+    "Cathedral": "大教堂",
+    "Chief's Hut": "酋长小屋",
+    "Cliffside Veins": "崖壁矿脉",
+    "Coal Mine": "煤矿",
+    "Colosseum": "斗兽场",
+    "Community Center": "社区中心",
+    "Courtyard": "庭院",
+    "Crimson Fields": "绯红原野",
+    "Crimson Isle": "绯红孤岛",
+    "Crystal Hollows": "水晶洞窟",
+    "Dark Thicket": "幽暗灌木丛",
+    "Deep Caverns": "深层洞穴",
+    "Desert Settlement": "沙漠聚落",
+    "Diamond Reserve": "钻石储藏区",
+    "Divan's Gateway": "迪万之门",
+    "Dojo": "道场",
+    "Dojo Area": "道场区",
+    "Dragon's Nest": "龙巢",
+    "Dragontail": "龙尾镇",
+    "Dragontail Auction House": "龙尾镇拍卖行",
+    "Dragontail Bank": "龙尾镇银行",
+    "Dragontail Bazaar": "龙尾镇集市",
+    "Dragontail Blacksmith": "龙尾镇铁匠铺",
+    "Dragontail Townsquare": "龙尾镇广场",
+    "Dungeon": "地牢",
+    "Dungeon Hub": "地牢大厅",
+    "Dwarven Mines": "矮人矿洞",
+    "Dwarven Tavern": "矮人酒馆",
+    "Dwarven Village": "矮人村庄",
+    "Einary's Emporium": "艾纳里的商行",
+    "Election Room": "选举室",
+    "Far Reserve": "远方矿藏",
+    "Farm": "农场",
+    "Farmhouse": "农舍",
+    "Fashion Shop": "时装店",
+    "Fisherman's Hut": "渔夫小屋",
+    "Flower House": "花屋",
+    "Forest": "森林",
+    "Forge Basin": "锻造盆地",
+    "Forgotten Skull": "遗忘之颅",
+    "Gary's Shack": "加里的小屋",
+    "Gates to the Mines": "矿区之门",
+    "Glacial Cave": "冰川洞穴",
+    "Glacite Mineshafts": "极冰矿井",
+    "Glowing Mushroom Cave": "发光蘑菇洞穴",
+    "Goblin Burrows": "哥布林地穴",
+    "Gold Mine": "金矿",
+    "Grand Library": "大图书馆",
+    "Grandma's House": "外婆之家",
+    "Gravel Mines": "砂砾矿区",
+    "Graveyard": "墓地",
+    "Great Ice Wall": "巨型冰墙",
+    "Gunpowder Mines": "火药矿区",
+    "Hanging Court": "悬廷",
+    "Hexatorum": "六芒殿",
+    "Hot Springs": "温泉",
+    "Howling Cave": "嚎叫洞穴",
+    "Hub": "主城",
+    "Igrupan's Chicken Coop": "伊格鲁潘的鸡舍",
+    "Igrupan's House": "伊格鲁潘的房屋",
+    "Jake's House": "杰克之家",
+    "Jerry Pond": "杰瑞池塘",
+    "Jerry's Workshop": "杰瑞的工坊",
+    "Jungle Island": "丛林岛",
+    "Kuudra's Hollow": "库德拉巢穴",
+    "Lapis Quarry": "青金石采石场",
+    "Lava Springs": "熔岩泉",
+    "Library": "图书馆",
+    "Lonely Island": "孤岛",
+    "Lotus Atoll": "莲花环礁",
+    "Mage Council": "法师议会",
+    "Mage Outpost": "法师前哨站",
+    "Magma Chamber": "岩浆洞室",
+    "Matriarch's Lair": "女族长的巢穴",
+    "Melody's Plateau": "梅洛迪高地",
+    "Miner's Guild": "矿工公会",
+    "Minion Shop": "小人商店",
+    "Moonglade Marsh": "月光沼泽",
+    "Mount Jerry": "杰瑞山",
+    "Mountain": "高山",
+    "Museum": "博物馆",
+    "Mushroom Desert": "蘑菇沙漠",
+    "Mushroom Gorge": "蘑菇峡谷",
+    "Mystic Marsh": "神秘沼泽",
+    "Oasis": "绿洲",
+    "Obsidian Sanctuary": "黑曜石圣所",
+    "Odger's Hut": "奥杰尔的小屋",
+    "Overgrown Mushroom Cave": "繁茂蘑菇洞穴",
+    "Palace Bridge": "宫殿桥",
+    "Pet Care": "宠物护理所",
+    "Pigmen's Den": "猪人巢穴",
+    "Plhlegblast Pool": "弗莱格布拉斯池",
+    "Private Island": "私人岛屿",
+    "Rampart's Quarry": "壁垒采石场",
+    "Reflective Pond": "倒影池塘",
+    "Rift": "裂隙",
+    "Royal Mines": "皇家矿区",
+    "Royal Palace": "皇家宫殿",
+    "Royal Quarters": "皇家寝宫",
+    "Ruins": "遗迹",
+    "Ruins of Ashfang": "灰牙遗迹",
+    "Safari": "游猎场",
+    "Savanna Woodland": "热带草原林地",
+    "Scarleton": "绯红城",
+    "Scarleton Auction House": "绯红城拍卖行",
+    "Scarleton Bank": "绯红城银行",
+    "Scarleton Bazaar": "绯红城集市",
+    "Scarleton Blacksmith": "绯红城铁匠铺",
+    "Scarleton Minion Shop": "绯红城小人商店",
+    "Scarleton Plaza": "绯红城广场",
+    "Shepherd's Keep": "牧羊人牧场",
+    "Sherry's Showroom": "雪莉的展厅",
+    "Slimehill": "史莱姆山",
+    "Smoldering Tomb": "阴燃墓穴",
+    "Spider Mound": "蜘蛛山丘",
+    "Spider's Den": "蜘蛛巢穴",
+    "Spruce Woods": "云杉林",
+    "Stronghold": "要塞",
+    "Sunken Jerry Pond": "沉没的杰瑞池塘",
+    "Tavern": "酒馆",
+    "Terry's Shack": "特里的小屋",
+    "Thaumaturgist": "调律师居所",
+    "The Barn": "谷仓",
+    "The Bastion": "壁垒",
+    "The Dukedom": "公爵领",
+    "The End": "末地",
+    "The Farming Islands": "农业岛",
+    "The Forge": "锻造厂",
+    "The Garden": "花园",
+    "The Lift": "升降梯",
+    "The Mist": "迷雾",
+    "The Park": "公园",
+    "The Wasteland": "荒原",
+    "Throne Room": "王座厅",
+    "Torrhus Canyon": "托鲁斯峡谷",
+    "Trapper's Den": "猎人小屋",
+    "Treasure Hunter Camp": "宝藏猎人营地",
+    "Unincorporated": "未辖地",
+    "Upper Mines": "上层矿区",
+    "Viking Longhouse": "维京长屋",
+    "Village": "村庄",
+    "Void Sepulture": "虚空墓地",
+    "Void Slate": "虚空石台",
+    "Weaponsmith": "武器匠",
+    "Wilderness": "荒野",
+    "Windmill": "风车",
+    "Wizard Tower": "巫师塔",
+    "Zealot Bruiser Hideout": "狂热斗士藏身处",
+    "None": "无",
+    "Trials of Fire": "火之试炼",
+    "Your Island": "你的岛屿",
+    "Garden": "花园",
+    "Bank": "银行",
+    "Mining District": "矿业区",
+    "Abiphones & Co.": "阿比电话商店",
+    "Artist's Abode": "艺术家居所",
+    "Fishing Outpost": "钓鱼前哨",
+    "Communal Stew": "共享炖锅",
+    "Combat Settlement": "战斗聚落",
+    "Foraging Camp": "伐木营地",
+    "Weather Station": "气象站",
+    "Trade Center": "交易中心",
+    "Security Hall": "安保大厅"
+  },
+  "labels": {
+    "Info": "信息",
+    "Area": "区域",
+    "Zone": "区域",
+    "Server": "服务器",
+    "Gems": "宝石币",
+    "Fairy Souls": "仙女之魂",
+    "Rain": "降雨",
+    "Profile": "存档",
+    "SB Level": "空岛等级",
+    "Bank": "银行",
+    "Interest": "利息",
+    "Pet": "宠物",
+    "Collection": "收集",
+    "Election": "选举",
+    "Event": "活动",
+    "Ends In": "剩余时间",
+    "Starts In": "开始时间",
+    "Skills": "技能",
+    "Stats": "属性",
+    "Speed": "速度",
+    "Strength": "力量",
+    "Crit Chance": "暴击率",
+    "Crit Damage": "暴击伤害",
+    "Attack Speed": "攻击速度",
+    "Breeze": "微风",
+    "Daily Quests": "每日任务",
+    "Forges": "锻造炉",
+    "Commissions": "委托",
+    "Powders": "粉末",
+    "Mithril": "秘银",
+    "Gemstone": "宝石",
+    "Glacite": "极冰",
+    "Minions": "小人",
+    "Mayor": "市长",
+    "Year": "年份",
+    "Garden Level": "花园等级",
+    "Copper": "铜",
+    "Sowdust": "播种尘",
+    "Farming Fortune": "农业时运",
+    "Bonus Pest Chance": "额外害虫几率",
+    "Composter": "堆肥机",
+    "Organic Matter": "有机物",
+    "Fuel": "燃料",
+    "Time Left": "剩余时间",
+    "Stored Compost": "已储存堆肥",
+    "Jacob's Contest": "雅各布农业竞赛",
+    "Pests": "害虫",
+    "Alive": "存活",
+    "Plots": "地块",
+    "Spray": "喷剂",
+    "Repellent": "驱虫剂",
+    "Bonus": "加成",
+    "Cooldown": "冷却时间",
+    "Pest Traps": "害虫陷阱",
+    "Full Traps": "已满陷阱",
+    "No Bait": "无诱饵",
+    "Visitors": "访客",
+    "Next Visitor": "下一位访客",
+    "Purse": "钱包",
+    "Bits": "点券",
+    "Rank": "会员等级",
+    "Nearby Players": "附近玩家",
+    "Combat": "战斗",
+    "Foraging": "伐木",
+    "Fishing": "钓鱼",
+    "Farming": "农业",
+    "Mining": "挖矿"
+  },
+  "values": {
+    "Arachne's Burrow": "阿拉克涅巢穴",
+    "Arachne's Sanctuary": "阿拉克涅圣所",
+    "Archaeologist's Camp": "考古学家营地",
+    "Archery Range": "射箭场",
+    "Aristocrat Passage": "贵族通道",
+    "Auction House": "拍卖行",
+    "Aura's Lab": "奥拉的实验室",
+    "Backwater Bayou": "死水河岸",
+    "Barbarian Outpost": "野蛮人前哨站",
+    "Barracks of Heroes": "英雄兵营",
+    "Bazaar Alley": "集市巷",
+    "Belly of the Beast": "巨兽之腹",
+    "Birch Park": "白桦公园",
+    "Blacksmith": "铁匠铺",
+    "Blazing Volcano": "炽焰火山",
+    "Builder's House": "建筑师之家",
+    "Burning Desert": "烈焰沙漠",
+    "C&C Minecarts Co.": "C&C 矿车公司",
+    "Canvas Room": "画布室",
+    "Catacombs Entrance": "地下墓穴入口",
+    "Cathedral": "大教堂",
+    "Chief's Hut": "酋长小屋",
+    "Cliffside Veins": "崖壁矿脉",
+    "Coal Mine": "煤矿",
+    "Colosseum": "斗兽场",
+    "Community Center": "社区中心",
+    "Courtyard": "庭院",
+    "Crimson Fields": "绯红原野",
+    "Crimson Isle": "绯红孤岛",
+    "Crystal Hollows": "水晶洞窟",
+    "Dark Thicket": "幽暗灌木丛",
+    "Deep Caverns": "深层洞穴",
+    "Desert Settlement": "沙漠聚落",
+    "Diamond Reserve": "钻石储藏区",
+    "Divan's Gateway": "迪万之门",
+    "Dojo": "道场",
+    "Dojo Area": "道场区",
+    "Dragon's Nest": "龙巢",
+    "Dragontail": "龙尾镇",
+    "Dragontail Auction House": "龙尾镇拍卖行",
+    "Dragontail Bank": "龙尾镇银行",
+    "Dragontail Bazaar": "龙尾镇集市",
+    "Dragontail Blacksmith": "龙尾镇铁匠铺",
+    "Dragontail Townsquare": "龙尾镇广场",
+    "Dungeon": "地牢",
+    "Dungeon Hub": "地牢大厅",
+    "Dwarven Mines": "矮人矿洞",
+    "Dwarven Tavern": "矮人酒馆",
+    "Dwarven Village": "矮人村庄",
+    "Einary's Emporium": "艾纳里的商行",
+    "Election Room": "选举室",
+    "Far Reserve": "远方矿藏",
+    "Farm": "农场",
+    "Farmhouse": "农舍",
+    "Fashion Shop": "时装店",
+    "Fisherman's Hut": "渔夫小屋",
+    "Flower House": "花屋",
+    "Forest": "森林",
+    "Forge Basin": "锻造盆地",
+    "Forgotten Skull": "遗忘之颅",
+    "Gary's Shack": "加里的小屋",
+    "Gates to the Mines": "矿区之门",
+    "Glacial Cave": "冰川洞穴",
+    "Glacite Mineshafts": "极冰矿井",
+    "Glowing Mushroom Cave": "发光蘑菇洞穴",
+    "Goblin Burrows": "哥布林地穴",
+    "Gold Mine": "金矿",
+    "Grand Library": "大图书馆",
+    "Grandma's House": "外婆之家",
+    "Gravel Mines": "砂砾矿区",
+    "Graveyard": "墓地",
+    "Great Ice Wall": "巨型冰墙",
+    "Gunpowder Mines": "火药矿区",
+    "Hanging Court": "悬廷",
+    "Hexatorum": "六芒殿",
+    "Hot Springs": "温泉",
+    "Howling Cave": "嚎叫洞穴",
+    "Hub": "主城",
+    "Igrupan's Chicken Coop": "伊格鲁潘的鸡舍",
+    "Igrupan's House": "伊格鲁潘的房屋",
+    "Jake's House": "杰克之家",
+    "Jerry Pond": "杰瑞池塘",
+    "Jerry's Workshop": "杰瑞的工坊",
+    "Jungle Island": "丛林岛",
+    "Kuudra's Hollow": "库德拉巢穴",
+    "Lapis Quarry": "青金石采石场",
+    "Lava Springs": "熔岩泉",
+    "Library": "图书馆",
+    "Lonely Island": "孤岛",
+    "Lotus Atoll": "莲花环礁",
+    "Mage Council": "法师议会",
+    "Mage Outpost": "法师前哨站",
+    "Magma Chamber": "岩浆洞室",
+    "Matriarch's Lair": "女族长的巢穴",
+    "Melody's Plateau": "梅洛迪高地",
+    "Miner's Guild": "矿工公会",
+    "Minion Shop": "小人商店",
+    "Moonglade Marsh": "月光沼泽",
+    "Mount Jerry": "杰瑞山",
+    "Mountain": "高山",
+    "Museum": "博物馆",
+    "Mushroom Desert": "蘑菇沙漠",
+    "Mushroom Gorge": "蘑菇峡谷",
+    "Mystic Marsh": "神秘沼泽",
+    "Oasis": "绿洲",
+    "Obsidian Sanctuary": "黑曜石圣所",
+    "Odger's Hut": "奥杰尔的小屋",
+    "Overgrown Mushroom Cave": "繁茂蘑菇洞穴",
+    "Palace Bridge": "宫殿桥",
+    "Pet Care": "宠物护理所",
+    "Pigmen's Den": "猪人巢穴",
+    "Plhlegblast Pool": "弗莱格布拉斯池",
+    "Private Island": "私人岛屿",
+    "Rampart's Quarry": "壁垒采石场",
+    "Reflective Pond": "倒影池塘",
+    "Rift": "裂隙",
+    "Royal Mines": "皇家矿区",
+    "Royal Palace": "皇家宫殿",
+    "Royal Quarters": "皇家寝宫",
+    "Ruins": "遗迹",
+    "Ruins of Ashfang": "灰牙遗迹",
+    "Safari": "游猎场",
+    "Savanna Woodland": "热带草原林地",
+    "Scarleton": "绯红城",
+    "Scarleton Auction House": "绯红城拍卖行",
+    "Scarleton Bank": "绯红城银行",
+    "Scarleton Bazaar": "绯红城集市",
+    "Scarleton Blacksmith": "绯红城铁匠铺",
+    "Scarleton Minion Shop": "绯红城小人商店",
+    "Scarleton Plaza": "绯红城广场",
+    "Shepherd's Keep": "牧羊人牧场",
+    "Sherry's Showroom": "雪莉的展厅",
+    "Slimehill": "史莱姆山",
+    "Smoldering Tomb": "阴燃墓穴",
+    "Spider Mound": "蜘蛛山丘",
+    "Spider's Den": "蜘蛛巢穴",
+    "Spruce Woods": "云杉林",
+    "Stronghold": "要塞",
+    "Sunken Jerry Pond": "沉没的杰瑞池塘",
+    "Tavern": "酒馆",
+    "Terry's Shack": "特里的小屋",
+    "Thaumaturgist": "调律师居所",
+    "The Barn": "谷仓",
+    "The Bastion": "壁垒",
+    "The Dukedom": "公爵领",
+    "The End": "末地",
+    "The Farming Islands": "农业岛",
+    "The Forge": "锻造厂",
+    "The Garden": "花园",
+    "The Lift": "升降梯",
+    "The Mist": "迷雾",
+    "The Park": "公园",
+    "The Wasteland": "荒原",
+    "Throne Room": "王座厅",
+    "Torrhus Canyon": "托鲁斯峡谷",
+    "Trapper's Den": "猎人小屋",
+    "Treasure Hunter Camp": "宝藏猎人营地",
+    "Unincorporated": "未辖地",
+    "Upper Mines": "上层矿区",
+    "Viking Longhouse": "维京长屋",
+    "Village": "村庄",
+    "Void Sepulture": "虚空墓地",
+    "Void Slate": "虚空石台",
+    "Weaponsmith": "武器匠",
+    "Wilderness": "荒野",
+    "Windmill": "风车",
+    "Wizard Tower": "巫师塔",
+    "Zealot Bruiser Hideout": "狂热斗士藏身处",
+    "None": "无",
+    "Trials of Fire": "火之试炼",
+    "Your Island": "你的岛屿",
+    "Garden": "花园",
+    "Bank": "银行",
+    "You are playing on MC.HYPIXEL.NET": "你正在 MC.HYPIXEL.NET 上游玩",
+    "Ranks, Boosters & MORE! STORE.HYPIXEL.NET": "会员等级、增幅器等更多内容！STORE.HYPIXEL.NET",
+    "PROTOTYPE": "原型服",
+    "Active Effects": "生效中的效果",
+    "Use \"/effects\" to see the effects!": "使用 \"/effects\" 查看效果！",
+    "Cookie Buff": "曲奇增益",
+    " Birch Park": " 白桦公园",
+    " None": " 无",
+    "SKYBLOCK": "空岛",
+    "Area: The Park": "区域: 公园",
+    "Rain: No rain!": "降雨: 没有下雨！",
+    "Profile: Pineapple": "存档: 菠萝",
+    "Pet:": "宠物:",
+    "Collection:": "收集:",
+    "Event: The Great Spook": "活动: 大惊吓",
+    "Skills:": "技能:",
+    "Stats:": "属性:",
+    " Spruce Woods": " 云杉林",
+    "Objective ⬉": "目标 ⬉",
+    "Find Kelly": "找到凯莉",
+    "Objective ⬆": "目标 ⬆",
+    "Objective ⬈": "目标 ⬈",
+    "Objective ⬇": "目标 ⬇",
+    "Objective ➡": "目标 ➡",
+    "Objective": "目标",
+    "Collect Spruce Logs": "收集云杉原木",
+    "Primal Fear": "原始恐惧",
+    "Objective ⬅": "目标 ⬅",
+    "Give Kelly Spruce Logs": "把云杉原木交给凯莉",
+    "Travel to the Dark Thicket": "前往幽暗灌木丛",
+    " Dark Thicket": " 幽暗灌木丛",
+    "Find the Campfire": "找到营火",
+    " Trials of Fire": " 火之试炼",
+    "Sneak up on Ryan": "悄悄靠近瑞安",
+    "Complete Trial of Fire I": "完成火之试炼 I",
+    "Objective ⬋": "目标 ⬋",
+    "Objective ⬊": "目标 ⬊",
+    "Talk to Ryan": "与瑞安交谈",
+    "Collect Dark Oak Logs": "收集深色橡木原木",
+    "Give Ryan Dark Oak Logs": "把深色橡木原木交给瑞安",
+    "Visit the Savanna Woodland": "前往热带草原林地",
+    "Complete Campfire Trials": "完成营火试炼",
+    " The Forge": " 锻造厂",
+    "Area: Dwarven Mines": "区域: 矮人矿洞",
+    "Daily Quests:": "每日任务:",
+    "Fetchur: Available": "费彻: 可用",
+    "Puzzler: Available": "解谜者: 可用",
+    "Forges:": "锻造炉:",
+    "Commissions:": "委托:",
+    "Powders:": "粉末:",
+    "Crystal Sentry": "水晶哨兵",
+    "Treasure Hunter": "寻宝猎人",
+    " Dwarven Mines": " 矮人矿洞",
+    " Forge Basin": " 锻造盆地",
+    " Rampart's Quarry": " 壁垒采石场",
+    "Slot unlocked": "槽位已解锁",
+    "Vegan Crawler": "素食爬行者",
+    " Gates to the Mines": " 矿区之门",
+    "Event: GOBLIN RAID": "活动: 哥布林突袭",
+    "Zone: Rampart's Quarry": "区域: 壁垒采石场",
+    "Commitment Phobi": "承诺恐惧症",
+    " The Lift": " 升降梯",
+    " Dwarven Village": " 矮人村庄",
+    "Zone: Far Reserve": "区域: 远方矿藏",
+    "Rampart's Quarry Mithril: DONE": "壁垒采石场秘银: 已完成",
+    " Far Reserve": " 远方矿藏",
+    "Ice Walker": "冰行者",
+    " Goblin Burrows": " 哥布林地穴",
+    "Goblin Slayer: DONE": "哥布林杀手: 已完成",
+    " Upper Mines": " 上层矿区",
+    " Cliffside Veins": " 崖壁矿脉",
+    "Elusive Goblin Slayer: DONE": "隐匿哥布林杀手: 已完成",
+    "Titanium Miner: DONE": "钛矿工: 已完成",
+    "Cliffside Veins Mithril: DONE": "崖壁矿脉秘银: 已完成",
+    " Your Island": " 你的岛屿",
+    "Area: Private Island": "区域: 私人岛屿",
+    " Village": " 村庄",
+    "Area: Hub": "区域: 主城",
+    "Event: Hoppity's Hunt": "活动: 霍皮提狩猎",
+    "Security Clerk": "保安文员",
+    "DONE": "已完成",
+    "Available": "可用",
+    "Ready!": "已就绪！",
+    "EMPTY": "空",
+    "ACTIVE": "运行中",
+    "INACTIVE": "未运行",
+    "FULL": "已满",
+    "No rain!": "没有下雨！",
+    "Over!": "已结束！",
+    "Queue Full!": "队列已满！",
+    "MAX PESTS": "已达害虫上限",
+    "GOBLIN RAID": "哥布林突袭",
+    "MITHRIL GOURMAND": "秘银美食家",
+    "The Great Spook": "惊吓盛典",
+    "Hoppity's Hunt": "霍皮蒂寻兔",
+    "Pineapple": "菠萝",
+    "Players": "玩家",
+    "Guests": "访客",
+    "Birch Log": "白桦原木",
+    "Dark Oak Log": "深色橡木原木",
+    "Spruce Log": "云杉原木",
+    "Chestplate of Divan": "迪万胸甲",
+    "Mole": "鼹鼠",
+    "Slime": "史莱姆",
+    "Fishing": "钓鱼",
+    "Gold": "金",
+    "Moonflower": "月光花",
+    "Mushroom": "蘑菇",
+    "Sunflower": "向日葵",
+    "Pumpkin": "南瓜",
+    "Carrot": "胡萝卜",
+    "Sugar Cane": "甘蔗",
+    "Jerry": "杰瑞",
+    "Elusive Goblin Slayer": "隐匿哥布林猎手",
+    "Rampart's Quarry Mithril": "壁垒采石场秘银",
+    "Goblin Slayer": "哥布林猎手",
+    "Goblin Raid Slayer": "哥布林突袭猎手",
+    "Cliffside Veins Mithril": "崖壁矿脉秘银",
+    "Titanium Miner": "钛矿工",
+    "Raffle": "抽奖",
+    "Goblin Raid": "哥布林突袭",
+    "Sowdust": "播种尘",
+    "Lazy Miner": "懒惰矿工",
+    "Arthur": "亚瑟",
+    "Gwendolyn": "格温多琳",
+    "Emissary Fraiser": "使者弗雷泽",
+    "Queen Mismyla": "米斯米拉女王",
+    "Sam": "萨姆",
+    "Goblin": "哥布林",
+    "Island": "岛屿",
+    "Jimmy": "吉米",
+    "Brigette": "布丽吉特",
+    "Weakling": "弱者",
+    "Pitfighter": "角斗士",
+    "Murderlover": "嗜杀者",
+    "Creepertamer": "苦力怕驯服者",
+    "Mining District": "矿业区",
+    "Abiphones & Co.": "阿比电话商店",
+    "Artist's Abode": "艺术家居所",
+    "Fishing Outpost": "钓鱼前哨",
+    "Communal Stew": "共享炖锅",
+    "Combat Settlement": "战斗聚落",
+    "Foraging Camp": "伐木营地",
+    "Weather Station": "气象站",
+    "Trade Center": "交易中心",
+    "Security Hall": "安保大厅",
+    "Harvest Feast": "丰收盛宴",
+    "Fishing Festival": "钓鱼节",
+    "Bonus Fishing Festival": "额外钓鱼节",
+    "Season of Jerry": "杰瑞季",
+    "New Year Celebration": "新年庆典",
+    "Election Over!": "选举结束！",
+    "Election Booth Opens": "选举投票开放",
+    "Traveling Zoo": "巡回动物园",
+    "Mining Fiesta": "采矿嘉年华",
+    "Dark Auction": "暗黑拍卖",
+    "Starlyn Contests": "星琳竞赛",
+    "Jacob's Farming Contest": "雅各布农业竞赛",
+    "Year of the Seal": "海豹年",
+    "Year of the Pig": "猪年",
+    "Year of the Witch": "女巫年",
+    "Stock Exchange": "股票交易",
+    "Carnival": "嘉年华",
+    "Party Time!": "周年派对！",
+    "Spooky Festival": "惊魂节",
+    "Election Over": "选举结束",
+    "Election: Over!": "选举：已结束！",
+    "Cocoa Beans": "可可豆",
+    "Nether Wart": "下界疣",
+    "Melon Slice": "西瓜片"
+  },
+  "entries": [
+    {
+      "en": "You are playing on MC.HYPIXEL.NET",
+      "zh": "你正在 MC.HYPIXEL.NET 上游玩"
+    },
+    {
+      "en": "Ranks, Boosters & MORE! STORE.HYPIXEL.NET",
+      "zh": "会员等级、增幅器等更多内容！STORE.HYPIXEL.NET"
+    },
+    {
+      "en": "PROTOTYPE",
+      "zh": "原型服"
+    },
+    {
+      "en": "Active Effects",
+      "zh": "生效中的效果"
+    },
+    {
+      "en": "You have a God Potion active! {0} hours",
+      "zh": "你的神之药水正在生效！剩余 {0} 小时"
+    },
+    {
+      "en": "Use \"/effects\" to see the effects!",
+      "zh": "使用 \"/effects\" 查看效果！"
+    },
+    {
+      "en": "Cookie Buff",
+      "zh": "曲奇增益"
+    },
+    {
+      "en": "{0} day, {1} hours",
+      "zh": "{0} 天 {1} 小时"
+    },
+    {
+      "en": " Birch Park",
+      "zh": " 白桦公园"
+    },
+    {
+      "en": "Early Spring {0}th",
+      "zh": "初春 {0}日"
+    },
+    {
+      "en": "{0}:{1}pm",
+      "zh": "下午 {0}:{1}"
+    },
+    {
+      "en": " None",
+      "zh": " 无"
+    },
+    {
+      "en": "Purse: {0},{1}",
+      "zh": "钱包: {0},{1}"
+    },
+    {
+      "en": "Bits: {0}",
+      "zh": "点券: {0}"
+    },
+    {
+      "en": "SKYBLOCK",
+      "zh": "空岛"
+    },
+    {
+      "en": "Players ({0})",
+      "zh": "玩家 ({0})"
+    },
+    {
+      "en": "Area: The Park",
+      "zh": "区域: 公园"
+    },
+    {
+      "en": "Server: mini{0}K",
+      "zh": "服务器: mini{0}K"
+    },
+    {
+      "en": "Gems: {0}",
+      "zh": "宝石币: {0}"
+    },
+    {
+      "en": "Fairy Souls: {0}/{1}",
+      "zh": "仙女之魂: {0}/{1}"
+    },
+    {
+      "en": "Rain: No rain!",
+      "zh": "降雨: 没有下雨！"
+    },
+    {
+      "en": "Profile: Pineapple",
+      "zh": "存档: 菠萝"
+    },
+    {
+      "en": "SB Level: [{0}] {1}/{2} XP",
+      "zh": "空岛等级: [{0}] {1}/{2} 经验"
+    },
+    {
+      "en": "Bank: {0}M",
+      "zh": "银行: {0} 百万"
+    },
+    {
+      "en": "Interest: {0} Hours ({1}k)",
+      "zh": "利息: {0} 小时 ({1}k)"
+    },
+    {
+      "en": "Pet:",
+      "zh": "宠物:"
+    },
+    {
+      "en": "{0}/{1}M XP ({2}%)",
+      "zh": "{0}/{1} 百万经验 ({2}%)"
+    },
+    {
+      "en": "Collection:",
+      "zh": "收集:"
+    },
+    {
+      "en": "Birch Log VII: {0}/{1}k",
+      "zh": "白桦原木 VII: {0}/{1}k"
+    },
+    {
+      "en": "Dark Oak Log VII: {0}/{1}k",
+      "zh": "深色橡木原木 VII: {0}/{1}k"
+    },
+    {
+      "en": "Spruce Log VII: {0}/{1}k",
+      "zh": "云杉原木 VII: {0}/{1}k"
+    },
+    {
+      "en": "Election: {0}h",
+      "zh": "选举: {0} 小时"
+    },
+    {
+      "en": "Jerry: |||||||||| ({0}%)",
+      "zh": "杰瑞: |||||||||| ({0}%)"
+    },
+    {
+      "en": "Foxy: |||||||||| ({0}%)",
+      "zh": "福克西: |||||||||| ({0}%)"
+    },
+    {
+      "en": "Cole: |||||||||| ({0}%)",
+      "zh": "科尔: |||||||||| ({0}%)"
+    },
+    {
+      "en": "Event: The Great Spook",
+      "zh": "活动: 大惊吓"
+    },
+    {
+      "en": "Ends In: {0}d",
+      "zh": "剩余时间: {0} 天"
+    },
+    {
+      "en": "Skills:",
+      "zh": "技能:"
+    },
+    {
+      "en": "Combat {0}: {1}%",
+      "zh": "战斗 {0}: {1}%"
+    },
+    {
+      "en": "Foraging {0}: {1}%",
+      "zh": "伐木 {0}: {1}%"
+    },
+    {
+      "en": "Fishing {0}: {1}%",
+      "zh": "钓鱼 {0}: {1}%"
+    },
+    {
+      "en": "Stats:",
+      "zh": "属性:"
+    },
+    {
+      "en": "Speed: {0}",
+      "zh": "速度: {0}"
+    },
+    {
+      "en": "Strength: {0}",
+      "zh": "力量: {0}"
+    },
+    {
+      "en": "Crit Chance: {0}",
+      "zh": "暴击率: {0}"
+    },
+    {
+      "en": "Crit Damage: {0}",
+      "zh": "暴击伤害: {0}"
+    },
+    {
+      "en": "Attack Speed: {0}",
+      "zh": "攻击速度: {0}"
+    },
+    {
+      "en": " Birch Park",
+      "zh": " 白桦公园"
+    },
+    {
+      "en": " Spruce Woods",
+      "zh": " 云杉林"
+    },
+    {
+      "en": "Early Spring {0}th",
+      "zh": "初春 {0}日"
+    },
+    {
+      "en": "{0}:{1}pm",
+      "zh": "下午 {0}:{1}"
+    },
+    {
+      "en": " Spruce Woods",
+      "zh": " 云杉林"
+    },
+    {
+      "en": "Purse: {0},{1}",
+      "zh": "钱包: {0},{1}"
+    },
+    {
+      "en": "Bits: {0}",
+      "zh": "点券: {0}"
+    },
+    {
+      "en": "Objective ⬉",
+      "zh": "目标 ⬉"
+    },
+    {
+      "en": "Find Kelly",
+      "zh": "找到凯莉"
+    },
+    {
+      "en": "Objective ⬆",
+      "zh": "目标 ⬆"
+    },
+    {
+      "en": "Objective ⬈",
+      "zh": "目标 ⬈"
+    },
+    {
+      "en": "Bits: {0} (+{1})",
+      "zh": "点券: {0} (+{1})"
+    },
+    {
+      "en": "+{0} Bits from Cookie Buff!",
+      "zh": "+{0} 点券（来自曲奇增益）！"
+    },
+    {
+      "en": "Objective ⬇",
+      "zh": "目标 ⬇"
+    },
+    {
+      "en": "Purse: {0},{1} (+{2})",
+      "zh": "钱包: {0},{1} (+{2})"
+    },
+    {
+      "en": "Objective ➡",
+      "zh": "目标 ➡"
+    },
+    {
+      "en": "Early Spring {0}th",
+      "zh": "初春 {0}日"
+    },
+    {
+      "en": "{0}:{1}pm",
+      "zh": "下午 {0}:{1}"
+    },
+    {
+      "en": " Spruce Woods",
+      "zh": " 云杉林"
+    },
+    {
+      "en": "Purse: {0},{1}",
+      "zh": "钱包: {0},{1}"
+    },
+    {
+      "en": "Bits: {0}",
+      "zh": "点券: {0}"
+    },
+    {
+      "en": "Objective",
+      "zh": "目标"
+    },
+    {
+      "en": "Collect Spruce Logs",
+      "zh": "收集云杉原木"
+    },
+    {
+      "en": "Primal Fear",
+      "zh": "原始恐惧"
+    },
+    {
+      "en": "Purse: {0},{1} (+{2})",
+      "zh": "钱包: {0},{1} (+{2})"
+    },
+    {
+      "en": "Objective ⬅",
+      "zh": "目标 ⬅"
+    },
+    {
+      "en": "Give Kelly Spruce Logs",
+      "zh": "把云杉原木交给凯莉"
+    },
+    {
+      "en": "Spruce Log x{0}{1}",
+      "zh": "云杉原木 x{0}{1}"
+    },
+    {
+      "en": "Objective ⬉",
+      "zh": "目标 ⬉"
+    },
+    {
+      "en": "Objective ⬆",
+      "zh": "目标 ⬆"
+    },
+    {
+      "en": "Objective ⬈",
+      "zh": "目标 ⬈"
+    },
+    {
+      "en": "+{0} SkyBlock XP (Complete Objective) ({1}/{2})",
+      "zh": "+{0} 空岛经验（完成目标）({1}/{2})"
+    },
+    {
+      "en": "Travel to the Dark Thicket",
+      "zh": "前往幽暗灌木丛"
+    },
+    {
+      "en": "Objective ⬅",
+      "zh": "目标 ⬅"
+    },
+    {
+      "en": " Dark Thicket",
+      "zh": " 幽暗灌木丛"
+    },
+    {
+      "en": "Find the Campfire",
+      "zh": "找到营火"
+    },
+    {
+      "en": " Dark Thicket",
+      "zh": " 幽暗灌木丛"
+    },
+    {
+      "en": " Trials of Fire",
+      "zh": " 火之试炼"
+    },
+    {
+      "en": " Trials of Fire",
+      "zh": " 火之试炼"
+    },
+    {
+      "en": " Trials of Fire",
+      "zh": " 火之试炼"
+    },
+    {
+      "en": "Sneak up on Ryan",
+      "zh": "悄悄靠近瑞安"
+    },
+    {
+      "en": "Complete Trial of Fire I",
+      "zh": "完成火之试炼 I"
+    },
+    {
+      "en": "Objective ⬋",
+      "zh": "目标 ⬋"
+    },
+    {
+      "en": "Objective ⬊",
+      "zh": "目标 ⬊"
+    },
+    {
+      "en": "{0} DPS   {1} second",
+      "zh": "{0} DPS   {1} 秒"
+    },
+    {
+      "en": "{0} DPS   {1} seconds",
+      "zh": "{0} DPS   {1} 秒"
+    },
+    {
+      "en": "Talk to Ryan",
+      "zh": "与瑞安交谈"
+    },
+    {
+      "en": " Trials of Fire",
+      "zh": " 火之试炼"
+    },
+    {
+      "en": "Collect Dark Oak Logs",
+      "zh": "收集深色橡木原木"
+    },
+    {
+      "en": "{0}:{1}am",
+      "zh": "上午 {0}:{1}"
+    },
+    {
+      "en": " Dark Thicket",
+      "zh": " 幽暗灌木丛"
+    },
+    {
+      "en": "Give Ryan Dark Oak Logs",
+      "zh": "把深色橡木原木交给瑞安"
+    },
+    {
+      "en": "Dark Oak Log x{0}",
+      "zh": "深色橡木原木 x{0}"
+    },
+    {
+      "en": "Objective ⬋",
+      "zh": "目标 ⬋"
+    },
+    {
+      "en": "Objective ➡",
+      "zh": "目标 ➡"
+    },
+    {
+      "en": "{0}:{1}am",
+      "zh": "上午 {0}:{1}"
+    },
+    {
+      "en": "Visit the Savanna Woodland",
+      "zh": "前往热带草原林地"
+    },
+    {
+      "en": "Complete Campfire Trials",
+      "zh": "完成营火试炼"
+    },
+    {
+      "en": "+{0} SkyBlock XP (Accessory Bag) ({1}/{2})",
+      "zh": "+{0} 空岛经验（饰品袋）({1}/{2})"
+    },
+    {
+      "en": "Objective ⬇",
+      "zh": "目标 ⬇"
+    },
+    {
+      "en": "Objective ⬊",
+      "zh": "目标 ⬊"
+    },
+    {
+      "en": "{0}:{1}pm ࿇",
+      "zh": "下午 {0}:{1} ࿇"
+    },
+    {
+      "en": " The Forge",
+      "zh": " 锻造厂"
+    },
+    {
+      "en": " The Forge",
+      "zh": " 锻造厂"
+    },
+    {
+      "en": "Area: Dwarven Mines",
+      "zh": "区域: 矮人矿洞"
+    },
+    {
+      "en": "Server: mini{0}CN",
+      "zh": "服务器: mini{0}CN"
+    },
+    {
+      "en": "Breeze: in {0}m ",
+      "zh": "微风: {0} 分钟后 "
+    },
+    {
+      "en": "Daily Quests:",
+      "zh": "每日任务:"
+    },
+    {
+      "en": "Fetchur: Available",
+      "zh": "费彻: 可用"
+    },
+    {
+      "en": "Puzzler: Available",
+      "zh": "解谜者: 可用"
+    },
+    {
+      "en": "Forges:",
+      "zh": "锻造炉:"
+    },
+    {
+      "en": "{0}) Chestplate of Divan: Ready!",
+      "zh": "{0}) 迪万胸甲: 已就绪！"
+    },
+    {
+      "en": "Commissions:",
+      "zh": "委托:"
+    },
+    {
+      "en": "Elusive Goblin Slayer: {0}%",
+      "zh": "隐匿哥布林猎手: {0}%"
+    },
+    {
+      "en": "Rampart's Quarry Mithril: {0}%",
+      "zh": "壁垒采石场秘银: {0}%"
+    },
+    {
+      "en": "Goblin Slayer: {0}%",
+      "zh": "哥布林猎手: {0}%"
+    },
+    {
+      "en": "Goblin Raid Slayer: {0}%",
+      "zh": "哥布林突袭猎手: {0}%"
+    },
+    {
+      "en": "Powders:",
+      "zh": "粉末:"
+    },
+    {
+      "en": "Mithril: {0}",
+      "zh": "秘银: {0}"
+    },
+    {
+      "en": "Gemstone: {0}",
+      "zh": "宝石: {0}"
+    },
+    {
+      "en": "Glacite: {0}",
+      "zh": "极冰: {0}"
+    },
+    {
+      "en": "Crystal Sentry",
+      "zh": "水晶哨兵"
+    },
+    {
+      "en": "Treasure Hunter",
+      "zh": "寻宝猎人"
+    },
+    {
+      "en": "{0}) EMPTY",
+      "zh": "{0}) 空"
+    },
+    {
+      "en": "Purse: {0},{1} (+{2})",
+      "zh": "钱包: {0},{1} (+{2})"
+    },
+    {
+      "en": "Purse: {0},{1}{2}",
+      "zh": "钱包: {0},{1}{2}"
+    },
+    {
+      "en": "Purse: {0},{1}{2} (+{3})",
+      "zh": "钱包: {0},{1}{2} (+{3})"
+    },
+    {
+      "en": " Dwarven Mines",
+      "zh": " 矮人矿洞"
+    },
+    {
+      "en": "{0}:{1}am ࿇",
+      "zh": "上午 {0}:{1} ࿇"
+    },
+    {
+      "en": " Forge Basin",
+      "zh": " 锻造盆地"
+    },
+    {
+      "en": " Forge Basin",
+      "zh": " 锻造盆地"
+    },
+    {
+      "en": " Rampart's Quarry",
+      "zh": " 壁垒采石场"
+    },
+    {
+      "en": " Rampart's Quarry",
+      "zh": " 壁垒采石场"
+    },
+    {
+      "en": "Slot unlocked",
+      "zh": "槽位已解锁"
+    },
+    {
+      "en": "Bits: {0} (+{1})",
+      "zh": "点券: {0} (+{1})"
+    },
+    {
+      "en": "᠅ Mithril: {0}",
+      "zh": "᠅ 秘银: {0}"
+    },
+    {
+      "en": "Vegan Crawler",
+      "zh": "素食爬行者"
+    },
+    {
+      "en": " Gates to the Mines",
+      "zh": " 矿区之门"
+    },
+    {
+      "en": " Gates to the Mines",
+      "zh": " 矿区之门"
+    },
+    {
+      "en": "{0}/{1}k Drill Fuel      Forge Basin",
+      "zh": "{0}/{1}k 钻头燃料      锻造盆地"
+    },
+    {
+      "en": "{0}/{1}k Drill Fuel",
+      "zh": "{0}/{1}k 钻头燃料"
+    },
+    {
+      "en": "{0}:{1}am ࿇",
+      "zh": "上午 {0}:{1} ࿇"
+    },
+    {
+      "en": " The Forge",
+      "zh": " 锻造厂"
+    },
+    {
+      "en": "Event: GOBLIN RAID",
+      "zh": "活动: 哥布林突袭"
+    },
+    {
+      "en": "Zone: Rampart's Quarry",
+      "zh": "区域: 壁垒采石场"
+    },
+    {
+      "en": "{0}:{1}pm ࿇",
+      "zh": "下午 {0}:{1} ࿇"
+    },
+    {
+      "en": "Breeze: in {0}m {1}s ",
+      "zh": "微风: {0} 分 {1} 秒后 "
+    },
+    {
+      "en": "Commitment Phobi",
+      "zh": "承诺恐惧症"
+    },
+    {
+      "en": "Breeze: in {0}s ",
+      "zh": "微风: {0} 秒后 "
+    },
+    {
+      "en": "Breeze: for {0}m ",
+      "zh": "微风: 持续 {0} 分钟 "
+    },
+    {
+      "en": "{0}:{1}am ",
+      "zh": "上午 {0}:{1} "
+    },
+    {
+      "en": "{0}:{1}pm ",
+      "zh": "下午 {0}:{1} "
+    },
+    {
+      "en": "Breeze: for {0}m {1}s ",
+      "zh": "微风: 持续 {0} 分 {1} 秒 "
+    },
+    {
+      "en": "Server: mini{0}AB",
+      "zh": "服务器: mini{0}AB"
+    },
+    {
+      "en": " The Lift",
+      "zh": " 升降梯"
+    },
+    {
+      "en": " The Lift",
+      "zh": " 升降梯"
+    },
+    {
+      "en": " Dwarven Village",
+      "zh": " 矮人村庄"
+    },
+    {
+      "en": " Dwarven Village",
+      "zh": " 矮人村庄"
+    },
+    {
+      "en": "Breeze: for {0}s ",
+      "zh": "微风: 持续 {0} 秒 "
+    },
+    {
+      "en": "Early Spring {0}th",
+      "zh": "初春 {0}日"
+    },
+    {
+      "en": "Server: mini{0}DT",
+      "zh": "服务器: mini{0}DT"
+    },
+    {
+      "en": "Early Spring {0}th",
+      "zh": "初春 {0}日"
+    },
+    {
+      "en": " The Lift",
+      "zh": " 升降梯"
+    },
+    {
+      "en": "Zone: Far Reserve",
+      "zh": "区域: 远方矿藏"
+    },
+    {
+      "en": "Rampart's Quarry Mithril: DONE",
+      "zh": "壁垒采石场秘银: 已完成"
+    },
+    {
+      "en": "Cliffside Veins Mithril: {0}%",
+      "zh": "崖壁矿脉秘银: {0}%"
+    },
+    {
+      "en": " Far Reserve",
+      "zh": " 远方矿藏"
+    },
+    {
+      "en": " Far Reserve",
+      "zh": " 远方矿藏"
+    },
+    {
+      "en": "Ice Walker",
+      "zh": "冰行者"
+    },
+    {
+      "en": " Goblin Burrows",
+      "zh": " 哥布林地穴"
+    },
+    {
+      "en": " Goblin Burrows",
+      "zh": " 哥布林地穴"
+    },
+    {
+      "en": "Goblin Slayer: DONE",
+      "zh": "哥布林杀手: 已完成"
+    },
+    {
+      "en": "Titanium Miner: {0}%",
+      "zh": "钛矿工: {0}%"
+    },
+    {
+      "en": " Upper Mines",
+      "zh": " 上层矿区"
+    },
+    {
+      "en": " Upper Mines",
+      "zh": " 上层矿区"
+    },
+    {
+      "en": " Cliffside Veins",
+      "zh": " 崖壁矿脉"
+    },
+    {
+      "en": " Cliffside Veins",
+      "zh": " 崖壁矿脉"
+    },
+    {
+      "en": "{0}/{1}k Drill Fuel      Cliffside Veins",
+      "zh": "{0}/{1}k 钻头燃料      崖壁矿脉"
+    },
+    {
+      "en": "{0}/{1}k Drill Fuel     +{2} SkyBlock XP (HOTM Progression) ({3}/{4})",
+      "zh": "{0}/{1}k 钻头燃料     +{2} 空岛经验（山之心进度）({3}/{4})"
+    },
+    {
+      "en": "Elusive Goblin Slayer: DONE",
+      "zh": "隐匿哥布林杀手: 已完成"
+    },
+    {
+      "en": "Titanium Miner: DONE",
+      "zh": "钛矿工: 已完成"
+    },
+    {
+      "en": "Cliffside Veins Mithril: DONE",
+      "zh": "崖壁矿脉秘银: 已完成"
+    },
+    {
+      "en": "Raffle: {0}%",
+      "zh": "抽奖: {0}%"
+    },
+    {
+      "en": "Goblin Raid: {0}%",
+      "zh": "哥布林突袭: {0}%"
+    },
+    {
+      "en": " Your Island",
+      "zh": " 你的岛屿"
+    },
+    {
+      "en": "Guests ({0})",
+      "zh": "访客 ({0})"
+    },
+    {
+      "en": "Area: Private Island",
+      "zh": "区域: 私人岛屿"
+    },
+    {
+      "en": "Server: mini{0}AK",
+      "zh": "服务器: mini{0}AK"
+    },
+    {
+      "en": "Minions: {0}/{1}",
+      "zh": "小人: {0}/{1}"
+    },
+    {
+      "en": "{0}x Slime XI [FULL]",
+      "zh": "{0} 个史莱姆 XI [已满]"
+    },
+    {
+      "en": "{0}x Cave Spider XI [ACTIVE]",
+      "zh": "{0} 个洞穴蜘蛛 XI [运行中]"
+    },
+    {
+      "en": "{0}x Fishing XI [FULL]",
+      "zh": "{0} 个钓鱼 XI [已满]"
+    },
+    {
+      "en": "{0}x Gold XI [ACTIVE]",
+      "zh": "{0} 个金 XI [运行中]"
+    },
+    {
+      "en": "Purse: {0},{1} (+{2}",
+      "zh": "钱包: {0},{1} (+{2}"
+    },
+    {
+      "en": "{0}x Fishing XI [ACTIVE]",
+      "zh": "{0} 个钓鱼 XI [运行中]"
+    },
+    {
+      "en": " Village",
+      "zh": " 村庄"
+    },
+    {
+      "en": "Area: Hub",
+      "zh": "区域: 主城"
+    },
+    {
+      "en": "Server: mini{0}BC",
+      "zh": "服务器: mini{0}BC"
+    },
+    {
+      "en": "Event: Hoppity's Hunt",
+      "zh": "活动: 霍皮提狩猎"
+    },
+    {
+      "en": "Ends In: {0}h",
+      "zh": "剩余时间: {0} 小时"
+    },
+    {
+      "en": "Farming {0}: {1}%",
+      "zh": "农业 {0}: {1}%"
+    },
+    {
+      "en": "Mining {0}: {1}%",
+      "zh": "挖矿 {0}: {1}%"
+    },
+    {
+      "en": " Village",
+      "zh": " 村庄"
+    },
+    {
+      "en": "Security Clerk",
+      "zh": "保安文员"
+    },
+    {
+      "en": "Not active! Obtain booster cookies from the community",
+      "zh": "未生效！可前往主城的社区"
+    },
+    {
+      "en": "shop in the hub.",
+      "zh": "商店获取增益曲奇。"
+    },
+    {
+      "en": "Talk to Jeff",
+      "zh": "与杰夫交谈"
+    },
+    {
+      "en": "Show Jeff a Special Tool",
+      "zh": "向杰夫展示一件特殊工具"
+    },
+    {
+      "en": "Plot - {0}",
+      "zh": "地块 - {0}"
+    },
+    {
+      "en": "Plot - {0}  x{1}",
+      "zh": "地块 - {0}  x{1}"
+    }
+  ]
+}

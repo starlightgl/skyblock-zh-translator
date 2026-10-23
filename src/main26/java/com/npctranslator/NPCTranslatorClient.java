@@ -1778,8 +1778,9 @@ public class NPCTranslatorClient implements ClientModInitializer {
             sb.append(toFormattedString(stack.getHoverName()));
             net.minecraft.world.item.component.ItemLore lore = stack.get(net.minecraft.core.component.DataComponents.LORE);
             if (lore != null) for (Component l : lore.lines()) sb.append('\n').append(toFormattedString(l));
-            // numbers left out: Bazaar prices and countdowns change all the time, the item stays the same
-            h = TranslationUtil.normalize(sb.toString()).text.hashCode();
+            // numbers left out: Bazaar prices and countdowns change all the time, the item stays the same;
+            // except for shards, whose effect values change with the level (see ShardTooltipTranslator)
+            h = ShardTooltipTranslator.cacheTemplate(sb.toString()).text.hashCode();
         } catch (Exception e) {
             h = stack.getComponents() != null ? stack.getComponents().hashCode() : 0;
         }

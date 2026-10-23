@@ -55,18 +55,26 @@ public final class ItemLines {
         Plan p = new Plan(lines);
         ModConfig c = ModConfig.INSTANCE;
         int n = lines.size();
+        String[] filter = usePhrasebook ? FilterMenuText.overrides(lines) : null;
         if (usePhrasebook) {
             // right after start-up the phrase book is still loading: wait for it (we run off the render thread)
             for (int w = 0; w < 80 && !PhraseBook.isReady(); w++) {
                 try { Thread.sleep(100); } catch (InterruptedException e) { break; }
             }
-            String[] pb = PhraseBook.translateLines(lines);
+            String[] pb = FilterMenuText.translateLines(lines, filter);
             System.arraycopy(pb, 0, p.fixed, 0, n);
+            // Shard-only canonical paragraphs override partial generic matches. Other tooltips keep their current path.
+            String[] shards = ShardTooltipTranslator.translateLines(lines);
+            for (int k = 0; k < n; k++) if (shards[k] != null) p.fixed[k] = shards[k];
+        }
+        if (usePhrasebook) {
+            String rabbitName = FactionRabbitNames.tooltipName(lines);
+            if (rabbitName != null) p.fixed[0] = rabbitName;
         }
         boolean[] ai = new boolean[n];
         for (int i = 0; i < n; i++) {
             String parsed = lines.get(i);
-            String rule = parsed.isEmpty() ? null : PatternRules.translate(parsed);
+            String rule = filter != null && filter[i] != null ? filter[i] : (parsed.isEmpty() ? null : PatternRules.translate(parsed));
             if (rule != null && p.fixed[i] != PhraseMatcher.MERGED) p.fixed[i] = rule;
             if (p.fixed[i] == null && !parsed.isEmpty()) p.fixed[i] = EnchantHints.translateList(parsed);
             if (p.fixed[i] == null && !parsed.isEmpty() && i == 0) p.fixed[i] = TableNames.translateName(parsed);

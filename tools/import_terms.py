@@ -8,6 +8,8 @@ Writes, under src/main26/resources/assets/hypixel-npc-and-items-translate/defaul
   - table_names.json   names of items, pets, mobs, areas, reforges and enchantments
   - table_lines.json   item description lines ({0} placeholders become %1$s)
   - npc_translator_enchants.json   enchantment names and descriptions (updated in place)
+
+data/术语表修正.json (context fixes the table cannot hold) is applied on top of names and lines.
 """
 import json
 import os
@@ -279,6 +281,30 @@ for r in rows(wb["附魔"]):
         if r.get("终极附魔") == "是":
             e["ultimate"] = True
 
+# corrections the term table cannot express (the same English word meaning different things in
+# different menus) or has not taken over yet: data/术语表修正.json, applied after the table so a
+# re-import keeps them. Groups only document why; an entry overrides or adds one name / line.
+OVERRIDES = os.path.join(ROOT, "data/术语表修正.json")
+overrides = json.load(open(OVERRIDES, encoding="utf-8")) if os.path.exists(OVERRIDES) else {}
+fixed_names = fixed_lines = 0
+for group in overrides.get("names", {}).values():
+    for en, zh in group.items():
+        if names.get(en) != zh:
+            names[en] = zh
+            fixed_names += 1
+line_index = {l["en"]: l for l in lines}
+for group in overrides.get("lines", {}).values():
+    for en, zh in group.items():
+        l = line_index.get(en)
+        if l is None:
+            l = {"en": en, "zh": zh}
+            lines.append(l)
+            line_index[en] = l
+            fixed_lines += 1
+        elif l["zh"] != zh:
+            l["zh"] = zh
+            fixed_lines += 1
+
 with open(os.path.join(DEFAULTS, "table_names.json"), "w", encoding="utf-8") as f:
     json.dump({"_说明": "由 tools/import_terms.py 从 data/SkyBlock术语表.xlsx 生成，请勿手动修改。", "names": names, "aliases": alias,
                "reforges": reforges},
@@ -289,6 +315,7 @@ with open(os.path.join(DEFAULTS, "table_lines.json"), "w", encoding="utf-8") as 
 with open(enchant_path, "w", encoding="utf-8") as f:
     json.dump(enchants, f, ensure_ascii=False, indent=1)
 
+print(f"corrections from {os.path.basename(OVERRIDES)}: {fixed_names} names, {fixed_lines} lines")
 print(f"aliases: {len(alias)}")
 print(f"merged list rows split into lines: {split_count}")
 print(f"names: {len(names)}, description lines: {len(lines)}, enchantments: {len(enchants['enchants'])} (+{added})")

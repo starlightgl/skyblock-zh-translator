@@ -15,14 +15,14 @@ public final class PatternRules {
 
     private static final Map<String, String> UNIT = Map.of("s", "秒", "m", "分钟", "h", "小时", "d", "天");
     private static final Map<String, String> ACTION = Map.of(
-            "Instant Sell", "立即卖出",
-            "Instant Buy", "立即买入",
-            "Sell Offer", "挂单出售",
-            "Buy Order", "挂单收购",
-            "Claimed Sell Offer", "领取挂单出售",
-            "Claimed Buy Order", "领取挂单收购",
-            "Cancelled Sell Offer", "取消挂单出售",
-            "Cancelled Buy Order", "取消挂单收购");
+            "Instant Sell", "即时出售",
+            "Instant Buy", "即时购买",
+            "Sell Offer", "出售挂单",
+            "Buy Order", "收购订单",
+            "Claimed Sell Offer", "领取出售挂单",
+            "Claimed Buy Order", "领取收购订单",
+            "Cancelled Sell Offer", "取消出售挂单",
+            "Cancelled Buy Order", "取消收购订单");
 
     /** Bazaar history entry, matched on the text without colour codes. */
     private static final Pattern HISTORY = Pattern.compile(

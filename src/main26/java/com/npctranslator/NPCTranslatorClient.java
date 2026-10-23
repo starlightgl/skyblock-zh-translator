@@ -1353,8 +1353,8 @@ public class NPCTranslatorClient implements ClientModInitializer {
         if (menu != null) {
             prompt += "\nMENU:\nThese lines come from the in-game menu \"" + menu + "\". Use it to pick the right meaning.\n";
             if (menu.toLowerCase(Locale.ROOT).contains("bazaar")) {
-                prompt += "In Bazaar menus use: Bazaar = 集市, Buy Order = 挂单收购, Sell Offer = 挂单出售, "
-                        + "Instant Buy = 立即买入, Instant Sell = 立即卖出, products = 种商品.\n";
+                prompt += "In Bazaar menus use: Bazaar = 集市, Buy Order = 收购订单, Sell Offer = 出售挂单, "
+                        + "Instant Buy = 即时购买, Instant Sell = 即时出售, products = 种商品.\n";
             }
         }
         String ctx = isTooltip ? null : CHAT_CONTEXT.get();

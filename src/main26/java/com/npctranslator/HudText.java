@@ -13,7 +13,8 @@ public final class HudText {
     private static final Pattern LEGAL = Pattern.compile("(?i)§[0-9a-fk-or]");
     private static final Pattern NUMBER = Pattern.compile("\\{(\\d+)}");
     private static final Map<String,String> REGIONS = new LinkedHashMap<>(), LABELS = new HashMap<>(), VALUES = new HashMap<>();
-    private static final List<Rule> RULES = new ArrayList<>();
+    private static final List<Rule> RULES = new ArrayList<>(), BOSS_RULES = new ArrayList<>();
+    private static final Map<String,String> OBJECTIVES = new HashMap<>(), BOSS_EVENTS = new HashMap<>();
     private static Pattern REGION_PATTERN = Pattern.compile("(?!)");
     private static final class Rule {
         Pattern pattern; String zh; List<Integer> numbers = new ArrayList<>(); int literal;
@@ -30,6 +31,10 @@ public final class HudText {
                 read(root,"regions",REGIONS); read(root,"labels",LABELS); read(root,"values",VALUES);
                 for(var e:root.getAsJsonArray("entries")) { var r=e.getAsJsonObject(); RULES.add(new Rule(r.get("en").getAsString(),r.get("zh").getAsString())); }
                 RULES.sort(Comparator.comparingInt((Rule r)->r.literal).reversed());
+                if(root.has("objectives")) read(root,"objectives",OBJECTIVES);
+                if(root.has("boss_events")) read(root,"boss_events",BOSS_EVENTS);
+                if(root.has("boss")) for(var e:root.getAsJsonArray("boss")) { var r=e.getAsJsonObject(); BOSS_RULES.add(new Rule(r.get("en").getAsString(),r.get("zh").getAsString())); }
+                BOSS_RULES.sort(Comparator.comparingInt((Rule r)->r.literal).reversed());
                 List<String> names=new ArrayList<>(REGIONS.keySet()); names.sort(Comparator.comparingInt(String::length).reversed());
                 REGION_PATTERN=Pattern.compile("[\ue067⏣]\\s*("+String.join("|",names.stream().map(Pattern::quote).toList())+")(?=$|[^A-Za-z'])");
             }
@@ -85,6 +90,57 @@ public final class HudText {
         while(m.find())spans.add(new int[]{m.start(),m.end()});
         for(int i=spans.size()-1;i>=0;i--) {int[] p=spans.get(i);raw=new View(raw).replace(p[0],p[1],zh);}return raw;
     }
+    // ---- boss bar: quest objectives and timed events ----
+    /** Direction arrows and "(3/128)" progress that SkyBlock appends to a boss bar text; kept as they are. */
+    private static final Pattern BOSS_TAIL = Pattern.compile("^(\\s*)(.*?)((?:\\s*[⬉⬆⬈➡⬊⬇⬋⬅])?(?:\\s*\\(\\d[\\d,]*/\\d[\\d,]*\\))?(?:\\s*[⬉⬆⬈➡⬊⬇⬋⬅])?\\s*)$");
+    private static final Pattern BOSS_EVENT = Pattern.compile("^(PASSIVE )?EVENT (.+?) (?:ACTIVE IN (.+?) |RUNNING )FOR (\\d+(?::\\d+)+)$", Pattern.CASE_INSENSITIVE);
+    private static String region(String upper) {
+        for(var e:REGIONS.entrySet()) if(e.getKey().equalsIgnoreCase(upper)) return e.getValue();
+        return null;
+    }
+    private static String bossEvent(String name) {
+        String zh=BOSS_EVENTS.get(name.toUpperCase(Locale.ROOT)); if(zh!=null) return zh;
+        Matcher x=Pattern.compile("^(\\d+)X (.+)$").matcher(name);
+        if(x.matches()) { String rest=BOSS_EVENTS.get(x.group(2).toUpperCase(Locale.ROOT)); if(rest!=null) return x.group(1)+" 倍"+rest; }
+        return null;
+    }
+    private static String rule(List<Rule> rules,View v,int a,int b) {
+        String text=v.text.substring(a,b);
+        for(Rule rule:rules) {
+            Matcher m=rule.pattern.matcher(text);if(!m.matches())continue;
+            Map<Integer,String> captured=new HashMap<>();
+            for(int n=0;n<rule.numbers.size();n++) captured.put(rule.numbers.get(n),v.part(a+m.start(n+1),a+m.end(n+1)));
+            Matcher p=NUMBER.matcher(rule.zh);StringBuilder rendered=new StringBuilder();
+            while(p.find())p.appendReplacement(rendered,Matcher.quoteReplacement(captured.getOrDefault(Integer.valueOf(p.group(1)),p.group())));
+            p.appendTail(rendered);return rendered.toString();
+        }
+        return null;
+    }
+    /** "Objective: Find Kelly ⬉", "EVENT GOBLIN RAID ACTIVE IN FAR RESERVE for 12:34": only these shapes. */
+    public static String boss(String formatted) {
+        if(formatted==null || formatted.isEmpty()) return null;
+        View v=new View(formatted); Matcher t=BOSS_TAIL.matcher(v.text); if(!t.matches()) return null;
+        int a=t.start(2), b=t.end(2); String core=t.group(2); if(core.isEmpty()) return null;
+        String zh=null;
+        if(core.startsWith("Objective: ")) {
+            String goal=OBJECTIVES.get(core.substring(11).trim());
+            if(goal!=null) zh="目标: "+v.style(a+11)+goal;
+        }
+        if(zh==null) {
+            Matcher e=BOSS_EVENT.matcher(core);
+            if(e.matches()) {
+                String name=bossEvent(e.group(2)), area=e.group(3)==null?null:region(e.group(3));
+                if(name!=null && (e.group(3)==null || area!=null)) {
+                    String time=v.style(a+e.start(4))+v.part(a+e.start(4),a+e.end(4));
+                    zh=(e.group(1)!=null?"被动活动 ":"活动 ")+v.style(a+e.start(2))+name+(area!=null?" 正在"+area+"进行":"")+v.style(a)+"，剩余 "+time;
+                }
+            }
+        }
+        if(zh==null) zh=rule(BOSS_RULES,v,a,b);
+        if(zh==null) return null;
+        return v.replace(a,b,zh);
+    }
+
     public static String translate(String formatted,String surface) {
         if(formatted==null || formatted.isEmpty())return null;
         if(!"LOCATION".equals(surface) && !"REGION".equals(surface) && !"TITLE".equals(surface)) {

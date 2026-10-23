@@ -140,6 +140,22 @@ public final class HudTranslator {
     public static Component overlayText(Component original) { return hudText(original, "OVERLAY"); }
     public static Component regionText(Component original) { return hudText(original, "REGION"); }
     public static Component screenTitle(Component original) { return hudText(original, "TITLE"); }
+    /** Boss bar text: quest objectives and timed events; anything else is left as it is. */
+    public static Component bossBar(Component original) {
+        ModConfig c = cfg();
+        if (original == null || c == null || !c.enabled || !c.usePhrasebook) return original;
+        String formatted = NPCTranslatorClient.toFormattedString(original);
+        String key = "BOSS:" + formatted;
+        Component cached = WORLD_CACHE.get(key);
+        if (cached != null) return cached;
+        String out = HudText.boss(formatted);
+        if (out == null) out = RuntimeText.event(formatted);
+        Coverage.record(formatted, out != null, "Boss血条");
+        Component shown = out == null ? original : NPCTranslatorClient.parseColorCodes(out);
+        if (WORLD_CACHE.size() > 3000) WORLD_CACHE.clear();
+        WORLD_CACHE.put(key, shown);
+        return shown;
+    }
     public static Component containerTitle(Component original) {
         ModConfig c=cfg();
         if(original==null || c==null || !c.enabled || !c.usePhrasebook)return original;

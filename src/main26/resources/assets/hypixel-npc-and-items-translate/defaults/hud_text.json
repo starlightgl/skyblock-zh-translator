@@ -397,7 +397,7 @@
     "Terry's Shack": "特里的小屋",
     "Thaumaturgist": "调律师居所",
     "The Barn": "谷仓",
-    "The Bastion": "壁垒",
+    "The Bastion": "堡垒",
     "The Dukedom": "公爵领",
     "The End": "末地",
     "The Farming Islands": "农业岛",
@@ -478,7 +478,7 @@
     "Commissions:": "委托:",
     "Powders:": "粉末:",
     "Crystal Sentry": "水晶哨兵",
-    "Treasure Hunter": "寻宝猎人",
+    "Treasure Hunter": "寻宝人",
     " Dwarven Mines": " 矮人矿洞",
     " Forge Basin": " 锻造盆地",
     " Rampart's Quarry": " 壁垒采石场",
@@ -551,7 +551,7 @@
     "Sowdust": "播种尘",
     "Lazy Miner": "懒惰矿工",
     "Arthur": "亚瑟",
-    "Gwendolyn": "格温多琳",
+    "Gwendolyn": "格温多林",
     "Emissary Fraiser": "使者弗雷泽",
     "Queen Mismyla": "米斯米拉女王",
     "Sam": "萨姆",
@@ -1466,6 +1466,44 @@
     {
       "en": "Plot - {0}  x{1}",
       "zh": "地块 - {0}  x{1}"
+    }
+  ],
+  "objectives": {
+    "Find Kelly": "找到凯莉",
+    "Collect Spruce Logs": "收集云杉原木",
+    "Give Kelly Spruce Logs": "把云杉原木交给凯莉",
+    "Travel to the Dark Thicket": "前往幽暗灌木丛",
+    "Find the Campfire": "找到营火",
+    "Sneak up on Ryan": "悄悄靠近瑞安",
+    "Complete Trial of Fire I": "完成火之试炼 I",
+    "Talk to Ryan": "与瑞安交谈",
+    "Collect Dark Oak Logs": "收集深色橡木原木",
+    "Give Ryan Dark Oak Logs": "把深色橡木原木交给瑞安",
+    "Travel to the Savanna Woodland": "前往热带草原林地",
+    "Complete Campfire Trials": "完成营火试炼",
+    "Talk to Jeff in your Barn": "与谷仓里的杰夫交谈",
+    "Show Jeff a Specialized Farming Tool": "向杰夫展示一件专用农具"
+  },
+  "boss_events": {
+    "GOBLIN RAID": "哥布林突袭",
+    "MITHRIL GOURMAND": "秘银美食家",
+    "BETTER TOGETHER": "携手同行",
+    "POWDER": "粉末",
+    "GONE WITH THE WIND": "随风而逝",
+    "RAFFLE": "抽奖"
+  },
+  "boss": [
+    {
+      "en": "SKYBLOCK v{0}.{1} - MINISTERS",
+      "zh": "空岛 v{0}.{1} - 大臣更新"
+    },
+    {
+      "en": "HALLOWEEN STORE SALE - UP TO {0}% OFF -  {1}d {2}h {3}m {4}s",
+      "zh": "万圣节商店特卖 - 最高 {0}% 折扣 - {1} 天 {2} 小时 {3} 分 {4} 秒"
+    },
+    {
+      "en": "HALLOWEEN STORE SALE - UP TO {0}% OFF - {1}d {2}h {3}m {4}s",
+      "zh": "万圣节商店特卖 - 最高 {0}% 折扣 - {1} 天 {2} 小时 {3} 分 {4} 秒"
     }
   ]
 }

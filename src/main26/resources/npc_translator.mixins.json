@@ -16,6 +16,7 @@
     "WidgetTooltipMixin",
     "TabListMixin",
     "BossEventMixin",
+    "BossHealthOverlayMixin",
     "SkyHanniTabMixin",
     "SkyHanniTabWidthMixin",
     "ContainerTitleMixin"

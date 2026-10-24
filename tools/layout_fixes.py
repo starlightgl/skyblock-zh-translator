@@ -192,4 +192,61 @@ def post_process(lines, names, rules):
             continue
         keep.append(l)
     lines[:] = keep
+    # families of lines that differ only by a name become templates
+    stats["generalized"] = generalize(lines, names)
     return stats, log
+
+
+def generalize(lines, names, min_names=3):
+    """Templates from families of translated lines that differ only by a name:
+    "View all your Seeds Collection progress and rewards!" + "... Cactus Collection ..." ->
+    "View all your %1$s progress and rewards!". Only when at least `min_names` different names fill the slot."""
+    first = {}
+    for k, z in names.items():
+        if len(k) < 4 or not re.match(r"[A-Z]", k) or re.search(r"[()\[\]%]", k):
+            continue
+        if not re.search(CJK, z) or re.search(r"[A-Za-z]{3,}", z):
+            continue
+        first.setdefault(k.split(" ")[0], []).append(k)
+    for v in first.values():
+        v.sort(key=len, reverse=True)
+    exact = {l["en"] for l in lines}
+    fams = {}
+    for l in lines:
+        en, zh = l["en"], l["zh"]
+        phs = [int(x) for x in re.findall(r"%(\d+)\$s", en)]
+        if len(phs) > 2 or len(en) > 160:
+            continue
+        nxt = max(phs + [0]) + 1
+        for m in re.finditer(r"[A-Z][A-Za-z'\-]*", en):
+            if m.start() > 0 and en[m.start() - 1].isalpha():
+                continue
+            for k in first.get(m.group(), []):
+                end = m.start() + len(k)
+                if not en.startswith(k, m.start()) or (end < len(en) and en[end].isalpha()):
+                    continue
+                z = names[k]
+                if en.count(k) != 1 or zh.count(z) != 1:
+                    break
+                # the name must stand alone, not be part of a longer capitalised name or followed by a tier
+                before = en[:m.start()].rstrip().split(" ")[-1] if en[:m.start()].strip() else ""
+                after = en[end:].lstrip().split(" ")[0] if en[end:].strip() else ""
+                if re.match(r"[A-Z][a-z]", before) and not before.endswith(":") \
+                        or re.match(r"(?:[A-Z][a-z]|[IVXLC]+$|%\d)", after):
+                    break
+                ten = en[:m.start()] + "%%%d$s" % nxt + en[end:]
+                tzh = zh.replace(z, "%%%d$s" % nxt)
+                literal = re.sub(r"%\d+\$s", "", ten)
+                if len(re.sub(r"[^A-Za-z]", "", literal)) < 8:
+                    break
+                fams.setdefault((ten, tzh), set()).add(k)
+                break
+    added = []
+    seen = set()
+    for (ten, tzh), ks in sorted(fams.items(), key=lambda x: -len(x[1])):
+        if len(ks) < min_names or ten in exact or ten in seen:
+            continue
+        seen.add(ten)
+        added.append({"en": ten, "zh": tzh})
+    lines.extend(added)
+    return len(added)

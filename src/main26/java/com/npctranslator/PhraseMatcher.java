@@ -236,8 +236,7 @@ public final class PhraseMatcher {
         String baseCodes = textCodes(formatted);
         String zh = exact.get(key);
         if (zh == null) {
-            zh = matchTemplates(buckets.get(bucketKey(key)), key, formatted, baseCodes);
-            if (zh == null) zh = matchTemplates(buckets.get("*"), key, formatted, baseCodes);
+            zh = bestTemplate(key, formatted, baseCodes);
         }
         if (zh == null) {
             String sole = soleTerm(formatted);
@@ -577,8 +576,7 @@ public final class PhraseMatcher {
         String key = normalize(seg);
         String zh = exact.get(key);
         if (zh == null) {
-            zh = matchTemplates(buckets.get(bucketKey(key)), key, seg, leadCodes(seg));
-            if (zh == null) zh = matchTemplates(buckets.get("*"), key, seg, leadCodes(seg));
+            zh = bestTemplate(key, seg, leadCodes(seg));
         }
         if (zh != null) {
             String lead = leadCodes(seg);
@@ -603,7 +601,31 @@ public final class PhraseMatcher {
         return lead.find() ? lead.group(1) : "";
     }
 
+    /**
+     * The first template whose values all translate cleanly wins over one that leaves English in a value
+     * ("Growth %1$s" would give "成长 Exp Discount (-25%)"; "%1$s Exp Discount (-%2$s%)" gives "成长 经验折扣 (-25%)").
+     */
+    private String bestTemplate(String key, String formatted, String baseCodes) {
+        List<Template> own = buckets.get(bucketKey(key)), any = buckets.get("*");
+        String zh = matchTemplates(own, key, formatted, baseCodes, true);
+        if (zh == null) zh = matchTemplates(any, key, formatted, baseCodes, true);
+        if (zh == null) zh = matchTemplates(own, key, formatted, baseCodes, false);
+        if (zh == null) zh = matchTemplates(any, key, formatted, baseCodes, false);
+        return zh;
+    }
+
+    private static final Pattern LEFT_ENGLISH = Pattern.compile("[A-Za-z]{3,}");
+
+    private static boolean clean(String translatedValue) {
+        String p = CODE.matcher(translatedValue).replaceAll("").replaceAll("\\b(?:XP|EXP|SkyBlock|MVP|VIP|NPC|DPS|EHP|RNG|BIN)\\b", "");
+        return !LEFT_ENGLISH.matcher(p).find();
+    }
+
     private String matchTemplates(List<Template> list, String key, String formatted, String baseCodes) {
+        return matchTemplates(list, key, formatted, baseCodes, false);
+    }
+
+    private String matchTemplates(List<Template> list, String key, String formatted, String baseCodes, boolean requireClean) {
         if (list == null) return null;
         for (Template t : list) {
             Matcher m = t.pattern.matcher(key);
@@ -620,6 +642,7 @@ public final class PhraseMatcher {
                             // "Soulflow Cost: %s" must not swallow "1 Mana Cost: 90": a value never holds another "Label:"
                             || LABEL_INSIDE.matcher(v).find()) { ok = false; break; }
                     String tv = valueTranslator.apply(v);
+                    if (requireClean && !clean(tv)) { ok = false; break; }
                     // Zh templates without their own colours: keep the value's original colour (marked here,
                     // coloured after filling so the colour can also cover the sign, icon and stat name)
                     if (t.zh.indexOf('§') < 0) tv = MARK_START + String.valueOf((char) ('0' + i)) + tv + MARK_END;
@@ -936,7 +959,9 @@ public final class PhraseMatcher {
         if (np.isEmpty() || pp.isEmpty()) return false;
         char f = np.charAt(0);
         if (f == '+' || f == '-' || Character.isDigit(f) || (!Character.isLetter(f) && f != '(' && f != '"' && f != '\'')) return true;
-        return pp.matches(".*[\\d%kKM]$");
+        // a row ending with a number ("Speed 400") ends there, unless the next line carries on in lower case
+        // ("Potions that you brew have a 4➜5%" + "longer duration.")
+        return pp.matches(".*[\\d%kKM]$") && !Character.isLowerCase(f);
     }
 
     private static final Pattern BAR_CHARS = Pattern.compile("[━▬■▌▊█░▒▓|=\\-]{5,}");

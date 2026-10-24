@@ -89,6 +89,20 @@ public final class PhraseBook {
     private static final java.util.regex.Pattern VALUE_CORE =
             java.util.regex.Pattern.compile("^([^A-Za-z]*?)([A-Za-z](?:[A-Za-z' -]*[A-Za-z])?)([^A-Za-z]*)$");
 
+    private static final java.util.Map<String, String> SUFFIXES = java.util.Map.ofEntries(
+            java.util.Map.entry("Fortune", "时运"), java.util.Map.entry("Collection", "收集"), java.util.Map.entry("Skill", "技能"),
+            java.util.Map.entry("Recipe", "配方"), java.util.Map.entry("Recipes", "配方"), java.util.Map.entry("Crop", "作物"),
+            java.util.Map.entry("Minion", "小人"), java.util.Map.entry("Shard", "碎片"), java.util.Map.entry("Potion", "药水"),
+            java.util.Map.entry("Enchantment", "附魔"), java.util.Map.entry("Essence", "精粹"), java.util.Map.entry("Experience", "经验"),
+            java.util.Map.entry("Level", "等级"), java.util.Map.entry("Milestone", "里程碑"), java.util.Map.entry("Pet", "宠物"),
+            java.util.Map.entry("Barn Skin", "谷仓皮肤"), java.util.Map.entry("Skin", "皮肤"), java.util.Map.entry("Dye", "染料"),
+            java.util.Map.entry("Sack", "收纳袋"), java.util.Map.entry("Upgrade Stone", "升级石"), java.util.Map.entry("Mobs", "生物"),
+            java.util.Map.entry("Pests", "害虫"), java.util.Map.entry("Effects", "效果"));
+    private static final java.util.regex.Pattern SUFFIXED = java.util.regex.Pattern.compile(
+            "^(.+?) (Fortune|Collection|Skill|Recipes?|Crop|Minion|Shard|Potion|Enchantment|Essence|Experience|Level|Milestone|Pet|Barn Skin|Skin|Dye|Sack|Upgrade Stone|Mobs|Pests|Effects)$");
+    private static final java.util.Map<String, String> PREFIXES = java.util.Map.of("Enchanted", "附魔", "Tier", "阶级 ", "Requires", "需要");
+    private static final java.util.regex.Pattern PREFIXED = java.util.regex.Pattern.compile("^(Enchanted) (.+)$");
+
     private static final java.util.regex.Pattern TIERED = java.util.regex.Pattern.compile("^(.*[A-Za-z].*?) ([IVXLCDM]+|\\d+)$");
 
     /** A placeholder value: glossary term as a whole, or its words with numbers/icons around them ("+75 ❤ Health"). */
@@ -106,6 +120,17 @@ public final class PhraseBook {
         if (t.matches()) {
             String head = translateValue(t.group(1));
             if (!head.equals(t.group(1))) return head + " " + t.group(2);
+        }
+        // "Wheat Fortune", "Gold Ingot Collection", "Mining Skill", "Enchanted Clock Recipe": a name and a word
+        java.util.regex.Matcher sfx = SUFFIXED.matcher(v);
+        if (sfx.matches()) {
+            String head = translateValue(sfx.group(1));
+            if (!head.equals(sfx.group(1)) && !head.matches(".*[A-Za-z]{3,}.*")) return head + SUFFIXES.get(sfx.group(2));
+        }
+        java.util.regex.Matcher pfx = PREFIXED.matcher(v);
+        if (pfx.matches()) {
+            String rest = translateValue(pfx.group(2));
+            if (!rest.equals(pfx.group(2)) && !rest.matches(".*[A-Za-z]{3,}.*")) return PREFIXES.get(pfx.group(1)) + rest;
         }
         return v;
     }

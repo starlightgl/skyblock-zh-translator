@@ -143963,7 +143963,7 @@
 },
 {
 "en": "Reset all %1$s Tablist Widget settings back to their default.",
-"zh": "将%1$s的所有 Tab 列表组件设置恢复为默认值。"
+"zh": "将 %1$s 的所有 Tab 列表组件设置恢复为默认值。"
 },
 {
 "en": "SNEAK RIGHT CLICK",
@@ -144092,6 +144092,274 @@
 {
 "en": "The Expedition Volume %1$s",
 "zh": "远征记 第 %1$s 卷"
+},
+{
+"en": "%1$s Enchantment",
+"zh": "%1$s 附魔"
+},
+{
+"en": "%1$s Crop",
+"zh": "%1$s 作物"
+},
+{
+"en": "%1$s Skill",
+"zh": "%1$s 技能"
+},
+{
+"en": "%1$s Barn Skin",
+"zh": "%1$s 谷仓皮肤"
+},
+{
+"en": "View all your %1$s progress and rewards!",
+"zh": "查看你的全部 %1$s 进度与奖励！"
+},
+{
+"en": "View a list of items that can be converted and upgraded using %1$s.",
+"zh": "查看可用 %1$s 转换和升级的物品列表。"
+},
+{
+"en": "Requires %1$s!",
+"zh": "需要 %1$s！"
+},
+{
+"en": "Manage the %1$s you see when in the %2$s.",
+"zh": "管理在 %2$s 时显示的 %1$s。"
+},
+{
+"en": "Manage the %1$s you see when in %2$s.",
+"zh": "管理在 %2$s 时显示的 %1$s。"
+},
+{
+"en": "Manage the %1$s you see when on %2$s.",
+"zh": "管理在 %2$s 时显示的 %1$s。"
+},
+{
+"en": "Manage the %1$s you see when on the %2$s.",
+"zh": "管理在 %2$s 时显示的 %1$s。"
+},
+{
+"en": "Manage the %1$s you see when in a %2$s.",
+"zh": "管理在 %2$s 时显示的 %1$s。"
+},
+{
+"en": "Orb Buff: %1$s",
+"zh": "宝珠增益: %1$s"
+},
+{
+"en": "Statuses that show stats for %1$s.",
+"zh": "显示 %1$s 数据的状态。"
+},
+{
+"en": "Ability to purchase %1$s",
+"zh": "可购买 %1$s"
+},
+{
+"en": "You don't have enough %1$s!",
+"zh": "你的 %1$s 不足！"
+},
+{
+"en": "Gain +%1$s %2$s when mining %3$s.",
+"zh": "挖掘 %3$s 时获得 +%1$s %2$s。"
+},
+{
+"en": "God Potion Effects",
+"zh": "上帝药水效果"
+},
+{
+"en": "Non-God Potion Effects",
+"zh": "非上帝药水效果"
+},
+{
+"en": "Mixins",
+"zh": "混合剂"
+},
+{
+"en": "Cost %1$s",
+"zh": "花费 %1$s"
+},
+{
+"en": "Rare",
+"zh": "稀有"
+},
+{
+"en": "Divine",
+"zh": "神圣"
+},
+{
+"en": "Uncommon",
+"zh": "罕见"
+},
+{
+"en": "Common",
+"zh": "普通"
+},
+{
+"en": "Epic",
+"zh": "史诗"
+},
+{
+"en": "Legendary",
+"zh": "传说"
+},
+{
+"en": "Mythic",
+"zh": "神话"
+},
+{
+"en": "Special",
+"zh": "特殊"
+},
+{
+"en": "Very Special",
+"zh": "非常特殊"
+},
+{
+"en": "Lowest Price",
+"zh": "最低价格"
+},
+{
+"en": "Highest Price",
+"zh": "最高价格"
+},
+{
+"en": "Ending soon",
+"zh": "即将结束"
+},
+{
+"en": "BIN Only",
+"zh": "仅一口价"
+},
+{
+"en": "Auctions Only",
+"zh": "仅拍卖"
+},
+{
+"en": "Show All",
+"zh": "显示全部"
+},
+{
+"en": "Rarity",
+"zh": "稀有度"
+},
+{
+"en": "Default",
+"zh": "默认"
+},
+{
+"en": "Global",
+"zh": "全局"
+},
+{
+"en": "None",
+"zh": "无"
+},
+{
+"en": "Hide all pets",
+"zh": "隐藏所有宠物"
+},
+{
+"en": "Random",
+"zh": "随机"
+},
+{
+"en": "Shulker",
+"zh": "潜影贝"
+},
+{
+"en": "Demon",
+"zh": "恶魔"
+},
+{
+"en": "Dragon",
+"zh": "龙"
+},
+{
+"en": "Trash Lover",
+"zh": "垃圾爱好者"
+},
+{
+"en": "Spider",
+"zh": "蜘蛛"
+},
+{
+"en": "Poltergeist",
+"zh": "骚灵"
+},
+{
+"en": "Elusive",
+"zh": "隐逸"
+},
+{
+"en": "Frog",
+"zh": "青蛙"
+},
+{
+"en": "Lapis",
+"zh": "青金石"
+},
+{
+"en": "Tropical Fish",
+"zh": "热带鱼"
+},
+{
+"en": "Reptile",
+"zh": "爬行动物"
+},
+{
+"en": "Turtle",
+"zh": "海龟"
+},
+{
+"en": "Arctic",
+"zh": "极地"
+},
+{
+"en": "Treasure Fish",
+"zh": "宝藏鱼"
+},
+{
+"en": "Lizard",
+"zh": "蜥蜴"
+},
+{
+"en": "Squid",
+"zh": "鱿鱼"
+},
+{
+"en": "Elemental",
+"zh": "元素"
+},
+{
+"en": "Scaled",
+"zh": "鳞甲"
+},
+{
+"en": "Serpent",
+"zh": "巨蛇"
+},
+{
+"en": "Croco",
+"zh": "鳄类"
+},
+{
+"en": "Dinosaur",
+"zh": "恐龙"
+},
+{
+"en": "Crustacean",
+"zh": "甲壳"
+},
+{
+"en": "Phantom",
+"zh": "幻翼"
+},
+{
+"en": "Drowned",
+"zh": "溺尸"
+},
+{
+"en": "Miracle",
+"zh": "奇迹"
 },
 {
 "en": "- %1$s ❤ Health (MM) : %2$s",
@@ -145396,6 +145664,706 @@
 {
 "en": "- %1$s Slots",
 "zh": "- %1$s 个槽位"
+},
+{
+"en": "+%1$s %2$s  Magic Find",
+"zh": "+%1$s %2$s  魔法寻宝"
+},
+{
+"en": "+%1$s %2$s  Strength",
+"zh": "+%1$s %2$s  力量"
+},
+{
+"en": "Instantly sell all %1$s",
+"zh": "即时出售所有%1$s"
+},
+{
+"en": "Instantly sell all %1$s derivatives in your inventory.",
+"zh": "即时出售物品栏中所有%1$s衍生品。"
+},
+{
+"en": "Instantly sell all %1$s derivatives",
+"zh": "即时出售所有%1$s衍生品"
+},
+{
+"en": "This skin can only be applied to %1$s pets.",
+"zh": "此皮肤只能应用于%1$s宠物。"
+},
+{
+"en": "Obtain a %1$s and place it in your Accessory Bag.",
+"zh": "获得%1$s并放入你的饰品袋。"
+},
+{
+"en": "Consume this item to unlock the %1$s on The Garden!",
+"zh": "食用此物品以在花园中解锁%1$s！"
+},
+{
+"en": "Normal Enchantments ➜ %1$s",
+"zh": "普通附魔 ➜ %1$s"
+},
+{
+"en": "This skin can be applied to %1$s.",
+"zh": "此皮肤可应用于%1$s。"
+},
+{
+"en": "+%1$s% %2$s (Master) coins",
+"zh": "+%1$s% %2$s（大师）硬币"
+},
+{
+"en": "+%1$s %2$s (Master)  Magic Find",
+"zh": "+%1$s %2$s（大师）  魔法寻宝"
+},
+{
+"en": "+%1$s %2$s (Master)  Strength",
+"zh": "+%1$s %2$s（大师）  力量"
+},
+{
+"en": "Craft a Tier V %1$s.",
+"zh": "合成一个 V 级%1$s。"
+},
+{
+"en": "View all your %1$s",
+"zh": "查看你所有的%1$s"
+},
+{
+"en": "Mob Drops ➜ %1$s",
+"zh": "生物掉落物 ➜ %1$s"
+},
+{
+"en": "Applies the %1$s reforge when combined with Armor.",
+"zh": "与盔甲合成时，施加「%1$s」重铸。"
+},
+{
+"en": "%1$sx %3$s for %2$s coins",
+"zh": "%1$s 个%3$s，售价 %2$s 硬币"
+},
+{
+"en": "You currently own %1$s %2$s.",
+"zh": "你目前拥有 %1$s %2$s。"
+},
+{
+"en": "Item Upgrades ➜ %1$s",
+"zh": "物品升级 ➜ %1$s"
+},
+{
+"en": "[Bazaar] Sold %1$sx %3$s for %2$s coins!",
+"zh": "[集市] 已出售 %1$s 个%3$s，获得 %2$s 硬币！"
+},
+{
+"en": "Woods & Fishes ➜ %1$s",
+"zh": "木材与鱼类 ➜ %1$s"
+},
+{
+"en": "View all of the %1$s that you've unlocked!",
+"zh": "查看你已解锁的所有%1$s！"
+},
+{
+"en": "Instantly sell all %1$s derivatives in",
+"zh": "即时出售所有%1$s衍生品，位于"
+},
+{
+"en": "Applies the %1$s reforge when combined with Equipment.",
+"zh": "与装备合成时，施加「%1$s」重铸。"
+},
+{
+"en": "Ability: %1$s RIGHT CLICK",
+"zh": "技能: %1$s 右键"
+},
+{
+"en": "✔ Talk to the %1$s.",
+"zh": "✔ 与%1$s交谈。"
+},
+{
+"en": "Ultimate Enchantments ➜ %1$s",
+"zh": "终极附魔 ➜ %1$s"
+},
+{
+"en": "Teleport: %1$s",
+"zh": "传送: %1$s"
+},
+{
+"en": "Applies the %1$s reforge when combined with a Mining Tool.",
+"zh": "与挖矿工具合成时，施加「%1$s」重铸。"
+},
+{
+"en": "A type of %1$s that has clearly been treated with care.",
+"zh": "一种显然经过精心处理的%1$s。"
+},
+{
+"en": "A slightly better version of %1$s, but it could still use some work.",
+"zh": "比%1$s稍好一些，但仍有待打磨。"
+},
+{
+"en": "A near perfect version of %1$s.",
+"zh": "近乎完美的%1$s。"
+},
+{
+"en": "A perfectly refined %1$s.",
+"zh": "一块完美精炼的%1$s。"
+},
+{
+"en": "Gemstones ➜ %1$s",
+"zh": "宝石 ➜ %1$s"
+},
+{
+"en": "View all of the mobs that you've found and killed in the %1$s.",
+"zh": "查看你在%1$s发现并击杀过的所有怪物。"
+},
+{
+"en": "Reach Tier V in your %1$s.",
+"zh": "将你的%1$s提升到 V 级。"
+},
+{
+"en": "Purchase perks from the %1$s.",
+"zh": "在%1$s购买天赋。"
+},
+{
+"en": "Use this item to upgrade a %1$s from Tier XI to Tier XII.",
+"zh": "使用此物品将%1$s从 XI 级升级到 XII 级。"
+},
+{
+"en": "Placing this item on your private island will create a portal to %1$s for you to use whenever you want!",
+"zh": "将此物品放置在你的私人岛屿上，会生成一个通往%1$s的传送门，供你随时使用！"
+},
+{
+"en": "This Minion skin changes your minion's appearance to a %1$s.",
+"zh": "此小人皮肤可将你的小人外观变为%1$s。"
+},
+{
+"en": "%1$s ✖ Not Found",
+"zh": "%1$s ✖ 未找到"
+},
+{
+"en": "Dropped rarely from %1$s during the Harvest Feast event.",
+"zh": "在丰收盛宴活动期间由%1$s小概率掉落。"
+},
+{
+"en": "✔ Travel to the %1$s.",
+"zh": "✔ 前往%1$s。"
+},
+{
+"en": "Crystal Hollows ➜ %1$s",
+"zh": "水晶洞窟 ➜ %1$s"
+},
+{
+"en": "Crimson Isle ➜ %1$s",
+"zh": "绯红孤岛 ➜ %1$s"
+},
+{
+"en": "Moonglade Marsh ➜ %1$s",
+"zh": "月光沼泽 ➜ %1$s"
+},
+{
+"en": "▲ %1$s cannot be combined!",
+"zh": "▲ %1$s无法合成！"
+},
+{
+"en": "Gain +%1$s% more %2$s.",
+"zh": "获得的%2$s增加 +%1$s%。"
+},
+{
+"en": "Held Item: %1$s",
+"zh": "手持物品: %1$s"
+},
+{
+"en": "Glacite Tunnels ➜ %1$s",
+"zh": "极冰矿道 ➜ %1$s"
+},
+{
+"en": "Lava Fishing ➜ %1$s",
+"zh": "熔岩钓鱼 ➜ %1$s"
+},
+{
+"en": "Craft the %1$s",
+"zh": "制作%1$s"
+},
+{
+"en": "You found the %1$s!",
+"zh": "你找到了%1$s！"
+},
+{
+"en": "Reach Tier VI in your %1$s.",
+"zh": "将你的%1$s提升到 VI 级。"
+},
+{
+"en": "Craft a Tier VII %1$s.",
+"zh": "合成一个 VII 级%1$s。"
+},
+{
+"en": "Click to see %1$s!",
+"zh": "点击查看%1$s！"
+},
+{
+"en": "Attracted to %1$s.",
+"zh": "被%1$s吸引。"
+},
+{
+"en": "Applies the %1$s reforge when combined with a Fishing Rod.",
+"zh": "与钓鱼竿合成时，施加「%1$s」重铸。"
+},
+{
+"en": "Placing this item on your private island will create a portal to the %1$s for you to use",
+"zh": "将此物品放在你的私人岛屿上，会生成一个通往%1$s的传送门供你使用"
+},
+{
+"en": "Full Set Bonus: %3$s (%1$s/%2$s)",
+"zh": "套装效果: %3$s (%1$s/%2$s)"
+},
+{
+"en": "Sprayonator ➜ %1$s",
+"zh": "喷雾器 ➜ %1$s"
+},
+{
+"en": "Arachnids ➜ %1$s",
+"zh": "蛛形生物 ➜ %1$s"
+},
+{
+"en": "Gain +%1$s XP by purchasing this perk level from the %2$s shop!",
+"zh": "从%2$s商店购买此天赋等级可获得 +%1$s 经验。"
+},
+{
+"en": "Reach Tier VII in your %1$s.",
+"zh": "将你的%1$s提升到 VII 级。"
+},
+{
+"en": "Reach Tier IX in your %1$s.",
+"zh": "将你的%1$s提升到 IX 级。"
+},
+{
+"en": "Kill the %1$s on The End.",
+"zh": "在末地击杀%1$s。"
+},
+{
+"en": "Applies the %1$s reforge when combined with a Melee Weapon.",
+"zh": "与近战武器合成时，施加「%1$s」重铸。"
+},
+{
+"en": "Placing this item on your private island will create a portal to %1$s for you to use whenever you",
+"zh": "将此物品放在你的私人岛屿上，会生成一个通往%1$s的传送门，你可以随时"
+},
+{
+"en": "Dwarven Mines ➜ %1$s",
+"zh": "矮人矿洞 ➜ %1$s"
+},
+{
+"en": "Voidgloom Seraph ➜ %1$s",
+"zh": "虚影炽天使 ➜ %1$s"
+},
+{
+"en": "Water Orbs ➜ %1$s",
+"zh": "水之球 ➜ %1$s"
+},
+{
+"en": "Pickaxe Ability: %1$s",
+"zh": "镐子技能: %1$s"
+},
+{
+"en": "Obtain an %1$s and place it in your Accessory Bag.",
+"zh": "获得%1$s并放入你的饰品袋。"
+},
+{
+"en": "Ability to purchase %1$s from Amelia",
+"zh": "可从阿米莉亚处购买%1$s"
+},
+{
+"en": "Holds various items obtained from %1$s! Items you pickup go directly into your sacks.",
+"zh": "存放各种从%1$s中获得的物品！你拾取的物品会直接进入收纳袋。"
+},
+{
+"en": "Found in the %1$s.",
+"zh": "在%1$s中发现。"
+},
+{
+"en": "Grants +%1$s Mining Fortune while mining %2$s.",
+"zh": "挖掘%2$s时提供 +%1$s 挖掘时运。"
+},
+{
+"en": "Gives +%1$s% pet exp for %2$s.",
+"zh": "%2$s类宠物经验 +%1$s%。"
+},
+{
+"en": "Specialty: %1$s",
+"zh": "特产: %1$s"
+},
+{
+"en": "Applies the %1$s reforge when combined with a Farming Tool.",
+"zh": "与农业工具合成时，施加「%1$s」重铸。"
+},
+{
+"en": "Placing this item on your private island will create a portal to the %1$s for you to use whenever you want!",
+"zh": "将此物品放置在你的私人岛屿上，会创建一个通往%1$s的传送门，供你随时使用！"
+},
+{
+"en": "Holds various enchanted items obtained from %1$s! Items you pickup go directly into your sacks.",
+"zh": "存放从%1$s中获得的各种附魔物品！你拾取的物品会直接进入收纳袋。"
+},
+{
+"en": "chance to bring %1$s.",
+"zh": "几率带来%1$s。"
+},
+{
+"en": "Ability: %1$s  RIGHT CLICK",
+"zh": "技能: %1$s  右键"
+},
+{
+"en": "Requires donating a %1$s to Dr. Stone",
+"zh": "需要向斯通博士捐赠一块%1$s"
+},
+{
+"en": "Rare Crops ➜ %1$s",
+"zh": "稀有作物 ➜ %1$s"
+},
+{
+"en": "Mini Bosses ➜ %1$s",
+"zh": "小头目 ➜ %1$s"
+},
+{
+"en": "Backwater Bayou ➜ %1$s",
+"zh": "死水河岸 ➜ %1$s"
+},
+{
+"en": "Torrhus Canyon ➜ %1$s",
+"zh": "托鲁斯峡谷 ➜ %1$s"
+},
+{
+"en": "Oddities ➜ %1$s",
+"zh": "奇珍异物 ➜ %1$s"
+},
+{
+"en": "Book Modifiers ➜ %1$s",
+"zh": "书类修饰品 ➜ %1$s"
+},
+{
+"en": "View your %1$s!",
+"zh": "查看你的%1$s！"
+},
+{
+"en": " %1$s (HOTM Node)",
+"zh": " %1$s（山之心节点）"
+},
+{
+"en": "%1$s will leave your Garden and",
+"zh": "%1$s会离开你的花园，以后或许还会再来。"
+},
+{
+"en": "Item Needed: %1$s",
+"zh": "所需物品: %1$s"
+},
+{
+"en": "Combine x%1$s of this item at the Thaumaturgist in the Hub to unlock the %2$s power.",
+"zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「%2$s」能力。"
+},
+{
+"en": "Dropped by the %1$s in Torrhus Canyon.",
+"zh": "由托鲁斯峡谷中的%1$s掉落。"
+},
+{
+"en": "When applied to a weapon, increases its %2$s level by %1$s!",
+"zh": "应用于武器时，使其%2$s等级提高 %1$s！"
+},
+{
+"en": "When applied to armor, increases its %2$s level by %1$s!",
+"zh": "应用于盔甲时，使其%2$s等级提高 %1$s！"
+},
+{
+"en": "%2$s  Timid mobs have a %1$s% chance to remain still instead of fleeing.",
+"zh": "%2$s  胆小生物有 %1$s% 几率原地不动，而不是逃跑。"
+},
+{
+"en": "Holds various items obtained from %1$s! Items you pickup go directly",
+"zh": "存放各种从%1$s中获得的物品！你拾取的物品会直接"
+},
+{
+"en": "Wheat & Seeds ➜ %1$s",
+"zh": "小麦与种子 ➜ %1$s"
+},
+{
+"en": "Mushrooms ➜ %1$s",
+"zh": "蘑菇 ➜ %1$s"
+},
+{
+"en": "Goblin Eggs ➜ %1$s",
+"zh": "哥布林蛋 ➜ %1$s"
+},
+{
+"en": "Catacombs ➜ %1$s",
+"zh": "地下墓穴 ➜ %1$s"
+},
+{
+"en": "Secret Drops ➜ %1$s",
+"zh": "秘密掉落物 ➜ %1$s"
+},
+{
+"en": "Lotus Atoll ➜ %1$s",
+"zh": "莲花环礁 ➜ %1$s"
+},
+{
+"en": "Modifiers ➜ %1$s",
+"zh": "修饰品 ➜ %1$s"
+},
+{
+"en": "Prosperity ➜ %1$s",
+"zh": "繁盛 ➜ %1$s"
+},
+{
+"en": "Turbo-Carrot ➜ %1$s",
+"zh": "极速胡萝卜 ➜ %1$s"
+},
+{
+"en": "Fatal Tempo ➜ %1$s",
+"zh": "致命节奏 ➜ %1$s"
+},
+{
+"en": "Last Stand ➜ %1$s",
+"zh": "背水一战 ➜ %1$s"
+},
+{
+"en": "Refrigerate ➜ %1$s",
+"zh": "魔力冰甲 ➜ %1$s"
+},
+{
+"en": "Ultimate Wise ➜ %1$s",
+"zh": "终极智慧 ➜ %1$s"
+},
+{
+"en": "Collect to get: %1$s %2$s",
+"zh": "收集可获得: %1$s %2$s"
+},
+{
+"en": "Progress to %2$s VIII: %1$s%",
+"zh": "%2$s VIII 进度: %1$s%"
+},
+{
+"en": "Excellent! You have returned the %1$s to its rightful place!",
+"zh": "太好了！你把%1$s物归原主了！"
+},
+{
+"en": "Talk to me when you have found a %1$s!",
+"zh": "带着%1$s再来找我吧！"
+},
+{
+"en": "Gain XP by increasing your %1$s!",
+"zh": "通过提升%1$s获得经验！"
+},
+{
+"en": "Found when lathering %1$s.",
+"zh": "为%1$s涂抹蜜脾时出现。"
+},
+{
+"en": "Bring to the Keeper of %1$s in the Mines of Divan.",
+"zh": "交给迪万矿坑中的%1$s守护者。"
+},
+{
+"en": "The first %1$s times you consume this, gain a permanent +%2$s %3$s.",
+"zh": "前 %1$s 次食用此物品时，永久获得 +%2$s %3$s。"
+},
+{
+"en": "When applied to a fishing rod, increases its %2$s level by %1$s!",
+"zh": "应用于钓竿时，使其%2$s等级提高 %1$s！"
+},
+{
+"en": "Applies the %1$s reforge when combined with an Axe.",
+"zh": "与斧合成时，施加「%1$s」重铸。"
+},
+{
+"en": "Applies the %1$s reforge when combined with a Bow.",
+"zh": "与弓合成时，施加「%1$s」重铸。"
+},
+{
+"en": "Used to craft the %1$s pet item.",
+"zh": "用于合成%1$s宠物道具。"
+},
+{
+"en": "Gain +%1$s% extra %2$s.",
+"zh": "额外获得 +%1$s% %2$s。"
+},
+{
+"en": "Grants +%1$s  Sweep towards %2$s.",
+"zh": "对%2$s提供 +%1$s  横扫。"
+},
+{
+"en": "Grants +%1$s  Tracking towards %2$s.",
+"zh": "对%2$s提供 +%1$s  追踪。"
+},
+{
+"en": "Placing this item on your private island will create a portal to the %1$s for you to use whenever",
+"zh": "将此物品放置在你的私人岛屿上，会创建一个通往%1$s的传送门，供你随时"
+},
+{
+"en": "[NPC] Ryan: To receive it, we require %2$s x%1$s!",
+"zh": "[NPC] 瑞安: 要领取它，我们需要%2$s x%1$s！"
+},
+{
+"en": "[Bazaar] Bought %1$sx %3$s for %2$s coins!",
+"zh": "[集市] 以 %2$s 硬币购买了 %1$s 个%3$s！"
+},
+{
+"en": "Go to %1$s (or talk to Garry)",
+"zh": "前往%1$s（或与加里交谈）"
+},
+{
+"en": "Mutton & Wool ➜ %1$s",
+"zh": "羊肉与羊毛 ➜ %1$s"
+},
+{
+"en": "Glowstone ➜ %1$s",
+"zh": "荧石 ➜ %1$s"
+},
+{
+"en": "%1$s ➜ Mob Drops",
+"zh": "%1$s ➜ 生物掉落物"
+},
+{
+"en": "Catacombs Misc. ➜ %1$s",
+"zh": "地下墓穴杂项 ➜ %1$s"
+},
+{
+"en": "Master Stars ➜ %1$s",
+"zh": "大师之星 ➜ %1$s"
+},
+{
+"en": "Corruption ➜ %1$s",
+"zh": "腐化之钩 ➜ %1$s"
+},
+{
+"en": "Lapidary ➜ %1$s",
+"zh": "宝石精琢 ➜ %1$s"
+},
+{
+"en": "Overload ➜ %1$s",
+"zh": "极限箭击 ➜ %1$s"
+},
+{
+"en": "Pesterminator ➜ %1$s",
+"zh": "灭虫大师 ➜ %1$s"
+},
+{
+"en": "Petalfall ➜ %1$s",
+"zh": "飞花断木 ➜ %1$s"
+},
+{
+"en": "Quick Bite ➜ %1$s",
+"zh": "速咬 ➜ %1$s"
+},
+{
+"en": "Reflection ➜ %1$s",
+"zh": "箭矢反伤 ➜ %1$s"
+},
+{
+"en": "Rejuvenate ➜ %1$s",
+"zh": "回春 ➜ %1$s"
+},
+{
+"en": "Smarty Pants ➜ %1$s",
+"zh": "聪明绝腿 ➜ %1$s"
+},
+{
+"en": "Smoldering ➜ %1$s",
+"zh": "炼狱杀手 ➜ %1$s"
+},
+{
+"en": "RARE DROP! %2$s (+%1$s  Magic Find)",
+"zh": "稀有掉落！%2$s (+%1$s  魔法寻宝)"
+},
+{
+"en": "Turbo-Cacti ➜ %1$s",
+"zh": "极速仙人掌 ➜ %1$s"
+},
+{
+"en": "Turbo-Cocoa ➜ %1$s",
+"zh": "极速可可豆 ➜ %1$s"
+},
+{
+"en": "Turbo-Melon ➜ %1$s",
+"zh": "极速西瓜 ➜ %1$s"
+},
+{
+"en": "Turbo-Potato ➜ %1$s",
+"zh": "极速马铃薯 ➜ %1$s"
+},
+{
+"en": "Turbo-Pumpkin ➜ %1$s",
+"zh": "极速南瓜 ➜ %1$s"
+},
+{
+"en": "Turbo-Rose ➜ %1$s",
+"zh": "极速野玫瑰 ➜ %1$s"
+},
+{
+"en": "Turbo-Warts ➜ %1$s",
+"zh": "极速下界疣 ➜ %1$s"
+},
+{
+"en": "Turbo-Wheat ➜ %1$s",
+"zh": "极速小麦 ➜ %1$s"
+},
+{
+"en": "Crop Fever ➜ %1$s",
+"zh": "作物狂热 ➜ %1$s"
+},
+{
+"en": "Soul Eater ➜ %1$s",
+"zh": "噬魂 ➜ %1$s"
+},
+{
+"en": "%1$s (Foraging)",
+"zh": "%1$s (伐木)"
+},
+{
+"en": "%2$s   +%1$s SkyBlock XP",
+"zh": "%2$s   +%1$s 空岛经验"
+},
+{
+"en": "Pet available: %1$s",
+"zh": "可用宠物: %1$s"
+},
+{
+"en": "View all of the mobs that you've found and killed in %1$s.",
+"zh": "查看你在%1$s发现并击杀过的所有怪物。"
+},
+{
+"en": "COLLECTION UNLOCKED %1$s",
+"zh": "收集已解锁 %1$s"
+},
+{
+"en": "Boss: MASTER %1$s ✔",
+"zh": "首领: 大师%1$s ✔"
+},
+{
+"en": "Craft a Tier I %1$s.",
+"zh": "合成一个 I 级%1$s。"
+},
+{
+"en": "Apply the %1$s to your Ship.",
+"zh": "为你的船装上%1$s。"
+},
+{
+"en": "Gain +%1$s XP for applying a %2$s to your Ship!",
+"zh": "为你的船装上%2$s可获得 +%1$s 经验！"
+},
+{
+"en": "Location: %1$s",
+"zh": "地点: %1$s"
+},
+{
+"en": "Enemies of this type are typically found in %1$s.",
+"zh": "此类敌人通常出现在%1$s。"
+},
+{
+"en": "Bring %1$s of %3$s to Carrolyn to gain +%2$s XP.",
+"zh": "给卡罗琳带去 %1$s 个%3$s可获得 +%2$s 经验。"
+},
+{
+"en": "Reach %1$s% completion of %2$s to unlock this stage!",
+"zh": "%2$s阶段完成度达到 %1$s% 即可解锁此阶段！"
+},
+{
+"en": "%1$s: Level XXV",
+"zh": "%1$s: 等级 XXV"
+},
+{
+"en": "Click on a %1$s in your inventory to unlock!",
+"zh": "点击物品栏中的%1$s来解锁！"
 }
 ]
 }

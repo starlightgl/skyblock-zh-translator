@@ -330,7 +330,7 @@ public final class PhraseMatcher {
                 if (tr != null && !tr.equals(t)) z = tr;
             } else if (t.chars().allMatch(ch -> ch < 0x80 && !Character.isLetterOrDigit(ch))) {
                 // bullets, brackets and signs ("- ", "(", ")", "*", "+"): the next one in order, never searched again
-                if (t.matches("[.,!?:;]+")) continue;
+                if (t.length() == 1 && ".,!?:;".indexOf(t.charAt(0)) >= 0) continue;   // sentence punctuation is translated, not kept
                 sign = true;
             }
             int at = -1;

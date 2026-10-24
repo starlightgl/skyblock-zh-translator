@@ -1791,7 +1791,7 @@
 "Watcher Disc": "守望者唱片",
 "Old Disc": "苍老唱片",
 "Necron Disc": "耐克伦唱片",
-"The Expedition Volume 1": "远征 第一卷",
+"The Expedition Volume 1": "远征记 第 1 卷",
 "Dungeon Orb": "地牢宝珠",
 "Trap": "陷阱",
 "Wizard's Crystal": "巫师水晶",
@@ -12223,7 +12223,21 @@
 "Page 47": "第 47 页",
 "Page 48": "第 48 页",
 "Page 49": "第 49 页",
-"Page 50": "第 50 页"
+"Page 50": "第 50 页",
+"HOTM": "山之心",
+"Tracking Stat": "追踪属性",
+"Duration": "持续时间",
+"Infinite": "无限",
+"Alphabetical": "按字母排序",
+"Bestiary Milestones": "怪物图鉴里程碑",
+"Beastslayer's Codex Upgrade": "屠兽者法典升级",
+"Huntress' Intuition": "女猎人的直觉",
+"Rabbit Effect": "兔子效果",
+"Multiplicative Buffs": "乘算增益",
+"The Expedition Volume 2": "远征记 第 2 卷",
+"The Expedition Volume 3": "远征记 第 3 卷",
+"The Expedition Volume 4": "远征记 第 4 卷",
+"The Expedition Volume 5": "远征记 第 5 卷"
 },
 "aliases": {
 "Rezar® Abicase": [

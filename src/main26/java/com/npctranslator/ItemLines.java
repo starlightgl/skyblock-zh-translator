@@ -152,6 +152,12 @@ public final class ItemLines {
             String zh = TableNames.translateName(lv.group(3));
             if (zh != null) return lv.group(1) + "[等级 " + lv.group(2) + "] " + zh;
         }
+        // the same with colours inside the brackets: "§8[§7Lv1§8] §fCow"
+        if (plain.matches("\\[Lv\\d+\\] .+")) {
+            int close = formatted.indexOf("] ");
+            String zh = close < 0 ? null : TableNames.translateName(formatted.substring(close + 2));
+            if (zh != null) return formatted.substring(0, close + 2).replaceFirst("Lv", "等级 ") + zh;
+        }
         java.util.regex.Matcher m = BULLET.matcher(formatted);
         if (!m.matches()) return null;
         String zh = TableNames.translateName(m.group(2));

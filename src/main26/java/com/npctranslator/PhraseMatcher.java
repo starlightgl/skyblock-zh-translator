@@ -983,6 +983,9 @@ public final class PhraseMatcher {
         boolean prevValue = p0 == '+' || p0 == '-' || Character.isDigit(p0);
         // two rows of values ("10% Statspocalypse" + "3% Renowned Bonus") are two rows
         if (b > 0 && nextValue && prevValue && a == b) return true;
+        // reward rows without indent ("§8+§c1 Health" / "§8+§31,000,000 §7Combat Experience"): one row each,
+        // unless the row above clearly goes on ("+5 Strength and")
+        if (nextValue && prevValue && a == b && (f == '+' || f == '-') && !pp.matches(".*(?:\\b[a-z][a-z']*|,)$")) return true;
         // an unfinished sentence carries on, also onto a deeper-indented line
         // ("Potions that you brew have a" + "25➜26% longer duration.", "✔ Talk to Ryan to upgrade your" + "Talisman.")
         if (pp.matches(".*(?:\\b[a-z][a-z']*|,)$") && b >= a) return false;
@@ -993,7 +996,7 @@ public final class PhraseMatcher {
         if (b == 0) return false;
         if (nextValue || (!Character.isLetter(f) && f != '(' && f != '"' && f != '\'')) return true;
         // a row ending with a number ("Speed 400") ends there, unless the next line carries on in lower case
-        return pp.matches(".*[\\d%kKM]$") && !Character.isLowerCase(f);
+        return pp.matches(".*(?:\\d[kKM]?|%)$") && !Character.isLowerCase(f);
     }
 
     private static final Pattern BAR_CHARS = Pattern.compile("[━▬■▌▊█░▒▓|=\\-]{5,}");
@@ -1124,8 +1127,10 @@ public final class PhraseMatcher {
             Matcher lc = COLOUR.matcher(prev);
             String lastCol = "";
             while (lc.find()) lastCol = lc.group();
-            if (!lastCol.equalsIgnoreCase("§7") || p.isEmpty() || p.matches(".*[.!?。！？:：)\\]]$")) return false;
-            return true;
+            if (p.isEmpty() || p.matches(".*[.!?。！？:：)\\]]$")) return false;
+            if (lastCol.equalsIgnoreCase("§7")) return true;
+            // a name wrapped before its grey last word ("§9Enchanted Brown Mushroom Block" + "§7Recipe")
+            return normalize(next).matches("[A-Z][a-z]+");
         }
         // a grey sentence that has not ended yet wraps onto the next line even when that line starts with a
         // highlighted word ("…traps it for" + "§c5s §7and deals …")

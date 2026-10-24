@@ -45,6 +45,7 @@ public final class TextCollector {
     public static final String MOD_TEXT = "其他模组提示";
     public static final String PRICE_TABLE = "价格表格";
     public static final String BOOK = "书本";
+    public static final String HOVER = "悬停提示";
 
     public static final File FILE = new File(FabricLoader.getInstance().getConfigDir().toFile(), "npc_translator_text.tsv");
     /** File of 1.5.1-zh.3-beta.5, which only held menu items. Converted on first load. */

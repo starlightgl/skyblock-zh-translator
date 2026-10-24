@@ -20,7 +20,8 @@
     "SkyHanniTabMixin",
     "SkyHanniTabWidthMixin",
     "ContainerTitleMixin",
-    "BookAccessMixin"
+    "BookAccessMixin",
+    "HoverTextMixin"
   ],
   "injectors": {
     "defaultRequire": 1

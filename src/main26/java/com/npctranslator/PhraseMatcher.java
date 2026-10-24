@@ -239,6 +239,13 @@ public final class PhraseMatcher {
             zh = bestTemplate(key, formatted, baseCodes);
         }
         if (zh == null) {
+            // a list item ("§a✔ §fTalk to Hattie in the Backwater Bayou.", "§7■ Compete in a Trial of Fire."):
+            // the text after the mark, the mark kept as it is
+            Matcher item = LIST_MARK.matcher(formatted);
+            if (item.find() && item.end() < formatted.length()) {
+                String rest = translateWhole(formatted.substring(item.end()));
+                if (rest != null) return formatted.substring(0, item.end()) + rest.replaceFirst("^[\\s\u00a0]+", "");
+            }
             String sole = soleTerm(formatted);
             if (sole != null) return sole;
             String split = splitFields(formatted);
@@ -259,6 +266,8 @@ public final class PhraseMatcher {
         }
         return recolour(formatted, leadingSpace + baseCodes + zh, baseCodes);
     }
+
+    private static final Pattern LIST_MARK = Pattern.compile("^(?:[\\s\u00a0]|§[0-9a-fk-or])*[✔✖■▶•➜✘✓](?:§[0-9a-fk-or])*[\\s\u00a0]+(?:§[0-9a-fk-or])*");
 
     /** The colour of the line's own text: codes of the first run that holds a letter (else of the first visible character). */
     static String textCodes(String formatted) {
@@ -641,6 +650,12 @@ public final class PhraseMatcher {
                             || v.matches(".*[.!?。！？]\\s+\\S.*")
                             // "Soulflow Cost: %s" must not swallow "1 Mana Cost: 90": a value never holds another "Label:"
                             || LABEL_INSIDE.matcher(v).find()) { ok = false; break; }
+                    // a value right before a unit ("%1$ss", "%1$sm", "%1$sx") is a number, not words
+                    // ("Jacob's Farming Contest %1$ss" must not take "brackets include 10% more player" + "s")
+                    int after = m.end(i);
+                    if (after < key.length() && "smhdxk".indexOf(key.charAt(after)) >= 0
+                            && (after + 1 == key.length() || !Character.isLetter(key.charAt(after + 1)))
+                            && v.matches(".*[A-Za-z]{2,}.*")) { ok = false; break; }
                     String tv = valueTranslator.apply(v);
                     if (requireClean && !clean(tv)) { ok = false; break; }
                     // Zh templates without their own colours: keep the value's original colour (marked here,
@@ -918,6 +933,14 @@ public final class PhraseMatcher {
         String baseCodes = lead.find() ? lead.group(1) : "";
         String zh = matchTemplates(buckets.get(bucketKey(key)), key, formatted, baseCodes);
         if (zh == null) zh = matchTemplates(buckets.get("*"), key, formatted, baseCodes);
+        if (zh == null) {
+            // a wrapped list item ("§a✔ §fGive the Carpenter a stack of White" + "§fWool."): the text after the mark
+            Matcher item = LIST_MARK.matcher(formatted);
+            if (item.find() && item.end() < formatted.length()) {
+                String rest = translateStrict(formatted.substring(item.end()));
+                if (rest != null) return formatted.substring(0, item.end()) + rest.replaceFirst("^[\\s\u00a0]+", "");
+            }
+        }
         return zh == null ? null : translate(formatted);
     }
 
@@ -953,14 +976,23 @@ public final class PhraseMatcher {
      */
     static boolean rowBoundary(String prev, String next) {
         int a = indent(prev), b = indent(next);
+        String np = CODE.matcher(next).replaceAll("").trim(), pp = CODE.matcher(prev).replaceAll("").trim();
+        if (np.isEmpty() || pp.isEmpty()) return a != b;
+        char f = np.charAt(0), p0 = pp.charAt(0);
+        boolean nextValue = f == '+' || f == '-' || Character.isDigit(f);
+        boolean prevValue = p0 == '+' || p0 == '-' || Character.isDigit(p0);
+        // two rows of values ("10% Statspocalypse" + "3% Renowned Bonus") are two rows
+        if (b > 0 && nextValue && prevValue && a == b) return true;
+        // an unfinished sentence carries on, also onto a deeper-indented line
+        // ("Potions that you brew have a" + "25➜26% longer duration.", "✔ Talk to Ryan to upgrade your" + "Talisman.")
+        if (pp.matches(".*(?:\\b[a-z][a-z']*|,)$") && b >= a) return false;
+        // a hanging indent: the wrapped rest of a list item sits deeper than its mark
+        // (" ✔ Give the Carpenter a stack of White" + "    Wool.")
+        if (b >= a + 2 && !nextValue && !pp.matches(".*[.!?:：)\\]]$") && (Character.isLetter(f) || f == '(')) return false;
         if (a != b) return true;
         if (b == 0) return false;
-        String np = CODE.matcher(next).replaceAll("").trim(), pp = CODE.matcher(prev).replaceAll("").trim();
-        if (np.isEmpty() || pp.isEmpty()) return false;
-        char f = np.charAt(0);
-        if (f == '+' || f == '-' || Character.isDigit(f) || (!Character.isLetter(f) && f != '(' && f != '"' && f != '\'')) return true;
+        if (nextValue || (!Character.isLetter(f) && f != '(' && f != '"' && f != '\'')) return true;
         // a row ending with a number ("Speed 400") ends there, unless the next line carries on in lower case
-        // ("Potions that you brew have a 4➜5%" + "longer duration.")
         return pp.matches(".*[\\d%kKM]$") && !Character.isLowerCase(f);
     }
 
@@ -1085,11 +1117,26 @@ public final class PhraseMatcher {
         boolean prevBody = prevLead.isEmpty() || prevLead.equalsIgnoreCase("§7");
         // a coloured heading ("§9Growth V", "§6Full Set Bonus: …", "§9Renowned Bonus") is followed by its
         // grey description: that is a new paragraph
-        if (!prevBody && lead.equalsIgnoreCase("§7")) return false;
+        String p = normalize(prev);
+        if (!prevBody && lead.equalsIgnoreCase("§7")) {
+            // ... unless that line only began with a highlighted word and went on in grey without ending
+            // ("§aALL §7SkyBlock statistics, or just" + "§7the ones you have.")
+            Matcher lc = COLOUR.matcher(prev);
+            String lastCol = "";
+            while (lc.find()) lastCol = lc.group();
+            if (!lastCol.equalsIgnoreCase("§7") || p.isEmpty() || p.matches(".*[.!?。！？:：)\\]]$")) return false;
+            return true;
+        }
         // a grey sentence that has not ended yet wraps onto the next line even when that line starts with a
         // highlighted word ("…traps it for" + "§c5s §7and deals …")
-        String p = normalize(prev);
         if (prevBody && !p.isEmpty() && !p.matches(".*[.!?。！？:：)\\]]$") && !p.matches(".*\\d$")) return true;
+        // ... also when only its start was highlighted and it went on in grey ("§6Reindrake §7by §a10%§7 while
+        // fishing on" + "§cJerry's Workshop§7.")
+        Matcher lc2 = COLOUR.matcher(prev);
+        String lastGrey = "";
+        while (lc2.find()) lastGrey = lc2.group();
+        if (lastGrey.equalsIgnoreCase("§7") && !p.isEmpty() && !p.matches(".*[.!?。！？:：)\\]]$") && !p.matches(".*\\d$")
+                && p.matches(".*\\b[a-z][a-z']*$")) return true;
         if (lead.equalsIgnoreCase(prevLead)) return true;
         Matcher m = COLOUR.matcher(prev);
         String last = "";
@@ -1208,7 +1255,7 @@ public final class PhraseMatcher {
             if (c == ' ' || p == ' ') {                                 // cut at the space (it is dropped)
                 // "60,000 - 225,000", "+5 ❤": a range or a value with its icon stays together
                 String around = vis.substring(Math.max(0, i - 2), Math.min(n, i + 2));
-                prio[i] = around.matches(".*\\d ?[-~/] ?\\d.*|.*[-~/] .*|.* [-~/].*") ? 0 : 2;
+                prio[i] = around.matches(".*\\d ?[-~] ?\\d.*") ? 0 : 2;
                 continue;
             }
             if (CJK_BREAK_AFTER.indexOf(p) >= 0) { prio[i] = 3; continue; }

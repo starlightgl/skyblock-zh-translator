@@ -97,13 +97,20 @@ public final class PhraseBook {
             java.util.Map.entry("Level", "等级"), java.util.Map.entry("Milestone", "里程碑"), java.util.Map.entry("Pet", "宠物"),
             java.util.Map.entry("Barn Skin", "谷仓皮肤"), java.util.Map.entry("Skin", "皮肤"), java.util.Map.entry("Dye", "染料"),
             java.util.Map.entry("Sack", "收纳袋"), java.util.Map.entry("Upgrade Stone", "升级石"), java.util.Map.entry("Mobs", "生物"),
-            java.util.Map.entry("Pests", "害虫"), java.util.Map.entry("Effects", "效果"));
+            java.util.Map.entry("Pests", "害虫"), java.util.Map.entry("Effects", "效果"), java.util.Map.entry("Trade", "交易"),
+            java.util.Map.entry("Pest", "害虫"), java.util.Map.entry("Widget", "组件"), java.util.Map.entry("Quest", "任务"));
     private static final java.util.regex.Pattern SUFFIXED = java.util.regex.Pattern.compile(
-            "^(.+?) (Fortune|Collection|Skill|Recipes?|Crop|Minion|Shard|Potion|Enchantment|Essence|Experience|Level|Milestone|Pet|Barn Skin|Skin|Dye|Sack|Upgrade Stone|Mobs|Pests|Effects)$");
+            "^(.+?) (Fortune|Collection|Skill|Recipes?|Crop|Minion|Shard|Potion|Enchantment|Essence|Experience|Level|Milestone|Pet|Barn Skin|Skin|Dye|Sack|Upgrade Stone|Mobs|Pests?|Effects|Trade|Widget|Quest)$");
     private static final java.util.Map<String, String> PREFIXES = java.util.Map.of("Enchanted", "附魔", "Tier", "阶级 ", "Requires", "需要");
     private static final java.util.regex.Pattern PREFIXED = java.util.regex.Pattern.compile("^(Enchanted) (.+)$");
 
+    private static final java.util.regex.Pattern LEVELLED = java.util.regex.Pattern.compile("^\\[Lvl ?(\\d+)\\] (.+)$");
     private static final java.util.regex.Pattern TIERED = java.util.regex.Pattern.compile("^(.*[A-Za-z].*?) ([IVXLCDM]+|\\d+)$");
+
+    /** "Trade", "Crop", "Widget": the word that follows a name, alone. */
+    static String suffixWord(String w) {
+        return SUFFIXES.get(w);
+    }
 
     /** A placeholder value: glossary term as a whole, or its words with numbers/icons around them ("+75 ❤ Health"). */
     static String translateValue(String v) {
@@ -120,6 +127,12 @@ public final class PhraseBook {
         if (t.matches()) {
             String head = translateValue(t.group(1));
             if (!head.equals(t.group(1))) return head + " " + t.group(2);
+        }
+        // "[Lvl 1] Skeleton": a pet with its level
+        java.util.regex.Matcher lvl = LEVELLED.matcher(v);
+        if (lvl.matches()) {
+            String rest = translateValue(lvl.group(2));
+            if (!rest.equals(lvl.group(2))) return "[等级 " + lvl.group(1) + "] " + rest;
         }
         // "Wheat Fortune", "Gold Ingot Collection", "Mining Skill", "Enchanted Clock Recipe": a name and a word
         java.util.regex.Matcher sfx = SUFFIXED.matcher(v);

@@ -39,6 +39,7 @@ public final class TableNames {
     /** Stars, master stars and other decorations after an item name. */
     private static final Pattern SUFFIX = Pattern.compile("^(.*?[^\\s✪➊➋➌➍➎⚚✦✿◆♦●])((?:\\s*[✪➊➋➌➍➎⚚✦✿◆♦●]+)+.*)$");
     private static final Pattern LEAD = Pattern.compile("^((?:§[0-9a-fk-or])*)");
+    private static final Pattern ICON_LEAD = Pattern.compile("^(?:[\\uE000-\\uF8FF\\u2600-\\u27BF]+\\s+)+");
 
     private TableNames() {}
 
@@ -94,6 +95,17 @@ public final class TableNames {
         } catch (Exception e) {
             System.err.println("[NPCTranslator] vanilla names: " + e.getMessage());
         }
+        // keys collected with an icon or a check mark in front ("\uE015 Fine Amber Gemstone", "✔ Wheat Collection IX")
+        // also answer for the bare name
+        Map<String, String> bare = new HashMap<>();
+        for (Map.Entry<String, String> e : n.entrySet()) {
+            Matcher g = ICON_LEAD.matcher(e.getKey());
+            if (!g.find()) continue;
+            String k = e.getKey().substring(g.end()).trim();
+            String v = ICON_LEAD.matcher(e.getValue()).replaceFirst("").trim();
+            if (!k.isEmpty() && !v.isEmpty() && !n.containsKey(k)) bare.putIfAbsent(k, v);
+        }
+        n.putAll(bare);
         names = n;
         aliases = a;
         reforges = r;

@@ -80,7 +80,8 @@ public final class ItemLines {
             if (p.fixed[i] == null && !parsed.isEmpty() && i == 0) p.fixed[i] = TableNames.translateName(parsed);
             if (p.fixed[i] == null && !parsed.isEmpty()) p.fixed[i] = glossaryName(parsed);
             // a line that is just a name, maybe with a bullet or a tier: "▶ Enchanted Ink Sac", "Missile IV"
-            if (p.fixed[i] == null && i > 0 && !parsed.isEmpty()) p.fixed[i] = bulletName(parsed);
+            if (p.fixed[i] == null && !parsed.isEmpty()) p.fixed[i] = bulletName(parsed);
+            if (p.fixed[i] == null && !parsed.isEmpty()) p.fixed[i] = looseName(parsed);
             ai[i] = !parsed.isEmpty() && p.fixed[i] == null && TranslationUtil.needsTranslation(parsed);
         }
         // Wrapped sentences: join consecutive AI lines that continue the previous one.
@@ -112,7 +113,7 @@ public final class ItemLines {
     }
 
     private static final java.util.regex.Pattern BULLET =
-            java.util.regex.Pattern.compile("^((?:§[0-9a-fk-or])*\\s*(?:§[0-9a-fk-or])*(?:[▶•‣›◆➜→∙●■◇◈★✦✧\\-]\\s*(?:§[0-9a-fk-or])*)?)(.+)$");
+            java.util.regex.Pattern.compile("^((?:§[0-9a-fk-or])*\\s*(?:§[0-9a-fk-or])*(?:[▶•‣›◆➜→∙●■◇◈★✦✧✔✖\\-]\\s*(?:§[0-9a-fk-or])*)?)(.+)$");
 
     /** "▶ Enchanted Ink Sac" / "Missile IV": a name from the term table, keeping the bullet. */
     /** "§6Mossy Box §8(Mining)": a name followed by its category in brackets. */
@@ -155,6 +156,74 @@ public final class ItemLines {
         if (!m.matches()) return null;
         String zh = TableNames.translateName(m.group(2));
         return zh == null ? null : m.group(1) + zh;
+    }
+
+    private static final java.util.regex.Pattern LOOSE = java.util.regex.Pattern.compile(
+            "^([^A-Za-z]*?)([A-Za-z][A-Za-z0-9'’.&\\- ]*?[A-Za-z.])((?:\\s+x[\\d,]+(?:-[\\d,]+)?|\\s*\\(\\d[\\d.,]*%\\)|\\s*[✪➊➋➌➍➎]+)*[^A-Za-z]*)$");
+
+    /**
+     * A name with numbers, icons or an amount around it ("+27.5  Soft Shadow Assassin Cloak ✪✪✪✪✪",
+     * "■  Rough Ruby Gemstone (40%)", "Enchanted Ice x1,024", "20 North Stars", "Moth Pest"):
+     * the name is translated in place, everything around it (colours included) stays as it is.
+     */
+    static String looseName(String formatted) {
+        StringBuilder plain = new StringBuilder();
+        java.util.List<Integer> at = new java.util.ArrayList<>();
+        for (int i = 0; i < formatted.length(); i++) {
+            char c = formatted.charAt(i);
+            if (c == '§' && i + 1 < formatted.length()) { i++; continue; }
+            plain.append(c);
+            at.add(i);
+        }
+        String p = plain.toString();
+        if (p.trim().length() < 3 || p.trim().length() > 60) return null;
+        java.util.regex.Matcher m = LOOSE.matcher(p);
+        if (!m.matches()) return null;
+        String core = m.group(2).trim();
+        // a sentence's last words ("    Fisherman's Hut.") are not a name
+        if (core.endsWith(".") && !core.matches(".*\\b(?:Mk|Jr|Sr|St)\\.$") || m.group(3).replaceAll("x[\\d,]+(?:-[\\d,]+)?|\\(\\d[\\d.,]*%\\)|\\d[\\d,.]*", "").matches(".*[.!?,:;].*")) return null;
+        if (core.length() < 3 || core.split(" ").length > 6) return null;
+        int cs = m.start(2) + (m.group(2).length() - m.group(2).replaceFirst("^\\s+", "").length());
+        int ce = cs + core.length();
+        int fs = at.get(cs), fe = at.get(ce - 1) + 1;
+        String inner = formatted.substring(fs, fe);
+        if (inner.contains("§")) {
+            // differently coloured words ("§fEnchanted Bone Meal §7Trade"): each coloured part on its own
+            StringBuilder out = new StringBuilder();
+            java.util.regex.Matcher cm = java.util.regex.Pattern.compile("((?:§[0-9a-fk-or])*)([^§]*)").matcher(inner);
+            boolean ok = true;
+            while (cm.find()) {
+                if (cm.group().isEmpty()) continue;
+                String w = cm.group(2);
+                String z = w.trim().isEmpty() ? "" : nameOf(w.trim());
+                if (z == null) { ok = false; break; }
+                out.append(cm.group(1)).append(z);
+            }
+            if (ok) return formatted.substring(0, fs) + out + formatted.substring(fe);
+        }
+        String zh = nameOf(core);
+        if (zh == null) return null;
+        StringBuilder codesInside = new StringBuilder();
+        java.util.regex.Matcher cm = java.util.regex.Pattern.compile("§[0-9a-fk-or]").matcher(inner);
+        while (cm.find()) codesInside.append(cm.group());
+        return formatted.substring(0, fs) + codesInside + zh + formatted.substring(fe);
+    }
+
+    /** Chinese for a bare name: the item table, then the glossary (with "X Crop", "Y Pest"...), then the singular. */
+    static String nameOf(String core) {
+        String z = TableNames.translateName(core);
+        if (z != null) z = z.replaceFirst("^(?:§[0-9a-fk-or])*", "").trim();
+        if (z == null || z.isEmpty()) {
+            String v = PhraseBook.translateValue(core);
+            z = v.equals(core) ? null : v;
+        }
+        if (z == null) z = PhraseBook.suffixWord(core);
+        if (z == null && core.length() > 4 && core.endsWith("s") && !core.endsWith("ss")) {
+            String one = TableNames.translateName(core.endsWith("ies") ? core.substring(0, core.length() - 3) + "y" : core.substring(0, core.length() - 1));
+            if (one != null) z = one.replaceFirst("^(?:§[0-9a-fk-or])*", "").trim();
+        }
+        if (z == null || z.isEmpty() || z.matches(".*[A-Za-z]{3,}.*")) return null;
+        return z;
     }
 
     /** A line that is exactly one glossary term (an item or material name): its fixed translation. */

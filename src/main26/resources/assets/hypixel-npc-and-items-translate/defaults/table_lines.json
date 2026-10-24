@@ -13987,7 +13987,7 @@
 },
 {
 "en": "It is known that scientists and other experts always find ways to disagree on every subject known to humankind. However, they can all agree on one thing - that this is the greatest meal ever created in history.",
-"zh": "众所周知，科学家和其他专家在人类已知的每个话题上总能找到分歧。然而，他们都同意一件事——这是有史以来最伟大的一餐。"
+"zh": "众所周知，科学家和其他专家总能在人类已知的每个话题上找到分歧。不过他们都同意一件事：这是史上最伟大的一餐。"
 },
 {
 "en": "Awarded to those who participated in Dungeons on the Alpha Hypixel Network.",
@@ -14323,7 +14323,7 @@
 },
 {
 "en": "Increases the base stats of your dungeon items by %1$s% while in The Catacombs for each digit on your secret count. (Max %2$s%)",
-"zh": "在地下墓穴中时，你的秘密数每有一位数字，地牢物品的基础属性提高 %1$s%。（最多 %2$s%）"
+"zh": "在地下墓穴中时，你的秘密计数每有一位数，地牢物品的基础属性提高 %1$s%。（最多 %2$s%）"
 },
 {
 "en": "Once worn proudly, now covered in filth and soot.",
@@ -42435,7 +42435,7 @@
 },
 {
 "en": "Autumn %1$sth, Year %2$s",
-"zh": "第 %2$s 年秋季第 %1$s 天"
+"zh": "第 %2$s 年秋季 %1$s 日"
 },
 {
 "en": "✖ Talk to Hattie in the Backwater Bayou.",
@@ -42443,7 +42443,7 @@
 },
 {
 "en": "Spring %1$sth, Year %2$s",
-"zh": "第 %2$s 年春季第 %1$s 天"
+"zh": "第 %2$s 年春季 %1$s 日"
 },
 {
 "en": "✔ Talk to the Spider Tamer.",
@@ -42551,7 +42551,7 @@
 },
 {
 "en": "Spring %1$snd, Year %2$s",
-"zh": "第 %2$s 年春季第 %1$s 天"
+"zh": "第 %2$s 年春季 %1$s 日"
 },
 {
 "en": "✔ Talk to Gustave.",
@@ -42575,7 +42575,7 @@
 },
 {
 "en": "Autumn %1$snd, Year %2$s",
-"zh": "第 %2$s 年秋季第 %1$s 天"
+"zh": "第 %2$s 年秋季 %1$s 日"
 },
 {
 "en": "✔ Talk to the Archaeologist.",
@@ -47059,7 +47059,7 @@
 },
 {
 "en": "Date: %1$sth Early Spring %2$s",
-"zh": "日期: 空岛 %2$s 年早春 %1$s 日"
+"zh": "日期: 第 %2$s 年初春 %1$s 日"
 },
 {
 "en": "Jacob's Farming Contest %1$sm %2$ss",
@@ -66003,7 +66003,7 @@
 },
 {
 "en": "Date: %1$srd Autumn %2$s",
-"zh": "日期: 空岛 %2$s 年秋季 %1$s 日"
+"zh": "日期: 第 %2$s 年秋季 %1$s 日"
 },
 {
 "en": "%1$sth Harvest Feast %2$sh %3$sm %4$ss",
@@ -66263,7 +66263,7 @@
 },
 {
 "en": "Change the order of the widgets that are shown when in the Hub.",
-"zh": "调整在主城时显示的组件顺序。"
+"zh": "更改在主城时显示的组件顺序。"
 },
 {
 "en": "Left/Right-click to select a widget! Shift Left/Right-click to change its order!",
@@ -66275,7 +66275,7 @@
 },
 {
 "en": "Shows some general information when in the Hub.",
-"zh": "在主城时显示一些通用信息。"
+"zh": "在主城时显示一些常规信息。"
 },
 {
 "en": "Currently: ENABLED",
@@ -66299,7 +66299,7 @@
 },
 {
 "en": "Shows information about Mayor Elections when in the Hub.",
-"zh": "在主城时显示市长选举的相关信息。"
+"zh": "在主城时显示市长选举信息。"
 },
 {
 "en": "Shows information about upcoming or current events when in the Hub.",
@@ -66359,7 +66359,7 @@
 },
 {
 "en": "Shows information about your progress in active events when in the Hub.",
-"zh": "在主城时显示你在进行中活动的进度信息。"
+"zh": "在主城时显示你在进行中活动里的进度信息。"
 },
 {
 "en": "To Tablist Widgets",
@@ -66371,7 +66371,7 @@
 },
 {
 "en": "Changing this setting will only apply to being in the Hub.",
-"zh": "更改此设置仅对在主城时生效。"
+"zh": "更改此设置只对在主城时生效。"
 },
 {
 "en": "Click to reset ALL Hub settings!",
@@ -67851,7 +67851,7 @@
 },
 {
 "en": "Date: %1$sth Autumn %2$s",
-"zh": "日期: 空岛 %2$s 年秋季 %1$s 日"
+"zh": "日期: 第 %2$s 年秋季 %1$s 日"
 },
 {
 "en": "Hire this private rabbit to hunt eggs for you, they will collect eggs you missed!",
@@ -69571,7 +69571,7 @@
 },
 {
 "en": "Gain a +%1$s% chance to get +%2$s item when looting a Frozen Corpse.",
-"zh": "获得 +%1$s% 几率额外获得 +%2$s 件物品，在搜刮冰冻尸体时生效。"
+"zh": "搜刮冰冻尸体时，有 +%1$s% 的几率额外获得 +%2$s 件物品。"
 },
 {
 "en": "Frozen Corpse when entering a Glacite Mineshaft you summoned.",
@@ -72199,11 +72199,11 @@
 },
 {
 "en": "Date: %1$sst Early Winter %2$s",
-"zh": "日期: 初冬 %1$s 日，第 %2$s 年"
+"zh": "日期: 第 %2$s 年初冬 %1$s 日"
 },
 {
 "en": "Date: %1$snd Early Winter %2$s",
-"zh": "日期: 初冬 %1$s 日，第 %2$s 年"
+"zh": "日期: 第 %2$s 年初冬 %1$s 日"
 },
 {
 "en": "Summer Achievement",
@@ -82987,7 +82987,7 @@
 },
 {
 "en": "Date: %1$sth Early Winter %2$s",
-"zh": "日期: 初冬 %1$s 日，第 %2$s 年"
+"zh": "日期: 第 %2$s 年初冬 %1$s 日"
 },
 {
 "en": "Jacob's Farming Contest %1$ss",
@@ -83247,7 +83247,7 @@
 },
 {
 "en": "Summer %1$sth, Year %2$s",
-"zh": "夏季 %1$s 日，第 %2$s 年"
+"zh": "第 %2$s 年夏季 %1$s 日"
 },
 {
 "en": "✔ Complete Campfire Trials. (%1$s/%2$s)",
@@ -83407,7 +83407,7 @@
 },
 {
 "en": "Unlock Tiers by participating in Starlyn Contests and upgrade perks using Whispers.",
-"zh": "参加星林竞赛来解锁层级，并用低语升级天赋。"
+"zh": "参加星林竞赛解锁阶级，并用低语升级天赋。"
 },
 {
 "en": "You gain %1$s  Pressure Resistance.",
@@ -83543,7 +83543,7 @@
 },
 {
 "en": "Forest Whispers are dropped from Fig and Mangrove Tree Gifts on the Moonglade Marsh.",
-"zh": "森林低语来自月光沼泽的无花果树和红树馈赠。"
+"zh": "森林低语来自月光沼泽的无花果树和红树林树木礼物。"
 },
 {
 "en": "Welcome to the Moonglade Marsh, the first island of Galatea.",
@@ -83559,7 +83559,7 @@
 },
 {
 "en": "Here you'll continue to hone your Foraging and Hunting skills as you partake in Miria's Contests, explore the Critter Safari, and dive deep into Torrhus Springs.",
-"zh": "你将在这里继续磨练伐木与狩猎技能：参加米莉亚的竞赛、探索小动物游猎场，并深入托鲁斯温泉。"
+"zh": "在这里，你将参加米莉亚的竞赛、探索小动物游猎场、深入托鲁斯温泉，继续磨练伐木和狩猎技能。"
 },
 {
 "en": "Talk to Helia in the Torrhus Canyon!",
@@ -86759,7 +86759,7 @@
 },
 {
 "en": "Each item level upgrade ✪ grants a +%1$s% stat bonus and a +%2$s% bonus while in Dungeons.",
-"zh": "物品每提升一星 ✪，属性加成 +%1$s%，地牢内加成 +%2$s%。"
+"zh": "物品每提升一星 ✪，属性加成 +%1$s%，在地牢中加成 +%2$s%。"
 },
 {
 "en": "Fillets all the Trophy Fish in your inventory, giving you MagmaFish as a reward!",
@@ -139159,7 +139159,7 @@
 },
 {
 "en": "Every time you obtain Forest Essence, there is a %1$s% chance for it to double.",
-"zh": "每次获得森林精粹时，都有 %1$s% 几率翻倍。"
+"zh": "每次获得森林精粹时，有 %1$s% 的几率翻倍。"
 },
 {
 "en": "Grants %1$s Timber.",
@@ -139443,7 +139443,7 @@
 },
 {
 "en": "Date: %1$sst Winter %2$s",
-"zh": "日期: 冬季 %1$s 日，第 %2$s 年"
+"zh": "日期: 第 %2$s 年冬季 %1$s 日"
 },
 {
 "en": "Syphon Shards to unlock and level up your Attributes!",
@@ -139451,7 +139451,7 @@
 },
 {
 "en": "Each Attribute grant its own unique power, active at all times, no matter where you are.",
-"zh": "每个词条都有独特的能力，无论你身在何处都始终生效。"
+"zh": "每个属性都有其独特的效果，无论身在何处都始终生效。"
 },
 {
 "en": "Click to swap to the Hunting Box!",
@@ -139555,7 +139555,7 @@
 },
 {
 "en": "Your Catacombs RNG Meters fill with Dungeon Score each time you complete an S or S+ run.",
-"zh": "每次完成 S 或 S+ 评级的通关，你的地下墓穴掉落保底计量表都会按地牢分数增长。"
+"zh": "每次以 S 或 S+ 评级完成一局，你的地下墓穴掉落保底计量表都会按地牢评分充能。"
 },
 {
 "en": "Your selected RNG drop will be guaranteed to appear in a chest once your RNG Meter for a floor is full!",
@@ -139675,7 +139675,7 @@
 },
 {
 "en": "Heals everyone in your group to full health and grants them a shield for %1$s% of their maximum health. The cooldown is reduced by %2$s seconds for every player below %3$s% health.",
-"zh": "将队伍中所有人的生命值恢复至满，并给予相当于其最大生命值 %1$s% 的护盾。队伍中每有一名玩家生命值低于 %2$s%，冷却时间缩短 %3$s 秒。"
+"zh": "将队伍中所有人的生命值恢复至满，并给予相当于其最大生命值 %1$s% 的护盾。每有一名玩家生命值低于 %3$s%，冷却时间缩短 %2$s 秒。"
 },
 {
 "en": "Those attacks deal %1$s% of their melee damage (increased by your Intelligence) up to %2$s blocks, after which damage is reduced.",
@@ -139739,7 +139739,7 @@
 },
 {
 "en": "%1$s% chance for your arrows to bounce to an additional target.",
-"zh": "你的箭有 %1$s% 几率弹射到另一个目标。"
+"zh": "你的箭有 %1$s% 的几率弹射到额外一个目标。"
 },
 {
 "en": "Shoots a volley of %1$s Arrows that explodes on impact, dealing the same damage as your highest bow hit in the last minute in a %2$s block radius.",
@@ -140723,7 +140723,7 @@
 },
 {
 "en": "Gain XP by progressing your Heart of the Forest:",
-"zh": "通过推进你的森林之心获得经验:"
+"zh": "推进森林之心来获得经验:"
 },
 {
 "en": "Mithril Powder: Gain +%1$s XP per %2$s powder until",
@@ -141087,11 +141087,11 @@
 },
 {
 "en": "There are bushes throughout Galatea that periodically grow Berries. Simply click the bushes to collect them.",
-"zh": "加拉蒂亚各处都有会定期长出浆果的灌木。点击灌木即可采集。"
+"zh": "加拉蒂亚各处的灌木丛会定期长出浆果，点击灌木丛即可采集。"
 },
 {
 "en": "And who knows, you might even wake up some creatures inside of them!",
-"zh": "说不定，你还会惊醒藏在里面的生物！"
+"zh": "说不定还会吵醒藏在里面的生物！"
 },
 {
 "en": "You want to know exactly what is happening when you cut a Tree? With this chat message you will see all the details you need to understand if you are cutting trees correctly!",
@@ -141183,7 +141183,7 @@
 },
 {
 "en": "Most commonly found during the Spooky Festival.",
-"zh": "最常在惊魂节期间出现。"
+"zh": "最常出现在惊魂节期间。"
 },
 {
 "en": "Enemies of this type are typically found in The Garden.",
@@ -141443,7 +141443,7 @@
 },
 {
 "en": "Analyze mutations in the Crop Analyzer to increase this milestone.",
-"zh": "在作物分析仪中分析突变，以提升此里程碑。"
+"zh": "在作物分析仪中分析突变来推进此里程碑。"
 },
 {
 "en": "Complete all of the various tasks in the Rift by talking to the Wizard!",
@@ -142027,7 +142027,7 @@
 },
 {
 "en": "Date: %1$snd Winter %2$s",
-"zh": "日期: 冬季 %1$s 日，第 %2$s 年"
+"zh": "日期: 第 %2$s 年冬季 %1$s 日"
 },
 {
 "en": "View your progression through the Chapters of each island!",
@@ -142643,7 +142643,7 @@
 },
 {
 "en": "Shows timers from various events when in The Park.",
-"zh": "在公园时显示各类活动的计时。"
+"zh": "在公园时显示各类活动的计时器。"
 },
 {
 "en": "Shows your stats when in the Gold Mine.",
@@ -143807,7 +143807,7 @@
 },
 {
 "en": "Shows how long until you can next spawn a Stoneworm or Scatha.",
-"zh": "显示距离你下次能召唤石虫或斯卡萨还要多久。"
+"zh": "显示距离你下一次能生成石虫或斯卡莎还有多久。"
 },
 {
 "en": "Shows information about your faction reputation when on the Crimson Isle.",
@@ -144360,6 +144360,5006 @@
 {
 "en": "Miracle",
 "zh": "奇迹"
+},
+{
+"en": "Change the order of the widgets that are shown when in The Park.",
+"zh": "更改在公园时显示的组件顺序。"
+},
+{
+"en": "Change the order of the widgets that are shown when in the Deep Caverns.",
+"zh": "更改在深层洞穴时显示的组件顺序。"
+},
+{
+"en": "Change the order of the widgets that are shown when in the Dwarven Mines.",
+"zh": "更改在矮人矿洞时显示的组件顺序。"
+},
+{
+"en": "Change the order of the widgets that are shown when in the Spider's Den.",
+"zh": "更改在蜘蛛巢穴时显示的组件顺序。"
+},
+{
+"en": "Change the order of the widgets that are shown when in Jerry's Workshop.",
+"zh": "更改在杰瑞的工坊时显示的组件顺序。"
+},
+{
+"en": "Change the order of the widgets that are shown when on the Backwater Bayou.",
+"zh": "更改在死水河岸时显示的组件顺序。"
+},
+{
+"en": "Change the order of the widgets that are shown when in The Rift.",
+"zh": "更改在裂隙时显示的组件顺序。"
+},
+{
+"en": "Change the order of the widgets that are shown when in Kuudra.",
+"zh": "更改在库德拉时显示的组件顺序。"
+},
+{
+"en": "Change the order of the widgets that are shown when in the Mineshaft.",
+"zh": "更改在矿井时显示的组件顺序。"
+},
+{
+"en": "Change the order of the widgets that are shown when on the Lotus Atoll.",
+"zh": "更改在莲花环礁时显示的组件顺序。"
+},
+{
+"en": "Change the order of the widgets that are shown when on Torrhus Canyon.",
+"zh": "更改在托鲁斯峡谷时显示的组件顺序。"
+},
+{
+"en": "Change the order of the widgets that are shown when on the Torrhus Canyon.",
+"zh": "更改在托鲁斯峡谷时显示的组件顺序。"
+},
+{
+"en": "Change the order of the widgets that are shown when on the Safari.",
+"zh": "更改在游猎场时显示的组件顺序。"
+},
+{
+"en": "Change the order of the widgets that are shown when in the %1$s.",
+"zh": "更改在%1$s时显示的组件顺序。"
+},
+{
+"en": "Change the order of the widgets that are shown when in a %1$s.",
+"zh": "更改在%1$s时显示的组件顺序。"
+},
+{
+"en": "Change the order of the widgets that are shown when in %1$s.",
+"zh": "更改在%1$s时显示的组件顺序。"
+},
+{
+"en": "Change the order of the widgets that are shown when on the %1$s.",
+"zh": "更改在%1$s时显示的组件顺序。"
+},
+{
+"en": "Change the order of the widgets that are shown when on a %1$s.",
+"zh": "更改在%1$s时显示的组件顺序。"
+},
+{
+"en": "Change the order of the widgets that are shown when on %1$s.",
+"zh": "更改在%1$s时显示的组件顺序。"
+},
+{
+"en": "Shows some general information when in The Park.",
+"zh": "在公园时显示一些常规信息。"
+},
+{
+"en": "Shows some general information when in the Deep Caverns.",
+"zh": "在深层洞穴时显示一些常规信息。"
+},
+{
+"en": "Shows some general information when in the Dwarven Mines.",
+"zh": "在矮人矿洞时显示一些常规信息。"
+},
+{
+"en": "Shows some general information when in the Spider's Den.",
+"zh": "在蜘蛛巢穴时显示一些常规信息。"
+},
+{
+"en": "Shows some general information when in Jerry's Workshop.",
+"zh": "在杰瑞的工坊时显示一些常规信息。"
+},
+{
+"en": "Shows some general information when in The Rift.",
+"zh": "在裂隙时显示一些常规信息。"
+},
+{
+"en": "Shows some general information when in Kuudra.",
+"zh": "在库德拉时显示一些常规信息。"
+},
+{
+"en": "Shows some general information when in the Mineshaft.",
+"zh": "在矿井时显示一些常规信息。"
+},
+{
+"en": "Shows some general information when on the Lotus Atoll.",
+"zh": "在莲花环礁时显示一些常规信息。"
+},
+{
+"en": "Shows some general information when on Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示一些常规信息。"
+},
+{
+"en": "Shows some general information when on the Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示一些常规信息。"
+},
+{
+"en": "Shows some general information when on the Safari.",
+"zh": "在游猎场时显示一些常规信息。"
+},
+{
+"en": "Shows some general information when in the %1$s.",
+"zh": "在%1$s时显示一些常规信息。"
+},
+{
+"en": "Shows some general information when in a %1$s.",
+"zh": "在%1$s时显示一些常规信息。"
+},
+{
+"en": "Shows some general information when in %1$s.",
+"zh": "在%1$s时显示一些常规信息。"
+},
+{
+"en": "Shows some general information when on the %1$s.",
+"zh": "在%1$s时显示一些常规信息。"
+},
+{
+"en": "Shows some general information when on a %1$s.",
+"zh": "在%1$s时显示一些常规信息。"
+},
+{
+"en": "Shows some general information when on %1$s.",
+"zh": "在%1$s时显示一些常规信息。"
+},
+{
+"en": "Shows your currently selected profile with some additional information when on a Private Island.",
+"zh": "在私人岛屿时显示你当前选择的存档及一些附加信息。"
+},
+{
+"en": "Shows your currently selected profile with some additional information when in a Dungeon Hub.",
+"zh": "在地牢大厅时显示你当前选择的存档及一些附加信息。"
+},
+{
+"en": "Shows your currently selected profile with some additional information when on The Farming Islands.",
+"zh": "在农业岛时显示你当前选择的存档及一些附加信息。"
+},
+{
+"en": "Shows your currently selected profile with some additional information when in a Garden.",
+"zh": "在花园时显示你当前选择的存档及一些附加信息。"
+},
+{
+"en": "Shows your currently selected profile with some additional information when in The Park.",
+"zh": "在公园时显示你当前选择的存档及一些附加信息。"
+},
+{
+"en": "Shows your currently selected profile with some additional information when in the Gold Mine.",
+"zh": "在金矿时显示你当前选择的存档及一些附加信息。"
+},
+{
+"en": "Shows your currently selected profile with some additional information when in the Deep Caverns.",
+"zh": "在深层洞穴时显示你当前选择的存档及一些附加信息。"
+},
+{
+"en": "Shows your currently selected profile with some additional information when in the Dwarven Mines.",
+"zh": "在矮人矿洞时显示你当前选择的存档及一些附加信息。"
+},
+{
+"en": "Shows your currently selected profile with some additional information when in the Crystal Hollows.",
+"zh": "在水晶洞窟时显示你当前选择的存档及一些附加信息。"
+},
+{
+"en": "Shows your currently selected profile with some additional information when in the Spider's Den.",
+"zh": "在蜘蛛巢穴时显示你当前选择的存档及一些附加信息。"
+},
+{
+"en": "Shows your currently selected profile with some additional information when in The End.",
+"zh": "在末地时显示你当前选择的存档及一些附加信息。"
+},
+{
+"en": "Shows your currently selected profile with some additional information when on the Crimson Isle.",
+"zh": "在绯红孤岛时显示你当前选择的存档及一些附加信息。"
+},
+{
+"en": "Shows your currently selected profile with some additional information when in Jerry's Workshop.",
+"zh": "在杰瑞的工坊时显示你当前选择的存档及一些附加信息。"
+},
+{
+"en": "Shows your currently selected profile with some additional information when on Moonglade Marsh.",
+"zh": "在月光沼泽时显示你当前选择的存档及一些附加信息。"
+},
+{
+"en": "Shows your currently selected profile with some additional information when on the Backwater Bayou.",
+"zh": "在死水河岸时显示你当前选择的存档及一些附加信息。"
+},
+{
+"en": "Shows your currently selected profile with some additional information when in The Rift.",
+"zh": "在裂隙时显示你当前选择的存档及一些附加信息。"
+},
+{
+"en": "Shows your currently selected profile with some additional information when in Kuudra.",
+"zh": "在库德拉时显示你当前选择的存档及一些附加信息。"
+},
+{
+"en": "Shows your currently selected profile with some additional information when in the Mineshaft.",
+"zh": "在矿井时显示你当前选择的存档及一些附加信息。"
+},
+{
+"en": "Shows your currently selected profile with some additional information when on the Lotus Atoll.",
+"zh": "在莲花环礁时显示你当前选择的存档及一些附加信息。"
+},
+{
+"en": "Shows your currently selected profile with some additional information when on Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你当前选择的存档及一些附加信息。"
+},
+{
+"en": "Shows your currently selected profile with some additional information when on the Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你当前选择的存档及一些附加信息。"
+},
+{
+"en": "Shows your currently selected profile with some additional information when on the Safari.",
+"zh": "在游猎场时显示你当前选择的存档及一些附加信息。"
+},
+{
+"en": "Shows your currently selected profile with some additional information when in the %1$s.",
+"zh": "在%1$s时显示你当前选择的存档及一些附加信息。"
+},
+{
+"en": "Shows your currently selected profile with some additional information when in a %1$s.",
+"zh": "在%1$s时显示你当前选择的存档及一些附加信息。"
+},
+{
+"en": "Shows your currently selected profile with some additional information when in %1$s.",
+"zh": "在%1$s时显示你当前选择的存档及一些附加信息。"
+},
+{
+"en": "Shows your currently selected profile with some additional information when on the %1$s.",
+"zh": "在%1$s时显示你当前选择的存档及一些附加信息。"
+},
+{
+"en": "Shows your currently selected profile with some additional information when on a %1$s.",
+"zh": "在%1$s时显示你当前选择的存档及一些附加信息。"
+},
+{
+"en": "Shows your currently selected profile with some additional information when on %1$s.",
+"zh": "在%1$s时显示你当前选择的存档及一些附加信息。"
+},
+{
+"en": "Shows information about your pets when on a Private Island.",
+"zh": "在私人岛屿时显示你的宠物信息。"
+},
+{
+"en": "Shows information about your pets when in a Dungeon Hub.",
+"zh": "在地牢大厅时显示你的宠物信息。"
+},
+{
+"en": "Shows information about your pets when on The Farming Islands.",
+"zh": "在农业岛时显示你的宠物信息。"
+},
+{
+"en": "Shows information about your pets when in a Garden.",
+"zh": "在花园时显示你的宠物信息。"
+},
+{
+"en": "Shows information about your pets when in The Park.",
+"zh": "在公园时显示你的宠物信息。"
+},
+{
+"en": "Shows information about your pets when in the Gold Mine.",
+"zh": "在金矿时显示你的宠物信息。"
+},
+{
+"en": "Shows information about your pets when in the Deep Caverns.",
+"zh": "在深层洞穴时显示你的宠物信息。"
+},
+{
+"en": "Shows information about your pets when in the Dwarven Mines.",
+"zh": "在矮人矿洞时显示你的宠物信息。"
+},
+{
+"en": "Shows information about your pets when in the Crystal Hollows.",
+"zh": "在水晶洞窟时显示你的宠物信息。"
+},
+{
+"en": "Shows information about your pets when in the Spider's Den.",
+"zh": "在蜘蛛巢穴时显示你的宠物信息。"
+},
+{
+"en": "Shows information about your pets when in The End.",
+"zh": "在末地时显示你的宠物信息。"
+},
+{
+"en": "Shows information about your pets when on the Crimson Isle.",
+"zh": "在绯红孤岛时显示你的宠物信息。"
+},
+{
+"en": "Shows information about your pets when in Jerry's Workshop.",
+"zh": "在杰瑞的工坊时显示你的宠物信息。"
+},
+{
+"en": "Shows information about your pets when on Moonglade Marsh.",
+"zh": "在月光沼泽时显示你的宠物信息。"
+},
+{
+"en": "Shows information about your pets when on the Backwater Bayou.",
+"zh": "在死水河岸时显示你的宠物信息。"
+},
+{
+"en": "Shows information about your pets when in The Rift.",
+"zh": "在裂隙时显示你的宠物信息。"
+},
+{
+"en": "Shows information about your pets when in Kuudra.",
+"zh": "在库德拉时显示你的宠物信息。"
+},
+{
+"en": "Shows information about your pets when in the Mineshaft.",
+"zh": "在矿井时显示你的宠物信息。"
+},
+{
+"en": "Shows information about your pets when on the Lotus Atoll.",
+"zh": "在莲花环礁时显示你的宠物信息。"
+},
+{
+"en": "Shows information about your pets when on Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你的宠物信息。"
+},
+{
+"en": "Shows information about your pets when on the Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你的宠物信息。"
+},
+{
+"en": "Shows information about your pets when on the Safari.",
+"zh": "在游猎场时显示你的宠物信息。"
+},
+{
+"en": "Shows information about your pets when in the %1$s.",
+"zh": "在%1$s时显示你的宠物信息。"
+},
+{
+"en": "Shows information about your pets when in a %1$s.",
+"zh": "在%1$s时显示你的宠物信息。"
+},
+{
+"en": "Shows information about your pets when in %1$s.",
+"zh": "在%1$s时显示你的宠物信息。"
+},
+{
+"en": "Shows information about your pets when on the %1$s.",
+"zh": "在%1$s时显示你的宠物信息。"
+},
+{
+"en": "Shows information about your pets when on a %1$s.",
+"zh": "在%1$s时显示你的宠物信息。"
+},
+{
+"en": "Shows information about your pets when on %1$s.",
+"zh": "在%1$s时显示你的宠物信息。"
+},
+{
+"en": "Shows if there are active Fire Sales when on a Private Island.",
+"zh": "在私人岛屿时显示当前是否有进行中的限时特卖。"
+},
+{
+"en": "Shows if there are active Fire Sales when in a Dungeon Hub.",
+"zh": "在地牢大厅时显示当前是否有进行中的限时特卖。"
+},
+{
+"en": "Shows if there are active Fire Sales when on The Farming Islands.",
+"zh": "在农业岛时显示当前是否有进行中的限时特卖。"
+},
+{
+"en": "Shows if there are active Fire Sales when in a Garden.",
+"zh": "在花园时显示当前是否有进行中的限时特卖。"
+},
+{
+"en": "Shows if there are active Fire Sales when in The Park.",
+"zh": "在公园时显示当前是否有进行中的限时特卖。"
+},
+{
+"en": "Shows if there are active Fire Sales when in the Gold Mine.",
+"zh": "在金矿时显示当前是否有进行中的限时特卖。"
+},
+{
+"en": "Shows if there are active Fire Sales when in the Deep Caverns.",
+"zh": "在深层洞穴时显示当前是否有进行中的限时特卖。"
+},
+{
+"en": "Shows if there are active Fire Sales when in the Dwarven Mines.",
+"zh": "在矮人矿洞时显示当前是否有进行中的限时特卖。"
+},
+{
+"en": "Shows if there are active Fire Sales when in the Crystal Hollows.",
+"zh": "在水晶洞窟时显示当前是否有进行中的限时特卖。"
+},
+{
+"en": "Shows if there are active Fire Sales when in the Spider's Den.",
+"zh": "在蜘蛛巢穴时显示当前是否有进行中的限时特卖。"
+},
+{
+"en": "Shows if there are active Fire Sales when in The End.",
+"zh": "在末地时显示当前是否有进行中的限时特卖。"
+},
+{
+"en": "Shows if there are active Fire Sales when on the Crimson Isle.",
+"zh": "在绯红孤岛时显示当前是否有进行中的限时特卖。"
+},
+{
+"en": "Shows if there are active Fire Sales when in Jerry's Workshop.",
+"zh": "在杰瑞的工坊时显示当前是否有进行中的限时特卖。"
+},
+{
+"en": "Shows if there are active Fire Sales when on Moonglade Marsh.",
+"zh": "在月光沼泽时显示当前是否有进行中的限时特卖。"
+},
+{
+"en": "Shows if there are active Fire Sales when on the Backwater Bayou.",
+"zh": "在死水河岸时显示当前是否有进行中的限时特卖。"
+},
+{
+"en": "Shows if there are active Fire Sales when in The Rift.",
+"zh": "在裂隙时显示当前是否有进行中的限时特卖。"
+},
+{
+"en": "Shows if there are active Fire Sales when in Kuudra.",
+"zh": "在库德拉时显示当前是否有进行中的限时特卖。"
+},
+{
+"en": "Shows if there are active Fire Sales when in the Mineshaft.",
+"zh": "在矿井时显示当前是否有进行中的限时特卖。"
+},
+{
+"en": "Shows if there are active Fire Sales when on the Lotus Atoll.",
+"zh": "在莲花环礁时显示当前是否有进行中的限时特卖。"
+},
+{
+"en": "Shows if there are active Fire Sales when on Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示当前是否有进行中的限时特卖。"
+},
+{
+"en": "Shows if there are active Fire Sales when on the Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示当前是否有进行中的限时特卖。"
+},
+{
+"en": "Shows if there are active Fire Sales when on the Safari.",
+"zh": "在游猎场时显示当前是否有进行中的限时特卖。"
+},
+{
+"en": "Shows if there are active Fire Sales when in the %1$s.",
+"zh": "在%1$s时显示当前是否有进行中的限时特卖。"
+},
+{
+"en": "Shows if there are active Fire Sales when in a %1$s.",
+"zh": "在%1$s时显示当前是否有进行中的限时特卖。"
+},
+{
+"en": "Shows if there are active Fire Sales when in %1$s.",
+"zh": "在%1$s时显示当前是否有进行中的限时特卖。"
+},
+{
+"en": "Shows if there are active Fire Sales when on the %1$s.",
+"zh": "在%1$s时显示当前是否有进行中的限时特卖。"
+},
+{
+"en": "Shows if there are active Fire Sales when on a %1$s.",
+"zh": "在%1$s时显示当前是否有进行中的限时特卖。"
+},
+{
+"en": "Shows if there are active Fire Sales when on %1$s.",
+"zh": "在%1$s时显示当前是否有进行中的限时特卖。"
+},
+{
+"en": "Shows information about Mayor Elections when on a Private Island.",
+"zh": "在私人岛屿时显示市长选举信息。"
+},
+{
+"en": "Shows information about Mayor Elections when in a Dungeon Hub.",
+"zh": "在地牢大厅时显示市长选举信息。"
+},
+{
+"en": "Shows information about Mayor Elections when in a Garden.",
+"zh": "在花园时显示市长选举信息。"
+},
+{
+"en": "Shows information about Mayor Elections when in The Park.",
+"zh": "在公园时显示市长选举信息。"
+},
+{
+"en": "Shows information about Mayor Elections when in the Gold Mine.",
+"zh": "在金矿时显示市长选举信息。"
+},
+{
+"en": "Shows information about Mayor Elections when in the Deep Caverns.",
+"zh": "在深层洞穴时显示市长选举信息。"
+},
+{
+"en": "Shows information about Mayor Elections when in the Dwarven Mines.",
+"zh": "在矮人矿洞时显示市长选举信息。"
+},
+{
+"en": "Shows information about Mayor Elections when in the Crystal Hollows.",
+"zh": "在水晶洞窟时显示市长选举信息。"
+},
+{
+"en": "Shows information about Mayor Elections when in the Spider's Den.",
+"zh": "在蜘蛛巢穴时显示市长选举信息。"
+},
+{
+"en": "Shows information about Mayor Elections when in The End.",
+"zh": "在末地时显示市长选举信息。"
+},
+{
+"en": "Shows information about Mayor Elections when on the Crimson Isle.",
+"zh": "在绯红孤岛时显示市长选举信息。"
+},
+{
+"en": "Shows information about Mayor Elections when in Jerry's Workshop.",
+"zh": "在杰瑞的工坊时显示市长选举信息。"
+},
+{
+"en": "Shows information about Mayor Elections when on Moonglade Marsh.",
+"zh": "在月光沼泽时显示市长选举信息。"
+},
+{
+"en": "Shows information about Mayor Elections when in The Rift.",
+"zh": "在裂隙时显示市长选举信息。"
+},
+{
+"en": "Shows information about Mayor Elections when in Kuudra.",
+"zh": "在库德拉时显示市长选举信息。"
+},
+{
+"en": "Shows information about Mayor Elections when in the Mineshaft.",
+"zh": "在矿井时显示市长选举信息。"
+},
+{
+"en": "Shows information about Mayor Elections when on the Lotus Atoll.",
+"zh": "在莲花环礁时显示市长选举信息。"
+},
+{
+"en": "Shows information about Mayor Elections when on Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示市长选举信息。"
+},
+{
+"en": "Shows information about Mayor Elections when on the Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示市长选举信息。"
+},
+{
+"en": "Shows information about Mayor Elections when on the Safari.",
+"zh": "在游猎场时显示市长选举信息。"
+},
+{
+"en": "Shows information about Mayor Elections when in the %1$s.",
+"zh": "在%1$s时显示市长选举信息。"
+},
+{
+"en": "Shows information about Mayor Elections when in a %1$s.",
+"zh": "在%1$s时显示市长选举信息。"
+},
+{
+"en": "Shows information about Mayor Elections when in %1$s.",
+"zh": "在%1$s时显示市长选举信息。"
+},
+{
+"en": "Shows information about Mayor Elections when on the %1$s.",
+"zh": "在%1$s时显示市长选举信息。"
+},
+{
+"en": "Shows information about Mayor Elections when on a %1$s.",
+"zh": "在%1$s时显示市长选举信息。"
+},
+{
+"en": "Shows information about Mayor Elections when on %1$s.",
+"zh": "在%1$s时显示市长选举信息。"
+},
+{
+"en": "Shows information about upcoming or current events when in The Park.",
+"zh": "在公园时显示即将开始或正在进行的活动信息。"
+},
+{
+"en": "Shows information about upcoming or current events when in the Deep Caverns.",
+"zh": "在深层洞穴时显示即将开始或正在进行的活动信息。"
+},
+{
+"en": "Shows information about upcoming or current events when in the Dwarven Mines.",
+"zh": "在矮人矿洞时显示即将开始或正在进行的活动信息。"
+},
+{
+"en": "Shows information about upcoming or current events when in the Spider's Den.",
+"zh": "在蜘蛛巢穴时显示即将开始或正在进行的活动信息。"
+},
+{
+"en": "Shows information about upcoming or current events when in Jerry's Workshop.",
+"zh": "在杰瑞的工坊时显示即将开始或正在进行的活动信息。"
+},
+{
+"en": "Shows information about upcoming or current events when on the Backwater Bayou.",
+"zh": "在死水河岸时显示即将开始或正在进行的活动信息。"
+},
+{
+"en": "Shows information about upcoming or current events when in The Rift.",
+"zh": "在裂隙时显示即将开始或正在进行的活动信息。"
+},
+{
+"en": "Shows information about upcoming or current events when in Kuudra.",
+"zh": "在库德拉时显示即将开始或正在进行的活动信息。"
+},
+{
+"en": "Shows information about upcoming or current events when in the Mineshaft.",
+"zh": "在矿井时显示即将开始或正在进行的活动信息。"
+},
+{
+"en": "Shows information about upcoming or current events when on the Lotus Atoll.",
+"zh": "在莲花环礁时显示即将开始或正在进行的活动信息。"
+},
+{
+"en": "Shows information about upcoming or current events when on Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示即将开始或正在进行的活动信息。"
+},
+{
+"en": "Shows information about upcoming or current events when on the Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示即将开始或正在进行的活动信息。"
+},
+{
+"en": "Shows information about upcoming or current events when on the Safari.",
+"zh": "在游猎场时显示即将开始或正在进行的活动信息。"
+},
+{
+"en": "Shows information about upcoming or current events when in the %1$s.",
+"zh": "在%1$s时显示即将开始或正在进行的活动信息。"
+},
+{
+"en": "Shows information about upcoming or current events when in a %1$s.",
+"zh": "在%1$s时显示即将开始或正在进行的活动信息。"
+},
+{
+"en": "Shows information about upcoming or current events when in %1$s.",
+"zh": "在%1$s时显示即将开始或正在进行的活动信息。"
+},
+{
+"en": "Shows information about upcoming or current events when on the %1$s.",
+"zh": "在%1$s时显示即将开始或正在进行的活动信息。"
+},
+{
+"en": "Shows information about upcoming or current events when on a %1$s.",
+"zh": "在%1$s时显示即将开始或正在进行的活动信息。"
+},
+{
+"en": "Shows information about upcoming or current events when on %1$s.",
+"zh": "在%1$s时显示即将开始或正在进行的活动信息。"
+},
+{
+"en": "Shows your skills when in The Park.",
+"zh": "在公园时显示你的技能。"
+},
+{
+"en": "Shows your skills when in the Deep Caverns.",
+"zh": "在深层洞穴时显示你的技能。"
+},
+{
+"en": "Shows your skills when in the Dwarven Mines.",
+"zh": "在矮人矿洞时显示你的技能。"
+},
+{
+"en": "Shows your skills when in the Spider's Den.",
+"zh": "在蜘蛛巢穴时显示你的技能。"
+},
+{
+"en": "Shows your skills when in Jerry's Workshop.",
+"zh": "在杰瑞的工坊时显示你的技能。"
+},
+{
+"en": "Shows your skills when on the Backwater Bayou.",
+"zh": "在死水河岸时显示你的技能。"
+},
+{
+"en": "Shows your skills when in The Rift.",
+"zh": "在裂隙时显示你的技能。"
+},
+{
+"en": "Shows your skills when in Kuudra.",
+"zh": "在库德拉时显示你的技能。"
+},
+{
+"en": "Shows your skills when in the Mineshaft.",
+"zh": "在矿井时显示你的技能。"
+},
+{
+"en": "Shows your skills when on the Lotus Atoll.",
+"zh": "在莲花环礁时显示你的技能。"
+},
+{
+"en": "Shows your skills when on Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你的技能。"
+},
+{
+"en": "Shows your skills when on the Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你的技能。"
+},
+{
+"en": "Shows your skills when on the Safari.",
+"zh": "在游猎场时显示你的技能。"
+},
+{
+"en": "Shows your skills when in the %1$s.",
+"zh": "在%1$s时显示你的技能。"
+},
+{
+"en": "Shows your skills when in a %1$s.",
+"zh": "在%1$s时显示你的技能。"
+},
+{
+"en": "Shows your skills when in %1$s.",
+"zh": "在%1$s时显示你的技能。"
+},
+{
+"en": "Shows your skills when on the %1$s.",
+"zh": "在%1$s时显示你的技能。"
+},
+{
+"en": "Shows your skills when on a %1$s.",
+"zh": "在%1$s时显示你的技能。"
+},
+{
+"en": "Shows your skills when on %1$s.",
+"zh": "在%1$s时显示你的技能。"
+},
+{
+"en": "Shows your stats when in The Park.",
+"zh": "在公园时显示你的属性。"
+},
+{
+"en": "Shows your stats when in the Deep Caverns.",
+"zh": "在深层洞穴时显示你的属性。"
+},
+{
+"en": "Shows your stats when in the Dwarven Mines.",
+"zh": "在矮人矿洞时显示你的属性。"
+},
+{
+"en": "Shows your stats when in the Spider's Den.",
+"zh": "在蜘蛛巢穴时显示你的属性。"
+},
+{
+"en": "Shows your stats when in Jerry's Workshop.",
+"zh": "在杰瑞的工坊时显示你的属性。"
+},
+{
+"en": "Shows your stats when in The Rift.",
+"zh": "在裂隙时显示你的属性。"
+},
+{
+"en": "Shows your stats when in Kuudra.",
+"zh": "在库德拉时显示你的属性。"
+},
+{
+"en": "Shows your stats when in the Mineshaft.",
+"zh": "在矿井时显示你的属性。"
+},
+{
+"en": "Shows your stats when on the Lotus Atoll.",
+"zh": "在莲花环礁时显示你的属性。"
+},
+{
+"en": "Shows your stats when on Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你的属性。"
+},
+{
+"en": "Shows your stats when on the Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你的属性。"
+},
+{
+"en": "Shows your stats when on the Safari.",
+"zh": "在游猎场时显示你的属性。"
+},
+{
+"en": "Shows your stats when in the %1$s.",
+"zh": "在%1$s时显示你的属性。"
+},
+{
+"en": "Shows your stats when in a %1$s.",
+"zh": "在%1$s时显示你的属性。"
+},
+{
+"en": "Shows your stats when in %1$s.",
+"zh": "在%1$s时显示你的属性。"
+},
+{
+"en": "Shows your stats when on the %1$s.",
+"zh": "在%1$s时显示你的属性。"
+},
+{
+"en": "Shows your stats when on a %1$s.",
+"zh": "在%1$s时显示你的属性。"
+},
+{
+"en": "Shows your stats when on %1$s.",
+"zh": "在%1$s时显示你的属性。"
+},
+{
+"en": "Shows information about your current Bestiary Milestones when in a Dungeon Hub. This widget only shows the Bestiary families in the tablist which can be found on your current island.",
+"zh": "在地牢大厅时显示你当前的怪物图鉴里程碑信息。该组件只会在 Tab 列表中显示当前岛屿上能找到的怪物图鉴族系。"
+},
+{
+"en": "Shows information about your current Bestiary Milestones when in The Park. This widget only shows the Bestiary families in the tablist which can be found on your current island.",
+"zh": "在公园时显示你当前的怪物图鉴里程碑信息。该组件只会在 Tab 列表中显示当前岛屿上能找到的怪物图鉴族系。"
+},
+{
+"en": "Shows information about your current Bestiary Milestones when in the Gold Mine. This widget only shows the Bestiary families in the tablist which can be found on your current island.",
+"zh": "在金矿时显示你当前的怪物图鉴里程碑信息。该组件只会在 Tab 列表中显示当前岛屿上能找到的怪物图鉴族系。"
+},
+{
+"en": "Shows information about your current Bestiary Milestones when in the Deep Caverns. This widget only shows the Bestiary families in the tablist which can be found on your current island.",
+"zh": "在深层洞穴时显示你当前的怪物图鉴里程碑信息。该组件只会在 Tab 列表中显示当前岛屿上能找到的怪物图鉴族系。"
+},
+{
+"en": "Shows information about your current Bestiary Milestones when in the Dwarven Mines. This widget only shows the Bestiary families in the tablist which can be found on your current island.",
+"zh": "在矮人矿洞时显示你当前的怪物图鉴里程碑信息。该组件只会在 Tab 列表中显示当前岛屿上能找到的怪物图鉴族系。"
+},
+{
+"en": "Shows information about your current Bestiary Milestones when in the Spider's Den. This widget only shows the Bestiary families in the tablist which can be found on your current island.",
+"zh": "在蜘蛛巢穴时显示你当前的怪物图鉴里程碑信息。该组件只会在 Tab 列表中显示当前岛屿上能找到的怪物图鉴族系。"
+},
+{
+"en": "Shows information about your current Bestiary Milestones when in Jerry's Workshop. This widget only shows the Bestiary families in the tablist which can be found on your current island.",
+"zh": "在杰瑞的工坊时显示你当前的怪物图鉴里程碑信息。该组件只会在 Tab 列表中显示当前岛屿上能找到的怪物图鉴族系。"
+},
+{
+"en": "Shows information about your current Bestiary Milestones when in The Rift. This widget only shows the Bestiary families in the tablist which can be found on your current island.",
+"zh": "在裂隙时显示你当前的怪物图鉴里程碑信息。该组件只会在 Tab 列表中显示当前岛屿上能找到的怪物图鉴族系。"
+},
+{
+"en": "Shows information about your current Bestiary Milestones when in Kuudra. This widget only shows the Bestiary families in the tablist which can be found on your current island.",
+"zh": "在库德拉时显示你当前的怪物图鉴里程碑信息。该组件只会在 Tab 列表中显示当前岛屿上能找到的怪物图鉴族系。"
+},
+{
+"en": "Shows information about your current Bestiary Milestones when in the Mineshaft. This widget only shows the Bestiary families in the tablist which can be found on your current island.",
+"zh": "在矿井时显示你当前的怪物图鉴里程碑信息。该组件只会在 Tab 列表中显示当前岛屿上能找到的怪物图鉴族系。"
+},
+{
+"en": "Shows information about your current Bestiary Milestones when on the Lotus Atoll. This widget only shows the Bestiary families in the tablist which can be found on your current island.",
+"zh": "在莲花环礁时显示你当前的怪物图鉴里程碑信息。该组件只会在 Tab 列表中显示当前岛屿上能找到的怪物图鉴族系。"
+},
+{
+"en": "Shows information about your current Bestiary Milestones when on Torrhus Canyon. This widget only shows the Bestiary families in the tablist which can be found on your current island.",
+"zh": "在托鲁斯峡谷时显示你当前的怪物图鉴里程碑信息。该组件只会在 Tab 列表中显示当前岛屿上能找到的怪物图鉴族系。"
+},
+{
+"en": "Shows information about your current Bestiary Milestones when on the Torrhus Canyon. This widget only shows the Bestiary families in the tablist which can be found on your current island.",
+"zh": "在托鲁斯峡谷时显示你当前的怪物图鉴里程碑信息。该组件只会在 Tab 列表中显示当前岛屿上能找到的怪物图鉴族系。"
+},
+{
+"en": "Shows information about your current Bestiary Milestones when on the Safari. This widget only shows the Bestiary families in the tablist which can be found on your current island.",
+"zh": "在游猎场时显示你当前的怪物图鉴里程碑信息。该组件只会在 Tab 列表中显示当前岛屿上能找到的怪物图鉴族系。"
+},
+{
+"en": "Shows information about your current Bestiary Milestones when in the %1$s. This widget only shows the Bestiary families in the tablist which can be found on your current island.",
+"zh": "在%1$s时显示你当前的怪物图鉴里程碑信息。该组件只会在 Tab 列表中显示当前岛屿上能找到的怪物图鉴族系。"
+},
+{
+"en": "Shows information about your current Bestiary Milestones when in a %1$s. This widget only shows the Bestiary families in the tablist which can be found on your current island.",
+"zh": "在%1$s时显示你当前的怪物图鉴里程碑信息。该组件只会在 Tab 列表中显示当前岛屿上能找到的怪物图鉴族系。"
+},
+{
+"en": "Shows information about your current Bestiary Milestones when in %1$s. This widget only shows the Bestiary families in the tablist which can be found on your current island.",
+"zh": "在%1$s时显示你当前的怪物图鉴里程碑信息。该组件只会在 Tab 列表中显示当前岛屿上能找到的怪物图鉴族系。"
+},
+{
+"en": "Shows information about your current Bestiary Milestones when on the %1$s. This widget only shows the Bestiary families in the tablist which can be found on your current island.",
+"zh": "在%1$s时显示你当前的怪物图鉴里程碑信息。该组件只会在 Tab 列表中显示当前岛屿上能找到的怪物图鉴族系。"
+},
+{
+"en": "Shows information about your current Bestiary Milestones when on a %1$s. This widget only shows the Bestiary families in the tablist which can be found on your current island.",
+"zh": "在%1$s时显示你当前的怪物图鉴里程碑信息。该组件只会在 Tab 列表中显示当前岛屿上能找到的怪物图鉴族系。"
+},
+{
+"en": "Shows information about your current Bestiary Milestones when on %1$s. This widget only shows the Bestiary families in the tablist which can be found on your current island.",
+"zh": "在%1$s时显示你当前的怪物图鉴里程碑信息。该组件只会在 Tab 列表中显示当前岛屿上能找到的怪物图鉴族系。"
+},
+{
+"en": "Shows your collections when in a Dungeon Hub.",
+"zh": "在地牢大厅时显示你的收集。"
+},
+{
+"en": "Shows your collections when in The Park.",
+"zh": "在公园时显示你的收集。"
+},
+{
+"en": "Shows your collections when in the Gold Mine.",
+"zh": "在金矿时显示你的收集。"
+},
+{
+"en": "Shows your collections when in the Deep Caverns.",
+"zh": "在深层洞穴时显示你的收集。"
+},
+{
+"en": "Shows your collections when in the Dwarven Mines.",
+"zh": "在矮人矿洞时显示你的收集。"
+},
+{
+"en": "Shows your collections when in the Crystal Hollows.",
+"zh": "在水晶洞窟时显示你的收集。"
+},
+{
+"en": "Shows your collections when in the Spider's Den.",
+"zh": "在蜘蛛巢穴时显示你的收集。"
+},
+{
+"en": "Shows your collections when in Jerry's Workshop.",
+"zh": "在杰瑞的工坊时显示你的收集。"
+},
+{
+"en": "Shows your collections when on the Backwater Bayou.",
+"zh": "在死水河岸时显示你的收集。"
+},
+{
+"en": "Shows your collections when in The Rift.",
+"zh": "在裂隙时显示你的收集。"
+},
+{
+"en": "Shows your collections when in Kuudra.",
+"zh": "在库德拉时显示你的收集。"
+},
+{
+"en": "Shows your collections when in the Mineshaft.",
+"zh": "在矿井时显示你的收集。"
+},
+{
+"en": "Shows your collections when on the Lotus Atoll.",
+"zh": "在莲花环礁时显示你的收集。"
+},
+{
+"en": "Shows your collections when on Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你的收集。"
+},
+{
+"en": "Shows your collections when on the Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你的收集。"
+},
+{
+"en": "Shows your collections when on the Safari.",
+"zh": "在游猎场时显示你的收集。"
+},
+{
+"en": "Shows your collections when in the %1$s.",
+"zh": "在%1$s时显示你的收集。"
+},
+{
+"en": "Shows your collections when in a %1$s.",
+"zh": "在%1$s时显示你的收集。"
+},
+{
+"en": "Shows your collections when in %1$s.",
+"zh": "在%1$s时显示你的收集。"
+},
+{
+"en": "Shows your collections when on the %1$s.",
+"zh": "在%1$s时显示你的收集。"
+},
+{
+"en": "Shows your collections when on a %1$s.",
+"zh": "在%1$s时显示你的收集。"
+},
+{
+"en": "Shows your collections when on %1$s.",
+"zh": "在%1$s时显示你的收集。"
+},
+{
+"en": "Shows your available daily quests when on a Private Island.",
+"zh": "在私人岛屿时显示你可接取的每日任务。"
+},
+{
+"en": "Shows your available daily quests when in a Dungeon Hub.",
+"zh": "在地牢大厅时显示你可接取的每日任务。"
+},
+{
+"en": "Shows your available daily quests when on The Farming Islands.",
+"zh": "在农业岛时显示你可接取的每日任务。"
+},
+{
+"en": "Shows your available daily quests when in a Garden.",
+"zh": "在花园时显示你可接取的每日任务。"
+},
+{
+"en": "Shows your available daily quests when in The Park.",
+"zh": "在公园时显示你可接取的每日任务。"
+},
+{
+"en": "Shows your available daily quests when in the Gold Mine.",
+"zh": "在金矿时显示你可接取的每日任务。"
+},
+{
+"en": "Shows your available daily quests when in the Deep Caverns.",
+"zh": "在深层洞穴时显示你可接取的每日任务。"
+},
+{
+"en": "Shows your available daily quests when in the Dwarven Mines.",
+"zh": "在矮人矿洞时显示你可接取的每日任务。"
+},
+{
+"en": "Shows your available daily quests when in the Crystal Hollows.",
+"zh": "在水晶洞窟时显示你可接取的每日任务。"
+},
+{
+"en": "Shows your available daily quests when in the Spider's Den.",
+"zh": "在蜘蛛巢穴时显示你可接取的每日任务。"
+},
+{
+"en": "Shows your available daily quests when in The End.",
+"zh": "在末地时显示你可接取的每日任务。"
+},
+{
+"en": "Shows your available daily quests when on the Crimson Isle.",
+"zh": "在绯红孤岛时显示你可接取的每日任务。"
+},
+{
+"en": "Shows your available daily quests when in Jerry's Workshop.",
+"zh": "在杰瑞的工坊时显示你可接取的每日任务。"
+},
+{
+"en": "Shows your available daily quests when on Moonglade Marsh.",
+"zh": "在月光沼泽时显示你可接取的每日任务。"
+},
+{
+"en": "Shows your available daily quests when on the Backwater Bayou.",
+"zh": "在死水河岸时显示你可接取的每日任务。"
+},
+{
+"en": "Shows your available daily quests when in The Rift.",
+"zh": "在裂隙时显示你可接取的每日任务。"
+},
+{
+"en": "Shows your available daily quests when in Kuudra.",
+"zh": "在库德拉时显示你可接取的每日任务。"
+},
+{
+"en": "Shows your available daily quests when in the Mineshaft.",
+"zh": "在矿井时显示你可接取的每日任务。"
+},
+{
+"en": "Shows your available daily quests when on the Lotus Atoll.",
+"zh": "在莲花环礁时显示你可接取的每日任务。"
+},
+{
+"en": "Shows your available daily quests when on Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你可接取的每日任务。"
+},
+{
+"en": "Shows your available daily quests when on the Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你可接取的每日任务。"
+},
+{
+"en": "Shows your available daily quests when on the Safari.",
+"zh": "在游猎场时显示你可接取的每日任务。"
+},
+{
+"en": "Shows your available daily quests when in the %1$s.",
+"zh": "在%1$s时显示你可接取的每日任务。"
+},
+{
+"en": "Shows your available daily quests when in a %1$s.",
+"zh": "在%1$s时显示你可接取的每日任务。"
+},
+{
+"en": "Shows your available daily quests when in %1$s.",
+"zh": "在%1$s时显示你可接取的每日任务。"
+},
+{
+"en": "Shows your available daily quests when on the %1$s.",
+"zh": "在%1$s时显示你可接取的每日任务。"
+},
+{
+"en": "Shows your available daily quests when on a %1$s.",
+"zh": "在%1$s时显示你可接取的每日任务。"
+},
+{
+"en": "Shows your available daily quests when on %1$s.",
+"zh": "在%1$s时显示你可接取的每日任务。"
+},
+{
+"en": "Shows your active effects when in the Deep Caverns. This hides the same information that is usually shown in the tablist footer.",
+"zh": "在深层洞穴时显示你当前生效的效果。这会隐藏通常显示在 Tab 列表页脚的同样信息。"
+},
+{
+"en": "Shows your active effects when in the Dwarven Mines. This hides the same information that is usually shown in the tablist footer.",
+"zh": "在矮人矿洞时显示你当前生效的效果。这会隐藏通常显示在 Tab 列表页脚的同样信息。"
+},
+{
+"en": "Shows your active effects when in the Spider's Den. This hides the same information that is usually shown in the tablist footer.",
+"zh": "在蜘蛛巢穴时显示你当前生效的效果。这会隐藏通常显示在 Tab 列表页脚的同样信息。"
+},
+{
+"en": "Shows your active effects when in Jerry's Workshop. This hides the same information that is usually shown in the tablist footer.",
+"zh": "在杰瑞的工坊时显示你当前生效的效果。这会隐藏通常显示在 Tab 列表页脚的同样信息。"
+},
+{
+"en": "Shows your active effects when in The Rift. This hides the same information that is usually shown in the tablist footer.",
+"zh": "在裂隙时显示你当前生效的效果。这会隐藏通常显示在 Tab 列表页脚的同样信息。"
+},
+{
+"en": "Shows your active effects when in Kuudra. This hides the same information that is usually shown in the tablist footer.",
+"zh": "在库德拉时显示你当前生效的效果。这会隐藏通常显示在 Tab 列表页脚的同样信息。"
+},
+{
+"en": "Shows your active effects when in the Mineshaft. This hides the same information that is usually shown in the tablist footer.",
+"zh": "在矿井时显示你当前生效的效果。这会隐藏通常显示在 Tab 列表页脚的同样信息。"
+},
+{
+"en": "Shows your active effects when on the Lotus Atoll. This hides the same information that is usually shown in the tablist footer.",
+"zh": "在莲花环礁时显示你当前生效的效果。这会隐藏通常显示在 Tab 列表页脚的同样信息。"
+},
+{
+"en": "Shows your active effects when on Torrhus Canyon. This hides the same information that is usually shown in the tablist footer.",
+"zh": "在托鲁斯峡谷时显示你当前生效的效果。这会隐藏通常显示在 Tab 列表页脚的同样信息。"
+},
+{
+"en": "Shows your active effects when on the Torrhus Canyon. This hides the same information that is usually shown in the tablist footer.",
+"zh": "在托鲁斯峡谷时显示你当前生效的效果。这会隐藏通常显示在 Tab 列表页脚的同样信息。"
+},
+{
+"en": "Shows your active effects when on the Safari. This hides the same information that is usually shown in the tablist footer.",
+"zh": "在游猎场时显示你当前生效的效果。这会隐藏通常显示在 Tab 列表页脚的同样信息。"
+},
+{
+"en": "Shows your active effects when in the %1$s. This hides the same information that is usually shown in the tablist footer.",
+"zh": "在%1$s时显示你当前生效的效果。这会隐藏通常显示在 Tab 列表页脚的同样信息。"
+},
+{
+"en": "Shows your active effects when in a %1$s. This hides the same information that is usually shown in the tablist footer.",
+"zh": "在%1$s时显示你当前生效的效果。这会隐藏通常显示在 Tab 列表页脚的同样信息。"
+},
+{
+"en": "Shows your active effects when in %1$s. This hides the same information that is usually shown in the tablist footer.",
+"zh": "在%1$s时显示你当前生效的效果。这会隐藏通常显示在 Tab 列表页脚的同样信息。"
+},
+{
+"en": "Shows your active effects when on the %1$s. This hides the same information that is usually shown in the tablist footer.",
+"zh": "在%1$s时显示你当前生效的效果。这会隐藏通常显示在 Tab 列表页脚的同样信息。"
+},
+{
+"en": "Shows your active effects when on a %1$s. This hides the same information that is usually shown in the tablist footer.",
+"zh": "在%1$s时显示你当前生效的效果。这会隐藏通常显示在 Tab 列表页脚的同样信息。"
+},
+{
+"en": "Shows your active effects when on %1$s. This hides the same information that is usually shown in the tablist footer.",
+"zh": "在%1$s时显示你当前生效的效果。这会隐藏通常显示在 Tab 列表页脚的同样信息。"
+},
+{
+"en": "Shows your Essences when on a Private Island.",
+"zh": "在私人岛屿时显示你的精粹。"
+},
+{
+"en": "Shows your Essences when on The Farming Islands.",
+"zh": "在农业岛时显示你的精粹。"
+},
+{
+"en": "Shows your Essences when in a Garden.",
+"zh": "在花园时显示你的精粹。"
+},
+{
+"en": "Shows your Essences when in The Park.",
+"zh": "在公园时显示你的精粹。"
+},
+{
+"en": "Shows your Essences when in the Gold Mine.",
+"zh": "在金矿时显示你的精粹。"
+},
+{
+"en": "Shows your Essences when in the Deep Caverns.",
+"zh": "在深层洞穴时显示你的精粹。"
+},
+{
+"en": "Shows your Essences when in the Dwarven Mines.",
+"zh": "在矮人矿洞时显示你的精粹。"
+},
+{
+"en": "Shows your Essences when in the Crystal Hollows.",
+"zh": "在水晶洞窟时显示你的精粹。"
+},
+{
+"en": "Shows your Essences when in Jerry's Workshop.",
+"zh": "在杰瑞的工坊时显示你的精粹。"
+},
+{
+"en": "Shows your Essences when on the Backwater Bayou.",
+"zh": "在死水河岸时显示你的精粹。"
+},
+{
+"en": "Shows your Essences when in The Rift.",
+"zh": "在裂隙时显示你的精粹。"
+},
+{
+"en": "Shows your Essences when in Kuudra.",
+"zh": "在库德拉时显示你的精粹。"
+},
+{
+"en": "Shows your Essences when in the Mineshaft.",
+"zh": "在矿井时显示你的精粹。"
+},
+{
+"en": "Shows your Essences when on the Lotus Atoll.",
+"zh": "在莲花环礁时显示你的精粹。"
+},
+{
+"en": "Shows your Essences when on Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你的精粹。"
+},
+{
+"en": "Shows your Essences when on the Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你的精粹。"
+},
+{
+"en": "Shows your Essences when on the Safari.",
+"zh": "在游猎场时显示你的精粹。"
+},
+{
+"en": "Shows your Essences when in the %1$s.",
+"zh": "在%1$s时显示你的精粹。"
+},
+{
+"en": "Shows your Essences when in a %1$s.",
+"zh": "在%1$s时显示你的精粹。"
+},
+{
+"en": "Shows your Essences when in %1$s.",
+"zh": "在%1$s时显示你的精粹。"
+},
+{
+"en": "Shows your Essences when on the %1$s.",
+"zh": "在%1$s时显示你的精粹。"
+},
+{
+"en": "Shows your Essences when on a %1$s.",
+"zh": "在%1$s时显示你的精粹。"
+},
+{
+"en": "Shows your Essences when on %1$s.",
+"zh": "在%1$s时显示你的精粹。"
+},
+{
+"en": "Shows the status of your Forge when on a Private Island.",
+"zh": "在私人岛屿时显示你的锻造厂状态。"
+},
+{
+"en": "Shows the status of your Forge when in a Dungeon Hub.",
+"zh": "在地牢大厅时显示你的锻造厂状态。"
+},
+{
+"en": "Shows the status of your Forge when on The Farming Islands.",
+"zh": "在农业岛时显示你的锻造厂状态。"
+},
+{
+"en": "Shows the status of your Forge when in a Garden.",
+"zh": "在花园时显示你的锻造厂状态。"
+},
+{
+"en": "Shows the status of your Forge when in The Park.",
+"zh": "在公园时显示你的锻造厂状态。"
+},
+{
+"en": "Shows the status of your Forge when in the Gold Mine.",
+"zh": "在金矿时显示你的锻造厂状态。"
+},
+{
+"en": "Shows the status of your Forge when in the Deep Caverns.",
+"zh": "在深层洞穴时显示你的锻造厂状态。"
+},
+{
+"en": "Shows the status of your Forge when in the Dwarven Mines.",
+"zh": "在矮人矿洞时显示你的锻造厂状态。"
+},
+{
+"en": "Shows the status of your Forge when in the Crystal Hollows.",
+"zh": "在水晶洞窟时显示你的锻造厂状态。"
+},
+{
+"en": "Shows the status of your Forge when in the Spider's Den.",
+"zh": "在蜘蛛巢穴时显示你的锻造厂状态。"
+},
+{
+"en": "Shows the status of your Forge when in The End.",
+"zh": "在末地时显示你的锻造厂状态。"
+},
+{
+"en": "Shows the status of your Forge when on the Crimson Isle.",
+"zh": "在绯红孤岛时显示你的锻造厂状态。"
+},
+{
+"en": "Shows the status of your Forge when in Jerry's Workshop.",
+"zh": "在杰瑞的工坊时显示你的锻造厂状态。"
+},
+{
+"en": "Shows the status of your Forge when on Moonglade Marsh.",
+"zh": "在月光沼泽时显示你的锻造厂状态。"
+},
+{
+"en": "Shows the status of your Forge when on the Backwater Bayou.",
+"zh": "在死水河岸时显示你的锻造厂状态。"
+},
+{
+"en": "Shows the status of your Forge when in The Rift.",
+"zh": "在裂隙时显示你的锻造厂状态。"
+},
+{
+"en": "Shows the status of your Forge when in Kuudra.",
+"zh": "在库德拉时显示你的锻造厂状态。"
+},
+{
+"en": "Shows the status of your Forge when in the Mineshaft.",
+"zh": "在矿井时显示你的锻造厂状态。"
+},
+{
+"en": "Shows the status of your Forge when on the Lotus Atoll.",
+"zh": "在莲花环礁时显示你的锻造厂状态。"
+},
+{
+"en": "Shows the status of your Forge when on Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你的锻造厂状态。"
+},
+{
+"en": "Shows the status of your Forge when on the Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你的锻造厂状态。"
+},
+{
+"en": "Shows the status of your Forge when on the Safari.",
+"zh": "在游猎场时显示你的锻造厂状态。"
+},
+{
+"en": "Shows the status of your Forge when in the %1$s.",
+"zh": "在%1$s时显示你的锻造厂状态。"
+},
+{
+"en": "Shows the status of your Forge when in a %1$s.",
+"zh": "在%1$s时显示你的锻造厂状态。"
+},
+{
+"en": "Shows the status of your Forge when in %1$s.",
+"zh": "在%1$s时显示你的锻造厂状态。"
+},
+{
+"en": "Shows the status of your Forge when on the %1$s.",
+"zh": "在%1$s时显示你的锻造厂状态。"
+},
+{
+"en": "Shows the status of your Forge when on a %1$s.",
+"zh": "在%1$s时显示你的锻造厂状态。"
+},
+{
+"en": "Shows the status of your Forge when on %1$s.",
+"zh": "在%1$s时显示你的锻造厂状态。"
+},
+{
+"en": "Shows information about your Slayer XP and Quests when on a Private Island.",
+"zh": "在私人岛屿时显示你的猎手经验和任务信息。"
+},
+{
+"en": "Shows information about your Slayer XP and Quests when in a Dungeon Hub.",
+"zh": "在地牢大厅时显示你的猎手经验和任务信息。"
+},
+{
+"en": "Shows information about your Slayer XP and Quests when on The Farming Islands.",
+"zh": "在农业岛时显示你的猎手经验和任务信息。"
+},
+{
+"en": "Shows information about your Slayer XP and Quests when in a Garden.",
+"zh": "在花园时显示你的猎手经验和任务信息。"
+},
+{
+"en": "Shows information about your Slayer XP and Quests when in The Park.",
+"zh": "在公园时显示你的猎手经验和任务信息。"
+},
+{
+"en": "Shows information about your Slayer XP and Quests when in the Gold Mine.",
+"zh": "在金矿时显示你的猎手经验和任务信息。"
+},
+{
+"en": "Shows information about your Slayer XP and Quests when in the Deep Caverns.",
+"zh": "在深层洞穴时显示你的猎手经验和任务信息。"
+},
+{
+"en": "Shows information about your Slayer XP and Quests when in the Dwarven Mines.",
+"zh": "在矮人矿洞时显示你的猎手经验和任务信息。"
+},
+{
+"en": "Shows information about your Slayer XP and Quests when in the Crystal Hollows.",
+"zh": "在水晶洞窟时显示你的猎手经验和任务信息。"
+},
+{
+"en": "Shows information about your Slayer XP and Quests when in the Spider's Den.",
+"zh": "在蜘蛛巢穴时显示你的猎手经验和任务信息。"
+},
+{
+"en": "Shows information about your Slayer XP and Quests when in The End.",
+"zh": "在末地时显示你的猎手经验和任务信息。"
+},
+{
+"en": "Shows information about your Slayer XP and Quests when in Jerry's Workshop.",
+"zh": "在杰瑞的工坊时显示你的猎手经验和任务信息。"
+},
+{
+"en": "Shows information about your Slayer XP and Quests when on Moonglade Marsh.",
+"zh": "在月光沼泽时显示你的猎手经验和任务信息。"
+},
+{
+"en": "Shows information about your Slayer XP and Quests when on the Backwater Bayou.",
+"zh": "在死水河岸时显示你的猎手经验和任务信息。"
+},
+{
+"en": "Shows information about your Slayer XP and Quests when in The Rift.",
+"zh": "在裂隙时显示你的猎手经验和任务信息。"
+},
+{
+"en": "Shows information about your Slayer XP and Quests when in Kuudra.",
+"zh": "在库德拉时显示你的猎手经验和任务信息。"
+},
+{
+"en": "Shows information about your Slayer XP and Quests when in the Mineshaft.",
+"zh": "在矿井时显示你的猎手经验和任务信息。"
+},
+{
+"en": "Shows information about your Slayer XP and Quests when on the Lotus Atoll.",
+"zh": "在莲花环礁时显示你的猎手经验和任务信息。"
+},
+{
+"en": "Shows information about your Slayer XP and Quests when on Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你的猎手经验和任务信息。"
+},
+{
+"en": "Shows information about your Slayer XP and Quests when on the Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你的猎手经验和任务信息。"
+},
+{
+"en": "Shows information about your Slayer XP and Quests when on the Safari.",
+"zh": "在游猎场时显示你的猎手经验和任务信息。"
+},
+{
+"en": "Shows information about your Slayer XP and Quests when in the %1$s.",
+"zh": "在%1$s时显示你的猎手经验和任务信息。"
+},
+{
+"en": "Shows information about your Slayer XP and Quests when in a %1$s.",
+"zh": "在%1$s时显示你的猎手经验和任务信息。"
+},
+{
+"en": "Shows information about your Slayer XP and Quests when in %1$s.",
+"zh": "在%1$s时显示你的猎手经验和任务信息。"
+},
+{
+"en": "Shows information about your Slayer XP and Quests when on the %1$s.",
+"zh": "在%1$s时显示你的猎手经验和任务信息。"
+},
+{
+"en": "Shows information about your Slayer XP and Quests when on a %1$s.",
+"zh": "在%1$s时显示你的猎手经验和任务信息。"
+},
+{
+"en": "Shows information about your Slayer XP and Quests when on %1$s.",
+"zh": "在%1$s时显示你的猎手经验和任务信息。"
+},
+{
+"en": "Shows timers from various events when on a Private Island.",
+"zh": "在私人岛屿时显示各类活动的计时器。"
+},
+{
+"en": "Shows timers from various events when in a Dungeon Hub.",
+"zh": "在地牢大厅时显示各类活动的计时器。"
+},
+{
+"en": "Shows timers from various events when on The Farming Islands.",
+"zh": "在农业岛时显示各类活动的计时器。"
+},
+{
+"en": "Shows timers from various events when in a Garden.",
+"zh": "在花园时显示各类活动的计时器。"
+},
+{
+"en": "Shows timers from various events when in the Gold Mine.",
+"zh": "在金矿时显示各类活动的计时器。"
+},
+{
+"en": "Shows timers from various events when in the Deep Caverns.",
+"zh": "在深层洞穴时显示各类活动的计时器。"
+},
+{
+"en": "Shows timers from various events when in the Dwarven Mines.",
+"zh": "在矮人矿洞时显示各类活动的计时器。"
+},
+{
+"en": "Shows timers from various events when in the Crystal Hollows.",
+"zh": "在水晶洞窟时显示各类活动的计时器。"
+},
+{
+"en": "Shows timers from various events when in the Spider's Den.",
+"zh": "在蜘蛛巢穴时显示各类活动的计时器。"
+},
+{
+"en": "Shows timers from various events when in The End.",
+"zh": "在末地时显示各类活动的计时器。"
+},
+{
+"en": "Shows timers from various events when on the Crimson Isle.",
+"zh": "在绯红孤岛时显示各类活动的计时器。"
+},
+{
+"en": "Shows timers from various events when in Jerry's Workshop.",
+"zh": "在杰瑞的工坊时显示各类活动的计时器。"
+},
+{
+"en": "Shows timers from various events when on Moonglade Marsh.",
+"zh": "在月光沼泽时显示各类活动的计时器。"
+},
+{
+"en": "Shows timers from various events when on the Backwater Bayou.",
+"zh": "在死水河岸时显示各类活动的计时器。"
+},
+{
+"en": "Shows timers from various events when in The Rift.",
+"zh": "在裂隙时显示各类活动的计时器。"
+},
+{
+"en": "Shows timers from various events when in Kuudra.",
+"zh": "在库德拉时显示各类活动的计时器。"
+},
+{
+"en": "Shows timers from various events when in the Mineshaft.",
+"zh": "在矿井时显示各类活动的计时器。"
+},
+{
+"en": "Shows timers from various events when on the Lotus Atoll.",
+"zh": "在莲花环礁时显示各类活动的计时器。"
+},
+{
+"en": "Shows timers from various events when on Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示各类活动的计时器。"
+},
+{
+"en": "Shows timers from various events when on the Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示各类活动的计时器。"
+},
+{
+"en": "Shows timers from various events when on the Safari.",
+"zh": "在游猎场时显示各类活动的计时器。"
+},
+{
+"en": "Shows timers from various events when in the %1$s.",
+"zh": "在%1$s时显示各类活动的计时器。"
+},
+{
+"en": "Shows timers from various events when in a %1$s.",
+"zh": "在%1$s时显示各类活动的计时器。"
+},
+{
+"en": "Shows timers from various events when in %1$s.",
+"zh": "在%1$s时显示各类活动的计时器。"
+},
+{
+"en": "Shows timers from various events when on the %1$s.",
+"zh": "在%1$s时显示各类活动的计时器。"
+},
+{
+"en": "Shows timers from various events when on a %1$s.",
+"zh": "在%1$s时显示各类活动的计时器。"
+},
+{
+"en": "Shows timers from various events when on %1$s.",
+"zh": "在%1$s时显示各类活动的计时器。"
+},
+{
+"en": "Shows information about your progress in active events when on The Farming Islands.",
+"zh": "在农业岛时显示你在进行中活动里的进度信息。"
+},
+{
+"en": "Shows information about your progress in active events when in a Garden.",
+"zh": "在花园时显示你在进行中活动里的进度信息。"
+},
+{
+"en": "Shows information about your progress in active events when in The Park.",
+"zh": "在公园时显示你在进行中活动里的进度信息。"
+},
+{
+"en": "Shows information about your progress in active events when in the Gold Mine.",
+"zh": "在金矿时显示你在进行中活动里的进度信息。"
+},
+{
+"en": "Shows information about your progress in active events when in the Deep Caverns.",
+"zh": "在深层洞穴时显示你在进行中活动里的进度信息。"
+},
+{
+"en": "Shows information about your progress in active events when in the Dwarven Mines.",
+"zh": "在矮人矿洞时显示你在进行中活动里的进度信息。"
+},
+{
+"en": "Shows information about your progress in active events when in the Crystal Hollows.",
+"zh": "在水晶洞窟时显示你在进行中活动里的进度信息。"
+},
+{
+"en": "Shows information about your progress in active events when in the Spider's Den.",
+"zh": "在蜘蛛巢穴时显示你在进行中活动里的进度信息。"
+},
+{
+"en": "Shows information about your progress in active events when in The End.",
+"zh": "在末地时显示你在进行中活动里的进度信息。"
+},
+{
+"en": "Shows information about your progress in active events when on the Crimson Isle.",
+"zh": "在绯红孤岛时显示你在进行中活动里的进度信息。"
+},
+{
+"en": "Shows information about your progress in active events when in Jerry's Workshop.",
+"zh": "在杰瑞的工坊时显示你在进行中活动里的进度信息。"
+},
+{
+"en": "Shows information about your progress in active events when on Moonglade Marsh.",
+"zh": "在月光沼泽时显示你在进行中活动里的进度信息。"
+},
+{
+"en": "Shows information about your progress in active events when on the Backwater Bayou.",
+"zh": "在死水河岸时显示你在进行中活动里的进度信息。"
+},
+{
+"en": "Shows information about your progress in active events when in The Rift.",
+"zh": "在裂隙时显示你在进行中活动里的进度信息。"
+},
+{
+"en": "Shows information about your progress in active events when in Kuudra.",
+"zh": "在库德拉时显示你在进行中活动里的进度信息。"
+},
+{
+"en": "Shows information about your progress in active events when in the Mineshaft.",
+"zh": "在矿井时显示你在进行中活动里的进度信息。"
+},
+{
+"en": "Shows information about your progress in active events when on the Lotus Atoll.",
+"zh": "在莲花环礁时显示你在进行中活动里的进度信息。"
+},
+{
+"en": "Shows information about your progress in active events when on Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你在进行中活动里的进度信息。"
+},
+{
+"en": "Shows information about your progress in active events when on the Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你在进行中活动里的进度信息。"
+},
+{
+"en": "Shows information about your progress in active events when on the Safari.",
+"zh": "在游猎场时显示你在进行中活动里的进度信息。"
+},
+{
+"en": "Shows information about your progress in active events when in the %1$s.",
+"zh": "在%1$s时显示你在进行中活动里的进度信息。"
+},
+{
+"en": "Shows information about your progress in active events when in a %1$s.",
+"zh": "在%1$s时显示你在进行中活动里的进度信息。"
+},
+{
+"en": "Shows information about your progress in active events when in %1$s.",
+"zh": "在%1$s时显示你在进行中活动里的进度信息。"
+},
+{
+"en": "Shows information about your progress in active events when on the %1$s.",
+"zh": "在%1$s时显示你在进行中活动里的进度信息。"
+},
+{
+"en": "Shows information about your progress in active events when on a %1$s.",
+"zh": "在%1$s时显示你在进行中活动里的进度信息。"
+},
+{
+"en": "Shows information about your progress in active events when on %1$s.",
+"zh": "在%1$s时显示你在进行中活动里的进度信息。"
+},
+{
+"en": "Manage the Tablist Widgets you see when in the Hub.",
+"zh": "管理你在主城时看到的 Tab 列表组件。"
+},
+{
+"en": "Manage the Tablist Widgets you see when in a Dungeon Hub.",
+"zh": "管理你在地牢大厅时看到的 Tab 列表组件。"
+},
+{
+"en": "Manage the Tablist Widgets you see when on The Farming Islands.",
+"zh": "管理你在农业岛时看到的 Tab 列表组件。"
+},
+{
+"en": "Manage the Tablist Widgets you see when in a Garden.",
+"zh": "管理你在花园时看到的 Tab 列表组件。"
+},
+{
+"en": "Manage the Tablist Widgets you see when in The Park.",
+"zh": "管理你在公园时看到的 Tab 列表组件。"
+},
+{
+"en": "Manage the Tablist Widgets you see when in the Gold Mine.",
+"zh": "管理你在金矿时看到的 Tab 列表组件。"
+},
+{
+"en": "Manage the Tablist Widgets you see when in the Crystal Hollows.",
+"zh": "管理你在水晶洞窟时看到的 Tab 列表组件。"
+},
+{
+"en": "Manage the Tablist Widgets you see when in the Spider's Den.",
+"zh": "管理你在蜘蛛巢穴时看到的 Tab 列表组件。"
+},
+{
+"en": "Manage the Tablist Widgets you see when in The End.",
+"zh": "管理你在末地时看到的 Tab 列表组件。"
+},
+{
+"en": "Manage the Tablist Widgets you see when on the Crimson Isle.",
+"zh": "管理你在绯红孤岛时看到的 Tab 列表组件。"
+},
+{
+"en": "Manage the Tablist Widgets you see when on Moonglade Marsh.",
+"zh": "管理你在月光沼泽时看到的 Tab 列表组件。"
+},
+{
+"en": "Manage the Tablist Widgets you see when on the Backwater Bayou.",
+"zh": "管理你在死水河岸时看到的 Tab 列表组件。"
+},
+{
+"en": "Manage the Tablist Widgets you see when in The Rift.",
+"zh": "管理你在裂隙时看到的 Tab 列表组件。"
+},
+{
+"en": "Manage the Tablist Widgets you see when in Kuudra.",
+"zh": "管理你在库德拉时看到的 Tab 列表组件。"
+},
+{
+"en": "Manage the Tablist Widgets you see when in the Mineshaft.",
+"zh": "管理你在矿井时看到的 Tab 列表组件。"
+},
+{
+"en": "Manage the Tablist Widgets you see when on the Lotus Atoll.",
+"zh": "管理你在莲花环礁时看到的 Tab 列表组件。"
+},
+{
+"en": "Manage the Tablist Widgets you see when on Torrhus Canyon.",
+"zh": "管理你在托鲁斯峡谷时看到的 Tab 列表组件。"
+},
+{
+"en": "Manage the Tablist Widgets you see when on the Torrhus Canyon.",
+"zh": "管理你在托鲁斯峡谷时看到的 Tab 列表组件。"
+},
+{
+"en": "Manage the Tablist Widgets you see when on the Safari.",
+"zh": "管理你在游猎场时看到的 Tab 列表组件。"
+},
+{
+"en": "Manage the Tablist Widgets you see when in the %1$s.",
+"zh": "管理你在%1$s时看到的 Tab 列表组件。"
+},
+{
+"en": "Manage the Tablist Widgets you see when in a %1$s.",
+"zh": "管理你在%1$s时看到的 Tab 列表组件。"
+},
+{
+"en": "Manage the Tablist Widgets you see when in %1$s.",
+"zh": "管理你在%1$s时看到的 Tab 列表组件。"
+},
+{
+"en": "Manage the Tablist Widgets you see when on the %1$s.",
+"zh": "管理你在%1$s时看到的 Tab 列表组件。"
+},
+{
+"en": "Manage the Tablist Widgets you see when on a %1$s.",
+"zh": "管理你在%1$s时看到的 Tab 列表组件。"
+},
+{
+"en": "Manage the Tablist Widgets you see when on %1$s.",
+"zh": "管理你在%1$s时看到的 Tab 列表组件。"
+},
+{
+"en": "Shows the status of your minions when in the Hub.",
+"zh": "在主城时显示你的小人状态。"
+},
+{
+"en": "Shows the status of your minions when in a Dungeon Hub.",
+"zh": "在地牢大厅时显示你的小人状态。"
+},
+{
+"en": "Shows the status of your minions when on The Farming Islands.",
+"zh": "在农业岛时显示你的小人状态。"
+},
+{
+"en": "Shows the status of your minions when in a Garden.",
+"zh": "在花园时显示你的小人状态。"
+},
+{
+"en": "Shows the status of your minions when in The Park.",
+"zh": "在公园时显示你的小人状态。"
+},
+{
+"en": "Shows the status of your minions when in the Gold Mine.",
+"zh": "在金矿时显示你的小人状态。"
+},
+{
+"en": "Shows the status of your minions when in the Deep Caverns.",
+"zh": "在深层洞穴时显示你的小人状态。"
+},
+{
+"en": "Shows the status of your minions when in the Dwarven Mines.",
+"zh": "在矮人矿洞时显示你的小人状态。"
+},
+{
+"en": "Shows the status of your minions when in the Crystal Hollows.",
+"zh": "在水晶洞窟时显示你的小人状态。"
+},
+{
+"en": "Shows the status of your minions when in the Spider's Den.",
+"zh": "在蜘蛛巢穴时显示你的小人状态。"
+},
+{
+"en": "Shows the status of your minions when in The End.",
+"zh": "在末地时显示你的小人状态。"
+},
+{
+"en": "Shows the status of your minions when on the Crimson Isle.",
+"zh": "在绯红孤岛时显示你的小人状态。"
+},
+{
+"en": "Shows the status of your minions when in Jerry's Workshop.",
+"zh": "在杰瑞的工坊时显示你的小人状态。"
+},
+{
+"en": "Shows the status of your minions when on Moonglade Marsh.",
+"zh": "在月光沼泽时显示你的小人状态。"
+},
+{
+"en": "Shows the status of your minions when on the Backwater Bayou.",
+"zh": "在死水河岸时显示你的小人状态。"
+},
+{
+"en": "Shows the status of your minions when in The Rift.",
+"zh": "在裂隙时显示你的小人状态。"
+},
+{
+"en": "Shows the status of your minions when in Kuudra.",
+"zh": "在库德拉时显示你的小人状态。"
+},
+{
+"en": "Shows the status of your minions when in the Mineshaft.",
+"zh": "在矿井时显示你的小人状态。"
+},
+{
+"en": "Shows the status of your minions when on the Lotus Atoll.",
+"zh": "在莲花环礁时显示你的小人状态。"
+},
+{
+"en": "Shows the status of your minions when on Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你的小人状态。"
+},
+{
+"en": "Shows the status of your minions when on the Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你的小人状态。"
+},
+{
+"en": "Shows the status of your minions when on the Safari.",
+"zh": "在游猎场时显示你的小人状态。"
+},
+{
+"en": "Shows the status of your minions when in the %1$s.",
+"zh": "在%1$s时显示你的小人状态。"
+},
+{
+"en": "Shows the status of your minions when in a %1$s.",
+"zh": "在%1$s时显示你的小人状态。"
+},
+{
+"en": "Shows the status of your minions when in %1$s.",
+"zh": "在%1$s时显示你的小人状态。"
+},
+{
+"en": "Shows the status of your minions when on the %1$s.",
+"zh": "在%1$s时显示你的小人状态。"
+},
+{
+"en": "Shows the status of your minions when on a %1$s.",
+"zh": "在%1$s时显示你的小人状态。"
+},
+{
+"en": "Shows the status of your minions when on %1$s.",
+"zh": "在%1$s时显示你的小人状态。"
+},
+{
+"en": "Shows your current party members when in the Hub.",
+"zh": "在主城时显示你当前的队伍成员。"
+},
+{
+"en": "Shows your current party members when on a Private Island.",
+"zh": "在私人岛屿时显示你当前的队伍成员。"
+},
+{
+"en": "Shows your current party members when on The Farming Islands.",
+"zh": "在农业岛时显示你当前的队伍成员。"
+},
+{
+"en": "Shows your current party members when in a Garden.",
+"zh": "在花园时显示你当前的队伍成员。"
+},
+{
+"en": "Shows your current party members when in The Park.",
+"zh": "在公园时显示你当前的队伍成员。"
+},
+{
+"en": "Shows your current party members when in the Gold Mine.",
+"zh": "在金矿时显示你当前的队伍成员。"
+},
+{
+"en": "Shows your current party members when in the Deep Caverns.",
+"zh": "在深层洞穴时显示你当前的队伍成员。"
+},
+{
+"en": "Shows your current party members when in the Dwarven Mines.",
+"zh": "在矮人矿洞时显示你当前的队伍成员。"
+},
+{
+"en": "Shows your current party members when in the Crystal Hollows.",
+"zh": "在水晶洞窟时显示你当前的队伍成员。"
+},
+{
+"en": "Shows your current party members when in the Spider's Den.",
+"zh": "在蜘蛛巢穴时显示你当前的队伍成员。"
+},
+{
+"en": "Shows your current party members when in The End.",
+"zh": "在末地时显示你当前的队伍成员。"
+},
+{
+"en": "Shows your current party members when on the Crimson Isle.",
+"zh": "在绯红孤岛时显示你当前的队伍成员。"
+},
+{
+"en": "Shows your current party members when in Jerry's Workshop.",
+"zh": "在杰瑞的工坊时显示你当前的队伍成员。"
+},
+{
+"en": "Shows your current party members when on Moonglade Marsh.",
+"zh": "在月光沼泽时显示你当前的队伍成员。"
+},
+{
+"en": "Shows your current party members when on the Backwater Bayou.",
+"zh": "在死水河岸时显示你当前的队伍成员。"
+},
+{
+"en": "Shows your current party members when in The Rift.",
+"zh": "在裂隙时显示你当前的队伍成员。"
+},
+{
+"en": "Shows your current party members when in Kuudra.",
+"zh": "在库德拉时显示你当前的队伍成员。"
+},
+{
+"en": "Shows your current party members when in the Mineshaft.",
+"zh": "在矿井时显示你当前的队伍成员。"
+},
+{
+"en": "Shows your current party members when on the Lotus Atoll.",
+"zh": "在莲花环礁时显示你当前的队伍成员。"
+},
+{
+"en": "Shows your current party members when on Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你当前的队伍成员。"
+},
+{
+"en": "Shows your current party members when on the Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你当前的队伍成员。"
+},
+{
+"en": "Shows your current party members when on the Safari.",
+"zh": "在游猎场时显示你当前的队伍成员。"
+},
+{
+"en": "Shows your current party members when in the %1$s.",
+"zh": "在%1$s时显示你当前的队伍成员。"
+},
+{
+"en": "Shows your current party members when in a %1$s.",
+"zh": "在%1$s时显示你当前的队伍成员。"
+},
+{
+"en": "Shows your current party members when in %1$s.",
+"zh": "在%1$s时显示你当前的队伍成员。"
+},
+{
+"en": "Shows your current party members when on the %1$s.",
+"zh": "在%1$s时显示你当前的队伍成员。"
+},
+{
+"en": "Shows your current party members when on a %1$s.",
+"zh": "在%1$s时显示你当前的队伍成员。"
+},
+{
+"en": "Shows your current party members when on %1$s.",
+"zh": "在%1$s时显示你当前的队伍成员。"
+},
+{
+"en": "Shows your current amount of Pelts when in the Hub.",
+"zh": "在主城时显示你当前的毛皮数量。"
+},
+{
+"en": "Shows your current amount of Pelts when on a Private Island.",
+"zh": "在私人岛屿时显示你当前的毛皮数量。"
+},
+{
+"en": "Shows your current amount of Pelts when in a Dungeon Hub.",
+"zh": "在地牢大厅时显示你当前的毛皮数量。"
+},
+{
+"en": "Shows your current amount of Pelts when in a Garden.",
+"zh": "在花园时显示你当前的毛皮数量。"
+},
+{
+"en": "Shows your current amount of Pelts when in The Park.",
+"zh": "在公园时显示你当前的毛皮数量。"
+},
+{
+"en": "Shows your current amount of Pelts when in the Gold Mine.",
+"zh": "在金矿时显示你当前的毛皮数量。"
+},
+{
+"en": "Shows your current amount of Pelts when in the Deep Caverns.",
+"zh": "在深层洞穴时显示你当前的毛皮数量。"
+},
+{
+"en": "Shows your current amount of Pelts when in the Dwarven Mines.",
+"zh": "在矮人矿洞时显示你当前的毛皮数量。"
+},
+{
+"en": "Shows your current amount of Pelts when in the Crystal Hollows.",
+"zh": "在水晶洞窟时显示你当前的毛皮数量。"
+},
+{
+"en": "Shows your current amount of Pelts when in the Spider's Den.",
+"zh": "在蜘蛛巢穴时显示你当前的毛皮数量。"
+},
+{
+"en": "Shows your current amount of Pelts when in The End.",
+"zh": "在末地时显示你当前的毛皮数量。"
+},
+{
+"en": "Shows your current amount of Pelts when on the Crimson Isle.",
+"zh": "在绯红孤岛时显示你当前的毛皮数量。"
+},
+{
+"en": "Shows your current amount of Pelts when in Jerry's Workshop.",
+"zh": "在杰瑞的工坊时显示你当前的毛皮数量。"
+},
+{
+"en": "Shows your current amount of Pelts when on Moonglade Marsh.",
+"zh": "在月光沼泽时显示你当前的毛皮数量。"
+},
+{
+"en": "Shows your current amount of Pelts when on the Backwater Bayou.",
+"zh": "在死水河岸时显示你当前的毛皮数量。"
+},
+{
+"en": "Shows your current amount of Pelts when in The Rift.",
+"zh": "在裂隙时显示你当前的毛皮数量。"
+},
+{
+"en": "Shows your current amount of Pelts when in Kuudra.",
+"zh": "在库德拉时显示你当前的毛皮数量。"
+},
+{
+"en": "Shows your current amount of Pelts when in the Mineshaft.",
+"zh": "在矿井时显示你当前的毛皮数量。"
+},
+{
+"en": "Shows your current amount of Pelts when on the Lotus Atoll.",
+"zh": "在莲花环礁时显示你当前的毛皮数量。"
+},
+{
+"en": "Shows your current amount of Pelts when on Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你当前的毛皮数量。"
+},
+{
+"en": "Shows your current amount of Pelts when on the Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你当前的毛皮数量。"
+},
+{
+"en": "Shows your current amount of Pelts when on the Safari.",
+"zh": "在游猎场时显示你当前的毛皮数量。"
+},
+{
+"en": "Shows your current amount of Pelts when in the %1$s.",
+"zh": "在%1$s时显示你当前的毛皮数量。"
+},
+{
+"en": "Shows your current amount of Pelts when in a %1$s.",
+"zh": "在%1$s时显示你当前的毛皮数量。"
+},
+{
+"en": "Shows your current amount of Pelts when in %1$s.",
+"zh": "在%1$s时显示你当前的毛皮数量。"
+},
+{
+"en": "Shows your current amount of Pelts when on the %1$s.",
+"zh": "在%1$s时显示你当前的毛皮数量。"
+},
+{
+"en": "Shows your current amount of Pelts when on a %1$s.",
+"zh": "在%1$s时显示你当前的毛皮数量。"
+},
+{
+"en": "Shows your current amount of Pelts when on %1$s.",
+"zh": "在%1$s时显示你当前的毛皮数量。"
+},
+{
+"en": "Shows information about your visitors when in the Hub.",
+"zh": "在主城时显示你的访客信息。"
+},
+{
+"en": "Shows information about your visitors when on a Private Island.",
+"zh": "在私人岛屿时显示你的访客信息。"
+},
+{
+"en": "Shows information about your visitors when in a Dungeon Hub.",
+"zh": "在地牢大厅时显示你的访客信息。"
+},
+{
+"en": "Shows information about your visitors when on The Farming Islands.",
+"zh": "在农业岛时显示你的访客信息。"
+},
+{
+"en": "Shows information about your visitors when in The Park.",
+"zh": "在公园时显示你的访客信息。"
+},
+{
+"en": "Shows information about your visitors when in the Gold Mine.",
+"zh": "在金矿时显示你的访客信息。"
+},
+{
+"en": "Shows information about your visitors when in the Deep Caverns.",
+"zh": "在深层洞穴时显示你的访客信息。"
+},
+{
+"en": "Shows information about your visitors when in the Dwarven Mines.",
+"zh": "在矮人矿洞时显示你的访客信息。"
+},
+{
+"en": "Shows information about your visitors when in the Crystal Hollows.",
+"zh": "在水晶洞窟时显示你的访客信息。"
+},
+{
+"en": "Shows information about your visitors when in the Spider's Den.",
+"zh": "在蜘蛛巢穴时显示你的访客信息。"
+},
+{
+"en": "Shows information about your visitors when in The End.",
+"zh": "在末地时显示你的访客信息。"
+},
+{
+"en": "Shows information about your visitors when on the Crimson Isle.",
+"zh": "在绯红孤岛时显示你的访客信息。"
+},
+{
+"en": "Shows information about your visitors when in Jerry's Workshop.",
+"zh": "在杰瑞的工坊时显示你的访客信息。"
+},
+{
+"en": "Shows information about your visitors when on Moonglade Marsh.",
+"zh": "在月光沼泽时显示你的访客信息。"
+},
+{
+"en": "Shows information about your visitors when on the Backwater Bayou.",
+"zh": "在死水河岸时显示你的访客信息。"
+},
+{
+"en": "Shows information about your visitors when in The Rift.",
+"zh": "在裂隙时显示你的访客信息。"
+},
+{
+"en": "Shows information about your visitors when in Kuudra.",
+"zh": "在库德拉时显示你的访客信息。"
+},
+{
+"en": "Shows information about your visitors when in the Mineshaft.",
+"zh": "在矿井时显示你的访客信息。"
+},
+{
+"en": "Shows information about your visitors when on the Lotus Atoll.",
+"zh": "在莲花环礁时显示你的访客信息。"
+},
+{
+"en": "Shows information about your visitors when on Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你的访客信息。"
+},
+{
+"en": "Shows information about your visitors when on the Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你的访客信息。"
+},
+{
+"en": "Shows information about your visitors when on the Safari.",
+"zh": "在游猎场时显示你的访客信息。"
+},
+{
+"en": "Shows information about your visitors when in the %1$s.",
+"zh": "在%1$s时显示你的访客信息。"
+},
+{
+"en": "Shows information about your visitors when in a %1$s.",
+"zh": "在%1$s时显示你的访客信息。"
+},
+{
+"en": "Shows information about your visitors when in %1$s.",
+"zh": "在%1$s时显示你的访客信息。"
+},
+{
+"en": "Shows information about your visitors when on the %1$s.",
+"zh": "在%1$s时显示你的访客信息。"
+},
+{
+"en": "Shows information about your visitors when on a %1$s.",
+"zh": "在%1$s时显示你的访客信息。"
+},
+{
+"en": "Shows information about your visitors when on %1$s.",
+"zh": "在%1$s时显示你的访客信息。"
+},
+{
+"en": "Shows information about your composter when in the Hub.",
+"zh": "在主城时显示你的堆肥器信息。"
+},
+{
+"en": "Shows information about your composter when on a Private Island.",
+"zh": "在私人岛屿时显示你的堆肥器信息。"
+},
+{
+"en": "Shows information about your composter when in a Dungeon Hub.",
+"zh": "在地牢大厅时显示你的堆肥器信息。"
+},
+{
+"en": "Shows information about your composter when on The Farming Islands.",
+"zh": "在农业岛时显示你的堆肥器信息。"
+},
+{
+"en": "Shows information about your composter when in The Park.",
+"zh": "在公园时显示你的堆肥器信息。"
+},
+{
+"en": "Shows information about your composter when in the Gold Mine.",
+"zh": "在金矿时显示你的堆肥器信息。"
+},
+{
+"en": "Shows information about your composter when in the Deep Caverns.",
+"zh": "在深层洞穴时显示你的堆肥器信息。"
+},
+{
+"en": "Shows information about your composter when in the Dwarven Mines.",
+"zh": "在矮人矿洞时显示你的堆肥器信息。"
+},
+{
+"en": "Shows information about your composter when in the Crystal Hollows.",
+"zh": "在水晶洞窟时显示你的堆肥器信息。"
+},
+{
+"en": "Shows information about your composter when in the Spider's Den.",
+"zh": "在蜘蛛巢穴时显示你的堆肥器信息。"
+},
+{
+"en": "Shows information about your composter when in The End.",
+"zh": "在末地时显示你的堆肥器信息。"
+},
+{
+"en": "Shows information about your composter when on the Crimson Isle.",
+"zh": "在绯红孤岛时显示你的堆肥器信息。"
+},
+{
+"en": "Shows information about your composter when in Jerry's Workshop.",
+"zh": "在杰瑞的工坊时显示你的堆肥器信息。"
+},
+{
+"en": "Shows information about your composter when on Moonglade Marsh.",
+"zh": "在月光沼泽时显示你的堆肥器信息。"
+},
+{
+"en": "Shows information about your composter when on the Backwater Bayou.",
+"zh": "在死水河岸时显示你的堆肥器信息。"
+},
+{
+"en": "Shows information about your composter when in The Rift.",
+"zh": "在裂隙时显示你的堆肥器信息。"
+},
+{
+"en": "Shows information about your composter when in Kuudra.",
+"zh": "在库德拉时显示你的堆肥器信息。"
+},
+{
+"en": "Shows information about your composter when in the Mineshaft.",
+"zh": "在矿井时显示你的堆肥器信息。"
+},
+{
+"en": "Shows information about your composter when on the Lotus Atoll.",
+"zh": "在莲花环礁时显示你的堆肥器信息。"
+},
+{
+"en": "Shows information about your composter when on Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你的堆肥器信息。"
+},
+{
+"en": "Shows information about your composter when on the Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你的堆肥器信息。"
+},
+{
+"en": "Shows information about your composter when on the Safari.",
+"zh": "在游猎场时显示你的堆肥器信息。"
+},
+{
+"en": "Shows information about your composter when in the %1$s.",
+"zh": "在%1$s时显示你的堆肥器信息。"
+},
+{
+"en": "Shows information about your composter when in a %1$s.",
+"zh": "在%1$s时显示你的堆肥器信息。"
+},
+{
+"en": "Shows information about your composter when in %1$s.",
+"zh": "在%1$s时显示你的堆肥器信息。"
+},
+{
+"en": "Shows information about your composter when on the %1$s.",
+"zh": "在%1$s时显示你的堆肥器信息。"
+},
+{
+"en": "Shows information about your composter when on a %1$s.",
+"zh": "在%1$s时显示你的堆肥器信息。"
+},
+{
+"en": "Shows information about your composter when on %1$s.",
+"zh": "在%1$s时显示你的堆肥器信息。"
+},
+{
+"en": "Shows information about the pests when in the Hub.",
+"zh": "在主城时显示害虫信息。"
+},
+{
+"en": "Shows information about the pests when on a Private Island.",
+"zh": "在私人岛屿时显示害虫信息。"
+},
+{
+"en": "Shows information about the pests when in a Dungeon Hub.",
+"zh": "在地牢大厅时显示害虫信息。"
+},
+{
+"en": "Shows information about the pests when on The Farming Islands.",
+"zh": "在农业岛时显示害虫信息。"
+},
+{
+"en": "Shows information about the pests when in The Park.",
+"zh": "在公园时显示害虫信息。"
+},
+{
+"en": "Shows information about the pests when in the Gold Mine.",
+"zh": "在金矿时显示害虫信息。"
+},
+{
+"en": "Shows information about the pests when in the Deep Caverns.",
+"zh": "在深层洞穴时显示害虫信息。"
+},
+{
+"en": "Shows information about the pests when in the Dwarven Mines.",
+"zh": "在矮人矿洞时显示害虫信息。"
+},
+{
+"en": "Shows information about the pests when in the Crystal Hollows.",
+"zh": "在水晶洞窟时显示害虫信息。"
+},
+{
+"en": "Shows information about the pests when in the Spider's Den.",
+"zh": "在蜘蛛巢穴时显示害虫信息。"
+},
+{
+"en": "Shows information about the pests when in The End.",
+"zh": "在末地时显示害虫信息。"
+},
+{
+"en": "Shows information about the pests when on the Crimson Isle.",
+"zh": "在绯红孤岛时显示害虫信息。"
+},
+{
+"en": "Shows information about the pests when in Jerry's Workshop.",
+"zh": "在杰瑞的工坊时显示害虫信息。"
+},
+{
+"en": "Shows information about the pests when on Moonglade Marsh.",
+"zh": "在月光沼泽时显示害虫信息。"
+},
+{
+"en": "Shows information about the pests when on the Backwater Bayou.",
+"zh": "在死水河岸时显示害虫信息。"
+},
+{
+"en": "Shows information about the pests when in The Rift.",
+"zh": "在裂隙时显示害虫信息。"
+},
+{
+"en": "Shows information about the pests when in Kuudra.",
+"zh": "在库德拉时显示害虫信息。"
+},
+{
+"en": "Shows information about the pests when in the Mineshaft.",
+"zh": "在矿井时显示害虫信息。"
+},
+{
+"en": "Shows information about the pests when on the Lotus Atoll.",
+"zh": "在莲花环礁时显示害虫信息。"
+},
+{
+"en": "Shows information about the pests when on Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示害虫信息。"
+},
+{
+"en": "Shows information about the pests when on the Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示害虫信息。"
+},
+{
+"en": "Shows information about the pests when on the Safari.",
+"zh": "在游猎场时显示害虫信息。"
+},
+{
+"en": "Shows information about the pests when in the %1$s.",
+"zh": "在%1$s时显示害虫信息。"
+},
+{
+"en": "Shows information about the pests when in a %1$s.",
+"zh": "在%1$s时显示害虫信息。"
+},
+{
+"en": "Shows information about the pests when in %1$s.",
+"zh": "在%1$s时显示害虫信息。"
+},
+{
+"en": "Shows information about the pests when on the %1$s.",
+"zh": "在%1$s时显示害虫信息。"
+},
+{
+"en": "Shows information about the pests when on a %1$s.",
+"zh": "在%1$s时显示害虫信息。"
+},
+{
+"en": "Shows information about the pests when on %1$s.",
+"zh": "在%1$s时显示害虫信息。"
+},
+{
+"en": "Shows the status of the crystals when in the Hub.",
+"zh": "在主城时显示水晶状态。"
+},
+{
+"en": "Shows the status of the crystals when on a Private Island.",
+"zh": "在私人岛屿时显示水晶状态。"
+},
+{
+"en": "Shows the status of the crystals when in a Dungeon Hub.",
+"zh": "在地牢大厅时显示水晶状态。"
+},
+{
+"en": "Shows the status of the crystals when on The Farming Islands.",
+"zh": "在农业岛时显示水晶状态。"
+},
+{
+"en": "Shows the status of the crystals when in a Garden.",
+"zh": "在花园时显示水晶状态。"
+},
+{
+"en": "Shows the status of the crystals when in The Park.",
+"zh": "在公园时显示水晶状态。"
+},
+{
+"en": "Shows the status of the crystals when in the Gold Mine.",
+"zh": "在金矿时显示水晶状态。"
+},
+{
+"en": "Shows the status of the crystals when in the Deep Caverns.",
+"zh": "在深层洞穴时显示水晶状态。"
+},
+{
+"en": "Shows the status of the crystals when in the Dwarven Mines.",
+"zh": "在矮人矿洞时显示水晶状态。"
+},
+{
+"en": "Shows the status of the crystals when in the Spider's Den.",
+"zh": "在蜘蛛巢穴时显示水晶状态。"
+},
+{
+"en": "Shows the status of the crystals when in The End.",
+"zh": "在末地时显示水晶状态。"
+},
+{
+"en": "Shows the status of the crystals when on the Crimson Isle.",
+"zh": "在绯红孤岛时显示水晶状态。"
+},
+{
+"en": "Shows the status of the crystals when in Jerry's Workshop.",
+"zh": "在杰瑞的工坊时显示水晶状态。"
+},
+{
+"en": "Shows the status of the crystals when on Moonglade Marsh.",
+"zh": "在月光沼泽时显示水晶状态。"
+},
+{
+"en": "Shows the status of the crystals when on the Backwater Bayou.",
+"zh": "在死水河岸时显示水晶状态。"
+},
+{
+"en": "Shows the status of the crystals when in The Rift.",
+"zh": "在裂隙时显示水晶状态。"
+},
+{
+"en": "Shows the status of the crystals when in Kuudra.",
+"zh": "在库德拉时显示水晶状态。"
+},
+{
+"en": "Shows the status of the crystals when in the Mineshaft.",
+"zh": "在矿井时显示水晶状态。"
+},
+{
+"en": "Shows the status of the crystals when on the Lotus Atoll.",
+"zh": "在莲花环礁时显示水晶状态。"
+},
+{
+"en": "Shows the status of the crystals when on Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示水晶状态。"
+},
+{
+"en": "Shows the status of the crystals when on the Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示水晶状态。"
+},
+{
+"en": "Shows the status of the crystals when on the Safari.",
+"zh": "在游猎场时显示水晶状态。"
+},
+{
+"en": "Shows the status of the crystals when in the %1$s.",
+"zh": "在%1$s时显示水晶状态。"
+},
+{
+"en": "Shows the status of the crystals when in a %1$s.",
+"zh": "在%1$s时显示水晶状态。"
+},
+{
+"en": "Shows the status of the crystals when in %1$s.",
+"zh": "在%1$s时显示水晶状态。"
+},
+{
+"en": "Shows the status of the crystals when on the %1$s.",
+"zh": "在%1$s时显示水晶状态。"
+},
+{
+"en": "Shows the status of the crystals when on a %1$s.",
+"zh": "在%1$s时显示水晶状态。"
+},
+{
+"en": "Shows the status of the crystals when on %1$s.",
+"zh": "在%1$s时显示水晶状态。"
+},
+{
+"en": "Shows your mining commissions when in the Hub.",
+"zh": "在主城时显示你的挖矿委托。"
+},
+{
+"en": "Shows your mining commissions when on a Private Island.",
+"zh": "在私人岛屿时显示你的挖矿委托。"
+},
+{
+"en": "Shows your mining commissions when in a Dungeon Hub.",
+"zh": "在地牢大厅时显示你的挖矿委托。"
+},
+{
+"en": "Shows your mining commissions when on The Farming Islands.",
+"zh": "在农业岛时显示你的挖矿委托。"
+},
+{
+"en": "Shows your mining commissions when in a Garden.",
+"zh": "在花园时显示你的挖矿委托。"
+},
+{
+"en": "Shows your mining commissions when in The Park.",
+"zh": "在公园时显示你的挖矿委托。"
+},
+{
+"en": "Shows your mining commissions when in the Gold Mine.",
+"zh": "在金矿时显示你的挖矿委托。"
+},
+{
+"en": "Shows your mining commissions when in the Deep Caverns.",
+"zh": "在深层洞穴时显示你的挖矿委托。"
+},
+{
+"en": "Shows your mining commissions when in the Dwarven Mines.",
+"zh": "在矮人矿洞时显示你的挖矿委托。"
+},
+{
+"en": "Shows your mining commissions when in the Spider's Den.",
+"zh": "在蜘蛛巢穴时显示你的挖矿委托。"
+},
+{
+"en": "Shows your mining commissions when in The End.",
+"zh": "在末地时显示你的挖矿委托。"
+},
+{
+"en": "Shows your mining commissions when on the Crimson Isle.",
+"zh": "在绯红孤岛时显示你的挖矿委托。"
+},
+{
+"en": "Shows your mining commissions when in Jerry's Workshop.",
+"zh": "在杰瑞的工坊时显示你的挖矿委托。"
+},
+{
+"en": "Shows your mining commissions when on Moonglade Marsh.",
+"zh": "在月光沼泽时显示你的挖矿委托。"
+},
+{
+"en": "Shows your mining commissions when on the Backwater Bayou.",
+"zh": "在死水河岸时显示你的挖矿委托。"
+},
+{
+"en": "Shows your mining commissions when in The Rift.",
+"zh": "在裂隙时显示你的挖矿委托。"
+},
+{
+"en": "Shows your mining commissions when in Kuudra.",
+"zh": "在库德拉时显示你的挖矿委托。"
+},
+{
+"en": "Shows your mining commissions when in the Mineshaft.",
+"zh": "在矿井时显示你的挖矿委托。"
+},
+{
+"en": "Shows your mining commissions when on the Lotus Atoll.",
+"zh": "在莲花环礁时显示你的挖矿委托。"
+},
+{
+"en": "Shows your mining commissions when on Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你的挖矿委托。"
+},
+{
+"en": "Shows your mining commissions when on the Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你的挖矿委托。"
+},
+{
+"en": "Shows your mining commissions when on the Safari.",
+"zh": "在游猎场时显示你的挖矿委托。"
+},
+{
+"en": "Shows your mining commissions when in the %1$s.",
+"zh": "在%1$s时显示你的挖矿委托。"
+},
+{
+"en": "Shows your mining commissions when in a %1$s.",
+"zh": "在%1$s时显示你的挖矿委托。"
+},
+{
+"en": "Shows your mining commissions when in %1$s.",
+"zh": "在%1$s时显示你的挖矿委托。"
+},
+{
+"en": "Shows your mining commissions when on the %1$s.",
+"zh": "在%1$s时显示你的挖矿委托。"
+},
+{
+"en": "Shows your mining commissions when on a %1$s.",
+"zh": "在%1$s时显示你的挖矿委托。"
+},
+{
+"en": "Shows your mining commissions when on %1$s.",
+"zh": "在%1$s时显示你的挖矿委托。"
+},
+{
+"en": "Shows your powder when in the Hub.",
+"zh": "在主城时显示你的粉末。"
+},
+{
+"en": "Shows your powder when on a Private Island.",
+"zh": "在私人岛屿时显示你的粉末。"
+},
+{
+"en": "Shows your powder when in a Dungeon Hub.",
+"zh": "在地牢大厅时显示你的粉末。"
+},
+{
+"en": "Shows your powder when on The Farming Islands.",
+"zh": "在农业岛时显示你的粉末。"
+},
+{
+"en": "Shows your powder when in a Garden.",
+"zh": "在花园时显示你的粉末。"
+},
+{
+"en": "Shows your powder when in The Park.",
+"zh": "在公园时显示你的粉末。"
+},
+{
+"en": "Shows your powder when in the Gold Mine.",
+"zh": "在金矿时显示你的粉末。"
+},
+{
+"en": "Shows your powder when in the Deep Caverns.",
+"zh": "在深层洞穴时显示你的粉末。"
+},
+{
+"en": "Shows your powder when in the Dwarven Mines.",
+"zh": "在矮人矿洞时显示你的粉末。"
+},
+{
+"en": "Shows your powder when in the Spider's Den.",
+"zh": "在蜘蛛巢穴时显示你的粉末。"
+},
+{
+"en": "Shows your powder when in The End.",
+"zh": "在末地时显示你的粉末。"
+},
+{
+"en": "Shows your powder when on the Crimson Isle.",
+"zh": "在绯红孤岛时显示你的粉末。"
+},
+{
+"en": "Shows your powder when in Jerry's Workshop.",
+"zh": "在杰瑞的工坊时显示你的粉末。"
+},
+{
+"en": "Shows your powder when on Moonglade Marsh.",
+"zh": "在月光沼泽时显示你的粉末。"
+},
+{
+"en": "Shows your powder when on the Backwater Bayou.",
+"zh": "在死水河岸时显示你的粉末。"
+},
+{
+"en": "Shows your powder when in The Rift.",
+"zh": "在裂隙时显示你的粉末。"
+},
+{
+"en": "Shows your powder when in Kuudra.",
+"zh": "在库德拉时显示你的粉末。"
+},
+{
+"en": "Shows your powder when in the Mineshaft.",
+"zh": "在矿井时显示你的粉末。"
+},
+{
+"en": "Shows your powder when on the Lotus Atoll.",
+"zh": "在莲花环礁时显示你的粉末。"
+},
+{
+"en": "Shows your powder when on Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你的粉末。"
+},
+{
+"en": "Shows your powder when on the Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你的粉末。"
+},
+{
+"en": "Shows your powder when on the Safari.",
+"zh": "在游猎场时显示你的粉末。"
+},
+{
+"en": "Shows your powder when in the %1$s.",
+"zh": "在%1$s时显示你的粉末。"
+},
+{
+"en": "Shows your powder when in a %1$s.",
+"zh": "在%1$s时显示你的粉末。"
+},
+{
+"en": "Shows your powder when in %1$s.",
+"zh": "在%1$s时显示你的粉末。"
+},
+{
+"en": "Shows your powder when on the %1$s.",
+"zh": "在%1$s时显示你的粉末。"
+},
+{
+"en": "Shows your powder when on a %1$s.",
+"zh": "在%1$s时显示你的粉末。"
+},
+{
+"en": "Shows your powder when on %1$s.",
+"zh": "在%1$s时显示你的粉末。"
+},
+{
+"en": "Shows information about your current faction reputation when in the Hub.",
+"zh": "在主城时显示你当前的派系声望信息。"
+},
+{
+"en": "Shows information about your current faction reputation when on a Private Island.",
+"zh": "在私人岛屿时显示你当前的派系声望信息。"
+},
+{
+"en": "Shows information about your current faction reputation when in a Dungeon Hub.",
+"zh": "在地牢大厅时显示你当前的派系声望信息。"
+},
+{
+"en": "Shows information about your current faction reputation when on The Farming Islands.",
+"zh": "在农业岛时显示你当前的派系声望信息。"
+},
+{
+"en": "Shows information about your current faction reputation when in a Garden.",
+"zh": "在花园时显示你当前的派系声望信息。"
+},
+{
+"en": "Shows information about your current faction reputation when in The Park.",
+"zh": "在公园时显示你当前的派系声望信息。"
+},
+{
+"en": "Shows information about your current faction reputation when in the Gold Mine.",
+"zh": "在金矿时显示你当前的派系声望信息。"
+},
+{
+"en": "Shows information about your current faction reputation when in the Deep Caverns.",
+"zh": "在深层洞穴时显示你当前的派系声望信息。"
+},
+{
+"en": "Shows information about your current faction reputation when in the Dwarven Mines.",
+"zh": "在矮人矿洞时显示你当前的派系声望信息。"
+},
+{
+"en": "Shows information about your current faction reputation when in the Crystal Hollows.",
+"zh": "在水晶洞窟时显示你当前的派系声望信息。"
+},
+{
+"en": "Shows information about your current faction reputation when in the Spider's Den.",
+"zh": "在蜘蛛巢穴时显示你当前的派系声望信息。"
+},
+{
+"en": "Shows information about your current faction reputation when in The End.",
+"zh": "在末地时显示你当前的派系声望信息。"
+},
+{
+"en": "Shows information about your current faction reputation when in Jerry's Workshop.",
+"zh": "在杰瑞的工坊时显示你当前的派系声望信息。"
+},
+{
+"en": "Shows information about your current faction reputation when on Moonglade Marsh.",
+"zh": "在月光沼泽时显示你当前的派系声望信息。"
+},
+{
+"en": "Shows information about your current faction reputation when on the Backwater Bayou.",
+"zh": "在死水河岸时显示你当前的派系声望信息。"
+},
+{
+"en": "Shows information about your current faction reputation when in The Rift.",
+"zh": "在裂隙时显示你当前的派系声望信息。"
+},
+{
+"en": "Shows information about your current faction reputation when in Kuudra.",
+"zh": "在库德拉时显示你当前的派系声望信息。"
+},
+{
+"en": "Shows information about your current faction reputation when in the Mineshaft.",
+"zh": "在矿井时显示你当前的派系声望信息。"
+},
+{
+"en": "Shows information about your current faction reputation when on the Lotus Atoll.",
+"zh": "在莲花环礁时显示你当前的派系声望信息。"
+},
+{
+"en": "Shows information about your current faction reputation when on Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你当前的派系声望信息。"
+},
+{
+"en": "Shows information about your current faction reputation when on the Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你当前的派系声望信息。"
+},
+{
+"en": "Shows information about your current faction reputation when on the Safari.",
+"zh": "在游猎场时显示你当前的派系声望信息。"
+},
+{
+"en": "Shows information about your current faction reputation when in the %1$s.",
+"zh": "在%1$s时显示你当前的派系声望信息。"
+},
+{
+"en": "Shows information about your current faction reputation when in a %1$s.",
+"zh": "在%1$s时显示你当前的派系声望信息。"
+},
+{
+"en": "Shows information about your current faction reputation when in %1$s.",
+"zh": "在%1$s时显示你当前的派系声望信息。"
+},
+{
+"en": "Shows information about your current faction reputation when on the %1$s.",
+"zh": "在%1$s时显示你当前的派系声望信息。"
+},
+{
+"en": "Shows information about your current faction reputation when on a %1$s.",
+"zh": "在%1$s时显示你当前的派系声望信息。"
+},
+{
+"en": "Shows information about your current faction reputation when on %1$s.",
+"zh": "在%1$s时显示你当前的派系声望信息。"
+},
+{
+"en": "Shows your Whispers when in the Hub.",
+"zh": "在主城时显示你的低语。"
+},
+{
+"en": "Shows your Whispers when on a Private Island.",
+"zh": "在私人岛屿时显示你的低语。"
+},
+{
+"en": "Shows your Whispers when in a Dungeon Hub.",
+"zh": "在地牢大厅时显示你的低语。"
+},
+{
+"en": "Shows your Whispers when on The Farming Islands.",
+"zh": "在农业岛时显示你的低语。"
+},
+{
+"en": "Shows your Whispers when in a Garden.",
+"zh": "在花园时显示你的低语。"
+},
+{
+"en": "Shows your Whispers when in The Park.",
+"zh": "在公园时显示你的低语。"
+},
+{
+"en": "Shows your Whispers when in the Gold Mine.",
+"zh": "在金矿时显示你的低语。"
+},
+{
+"en": "Shows your Whispers when in the Deep Caverns.",
+"zh": "在深层洞穴时显示你的低语。"
+},
+{
+"en": "Shows your Whispers when in the Dwarven Mines.",
+"zh": "在矮人矿洞时显示你的低语。"
+},
+{
+"en": "Shows your Whispers when in the Crystal Hollows.",
+"zh": "在水晶洞窟时显示你的低语。"
+},
+{
+"en": "Shows your Whispers when in the Spider's Den.",
+"zh": "在蜘蛛巢穴时显示你的低语。"
+},
+{
+"en": "Shows your Whispers when in The End.",
+"zh": "在末地时显示你的低语。"
+},
+{
+"en": "Shows your Whispers when on the Crimson Isle.",
+"zh": "在绯红孤岛时显示你的低语。"
+},
+{
+"en": "Shows your Whispers when in Jerry's Workshop.",
+"zh": "在杰瑞的工坊时显示你的低语。"
+},
+{
+"en": "Shows your Whispers when on the Backwater Bayou.",
+"zh": "在死水河岸时显示你的低语。"
+},
+{
+"en": "Shows your Whispers when in The Rift.",
+"zh": "在裂隙时显示你的低语。"
+},
+{
+"en": "Shows your Whispers when in Kuudra.",
+"zh": "在库德拉时显示你的低语。"
+},
+{
+"en": "Shows your Whispers when in the Mineshaft.",
+"zh": "在矿井时显示你的低语。"
+},
+{
+"en": "Shows your Whispers when on the Lotus Atoll.",
+"zh": "在莲花环礁时显示你的低语。"
+},
+{
+"en": "Shows your Whispers when on Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你的低语。"
+},
+{
+"en": "Shows your Whispers when on the Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你的低语。"
+},
+{
+"en": "Shows your Whispers when on the Safari.",
+"zh": "在游猎场时显示你的低语。"
+},
+{
+"en": "Shows your Whispers when in the %1$s.",
+"zh": "在%1$s时显示你的低语。"
+},
+{
+"en": "Shows your Whispers when in a %1$s.",
+"zh": "在%1$s时显示你的低语。"
+},
+{
+"en": "Shows your Whispers when in %1$s.",
+"zh": "在%1$s时显示你的低语。"
+},
+{
+"en": "Shows your Whispers when on the %1$s.",
+"zh": "在%1$s时显示你的低语。"
+},
+{
+"en": "Shows your Whispers when on a %1$s.",
+"zh": "在%1$s时显示你的低语。"
+},
+{
+"en": "Shows your Whispers when on %1$s.",
+"zh": "在%1$s时显示你的低语。"
+},
+{
+"en": "Shows information about your faction reputation when in the Hub.",
+"zh": "在主城时显示你的派系声望信息。"
+},
+{
+"en": "Shows information about your faction reputation when on a Private Island.",
+"zh": "在私人岛屿时显示你的派系声望信息。"
+},
+{
+"en": "Shows information about your faction reputation when in a Dungeon Hub.",
+"zh": "在地牢大厅时显示你的派系声望信息。"
+},
+{
+"en": "Shows information about your faction reputation when on The Farming Islands.",
+"zh": "在农业岛时显示你的派系声望信息。"
+},
+{
+"en": "Shows information about your faction reputation when in a Garden.",
+"zh": "在花园时显示你的派系声望信息。"
+},
+{
+"en": "Shows information about your faction reputation when in The Park.",
+"zh": "在公园时显示你的派系声望信息。"
+},
+{
+"en": "Shows information about your faction reputation when in the Gold Mine.",
+"zh": "在金矿时显示你的派系声望信息。"
+},
+{
+"en": "Shows information about your faction reputation when in the Deep Caverns.",
+"zh": "在深层洞穴时显示你的派系声望信息。"
+},
+{
+"en": "Shows information about your faction reputation when in the Dwarven Mines.",
+"zh": "在矮人矿洞时显示你的派系声望信息。"
+},
+{
+"en": "Shows information about your faction reputation when in the Crystal Hollows.",
+"zh": "在水晶洞窟时显示你的派系声望信息。"
+},
+{
+"en": "Shows information about your faction reputation when in the Spider's Den.",
+"zh": "在蜘蛛巢穴时显示你的派系声望信息。"
+},
+{
+"en": "Shows information about your faction reputation when in The End.",
+"zh": "在末地时显示你的派系声望信息。"
+},
+{
+"en": "Shows information about your faction reputation when in Jerry's Workshop.",
+"zh": "在杰瑞的工坊时显示你的派系声望信息。"
+},
+{
+"en": "Shows information about your faction reputation when on Moonglade Marsh.",
+"zh": "在月光沼泽时显示你的派系声望信息。"
+},
+{
+"en": "Shows information about your faction reputation when on the Backwater Bayou.",
+"zh": "在死水河岸时显示你的派系声望信息。"
+},
+{
+"en": "Shows information about your faction reputation when in The Rift.",
+"zh": "在裂隙时显示你的派系声望信息。"
+},
+{
+"en": "Shows information about your faction reputation when in Kuudra.",
+"zh": "在库德拉时显示你的派系声望信息。"
+},
+{
+"en": "Shows information about your faction reputation when in the Mineshaft.",
+"zh": "在矿井时显示你的派系声望信息。"
+},
+{
+"en": "Shows information about your faction reputation when on the Lotus Atoll.",
+"zh": "在莲花环礁时显示你的派系声望信息。"
+},
+{
+"en": "Shows information about your faction reputation when on Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你的派系声望信息。"
+},
+{
+"en": "Shows information about your faction reputation when on the Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你的派系声望信息。"
+},
+{
+"en": "Shows information about your faction reputation when on the Safari.",
+"zh": "在游猎场时显示你的派系声望信息。"
+},
+{
+"en": "Shows information about your faction reputation when in the %1$s.",
+"zh": "在%1$s时显示你的派系声望信息。"
+},
+{
+"en": "Shows information about your faction reputation when in a %1$s.",
+"zh": "在%1$s时显示你的派系声望信息。"
+},
+{
+"en": "Shows information about your faction reputation when in %1$s.",
+"zh": "在%1$s时显示你的派系声望信息。"
+},
+{
+"en": "Shows information about your faction reputation when on the %1$s.",
+"zh": "在%1$s时显示你的派系声望信息。"
+},
+{
+"en": "Shows information about your faction reputation when on a %1$s.",
+"zh": "在%1$s时显示你的派系声望信息。"
+},
+{
+"en": "Shows information about your faction reputation when on %1$s.",
+"zh": "在%1$s时显示你的派系声望信息。"
+},
+{
+"en": "Shows information about placed pest traps when in the Hub.",
+"zh": "在主城时显示已放置的害虫陷阱信息。"
+},
+{
+"en": "Shows information about placed pest traps when on a Private Island.",
+"zh": "在私人岛屿时显示已放置的害虫陷阱信息。"
+},
+{
+"en": "Shows information about placed pest traps when in a Dungeon Hub.",
+"zh": "在地牢大厅时显示已放置的害虫陷阱信息。"
+},
+{
+"en": "Shows information about placed pest traps when on The Farming Islands.",
+"zh": "在农业岛时显示已放置的害虫陷阱信息。"
+},
+{
+"en": "Shows information about placed pest traps when in a Garden.",
+"zh": "在花园时显示已放置的害虫陷阱信息。"
+},
+{
+"en": "Shows information about placed pest traps when in The Park.",
+"zh": "在公园时显示已放置的害虫陷阱信息。"
+},
+{
+"en": "Shows information about placed pest traps when in the Gold Mine.",
+"zh": "在金矿时显示已放置的害虫陷阱信息。"
+},
+{
+"en": "Shows information about placed pest traps when in the Deep Caverns.",
+"zh": "在深层洞穴时显示已放置的害虫陷阱信息。"
+},
+{
+"en": "Shows information about placed pest traps when in the Dwarven Mines.",
+"zh": "在矮人矿洞时显示已放置的害虫陷阱信息。"
+},
+{
+"en": "Shows information about placed pest traps when in the Crystal Hollows.",
+"zh": "在水晶洞窟时显示已放置的害虫陷阱信息。"
+},
+{
+"en": "Shows information about placed pest traps when in the Spider's Den.",
+"zh": "在蜘蛛巢穴时显示已放置的害虫陷阱信息。"
+},
+{
+"en": "Shows information about placed pest traps when in The End.",
+"zh": "在末地时显示已放置的害虫陷阱信息。"
+},
+{
+"en": "Shows information about placed pest traps when on the Crimson Isle.",
+"zh": "在绯红孤岛时显示已放置的害虫陷阱信息。"
+},
+{
+"en": "Shows information about placed pest traps when in Jerry's Workshop.",
+"zh": "在杰瑞的工坊时显示已放置的害虫陷阱信息。"
+},
+{
+"en": "Shows information about placed pest traps when on Moonglade Marsh.",
+"zh": "在月光沼泽时显示已放置的害虫陷阱信息。"
+},
+{
+"en": "Shows information about placed pest traps when on the Backwater Bayou.",
+"zh": "在死水河岸时显示已放置的害虫陷阱信息。"
+},
+{
+"en": "Shows information about placed pest traps when in The Rift.",
+"zh": "在裂隙时显示已放置的害虫陷阱信息。"
+},
+{
+"en": "Shows information about placed pest traps when in Kuudra.",
+"zh": "在库德拉时显示已放置的害虫陷阱信息。"
+},
+{
+"en": "Shows information about placed pest traps when in the Mineshaft.",
+"zh": "在矿井时显示已放置的害虫陷阱信息。"
+},
+{
+"en": "Shows information about placed pest traps when on the Lotus Atoll.",
+"zh": "在莲花环礁时显示已放置的害虫陷阱信息。"
+},
+{
+"en": "Shows information about placed pest traps when on Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示已放置的害虫陷阱信息。"
+},
+{
+"en": "Shows information about placed pest traps when on the Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示已放置的害虫陷阱信息。"
+},
+{
+"en": "Shows information about placed pest traps when on the Safari.",
+"zh": "在游猎场时显示已放置的害虫陷阱信息。"
+},
+{
+"en": "Shows information about placed pest traps when in the %1$s.",
+"zh": "在%1$s时显示已放置的害虫陷阱信息。"
+},
+{
+"en": "Shows information about placed pest traps when in a %1$s.",
+"zh": "在%1$s时显示已放置的害虫陷阱信息。"
+},
+{
+"en": "Shows information about placed pest traps when in %1$s.",
+"zh": "在%1$s时显示已放置的害虫陷阱信息。"
+},
+{
+"en": "Shows information about placed pest traps when on the %1$s.",
+"zh": "在%1$s时显示已放置的害虫陷阱信息。"
+},
+{
+"en": "Shows information about placed pest traps when on a %1$s.",
+"zh": "在%1$s时显示已放置的害虫陷阱信息。"
+},
+{
+"en": "Shows information about placed pest traps when on %1$s.",
+"zh": "在%1$s时显示已放置的害虫陷阱信息。"
+},
+{
+"en": "Shows information about the dragon fight when in the Hub.",
+"zh": "在主城时显示末影龙战斗信息。"
+},
+{
+"en": "Shows information about the dragon fight when on a Private Island.",
+"zh": "在私人岛屿时显示末影龙战斗信息。"
+},
+{
+"en": "Shows information about the dragon fight when in a Dungeon Hub.",
+"zh": "在地牢大厅时显示末影龙战斗信息。"
+},
+{
+"en": "Shows information about the dragon fight when on The Farming Islands.",
+"zh": "在农业岛时显示末影龙战斗信息。"
+},
+{
+"en": "Shows information about the dragon fight when in a Garden.",
+"zh": "在花园时显示末影龙战斗信息。"
+},
+{
+"en": "Shows information about the dragon fight when in The Park.",
+"zh": "在公园时显示末影龙战斗信息。"
+},
+{
+"en": "Shows information about the dragon fight when in the Gold Mine.",
+"zh": "在金矿时显示末影龙战斗信息。"
+},
+{
+"en": "Shows information about the dragon fight when in the Deep Caverns.",
+"zh": "在深层洞穴时显示末影龙战斗信息。"
+},
+{
+"en": "Shows information about the dragon fight when in the Dwarven Mines.",
+"zh": "在矮人矿洞时显示末影龙战斗信息。"
+},
+{
+"en": "Shows information about the dragon fight when in the Crystal Hollows.",
+"zh": "在水晶洞窟时显示末影龙战斗信息。"
+},
+{
+"en": "Shows information about the dragon fight when in the Spider's Den.",
+"zh": "在蜘蛛巢穴时显示末影龙战斗信息。"
+},
+{
+"en": "Shows information about the dragon fight when in The End.",
+"zh": "在末地时显示末影龙战斗信息。"
+},
+{
+"en": "Shows information about the dragon fight when on the Crimson Isle.",
+"zh": "在绯红孤岛时显示末影龙战斗信息。"
+},
+{
+"en": "Shows information about the dragon fight when in Jerry's Workshop.",
+"zh": "在杰瑞的工坊时显示末影龙战斗信息。"
+},
+{
+"en": "Shows information about the dragon fight when on Moonglade Marsh.",
+"zh": "在月光沼泽时显示末影龙战斗信息。"
+},
+{
+"en": "Shows information about the dragon fight when on the Backwater Bayou.",
+"zh": "在死水河岸时显示末影龙战斗信息。"
+},
+{
+"en": "Shows information about the dragon fight when in The Rift.",
+"zh": "在裂隙时显示末影龙战斗信息。"
+},
+{
+"en": "Shows information about the dragon fight when in Kuudra.",
+"zh": "在库德拉时显示末影龙战斗信息。"
+},
+{
+"en": "Shows information about the dragon fight when in the Mineshaft.",
+"zh": "在矿井时显示末影龙战斗信息。"
+},
+{
+"en": "Shows information about the dragon fight when on the Lotus Atoll.",
+"zh": "在莲花环礁时显示末影龙战斗信息。"
+},
+{
+"en": "Shows information about the dragon fight when on Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示末影龙战斗信息。"
+},
+{
+"en": "Shows information about the dragon fight when on the Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示末影龙战斗信息。"
+},
+{
+"en": "Shows information about the dragon fight when on the Safari.",
+"zh": "在游猎场时显示末影龙战斗信息。"
+},
+{
+"en": "Shows information about the dragon fight when in the %1$s.",
+"zh": "在%1$s时显示末影龙战斗信息。"
+},
+{
+"en": "Shows information about the dragon fight when in a %1$s.",
+"zh": "在%1$s时显示末影龙战斗信息。"
+},
+{
+"en": "Shows information about the dragon fight when in %1$s.",
+"zh": "在%1$s时显示末影龙战斗信息。"
+},
+{
+"en": "Shows information about the dragon fight when on the %1$s.",
+"zh": "在%1$s时显示末影龙战斗信息。"
+},
+{
+"en": "Shows information about the dragon fight when on a %1$s.",
+"zh": "在%1$s时显示末影龙战斗信息。"
+},
+{
+"en": "Shows information about the dragon fight when on %1$s.",
+"zh": "在%1$s时显示末影龙战斗信息。"
+},
+{
+"en": "Shows information about your crop milestones when in the Hub.",
+"zh": "在主城时显示你的作物里程碑信息。"
+},
+{
+"en": "Shows information about your crop milestones when on a Private Island.",
+"zh": "在私人岛屿时显示你的作物里程碑信息。"
+},
+{
+"en": "Shows information about your crop milestones when in a Dungeon Hub.",
+"zh": "在地牢大厅时显示你的作物里程碑信息。"
+},
+{
+"en": "Shows information about your crop milestones when on The Farming Islands.",
+"zh": "在农业岛时显示你的作物里程碑信息。"
+},
+{
+"en": "Shows information about your crop milestones when in a Garden.",
+"zh": "在花园时显示你的作物里程碑信息。"
+},
+{
+"en": "Shows information about your crop milestones when in The Park.",
+"zh": "在公园时显示你的作物里程碑信息。"
+},
+{
+"en": "Shows information about your crop milestones when in the Gold Mine.",
+"zh": "在金矿时显示你的作物里程碑信息。"
+},
+{
+"en": "Shows information about your crop milestones when in the Deep Caverns.",
+"zh": "在深层洞穴时显示你的作物里程碑信息。"
+},
+{
+"en": "Shows information about your crop milestones when in the Dwarven Mines.",
+"zh": "在矮人矿洞时显示你的作物里程碑信息。"
+},
+{
+"en": "Shows information about your crop milestones when in the Crystal Hollows.",
+"zh": "在水晶洞窟时显示你的作物里程碑信息。"
+},
+{
+"en": "Shows information about your crop milestones when in the Spider's Den.",
+"zh": "在蜘蛛巢穴时显示你的作物里程碑信息。"
+},
+{
+"en": "Shows information about your crop milestones when in The End.",
+"zh": "在末地时显示你的作物里程碑信息。"
+},
+{
+"en": "Shows information about your crop milestones when on the Crimson Isle.",
+"zh": "在绯红孤岛时显示你的作物里程碑信息。"
+},
+{
+"en": "Shows information about your crop milestones when in Jerry's Workshop.",
+"zh": "在杰瑞的工坊时显示你的作物里程碑信息。"
+},
+{
+"en": "Shows information about your crop milestones when on Moonglade Marsh.",
+"zh": "在月光沼泽时显示你的作物里程碑信息。"
+},
+{
+"en": "Shows information about your crop milestones when on the Backwater Bayou.",
+"zh": "在死水河岸时显示你的作物里程碑信息。"
+},
+{
+"en": "Shows information about your crop milestones when in The Rift.",
+"zh": "在裂隙时显示你的作物里程碑信息。"
+},
+{
+"en": "Shows information about your crop milestones when in Kuudra.",
+"zh": "在库德拉时显示你的作物里程碑信息。"
+},
+{
+"en": "Shows information about your crop milestones when in the Mineshaft.",
+"zh": "在矿井时显示你的作物里程碑信息。"
+},
+{
+"en": "Shows information about your crop milestones when on the Lotus Atoll.",
+"zh": "在莲花环礁时显示你的作物里程碑信息。"
+},
+{
+"en": "Shows information about your crop milestones when on Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你的作物里程碑信息。"
+},
+{
+"en": "Shows information about your crop milestones when on the Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你的作物里程碑信息。"
+},
+{
+"en": "Shows information about your crop milestones when on the Safari.",
+"zh": "在游猎场时显示你的作物里程碑信息。"
+},
+{
+"en": "Shows information about your crop milestones when in the %1$s.",
+"zh": "在%1$s时显示你的作物里程碑信息。"
+},
+{
+"en": "Shows information about your crop milestones when in a %1$s.",
+"zh": "在%1$s时显示你的作物里程碑信息。"
+},
+{
+"en": "Shows information about your crop milestones when in %1$s.",
+"zh": "在%1$s时显示你的作物里程碑信息。"
+},
+{
+"en": "Shows information about your crop milestones when on the %1$s.",
+"zh": "在%1$s时显示你的作物里程碑信息。"
+},
+{
+"en": "Shows information about your crop milestones when on a %1$s.",
+"zh": "在%1$s时显示你的作物里程碑信息。"
+},
+{
+"en": "Shows information about your crop milestones when on %1$s.",
+"zh": "在%1$s时显示你的作物里程碑信息。"
+},
+{
+"en": "Shows your Dungeons-related progression when in the Hub.",
+"zh": "在主城时显示你的地牢相关进度。"
+},
+{
+"en": "Shows your Dungeons-related progression when on a Private Island.",
+"zh": "在私人岛屿时显示你的地牢相关进度。"
+},
+{
+"en": "Shows your Dungeons-related progression when in a Dungeon Hub.",
+"zh": "在地牢大厅时显示你的地牢相关进度。"
+},
+{
+"en": "Shows your Dungeons-related progression when on The Farming Islands.",
+"zh": "在农业岛时显示你的地牢相关进度。"
+},
+{
+"en": "Shows your Dungeons-related progression when in a Garden.",
+"zh": "在花园时显示你的地牢相关进度。"
+},
+{
+"en": "Shows your Dungeons-related progression when in The Park.",
+"zh": "在公园时显示你的地牢相关进度。"
+},
+{
+"en": "Shows your Dungeons-related progression when in the Gold Mine.",
+"zh": "在金矿时显示你的地牢相关进度。"
+},
+{
+"en": "Shows your Dungeons-related progression when in the Deep Caverns.",
+"zh": "在深层洞穴时显示你的地牢相关进度。"
+},
+{
+"en": "Shows your Dungeons-related progression when in the Dwarven Mines.",
+"zh": "在矮人矿洞时显示你的地牢相关进度。"
+},
+{
+"en": "Shows your Dungeons-related progression when in the Crystal Hollows.",
+"zh": "在水晶洞窟时显示你的地牢相关进度。"
+},
+{
+"en": "Shows your Dungeons-related progression when in the Spider's Den.",
+"zh": "在蜘蛛巢穴时显示你的地牢相关进度。"
+},
+{
+"en": "Shows your Dungeons-related progression when in The End.",
+"zh": "在末地时显示你的地牢相关进度。"
+},
+{
+"en": "Shows your Dungeons-related progression when on the Crimson Isle.",
+"zh": "在绯红孤岛时显示你的地牢相关进度。"
+},
+{
+"en": "Shows your Dungeons-related progression when in Jerry's Workshop.",
+"zh": "在杰瑞的工坊时显示你的地牢相关进度。"
+},
+{
+"en": "Shows your Dungeons-related progression when on Moonglade Marsh.",
+"zh": "在月光沼泽时显示你的地牢相关进度。"
+},
+{
+"en": "Shows your Dungeons-related progression when on the Backwater Bayou.",
+"zh": "在死水河岸时显示你的地牢相关进度。"
+},
+{
+"en": "Shows your Dungeons-related progression when in The Rift.",
+"zh": "在裂隙时显示你的地牢相关进度。"
+},
+{
+"en": "Shows your Dungeons-related progression when in Kuudra.",
+"zh": "在库德拉时显示你的地牢相关进度。"
+},
+{
+"en": "Shows your Dungeons-related progression when in the Mineshaft.",
+"zh": "在矿井时显示你的地牢相关进度。"
+},
+{
+"en": "Shows your Dungeons-related progression when on the Lotus Atoll.",
+"zh": "在莲花环礁时显示你的地牢相关进度。"
+},
+{
+"en": "Shows your Dungeons-related progression when on Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你的地牢相关进度。"
+},
+{
+"en": "Shows your Dungeons-related progression when on the Torrhus Canyon.",
+"zh": "在托鲁斯峡谷时显示你的地牢相关进度。"
+},
+{
+"en": "Shows your Dungeons-related progression when on the Safari.",
+"zh": "在游猎场时显示你的地牢相关进度。"
+},
+{
+"en": "Shows your Dungeons-related progression when in the %1$s.",
+"zh": "在%1$s时显示你的地牢相关进度。"
+},
+{
+"en": "Shows your Dungeons-related progression when in a %1$s.",
+"zh": "在%1$s时显示你的地牢相关进度。"
+},
+{
+"en": "Shows your Dungeons-related progression when in %1$s.",
+"zh": "在%1$s时显示你的地牢相关进度。"
+},
+{
+"en": "Shows your Dungeons-related progression when on the %1$s.",
+"zh": "在%1$s时显示你的地牢相关进度。"
+},
+{
+"en": "Shows your Dungeons-related progression when on a %1$s.",
+"zh": "在%1$s时显示你的地牢相关进度。"
+},
+{
+"en": "Shows your Dungeons-related progression when on %1$s.",
+"zh": "在%1$s时显示你的地牢相关进度。"
+},
+{
+"en": "Changing this setting will only apply to being in The Park.",
+"zh": "更改此设置只对在公园时生效。"
+},
+{
+"en": "Changing this setting will only apply to being in the Deep Caverns.",
+"zh": "更改此设置只对在深层洞穴时生效。"
+},
+{
+"en": "Changing this setting will only apply to being in the Dwarven Mines.",
+"zh": "更改此设置只对在矮人矿洞时生效。"
+},
+{
+"en": "Changing this setting will only apply to being in the Spider's Den.",
+"zh": "更改此设置只对在蜘蛛巢穴时生效。"
+},
+{
+"en": "Changing this setting will only apply to being in Jerry's Workshop.",
+"zh": "更改此设置只对在杰瑞的工坊时生效。"
+},
+{
+"en": "Changing this setting will only apply to being on Moonglade Marsh.",
+"zh": "更改此设置只对在月光沼泽时生效。"
+},
+{
+"en": "Changing this setting will only apply to being in The Rift.",
+"zh": "更改此设置只对在裂隙时生效。"
+},
+{
+"en": "Changing this setting will only apply to being in Kuudra.",
+"zh": "更改此设置只对在库德拉时生效。"
+},
+{
+"en": "Changing this setting will only apply to being in the Mineshaft.",
+"zh": "更改此设置只对在矿井时生效。"
+},
+{
+"en": "Changing this setting will only apply to being on the Lotus Atoll.",
+"zh": "更改此设置只对在莲花环礁时生效。"
+},
+{
+"en": "Changing this setting will only apply to being on Torrhus Canyon.",
+"zh": "更改此设置只对在托鲁斯峡谷时生效。"
+},
+{
+"en": "Changing this setting will only apply to being on the Torrhus Canyon.",
+"zh": "更改此设置只对在托鲁斯峡谷时生效。"
+},
+{
+"en": "Changing this setting will only apply to being on the Safari.",
+"zh": "更改此设置只对在游猎场时生效。"
+},
+{
+"en": "Tablist Widgets appear in the player list.",
+"zh": "Tab 列表组件显示在玩家列表中。"
+},
+{
+"en": "Place this minion and it will start generating and chopping acacia logs! Requires an open area to place trees.",
+"zh": "放置此小人后，它会开始生成并砍伐金合欢原木！需要一片空地来种树。"
+},
+{
+"en": "Place this minion and it will start generating and chopping birch logs! Requires an open area to place trees.",
+"zh": "放置此小人后，它会开始生成并砍伐白桦原木！需要一片空地来种树。"
+},
+{
+"en": "Place this minion and it will start generating and slaying Blazes!",
+"zh": "放置此小人后，它会开始生成并击杀烈焰人！"
+},
+{
+"en": "Place this minion and it will start generating and harvesting cactus. Requires sand nearby so cacti can be planted.",
+"zh": "放置此小人后，它会开始生成并收获仙人掌。需要附近有沙子来种植仙人掌。"
+},
+{
+"en": "Place this minion and it will start generating and harvesting carrots. Requires dirt or soil nearby so carrots can be planted.",
+"zh": "放置此小人后，它会开始生成并收获胡萝卜。需要附近有泥土或耕地来种植胡萝卜。"
+},
+{
+"en": "Place this minion and it will start generating and slaying Chickens!",
+"zh": "放置此小人后，它会开始生成并击杀鸡！"
+},
+{
+"en": "Place this minion and it will start generating and mining clay! Requires an open area to place clay.",
+"zh": "放置此小人后，它会开始生成并挖掘黏土！需要一片空地来放置黏土。"
+},
+{
+"en": "Place this minion and it will start generating and mining coal ore! Requires an open area to place coal ore.",
+"zh": "放置此小人后，它会开始生成并挖掘煤矿石！需要一片空地来放置煤矿石。"
+},
+{
+"en": "Place this minion and it will start generating and mining Cobblestone! Requires an open area to place Cobblestone.",
+"zh": "放置此小人后，它会开始生成并挖掘圆石！需要一片空地来放置圆石。"
+},
+{
+"en": "Place this minion and it will start generating and harvesting cocoa beans. Requires jungle logs nearby so cocoa can be placed, or air nearby so jungle logs can be placed.",
+"zh": "放置此小人后，它会开始生成并收获可可豆。需要附近有丛林原木来放置可可果，或有空位来放置丛林原木。"
+},
+{
+"en": "Place this minion and it will start generating and slaying Cows!",
+"zh": "放置此小人后，它会开始生成并击杀牛！"
+},
+{
+"en": "Place this minion and it will start generating and chopping dark oak logs! Requires an open area to place trees.",
+"zh": "放置此小人后，它会开始生成并砍伐深色橡木原木！需要一片空地来种树。"
+},
+{
+"en": "Place this minion and it will start generating and mining diamond ore! Requires an open area to place diamond ore.",
+"zh": "放置此小人后，它会开始生成并挖掘钻石矿石！需要一片空地来放置钻石矿石。"
+},
+{
+"en": "Place this minion and it will start generating and mining emerald ore! Requires an open area to place emerald ore.",
+"zh": "放置此小人后，它会开始生成并挖掘绿宝石矿石！需要一片空地来放置绿宝石矿石。"
+},
+{
+"en": "Place this minion and it will start fishing. Requires water nearby.",
+"zh": "放置此小人后，它会开始钓鱼。需要附近有水。"
+},
+{
+"en": "Place this minion and it will start generating and harvesting flowers. Requires grass nearby so flowers can be planted.",
+"zh": "放置此小人后，它会开始生成并收获花朵。需要附近有草方块来种花。"
+},
+{
+"en": "Place this minion and it will start generating and mining glowstone! Requires an open area to place glowstone.",
+"zh": "放置此小人后，它会开始生成并挖掘荧石！需要一片空地来放置荧石。"
+},
+{
+"en": "Place this minion and it will start generating and mining gold ore! Requires an open area to place gold ore.",
+"zh": "放置此小人后，它会开始生成并挖掘金矿石！需要一片空地来放置金矿石。"
+},
+{
+"en": "Place this minion and it will start generating and mining Hard Stone! Requires an open area to place Hard Stone.",
+"zh": "放置此小人后，它会开始生成并挖掘硬石！需要一片空地来放置硬石。"
+},
+{
+"en": "Place this minion and it will start generating and mining ice! Requires an open area to place ice.",
+"zh": "放置此小人后，它会开始生成并挖掘冰！需要一片空地来放置冰。"
+},
+{
+"en": "Place this minion and it will start generating and mining iron ore! Requires an open area to place iron ore.",
+"zh": "放置此小人后，它会开始生成并挖掘铁矿石！需要一片空地来放置铁矿石。"
+},
+{
+"en": "Place this minion and it will start generating and chopping jungle logs! Requires an open area to place trees.",
+"zh": "放置此小人后，它会开始生成并砍伐丛林原木！需要一片空地来种树。"
+},
+{
+"en": "Place this minion and it will start generating and mining lapis ore! Requires an open area to place lapis ore.",
+"zh": "放置此小人后，它会开始生成并挖掘青金石矿石！需要一片空地来放置青金石矿石。"
+},
+{
+"en": "Place this minion and it will start generating and harvesting lily pads. Requires water nearby.",
+"zh": "放置此小人后，它会开始生成并收获睡莲。需要附近有水。"
+},
+{
+"en": "Place this minion and it will start generating and slaying Magma Cubes!",
+"zh": "放置此小人后，它会开始生成并击杀岩浆怪！"
+},
+{
+"en": "Place this minion and it will start generating and harvesting melons! Requires an open area to place melons.",
+"zh": "放置此小人后，它会开始生成并收获西瓜！需要一片空地来放置西瓜。"
+},
+{
+"en": "Place this minion and it will start generating and mining mithril ore! Requires an open area to place mithril ore.",
+"zh": "放置此小人后，它会开始生成并挖掘秘银矿石！需要一片空地来放置秘银矿石。"
+},
+{
+"en": "Place this minion and it will start generating and harvesting red and brown mushrooms! Requires an area that is suitable for mushrooms to be placed.",
+"zh": "放置此小人后，它会开始生成并收获红色和棕色蘑菇！需要适合放置蘑菇的区域。"
+},
+{
+"en": "Place this minion and it will start generating and mining mycelium! Requires an open area to place mycelium.",
+"zh": "放置此小人后，它会开始生成并挖掘菌丝！需要一片空地来放置菌丝。"
+},
+{
+"en": "Place this minion and it will start generating and harvesting nether warts. Requires soul sand nearby so nether warts can be planted.",
+"zh": "放置此小人后，它会开始生成并收获下界疣。需要附近有灵魂沙来种植下界疣。"
+},
+{
+"en": "Place this minion and it will start generating and chopping oak logs! Requires an open area to place trees.",
+"zh": "放置此小人后，它会开始生成并砍伐橡木原木！需要一片空地来种树。"
+},
+{
+"en": "Place this minion and it will start generating and mining obsidian! Requires an open area to place obsidian.",
+"zh": "放置此小人后，它会开始生成并挖掘黑曜石！需要一片空地来放置黑曜石。"
+},
+{
+"en": "Place this minion and it will start generating and slaying Pigs!",
+"zh": "放置此小人后，它会开始生成并击杀猪！"
+},
+{
+"en": "Place this minion and it will start generating and harvesting potatoes. Requires dirt or soil nearby so potatoes can be planted.",
+"zh": "放置此小人后，它会开始生成并收获马铃薯。需要附近有泥土或耕地来种植马铃薯。"
+},
+{
+"en": "Place this minion and it will start generating and harvesting pumpkins! Requires an open area to place pumpkins.",
+"zh": "放置此小人后，它会开始生成并收获南瓜！需要一片空地来放置南瓜。"
+},
+{
+"en": "Place this minion and it will start generating and mining quartz ore! Requires an open area to place quartz ore.",
+"zh": "放置此小人后，它会开始生成并挖掘石英矿石！需要一片空地来放置石英矿石。"
+},
+{
+"en": "Place this minion and it will start generating and slaying Rabbits!",
+"zh": "放置此小人后，它会开始生成并击杀兔子！"
+},
+{
+"en": "Place this minion and it will start generating and mining redstone ore! Requires an open area to place redstone ore.",
+"zh": "放置此小人后，它会开始生成并挖掘红石矿石！需要一片空地来放置红石矿石。"
+},
+{
+"en": "Place this minion and it will start generating and mining red sand! Requires an open area to place red sand.",
+"zh": "放置此小人后，它会开始生成并挖掘红沙！需要一片空地来放置红沙。"
+},
+{
+"en": "Place this minion and it will start generating and struggling with Revenants!",
+"zh": "放置此小人后，它会开始生成亡魂并与之苦战！"
+},
+{
+"en": "Place this minion and it will start generating and slaying Sheep!",
+"zh": "放置此小人后，它会开始生成并击杀羊！"
+},
+{
+"en": "Place this minion and it will start generating and shovelling snow! Requires an open area to place snow.",
+"zh": "放置此小人后，它会开始生成并铲雪！需要一片空地来放置雪。"
+},
+{
+"en": "Place this minion and it will start generating and chopping spruce logs! Requires an open area to place trees.",
+"zh": "放置此小人后，它会开始生成并砍伐云杉原木！需要一片空地来种树。"
+},
+{
+"en": "Place this minion and it will start generating and harvesting sugar canes! Requires an area that is suitable for sugar cane to be placed.",
+"zh": "放置此小人后，它会开始生成并收获甘蔗！需要适合放置甘蔗的区域。"
+},
+{
+"en": "Place this minion and it will start generating sunflowers during the day, and moonflowers at night.",
+"zh": "放置此小人后，它会在白天生成向日葵，在夜晚生成月光花。"
+},
+{
+"en": "Place this minion and it will start generating and squashing Tarantulas!",
+"zh": "放置此小人后，它会开始生成并踩扁狼蛛！"
+},
+{
+"en": "Place this minion and it will start generating and harvesting wheat. Requires dirt or soil nearby so wheat can be planted.",
+"zh": "放置此小人后，它会开始生成并收获小麦。需要附近有泥土或耕地来种植小麦。"
+},
+{
+"en": "Place this minion and it will start generating and slaying Cave Spiders!",
+"zh": "放置此小人后，它会开始生成并击杀洞穴蜘蛛！"
+},
+{
+"en": "Place this minion and it will start generating and slaying Endermen!",
+"zh": "放置此小人后，它会开始生成并击杀末影人！"
+},
+{
+"en": "Place this minion and it will start generating and mining end stone! Requires an open area to place end stone.",
+"zh": "放置此小人后，它会开始生成并挖掘末地石！需要一片空地来放置末地石。"
+},
+{
+"en": "Place this minion and it will start generating and mining gravel! Requires an open area to place gravel.",
+"zh": "放置此小人后，它会开始生成并挖掘沙砾！需要一片空地来放置沙砾。"
+},
+{
+"en": "Place this minion and it will start generating and slaying Infernals!",
+"zh": "放置此小人后，它会开始生成并击杀炼狱生物！"
+},
+{
+"en": "Place this minion and it will start generating and mining sand! Requires an open area to place sand.",
+"zh": "放置此小人后，它会开始生成并挖掘沙子！需要一片空地来放置沙子。"
+},
+{
+"en": "Place this minion and it will start generating and slaying Skeletons!",
+"zh": "放置此小人后，它会开始生成并击杀骷髅！"
+},
+{
+"en": "Place this minion and it will start generating and slaying Slimes!",
+"zh": "放置此小人后，它会开始生成并击杀史莱姆！"
+},
+{
+"en": "Place this minion and it will start generating and slaying Spiders!",
+"zh": "放置此小人后，它会开始生成并击杀蜘蛛！"
+},
+{
+"en": "Place this minion and it will start generating and slaying Vampire Scions!",
+"zh": "放置此小人后，它会开始生成并击杀吸血鬼后裔！"
+},
+{
+"en": "Place this minion and it will start generating and slaying Voidlings!",
+"zh": "放置此小人后，它会开始生成并击杀虚空者！"
+},
+{
+"en": "Place this minion and it will start generating and slaying Zombies!",
+"zh": "放置此小人后，它会开始生成并击杀僵尸！"
+},
+{
+"en": "Place this minion and it will start generating and shoveling snow! Requires an open area to place snow.",
+"zh": "放置此小人后，它便会开始生成并铲雪！需要开阔的区域来放置雪。"
+},
+{
+"en": "Early Spring %1$sst, Year %2$s",
+"zh": "第 %2$s 年初春 %1$s 日"
+},
+{
+"en": "Date: %1$sst Early Spring %2$s",
+"zh": "日期: 第 %2$s 年初春 %1$s 日"
+},
+{
+"en": "Early Spring %1$sst",
+"zh": "初春 %1$s 日"
+},
+{
+"en": "Early Spring %1$snd, Year %2$s",
+"zh": "第 %2$s 年初春 %1$s 日"
+},
+{
+"en": "Date: %1$snd Early Spring %2$s",
+"zh": "日期: 第 %2$s 年初春 %1$s 日"
+},
+{
+"en": "Early Spring %1$snd",
+"zh": "初春 %1$s 日"
+},
+{
+"en": "Early Spring %1$srd, Year %2$s",
+"zh": "第 %2$s 年初春 %1$s 日"
+},
+{
+"en": "Date: %1$srd Early Spring %2$s",
+"zh": "日期: 第 %2$s 年初春 %1$s 日"
+},
+{
+"en": "Early Spring %1$srd",
+"zh": "初春 %1$s 日"
+},
+{
+"en": "Early Spring %1$sth, Year %2$s",
+"zh": "第 %2$s 年初春 %1$s 日"
+},
+{
+"en": "Early Spring %1$sth",
+"zh": "初春 %1$s 日"
+},
+{
+"en": "Early Spring, Year %1$s",
+"zh": "第 %1$s 年初春"
+},
+{
+"en": "Spring %1$sst, Year %2$s",
+"zh": "第 %2$s 年春季 %1$s 日"
+},
+{
+"en": "Date: %1$sst Spring %2$s",
+"zh": "日期: 第 %2$s 年春季 %1$s 日"
+},
+{
+"en": "Spring %1$sst",
+"zh": "春季 %1$s 日"
+},
+{
+"en": "Date: %1$snd Spring %2$s",
+"zh": "日期: 第 %2$s 年春季 %1$s 日"
+},
+{
+"en": "Spring %1$snd",
+"zh": "春季 %1$s 日"
+},
+{
+"en": "Spring %1$srd, Year %2$s",
+"zh": "第 %2$s 年春季 %1$s 日"
+},
+{
+"en": "Date: %1$srd Spring %2$s",
+"zh": "日期: 第 %2$s 年春季 %1$s 日"
+},
+{
+"en": "Spring %1$srd",
+"zh": "春季 %1$s 日"
+},
+{
+"en": "Date: %1$sth Spring %2$s",
+"zh": "日期: 第 %2$s 年春季 %1$s 日"
+},
+{
+"en": "Spring %1$sth",
+"zh": "春季 %1$s 日"
+},
+{
+"en": "Spring, Year %1$s",
+"zh": "第 %1$s 年春季"
+},
+{
+"en": "Late Spring %1$sst, Year %2$s",
+"zh": "第 %2$s 年春末 %1$s 日"
+},
+{
+"en": "Date: %1$sst Late Spring %2$s",
+"zh": "日期: 第 %2$s 年春末 %1$s 日"
+},
+{
+"en": "Late Spring %1$sst",
+"zh": "春末 %1$s 日"
+},
+{
+"en": "Late Spring %1$snd, Year %2$s",
+"zh": "第 %2$s 年春末 %1$s 日"
+},
+{
+"en": "Date: %1$snd Late Spring %2$s",
+"zh": "日期: 第 %2$s 年春末 %1$s 日"
+},
+{
+"en": "Late Spring %1$snd",
+"zh": "春末 %1$s 日"
+},
+{
+"en": "Late Spring %1$srd, Year %2$s",
+"zh": "第 %2$s 年春末 %1$s 日"
+},
+{
+"en": "Date: %1$srd Late Spring %2$s",
+"zh": "日期: 第 %2$s 年春末 %1$s 日"
+},
+{
+"en": "Late Spring %1$srd",
+"zh": "春末 %1$s 日"
+},
+{
+"en": "Late Spring %1$sth, Year %2$s",
+"zh": "第 %2$s 年春末 %1$s 日"
+},
+{
+"en": "Date: %1$sth Late Spring %2$s",
+"zh": "日期: 第 %2$s 年春末 %1$s 日"
+},
+{
+"en": "Late Spring %1$sth",
+"zh": "春末 %1$s 日"
+},
+{
+"en": "Late Spring, Year %1$s",
+"zh": "第 %1$s 年春末"
+},
+{
+"en": "Early Summer %1$sst, Year %2$s",
+"zh": "第 %2$s 年初夏 %1$s 日"
+},
+{
+"en": "Date: %1$sst Early Summer %2$s",
+"zh": "日期: 第 %2$s 年初夏 %1$s 日"
+},
+{
+"en": "Early Summer %1$sst",
+"zh": "初夏 %1$s 日"
+},
+{
+"en": "Early Summer %1$snd, Year %2$s",
+"zh": "第 %2$s 年初夏 %1$s 日"
+},
+{
+"en": "Date: %1$snd Early Summer %2$s",
+"zh": "日期: 第 %2$s 年初夏 %1$s 日"
+},
+{
+"en": "Early Summer %1$snd",
+"zh": "初夏 %1$s 日"
+},
+{
+"en": "Early Summer %1$srd, Year %2$s",
+"zh": "第 %2$s 年初夏 %1$s 日"
+},
+{
+"en": "Date: %1$srd Early Summer %2$s",
+"zh": "日期: 第 %2$s 年初夏 %1$s 日"
+},
+{
+"en": "Early Summer %1$srd",
+"zh": "初夏 %1$s 日"
+},
+{
+"en": "Early Summer %1$sth, Year %2$s",
+"zh": "第 %2$s 年初夏 %1$s 日"
+},
+{
+"en": "Date: %1$sth Early Summer %2$s",
+"zh": "日期: 第 %2$s 年初夏 %1$s 日"
+},
+{
+"en": "Early Summer %1$sth",
+"zh": "初夏 %1$s 日"
+},
+{
+"en": "Early Summer, Year %1$s",
+"zh": "第 %1$s 年初夏"
+},
+{
+"en": "Summer %1$sst, Year %2$s",
+"zh": "第 %2$s 年夏季 %1$s 日"
+},
+{
+"en": "Date: %1$sst Summer %2$s",
+"zh": "日期: 第 %2$s 年夏季 %1$s 日"
+},
+{
+"en": "Summer %1$sst",
+"zh": "夏季 %1$s 日"
+},
+{
+"en": "Summer %1$snd, Year %2$s",
+"zh": "第 %2$s 年夏季 %1$s 日"
+},
+{
+"en": "Date: %1$snd Summer %2$s",
+"zh": "日期: 第 %2$s 年夏季 %1$s 日"
+},
+{
+"en": "Summer %1$snd",
+"zh": "夏季 %1$s 日"
+},
+{
+"en": "Summer %1$srd, Year %2$s",
+"zh": "第 %2$s 年夏季 %1$s 日"
+},
+{
+"en": "Date: %1$srd Summer %2$s",
+"zh": "日期: 第 %2$s 年夏季 %1$s 日"
+},
+{
+"en": "Summer %1$srd",
+"zh": "夏季 %1$s 日"
+},
+{
+"en": "Date: %1$sth Summer %2$s",
+"zh": "日期: 第 %2$s 年夏季 %1$s 日"
+},
+{
+"en": "Summer %1$sth",
+"zh": "夏季 %1$s 日"
+},
+{
+"en": "Summer, Year %1$s",
+"zh": "第 %1$s 年夏季"
+},
+{
+"en": "Late Summer %1$sst, Year %2$s",
+"zh": "第 %2$s 年夏末 %1$s 日"
+},
+{
+"en": "Date: %1$sst Late Summer %2$s",
+"zh": "日期: 第 %2$s 年夏末 %1$s 日"
+},
+{
+"en": "Late Summer %1$sst",
+"zh": "夏末 %1$s 日"
+},
+{
+"en": "Late Summer %1$snd, Year %2$s",
+"zh": "第 %2$s 年夏末 %1$s 日"
+},
+{
+"en": "Date: %1$snd Late Summer %2$s",
+"zh": "日期: 第 %2$s 年夏末 %1$s 日"
+},
+{
+"en": "Late Summer %1$snd",
+"zh": "夏末 %1$s 日"
+},
+{
+"en": "Late Summer %1$srd, Year %2$s",
+"zh": "第 %2$s 年夏末 %1$s 日"
+},
+{
+"en": "Date: %1$srd Late Summer %2$s",
+"zh": "日期: 第 %2$s 年夏末 %1$s 日"
+},
+{
+"en": "Late Summer %1$srd",
+"zh": "夏末 %1$s 日"
+},
+{
+"en": "Late Summer %1$sth, Year %2$s",
+"zh": "第 %2$s 年夏末 %1$s 日"
+},
+{
+"en": "Date: %1$sth Late Summer %2$s",
+"zh": "日期: 第 %2$s 年夏末 %1$s 日"
+},
+{
+"en": "Late Summer %1$sth",
+"zh": "夏末 %1$s 日"
+},
+{
+"en": "Late Summer, Year %1$s",
+"zh": "第 %1$s 年夏末"
+},
+{
+"en": "Early Autumn %1$sst, Year %2$s",
+"zh": "第 %2$s 年初秋 %1$s 日"
+},
+{
+"en": "Date: %1$sst Early Autumn %2$s",
+"zh": "日期: 第 %2$s 年初秋 %1$s 日"
+},
+{
+"en": "Early Autumn %1$sst",
+"zh": "初秋 %1$s 日"
+},
+{
+"en": "Early Autumn %1$snd, Year %2$s",
+"zh": "第 %2$s 年初秋 %1$s 日"
+},
+{
+"en": "Date: %1$snd Early Autumn %2$s",
+"zh": "日期: 第 %2$s 年初秋 %1$s 日"
+},
+{
+"en": "Early Autumn %1$snd",
+"zh": "初秋 %1$s 日"
+},
+{
+"en": "Early Autumn %1$srd, Year %2$s",
+"zh": "第 %2$s 年初秋 %1$s 日"
+},
+{
+"en": "Date: %1$srd Early Autumn %2$s",
+"zh": "日期: 第 %2$s 年初秋 %1$s 日"
+},
+{
+"en": "Early Autumn %1$srd",
+"zh": "初秋 %1$s 日"
+},
+{
+"en": "Early Autumn %1$sth, Year %2$s",
+"zh": "第 %2$s 年初秋 %1$s 日"
+},
+{
+"en": "Date: %1$sth Early Autumn %2$s",
+"zh": "日期: 第 %2$s 年初秋 %1$s 日"
+},
+{
+"en": "Early Autumn %1$sth",
+"zh": "初秋 %1$s 日"
+},
+{
+"en": "Early Autumn, Year %1$s",
+"zh": "第 %1$s 年初秋"
+},
+{
+"en": "Autumn %1$sst, Year %2$s",
+"zh": "第 %2$s 年秋季 %1$s 日"
+},
+{
+"en": "Date: %1$sst Autumn %2$s",
+"zh": "日期: 第 %2$s 年秋季 %1$s 日"
+},
+{
+"en": "Autumn %1$sst",
+"zh": "秋季 %1$s 日"
+},
+{
+"en": "Date: %1$snd Autumn %2$s",
+"zh": "日期: 第 %2$s 年秋季 %1$s 日"
+},
+{
+"en": "Autumn %1$snd",
+"zh": "秋季 %1$s 日"
+},
+{
+"en": "Autumn %1$srd, Year %2$s",
+"zh": "第 %2$s 年秋季 %1$s 日"
+},
+{
+"en": "Autumn %1$srd",
+"zh": "秋季 %1$s 日"
+},
+{
+"en": "Autumn %1$sth",
+"zh": "秋季 %1$s 日"
+},
+{
+"en": "Autumn, Year %1$s",
+"zh": "第 %1$s 年秋季"
+},
+{
+"en": "Late Autumn %1$sst, Year %2$s",
+"zh": "第 %2$s 年秋末 %1$s 日"
+},
+{
+"en": "Date: %1$sst Late Autumn %2$s",
+"zh": "日期: 第 %2$s 年秋末 %1$s 日"
+},
+{
+"en": "Late Autumn %1$sst",
+"zh": "秋末 %1$s 日"
+},
+{
+"en": "Late Autumn %1$snd, Year %2$s",
+"zh": "第 %2$s 年秋末 %1$s 日"
+},
+{
+"en": "Date: %1$snd Late Autumn %2$s",
+"zh": "日期: 第 %2$s 年秋末 %1$s 日"
+},
+{
+"en": "Late Autumn %1$snd",
+"zh": "秋末 %1$s 日"
+},
+{
+"en": "Late Autumn %1$srd, Year %2$s",
+"zh": "第 %2$s 年秋末 %1$s 日"
+},
+{
+"en": "Date: %1$srd Late Autumn %2$s",
+"zh": "日期: 第 %2$s 年秋末 %1$s 日"
+},
+{
+"en": "Late Autumn %1$srd",
+"zh": "秋末 %1$s 日"
+},
+{
+"en": "Late Autumn %1$sth, Year %2$s",
+"zh": "第 %2$s 年秋末 %1$s 日"
+},
+{
+"en": "Date: %1$sth Late Autumn %2$s",
+"zh": "日期: 第 %2$s 年秋末 %1$s 日"
+},
+{
+"en": "Late Autumn %1$sth",
+"zh": "秋末 %1$s 日"
+},
+{
+"en": "Late Autumn, Year %1$s",
+"zh": "第 %1$s 年秋末"
+},
+{
+"en": "Early Winter %1$sst, Year %2$s",
+"zh": "第 %2$s 年初冬 %1$s 日"
+},
+{
+"en": "Early Winter %1$sst",
+"zh": "初冬 %1$s 日"
+},
+{
+"en": "Early Winter %1$snd, Year %2$s",
+"zh": "第 %2$s 年初冬 %1$s 日"
+},
+{
+"en": "Early Winter %1$snd",
+"zh": "初冬 %1$s 日"
+},
+{
+"en": "Early Winter %1$srd, Year %2$s",
+"zh": "第 %2$s 年初冬 %1$s 日"
+},
+{
+"en": "Date: %1$srd Early Winter %2$s",
+"zh": "日期: 第 %2$s 年初冬 %1$s 日"
+},
+{
+"en": "Early Winter %1$srd",
+"zh": "初冬 %1$s 日"
+},
+{
+"en": "Early Winter %1$sth, Year %2$s",
+"zh": "第 %2$s 年初冬 %1$s 日"
+},
+{
+"en": "Early Winter %1$sth",
+"zh": "初冬 %1$s 日"
+},
+{
+"en": "Early Winter, Year %1$s",
+"zh": "第 %1$s 年初冬"
+},
+{
+"en": "Winter %1$sst, Year %2$s",
+"zh": "第 %2$s 年冬季 %1$s 日"
+},
+{
+"en": "Winter %1$sst",
+"zh": "冬季 %1$s 日"
+},
+{
+"en": "Winter %1$snd, Year %2$s",
+"zh": "第 %2$s 年冬季 %1$s 日"
+},
+{
+"en": "Winter %1$snd",
+"zh": "冬季 %1$s 日"
+},
+{
+"en": "Winter %1$srd, Year %2$s",
+"zh": "第 %2$s 年冬季 %1$s 日"
+},
+{
+"en": "Date: %1$srd Winter %2$s",
+"zh": "日期: 第 %2$s 年冬季 %1$s 日"
+},
+{
+"en": "Winter %1$srd",
+"zh": "冬季 %1$s 日"
+},
+{
+"en": "Winter %1$sth, Year %2$s",
+"zh": "第 %2$s 年冬季 %1$s 日"
+},
+{
+"en": "Date: %1$sth Winter %2$s",
+"zh": "日期: 第 %2$s 年冬季 %1$s 日"
+},
+{
+"en": "Winter %1$sth",
+"zh": "冬季 %1$s 日"
+},
+{
+"en": "Winter, Year %1$s",
+"zh": "第 %1$s 年冬季"
+},
+{
+"en": "Late Winter %1$sst, Year %2$s",
+"zh": "第 %2$s 年冬末 %1$s 日"
+},
+{
+"en": "Date: %1$sst Late Winter %2$s",
+"zh": "日期: 第 %2$s 年冬末 %1$s 日"
+},
+{
+"en": "Late Winter %1$sst",
+"zh": "冬末 %1$s 日"
+},
+{
+"en": "Late Winter %1$snd, Year %2$s",
+"zh": "第 %2$s 年冬末 %1$s 日"
+},
+{
+"en": "Date: %1$snd Late Winter %2$s",
+"zh": "日期: 第 %2$s 年冬末 %1$s 日"
+},
+{
+"en": "Late Winter %1$snd",
+"zh": "冬末 %1$s 日"
+},
+{
+"en": "Late Winter %1$srd, Year %2$s",
+"zh": "第 %2$s 年冬末 %1$s 日"
+},
+{
+"en": "Date: %1$srd Late Winter %2$s",
+"zh": "日期: 第 %2$s 年冬末 %1$s 日"
+},
+{
+"en": "Late Winter %1$srd",
+"zh": "冬末 %1$s 日"
+},
+{
+"en": "Late Winter %1$sth, Year %2$s",
+"zh": "第 %2$s 年冬末 %1$s 日"
+},
+{
+"en": "Date: %1$sth Late Winter %2$s",
+"zh": "日期: 第 %2$s 年冬末 %1$s 日"
+},
+{
+"en": "Late Winter %1$sth",
+"zh": "冬末 %1$s 日"
+},
+{
+"en": "Late Winter, Year %1$s",
+"zh": "第 %1$s 年冬末"
+},
+{
+"en": "Add the Chicken Pet to your Pets Menu.",
+"zh": "把鸡宠物加入你的宠物菜单。"
+},
+{
+"en": "Apply the Junk Sinker to a Fishing Rod at Roddy.",
+"zh": "在罗迪处把垃圾铅坠装到钓鱼竿上。"
+},
+{
+"en": "Bring a Lapis Pickaxe to the Lapis Miner.",
+"zh": "把一把青金石镐带给青金石矿工。"
+},
+{
+"en": "Claim the Fishing Rod from Fisherwoman Enid.",
+"zh": "从女渔夫伊妮德那里领取钓鱼竿。"
+},
+{
+"en": "Collect potatoes, carrots, melon, and pumpkins. (%1$s/%2$s)",
+"zh": "收集马铃薯、胡萝卜、西瓜和南瓜。(%1$s/%2$s)"
+},
+{
+"en": "Collect sugar cane, cocoa beans, and cactus. (%1$s/%2$s)",
+"zh": "收集甘蔗、可可豆和仙人掌。(%1$s/%2$s)"
+},
+{
+"en": "Complete Trial of Fire %1$s.",
+"zh": "完成火之试炼 %1$s。"
+},
+{
+"en": "Complete the Trials of the Jungle Temple.",
+"zh": "完成丛林神殿的试炼。"
+},
+{
+"en": "Explore the Island.",
+"zh": "探索这座岛屿。"
+},
+{
+"en": "Find Full Ender Set then talk to Lone Adventurer.",
+"zh": "找齐一整套末影套装，然后与孤独的冒险家交谈。"
+},
+{
+"en": "Give %1$s Redstone to the Redstone Miner.",
+"zh": "把 %1$s 个红石交给红石矿工。"
+},
+{
+"en": "Give Ryan Dark Oak Logs.",
+"zh": "把深色橡木原木交给瑞安。"
+},
+{
+"en": "Give a Secret Railroad Pass to the Ticket Master.",
+"zh": "把秘密铁路通行证交给检票员。"
+},
+{
+"en": "Give the Carpenter a stack of White Wool.",
+"zh": "交给木匠一组白色羊毛。"
+},
+{
+"en": "Leave the area.",
+"zh": "离开这片区域。"
+},
+{
+"en": "Reach the first Chicken Race checkpoint.",
+"zh": "到达鸡群赛跑的第一个检查点。"
+},
+{
+"en": "Search for the Hidden Relics. (%1$s/%2$s)",
+"zh": "寻找隐藏的遗物。(%1$s/%2$s)"
+},
+{
+"en": "Show Jeff a Specialized Farming Tool.",
+"zh": "给杰夫看一件专用农业工具。"
+},
+{
+"en": "Talk to Captain Baha near the Ship behind the Fisherman's Hut.",
+"zh": "与渔夫小屋后面船边的巴哈船长交谈。"
+},
+{
+"en": "Talk to David Hunterborough.",
+"zh": "与大卫·亨特伯勒交谈。"
+},
+{
+"en": "Talk to Fisherman Gerald at the Fisherman's Hut.",
+"zh": "与渔夫小屋的渔夫杰拉德交谈。"
+},
+{
+"en": "Talk to Fisherwoman Enid near the bridge entering the Wilderness.",
+"zh": "与通往荒野的桥边的女渔夫伊妮德交谈。"
+},
+{
+"en": "Talk to Hattie in the Backwater Bayou.",
+"zh": "与死水河岸的哈蒂交谈。"
+},
+{
+"en": "Wait for Beth to revisit your Garden again.",
+"zh": "等待贝丝再次拜访你的花园。"
+},
+{
+"en": "Apply the Rusty Ship Engine to your Ship through the Ship Upgrades menu with Captain Baha.",
+"zh": "通过巴哈船长的船舶升级菜单，把生锈船引擎装到你的船上。"
+},
+{
+"en": "Talk to Swoop",
+"zh": "与斯伍普交谈"
+},
+{
+"en": "Mana Pool: %1$s",
+"zh": "法力池: %1$s"
+},
+{
+"en": "Max Health: %1$s",
+"zh": "最大生命值: %1$s"
+},
+{
+"en": "Cocoa Beans Fortune is the chance to gain multiple drops from Cocoa Beans. This chance is added on top of your %1$s.",
+"zh": "可可豆时运是可可豆获得多倍掉落的几率。该几率会叠加在你的%1$s之上。"
+},
+{
+"en": "Cocoa Beans Fortune is the chance to gain multiple drops from Cocoa Beans. This chance is added on top of your Farming Fortune.",
+"zh": "可可豆时运是可可豆获得多倍掉落的几率。该几率会叠加在你的农业时运之上。"
+},
+{
+"en": "Exchange Ice Essence for perks useful in Jerry's Workshop and beyond!",
+"zh": "用寒冰精粹兑换在杰瑞的工坊及其他地方都用得上的天赋！"
+},
+{
+"en": "Remaining Ice Essence Upgrades",
+"zh": "剩余的寒冰精粹升级"
+},
+{
+"en": "Sum Essence Needed: %1$s",
+"zh": "所需精粹总数: %1$s"
+},
+{
+"en": "Essence Owned: %1$s",
+"zh": "已拥有精粹: %1$s"
+},
+{
+"en": "Additional Essence Needed: %1$s",
+"zh": "还需精粹: %1$s"
+},
+{
+"en": "BZ Instant Buy: %1$s",
+"zh": "集市即时购买: %1$s"
+},
+{
+"en": "BZ Buy Order: %1$s",
+"zh": "集市收购订单: %1$s"
+},
+{
+"en": "Increases Mage class experience gain by %1$s%.",
+"zh": "法师职业经验获取提高 %1$s%。"
+},
+{
+"en": "Increases Archer class experience gain by %1$s%.",
+"zh": "弓箭手职业经验获取提高 %1$s%。"
+},
+{
+"en": "Increases Berserk class experience gain by %1$s%.",
+"zh": "狂战士职业经验获取提高 %1$s%。"
+},
+{
+"en": "Increases Healer class experience gain by %1$s%.",
+"zh": "治疗者职业经验获取提高 %1$s%。"
+},
+{
+"en": "Increases Tank class experience gain by %1$s%.",
+"zh": "坦克职业经验获取提高 %1$s%。"
+},
+{
+"en": "Grants +%1$s% essence when salvaging.",
+"zh": "分解时获得的精粹 +%1$s%。"
+},
+{
+"en": "Gain %1$s% extra gifts from the Gift Attack event.",
+"zh": "在礼物大作战活动中额外获得 %1$s% 礼物。"
+},
+{
+"en": "Increases the chance to spawn a Reindrake by %1$s% while fishing on Jerry's Workshop.",
+"zh": "在杰瑞的工坊钓鱼时，生成驯鹿龙的几率提高 %1$s%。"
+},
+{
+"en": "Gain %1$s Cold Resistance.",
+"zh": "获得 %1$s 寒冷抵抗。"
+},
+{
+"en": "Applicable on: %1$s",
+"zh": "适用于: %1$s"
+},
+{
+"en": "Applicable on: Fishing Rod, Melee Weapon",
+"zh": "适用于: 钓鱼竿、近战武器"
+},
+{
+"en": "Applicable on: Melee Weapon, Mining Tools",
+"zh": "适用于: 近战武器、挖矿工具"
+},
+{
+"en": "Applicable on: Melee Weapon, Fishing Rod",
+"zh": "适用于: 近战武器、钓鱼竿"
+},
+{
+"en": "View a list of items that can be upgraded using Crimson Essence.",
+"zh": "查看可以用绯红精粹升级的物品列表。"
+},
+{
+"en": "View a list of items that can be upgraded using %1$s.",
+"zh": "查看可以用%1$s升级的物品列表。"
+},
+{
+"en": "Insert all salvageable %1$s items dropped from mobs in your inventory that have not been modified or upgraded.",
+"zh": "放入背包中所有可分解、由怪物掉落且未经修改或升级的%1$s物品。"
+},
+{
+"en": "To Salvage Items",
+"zh": "返回分解物品"
+},
+{
+"en": "Only sold in December!",
+"zh": "仅在十二月出售！"
+},
+{
+"en": "North Stars: %1$s",
+"zh": "北极星: %1$s"
+},
+{
+"en": "North Stars have a small chance to drop when giving or receiving gifts.",
+"zh": "赠送或收到礼物时有小概率掉落北极星。"
+},
+{
+"en": "Increases the chance for Monsters to drop their armor by %1$s%.",
+"zh": "怪物掉落其盔甲的几率提高 %1$s%。"
+},
+{
+"en": "Air should be 1 layer underneath where the minion is standing.",
+"zh": "小人脚下那一层应该是空气。"
+},
+{
+"en": "Looks like you're getting the hang of things! As you continue to play SkyBlock, complete these tasks to expand your understanding of the game.",
+"zh": "看来你已经上手了！继续游玩空岛的同时，完成这些任务来加深对游戏的了解吧。"
+},
+{
+"en": "Complete Chapter %1$s on the Moonglade Marsh.",
+"zh": "完成月光沼泽的第 %1$s 章。"
+},
+{
+"en": "Complete Chapter %1$s on the Backwater Bayou.",
+"zh": "完成死水河岸的第 %1$s 章。"
+},
+{
+"en": "Complete Chapter %1$s on the Torrhus Canyon.",
+"zh": "完成托鲁斯峡谷的第 %1$s 章。"
+},
+{
+"en": "Increase the size of your Accessory Bag by %1$s Slots by talking to Jacobus in the Thaumaturgist building.",
+"zh": "到调律师大楼找雅各布斯，把饰品袋扩充 %1$s 格。"
+},
+{
+"en": "Progress to %1$s Slots: %2$s%",
+"zh": "扩充至 %1$s 格的进度: %2$s%"
+},
+{
+"en": "Analyze mutations in the Crop Analyzer to reach DNA Analysis Milestone %1$s.",
+"zh": "在作物分析仪中分析突变，达到 DNA 分析里程碑 %1$s。"
+},
+{
+"en": "Purchase %1$s from the Spooky Festival Perk Shop.",
+"zh": "在惊魂节天赋商店购买%1$s。"
+},
+{
+"en": "Hide the rankings display for your Skills.",
+"zh": "隐藏技能的排名显示。"
+},
+{
+"en": "Click on a valid Hunting Tool in your inventory while this menu is open to store it in your toolkit.",
+"zh": "打开此菜单时，点击背包中有效的狩猎工具即可将其存入工具包。"
+},
+{
+"en": "Your co-op profile may have up to %1$s players.",
+"zh": "你的合作存档最多可有 %1$s 名玩家。"
+},
+{
+"en": "Unlock more slots from Elizabeth at the Community Center",
+"zh": "在社区中心找伊丽莎白解锁更多栏位"
+},
+{
+"en": "View all of the %1$s Recipes that you've unlocked!",
+"zh": "查看你已解锁的所有%1$s配方！"
+},
+{
+"en": "Rarer boxes hold more coins and Skill XP, but all have the same chances for items!",
+"zh": "越稀有的盒子装的硬币和技能经验越多，但开出物品的几率都一样！"
+},
+{
+"en": "You are in the top %1$s% of %2$s Classic players!",
+"zh": "你位列 %2$s 名经典模式玩家的前 %1$s%！"
+},
+{
+"en": "Desert Whispers are dropped from Helix Tree Gifts on Torrhus Canyon.",
+"zh": "沙漠低语来自托鲁斯峡谷的螺旋树树木礼物。"
+},
+{
+"en": "Throwing your axe consumes %1$s% of your total mana. You gain %2$s Sweep for every %3$s Mana used, for %4$s seconds.",
+"zh": "投掷斧头会消耗你全部法力的 %1$s%。每消耗 %3$s 点法力，获得 %2$s 横扫，持续 %4$s 秒。"
+},
+{
+"en": "Hunting a %1$s grants +%2$s Forest Whispers while on the Moonglade Marsh or +%3$s Desert Whispers if on Torrhus Canyon.",
+"zh": "在月光沼泽狩猎%1$s可获得 +%2$s 森林低语，在托鲁斯峡谷则获得 +%3$s 沙漠低语。"
+},
+{
+"en": "Gain +%1$s Foraging Fortune and +%2$s Sweep for each player on your current island with Half Full enabled. (Capped at %3$s players).",
+"zh": "你所在岛屿上每有一名启用了「半满」的玩家，获得 +%1$s 伐木时运和 +%2$s 横扫。（最多计 %3$s 名玩家）"
+},
+{
+"en": "Gain +%1$s Foraging Fortune and +%2$s Sweep for each player on your current island with Half Empty enabled. (Capped at %3$s players).",
+"zh": "你所在岛屿上每有一名启用了「半空」的玩家，获得 +%1$s 伐木时运和 +%2$s 横扫。（最多计 %3$s 名玩家）"
+},
+{
+"en": "Increase %1$s by %2$s and %3$s by %4$s for the first %5$s trees cut every day.",
+"zh": "每天砍伐的前 %5$s 棵树，%1$s提高 %2$s，%3$s提高 %4$s。"
+},
+{
+"en": "With your %1$s Sweep, you would cut %2$s %3$s. Gain %4$s Sweep to cut an additional log.",
+"zh": "以你的 %1$s 横扫，可以砍下 %2$s 个%3$s。再获得 %4$s 横扫即可多砍一个原木。"
+},
+{
+"en": "Sweep determines how many logs you can cut in a row with your axes.",
+"zh": "横扫决定你用斧头一次能连续砍下多少个原木。"
+},
+{
+"en": "%1$s Token of the Forest",
+"zh": "%1$s 森林令牌"
+},
+{
+"en": "Loot different types of Frozen Corpses while in the Glacite Mineshafts to progress through the milestones.",
+"zh": "在极冰矿井中搜刮不同种类的冰冻尸体来推进里程碑。"
+},
+{
+"en": "Upon reaching a new milestone, unlock exclusive rewards!",
+"zh": "每达到一个新里程碑，即可解锁专属奖励！"
+},
+{
+"en": "Gain a +%1$s% chance to spawn +%2$s Frozen Corpse when entering a Glacite Mineshaft you summoned.",
+"zh": "进入你召唤的极冰矿井时，有 +%1$s% 的几率额外生成 +%2$s 具冰冻尸体。"
+},
+{
+"en": "Your selected RNG Drop will be guaranteed to appear in a viable Frozen Corpse once your RNG Meter is full!",
+"zh": "掉落保底计量表充满后，你选择的保底掉落必定会出现在一具符合条件的冰冻尸体中！"
+},
+{
+"en": "Kill an enemy of this type to unlock these rewards!",
+"zh": "击杀一只该类型的敌人即可解锁这些奖励！"
+},
+{
+"en": "Most commonly found during the %1$s.",
+"zh": "最常出现在%1$s期间。"
+},
+{
+"en": "Most commonly found during the Mythological Ritual.",
+"zh": "最常出现在神话仪式期间。"
+},
+{
+"en": "Enemies of this type are typically found in %1$s and take increased damage from the %2$s enchantment.",
+"zh": "这类敌人通常出现在%1$s，受到%2$s附魔的伤害会提高。"
+},
+{
+"en": "Enemies of this type are typically found in the %1$s. Enemies of this type take increased damage from the %2$s enchantment.",
+"zh": "这类敌人通常出现在%1$s。这类敌人受到%2$s附魔的伤害会提高。"
+},
+{
+"en": "Enemies of this type are typically found in %1$s. Enemies of this type take increased damage from the %2$s enchantment.",
+"zh": "这类敌人通常出现在%1$s。这类敌人受到%2$s附魔的伤害会提高。"
+},
+{
+"en": "Enemies of this type take increased damage from the %1$s enchantment.",
+"zh": "这类敌人受到%1$s附魔的伤害会提高。"
+},
+{
+"en": "Clicking on a teammate creates a tether connecting yourself to them. Tethered teammates receive %1$s% of your maximum health as healing every second while they are within %2$s blocks of you. Every %3$s melee hits you deal while tethered will heal both players for %4$s% of their maximum health.",
+"zh": "点击队友会与其建立系绳连接。被连接的队友在你 %2$s 格内时，每秒恢复相当于你最大生命值 %1$s% 的生命。连接期间你每造成 %3$s 次近战攻击，双方都会恢复各自最大生命值的 %4$s%。"
+},
+{
+"en": "Throw a potion which heals all teammates in a %1$s block radius for %2$s% of their max health and +%3$s Health.",
+"zh": "投掷一瓶药水，为 %1$s 格范围内的所有队友恢复其最大生命值 %2$s% 的生命，外加 +%3$s 生命值。"
+},
+{
+"en": "Throw a potion which gives all teammates in a %1$s block radius %2$s HP worth of absorption for %3$s seconds.",
+"zh": "投掷一瓶药水，使 %1$s 格范围内的所有队友获得 %2$s 点生命值的伤害吸收，持续 %3$s 秒。"
+},
+{
+"en": "Grants %1$s Attack Speed, %2$s Speed and %3$sx melee damage increase for %4$s seconds. Also summons %5$s Zombie minions to aid you in battle!",
+"zh": "获得 %1$s 攻击速度、%2$s 速度和 %3$s 倍近战伤害，持续 %4$s 秒。同时召唤 %5$s 只僵尸随从协助你战斗！"
+},
+{
+"en": "Shoots %1$s Arrows per second for %2$s seconds! Arrows deal %3$s% of your highest Bow hit in the last minute.",
+"zh": "每秒射出 %1$s 支箭，持续 %2$s 秒！每支箭造成你最近一分钟内最高弓箭伤害的 %3$s%。"
+},
+{
+"en": "Increases the base stats of your dungeon items and healing in dungeons by %1$s% while in The Catacombs.",
+"zh": "在地下墓穴中时，地牢物品的基础属性和地牢内的治疗量提高 %1$s%。"
+},
+{
+"en": "Gain XP by progressing your Heart of the Mountain:",
+"zh": "推进山之心来获得经验:"
+},
+{
+"en": "Gain XP by progressing your Core of the Mountain!",
+"zh": "推进山之核心来获得经验！"
+},
+{
+"en": "Gain XP for each of your Commission Milestones!",
+"zh": "每达成一个委托里程碑即可获得经验！"
+},
+{
+"en": "Gain XP by leveling up your Catacombs level!",
+"zh": "提升地下墓穴等级来获得经验！"
+},
+{
+"en": "Gain XP by completing your Boss Collections!",
+"zh": "完成首领收集来获得经验！"
+},
+{
+"en": "Tier %1$s: +%2$s XP",
+"zh": "第 %1$s 阶: +%2$s 经验"
+},
+{
+"en": "Gain XP by mining blocks during the Mining Fiesta event! Blocks contribute their %1$s towards this task.",
+"zh": "在挖矿嘉年华活动期间挖掘方块来获得经验！方块会按其%1$s计入此任务。"
+},
+{
+"en": "Gain XP by mining blocks during the Mining Fiesta event! Blocks contribute their Breaking Power towards this task.",
+"zh": "在挖矿嘉年华活动期间挖掘方块来获得经验！方块会按其破坏力计入此任务。"
+},
+{
+"en": "Requires The Catacombs Floor %1$s Completion",
+"zh": "需要通关地下墓穴第 %1$s 层"
+},
+{
+"en": "Requires Master Mode The Catacombs Floor %1$s Completion.",
+"zh": "需要通关大师模式地下墓穴第 %1$s 层。"
+},
+{
+"en": "Complete Catacombs Floor %1$s",
+"zh": "通关地下墓穴第 %1$s 层"
+},
+{
+"en": "Complete Master Mode Catacombs Floor %1$s",
+"zh": "通关大师模式地下墓穴第 %1$s 层"
+},
+{
+"en": "Syphon Shards to unlock and level up your Attributes! Each Attribute grant its own unique power, active at all times, no matter where you are.",
+"zh": "吸取碎片来解锁并升级你的属性！每个属性都有其独特的效果，无论身在何处都始终生效。"
+},
+{
+"en": "Attributes can reach up to level %1$s, with shard costs scaling based on their rarity.",
+"zh": "属性最高可升至 %1$s 级，所需碎片数量随稀有度增加。"
+},
+{
+"en": "of researchers studying the various species of Trophy Frogs found throughout the Lotus Atoll.",
+"zh": "研究莲花环礁各处奖杯蛙物种的研究员们。"
+},
+{
+"en": "Gain +%1$s Pet Luck and +%2$sx chocolate.",
+"zh": "获得 +%1$s 宠物幸运和 +%2$s 倍巧克力。"
+},
+{
+"en": "Grants +%1$s Tracking towards %2$s.",
+"zh": "对%2$s提供 +%1$s 追踪。"
+},
+{
+"en": "Weakness",
+"zh": "虚弱"
+},
+{
+"en": "Slowness",
+"zh": "缓慢"
+},
+{
+"en": "Reduces %1$s when attacking enemies.",
+"zh": "攻击敌人时降低%1$s。"
+},
+{
+"en": "Reduces %1$s Damage when attacking enemies.",
+"zh": "攻击敌人时降低 %1$s 伤害。"
+},
+{
+"en": "%1$s-%2$s: %3$sth Election Booth Opens",
+"zh": "%1$s-%2$s: 第 %3$s 届选举投票站开放"
+},
+{
+"en": "%1$s-%2$s: %3$sst Election Booth Opens",
+"zh": "%1$s-%2$s: 第 %3$s 届选举投票站开放"
+},
+{
+"en": "%1$s-%2$s: %3$snd Election Booth Opens",
+"zh": "%1$s-%2$s: 第 %3$s 届选举投票站开放"
+},
+{
+"en": "%1$s-%2$s: %3$srd Election Booth Opens",
+"zh": "%1$s-%2$s: 第 %3$s 届选举投票站开放"
+},
+{
+"en": "\"Fire guy!\"",
+"zh": "“火焰小子！”"
+},
+{
+"en": "The Minotaur is a rare mob in the Mythological Ritual. It will attack at melee range, and can throw an axe at you, temporarily slowing down your healing speed. It has a special mechanic called Bleed that allows it to do more damage. It increases by 1 every time it hits you, and increases by 3 every time its axe hits you.",
+"zh": "米诺陶是神话仪式中的稀有生物。它会近身攻击，也会向你投掷斧头，暂时降低你的治疗速度。它拥有名为「流血」的特殊机制，可造成更多伤害：每次击中你时流血 +1，斧头击中你时 +3。"
+},
+{
+"en": "Use this on an item in an Anvil to apply it!",
+"zh": "在铁砧中将其用于物品上即可应用！"
+},
+{
+"en": "Grants +%1$s %2$s, which increases your chance for multiple ore drops.",
+"zh": "提供 +%1$s %2$s，提高获得多倍矿物掉落的几率。"
+},
+{
+"en": "Grants +%1$s %2$s, which increases your chance for multiple logs.",
+"zh": "提供 +%1$s %2$s，提高获得多根原木的几率。"
+},
+{
+"en": "Grants +%1$s %2$s, which increases your chance for multiple crops.",
+"zh": "提供 +%1$s %2$s，提高作物多倍掉落的几率。"
+},
+{
+"en": "Requirement",
+"zh": "要求"
+},
+{
+"en": "Properties",
+"zh": "属性"
+},
+{
+"en": "Fire Sales: (%1$s)",
+"zh": "限时特卖: (%1$s)"
+},
+{
+"en": "- %1$sx %2$s %3$s ago",
+"zh": "- %1$sx %2$s %3$s前"
 },
 {
 "en": "- %1$s ❤ Health (MM) : %2$s",
@@ -145666,6 +150666,10 @@
 "zh": "- %1$s 个槽位"
 },
 {
+"en": "Tier %1$s:",
+"zh": "第 %1$s 阶:"
+},
+{
 "en": "+%1$s %2$s  Magic Find",
 "zh": "+%1$s %2$s  魔法寻宝"
 },
@@ -145762,6 +150766,10 @@
 "zh": "即时出售所有%1$s衍生品，位于"
 },
 {
+"en": "Teleport: %1$s",
+"zh": "传送: %1$s"
+},
+{
 "en": "Applies the %1$s reforge when combined with Equipment.",
 "zh": "与装备合成时，施加「%1$s」重铸。"
 },
@@ -145776,10 +150784,6 @@
 {
 "en": "Ultimate Enchantments ➜ %1$s",
 "zh": "终极附魔 ➜ %1$s"
-},
-{
-"en": "Teleport: %1$s",
-"zh": "传送: %1$s"
 },
 {
 "en": "Applies the %1$s reforge when combined with a Mining Tool.",
@@ -145818,12 +150822,12 @@
 "zh": "在%1$s购买天赋。"
 },
 {
-"en": "Use this item to upgrade a %1$s from Tier XI to Tier XII.",
-"zh": "使用此物品将%1$s从 XI 级升级到 XII 级。"
-},
-{
 "en": "Placing this item on your private island will create a portal to %1$s for you to use whenever you want!",
 "zh": "将此物品放置在你的私人岛屿上，会生成一个通往%1$s的传送门，供你随时使用！"
+},
+{
+"en": "Use this item to upgrade a %1$s from Tier XI to Tier XII.",
+"zh": "使用此物品将%1$s从 XI 级升级到 XII 级。"
 },
 {
 "en": "This Minion skin changes your minion's appearance to a %1$s.",
@@ -146050,6 +151054,14 @@
 "zh": "所需物品: %1$s"
 },
 {
+"en": "Changing this setting will only apply to being in the %1$s.",
+"zh": "更改此设置只对在%1$s时生效。"
+},
+{
+"en": "Changing this setting will only apply to being on the %1$s.",
+"zh": "更改此设置只对在%1$s时生效。"
+},
+{
 "en": "Combine x%1$s of this item at the Thaumaturgist in the Hub to unlock the %2$s power.",
 "zh": "在主城的调律师处合成 %1$s 个此物品，以解锁「%2$s」能力。"
 },
@@ -146146,6 +151158,10 @@
 "zh": "通过提升%1$s获得经验！"
 },
 {
+"en": "Changing this setting will only apply to being in %1$s.",
+"zh": "更改此设置只对在%1$s时生效。"
+},
+{
 "en": "Found when lathering %1$s.",
 "zh": "为%1$s涂抹蜜脾时出现。"
 },
@@ -146174,6 +151190,10 @@
 "zh": "用于合成%1$s宠物道具。"
 },
 {
+"en": "Placing this item on your private island will create a portal to %1$s for you to use",
+"zh": "将此物品放置在你的私人岛屿上，会生成一个通往%1$s的传送门，供你"
+},
+{
 "en": "Gain +%1$s% extra %2$s.",
 "zh": "额外获得 +%1$s% %2$s。"
 },
@@ -146192,6 +151212,10 @@
 {
 "en": "[NPC] Ryan: To receive it, we require %2$s x%1$s!",
 "zh": "[NPC] 瑞安: 要领取它，我们需要%2$s x%1$s！"
+},
+{
+"en": "%1$sh ago Instant Sell of %2$sx  %3$s",
+"zh": "%1$s 小时前 即时出售 %2$s 个  %3$s"
 },
 {
 "en": "[Bazaar] Bought %1$sx %3$s for %2$s coins!",
@@ -146314,6 +151338,14 @@
 "zh": "%2$s   +%1$s 空岛经验"
 },
 {
+"en": " Category: %1$s",
+"zh": " 类别: %1$s"
+},
+{
+"en": " Category: %1$s",
+"zh": " 类别: %1$s"
+},
+{
 "en": "Pet available: %1$s",
 "zh": "可用宠物: %1$s"
 },
@@ -146358,12 +151390,20 @@
 "zh": "%2$s阶段完成度达到 %1$s% 即可解锁此阶段！"
 },
 {
+"en": "Changing this setting will only apply to being on %1$s.",
+"zh": "更改此设置只对在%1$s时生效。"
+},
+{
 "en": "%1$s: Level XXV",
 "zh": "%1$s: 等级 XXV"
 },
 {
 "en": "Click on a %1$s in your inventory to unlock!",
 "zh": "点击物品栏中的%1$s来解锁！"
+},
+{
+"en": "Complete Chapter %1$s on the %2$s.",
+"zh": "完成%2$s的第 %1$s 章。"
 }
 ]
 }

@@ -29,6 +29,9 @@ public final class TableNames {
     /** "2x Fire Spiral Rune I": a count in front of the name. */
     private static final Pattern COUNT = Pattern.compile("^((?:§[0-9a-fk-or])*)(\\d[\\d,]*x )(.+)$");
     private static final String VANILLA = "/assets/hypixel-npc-and-items-translate/defaults/vanilla_names.json";
+    /** Real item names that only look like a reforge + an item ("Refined Mithril", "Giant Cleaver"), from the NEU item list. */
+    private static final String NOT_REFORGED_RES = "/assets/hypixel-npc-and-items-translate/defaults/not_reforged.json";
+    private static java.util.Set<String> notReforged = java.util.Collections.emptySet();
     private static volatile boolean loaded = false;
     private static Map<String, String> names = Collections.emptyMap();
     private static Map<String, List<String>> aliases = Collections.emptyMap();
@@ -106,6 +109,13 @@ public final class TableNames {
             if (!k.isEmpty() && !v.isEmpty() && !n.containsKey(k)) bare.putIfAbsent(k, v);
         }
         n.putAll(bare);
+        java.util.Set<String> nr = new java.util.HashSet<>();
+        try (InputStream in = TableNames.class.getResourceAsStream(NOT_REFORGED_RES)) {
+            if (in != null) for (JsonElement e : JsonParser.parseReader(new InputStreamReader(in, StandardCharsets.UTF_8)).getAsJsonArray()) nr.add(e.getAsString());
+        } catch (Exception e) {
+            System.err.println("[NPCTranslator] not_reforged: " + e.getMessage());
+        }
+        notReforged = nr;
         names = n;
         aliases = a;
         reforges = r;
@@ -144,6 +154,10 @@ public final class TableNames {
         Matcher lm = LEAD.matcher(formatted);
         String lead = lm.find() ? lm.group(1) : "";
         String plain = TranslationUtil.stripColorCodes(formatted).trim();
+        // a reforged item: the proofread reforge + the item, not an old whole-name entry collected with
+        // another reforge translation ("Honored Ender Necklace", "Renowned Yog Boots")
+        String reforged = reforgedName(formatted, plain, lead);
+        if (reforged != null) return reforged;
         String zh = names.get(plain);
         if (zh != null) return lead + zh;
 
@@ -157,7 +171,7 @@ public final class TableNames {
         Matcher pet = PET.matcher(plain);
         if (pet.matches()) {
             String p = names.get(pet.group(2));
-            return p == null ? null : lead + "[Lv." + pet.group(1) + "] " + p;
+            return p == null ? null : lead + "[等级 " + pet.group(1) + "] " + p;
         }
         String suffix = "";
         String core = plain;
@@ -190,11 +204,33 @@ public final class TableNames {
         return lead + (reforge != null ? reforge + " " : "") + base + suffix;
     }
 
+    /** Reforge + item name with the stars kept, or null when the name is not a reforged item. */
+    private static String reforgedName(String formatted, String plain, String lead) {
+        String core = plain, suffix = "";
+        Matcher sm = SUFFIX.matcher(plain);
+        if (sm.matches()) {
+            core = sm.group(1).trim();
+            int at = indexAfterPlain(formatted, core.length());
+            suffix = at >= 0 ? formatted.substring(at) : sm.group(2);
+        }
+        if (notReforged.contains(core)) return null;
+        String prefix = reforgePrefix(core);
+        if (prefix == null) return null;
+        String reforge = reforges.get(prefix);
+        String rest = core.substring(prefix.length() + 1);
+        if (reforge == null) return null;
+        String base = names.get(rest);
+        if (base == null) return null;
+        return lead + reforge + " " + base + suffix;
+    }
+
     /** Explicit reforge prefix wins over a stale whole-name sentence cache. */
     public static String translateReforgedName(String formatted) {
         load();
         if (formatted == null) return null;
         String plain = TranslationUtil.stripColorCodes(formatted).trim();
+        Matcher sm0 = SUFFIX.matcher(plain);
+        if (notReforged.contains(sm0.matches() ? sm0.group(1).trim() : plain)) return null;
         String prefix = reforgePrefix(plain);
         if (prefix == null) return null;
         int sp = prefix.length();

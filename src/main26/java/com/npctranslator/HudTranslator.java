@@ -416,7 +416,12 @@ public final class HudTranslator {
         if (!TranslationUtil.needsTranslation(formatted)) return null;
 
         ModConfig c = cfg();
-        String named = TableNames.translateName(formatted);
+        // the same order as the name line of the item's tooltip, so both show the same name
+        String named = TableNames.translateReforgedName(formatted);
+        if (named == null && c.usePhrasebook) named = PhraseBook.translate(formatted);
+        if (named == null) named = TableNames.translateName(formatted);
+        if (named == null) named = ItemLines.bulletName(formatted);
+        if (named == null) named = ItemLines.looseName(formatted);
         if (named != null) return remember(formatted, named);
         TranslationUtil.Template t = c.normalizeNumbers ? TranslationUtil.normalize(formatted) : TranslationUtil.Template.raw(formatted);
         // 1) dictionary written by tooltip translation (preferred provider first, then any provider)

@@ -44,6 +44,7 @@ public final class TextCollector {
     public static final String WORLD = "名称与悬浮文字";
     public static final String MOD_TEXT = "其他模组提示";
     public static final String PRICE_TABLE = "价格表格";
+    public static final String BOOK = "书本";
 
     public static final File FILE = new File(FabricLoader.getInstance().getConfigDir().toFile(), "npc_translator_text.tsv");
     /** File of 1.5.1-zh.3-beta.5, which only held menu items. Converted on first load. */
@@ -165,6 +166,60 @@ public final class TextCollector {
         } catch (Exception e) {
             System.err.println("[NPCTranslator] text file: " + e.getMessage());
         }
+    }
+
+    /**
+     * Whole tooltips with their colour codes (config/npc_translator_tooltips.jsonl, one JSON object per line):
+     * lets the layout of translated tooltips (line joins, wrapping, colours) be replayed and checked offline.
+     * One sample per menu and tooltip shape (numbers folded); at most 30,000.
+     */
+    public static final File SAMPLES = new File(FabricLoader.getInstance().getConfigDir().toFile(), "npc_translator_tooltips.jsonl");
+    private static final java.util.Set<String> SAMPLE_KEYS = new java.util.HashSet<>();
+    private static boolean samplesLoaded = false;
+
+    public static void recordTooltip(String where, List<String> lines) {
+        if (lines == null || lines.isEmpty() || !enabled()) return;
+        for (String l : lines) if (hasChinese(l)) return;   // already translated
+        final List<String> copy = new java.util.ArrayList<>(lines);
+        final String menu = where == null ? "" : where;
+        try {
+            CAPTURES.execute(() -> {
+                try {
+                    if (!samplesLoaded) {
+                        samplesLoaded = true;
+                        if (SAMPLES.exists()) {
+                            try (BufferedReader r = new BufferedReader(new InputStreamReader(new FileInputStream(SAMPLES), StandardCharsets.UTF_8))) {
+                                String row;
+                                while ((row = r.readLine()) != null) {
+                                    try {
+                                        com.google.gson.JsonObject o = com.google.gson.JsonParser.parseString(row).getAsJsonObject();
+                                        List<String> ls = new java.util.ArrayList<>();
+                                        for (com.google.gson.JsonElement e : o.getAsJsonArray("lines")) ls.add(e.getAsString());
+                                        SAMPLE_KEYS.add(sampleKey(o.get("menu").getAsString(), ls));
+                                    } catch (Exception ignored) {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    if (SAMPLE_KEYS.size() >= 30000 || !SAMPLE_KEYS.add(sampleKey(menu, copy))) return;
+                    com.google.gson.JsonObject o = new com.google.gson.JsonObject();
+                    o.addProperty("menu", anonymize(menu));
+                    com.google.gson.JsonArray a = new com.google.gson.JsonArray();
+                    for (String l : copy) a.add(anonymize(l));
+                    o.add("lines", a);
+                    try (Writer w = new OutputStreamWriter(new FileOutputStream(SAMPLES, true), StandardCharsets.UTF_8)) {
+                        w.write(o.toString() + "\n");
+                    }
+                } catch (Throwable ignored) {
+                }
+            });
+        } catch (java.util.concurrent.RejectedExecutionException ignored) {
+        }
+    }
+
+    private static String sampleKey(String menu, List<String> lines) {
+        return menu.replaceAll("\\d[\\d,.]*", "#") + "\u0001" + String.join("\n", lines).replaceAll("\\d[\\d,.]*", "#");
     }
 
     /** Records each wrapped sentence of a tooltip (lines 1..n) as one joined entry. */

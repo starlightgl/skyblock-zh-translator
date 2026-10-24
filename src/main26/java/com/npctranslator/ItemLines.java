@@ -112,7 +112,7 @@ public final class ItemLines {
     }
 
     private static final java.util.regex.Pattern BULLET =
-            java.util.regex.Pattern.compile("^((?:§[0-9a-fk-or])*\\s*(?:[▶•‣›◆➜→\\-]\\s*(?:§[0-9a-fk-or])*)?)(.+)$");
+            java.util.regex.Pattern.compile("^((?:§[0-9a-fk-or])*\\s*(?:§[0-9a-fk-or])*(?:[▶•‣›◆➜→∙●■◇◈★✦✧\\-]\\s*(?:§[0-9a-fk-or])*)?)(.+)$");
 
     /** "▶ Enchanted Ink Sac" / "Missile IV": a name from the term table, keeping the bullet. */
     /** "§6Mossy Box §8(Mining)": a name followed by its category in brackets. */

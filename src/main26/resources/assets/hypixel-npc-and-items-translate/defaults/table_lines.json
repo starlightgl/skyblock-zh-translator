@@ -143986,6 +143986,98 @@
 "zh": "射击时"
 },
 {
+"en": "Reward:",
+"zh": "奖励:"
+},
+{
+"en": "Completed: %1$s",
+"zh": "已完成: %1$s"
+},
+{
+"en": "✌ Guests: %1$s/%2$s",
+"zh": "✌ 访客: %1$s/%2$s"
+},
+{
+"en": "Manage players guesting on your island.",
+"zh": "管理在你岛屿上做客的玩家。"
+},
+{
+"en": "and more...",
+"zh": "以及更多……"
+},
+{
+"en": "You currently own %1$s Crimson Essence.",
+"zh": "你目前拥有 %1$s 绯红精粹。"
+},
+{
+"en": "You currently own %1$s Diamond Essence.",
+"zh": "你目前拥有 %1$s 钻石精粹。"
+},
+{
+"en": "You currently own %1$s Dragon Essence.",
+"zh": "你目前拥有 %1$s 巨龙精粹。"
+},
+{
+"en": "You currently own %1$s Forest Essence.",
+"zh": "你目前拥有 %1$s 森林精粹。"
+},
+{
+"en": "You currently own %1$s Fossil Essence.",
+"zh": "你目前拥有 %1$s 化石精粹。"
+},
+{
+"en": "You currently own %1$s Gold Essence.",
+"zh": "你目前拥有 %1$s 黄金精粹。"
+},
+{
+"en": "You currently own %1$s Ice Essence.",
+"zh": "你目前拥有 %1$s 寒冰精粹。"
+},
+{
+"en": "You currently own %1$s Safari Essence.",
+"zh": "你目前拥有 %1$s 游猎场精粹。"
+},
+{
+"en": "You currently own %1$s Spider Essence.",
+"zh": "你目前拥有 %1$s 蜘蛛精粹。"
+},
+{
+"en": "You currently own %1$s Sun Gecko Essence.",
+"zh": "你目前拥有 %1$s 太阳壁虎精粹。"
+},
+{
+"en": "You currently own %1$s Undead Essence.",
+"zh": "你目前拥有 %1$s 亡灵精粹。"
+},
+{
+"en": "You currently own %1$s Wither Essence.",
+"zh": "你目前拥有 %1$s 凋灵精粹。"
+},
+{
+"en": "You currently own %1$s True Essence.",
+"zh": "你目前拥有 %1$s 真实精粹。"
+},
+{
+"en": "You currently own %1$s Critical Essence.",
+"zh": "你目前拥有 %1$s 暴击精粹。"
+},
+{
+"en": "You currently own %1$s Intelligence Essence.",
+"zh": "你目前拥有 %1$s 智力精粹。"
+},
+{
+"en": "You currently own %1$s Health Essence.",
+"zh": "你目前拥有 %1$s 生命精粹。"
+},
+{
+"en": "You currently own %1$s Defense Essence.",
+"zh": "你目前拥有 %1$s 防御精粹。"
+},
+{
+"en": "You currently own %1$s Strength Essence.",
+"zh": "你目前拥有 %1$s 力量精粹。"
+},
+{
 "en": "❣ Requires Kuudra Basic Tier Completion.",
 "zh": "❣ 需要通关库德拉基础难度。"
 },
@@ -144004,6 +144096,18 @@
 {
 "en": "❣ Requires Kuudra Hot Tier Completion.",
 "zh": "❣ 需要通关库德拉炽热难度。"
+},
+{
+"en": "❣ Requires Any of the following:",
+"zh": "❣ 需要满足以下任意一项:"
+},
+{
+"en": "- Heart of the Mountain Tier %1$s",
+"zh": "- 山之心等级 %1$s"
+},
+{
+"en": "- Stranded Profile .",
+"zh": "- 搁浅模式档案 。"
 },
 {
 "en": "❣ Requires Target Practice I.",
@@ -144082,6 +144186,10 @@
 "zh": "❣ 需要莲花收集 IX。"
 },
 {
+"en": "- Stranded Profile",
+"zh": "- 搁浅模式档案"
+},
+{
 "en": "• Golden Dragon Egg",
 "zh": "• 金龙蛋"
 },
@@ -144156,6 +144264,14 @@
 {
 "en": "[BtrBz] Your Buy Order for %1$sx %2$s was MATCHED!",
 "zh": "[BtrBz] 你的 %1$s 个%2$s收购订单已成交！"
+},
+{
+"en": "/visit prtl%1$s",
+"zh": "/visit prtl%1$s"
+},
+{
+"en": "- Online Hub (feat. %1$sClover) Click",
+"zh": "- 在线中心 (特邀 %1$sClover) 点击"
 },
 {
 "en": "✔ Ability Chat",
@@ -144300,6 +144416,14 @@
 {
 "en": "✔ Ferocity Sounds",
 "zh": "✔ 残暴音效"
+},
+{
+"en": "??? Sea Creature \"What have we done?\"",
+"zh": "??? 海怪“我们做了什么？”"
+},
+{
+"en": "- Unknown Spider",
+"zh": "- 无名蜘蛛"
 }
 ]
 }

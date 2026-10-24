@@ -2012,6 +2012,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 if (!f.isEmpty()) TextCollector.record(i == 0 ? TextCollector.ITEM_NAME : TextCollector.ITEM_LINE, where, f, null);
             }
             TextCollector.recordSentences(where, lines);
+            TextCollector.recordTooltip(where, lines);
         } catch (Throwable ignored) {
         }
     }
@@ -2070,6 +2071,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 TextCollector.record(i == 0 ? TextCollector.ITEM_NAME : TextCollector.ITEM_LINE, menu, f, null);
             }
             TextCollector.recordSentences(menu, lines);
+            TextCollector.recordTooltip(menu, lines);
         }
     }
 

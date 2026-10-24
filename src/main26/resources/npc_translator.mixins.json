@@ -19,7 +19,8 @@
     "BossHealthOverlayMixin",
     "SkyHanniTabMixin",
     "SkyHanniTabWidthMixin",
-    "ContainerTitleMixin"
+    "ContainerTitleMixin",
+    "BookAccessMixin"
   ],
   "injectors": {
     "defaultRequire": 1

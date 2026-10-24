@@ -66,12 +66,13 @@ def spacing(zh):
 
 
 _BULLET = r"(?:❣|☠|■|✔|✖|•|▶|◆|-(?= [A-Z0-9]))"
+_BULLET_ZH = r"(?:❣|☠|■|✔|✖|•|▶|◆|(?<!\S)-(?= \S))"
 
 
 def bullet_rows(en, zh):
     """'❣ A. ❣ B.' / '❣ 甲。❣ 乙。' -> [('❣ A.', '❣ 甲。'), ('❣ B.', '❣ 乙。')] when both sides split the same way."""
     pe = re.split(r"\s+(?=" + _BULLET + r" )", en.strip())
-    pz = re.split(r"\s*(?=" + _BULLET + r" ?)", zh.strip())
+    pz = re.split(r"\s*(?=" + _BULLET_ZH + r" ?)", zh.strip())
     pz = [p for p in pz if p.strip()]
     if len(pe) < 2 or len(pe) != len(pz):
         return []

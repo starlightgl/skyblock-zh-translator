@@ -233,14 +233,15 @@ public final class PhraseMatcher {
         if (key.length() < 2) return null;
         String stat = statLine(formatted);
         if (stat != null) return stat;
-        Matcher lead = LEADING_CODES.matcher(formatted.replaceFirst("^[\\s ]+", ""));
-        String baseCodes = lead.find() ? lead.group(1) : "";
+        String baseCodes = textCodes(formatted);
         String zh = exact.get(key);
         if (zh == null) {
             zh = matchTemplates(buckets.get(bucketKey(key)), key, formatted, baseCodes);
             if (zh == null) zh = matchTemplates(buckets.get("*"), key, formatted, baseCodes);
         }
         if (zh == null) {
+            String sole = soleTerm(formatted);
+            if (sole != null) return sole;
             String split = splitFields(formatted);
             if (split != null) return split;
             // a single "Label: value" whose label is known (e.g. "Mana Cost: 150")
@@ -252,8 +253,166 @@ public final class PhraseMatcher {
         if (zh.startsWith("§")) {
             return leadingSpace + zh;
         }
-        return leadingSpace + baseCodes + zh;
+        return recolour(formatted, leadingSpace + baseCodes + zh, baseCodes);
     }
+
+    /** The colour of the line's own text: codes of the first run that holds a letter (else of the first visible character). */
+    static String textCodes(String formatted) {
+        String act = "", first = null;
+        for (int i = 0; i < formatted.length(); i++) {
+            char c = formatted.charAt(i);
+            if (c == '§' && i + 1 < formatted.length()) {
+                char code = Character.toLowerCase(formatted.charAt(i + 1));
+                if ((code >= '0' && code <= '9') || (code >= 'a' && code <= 'f') || code == 'r') act = "";
+                if (code != 'r') act += "§" + formatted.charAt(i + 1);
+                i++;
+                continue;
+            }
+            if (c == ' ' || c == ' ') continue;
+            if (first == null) first = act;
+            if (Character.isLetter(c)) return act;
+        }
+        return first == null ? "" : first;
+    }
+
+    /** Characters of a §-formatted string with the codes active at each of them. */
+    private static String charsWithCodes(String formatted, List<String> codes) {
+        StringBuilder chars = new StringBuilder();
+        String act = "";
+        for (int i = 0; i < formatted.length(); i++) {
+            char c = formatted.charAt(i);
+            if (c == '§' && i + 1 < formatted.length()) {
+                char code = Character.toLowerCase(formatted.charAt(i + 1));
+                if ((code >= '0' && code <= '9') || (code >= 'a' && code <= 'f') || code == 'r') act = "";
+                if (code != 'r') act += "§" + formatted.charAt(i + 1);
+                i++;
+                continue;
+            }
+            chars.append(c);
+            codes.add(act);
+        }
+        return chars.toString();
+    }
+
+    /**
+     * Put back colours of the original that the translation lost: every coloured run of the original whose
+     * translation (or the run itself: numbers, icons, "???") is found in the output, still in the base colour,
+     * gets its colour back ("§6??? §3Sea Creature" -> "§6??? §3海怪", "§a✌ §7Guests" -> "§a✌ §7访客").
+     */
+    private String recolour(String original, String result, String base) {
+        List<String> oc = new ArrayList<>();
+        String op = charsWithCodes(original, oc);
+        List<String> runCodes = new ArrayList<>(), runText = new ArrayList<>();
+        for (int i = 0; i < op.length(); ) {
+            int j = i;
+            while (j < op.length() && oc.get(j).equals(oc.get(i))) j++;
+            runCodes.add(oc.get(i));
+            runText.add(op.substring(i, j));
+            i = j;
+        }
+        boolean any = false;
+        for (int k = 0; k < runCodes.size(); k++) if (!runCodes.get(k).equals(base) && !runText.get(k).trim().isEmpty()) { any = true; break; }
+        if (!any) return result;
+        List<String> codes = new ArrayList<>();
+        String plain = charsWithCodes(result, codes);
+        int from = 0;
+        boolean changed = false;
+        for (int k = 0; k < runCodes.size(); k++) {
+            String rc = runCodes.get(k);
+            if (rc.equals(base)) continue;
+            String t = runText.get(k).trim();
+            if (t.matches(".*[A-Za-z].*")) t = t.replaceAll("^[.,!?:;(]+|[.,!?:;)]+$", "").trim();
+            if (t.isEmpty()) continue;
+            String z = t;
+            boolean sign = false;
+            if (t.matches(".*[A-Za-z].*")) {
+                String tr = valueTranslator.apply(t);
+                if (tr != null && !tr.equals(t)) z = tr;
+            } else if (t.chars().allMatch(ch -> ch < 0x80 && !Character.isLetterOrDigit(ch))) {
+                // bullets, brackets and signs ("- ", "(", ")", "*", "+"): the next one in order, never searched again
+                if (t.matches("[.,!?:;]+")) continue;
+                sign = true;
+            }
+            int at = -1;
+            if (sign) {
+                boolean firstRun = runText.subList(0, k).stream().allMatch(r -> r.trim().isEmpty());
+                if ((z.equals("+") || z.equals("-")) && !(firstRun && plain.startsWith(z, leadingSpaces(plain)))) {
+                    // a sign belongs to the number after it
+                    for (int j = Math.max(0, from); j + 1 < plain.length(); j++)
+                        if (plain.startsWith(z, j) && Character.isDigit(plain.charAt(j + z.length()))) { at = j; break; }
+                } else at = plain.indexOf(z, from);
+            } else {
+                at = plain.indexOf(z, from);
+                if (at < 0) at = plain.indexOf(z);
+            }
+            if (at < 0) continue;
+            boolean free = true;
+            for (int j = at; j < at + z.length(); j++) if (!codes.get(j).equals(base) && !codes.get(j).equals(rc)) { free = false; break; }
+            if (!free) continue;
+            for (int j = at; j < at + z.length(); j++) codes.set(j, rc);
+            from = at + z.length();
+            changed = true;
+        }
+        if (!changed) return result;
+        StringBuilder out = new StringBuilder();
+        String shown = null;
+        for (int j = 0; j < plain.length(); j++) {
+            String c = codes.get(j);
+            if (!c.equals(shown)) {
+                if (!c.isEmpty()) out.append(c);
+                else if (shown != null) out.append("§r");
+                shown = c;
+            }
+            out.append(plain.charAt(j));
+        }
+        return out.toString();
+    }
+
+    private static int leadingSpaces(String s) {
+        int i = 0;
+        while (i < s.length() && (s.charAt(i) == ' ' || s.charAt(i) == '\u00A0')) i++;
+        return i;
+    }
+
+    private static final Pattern WORDS = Pattern.compile("[A-Za-z][A-Za-z'\\-]*(?: [A-Za-z][A-Za-z'\\-]*)*");
+
+    /**
+     * A line that is only numbers, icons and one name ("§8+§c4❤ Health", "§f⚡ Speed §f400", "+200,000 Coins"):
+     * the name is translated in place, everything else (colours included) stays as it is.
+     */
+    private String soleTerm(String formatted) {
+        StringBuilder plain = new StringBuilder();
+        List<Integer> at = new ArrayList<>();
+        for (int i = 0; i < formatted.length(); i++) {
+            char c = formatted.charAt(i);
+            if (c == '§' && i + 1 < formatted.length()) { i++; continue; }
+            plain.append(c);
+            at.add(i);
+        }
+        Matcher w = WORDS.matcher(plain);
+        int ps = -1, pe = -1;
+        while (w.find()) {
+            // unit letters on a number ("1.5k", "3x", "20s") belong to the number
+            if (w.start() > 0 && Character.isDigit(plain.charAt(w.start() - 1)) && w.group().length() <= 2) continue;
+            if (ps >= 0) return null;
+            ps = w.start();
+            pe = w.end();
+        }
+        if (ps < 0 || pe - ps < 3) return null;
+        String rest = plain.substring(0, ps) + plain.substring(pe);
+        if (rest.matches(".*[A-Za-z]{3,}.*")) return null;
+        if (!rest.matches(".*[\\d\\p{So}\\uE000-\\uF8FF].*")) return null;   // a number or an icon beside the name
+        String phrase = plain.substring(ps, pe);
+        String zh = valueTranslator.apply(phrase);
+        if (zh == null || zh.equals(phrase) || zh.matches(".*[A-Za-z]{3,}.*")) return null;
+        int fs = at.get(ps), fe = at.get(pe - 1) + 1;
+        // codes inside the name move to its front
+        StringBuilder codesInside = new StringBuilder();
+        Matcher cm = CODE.matcher(formatted.substring(fs, fe));
+        while (cm.find()) codesInside.append(cm.group());
+        return formatted.substring(0, fs) + codesInside + zh + formatted.substring(fe);
+    }
+
 
     /** Two or more spaces between visible text: the server lays out columns ("Ability: Soulcry  RIGHT CLICK"). */
     private static final Pattern GAP = Pattern.compile("\\S((?:§[0-9a-fk-orA-FK-OR])*[ \u00A0]{2,})(?=\\S)");
@@ -497,7 +656,7 @@ public final class PhraseMatcher {
             String rest = filled.substring(me + 1);
             int take = suffixLength(rest, run[2]);
             // back to the colour the original used after the value, or the line's own colour
-            out.append(rest, 0, take).append(run[3].isEmpty() || run[3].equals(codes) ? back : run[3]);
+            out.append(rest, 0, take).append(back);
             i = me + 1 + take;
         }
         return out.toString();
@@ -706,13 +865,40 @@ public final class PhraseMatcher {
     /** Whether {@code next} continues the sentence of {@code prev} (same rules as the line joining). */
     public static boolean continuesLine(String prev, String next) {
         if (OrderBookText.isBoundary(prev) || OrderBookText.isBoundary(next)) return false;
-        if (isBar(prev) || isBar(next)) return false;
+        if (isBar(prev) || isBar(next) || rowBoundary(prev, next)) return false;
         return !isBlank(prev) && !isBlank(next) && sameParagraph(prev, next) && !STARTS_FIELD.matcher(next).find()
                 && !STARTS_BULLET.matcher(next).find();
     }
 
     /** A list item ("▶ Growth VI", "- Bazaar (I-V)", "■ Talk to Kelly", "✔ Tier II") never continues the line above. */
     static final Pattern STARTS_BULLET = Pattern.compile("^[\\s  ]*(?:§[0-9a-fk-or])*(?:[▶•‣›◆∙➜→■✔✖✘✓☐☑★❖◇◈❣☠⚠]|[-–](?:§[0-9a-fk-or])* (?:§[0-9a-fk-or])*[A-Z0-9+(\\[])");
+
+    /** Visible leading spaces of a line. */
+    static int indent(String formatted) {
+        int n = 0;
+        for (int i = 0; i < formatted.length(); i++) {
+            char c = formatted.charAt(i);
+            if (c == '§' && i + 1 < formatted.length()) { i++; continue; }
+            if (c == ' ' || c == ' ') { n++; continue; }
+            break;
+        }
+        return n;
+    }
+
+    /**
+     * Rows of a list never run on into each other: lines indented differently, and indented rows that start
+     * with a value or an icon ("  +200,000 Coins", " ⚡ Speed 400") or follow a row ending with a number.
+     */
+    static boolean rowBoundary(String prev, String next) {
+        int a = indent(prev), b = indent(next);
+        if (a != b) return true;
+        if (b == 0) return false;
+        String np = CODE.matcher(next).replaceAll("").trim(), pp = CODE.matcher(prev).replaceAll("").trim();
+        if (np.isEmpty() || pp.isEmpty()) return false;
+        char f = np.charAt(0);
+        if (f == '+' || f == '-' || Character.isDigit(f) || (!Character.isLetter(f) && f != '(' && f != '"' && f != '\'')) return true;
+        return pp.matches(".*[\\d%kKM]$");
+    }
 
     private static final Pattern BAR_CHARS = Pattern.compile("[━▬■▌▊█░▒▓|=\\-]{5,}");
 
@@ -802,7 +988,7 @@ public final class PhraseMatcher {
                 for (int k = i + 1; k <= maxJ; k++) {
                     if (OrderBookText.isBoundary(lines.get(k)) || isBlank(lines.get(k)) || !sameParagraph(lines.get(k - 1), lines.get(k))
                             || STARTS_FIELD.matcher(lines.get(k)).find() || STARTS_BULLET.matcher(lines.get(k)).find()
-                            || isBar(lines.get(k))) { maxJ = k - 1; break; }
+                            || isBar(lines.get(k)) || rowBoundary(lines.get(k - 1), lines.get(k))) { maxJ = k - 1; break; }
                 }
                 for (int j = maxJ; j > i; j--) {
                     StringBuilder joined = new StringBuilder(lines.get(i));

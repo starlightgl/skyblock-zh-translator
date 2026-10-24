@@ -21176,7 +21176,12 @@
             "You currently own %1$s Intelligence Essence.": "你目前拥有 %1$s 智力精粹。",
             "You currently own %1$s Health Essence.": "你目前拥有 %1$s 生命精粹。",
             "You currently own %1$s Defense Essence.": "你目前拥有 %1$s 防御精粹。",
-            "You currently own %1$s Strength Essence.": "你目前拥有 %1$s 力量精粹。"
+            "You currently own %1$s Strength Essence.": "你目前拥有 %1$s 力量精粹。",
+            "%1$s Recipe": "%1$s 配方",
+            "%1$s Recipes": "%1$s 配方",
+            "%1$s Exp Discount (-%2$s%)": "%1$s 经验折扣 (-%2$s%)",
+            "The Expedition Volume %1$s": "远征记 第 %1$s 卷",
+            "Click to read!": "点击阅读！"
         }
     },
     "unify": [

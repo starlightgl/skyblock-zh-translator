@@ -144078,6 +144078,10 @@
 "zh": "你目前拥有 %1$s 力量精粹。"
 },
 {
+"en": "- %1$s ❤ Health (MM) : %2$s",
+"zh": "- %1$s ❤ 生命值 (大师模式) : %2$s"
+},
+{
 "en": "❣ Requires Kuudra Basic Tier Completion.",
 "zh": "❣ 需要通关库德拉基础难度。"
 },
@@ -144098,6 +144102,22 @@
 "zh": "❣ 需要通关库德拉炽热难度。"
 },
 {
+"en": "Berserk:",
+"zh": "狂战士:"
+},
+{
+"en": "Mage:",
+"zh": "法师:"
+},
+{
+"en": "Tank:",
+"zh": "坦克:"
+},
+{
+"en": "+%1$s Defense and reduces damage taken by %2$s% for each piece you have equipped if you are hit by the same monster within %3$s seconds.",
+"zh": "+%1$s 防御；若在 %3$s 秒内被同一只怪物击中，你每穿戴一件，受到的伤害降低 %2$s%。"
+},
+{
 "en": "❣ Requires Any of the following:",
 "zh": "❣ 需要满足以下任意一项:"
 },
@@ -144110,12 +144130,80 @@
 "zh": "- 搁浅模式档案 。"
 },
 {
+"en": "Chance:",
+"zh": "几率:"
+},
+{
+"en": "- %1$s% (With Enderman Slayer %2$s)",
+"zh": "- %1$s%（末影人猎手 %2$s 时）"
+},
+{
 "en": "❣ Requires Target Practice I.",
 "zh": "❣ 需要靶场练习 I。"
 },
 {
+"en": "- %1$s.%2$s ❤ Health (MM) : %3$s.%4$s",
+"zh": "- %1$s.%2$s ❤ 生命值（大师模式）: %3$s.%4$s"
+},
+{
 "en": "❣ Requires Master Mode The Catacombs Floor IV Completion.",
 "zh": "❣ 需要通关大师模式地下墓穴第 IV 层。"
+},
+{
+"en": "Healer:",
+"zh": "治疗:"
+},
+{
+"en": "+%1$s Mending & tethered players and players within %2$s blocks are healed for %3$s% of your Life Steal, Drain, and Vampirism healing.",
+"zh": "+%1$s 修补，且被连结的玩家和 %2$s 格内的玩家会获得相当于你吸血、汲取和吸血鬼治疗量 %3$s% 的治疗。"
+},
+{
+"en": "• Grants +%1$s% base mana regen.",
+"zh": "• 提供 +%1$s% 基础法力恢复。"
+},
+{
+"en": "• Gain +%1$s Vitality.",
+"zh": "• 获得 +%1$s 活力。"
+},
+{
+"en": "• Gain +%1$s True Defense.",
+"zh": "• 获得 +%1$s 真实防御。"
+},
+{
+"en": "• Heal %1$s❤ per second while on the Crimson Isle and Kuudra.",
+"zh": "• 在绯红孤岛和库德拉中每秒恢复 %1$s❤。"
+},
+{
+"en": "- Throin the Forger.",
+"zh": "- 锻造师斯罗因"
+},
+{
+"en": "● Monsters",
+"zh": "● 怪物"
+},
+{
+"en": "● Griffin Feathers",
+"zh": "● 狮鹫羽毛"
+},
+{
+"en": "What have we done?",
+"zh": "我们都做了些什么？"
+},
+{
+"en": "- Unknown Spider",
+"zh": "- 无名蜘蛛"
+},
+{
+"en": "It's time.",
+"zh": "是时候了。"
+},
+{
+"en": "- Uninformed Spider",
+"zh": "- 不明真相的蜘蛛"
+},
+{
+"en": "● Mythos Fragments",
+"zh": "● 迷思残片"
 },
 {
 "en": "❣ Requires Sand Collection VII.",
@@ -144126,6 +144214,10 @@
 "zh": "❣ 需要靶场练习 III。"
 },
 {
+"en": "❣ Charm Chance.",
+"zh": "❣ 魅力几率。"
+},
+{
 "en": "❣ Requires Slimeball Collection VII.",
 "zh": "❣ 需要黏液球收集 VII。"
 },
@@ -144134,60 +144226,32 @@
 "zh": "❣ 需要靶场练习 II。"
 },
 {
-"en": "❣ Requires Coal Collection VII.",
-"zh": "❣ 需要煤炭收集 VII。"
+"en": "Consume this item to unwrap it and find some Junk. Contains a random selection of %1$s of the following:",
+"zh": "食用此物品将其拆开，可以找到一些垃圾。随机包含以下物品中的 %1$s 个："
 },
 {
-"en": "• +%1$s Fishing Speed",
-"zh": "• +%1$s 钓鱼速度"
+"en": "• Rusty Coin",
+"zh": "• 生锈硬币"
 },
 {
-"en": "• +%1$s Sea Creature Chance",
-"zh": "• +%1$s 海怪几率"
+"en": "• Busted Belt Buckle",
+"zh": "• 坏掉的皮带扣"
 },
 {
-"en": "• +%1$s Treasure Chance",
-"zh": "• +%1$s 宝藏几率"
+"en": "• Old Leather Boot",
+"zh": "• 旧皮靴"
 },
 {
-"en": "❣ Requires Ice Collection VII.",
-"zh": "❣ 需要冰收集 VII。"
+"en": "☠ Wither mobs during the Year of the Witch!",
+"zh": "☠ 凋灵生物有时会掉落！"
 },
 {
-"en": "❣ Requires Lotus Collection V.",
-"zh": "❣ 需要莲花收集 V。"
+"en": "+%1$s Cocoa Beans Fortune",
+"zh": "+%1$s 可可豆时运"
 },
 {
-"en": "❣ Requires Cactus Collection VII.",
-"zh": "❣ 需要仙人掌收集 VII。"
-},
-{
-"en": "❣ Requires Lotus Collection VIII.",
-"zh": "❣ 需要莲花收集 VIII。"
-},
-{
-"en": "• Zombie Armor triggers on all hits.",
-"zh": "• 僵尸盔甲对所有攻击生效。"
-},
-{
-"en": "• Store %1$s extra necromancer souls.",
-"zh": "• 额外储存 %1$s 个死灵法师灵魂。"
-},
-{
-"en": "• Summon %1$s more necromancy mobs.",
-"zh": "• 额外召唤 %1$s 个死灵生物。"
-},
-{
-"en": "• Gain +%1$s Attack Speed.",
-"zh": "• 获得 +%1$s 攻击速度。"
-},
-{
-"en": "❣ Requires Lotus Collection IX.",
-"zh": "❣ 需要莲花收集 IX。"
-},
-{
-"en": "- Stranded Profile",
-"zh": "- 搁浅模式档案"
+"en": "● Braided Griffin Feathers",
+"zh": "● 编织狮鹫羽毛"
 },
 {
 "en": "• Golden Dragon Egg",
@@ -144200,6 +144264,130 @@
 {
 "en": "• Rose Dragon Egg",
 "zh": "• 玫瑰龙蛋"
+},
+{
+"en": "Next Hit Damage:",
+"zh": "下一次攻击伤害:"
+},
+{
+"en": "+%1$s% (Max %2$s%)",
+"zh": "+%1$s%（最多 %2$s%）"
+},
+{
+"en": "❣ Requires Coal Collection VII.",
+"zh": "❣ 需要煤炭收集 VII。"
+},
+{
+"en": "Effect:",
+"zh": "效果:"
+},
+{
+"en": "+%1$s Overbloom.",
+"zh": "+%1$s 繁花。"
+},
+{
+"en": "• Grants +%1$s Mining Speed.",
+"zh": "• 提供 +%1$s 挖掘速度。"
+},
+{
+"en": "• Grants +%1$s Mining Fortune.",
+"zh": "• 提供 +%1$s 挖掘时运。"
+},
+{
+"en": "• Grants +%1$s Heat Resistance.",
+"zh": "• 提供 +%1$s 炎热抵抗。"
+},
+{
+"en": "• Grants +%1$s Cold Resistance.",
+"zh": "• 提供 +%1$s 寒冷抵抗。"
+},
+{
+"en": "- %1$s% Green Goblin Egg",
+"zh": "- %1$s% 绿色哥布林蛋"
+},
+{
+"en": "- %1$s% Yellow Goblin Egg",
+"zh": "- %1$s% 黄色哥布林蛋"
+},
+{
+"en": "- %1$s% Blue Goblin Egg",
+"zh": "- %1$s% 蓝色哥布林蛋"
+},
+{
+"en": "Other Sources: Custom Ores (Gold etc.)",
+"zh": "其他来源: 自定义矿石（金等）"
+},
+{
+"en": "- %1$s% Gemstones and Mithril in the Crystal Hollows",
+"zh": "- %1$s% 水晶洞窟中的宝石和秘银"
+},
+{
+"en": "- %1$s% Hard Stone in the Crystal Hollows",
+"zh": "- %1$s% 水晶洞窟中的硬石"
+},
+{
+"en": "+1%  Magic Find 10 Combo (lasts %1$ss)",
+"zh": "+1%  魔法寻宝 10 连击（持续 %1$s 秒） 每次击杀"
+},
+{
+"en": "+2 coins per kill 15 Combo (lasts %1$ss)",
+"zh": "+2 硬币 15 连击（持续 %1$s 秒）"
+},
+{
+"en": "+1%  Magic Find 30 Combo (lasts %1$ss)",
+"zh": "+1%  魔法寻宝 30 连击（持续 %1$s 秒） 每次击杀"
+},
+{
+"en": "+2 coins per kill",
+"zh": "+2 硬币"
+},
+{
+"en": "+4 coins per kill 15 Combo (lasts %1$ss)",
+"zh": "+4 硬币 15 连击（持续 %1$s 秒）"
+},
+{
+"en": "+4 coins per kill",
+"zh": "+4 硬币"
+},
+{
+"en": "+2%  Magic Find 10 Combo (lasts %1$ss)",
+"zh": "+2%  魔法寻宝 10 连击（持续 %1$s 秒） 每次击杀"
+},
+{
+"en": "+6 coins per kill 15 Combo (lasts %1$ss)",
+"zh": "+6 硬币 15 连击（持续 %1$s 秒）"
+},
+{
+"en": "+2%  Magic Find 30 Combo (lasts %1$ss)",
+"zh": "+2%  魔法寻宝 30 连击（持续 %1$s 秒） 每次击杀"
+},
+{
+"en": "+6 coins per kill",
+"zh": "+6 硬币"
+},
+{
+"en": "+8 coins per kill 15 Combo (lasts %1$ss)",
+"zh": "+8 硬币 15 连击（持续 %1$s 秒）"
+},
+{
+"en": "+8 coins per kill",
+"zh": "+8 硬币"
+},
+{
+"en": "+3%  Magic Find 10 Combo (lasts %1$ss)",
+"zh": "+3%  魔法寻宝 10 连击（持续 %1$s 秒） 每次击杀"
+},
+{
+"en": "+10 coins per kill 15 Combo (lasts %1$ss)",
+"zh": "+10 硬币 15 连击（持续 %1$s 秒）"
+},
+{
+"en": "+3%  Magic Find 30 Combo (lasts %1$ss)",
+"zh": "+3%  魔法寻宝 30 连击（持续 %1$s 秒） 每次击杀"
+},
+{
+"en": "+10 coins per kill",
+"zh": "+10 硬币"
 },
 {
 "en": "• Hephaestus Plushie",
@@ -144222,6 +144410,38 @@
 "zh": "• 赫菲斯托斯纪念品"
 },
 {
+"en": "• +%1$s Fishing Speed",
+"zh": "• +%1$s 钓鱼速度"
+},
+{
+"en": "• +%1$s Sea Creature Chance",
+"zh": "• +%1$s 海怪几率"
+},
+{
+"en": "• +%1$s Treasure Chance",
+"zh": "• +%1$s 宝藏几率"
+},
+{
+"en": "❣ Requires Ice Collection VII.",
+"zh": "❣ 需要冰收集 VII。"
+},
+{
+"en": "❣ Requires Lotus Collection V.",
+"zh": "❣ 需要莲花收集 V。"
+},
+{
+"en": "Garden Requirements:",
+"zh": "花园要求:"
+},
+{
+"en": "- Garden XV (%1$s)",
+"zh": "- 花园 XV（%1$s）"
+},
+{
+"en": "- %1$s Visitors served",
+"zh": "- 已接待 %1$s 位访客"
+},
+{
 "en": "• Heal yourself for %1$s❤ per second.",
 "zh": "• 每秒为自己恢复 %1$s❤。"
 },
@@ -144234,40 +144454,360 @@
 "zh": "• 获得 +%1$s 生命恢复。"
 },
 {
-"en": "• Grants +%1$s% base mana regen.",
-"zh": "• 基础法力恢复提高 +%1$s%。"
-},
-{
 "en": "• Grants +%1$s Strength.",
 "zh": "• 提供 +%1$s 力量。"
 },
 {
-"en": "%1$sx",
-"zh": "%1$s 个"
+"en": "+%1$s☯ Fishing Wisdom",
+"zh": "+%1$s☯ 钓鱼智慧"
+},
+{
+"en": "❣ Requires Cactus Collection VII.",
+"zh": "❣ 需要仙人掌收集 VII。"
+},
+{
+"en": "+%1$s☯ Farming Wisdom",
+"zh": "+%1$s☯ 农业智慧"
+},
+{
+"en": "Increased EXP:",
+"zh": "经验提升:"
+},
+{
+"en": "+%1$s% EXP",
+"zh": "+%1$s% 经验"
+},
+{
+"en": "❣ Requires Lotus Collection VIII.",
+"zh": "❣ 需要莲花收集 VIII。"
+},
+{
+"en": "• Zombie Armor triggers on all hits.",
+"zh": "• 僵尸盔甲对所有攻击生效。"
+},
+{
+"en": "• Store %1$s extra necromancer souls.",
+"zh": "• 额外储存 %1$s 个死灵法师灵魂。"
+},
+{
+"en": "• Summon %1$s more necromancy mobs.",
+"zh": "• 额外召唤 %1$s 个死灵生物。"
+},
+{
+"en": "+%1$s Growth Stages",
+"zh": "+%1$s 个生长阶段"
+},
+{
+"en": "- %1$sM coins as a token of gratitude.",
+"zh": "- %1$sM 硬币以表谢意。"
+},
+{
+"en": "☠ Wither, ༕ Undead and 🦴 Skeletal mobs by %1$s%.",
+"zh": "☠ 凋灵、༕ 亡灵和 🦴 骷髅生物造成的伤害提高 %1$s%。"
+},
+{
+"en": "• Gain +%1$s Attack Speed.",
+"zh": "• 获得 +%1$s 攻击速度。"
+},
+{
+"en": "• Sea Creatures you fish up will be Corrupted.",
+"zh": "• 你钓上的海怪会被腐化。"
+},
+{
+"en": "❣ Requires Lotus Collection IX.",
+"zh": "❣ 需要莲花收集 IX。"
+},
+{
+"en": "Ability: Howl RIGHT CLICK You and %1$s nearby players gain:",
+"zh": "技能: 嚎叫 右键 你和附近 %1$s 名玩家获得:"
+},
+{
+"en": "+%1$s Speed for %2$s seconds.",
+"zh": "+%1$s 速度，持续 %2$s 秒。"
+},
+{
+"en": "• Grants +%1$s Gemstone Spread.",
+"zh": "• 提供 +%1$s 宝石蔓延。"
+},
+{
+"en": "Open the lid and pull out the Wither Scroll stored within. Can be any of the following:",
+"zh": "打开瓶盖，取出里面存放的凋灵卷轴。可能是以下任意一种:"
+},
+{
+"en": "• Implosion",
+"zh": "• 内爆"
+},
+{
+"en": "• Shadow Warp",
+"zh": "• 暗影跃迁"
+},
+{
+"en": "• Wither Shield",
+"zh": "• 凋灵护盾"
+},
+{
+"en": "- %1$s,%2$s ❤ Health (MM) : %3$s",
+"zh": "- %1$s,%2$s ❤ 生命值 (大师模式): %3$s"
+},
+{
+"en": "+%1$s Defense and reduces damage",
+"zh": "+%1$s 防御，并且"
+},
+{
+"en": "- Stranded Profile",
+"zh": "- 搁浅模式档案"
+},
+{
+"en": "10 Combo (lasts %1$ss)",
+"zh": "10 连击（持续 %1$s 秒） 每次击杀"
+},
+{
+"en": "30 Combo (lasts %1$ss)",
+"zh": "30 连击（持续 %1$s 秒） 每次击杀"
+},
+{
+"en": "the following:",
+"zh": "以下任意一种:"
+},
+{
+"en": "- MINISTERS",
+"zh": "- 大臣"
+},
+{
+"en": "%1$s Score:",
+"zh": "%1$s 分:"
+},
+{
+"en": "+%1$s Magic Find",
+"zh": "+%1$s 魔法寻宝"
+},
+{
+"en": "+%1$s Magic Find «",
+"zh": "+%1$s 魔法寻宝 «"
+},
+{
+"en": "- %1$s = %2$s coins",
+"zh": "- %1$s = %2$s 硬币"
+},
+{
+"en": "Extra fee:",
+"zh": "额外费用:"
+},
+{
+"en": "+%1$s coins (%2$s%)",
+"zh": "+%1$s 硬币（%2$s%）"
+},
+{
+"en": "+%1$s coins",
+"zh": "+%1$s 硬币"
 },
 {
 "en": "◆ Fire Spiral Rune I",
 "zh": "◆ 火焰螺旋符文 I"
 },
 {
-"en": "[BtrBz] Your Buy Order for %1$sx %2$s was UNDERCUT by %3$s coins!",
-"zh": "[BtrBz] 你的 %1$s 个%2$s收购订单被压价 %3$s 硬币！"
+"en": "◆ Fire Spiral Rune I to IceSniperALT in an auction!",
+"zh": "◆ 火焰螺旋符文 I 卖给 IceSniperALT，领取了 %1$s 硬币！"
 },
 {
-"en": "• queue: %1$s order / %2$s items [Go To Orders]",
-"zh": "• 队列: %1$s 个订单 / %2$s 件物品 [前往订单]"
+"en": "■ Poppy",
+"zh": "■ 虞美人"
 },
 {
-"en": "• queue: %1$s orders / %2$s items [Go To Orders]",
-"zh": "• 队列: %1$s 个订单 / %2$s 件物品 [前往订单]"
+"en": "■ Dandelion",
+"zh": "■ 蒲公英"
 },
 {
-"en": "[BtrBz] Your Buy Order for %1$sx %2$s was MATCHED!",
-"zh": "[BtrBz] 你的 %1$s 个%2$s收购订单已成交！"
+"en": "■ Plant Matter",
+"zh": "■ 植物物质"
 },
 {
-"en": "/visit prtl%1$s",
-"zh": "/visit prtl%1$s"
+"en": "■ Red Thornleaf",
+"zh": "■ 红棘叶"
+},
+{
+"en": "■ Enchanted Dandelion",
+"zh": "■ 附魔蒲公英"
+},
+{
+"en": "■ Enchanted Poppy",
+"zh": "■ 附魔虞美人"
+},
+{
+"en": "■ Goblin Egg",
+"zh": "■ 哥布林蛋"
+},
+{
+"en": "■ Biofuel",
+"zh": "■ 生物燃料"
+},
+{
+"en": "■ Green Goblin Egg",
+"zh": "■ 绿色哥布林蛋"
+},
+{
+"en": "■ Coalroot",
+"zh": "■ 煤根"
+},
+{
+"en": "■ Volta",
+"zh": "■ 伏打"
+},
+{
+"en": "■ Oil Barrel",
+"zh": "■ 油桶"
+},
+{
+"en": "■ Yellow Goblin Egg",
+"zh": "■ 黄色哥布林蛋"
+},
+{
+"en": "■ Red Goblin Egg",
+"zh": "■ 红色哥布林蛋"
+},
+{
+"en": "■ Blue Goblin Egg",
+"zh": "■ 蓝色哥布林蛋"
+},
+{
+"en": "■ Sunflower Oil",
+"zh": "■ 葵花籽油"
+},
+{
+"en": "■ Ugly Fossil",
+"zh": "■ 丑陋化石"
+},
+{
+"en": "■ Helix Fossil",
+"zh": "■ 螺旋化石"
+},
+{
+"en": "■ Tusk Fossil",
+"zh": "■ 獠牙化石"
+},
+{
+"en": "■ Webbed Fossil",
+"zh": "■ 蛛网化石"
+},
+{
+"en": "■ Footprint Fossil",
+"zh": "■ 足迹化石"
+},
+{
+"en": "■ Spine Fossil",
+"zh": "■ 脊椎化石"
+},
+{
+"en": "■ Clubbed Fossil",
+"zh": "■ 棒状化石"
+},
+{
+"en": "■ Claw Fossil",
+"zh": "■ 爪子化石"
+},
+{
+"en": "Chocolate Per Click:",
+"zh": "每次点击巧克力:"
+},
+{
+"en": "+%1$s Chocolate",
+"zh": "+%1$s 巧克力"
+},
+{
+"en": "You have:",
+"zh": "你已拥有:"
+},
+{
+"en": "Per Cookie:",
+"zh": "每块曲奇: 可获得"
+},
+{
+"en": "+%1$s bits available",
+"zh": "+%1$s 点券"
+},
+{
+"en": "Dwarven Mines:",
+"zh": "矮人矿洞:"
+},
+{
+"en": "+%1$s Mithril Powder",
+"zh": "+%1$s 秘银粉末"
+},
+{
+"en": "Crystal Hollows:",
+"zh": "水晶洞窟:"
+},
+{
+"en": "+%1$s Gemstone Powder",
+"zh": "+%1$s 宝石粉末"
+},
+{
+"en": "Glacite Tunnels:",
+"zh": "极冰矿道:"
+},
+{
+"en": "+%1$s Glacite Powder",
+"zh": "+%1$s 极冰粉末"
+},
+{
+"en": "Mithril:",
+"zh": "秘银:"
+},
+{
+"en": "Gemstone:",
+"zh": "宝石:"
+},
+{
+"en": "Glacite:",
+"zh": "极冰:"
+},
+{
+"en": "✖ Not Found",
+"zh": "✖ 未找到"
+},
+{
+"en": "✔ Found",
+"zh": "✔ 已找到"
+},
+{
+"en": "+%1$s Grants",
+"zh": "+%1$s 挖掘紫水晶时提供"
+},
+{
+"en": "+%1$s Mining Fortune while mining Amethyst.",
+"zh": "+%1$s 挖掘时运。"
+},
+{
+"en": "+%1$s The very first pickaxe model! Invented by the famous Thomas Pickson. This item can be reforged!",
+"zh": "+%1$s 史上第一款镐！由著名的托马斯·皮克森发明。此物品可以重铸！"
+},
+{
+"en": "+%1$s Right-click to point towards the nearest Relic!",
+"zh": "+%1$s 右键指向最近的遗物！"
+},
+{
+"en": "- Uninformed Spider RARE",
+"zh": "- 不明真相的蜘蛛 稀有"
+},
+{
+"en": "+%1$s This shard automatically adapts to its user inside Dungeons, allowing you to perform your class ability. Reduces the cooldown of Seismic Wave by %2$ss.",
+"zh": "+%1$s 这块碎片在地牢中会自动适应使用者，让你能够施展职业技能。地震波的冷却时间缩短 %2$s 秒。"
+},
+{
+"en": "+%1$s Magic Find %2$s Score:",
+"zh": "+%1$s 魔法寻宝 %2$s 分:"
+},
+{
+"en": "+%1$s Magic Find « %2$s Score:",
+"zh": "+%1$s 魔法寻宝 « %2$s 分:"
+},
+{
+"en": "Piercing Exp Discount (-%1$s%)",
+"zh": "穿透附魔经验折扣 (-%1$s%)"
+},
+{
+"en": "Thorns Exp Discount (-%1$s%)",
+"zh": "荆棘附魔经验折扣 (-%1$s%)"
 },
 {
 "en": "- Online Hub (feat. %1$sClover) Click",
@@ -144418,12 +144958,428 @@
 "zh": "✔ 残暴音效"
 },
 {
-"en": "??? Sea Creature \"What have we done?\"",
-"zh": "??? 海怪“我们做了什么？”"
+"en": "Per point:",
+"zh": "每点:"
 },
 {
-"en": "- Unknown Spider",
-"zh": "- 无名蜘蛛"
+"en": "+%1$s Chocolate -----------------",
+"zh": "+%1$s 巧克力 -----------------"
+},
+{
+"en": "✖ Win GOLD in %1$s collection! (%2$s/%3$s)",
+"zh": "✖ 在 %1$s 项收集品中获得金牌！(%2$s/%3$s)"
+},
+{
+"en": "+%1$s Chocolate UPGRADE ➜ Hand-Baked Chocolate V",
+"zh": "+%1$s 巧克力升级 ➜ 手工巧克力 V"
+},
+{
+"en": "+%1$s Cocoa Beans Fortune You have purchased the maximum amount of upgrades!",
+"zh": "+%1$s 可可豆时运你已购买了最大数量的升级！"
+},
+{
+"en": "+%1$s bits available Your Fame Rank's bit multiplier applies on the bits from every cookie you've ever eaten!",
+"zh": "+%1$s 点券你的名望等级点券倍率适用于你吃过的每一块曲奇所提供的点券！"
+},
+{
+"en": "+%1$s Glacite Powder ENABLED",
+"zh": "+%1$s 极冰粉末已启用"
+},
+{
+"en": "✖ Not Found Amber",
+"zh": "✖ 未找到琥珀"
+},
+{
+"en": "✖ Not Found Amethyst",
+"zh": "✖ 未找到紫水晶"
+},
+{
+"en": "✖ Not Found Sapphire",
+"zh": "✖ 未找到蓝宝石"
+},
+{
+"en": "✖ Not Found Topaz",
+"zh": "✖ 未找到黄玉"
+},
+{
+"en": "✔ Found Ruby",
+"zh": "✔ 已找到红宝石"
+},
+{
+"en": "✔ Found Opal",
+"zh": "✔ 已找到蛋白石"
+},
+{
+"en": "✖ Not Found Aquamarine",
+"zh": "✖ 未找到海蓝宝石"
+},
+{
+"en": "✖ Not Found Peridot",
+"zh": "✖ 未找到橄榄石"
+},
+{
+"en": "✖ Not Found Citrine",
+"zh": "✖ 未找到黄水晶"
+},
+{
+"en": "Adds up to:",
+"zh": "合计:"
+},
+{
+"en": "Additive:",
+"zh": "叠加:"
+},
+{
+"en": "Magic Damage:",
+"zh": "魔法伤害:"
+},
+{
+"en": "Avg HP/s:",
+"zh": "平均每秒恢复:"
+},
+{
+"en": "Total Fortune:",
+"zh": "总时运:"
+},
+{
+"en": "Value:",
+"zh": "数值:"
+},
+{
+"en": "Flat:",
+"zh": "固定:"
+},
+{
+"en": "✖ Not Placed",
+"zh": "✖ 未镶嵌"
+},
+{
+"en": "Fig Log:",
+"zh": "无花果原木:"
+},
+{
+"en": "+%1$s Forest Whispers",
+"zh": "+%1$s 森林低语"
+},
+{
+"en": "Mangrove Log:",
+"zh": "红树原木:"
+},
+{
+"en": "Helix Log:",
+"zh": "螺旋树原木:"
+},
+{
+"en": "+%1$s Desert Whispers",
+"zh": "+%1$s 沙漠低语"
+},
+{
+"en": "- Chapter I",
+"zh": "- 第 I 章"
+},
+{
+"en": "Current Tier:",
+"zh": "当前等级: 打捞速度"
+},
+{
+"en": "+%1$s% collecting speed",
+"zh": "+%1$s%"
+},
+{
+"en": "+%1$s% building speed",
+"zh": "+%1$s%"
+},
+{
+"en": "+%1$s% damage,",
+"zh": "+%1$s%，下潜倒计时"
+},
+{
+"en": "+%1$ss to submerge",
+"zh": "+%1$s 秒"
+},
+{
+"en": "+%1$s% speed, %2$sx damage",
+"zh": "+%1$s%，%2$s 倍伤害"
+},
+{
+"en": "+%1$s %2$s Attribute (Level %3$s)",
+"zh": "+%1$s %2$s属性 (等级 %3$s)"
+},
+{
+"en": "- %1$s more to upgrade!",
+"zh": "- 再获得 %1$s 个即可升级！"
+},
+{
+"en": "- Floor %1$s",
+"zh": "- 第 %1$s 层"
+},
+{
+"en": "- Entrance",
+"zh": "- 入口"
+},
+{
+"en": "❣ Health Regen.",
+"zh": "❣ 生命恢复。"
+},
+{
+"en": "☠ Crit Damage.",
+"zh": "☠ 暴击伤害。"
+},
+{
+"en": "Melee Damage:",
+"zh": "近战伤害:"
+},
+{
+"en": "Arrow Damage:",
+"zh": "箭矢伤害:"
+},
+{
+"en": "☠ Crit Damage",
+"zh": "☠ 暴击伤害"
+},
+{
+"en": "- %1$s Tier",
+"zh": "- %1$s难度"
+},
+{
+"en": "- Basic Dungeons:",
+"zh": "- 普通地牢: 击杀计数"
+},
+{
+"en": "+%1$s Kill Count",
+"zh": "+%1$s"
+},
+{
+"en": "- Floor I",
+"zh": "- 第 I 层"
+},
+{
+"en": "- Floor II",
+"zh": "- 第 II 层"
+},
+{
+"en": "- Floor III",
+"zh": "- 第 III 层"
+},
+{
+"en": "- Floor IV",
+"zh": "- 第 IV 层"
+},
+{
+"en": "- Floor V",
+"zh": "- 第 V 层"
+},
+{
+"en": "- Floor VI",
+"zh": "- 第 VI 层"
+},
+{
+"en": "- Floor VII",
+"zh": "- 第 VII 层"
+},
+{
+"en": "- Basic",
+"zh": "- 基础难度"
+},
+{
+"en": "Keys:",
+"zh": "钥匙:"
+},
+{
+"en": "- Fuel",
+"zh": "- 燃料"
+},
+{
+"en": "- Torrhus Canyon, is here!",
+"zh": "- 托鲁斯峡谷已经开放！"
+},
+{
+"en": "Timecharm:",
+"zh": "时间护符:"
+},
+{
+"en": "✖ Missing!",
+"zh": "✖ 尚未获得！"
+},
+{
+"en": "Total Buff:",
+"zh": "总增益:"
+},
+{
+"en": "+%1$s ☯ Combat Wisdom",
+"zh": "+%1$s ☯ 战斗智慧"
+},
+{
+"en": "When complete:",
+"zh": "完成后:"
+},
+{
+"en": "Rift time:",
+"zh": "裂隙时间:"
+},
+{
+"en": "• ф Rift Time:",
+"zh": "• ф 裂隙时间:"
+},
+{
+"en": "- Cursus to your Museum.",
+"zh": "- 库尔苏斯捐赠给你的博物馆。"
+},
+{
+"en": "Walk Speed:",
+"zh": "行走速度:"
+},
+{
+"en": "+%1$s% every",
+"zh": "+%3$s  防御额外提高"
+},
+{
+"en": "+%1$s Defense in damage to any enemy in its path.",
+"zh": "+%2$s%。"
+},
+{
+"en": "- Master Mode:",
+"zh": "- 大师模式:"
+},
+{
+"en": "Level %1$s-%2$s:",
+"zh": "%1$s-%2$s 级:"
+},
+{
+"en": "Per %1$s Fairy Souls:",
+"zh": "每 %1$s 个仙女之魂:"
+},
+{
+"en": "Per Pet Score:",
+"zh": "每点宠物评分:"
+},
+{
+"en": "Per Collection Milestone:",
+"zh": "每个收集里程碑:"
+},
+{
+"en": "Tier I:",
+"zh": "I 级:"
+},
+{
+"en": "Tier II:",
+"zh": "II 级:"
+},
+{
+"en": "Tier III:",
+"zh": "III 级:"
+},
+{
+"en": "Tier IV:",
+"zh": "IV 级:"
+},
+{
+"en": "Tier V:",
+"zh": "V 级:"
+},
+{
+"en": "Tier VI:",
+"zh": "VI 级:"
+},
+{
+"en": "Tier VII:",
+"zh": "VII 级:"
+},
+{
+"en": "Tier VIII:",
+"zh": "VIII 级:"
+},
+{
+"en": "Tier IX:",
+"zh": "IX 级:"
+},
+{
+"en": "Tier X:",
+"zh": "X 级:"
+},
+{
+"en": "Tier XI:",
+"zh": "XI 级:"
+},
+{
+"en": "Tier XII:",
+"zh": "XII 级:"
+},
+{
+"en": "Per %1$s Blocks Mined:",
+"zh": "每挖掘 %1$s 个方块:"
+},
+{
+"en": "Per %1$s Sharks Killed:",
+"zh": "每击杀 %1$s 条鲨鱼:"
+},
+{
+"en": "Level %1$s:",
+"zh": "%1$s 级:"
+},
+{
+"en": "Each Family Tier:",
+"zh": "每个族系等级:"
+},
+{
+"en": "Every %1$s Milestones:",
+"zh": "每 %1$s 个里程碑:"
+},
+{
+"en": "Per %1$s Kills:",
+"zh": "每 %1$s 次击杀:"
+},
+{
+"en": "Per Milestone:",
+"zh": "每个里程碑:"
+},
+{
+"en": "Per Upgrade Tier:",
+"zh": "每个升级等级:"
+},
+{
+"en": "Per Level:",
+"zh": "每级:"
+},
+{
+"en": "Per Upgrade:",
+"zh": "每次升级:"
+},
+{
+"en": "Per Plot:",
+"zh": "每个地块:"
+},
+{
+"en": "Tiers %1$s-%2$s:",
+"zh": "%1$s-%2$s 级:"
+},
+{
+"en": "Per Increase:",
+"zh": "每次提升:"
+},
+{
+"en": "Per Candy %1$snd Slot:",
+"zh": "第 %1$s 个糖果槽位:"
+},
+{
+"en": "For %1$srd Slot:",
+"zh": "第 %1$s 个槽位:"
+},
+{
+"en": "Per Coin Milestone:",
+"zh": "每个硬币里程碑:"
+},
+{
+"en": "Total Worth:",
+"zh": "总价值:"
+},
+{
+"en": "▶ Account Upgrades",
+"zh": "▶ 账户升级"
+},
+{
+"en": "- %1$s Slots",
+"zh": "- %1$s 个槽位"
 }
 ]
 }

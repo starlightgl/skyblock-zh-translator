@@ -65,18 +65,23 @@ def spacing(zh):
     return re.sub(r"\u0000(\d+)\u0001", lambda m: masks[int(m.group(1))], t)
 
 
-_BULLET = r"(?:❣|☠|■|✔|✖|•|▶|◆|-(?= [A-Z0-9]))"
-_BULLET_ZH = r"(?:❣|☠|■|✔|✖|•|▶|◆|(?<!\S)-(?= \S))"
+_BULLET = r"(?:❣|☠|■|✔|✖|•|▶|◆|●|-(?= [A-Z0-9%])|\+(?=%\d|\d))"
+_BULLET_ZH = r"(?:❣|☠|■|✔|✖|•|▶|◆|●|(?<!\S)-(?= \S)|(?<!\S)\+(?=%\d|\d))"
 
 
 def bullet_rows(en, zh):
     """'❣ A. ❣ B.' / '❣ 甲。❣ 乙。' -> [('❣ A.', '❣ 甲。'), ('❣ B.', '❣ 乙。')] when both sides split the same way."""
-    pe = re.split(r"\s+(?=" + _BULLET + r" )", en.strip())
-    pz = re.split(r"\s*(?=" + _BULLET_ZH + r" ?)", zh.strip())
+    bul, bulz = _BULLET, _BULLET_ZH
+    pe = re.split(r"\s+(?=" + bul + r" ?)", en.strip())
+    # "+5 Coins" rows only after a complete first row ("Combo (lasts 5s)"), never inside a sentence ("Grants +5 …")
+    if len(pe) > 1 and re.search(r"\s\+(?:%\d|\d)", en) and not re.search(r"(?:[):]|%\d\$s|\d)$", pe[0]):
+        bul, bulz = bul.replace(r"|\+(?=%\d|\d)", ""), bulz.replace(r"|(?<!\S)\+(?=%\d|\d)", "")
+        pe = re.split(r"\s+(?=" + bul + r" ?)", en.strip())
+    pz = re.split(r"\s*(?=" + bulz + r" ?)", zh.strip())
     pz = [p for p in pz if p.strip()]
     if len(pe) < 2 or len(pe) != len(pz):
         return []
-    for a, b in zip(pe, pz):
+    for a, b in list(zip(pe, pz))[1:]:
         if a[0] != b[0]:
             return []
     return [renumber(a, b.strip()) for a, b in zip(pe, pz)]
@@ -89,6 +94,19 @@ def renumber(en, zh):
         order.setdefault(m.group(1), str(len(order) + 1))
     f = lambda m: "%" + order.get(m.group(1), m.group(1)) + "$s"
     return re.sub(r"%(\d+)\$s", f, en), re.sub(r"%(\d+)\$s", f, zh)
+
+
+_FUNCTION_END = re.compile(r"\b(?:and|or|the|to|of|a|an|for|with|your|by|in|on|at|from|as|is|are|you|will|be|per|when|while|if|that|which|than)$", re.I)
+
+
+def _row_ok(row):
+    """A derived row must be a whole row: a bullet row, or a heading ending like a line ends; never a fragment."""
+    letters = len(re.sub(r"%\d+\$s|[^A-Za-z]", "", row))
+    if letters < 3 or _FUNCTION_END.search(row.rstrip(" .")) or "[" in row and "]" in row and not row.startswith("-"):
+        return False
+    if re.match(r"(?:❣|☠|■|✔|✖|•|▶|◆|●|-|\+)", row):
+        return True
+    return bool(re.search(r"[.!?:)]$", row))
 
 
 _END = re.compile(r"(?:[.!?:)*\]]|\b[IVXLC]+|%\d\$s|\d)$")
@@ -149,6 +167,8 @@ def post_process(lines, names, rules):
     # list rows joined into one entry: each row gets its own entry
     for l in list(lines):
         for a, b in bullet_rows(l["en"], l["zh"]):
+            if not _row_ok(a):
+                continue
             if a not in exact:
                 exact[a] = b
                 lines.append({"en": a, "zh": b})

@@ -248,6 +248,11 @@ public final class PhraseMatcher {
             String body = formatted.replaceFirst("^[\\s  ]+", "");
             return LABEL_VALUE.matcher(body).matches() ? translateField(body) : null;
         }
+        if (zh.length() > 0 && zh.charAt(0) == BASE_MARK) {
+            int end = zh.indexOf(BASE_MARK, 1);
+            baseCodes = zh.substring(1, end);
+            zh = zh.substring(end + 1);
+        }
         zh = restoreGlyphs(formatted, zh);
         String leadingSpace = leadingWhitespace(CODE.matcher(formatted).replaceAll(""));
         if (zh.startsWith("§")) {
@@ -576,8 +581,14 @@ public final class PhraseMatcher {
             if (zh == null) zh = matchTemplates(buckets.get("*"), key, seg, leadCodes(seg));
         }
         if (zh != null) {
+            String lead = leadCodes(seg);
+            if (zh.length() > 0 && zh.charAt(0) == BASE_MARK) {
+                int end = zh.indexOf(BASE_MARK, 1);
+                lead = zh.substring(1, end);
+                zh = zh.substring(end + 1);
+            }
             zh = restoreGlyphs(seg, zh);
-            return zh.startsWith("§") ? zh : leadCodes(seg) + zh;
+            return zh.startsWith("§") ? zh : lead + zh;
         }
         Matcher lv = LABEL_VALUE.matcher(seg);
         if (!lv.matches()) return null;
@@ -614,7 +625,14 @@ public final class PhraseMatcher {
                     if (t.zh.indexOf('§') < 0) tv = MARK_START + String.valueOf((char) ('0' + i)) + tv + MARK_END;
                     values.add(tv);
                 }
-                if (ok) return t.zh.indexOf('§') < 0 ? colourValues(fill(t.zh, values), formatted, m, baseCodes) : fill(t.zh, values);
+                if (!ok) continue;
+                if (t.zh.indexOf('§') >= 0) return fill(t.zh, values);
+                // the line's own colour is the colour of the template's words, not of a value at its start
+                // ("§6Enchanted Clock §7Recipe": grey, the name gold)
+                String lit = literalCodes(formatted, m);
+                String base = lit != null ? lit : baseCodes;
+                String out = colourValues(fill(t.zh, values), formatted, m, base);
+                return base.equals(baseCodes) ? out : BASE_MARK + base + BASE_MARK + out;
             }
         }
         return null;
@@ -622,6 +640,27 @@ public final class PhraseMatcher {
 
 
     private static final char MARK_START = '\u0010', MARK_END = '\u0012';
+    /** Prefix of a template result whose base colour differs from the one passed in: MARK codes MARK text. */
+    static final char BASE_MARK = '\u0011';
+
+    /** Codes of the first letter of the original that is not part of a captured value, or null. */
+    private static String literalCodes(String formatted, Matcher m) {
+        List<String> codes = new ArrayList<>();
+        String plain = charsWithCodes(formatted, codes);
+        StringBuilder folded = new StringBuilder();
+        for (int i = 0; i < plain.length(); i++) { Character g = GLYPHS.get(plain.charAt(i)); folded.append(g != null ? g : plain.charAt(i)); }
+        boolean[] value = new boolean[plain.length()];
+        int from = 0;
+        for (int g = 1; g <= m.groupCount(); g++) {
+            String v = m.group(g);
+            int at = folded.indexOf(v, from);
+            if (at < 0) continue;
+            for (int j = at; j < at + v.length(); j++) value[j] = true;
+            from = at + v.length();
+        }
+        for (int i = 0; i < plain.length(); i++) if (!value[i] && Character.isLetter(plain.charAt(i))) return codes.get(i);
+        return null;
+    }
 
     /**
      * Give each filled value the colour it had in the original line. When the original coloured the whole

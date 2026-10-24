@@ -21887,6 +21887,20 @@
             "from": [
                 "火焰火焰双发"
             ]
+        },
+        {
+            "en": "Exp Discount",
+            "to": "经验折扣",
+            "from": [
+                "Exp Discount"
+            ]
+        },
+        {
+            "en": "Recipes?",
+            "to": "配方",
+            "from": [
+                " ?Recipes?(?![A-Za-z])"
+            ]
         }
     ]
 }

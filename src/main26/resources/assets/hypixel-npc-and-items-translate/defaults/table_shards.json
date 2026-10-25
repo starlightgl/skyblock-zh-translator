@@ -6997,7 +6997,7 @@
     },
     {
       "en": "Increases your  Speed Cap by +%1$s while in The Catacombs.",
-      "zh": "在地下墓穴中时，你的 速度上限 +%1$s。",
+      "zh": "在地牢中时，你的 速度上限 +%1$s。",
       "source": {
         "kind": "canonical full effect",
         "item": "Folf Shard",
@@ -7135,7 +7135,7 @@
     },
     {
       "en": "Grants +%1$s% more Catacombs XP.",
-      "zh": "获得的地下墓穴经验增加 +%1$s%。",
+      "zh": "获得的地牢经验增加 +%1$s%。",
       "source": {
         "kind": "canonical full effect",
         "item": "Bonzo Shard",
@@ -7411,7 +7411,7 @@
     },
     {
       "en": "Increases the quality of boss rewards in The Catacombs by +%1$s.",
-      "zh": "地下墓穴首领奖励的品质 +%1$s。",
+      "zh": "地牢首领奖励的品质 +%1$s。",
       "source": {
         "kind": "canonical full effect",
         "item": "Hideongeon Shard",
@@ -47864,7 +47864,7 @@
     },
     {
       "en": "Zombie Soldiers march tirelessly through the catacombs, their decayed bodies clad in ancient, rusting armor.",
-      "zh": "僵尸士兵在地下墓穴中不知疲倦地行军，腐朽的身体上穿着古老而生锈的盔甲。",
+      "zh": "僵尸士兵在地牢中不知疲倦地行军，腐朽的身体上穿着古老而生锈的盔甲。",
       "source": {
         "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
         "item": "Zombie Soldier Shard"
@@ -49408,7 +49408,7 @@
     },
     {
       "en": "Legends say Skeletor was once a powerful knight, now cursed to guard the Catacombs for eternity, attacking any intruders with relentless fury.",
-      "zh": "传说骷髅督军曾是一位强大的骑士，如今被诅咒永世守卫地下墓穴，以无情的怒火攻击一切入侵者。",
+      "zh": "传说骷髅督军曾是一位强大的骑士，如今被诅咒永世守卫地牢，以无情的怒火攻击一切入侵者。",
       "source": {
         "kind": "supplemental flavour translated 2026-10-23 (Claude), absent from table",
         "item": "Skeletor Shard"

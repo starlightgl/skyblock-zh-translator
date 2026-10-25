@@ -29,6 +29,7 @@ NAME_SHEETS = ["物品名称", "宠物", "生物", "区域", "修饰词", "附�
 # translation is still used inside other entries (the table fixed 水晶残核 → 水晶洞窟 for the area,
 # but some descriptions and item names still carried the old word). Order matters.
 REPLACE = {
+    "地下墓穴": "地牢",  # 2026-10-25 user: Catacombs
     "爪牙": "小人",
     "水晶残核": "水晶洞窟",
     "残核": "洞窟",
@@ -310,6 +311,16 @@ for group in overrides.get("lines", {}).values():
         elif l["zh"] != zh:
             l["zh"] = zh
             fixed_lines += 1
+
+# User wording decisions also apply to explicit overrides and enchant hints.
+for en in names:
+    names[en] = names[en].replace("地下墓穴", "地牢")
+for entry in lines:
+    entry["zh"] = entry["zh"].replace("地下墓穴", "地牢")
+for enchant in enchants["enchants"]:
+    for field in ("zh", "hint"):
+        if isinstance(enchant.get(field), str):
+            enchant[field] = enchant[field].replace("地下墓穴", "地牢")
 
 # layout and consistency: one spelling per name, multi-line glue and progress-bar joins dropped,
 # list rows split, "%1$sM" kept, Chinese / Latin spacing (tools/layout_fixes.py)

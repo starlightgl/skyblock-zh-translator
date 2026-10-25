@@ -219,7 +219,7 @@
 },
 {
 "en": "❣ Requires Catacombs Skill %1$s.",
-"zh": "❣ 需要地下墓穴技能 %1$s。"
+"zh": "❣ 需要地牢技能 %1$s。"
 },
 {
 "en": "Right-click on your summoned pet to give it this item!",
@@ -243,7 +243,7 @@
 },
 {
 "en": "- Catacombs (I-V)",
-"zh": "- 地下墓穴 (I-V)"
+"zh": "- 地牢 (I-V)"
 },
 {
 "en": "EPIC PET",
@@ -619,7 +619,7 @@
 },
 {
 "en": "❣ Requires The Catacombs Floor VII Completion.",
-"zh": "❣ 需要通关地下墓穴第 VII 层。"
+"zh": "❣ 需要通关地牢第 VII 层。"
 },
 {
 "en": "RARE WATER SHARD (ID R%1$s)",
@@ -855,7 +855,7 @@
 },
 {
 "en": "- Catacombs (VI-X)",
-"zh": "- 地下墓穴 (VI-X)"
+"zh": "- 地牢 (VI-X)"
 },
 {
 "en": "- Bazaar (VI-X)",
@@ -931,7 +931,7 @@
 },
 {
 "en": "❣ Requires The Catacombs Floor VI Completion.",
-"zh": "❣ 需要通关地下墓穴第 VI 层。"
+"zh": "❣ 需要通关地牢第 VI 层。"
 },
 {
 "en": "- Experiments (VI)",
@@ -1047,7 +1047,7 @@
 },
 {
 "en": "❣ Requires The Catacombs Floor V Completion.",
-"zh": "❣ 需要通关地下墓穴第 V 层。"
+"zh": "❣ 需要通关地牢第 V 层。"
 },
 {
 "en": "Grants +%1$s Health Regen.",
@@ -1139,7 +1139,7 @@
 },
 {
 "en": "❣ Requires The Catacombs Floor III Completion.",
-"zh": "❣ 需要通关地下墓穴第 III 层。"
+"zh": "❣ 需要通关地牢第 III 层。"
 },
 {
 "en": "EPIC DUNGEON LEGGINGS",
@@ -1203,7 +1203,7 @@
 },
 {
 "en": "❣ Requires The Catacombs Floor IV Completion.",
-"zh": "❣ 需要通关地下墓穴第 IV 层。"
+"zh": "❣ 需要通关地牢第 IV 层。"
 },
 {
 "en": "ථ Hook NONE ꨃ Line NONE ࿉ Sinker NONE",
@@ -1935,7 +1935,7 @@
 },
 {
 "en": "Full Set Bonus: Efficient training (%1$s/%2$s) Every %3$s Catacombs levels, this armor piece gains +%4$s% stats.",
-"zh": "套装效果: 高效训练 (%1$s/%2$s) 地下墓穴每提升 %3$s 级，此盔甲部件获得 +%4$s% 属性。"
+"zh": "套装效果: 高效训练 (%1$s/%2$s) 地牢每提升 %3$s 级，此盔甲部件获得 +%4$s% 属性。"
 },
 {
 "en": "Healer: +%1$s Mending, +%2$s Health",
@@ -2175,7 +2175,7 @@
 },
 {
 "en": "Full Set Bonus: Shadow Assassin (%1$s/%2$s) Grants +%3$s Strength for every mob you kill in The Catacombs.",
-"zh": "套装效果: 暗影刺客 (%1$s/%2$s) 你在地下墓穴中每击杀一只怪物，提供 +%3$s 力量。"
+"zh": "套装效果: 暗影刺客 (%1$s/%2$s) 你在地牢中每击杀一只怪物，提供 +%3$s 力量。"
 },
 {
 "en": "(Strength resets after each run)",
@@ -2359,7 +2359,7 @@
 },
 {
 "en": "- Catacombs (VII)",
-"zh": "- 地下墓穴 (VII)"
+"zh": "- 地牢 (VII)"
 },
 {
 "en": "- Severed Hand (VII)",
@@ -2375,7 +2375,7 @@
 },
 {
 "en": "- Catacombs (VI-VII)",
-"zh": "- 地下墓穴 (VI-VII)"
+"zh": "- 地牢 (VI-VII)"
 },
 {
 "en": "- Thunderbolt",
@@ -2435,7 +2435,7 @@
 },
 {
 "en": "❣ Requires The Catacombs Floor I Completion.",
-"zh": "❣ 需要通关地下墓穴第 I 层。"
+"zh": "❣ 需要通关地牢第 I 层。"
 },
 {
 "en": "Candy Lover Increases drop chance of candies from mobs by %1$s%.",
@@ -2619,7 +2619,7 @@
 },
 {
 "en": "- Catacombs (VI)",
-"zh": "- 地下墓穴 (VI)"
+"zh": "- 地牢 (VI)"
 },
 {
 "en": "- Beetle Pest (I)",
@@ -2695,7 +2695,7 @@
 },
 {
 "en": "- Catacombs (V)",
-"zh": "- 地下墓穴 (V)"
+"zh": "- 地牢 (V)"
 },
 {
 "en": "- Golden Bounty (VI)",
@@ -2731,7 +2731,7 @@
 },
 {
 "en": "❣ Requires The Catacombs Floor II Completion.",
-"zh": "❣ 需要通关地下墓穴第 II 层。"
+"zh": "❣ 需要通关地牢第 II 层。"
 },
 {
 "en": "Obtained during the %1$s Alchemist experiments!",
@@ -3079,7 +3079,7 @@
 },
 {
 "en": "Long lost to the depths of the Catacombs.",
-"zh": "早已迷失在地下墓穴的深处。"
+"zh": "早已迷失在地牢的深处。"
 },
 {
 "en": "Grants +%1$s% chance to find a Chocolate Rabbit that you haven't found yet and grants +%2$s Chocolate per second.",
@@ -6463,7 +6463,7 @@
 },
 {
 "en": "Ability: Clownin' Around Instead of dying, gain damage immunity and +%1$s  Strength for %2$ss and fully replenish your health. The cooldown and Strength bonus you receive improve based on your Dungeoneering Skill level. This ability only works while in The Catacombs!",
-"zh": "技能: 小丑把戏 免于死亡，改为获得伤害免疫和 +%1$s 力量，持续 %2$s 秒，并完全恢复生命值。冷却时间和获得的力量加成随你的地牢技能等级提升。此技能仅在地下墓穴中生效！"
+"zh": "技能: 小丑把戏 免于死亡，改为获得伤害免疫和 +%1$s 力量，持续 %2$s 秒，并完全恢复生命值。冷却时间和获得的力量加成随你的地牢技能等级提升。此技能仅在地牢中生效！"
 },
 {
 "en": "Ability: Showtime RIGHT CLICK Shoots balloons that create a large explosion on impact, dealing up to %1$s damage.",
@@ -6651,7 +6651,7 @@
 },
 {
 "en": "Obtained from killing Bonzo in The Catacombs lots of times. Grants %1$sx stats on The Catacombs Floor I.",
-"zh": "在地下墓穴中多次击杀邦佐后获得。在地下墓穴第 I 层获得 %1$s 倍属性。"
+"zh": "在地牢中多次击杀邦佐后获得。在地牢第 I 层获得 %1$s 倍属性。"
 },
 {
 "en": "Involved in the dark arts due to his parents' insistence. Originally worked as a Circus clown.",
@@ -6659,7 +6659,7 @@
 },
 {
 "en": "Obtained from killing Livid in The Catacombs lots of times. Grants %1$sx stats on The Catacombs Floor V.",
-"zh": "在地下墓穴中多次击杀利维德后获得。在地下墓穴第 V 层获得 %1$s 倍属性。"
+"zh": "在地牢中多次击杀利维德后获得。在地牢第 V 层获得 %1$s 倍属性。"
 },
 {
 "en": "Strongly believes he will become the Lord one day. Subject of mockeries, even from his disciples.",
@@ -6667,15 +6667,15 @@
 },
 {
 "en": "Obtained from killing Maxor, Storm, Goldor, and Necron in The Catacombs lots of times. Grants %1$sx stats on The Catacombs Floor VII.",
-"zh": "在地下墓穴中多次击杀马克索、斯托姆、戈尔多和耐克伦后获得。在地下墓穴第 VII 层获得 %1$s 倍属性。"
+"zh": "在地牢中多次击杀马克索、斯托姆、戈尔多和耐克伦后获得。在地牢第 VII 层获得 %1$s 倍属性。"
 },
 {
 "en": "Disciples of the Wither King. Inherited the Catacombs eons ago. Never defeated, feared by anything living AND dead.",
-"zh": "凋灵之王的门徒，万古之前继承了地下墓穴。从未被击败，令一切生者与死者都畏惧。"
+"zh": "凋灵之王的门徒，万古之前继承了地牢。从未被击败，令一切生者与死者都畏惧。"
 },
 {
 "en": "Obtained from killing The Professor in The Catacombs lots of times. Grants %1$sx stats on The Catacombs Floor III.",
-"zh": "在地下墓穴中多次击杀教授后获得。在地下墓穴第 III 层获得 %1$s 倍属性。"
+"zh": "在地牢中多次击杀教授后获得。在地牢第 III 层获得 %1$s 倍属性。"
 },
 {
 "en": "Despite his great technique, he failed the Masters exam three times. Works from %1$s to %2$s. Cares about his students.",
@@ -6683,7 +6683,7 @@
 },
 {
 "en": "Obtained from killing Sadan in The Catacombs lots of times. Grants %1$sx stats on The Catacombs Floor VI.",
-"zh": "在地下墓穴中多次击杀萨丹后获得。在地下墓穴第 VI 层获得 %1$s 倍属性。"
+"zh": "在地牢中多次击杀萨丹后获得。在地牢第 VI 层获得 %1$s 倍属性。"
 },
 {
 "en": "Necromancy was always strong in his family. Says he once beat a Wither in a duel. Likes to brag.",
@@ -6691,7 +6691,7 @@
 },
 {
 "en": "Obtained from killing Scarf in The Catacombs lots of times. Grants %1$sx stats on The Catacombs Floor II.",
-"zh": "在地下墓穴中多次击杀斯卡夫后获得。在地下墓穴第 II 层获得 %1$s 倍属性。"
+"zh": "在地牢中多次击杀斯卡夫后获得。在地牢第 II 层获得 %1$s 倍属性。"
 },
 {
 "en": "First of his class. His teacher said he will do \"great things\".",
@@ -6703,7 +6703,7 @@
 },
 {
 "en": "Obtained from killing Thorn in The Catacombs lots of times. Grants %1$sx stats on The Catacombs Floor IV.",
-"zh": "在地下墓穴中多次击杀索恩后获得。在地下墓穴第 IV 层获得 %1$s 倍属性。"
+"zh": "在地牢中多次击杀索恩后获得。在地牢第 IV 层获得 %1$s 倍属性。"
 },
 {
 "en": "Powerful Necromancer that specializes in animals. Calls himself a vegetarian, go figure.",
@@ -7691,7 +7691,7 @@
 },
 {
 "en": "Defenders of the Catacombs.",
-"zh": "地下墓穴的守护者。"
+"zh": "地牢的守护者。"
 },
 {
 "en": "Skeletor but with free shipping.",
@@ -7759,7 +7759,7 @@
 },
 {
 "en": "❣ Requires Catacombs Skill %1$s. ❣ Requires Master Mode The Catacombs Floor IV Completion.",
-"zh": "❣ 需要地下墓穴技能 %1$s 级。❣ 需要通关大师模式地下墓穴第 IV 层。"
+"zh": "❣ 需要地牢技能 %1$s 级。❣ 需要通关大师模式地牢第 IV 层。"
 },
 {
 "en": "Mob Types:  Aquatic,  Airborne",
@@ -8527,7 +8527,7 @@
 },
 {
 "en": "Deals +%1$s% damage to  Wither mobs. Grants +%2$s  Damage and +%3$s  Defense per Catacombs level.",
-"zh": "对 凋灵生物造成 +%1$s% 伤害。每级地下墓穴等级提供 +%2$s 伤害和 +%3$s 防御。"
+"zh": "对 凋灵生物造成 +%1$s% 伤害。每级地牢等级提供 +%2$s 伤害和 +%3$s 防御。"
 },
 {
 "en": "This Minion skin changes your minion's appearance to an Astronaut.",
@@ -9719,7 +9719,7 @@
 },
 {
 "en": "Bonzo is the boss of Floor %1$s of the Catacombs. He is a 'New Necromancer' and has two phases. In the first one he runs away from the player until he is killed. Then he revives appearing as a clown and attacks the player.",
-"zh": "邦佐是地下墓穴第 %1$s 层的首领。他是一名“新晋死灵法师”，战斗分为两个阶段：第一阶段他会一直躲避玩家，直到被击杀；随后他会以小丑的模样复活并攻击玩家。"
+"zh": "邦佐是地牢第 %1$s 层的首领。他是一名“新晋死灵法师”，战斗分为两个阶段：第一阶段他会一直躲避玩家，直到被击杀；随后他会以小丑的模样复活并攻击玩家。"
 },
 {
 "en": "This skin can be applied to Bonzo's Mask and  Bonzo's Mask.",
@@ -10131,7 +10131,7 @@
 },
 {
 "en": "Grants %1$s❣ Charm Chance towards mobs inside The Catacombs.",
-"zh": "对地下墓穴中的生物提供 %1$s❣ 魅力几率。"
+"zh": "对地牢中的生物提供 %1$s❣ 魅力几率。"
 },
 {
 "en": "Applies the Candied reforge when combined with Armor.",
@@ -10251,7 +10251,7 @@
 },
 {
 "en": "Increases Catacombs dungeon experience by +%1$s%.",
-"zh": "地下墓穴地牢经验提高 +%1$s%。"
+"zh": "地牢地牢经验提高 +%1$s%。"
 },
 {
 "en": "So many eyes.",
@@ -11059,7 +11059,7 @@
 },
 {
 "en": "❣ Requires Master Mode The Catacombs Floor VII Completion.",
-"zh": "❣ 需要通关大师模式地下墓穴第 VII 层。"
+"zh": "❣ 需要通关大师模式地牢第 VII 层。"
 },
 {
 "en": "Combine x%1$s of this item at the Thaumaturgist in the Hub to unlock the Shaded power.",
@@ -11795,7 +11795,7 @@
 },
 {
 "en": "Ability: Dungeon Breaker DIG While in The Catacombs, consume %1$s⸕ charge to break a block. %2$s blocks can be broken at a time, and re-appear after %3$ss. %4$s⸕ charges are regenerated each second.",
-"zh": "技能: 地牢破坏者 挖掘 在地下墓穴中时，消耗 %1$s⸕ 充能来破坏一个方块，每次最多可破坏 %2$s 个方块，被破坏的方块会在 %3$s 秒后重新出现，每秒恢复 %4$s⸕ 充能。"
+"zh": "技能: 地牢破坏者 挖掘 在地牢中时，消耗 %1$s⸕ 充能来破坏一个方块，每次最多可破坏 %2$s 个方块，被破坏的方块会在 %3$s 秒后重新出现，每秒恢复 %4$s⸕ 充能。"
 },
 {
 "en": "SPECIAL DUNGEON PICKAXE",
@@ -14343,7 +14343,7 @@
 },
 {
 "en": "Increases the base stats of your dungeon items by %1$s% while in The Catacombs for each digit on your secret count. (Max %2$s%)",
-"zh": "在地下墓穴中时，你的秘密计数每有一位数，地牢物品的基础属性提高 %1$s%。（最多 %2$s%）"
+"zh": "在地牢中时，你的秘密计数每有一位数，地牢物品的基础属性提高 %1$s%。（最多 %2$s%）"
 },
 {
 "en": "Once worn proudly, now covered in filth and soot.",
@@ -14459,7 +14459,7 @@
 },
 {
 "en": "❣ Requires Master Mode Catacombs Floor VI Completion.",
-"zh": "❣ 需要完成大师模式地下墓穴第 VI 层。"
+"zh": "❣ 需要完成大师模式地牢第 VI 层。"
 },
 {
 "en": "Ability: Giant's Slam RIGHT CLICK Slam your sword into the ground dealing %1$s damage to nearby enemies.",
@@ -15223,7 +15223,7 @@
 },
 {
 "en": "Ability: Cells Alignment RIGHT CLICK Apply Aligned to yourself for %1$ss, plus %2$s nearby players on grouped islands. (Catacombs, etc.)",
-"zh": "技能: 细胞校准 右键 为自己以及组队岛屿（地下墓穴等）上附近的 %2$s 名玩家施加「校准」效果，持续 %1$s 秒。"
+"zh": "技能: 细胞校准 右键 为自己以及组队岛屿（地牢等）上附近的 %2$s 名玩家施加「校准」效果，持续 %1$s 秒。"
 },
 {
 "en": "||| Aligned Splits incoming damage and applies it over %1$ss.",
@@ -15427,7 +15427,7 @@
 },
 {
 "en": "Hecatomb I Gain +%1$s% Catacombs XP & +%2$s% Class XP, doubled on S+ runs. Grants +%3$s❤ per %4$s Catacombs levels.",
-"zh": "百战加冕 I 获得 +%1$s% 地下墓穴经验和 +%2$s% 职业经验，S+ 评级通关时翻倍。每 %4$s 级地下墓穴等级提供 +%3$s❤。"
+"zh": "百战加冕 I 获得 +%1$s% 地牢经验和 +%2$s% 职业经验，S+ 评级通关时翻倍。每 %4$s 级地牢等级提供 +%3$s❤。"
 },
 {
 "en": "Complete %1$s S runs for Tier II Complete %2$s S runs for Tier III Complete %3$s S runs for Tier IV Complete %4$s S runs for Tier V Complete %5$s S runs for Tier VI Complete %6$s S runs for Tier VII Complete %7$s S runs for Tier VIII Complete %8$s S runs for Tier IX",
@@ -15851,7 +15851,7 @@
 },
 {
 "en": "Deals +%1$s% damage to  Wither mobs. Grants +%2$s  Damage and +%3$s  Intelligence per Catacombs level.",
-"zh": "对  凋灵怪物造成的伤害提高 +%1$s%。每级地下墓穴等级提供 +%2$s  伤害和 +%3$s  智力。"
+"zh": "对  凋灵怪物造成的伤害提高 +%1$s%。每级地牢等级提供 +%2$s  伤害和 +%3$s  智力。"
 },
 {
 "en": "Combine with Catalysts, buffing the fuel to x%1$s for %2$s hours duration.",
@@ -15971,7 +15971,7 @@
 },
 {
 "en": "Upon starting a floor in The Catacombs, automatically consumes the selected Dungeon Potion from your inventory or Potion Bag.",
-"zh": "开始一层地下墓穴时，会自动从你的物品栏或药水袋中消耗所选的地牢药水。"
+"zh": "开始一层地牢时，会自动从你的物品栏或药水袋中消耗所选的地牢药水。"
 },
 {
 "en": "If you do not have the selected potion in your inventory or Potion Bag, it will be purchased and consumed automatically using Coins from your purse or bank.",
@@ -16007,7 +16007,7 @@
 },
 {
 "en": "Instantly breaks weak walls. Can be used to blow up Crypts in The Catacombs and Crystal Hollows.",
-"zh": "瞬间炸开脆弱的墙壁。可用于炸开地下墓穴和水晶洞窟中的墓穴。"
+"zh": "瞬间炸开脆弱的墙壁。可用于炸开地牢和水晶洞窟中的墓穴。"
 },
 {
 "en": "Places a torch for %1$s coins.",
@@ -16575,7 +16575,7 @@
 },
 {
 "en": "Holds items commonly found in The Catacombs! Items you pickup go directly into your sacks.",
-"zh": "存放地下墓穴中常见的物品！你拾取的物品会直接进入收纳袋。"
+"zh": "存放地牢中常见的物品！你拾取的物品会直接进入收纳袋。"
 },
 {
 "en": "LEGENDARY SACK",
@@ -16787,7 +16787,7 @@
 },
 {
 "en": "Livid is the boss of Floor %1$s of the Catacombs. He is a 'Master Necromancer' and has only one phase. In this phase he makes eight clones of himself. Each with different abilities. The player must kill the true livid to complete the boss fight.",
-"zh": "利维德是地下墓穴第 %1$s 层的首领。他是一名「死灵大师」，只有一个阶段。在这个阶段中，他会制造八个自己的分身，每个分身拥有不同的能力。玩家必须击杀真正的利维德才能完成首领战。"
+"zh": "利维德是地牢第 %1$s 层的首领。他是一名「死灵大师」，只有一个阶段。在这个阶段中，他会制造八个自己的分身，每个分身拥有不同的能力。玩家必须击杀真正的利维德才能完成首领战。"
 },
 {
 "en": "Ability: Throw RIGHT CLICK Throw your dagger at your enemies!",
@@ -18127,7 +18127,7 @@
 },
 {
 "en": "Necron is the boss of Floor %1$s of the Catacombs. He is a 'Wither Lord' and has %2$s phases. In the %3$sst he must be killed after being frozen by Energy Crystals. In the %4$snd he must be crushed with Pillars. In the %5$srd the Player must solve terminals and must be killed again normally in the %6$sth.",
-"zh": "耐克伦是地下墓穴第 %1$s 层的首领。他是一位「凋灵领主」，共有 %2$s 个阶段。第 %3$s 阶段中，必须先用能量水晶将他冻结才能击杀。第 %4$s 阶段中，必须用石柱将他砸中。第 %5$s 阶段中，玩家必须解开终端，并在第 %6$s 阶段以正常方式再次击杀他。"
+"zh": "耐克伦是地牢第 %1$s 层的首领。他是一位「凋灵领主」，共有 %2$s 个阶段。第 %3$s 阶段中，必须先用能量水晶将他冻结才能击杀。第 %4$s 阶段中，必须用石柱将他砸中。第 %5$s 阶段中，玩家必须解开终端，并在第 %6$s 阶段以正常方式再次击杀他。"
 },
 {
 "en": "Withered Dragon (MM):",
@@ -18403,7 +18403,7 @@
 },
 {
 "en": "This vicious material can sometimes be found on the floor of The Catacombs.",
-"zh": "这种凶险的材料有时可以在地下墓穴的地面上找到。"
+"zh": "这种凶险的材料有时可以在地牢的地面上找到。"
 },
 {
 "en": "Precise Bonus Deal +%1$s%  Damage when hitting a mob's head.",
@@ -20367,7 +20367,7 @@
 },
 {
 "en": "Ancient Bonus Grants +%1$s Crit Damage per Catacombs skill level you have.",
-"zh": "远古加成 你的地下墓穴技能每有一级，提供 +%1$s 暴击伤害。"
+"zh": "远古加成 你的地牢技能每有一级，提供 +%1$s 暴击伤害。"
 },
 {
 "en": "After walking a certain amount of blocks, has a chance to spawn an Armadillo!",
@@ -20487,7 +20487,7 @@
 },
 {
 "en": "The Professor is the boss of Floor %1$s of the Catacombs. He is a 'Professor' and has three phases. In the %2$sst he spawns %3$s Guardians and creates a barrier. After they are killed, he attacks the player. Once he is at %4$s% health, he will merge with his guardians and continue to fight.",
-"zh": "教授是地下墓穴第 %1$s 层的首领。他是一位「教授」，共有三个阶段。第 %2$s 阶段中，他会召唤 %3$s 名守卫者并制造屏障。守卫者被击杀后，他会攻击玩家。当他的生命值降至 %4$s% 时，他会与守卫者融合并继续战斗。"
+"zh": "教授是地牢第 %1$s 层的首领。他是一位「教授」，共有三个阶段。第 %2$s 阶段中，他会召唤 %3$s 名守卫者并制造屏障。守卫者被击杀后，他会攻击玩家。当他的生命值降至 %4$s% 时，他会与守卫者融合并继续战斗。"
 },
 {
 "en": "Projectile Protection I Grants +%1$s  Defense against projectiles.",
@@ -21575,7 +21575,7 @@
 },
 {
 "en": "Sadan is the boss of Floor %1$s of the Catacombs. He is a 'Necromancer Lord' and has three phases. In the first he summons a teracotta army that must be survied for %2$s seconds. After that he summons four giants and once killed, he merges them into himself.",
-"zh": "萨丹是地下墓穴第 %1$s 层的首领。他是一名「死灵法师领主」，共有三个阶段。在第一阶段，他会召唤一支陶俑大军，你必须坚持 %2$s 秒。之后他会召唤四个巨人，巨人被击杀后，他会将它们融入自己体内。"
+"zh": "萨丹是地牢第 %1$s 层的首领。他是一名「死灵法师领主」，共有三个阶段。在第一阶段，他会召唤一支陶俑大军，你必须坚持 %2$s 秒。之后他会召唤四个巨人，巨人被击杀后，他会将它们融入自己体内。"
 },
 {
 "en": "Applies the Empowered reforge when combined with Armor.",
@@ -21687,7 +21687,7 @@
 },
 {
 "en": "Give this letter to Mort to gain access to enter The Catacombs on your own!",
-"zh": "把这封信交给莫特，即可获准独自进入地下墓穴！"
+"zh": "把这封信交给莫特，即可获准独自进入地牢！"
 },
 {
 "en": "Allows you to change the biome at the targeted block on your private island to Savanna.",
@@ -21727,7 +21727,7 @@
 },
 {
 "en": "Scarf is the boss of Floor %1$s of the Catacombs. He is an 'Apprentice Necromancer and has two phases. In the first phase he summons %2$s undead servants while he hides behind a barrier. Once all %3$s are defeated, the barrier comes down and you must kill him in the second phase.",
-"zh": "斯卡夫是地下墓穴第 %1$s 层的首领。他是一名「学徒死灵法师」，共有两个阶段。在第一阶段，他躲在屏障后面并召唤 %2$s 名亡灵仆从。%3$s 名仆从全部被击败后，屏障就会消失，你必须在第二阶段击杀他。"
+"zh": "斯卡夫是地牢第 %1$s 层的首领。他是一名「学徒死灵法师」，共有两个阶段。在第一阶段，他躲在屏障后面并召唤 %2$s 名亡灵仆从。%3$s 名仆从全部被击败后，屏障就会消失，你必须在第二阶段击杀他。"
 },
 {
 "en": "Dark and powerful spells, includes his favorite \"Barrier\" that his Professor taught him.",
@@ -21851,7 +21851,7 @@
 },
 {
 "en": "Deals +%1$s% damage to  Wither mobs. Grants +%2$s  Damage and +%3$s  Crit Damage per Catacombs level.",
-"zh": "对  凋灵生物造成的伤害 +%1$s%。每级地下墓穴等级提供 +%2$s  伤害和 +%3$s  暴击伤害。"
+"zh": "对  凋灵生物造成的伤害 +%1$s%。每级地牢等级提供 +%2$s  伤害和 +%3$s  暴击伤害。"
 },
 {
 "en": "Amphibious Increases the base stats of this pet by %3$s% during the Year of the Seal.",
@@ -22403,7 +22403,7 @@
 },
 {
 "en": "Leader of the Catacombs' skeleton army.",
-"zh": "地下墓穴骷髅大军的首领。"
+"zh": "地牢骷髅大军的首领。"
 },
 {
 "en": "Just a normal skelly",
@@ -22767,7 +22767,7 @@
 },
 {
 "en": "While in The Catacombs, summon a Haunted Skull that slowly revolves around you every %1$s seconds or when you kill a mob with melee damage.",
-"zh": "在地下墓穴中时，每 %1$s 秒或你用近战伤害击杀一个生物时，召唤一个绕着你缓慢旋转的闹鬼头颅。"
+"zh": "在地牢中时，每 %1$s 秒或你用近战伤害击杀一个生物时，召唤一个绕着你缓慢旋转的闹鬼头颅。"
 },
 {
 "en": "When an enemy is hit by a Haunted Skull, they are stunned for %1$s",
@@ -23835,7 +23835,7 @@
 },
 {
 "en": "Thorn is the boss of Floor %1$s of the Catacombs. He is a 'Shaman Necromancer', appears as a ghast, and does not attack the player. He spawns Spirit Animals that you must kill to spawn a Spirit Bear which when killed drops the Spirit Bow which is a single shot bow and the only way to damage him.",
-"zh": "索恩是地下墓穴第 %1$s 层的首领。他是一名「萨满死灵法师」，外形是一只恶魂，不会攻击玩家。他会召唤灵魂动物，你必须击杀它们来召唤灵魂熊；灵魂熊被击杀后会掉落灵魂长弓，这是一把只能射一发的弓，也是对他造成伤害的唯一方式。"
+"zh": "索恩是地牢第 %1$s 层的首领。他是一名「萨满死灵法师」，外形是一只恶魂，不会攻击玩家。他会召唤灵魂动物，你必须击杀它们来召唤灵魂熊；灵魂熊被击杀后会掉落灵魂长弓，这是一把只能射一发的弓，也是对他造成伤害的唯一方式。"
 },
 {
 "en": "❤ Health: %1$s hits ❤ Health (MM): %2$s hits",
@@ -24595,7 +24595,7 @@
 },
 {
 "en": "- Catacombs (I)",
-"zh": "- 地下墓穴 (I)"
+"zh": "- 地牢 (I)"
 },
 {
 "en": "Sunset I During the day, +%1$s Overbloom. During the night, -%2$s% Visitor Cooldown.",
@@ -24699,7 +24699,7 @@
 },
 {
 "en": "Deals +%1$s% damage to  Wither mobs. Grants +%2$s  Damage and +%3$s  Strength per Catacombs level.",
-"zh": "对  凋灵生物造成的伤害 +%1$s%。每级地下墓穴等级提供 +%2$s  伤害和 +%3$s  力量。"
+"zh": "对  凋灵生物造成的伤害 +%1$s%。每级地牢等级提供 +%2$s  伤害和 +%3$s  力量。"
 },
 {
 "en": "Apply a natural regen tick when you deal melee damage. (%1$ss cooldown)",
@@ -25335,7 +25335,7 @@
 },
 {
 "en": "Withered Bonus Grants +%1$s Strength per Catacombs skill level you have.",
-"zh": "凋灵加成 你每有一级地下墓穴技能等级，提供 +%1$s 力量。"
+"zh": "凋灵加成 你每有一级地牢技能等级，提供 +%1$s 力量。"
 },
 {
 "en": "Ability: Creeper Veil RIGHT CLICK Spawns a layered veil that negates damage for %1$ss, as follows:",
@@ -25347,7 +25347,7 @@
 },
 {
 "en": "➤ The damage blocked scales with your Dungeon Stat Boost while in The Catacombs.",
-"zh": "➤ 在地下墓穴中时，格挡的伤害随你的地牢属性加成而提升。"
+"zh": "➤ 在地牢中时，格挡的伤害随你的地牢属性加成而提升。"
 },
 {
 "en": "➤ When the damage exceeds a layer's limit, another layer is consumed, until all damage is accounted for.",
@@ -25383,7 +25383,7 @@
 },
 {
 "en": "Ability: Wither Shield RIGHT CLICK Reduces damage taken by %1$s% for %2$s seconds. Also grants an absorption shield that scales based on your Catacombs Level.",
-"zh": "技能: 凋灵护盾 右键 受到的伤害降低 %1$s%，持续 %2$s 秒。同时提供一个吸收护盾，其数值随你的地下墓穴等级提升。"
+"zh": "技能: 凋灵护盾 右键 受到的伤害降低 %1$s%，持续 %2$s 秒。同时提供一个吸收护盾，其数值随你的地牢等级提升。"
 },
 {
 "en": "Stronger Bones Take %1$s% less damage from 🦴 Skeletal mobs.",
@@ -25583,7 +25583,7 @@
 },
 {
 "en": "This NPC can be found in The Catacombs.",
-"zh": "此 NPC 可在地下墓穴中找到。"
+"zh": "此 NPC 可在地牢中找到。"
 },
 {
 "en": "Used in crafting to upgrade pet items purchased from Zog.",
@@ -25807,7 +25807,7 @@
 },
 {
 "en": "Every %1$s Catacombs levels, this armor piece gains +%2$s% stats.",
-"zh": "地下墓穴每提升 %1$s 级，此盔甲部件获得 +%2$s% 属性。"
+"zh": "地牢每提升 %1$s 级，此盔甲部件获得 +%2$s% 属性。"
 },
 {
 "en": "Tank: +%1$s Defense and reduces damage",
@@ -26583,7 +26583,7 @@
 },
 {
 "en": "Increases your  Speed Cap by +%1$s while in The Catacombs.",
-"zh": "在地下墓穴中时，你的 速度上限 +%1$s。"
+"zh": "在地牢中时，你的 速度上限 +%1$s。"
 },
 {
 "en": "Catacombs Explorer I",
@@ -26591,7 +26591,7 @@
 },
 {
 "en": "Grants +%1$s% more Catacombs XP.",
-"zh": "获得的地下墓穴经验增加 +%1$s%。"
+"zh": "获得的地牢经验增加 +%1$s%。"
 },
 {
 "en": "Catacombs Graduate I",
@@ -26607,7 +26607,7 @@
 },
 {
 "en": "Increases the quality of boss rewards in The Catacombs by +%1$s.",
-"zh": "地下墓穴首领奖励的品质 +%1$s。"
+"zh": "地牢首领奖励的品质 +%1$s。"
 },
 {
 "en": "Cavernous Tracker I",
@@ -29531,7 +29531,7 @@
 },
 {
 "en": "only works while in The Catacombs!",
-"zh": "仅在地下墓穴中生效！"
+"zh": "仅在地牢中生效！"
 },
 {
 "en": "Ability: Showtime RIGHT CLICK",
@@ -30399,11 +30399,11 @@
 },
 {
 "en": "Obtained from killing Bonzo in The Catacombs lots of times. Grants %1$sx",
-"zh": "在地下墓穴中多次击杀邦佐后获得。提供 %1$s 倍"
+"zh": "在地牢中多次击杀邦佐后获得。提供 %1$s 倍"
 },
 {
 "en": "stats on The Catacombs Floor I.",
-"zh": "属性，限地下墓穴第 I 层。"
+"zh": "属性，限地牢第 I 层。"
 },
 {
 "en": "SPECIAL DUNGEON HELMET",
@@ -30411,43 +30411,43 @@
 },
 {
 "en": "Obtained from killing Livid in The Catacombs lots of times. Grants %1$sx",
-"zh": "在地下墓穴中多次击杀利维德后获得。提供 %1$s 倍"
+"zh": "在地牢中多次击杀利维德后获得。提供 %1$s 倍"
 },
 {
 "en": "stats on The Catacombs Floor V.",
-"zh": "属性，限地下墓穴第 V 层。"
+"zh": "属性，限地牢第 V 层。"
 },
 {
 "en": "Obtained from killing Maxor, Storm, Goldor, and Necron in The Catacombs",
-"zh": "在地下墓穴中多次击杀马克索、斯托姆、戈尔多和耐克伦"
+"zh": "在地牢中多次击杀马克索、斯托姆、戈尔多和耐克伦"
 },
 {
 "en": "lots of times. Grants %1$sx stats on The Catacombs Floor VII.",
-"zh": "后获得。提供 %1$s 倍属性，限地下墓穴第 VII 层。"
+"zh": "后获得。提供 %1$s 倍属性，限地牢第 VII 层。"
 },
 {
 "en": "Obtained from killing Sadan in The Catacombs lots of times. Grants %1$sx",
-"zh": "在地下墓穴中多次击杀萨丹后获得。提供 %1$s 倍"
+"zh": "在地牢中多次击杀萨丹后获得。提供 %1$s 倍"
 },
 {
 "en": "stats on The Catacombs Floor VI.",
-"zh": "属性，限地下墓穴第 VI 层。"
+"zh": "属性，限地牢第 VI 层。"
 },
 {
 "en": "Obtained from killing Scarf in The Catacombs lots of times. Grants %1$sx",
-"zh": "在地下墓穴中多次击杀斯卡夫后获得。提供 %1$s 倍"
+"zh": "在地牢中多次击杀斯卡夫后获得。提供 %1$s 倍"
 },
 {
 "en": "stats on The Catacombs Floor II.",
-"zh": "属性，限地下墓穴第 II 层。"
+"zh": "属性，限地牢第 II 层。"
 },
 {
 "en": "Obtained from killing Thorn in The Catacombs lots of times. Grants %1$sx",
-"zh": "在地下墓穴中多次击杀索恩后获得。提供 %1$s 倍"
+"zh": "在地牢中多次击杀索恩后获得。提供 %1$s 倍"
 },
 {
 "en": "stats on The Catacombs Floor IV.",
-"zh": "属性，限地下墓穴第 IV 层。"
+"zh": "属性，限地牢第 IV 层。"
 },
 {
 "en": "Fleet Bonus",
@@ -30691,7 +30691,7 @@
 },
 {
 "en": "While in The Catacombs, consume %1$s⸕ charge to break a block. %2$s blocks can be broken at a time, and re-appear after %3$ss. %4$s⸕ charges are regenerated each",
-"zh": "在地下墓穴中时，消耗 %1$s⸕ 充能来破坏一个方块，每次最多可破坏 %2$s 个方块，被破坏的方块会在 %3$s 秒后重新出现。充能恢复速度为 %4$s⸕ 每"
+"zh": "在地牢中时，消耗 %1$s⸕ 充能来破坏一个方块，每次最多可破坏 %2$s 个方块，被破坏的方块会在 %3$s 秒后重新出现。充能恢复速度为 %4$s⸕ 每"
 },
 {
 "en": "second.",
@@ -32083,7 +32083,7 @@
 },
 {
 "en": "Increases the base stats of your dungeon items by %1$s% while in The Catacombs for each digit on your",
-"zh": "在地下墓穴中时，你的地牢物品基础属性提高 %1$s%，按你的"
+"zh": "在地牢中时，你的地牢物品基础属性提高 %1$s%，按你的"
 },
 {
 "en": "secret count. (Max %1$s%)",
@@ -32775,7 +32775,7 @@
 },
 {
 "en": "Apply Aligned to yourself for %1$ss, plus %2$s nearby players on grouped islands. (Catacombs, etc.)",
-"zh": "为自己以及组队岛屿（地下墓穴等）上附近的 %2$s 名玩家施加「校准」效果，持续 %1$s 秒。"
+"zh": "为自己以及组队岛屿（地牢等）上附近的 %2$s 名玩家施加「校准」效果，持续 %1$s 秒。"
 },
 {
 "en": "||| Aligned",
@@ -32863,11 +32863,11 @@
 },
 {
 "en": "Gain +%1$s% Catacombs XP & +%2$s% Class XP, doubled on S+ runs.",
-"zh": "获得 +%1$s% 地下墓穴经验和 +%2$s% 职业经验，S+ 评级通关时翻倍。"
+"zh": "获得 +%1$s% 地牢经验和 +%2$s% 职业经验，S+ 评级通关时翻倍。"
 },
 {
 "en": "Grants +%1$s❤ per %2$s Catacombs levels.",
-"zh": "每 %2$s 级地下墓穴等级提供 +%1$s❤。"
+"zh": "每 %2$s 级地牢等级提供 +%1$s❤。"
 },
 {
 "en": "Spiky Quills",
@@ -33247,7 +33247,7 @@
 },
 {
 "en": "Upon starting a floor in The Catacombs, automatically consumes",
-"zh": "开始一层地下墓穴时，会自动从你的"
+"zh": "开始一层地牢时，会自动从你的"
 },
 {
 "en": "the selected Dungeon Potion from your inventory or Potion Bag.",
@@ -33651,7 +33651,7 @@
 },
 {
 "en": "Holds items commonly found in The Catacombs! Items you pickup go",
-"zh": "存放地下墓穴中常见的物品！你拾取的物品会"
+"zh": "存放地牢中常见的物品！你拾取的物品会"
 },
 {
 "en": "Doubles the odds of fishing a rare",
@@ -35103,7 +35103,7 @@
 },
 {
 "en": "Grants +%1$s Crit Damage per Catacombs skill level you have.",
-"zh": "你的地下墓穴技能每有一级，提供 +%1$s 暴击伤害。"
+"zh": "你的地牢技能每有一级，提供 +%1$s 暴击伤害。"
 },
 {
 "en": "Undead Bonus",
@@ -36019,7 +36019,7 @@
 },
 {
 "en": "Grants +%1$s Strength for every mob you kill in The Catacombs.",
-"zh": "你在地下墓穴中每击杀一只怪物，提供 +%1$s 力量。"
+"zh": "你在地牢中每击杀一只怪物，提供 +%1$s 力量。"
 },
 {
 "en": "Piece Bonus: Sinew",
@@ -36447,7 +36447,7 @@
 },
 {
 "en": "While in The Catacombs, summon a Haunted Skull that slowly revolves",
-"zh": "在地下墓穴中时，召唤一个缓慢旋转的闹鬼头颅"
+"zh": "在地牢中时，召唤一个缓慢旋转的闹鬼头颅"
 },
 {
 "en": "around you every %1$s seconds or when you kill a mob with melee damage.",
@@ -38003,7 +38003,7 @@
 },
 {
 "en": "Grants +%1$s Strength per Catacombs skill level you have.",
-"zh": "你每有一级地下墓穴技能等级，提供 +%1$s 力量。"
+"zh": "你每有一级地牢技能等级，提供 +%1$s 力量。"
 },
 {
 "en": "Ability: Creeper Veil RIGHT CLICK",
@@ -38023,7 +38023,7 @@
 },
 {
 "en": "➤ The damage blocked scales with",
-"zh": "➤ 在地下墓穴中时，格挡的伤害随"
+"zh": "➤ 在地牢中时，格挡的伤害随"
 },
 {
 "en": "your Dungeon Stat Boost while in The Catacombs.",
@@ -38075,7 +38075,7 @@
 },
 {
 "en": "Reduces damage taken by %1$s% for %2$s seconds. Also grants an absorption shield that scales based on your Catacombs Level.",
-"zh": "受到的伤害降低 %1$s%，持续 %2$s 秒。同时提供一个吸收护盾，其数值随你的地下墓穴等级提升。"
+"zh": "受到的伤害降低 %1$s%，持续 %2$s 秒。同时提供一个吸收护盾，其数值随你的地牢等级提升。"
 },
 {
 "en": "Stronger Bones",
@@ -49843,7 +49843,7 @@
 },
 {
 "en": "▶ Catacombs Misc.",
-"zh": "▶ 地下墓穴杂项"
+"zh": "▶ 地牢杂项"
 },
 {
 "en": "Combat ➜ Rotten Flesh",
@@ -50467,15 +50467,15 @@
 },
 {
 "en": "Combat ➜ Catacombs",
-"zh": "战斗 ➜ 地下墓穴"
+"zh": "战斗 ➜ 地牢"
 },
 {
 "en": "Instantly sell all Catacombs",
-"zh": "即时出售所有地下墓穴"
+"zh": "即时出售所有地牢"
 },
 {
 "en": "Catacombs ➜ Special Fragments",
-"zh": "地下墓穴 ➜ 特殊残片"
+"zh": "地牢 ➜ 特殊残片"
 },
 {
 "en": "Instantly sell all Special Fragments",
@@ -50483,7 +50483,7 @@
 },
 {
 "en": "To Catacombs",
-"zh": "返回地下墓穴"
+"zh": "返回地牢"
 },
 {
 "en": "To Special Fragments",
@@ -50503,7 +50503,7 @@
 },
 {
 "en": "Catacombs ➜ Mob Drops",
-"zh": "地下墓穴 ➜ 生物掉落物"
+"zh": "地牢 ➜ 生物掉落物"
 },
 {
 "en": "Mob Drops ➜ Mimic Fragment",
@@ -50519,7 +50519,7 @@
 },
 {
 "en": "Catacombs ➜ Secret Drops",
-"zh": "地下墓穴 ➜ 秘密掉落物"
+"zh": "地牢 ➜ 秘密掉落物"
 },
 {
 "en": "Instantly sell all Secret Drops",
@@ -50555,31 +50555,31 @@
 },
 {
 "en": "Catacombs ➜ Catacombs Misc.",
-"zh": "地下墓穴 ➜ 地下墓穴杂项"
+"zh": "地牢 ➜ 地牢杂项"
 },
 {
 "en": "Instantly sell all Catacombs Misc.",
-"zh": "即时出售所有地下墓穴杂项"
+"zh": "即时出售所有地牢杂项"
 },
 {
 "en": "Catacombs Misc. ➜ Kismet Feather",
-"zh": "地下墓穴杂项 ➜ 天命之羽"
+"zh": "地牢杂项 ➜ 天命之羽"
 },
 {
 "en": "To Catacombs Misc.",
-"zh": "返回地下墓穴杂项"
+"zh": "返回地牢杂项"
 },
 {
 "en": "Catacombs Misc. ➜ Wither Cataly",
-"zh": "地下墓穴杂项 ➜ 凋灵催化剂"
+"zh": "地牢杂项 ➜ 凋灵催化剂"
 },
 {
 "en": "Catacombs Misc. ➜ Spirit Wing",
-"zh": "地下墓穴杂项 ➜ 灵魂之翼"
+"zh": "地牢杂项 ➜ 灵魂之翼"
 },
 {
 "en": "Catacombs Misc. ➜ Spirit Bone",
-"zh": "地下墓穴杂项 ➜ 灵魂之骨"
+"zh": "地牢杂项 ➜ 灵魂之骨"
 },
 {
 "en": "Wood ➜ Oak",
@@ -51051,7 +51051,7 @@
 },
 {
 "en": "Grants +%1$s  Damage and +%2$s ",
-"zh": "每级地下墓穴等级提供 +%1$s  伤害和 +%2$s "
+"zh": "每级地牢等级提供 +%1$s  伤害和 +%2$s "
 },
 {
 "en": "Intelligence per Catacombs level.",
@@ -53427,7 +53427,7 @@
 },
 {
 "en": "Grants +%1$s per %2$s Catacombs levels.",
-"zh": "每 %2$s 级地下墓穴等级提供 +%1$s。"
+"zh": "每 %2$s 级地牢等级提供 +%1$s。"
 },
 {
 "en": "%1$s S runs to tier up!",
@@ -60731,7 +60731,7 @@
 },
 {
 "en": "Every %1$s Catacombs levels, this armor piece",
-"zh": "地下墓穴每提升 %1$s 级，此护甲部件"
+"zh": "地牢每提升 %1$s 级，此护甲部件"
 },
 {
 "en": "Grants additional bonuses based on your",
@@ -69311,7 +69311,7 @@
 },
 {
 "en": "Instantly sell all Special Fragments To Catacombs",
-"zh": "即时出售所有特殊残片返回地下墓穴"
+"zh": "即时出售所有特殊残片返回地牢"
 },
 {
 "en": "‣ Quick access to some menus using their respective commands:",
@@ -69915,7 +69915,7 @@
 },
 {
 "en": "Every %1$s Catacombs levels, this armor piece gains +%1$s% stats.",
-"zh": "地下墓穴每提升 %1$s 级，此护甲部件属性提升 +%1$s%。"
+"zh": "地牢每提升 %1$s 级，此护甲部件属性提升 +%1$s%。"
 },
 {
 "en": "taken by %1$s% for each piece you have equipped if you are hit by the same monster within %1$s",
@@ -70079,7 +70079,7 @@
 },
 {
 "en": "- Catacombs (%1$s)",
-"zh": "- 地下墓穴 (%1$s)"
+"zh": "- 地牢 (%1$s)"
 },
 {
 "en": "- Kuudra (%1$s)",
@@ -70603,7 +70603,7 @@
 },
 {
 "en": "The Catacombs",
-"zh": "地下墓穴"
+"zh": "地牢"
 },
 {
 "en": "Mythological Creatures",
@@ -73103,7 +73103,7 @@
 },
 {
 "en": "View all of the mobs that you've found and killed in The Catacombs.",
-"zh": "查看你在地下墓穴发现并击杀过的所有怪物。"
+"zh": "查看你在地牢发现并击杀过的所有怪物。"
 },
 {
 "en": "View all of the Sea Creatures that you've killed while fishing.",
@@ -86731,7 +86731,7 @@
 },
 {
 "en": "After completing a Catacombs or Kuudra run, if you don't open a chest, I'll save it here for you!",
-"zh": "完成地下墓穴或库德拉挑战后，若你没有开启宝箱，我会替你保存在这里！"
+"zh": "完成地牢或库德拉挑战后，若你没有开启宝箱，我会替你保存在这里！"
 },
 {
 "en": "But beware, I can only hold 60 runs worth of chests, and will discard them after 72 hours!",
@@ -90695,7 +90695,7 @@
 },
 {
 "en": "For the longest time I thought I would move to the Crimson Isle or visit the Catacombs after this place.",
-"zh": "很长一段时间里，我都想着，离开这里以后就去绯红孤岛，或者到地下墓穴看看。"
+"zh": "很长一段时间里，我都想着，离开这里以后就去绯红孤岛，或者到地牢看看。"
 },
 {
 "en": "But the truth is, I really like it here.",
@@ -95155,15 +95155,15 @@
 },
 {
 "en": "%1$s entered The Catacombs, Floor %2$s!",
-"zh": "%1$s 进入了地下墓穴第 %2$s 层！"
+"zh": "%1$s 进入了地牢第 %2$s 层！"
 },
 {
 "en": "%1$s entered The Catacombs, Entrance!",
-"zh": "%1$s 进入了地下墓穴入口层！"
+"zh": "%1$s 进入了地牢入口层！"
 },
 {
 "en": "%1$s entered MM The Catacombs, Floor %2$s!",
-"zh": "%1$s 进入了大师模式地下墓穴第 %2$s 层！"
+"zh": "%1$s 进入了大师模式地牢第 %2$s 层！"
 },
 {
 "en": "%1$s selected the %2$s Class!",
@@ -95431,7 +95431,7 @@
 },
 {
 "en": "You will no longer auto ready up when joining The Catacombs!",
-"zh": "你已关闭加入地下墓穴时自动准备的功能！"
+"zh": "你已关闭加入地牢时自动准备的功能！"
 },
 {
 "en": "Use '/togglereadyup' when the instance has started or the toggle in the queue menu to change this option whenever.",
@@ -95447,15 +95447,15 @@
 },
 {
 "en": "The Catacombs - Floor %1$s",
-"zh": "地下墓穴 - 第 %1$s 层"
+"zh": "地牢 - 第 %1$s 层"
 },
 {
 "en": "The Catacombs - Entrance",
-"zh": "地下墓穴 - 入口"
+"zh": "地牢 - 入口"
 },
 {
 "en": "Master Mode The Catacombs - Floor %1$s",
-"zh": "大师模式地下墓穴 - 第 %1$s 层"
+"zh": "大师模式地牢 - 第 %1$s 层"
 },
 {
 "en": "☠ Defeated %1$s in %2$sm %3$ss",
@@ -95467,7 +95467,7 @@
 },
 {
 "en": "+%1$s Catacombs Experience",
-"zh": "+%1$s 点地下墓穴经验"
+"zh": "+%1$s 点地牢经验"
 },
 {
 "en": "☠ Defeated %1$s in %2$sm %3$ss (NEW RECORD!)",
@@ -95531,7 +95531,7 @@
 },
 {
 "en": "You will now auto ready up when joining The Catacombs!",
-"zh": "你已开启加入地下墓穴时自动准备的功能！"
+"zh": "你已开启加入地牢时自动准备的功能！"
 },
 {
 "en": "You have selected the %1$s Dungeon Class!",
@@ -95563,11 +95563,11 @@
 },
 {
 "en": "You will no longer auto ready up when joining MM The Catacombs!",
-"zh": "你已关闭进入大师模式地下墓穴时自动准备的功能！"
+"zh": "你已关闭进入大师模式地牢时自动准备的功能！"
 },
 {
 "en": "You will now auto ready up when joining MM The Catacombs!",
-"zh": "你已开启进入大师模式地下墓穴时自动准备的功能！"
+"zh": "你已开启进入大师模式地牢时自动准备的功能！"
 },
 {
 "en": "This item cannot be salvaged!",
@@ -95715,7 +95715,7 @@
 },
 {
 "en": "You must have Catacombs Skill %1$s!",
-"zh": "需要地下墓穴技能达到 %1$s 级！"
+"zh": "需要地牢技能达到 %1$s 级！"
 },
 {
 "en": "Selected dungeon: %1$s",
@@ -95767,7 +95767,7 @@
 },
 {
 "en": "- Obtained from Master Catacombs Floor %1$s.",
-"zh": "- 获取自地下墓穴大师模式 %1$s 层。"
+"zh": "- 获取自地牢大师模式 %1$s 层。"
 },
 {
 "en": "Toggle",
@@ -95783,7 +95783,7 @@
 },
 {
 "en": "MM The Catacombs - Floor %1$s",
-"zh": "大师模式地下墓穴 - 第 %1$s 层"
+"zh": "大师模式地牢 - 第 %1$s 层"
 },
 {
 "en": "Party size: 1-5",
@@ -95791,27 +95791,27 @@
 },
 {
 "en": "✓ Catacombs Skill %1$s.",
-"zh": "✓ 地下墓穴技能 %1$s 级。"
+"zh": "✓ 地牢技能 %1$s 级。"
 },
 {
 "en": "✗ Catacombs Skill %1$s.",
-"zh": "✗ 地下墓穴技能 %1$s 级。"
+"zh": "✗ 地牢技能 %1$s 级。"
 },
 {
 "en": "✓ Master Mode The Catacombs Floor",
-"zh": "✓ 通关大师模式地下墓穴第"
+"zh": "✓ 通关大师模式地牢第"
 },
 {
 "en": "✗ Master Mode The Catacombs Floor",
-"zh": "✗ 尚未通关大师模式地下墓穴第"
+"zh": "✗ 尚未通关大师模式地牢第"
 },
 {
 "en": "✓ The Catacombs Floor %1$s Completion.",
-"zh": "✓ 通关地下墓穴第 %1$s 层。"
+"zh": "✓ 通关地牢第 %1$s 层。"
 },
 {
 "en": "✓ The Catacombs Floor VII",
-"zh": "✓ 通关地下墓穴第 VII 层。"
+"zh": "✓ 通关地牢第 VII 层。"
 },
 {
 "en": "Mini-Boss: The Watcher ✔",
@@ -95975,7 +95975,7 @@
 },
 {
 "en": "Catacombs (%1$s) RNG Meter",
-"zh": "地下墓穴 (%1$s) RNG 计量表"
+"zh": "地牢 (%1$s) RNG 计量表"
 },
 {
 "en": "RNG Meter",
@@ -95999,11 +95999,11 @@
 },
 {
 "en": "Catacombs Mastery %1$s",
-"zh": "地下墓穴精通 %1$s 级"
+"zh": "地牢精通 %1$s 级"
 },
 {
 "en": "Catacombs RNG Meters",
-"zh": "地下墓穴 RNG 计量表"
+"zh": "地牢 RNG 计量表"
 },
 {
 "en": "+%1$s Renew Healing",
@@ -96391,7 +96391,7 @@
 },
 {
 "en": "Master Mode The Catacombs",
-"zh": "大师模式地下墓穴"
+"zh": "大师模式地牢"
 },
 {
 "en": "%1$s: Crowd Control",
@@ -96615,7 +96615,7 @@
 },
 {
 "en": "The Catacombs %1$s",
-"zh": "地下墓穴 %1$s 级"
+"zh": "地牢 %1$s 级"
 },
 {
 "en": "Progress to Mastery %1$s: %2$s%",
@@ -96847,7 +96847,7 @@
 },
 {
 "en": "Catacombs Profile",
-"zh": "地下墓穴资料"
+"zh": "地牢资料"
 },
 {
 "en": "Dungeon Rules and Tips",
@@ -96943,7 +96943,7 @@
 },
 {
 "en": "Catacombs level too low!",
-"zh": "地下墓穴等级过低！"
+"zh": "地牢等级过低！"
 },
 {
 "en": "Click to queue for dungeon!",
@@ -97007,7 +97007,7 @@
 },
 {
 "en": "To Catacombs Gate",
-"zh": "返回地下墓穴入口"
+"zh": "返回地牢入口"
 },
 {
 "en": "To Party Finder",
@@ -97195,7 +97195,7 @@
 },
 {
 "en": "Requires Catacombs Level %1$s!",
-"zh": "需要地下墓穴等级 %1$s!"
+"zh": "需要地牢等级 %1$s!"
 },
 {
 "en": "Requires a Class at Level %1$s!",
@@ -97279,7 +97279,7 @@
 },
 {
 "en": "Opening The Catacombs for your",
-"zh": "正在为你的队伍打开地下墓穴……"
+"zh": "正在为你的队伍打开地牢……"
 },
 {
 "en": "Already opened!",
@@ -97607,7 +97607,7 @@
 },
 {
 "en": "❣ Requires The Catacombs Floor %1$s Completion.",
-"zh": "❣ 需要通关地下墓穴第 %1$s 层。"
+"zh": "❣ 需要通关地牢第 %1$s 层。"
 },
 {
 "en": "DARN BOI",
@@ -97615,7 +97615,7 @@
 },
 {
 "en": "Opening The Catacombs for your party!",
-"zh": "正在为你的队伍打开地下墓穴……"
+"zh": "正在为你的队伍打开地牢……"
 },
 {
 "en": "The longer you hold this in your inventory, the stronger you'll become for %1$s minutes after removing it from your inventory!",
@@ -97643,7 +97643,7 @@
 },
 {
 "en": "Increases your base ❤ Health while in The Catacombs by +%1$s.",
-"zh": "在地下墓穴中，基础 ❤ 生命值提高 +%1$s。"
+"zh": "在地牢中，基础 ❤ 生命值提高 +%1$s。"
 },
 {
 "en": "Shows the layout of the Dungeon as it is explored and completed.",
@@ -97751,7 +97751,7 @@
 },
 {
 "en": "Opening MM The Catacombs for your party!",
-"zh": "正在为你的队伍创建大师模式地下墓穴实例！"
+"zh": "正在为你的队伍创建大师模式地牢实例！"
 },
 {
 "en": "View all your The Professor Collection progress and rewards!",
@@ -97851,7 +97851,7 @@
 },
 {
 "en": "Increase your Catacombs dungeon level to unlock new rewards!",
-"zh": "提升地下墓穴等级，解锁更多奖励！"
+"zh": "提升地牢等级，解锁更多奖励！"
 },
 {
 "en": "Shards ➜ Bonzo Shard",
@@ -97863,39 +97863,39 @@
 },
 {
 "en": "Catacombs - Floor %1$s",
-"zh": "地下墓穴 - 第 %1$s 层"
+"zh": "地牢 - 第 %1$s 层"
 },
 {
 "en": "The Catacombs - Floor I",
-"zh": "地下墓穴 - 第 I 层"
+"zh": "地牢 - 第 I 层"
 },
 {
 "en": "The Catacombs - Floor II",
-"zh": "地下墓穴 - 第 II 层"
+"zh": "地牢 - 第 II 层"
 },
 {
 "en": "The Catacombs - Floor III",
-"zh": "地下墓穴 - 第 III 层"
+"zh": "地牢 - 第 III 层"
 },
 {
 "en": "The Catacombs - Floor IV",
-"zh": "地下墓穴 - 第 IV 层"
+"zh": "地牢 - 第 IV 层"
 },
 {
 "en": "The Catacombs - Floor V",
-"zh": "地下墓穴 - 第 V 层"
+"zh": "地牢 - 第 V 层"
 },
 {
 "en": "The Catacombs - Floor VI",
-"zh": "地下墓穴 - 第 VI 层"
+"zh": "地牢 - 第 VI 层"
 },
 {
 "en": "The Catacombs - Floor VII",
-"zh": "地下墓穴 - 第 VII 层"
+"zh": "地牢 - 第 VII 层"
 },
 {
 "en": "Master Mode The Catacombs - Flo",
-"zh": "大师模式地下墓穴"
+"zh": "大师模式地牢"
 },
 {
 "en": "Ready Up",
@@ -97927,11 +97927,11 @@
 },
 {
 "en": "Catacombs Rewards",
-"zh": "地下墓穴奖励"
+"zh": "地牢奖励"
 },
 {
 "en": "(%1$s/%2$s) Catacombs (%3$s) RNG Meter",
-"zh": "(%1$s/%2$s) 地下墓穴 (%3$s) RNG 计量表"
+"zh": "(%1$s/%2$s) 地牢 (%3$s) RNG 计量表"
 },
 {
 "en": "Kuudra - Basic",
@@ -97943,7 +97943,7 @@
 },
 {
 "en": "Catacombs Gate",
-"zh": "地下墓穴入口"
+"zh": "地牢入口"
 },
 {
 "en": "Party Finder",
@@ -98379,15 +98379,15 @@
 },
 {
 "en": "Have you noticed that it's not possible to enter The Catacombs alone?",
-"zh": "你有没有发现，没法独自进入地下墓穴？"
+"zh": "你有没有发现，没法独自进入地牢？"
 },
 {
 "en": "Mort's just really stubborn when it comes to The Catacombs. He's seen so many adventurers get lost down there that he now refuses to let anyone in without a buddy.",
-"zh": "一提到地下墓穴，莫特就特别固执。他见过太多冒险者在里面迷路，所以现在没有同伴，他就不放人进去。"
+"zh": "一提到地牢，莫特就特别固执。他见过太多冒险者在里面迷路，所以现在没有同伴，他就不放人进去。"
 },
 {
 "en": "Not the mention that The Catacombs is extremenly dangerous to explore alone.",
-"zh": "更别说独自探索地下墓穴，可是极其危险的。"
+"zh": "更别说独自探索地牢，可是极其危险的。"
 },
 {
 "en": "Although he won't let the average adventurer pass, he might reconsider it if you're strong enough.",
@@ -98395,7 +98395,7 @@
 },
 {
 "en": "Well, for The Catacombs, I reckon that if you have defeated The Professor, he'd probably let you in.",
-"zh": "至于地下墓穴，我想你要是击败过教授，他大概就会放行。"
+"zh": "至于地牢，我想你要是击败过教授，他大概就会放行。"
 },
 {
 "en": "If you can do that, I'll give you my personal recommendation!",
@@ -98415,7 +98415,7 @@
 },
 {
 "en": "Then take this letter to Mort whenever you feel like entering The Catacombs alone. Make sure that you're not in a party.",
-"zh": "那你想独自进入地下墓穴时，就拿这封信给莫特看。记得先退出队伍。"
+"zh": "那你想独自进入地牢时，就拿这封信给莫特看。记得先退出队伍。"
 },
 {
 "en": "Best of luck.",
@@ -98423,7 +98423,7 @@
 },
 {
 "en": "Good luck on your solo adventures. I look forward to hearing about your triumphs within The Catacombs!",
-"zh": "祝你的单人冒险一切顺利。我期待听到你在地下墓穴中凯旋的消息！"
+"zh": "祝你的单人冒险一切顺利。我期待听到你在地牢中凯旋的消息！"
 },
 {
 "en": "I can see that you already have my recommendation letter on you!",
@@ -98639,7 +98639,7 @@
 },
 {
 "en": "The Wither King now lives in the deepest floor of the Catacombs, but where is the Wither Prince?",
-"zh": "凋灵之王如今住在地下墓穴最深层，但凋灵王子又在哪里呢？"
+"zh": "凋灵之王如今住在地牢最深层，但凋灵王子又在哪里呢？"
 },
 {
 "en": "I wonder if they'll ever open more doors in here.",
@@ -98739,7 +98739,7 @@
 },
 {
 "en": "Well fought humans, no longer you will disrupt the silence of the Catacombs.",
-"zh": "打得不错，小人类，你们再也无法打扰地下墓穴的寂静了。"
+"zh": "打得不错，小人类，你们再也无法打扰地牢的寂静了。"
 },
 {
 "en": "Impossible! How did you figure out which one I was?!",
@@ -98867,7 +98867,7 @@
 },
 {
 "en": "I don't tend to give out my contact to those delving into The Catacombs.",
-"zh": "我一般不把联系方式给那些深入地下墓穴的人。"
+"zh": "我一般不把联系方式给那些深入地牢的人。"
 },
 {
 "en": "I used to, but remembering who's still alive and who isn't is a nightmare.",
@@ -98907,7 +98907,7 @@
 },
 {
 "en": "I wish you the best of luck in The Catacombs.",
-"zh": "祝你在地下墓穴里好运。"
+"zh": "祝你在地牢里好运。"
 },
 {
 "en": "Try to stay alive, for both your sake and mine - I don't feel like expending the minimal effort required to remove you from my contacts.",
@@ -98939,7 +98939,7 @@
 },
 {
 "en": "Hey %1$s, welcome to The Catacombs!",
-"zh": "嘿，%1$s，欢迎来到地下墓穴！"
+"zh": "嘿，%1$s，欢迎来到地牢！"
 },
 {
 "en": "We hope you have a long stay!",
@@ -98999,7 +98999,7 @@
 },
 {
 "en": "Welcome back. Are you here to enter The Catacombs again?",
-"zh": "欢迎回来。你又要进地下墓穴了？"
+"zh": "欢迎回来。你又要进地牢了？"
 },
 {
 "en": "WHAT? You want to go in alone? I simply cannot allow that to happen.",
@@ -99015,7 +99015,7 @@
 },
 {
 "en": "I'll allow you to enter The Catacombs alone from now on.",
-"zh": "从现在起，我允许你独自进入地下墓穴"
+"zh": "从现在起，我允许你独自进入地牢"
 },
 {
 "en": "However, let me give you an explicit final warning.",
@@ -99027,7 +99027,7 @@
 },
 {
 "en": "After all, The Catacombs won't go easy on you just because you're on your own.",
-"zh": "毕竟，地下墓穴可不会因为你独自一人就手下留情。"
+"zh": "毕竟，地牢可不会因为你独自一人就手下留情。"
 },
 {
 "en": "You have been warned. I wish you the best of luck.",
@@ -99131,11 +99131,11 @@
 },
 {
 "en": "The Catacombs... are no more.",
-"zh": "地下墓穴……不复存在了。"
+"zh": "地牢……不复存在了。"
 },
 {
 "en": "You merely adopted the Catacombs! I was molded by them!",
-"zh": "你们不过是后来才踏入地下墓穴！而我是由地下墓穴塑造的！"
+"zh": "你们不过是后来才踏入地牢！而我是由地牢塑造的！"
 },
 {
 "en": "I - Necron - was destined to rule over Mankind! Dead or Alive!",
@@ -99143,7 +99143,7 @@
 },
 {
 "en": "The Catacombs made you stronger, but can you beat me?!",
-"zh": "地下墓穴让你们变强了，但你们能打败我吗？!"
+"zh": "地牢让你们变强了，但你们能打败我吗？!"
 },
 {
 "en": "Show me how you beat Storm!!!",
@@ -99191,7 +99191,7 @@
 },
 {
 "en": "These Catacombs hold many riches, powerful items and great experience.",
-"zh": "这座地下墓穴里藏着大量财富、强力装备，还有丰厚的经验。"
+"zh": "这座地牢里藏着大量财富、强力装备，还有丰厚的经验。"
 },
 {
 "en": "My trick? I make coins from the others' greed.",
@@ -99219,7 +99219,7 @@
 },
 {
 "en": "✆ Have you heard of the Catacombs Expert Ring?",
-"zh": "✆ 你听说过地下墓穴专家戒指吗？"
+"zh": "✆ 你听说过地牢专家戒指吗？"
 },
 {
 "en": "✆ I really want it.",
@@ -99247,7 +99247,7 @@
 },
 {
 "en": "Though I sit stationary in this prison that is The Catacombs, my knowledge knows no bounds.",
-"zh": "尽管我被困在地下墓穴这座牢笼里动弹不得，我的学识却没有边界。"
+"zh": "尽管我被困在地牢这座牢笼里动弹不得，我的学识却没有边界。"
 },
 {
 "en": "Prove your knowledge by answering 3 questions and I shall reward you in ways that transcend time!",
@@ -100163,7 +100163,7 @@
 },
 {
 "en": "My Arena is the most entertaining place in all the Catacombs!",
-"zh": "我的竞技场是整个地下墓穴中最有趣的地方！"
+"zh": "我的竞技场是整个地牢中最有趣的地方！"
 },
 {
 "en": "Today you'll be our spectacle.",
@@ -100623,7 +100623,7 @@
 },
 {
 "en": "⏣ The Catacombs (%1$s)",
-"zh": "⏣ 地下墓穴 （%1$s）"
+"zh": "⏣ 地牢 （%1$s）"
 },
 {
 "en": "Auto-closing in: %1$s",
@@ -100775,7 +100775,7 @@
 },
 {
 "en": "Catacombs Floor %1$s",
-"zh": "地下墓穴第 %1$s 层"
+"zh": "地牢第 %1$s 层"
 },
 {
 "en": "Regeneration %1$s %2$s",
@@ -102255,7 +102255,7 @@
 },
 {
 "en": "I'm all out of Melons down in the Catacombs, you got any?",
-"zh": "我在地下墓穴里的西瓜全吃完了，你有吗？"
+"zh": "我在地牢里的西瓜全吃完了，你有吗？"
 },
 {
 "en": "Truthfully, I've forgotten how I ended up down there in the first place.",
@@ -103883,7 +103883,7 @@
 },
 {
 "en": "✆ I've always wanted one, but you can't find them around here, and I'm too scared to venture into The Catacombs in search of one.",
-"zh": "✆ 我一直想要一颗，可这附近找不到，我又不敢去地下墓穴里找。"
+"zh": "✆ 我一直想要一颗，可这附近找不到，我又不敢去地牢里找。"
 },
 {
 "en": "✆ Hmm, you don't seem to have a Midas Jewel.",
@@ -103891,7 +103891,7 @@
 },
 {
 "en": "✆ You can sometimes find one when killing King Midas in The Catacombs.",
-"zh": "✆ 在地下墓穴里击杀弥达斯王，有时会掉落一颗。"
+"zh": "✆ 在地牢里击杀弥达斯王，有时会掉落一颗。"
 },
 {
 "en": "✆ ...Or so I've heard.",
@@ -103903,7 +103903,7 @@
 },
 {
 "en": "✆ I hope it wasn't too much of a hassle to get, I've heard stories of The Catacombs...",
-"zh": "✆ 希望你找它没费太多工夫，我听说过地下墓穴的那些故事..."
+"zh": "✆ 希望你找它没费太多工夫，我听说过地牢的那些故事..."
 },
 {
 "en": "✆ Here's my contact, you can call me whenever you need to access the Gold Essence Shop.",
@@ -105187,7 +105187,7 @@
 },
 {
 "en": "I ordered a snack down to my room in the Catacombs. Took them years to find me, and even then they forgot the toppings!",
-"zh": "我在地下墓穴的房间点了份零食。他们花了好几年才找到我，结果还忘了配料！"
+"zh": "我在地牢的房间点了份零食。他们花了好几年才找到我，结果还忘了配料！"
 },
 {
 "en": "Sometimes you just have to take matters into your own hands, you know?",
@@ -129471,7 +129471,7 @@
 },
 {
 "en": "There was once a powerful necromancer who lived in the Catacombs.",
-"zh": "从前有个强大的死灵法师，住在地下墓穴里。"
+"zh": "从前有个强大的死灵法师，住在地牢里。"
 },
 {
 "en": "After a falling out with its administration, she retired to the Rift.",
@@ -139567,7 +139567,7 @@
 },
 {
 "en": "Current Mastery Reward: Your Dungeon Items' stats are increased by %1$s% while in The Catacombs.",
-"zh": "当前精通奖励: 在地下墓穴中时，你的地牢物品属性提高 %1$s%。"
+"zh": "当前精通奖励: 在地牢中时，你的地牢物品属性提高 %1$s%。"
 },
 {
 "en": "Collect Essence in Dungeons which can be used to upgrade gear and purchase perks and upgrades!",
@@ -139575,11 +139575,11 @@
 },
 {
 "en": "View your statistics, best performances, and more for The Catacombs!",
-"zh": "查看你在地下墓穴中的统计数据、最佳表现等内容！"
+"zh": "查看你在地牢中的统计数据、最佳表现等内容！"
 },
 {
 "en": "Your Catacombs RNG Meters fill with Dungeon Score each time you complete an S or S+ run.",
-"zh": "每次以 S 或 S+ 评级完成一局，你的地下墓穴掉落保底计量表都会按地牢评分充能。"
+"zh": "每次以 S 或 S+ 评级完成一局，你的地牢掉落保底计量表都会按地牢评分充能。"
 },
 {
 "en": "Your selected RNG drop will be guaranteed to appear in a chest once your RNG Meter for a floor is full!",
@@ -139587,11 +139587,11 @@
 },
 {
 "en": "Complete Catacombs dungeons to earn experience!",
-"zh": "通关地下墓穴以获得经验！"
+"zh": "通关地牢以获得经验！"
 },
 {
 "en": "Your RNG Meter fills each time you complete an S+ run on Catacombs (F%1$s) by your score for that run.",
-"zh": "每次以 S+ 评级通关地下墓穴 (F%1$s)，你的掉落保底计量表都会按该次分数增长。"
+"zh": "每次以 S+ 评级通关地牢 (F%1$s)，你的掉落保底计量表都会按该次分数增长。"
 },
 {
 "en": "Completing S runs fills your meter with %1$s% of your score.",
@@ -139607,7 +139607,7 @@
 },
 {
 "en": "Catacombs (M%1$s)",
-"zh": "地下墓穴 (M%1$s)"
+"zh": "地牢 (M%1$s)"
 },
 {
 "en": "You must defeat Maxor, Storm, Goldor, and Necron first!",
@@ -139615,7 +139615,7 @@
 },
 {
 "en": "To Catacombs Rewards",
-"zh": "返回地下墓穴奖励"
+"zh": "返回地牢奖励"
 },
 {
 "en": "Odds: Occasional (%1$s%)",
@@ -139623,7 +139623,7 @@
 },
 {
 "en": "To Catacombs RNG Meters",
-"zh": "返回地下墓穴掉落保底计量表"
+"zh": "返回地牢掉落保底计量表"
 },
 {
 "en": "Play this floor once to unlock stats for it!",
@@ -139659,7 +139659,7 @@
 },
 {
 "en": "To Catacombs Profile",
-"zh": "返回地下墓穴档案"
+"zh": "返回地牢档案"
 },
 {
 "en": "Play more of Floor III for your best runs to appear here!",
@@ -140639,7 +140639,7 @@
 },
 {
 "en": "Gain XP by leveling up your Catacombs classes!",
-"zh": "通过提升地下墓穴职业等级获得经验！"
+"zh": "通过提升地牢职业等级获得经验！"
 },
 {
 "en": "Click to see Class Levels!",
@@ -140647,7 +140647,7 @@
 },
 {
 "en": "Click to see Catacombs Levels!",
-"zh": "点击查看地下墓穴等级！"
+"zh": "点击查看地牢等级！"
 },
 {
 "en": "You have not unlocked the content required to complete this task!",
@@ -141147,7 +141147,7 @@
 },
 {
 "en": "Enemies of this type are typically found in The Catacombs and take increased damage from the Smite enchantment.",
-"zh": "此类敌人通常出现在地下墓穴，受到亡灵杀手附魔的伤害提高。"
+"zh": "此类敌人通常出现在地牢，受到亡灵杀手附魔的伤害提高。"
 },
 {
 "en": "Kill an enemy of this type to unlock it!",
@@ -141591,7 +141591,7 @@
 },
 {
 "en": "Reach Catacombs Level XII by completing Dungeon runs in The Catacombs.",
-"zh": "在地下墓穴中通关地牢，将地下墓穴等级提升到 XII。"
+"zh": "在地牢中通关地牢，将地牢等级提升到 XII。"
 },
 {
 "en": "Reach Level IX in all of your Dungeon Classes.",
@@ -149243,7 +149243,7 @@
 },
 {
 "en": "Increases the base stats of your dungeon items and healing in dungeons by %1$s% while in The Catacombs.",
-"zh": "在地下墓穴中时，地牢物品的基础属性和地牢内的治疗量提高 %1$s%。"
+"zh": "在地牢中时，地牢物品的基础属性和地牢内的治疗量提高 %1$s%。"
 },
 {
 "en": "Gain XP by progressing your Heart of the Mountain:",
@@ -149259,7 +149259,7 @@
 },
 {
 "en": "Gain XP by leveling up your Catacombs level!",
-"zh": "提升地下墓穴等级来获得经验！"
+"zh": "提升地牢等级来获得经验！"
 },
 {
 "en": "Gain XP by completing your Boss Collections!",
@@ -149279,19 +149279,19 @@
 },
 {
 "en": "Requires The Catacombs Floor %1$s Completion",
-"zh": "需要通关地下墓穴第 %1$s 层"
+"zh": "需要通关地牢第 %1$s 层"
 },
 {
 "en": "Requires Master Mode The Catacombs Floor %1$s Completion.",
-"zh": "需要通关大师模式地下墓穴第 %1$s 层。"
+"zh": "需要通关大师模式地牢第 %1$s 层。"
 },
 {
 "en": "Complete Catacombs Floor %1$s",
-"zh": "通关地下墓穴第 %1$s 层"
+"zh": "通关地牢第 %1$s 层"
 },
 {
 "en": "Complete Master Mode Catacombs Floor %1$s",
-"zh": "通关大师模式地下墓穴第 %1$s 层"
+"zh": "通关大师模式地牢第 %1$s 层"
 },
 {
 "en": "Syphon Shards to unlock and level up your Attributes! Each Attribute grant its own unique power, active at all times, no matter where you are.",
@@ -149423,11 +149423,11 @@
 },
 {
 "en": "I came to visit my Grandparent's tomb inside the Catacombs, and pay my respects. When I finally arrived I discovered the tombs had been destroyed, someone had dug up the bodies! Who would do such an evil thing?",
-"zh": "我来到地下墓穴，想去祖父母的墓前祭拜。可等我终于赶到时，却发现墓已经被毁了，有人把遗体挖走了！谁会做出这么恶毒的事？"
+"zh": "我来到地牢，想去祖父母的墓前祭拜。可等我终于赶到时，却发现墓已经被毁了，有人把遗体挖走了！谁会做出这么恶毒的事？"
 },
 {
 "en": "I noticed two parallel streaks connecting the uncovered grave site to a tunnel I had never seen before inside the Catacombs. Whoever decided to desecrate a sacred burial ground and drag the bodies away, they will surely pay!",
-"zh": "我注意到有两道平行的拖痕，从被掘开的墓穴一直延伸到一条我在地下墓穴里从没见过的隧道。不管是谁亵渎了这片神圣的墓地、把遗体拖走，都一定会付出代价！"
+"zh": "我注意到有两道平行的拖痕，从被掘开的墓穴一直延伸到一条我在地牢里从没见过的隧道。不管是谁亵渎了这片神圣的墓地、把遗体拖走，都一定会付出代价！"
 },
 {
 "en": "After I exited the tunnel, I came upon a large room. It was inlaid with many skulls, a plethora of its stonework was deeply cracked, the wooden tiles completely rotten, and cobwebs littered the ceiling, as if no one stepped foot in here for years.",
@@ -149471,7 +149471,7 @@
 },
 {
 "en": "This is the lab report of Dr. Myles, Scientist of the Mage Association, in conjunction with Officer Roy of the Adventurer's Guild, and Documentation of the Catacombs. Roy will be my assistant with this, and also in future Lab Reports.",
-"zh": "这是法师协会科学家迈尔斯博士的实验报告，与冒险者公会的罗伊警官合作完成，并附地下墓穴的相关记录。罗伊将担任我此项研究以及今后实验报告的助手。"
+"zh": "这是法师协会科学家迈尔斯博士的实验报告，与冒险者公会的罗伊警官合作完成，并附地牢的相关记录。罗伊将担任我此项研究以及今后实验报告的助手。"
 },
 {
 "en": "Early Autumn 10:",
@@ -149479,7 +149479,7 @@
 },
 {
 "en": "Today the mage association hauled an undead organism into the lab, and I was given a brief description of what it was doing in the Catacombs. Unfortunately, I was not present during the capture process.",
-"zh": "今天法师协会把一个不死生物拖进了实验室，我听取了它在地下墓穴中活动情况的简要说明。遗憾的是，捕获过程我并不在场。"
+"zh": "今天法师协会把一个不死生物拖进了实验室，我听取了它在地牢中活动情况的简要说明。遗憾的是，捕获过程我并不在场。"
 },
 {
 "en": "The creature matches most historical descriptions of undead humans known as Zombies. This specimen resembles an old female, seeming to have originally died from old age. We christened the newly discovered Zombie, New.",
@@ -149503,7 +149503,7 @@
 },
 {
 "en": "New gave birth to another Zombie. We named the newborn Two. While it is still unclear how the contagion spreads, this alarming discovery raises multiple questions. These answers can only be found in the Catacombs.",
-"zh": "“新”生下了另一只僵尸。我们给这只新生的僵尸取名为“二”。虽然还不清楚这种传染是如何扩散的，但这个令人不安的发现引出了许多疑问。这些答案只能在地下墓穴中找到。"
+"zh": "“新”生下了另一只僵尸。我们给这只新生的僵尸取名为“二”。虽然还不清楚这种传染是如何扩散的，但这个令人不安的发现引出了许多疑问。这些答案只能在地牢中找到。"
 },
 {
 "en": "Two is far too powerful. We have failed to curb its vicious tendencies. Officer Roy was found dead in the testing facility, ripped limb from limb.",
@@ -149519,7 +149519,7 @@
 },
 {
 "en": "\"Very well.\" The King grasped his scepter and spoke resolutely. \"I shall send a garrison of highly trained militia to further investigate the Catacombs. If dark magic is at work there, we will take care of it swiftly.\"",
-"zh": "“很好。”国王握住权杖，语气坚决，“我将派出一支训练有素的民兵队伍，进一步调查地下墓穴。如果那里真有黑暗魔法作祟，我们会迅速处理掉它。”"
+"zh": "“很好。”国王握住权杖，语气坚决，“我将派出一支训练有素的民兵队伍，进一步调查地牢。如果那里真有黑暗魔法作祟，我们会迅速处理掉它。”"
 },
 {
 "en": "The atmosphere in the room became more serious but the court seemed relieved. Rumors were spreading in the Kingdom concerning the living corpse found in the crypts, and after the tragedy in the facility, people's mindsets started to worsen.",
@@ -149539,7 +149539,7 @@
 },
 {
 "en": "We entered the Catacombs. I still have no idea what we are looking for in this death hole, nobody tells me much anyways. After all, in the army, I'm at the bottom of the food chain.",
-"zh": "我们进入了地下墓穴。我到现在都不知道我们要在这个死人窟里找什么，反正也没人跟我多说。毕竟在军队里，我处在食物链的最底层。"
+"zh": "我们进入了地牢。我到现在都不知道我们要在这个死人窟里找什么，反正也没人跟我多说。毕竟在军队里，我处在食物链的最底层。"
 },
 {
 "en": "Before entering this giant graveyard, I couldn't believe any of the stories. But now that I'm here, I'm not sure what to think anymore. This place is darker than a moonless night, everything is tainted with shadows.",
@@ -149575,7 +149575,7 @@
 },
 {
 "en": "There was no trace of any remains, the bodies and anything else those tombs used to protect were gone. This development corroborates the suspicions of evil work in the Catacombs, the expedition must press on.",
-"zh": "墓里没有任何遗骸的痕迹，尸体以及那些坟墓原本守护的一切都不见了。这一发现印证了地下墓穴中有邪恶活动的怀疑，远征必须继续。"
+"zh": "墓里没有任何遗骸的痕迹，尸体以及那些坟墓原本守护的一切都不见了。这一发现印证了地牢中有邪恶活动的怀疑，远征必须继续。"
 },
 {
 "en": "Whoever took those corpses left no clues behind. There are signs of human activity, but all those trails and footsteps lead to nowhere, just as if they walked right through the walls.",
@@ -149663,7 +149663,7 @@
 },
 {
 "en": "Solomon believes that the Expedition must return to the King's Castle at once, we have reason to believe that Kaeman survived and took hold of the Catacombs. Our group isn't prepared for a confrontation with the Wither King.",
-"zh": "所罗门认为远征队必须立刻返回国王的城堡，我们有理由相信凯曼还活着，并且已经占据了地下墓穴。我们的队伍还没准备好与凋灵之王正面交锋。"
+"zh": "所罗门认为远征队必须立刻返回国王的城堡，我们有理由相信凯曼还活着，并且已经占据了地牢。我们的队伍还没准备好与凋灵之王正面交锋。"
 },
 {
 "en": "General Dan ordered the troops to march on, insisting that we at least explore the third floor before turning back. After all, we still had enough resources for another 4 days of travel.",
@@ -149675,7 +149675,7 @@
 },
 {
 "en": "After a few hours, the group entered a large room, probably the largest one yet. The room had giant water pipes landing into large pools. Proof that the sewers had connections with the Catacombs.",
-"zh": "几个小时后，队伍进入一个大房间，可能是目前为止最大的一个。房间里有巨大的水管，一直通到几个大水池里。这证明下水道与地下墓穴是相通的。"
+"zh": "几个小时后，队伍进入一个大房间，可能是目前为止最大的一个。房间里有巨大的水管，一直通到几个大水池里。这证明下水道与地牢是相通的。"
 },
 {
 "en": "The General said it was time for a break, so the group started to prepare for lunch. Solomon reiterated his wish to return to the Castle immediately. After a short debate, General Dan agreed to end the expedition.",
@@ -149699,7 +149699,7 @@
 },
 {
 "en": "One of the rescued soldiers was acting odd. He started mumbling to himself, and knowing the Catacombs, I was ready for whatever this could be. He started screaming \"GET OUT!!!\", and clawed at his eyes. Then, he stopped.",
-"zh": "被救下的士兵中有一个举止古怪。他开始自言自语，我了解地下墓穴，所以已做好了应对任何情况的准备。他开始尖叫“滚出去！！！”，还用手抓自己的眼睛。然后，他停了下来。"
+"zh": "被救下的士兵中有一个举止古怪。他开始自言自语，我了解地牢，所以已做好了应对任何情况的准备。他开始尖叫“滚出去！！！”，还用手抓自己的眼睛。然后，他停了下来。"
 },
 {
 "en": "Suddenly, he leaped at his comrade and tried to pierce him with his sword. I used all the mana I had left to stun him before he could kill. The color in his eyes was gone, as if he was being mind controlled.",
@@ -149711,7 +149711,7 @@
 },
 {
 "en": "The Catacombs hide an entire army of incredible strength. Someone has to come back alive from the expedition at all c...",
-"zh": "地下墓穴里藏着一整支实力惊人的军队。无论付出什么代价，远征队里都必须有人活着回去……"
+"zh": "地牢里藏着一整支实力惊人的军队。无论付出什么代价，远征队里都必须有人活着回去……"
 },
 {
 "en": "THE WALLS",
@@ -149919,11 +149919,11 @@
 },
 {
 "en": "We still don't know what caused this group of humans to explore the Catacombs, but now it is clear they had suspicions of what was inside. No matter what, we have to make a move, I think the plan is to send Storm after the Castle if they flee.",
-"zh": "我们仍不知道是什么促使这群人类来探索地下墓穴，但现在很清楚，他们已经怀疑这里面有什么了。无论如何，我们必须采取行动，我想计划是如果他们逃跑，就派斯托姆去追击城堡。"
+"zh": "我们仍不知道是什么促使这群人类来探索地牢，但现在很清楚，他们已经怀疑这里面有什么了。无论如何，我们必须采取行动，我想计划是如果他们逃跑，就派斯托姆去追击城堡。"
 },
 {
 "en": "At least I got confirmation that none of them escaped the Catacombs, and their group only had a few days worth of resources, the Kingdom will understand soon enough what happened. We must strike before they realize.",
-"zh": "至少我得到确认，他们没有一个人逃出地下墓穴，而且他们的队伍只带了几天的物资，王国很快就会明白发生了什么。我们必须在他们察觉之前发动攻击。"
+"zh": "至少我得到确认，他们没有一个人逃出地牢，而且他们的队伍只带了几天的物资，王国很快就会明白发生了什么。我们必须在他们察觉之前发动攻击。"
 },
 {
 "en": "Only 2 humans are left alive. It seems like Necron wanted to interrogate the mage, and the other one, I have no idea what the 'stalker' wants to do with him.",
@@ -150247,11 +150247,11 @@
 },
 {
 "en": "\"Just what is... What is this place?\" Necron exclaimed. The Wither King's acute sense of death had identified that his cage was right above a place filled with corpses. \"The Catacombs.\" Kaeman replied.",
-"zh": "“这……这到底是什么地方？”耐克伦惊呼。凋灵之王对死亡的敏锐感知早已察觉到，他的牢笼正好位于一个满是尸体的地方的上方。“地下墓穴。”凯曼答道。"
+"zh": "“这……这到底是什么地方？”耐克伦惊呼。凋灵之王对死亡的敏锐感知早已察觉到，他的牢笼正好位于一个满是尸体的地方的上方。“地牢。”凯曼答道。"
 },
 {
 "en": "He had planned his escape to look like an accident, a bi-product of his planning. While hidden in the Catacombs he would have time to heal and prepare his return, while he taught his new apprentice from the shadows.",
-"zh": "他把这次逃脱安排得像一场意外，是他计划的副产品。藏身地下墓穴期间，他有时间疗伤、准备卷土重来，同时在暗中教导他的新学徒。"
+"zh": "他把这次逃脱安排得像一场意外，是他计划的副产品。藏身地牢期间，他有时间疗伤、准备卷土重来，同时在暗中教导他的新学徒。"
 },
 {
 "en": "THE FOLLOWER 2",
@@ -150399,11 +150399,11 @@
 },
 {
 "en": "Lathrop descended one of the corridors, the footsteps before him his only guide. Suspicion grew as to their destination - the coal cave was an entrance to the ancient Catacombs, final resting place of the Cataclysm's casualties.",
-"zh": "拉斯罗普走下其中一条通道，前方的脚步声是他唯一的向导。他越来越怀疑他们的目的地——这个煤矿洞穴是古老地下墓穴的入口，大灾变遇难者的最终安息之所。"
+"zh": "拉斯罗普走下其中一条通道，前方的脚步声是他唯一的向导。他越来越怀疑他们的目的地——这个煤矿洞穴是古老地牢的入口，大灾变遇难者的最终安息之所。"
 },
 {
 "en": "Echoes faded, Lathrop waited in silence, ears pricked for any sign of his quarry's passage. After a moment deemed safe, he resumed his pursuit. At last, he arrived in a large chamber, the catacomb's gateway. The stranger was nowhere in sight.",
-"zh": "回声渐渐消失，拉斯罗普静静等待，竖起耳朵留意猎物经过的任何动静。等到觉得安全了，他又继续追踪。最后，他来到一个巨大的墓室，那是地下墓穴的大门。陌生人不见了踪影。"
+"zh": "回声渐渐消失，拉斯罗普静静等待，竖起耳朵留意猎物经过的任何动静。等到觉得安全了，他又继续追踪。最后，他来到一个巨大的墓室，那是地牢的大门。陌生人不见了踪影。"
 },
 {
 "en": "Lathrop was about to inspect the grand wooden door in front of him, when a voice shattered the silence from behind him. \"Why are you trailing me?\" It asked, causing a chill to run down his spine.",
@@ -150423,7 +150423,7 @@
 },
 {
 "en": "Necron observed Lathrop in silence for a moment, then picked up Livid's unconscious body and slung it over his shoulder. He walked towards the large wooden door, which opened on its own. \"Come,\" he said as he stepped into the Catacombs.",
-"zh": "耐克伦沉默地打量了拉斯罗普片刻，然后扛起利维德昏迷的身体，甩到肩上。他朝那扇巨大的木门走去，门自己打开了。“来吧，”他说着，走进了地下墓穴。"
+"zh": "耐克伦沉默地打量了拉斯罗普片刻，然后扛起利维德昏迷的身体，甩到肩上。他朝那扇巨大的木门走去，门自己打开了。“来吧，”他说着，走进了地牢。"
 },
 {
 "en": "Donating a %1$s will count as donating this item.",
@@ -151687,7 +151687,7 @@
 },
 {
 "en": "Good luck on your solo adventurers. I look forward to hearing about your triumphs within The Catacombs!",
-"zh": "祝你单人冒险顺利。我期待听到你在地下墓穴中的胜利！"
+"zh": "祝你单人冒险顺利。我期待听到你在地牢中的胜利！"
 },
 {
 "en": "The Agarimoo's fumes are damaging you!",
@@ -153747,11 +153747,11 @@
 },
 {
 "en": "Blow up %1$sk Crypts in The Catacombs.",
-"zh": "在地下墓穴中炸毁 %1$sk 座墓穴。"
+"zh": "在地牢中炸毁 %1$sk 座墓穴。"
 },
 {
 "en": "Blow up %1$sk Crypts in the Catacombs.",
-"zh": "在地下墓穴中炸毁 %1$sk 座墓穴。"
+"zh": "在地牢中炸毁 %1$sk 座墓穴。"
 },
 {
 "en": "Break %1$sM Crop Blocks.",
@@ -153991,7 +153991,7 @@
 },
 {
 "en": "Obtain a score of %1$s or higher on Floor %2$s of Catacombs.",
-"zh": "在地下墓穴第 %2$s 层获得 %1$s 或更高的评分。"
+"zh": "在地牢第 %2$s 层获得 %1$s 或更高的评分。"
 },
 {
 "en": "Obtain %1$s unique Pets.",
@@ -154167,11 +154167,11 @@
 },
 {
 "en": "Obtain a score if %1$s or higher on Floor %2$s of Catacombs.",
-"zh": "在地下墓穴第 %2$s 层获得 %1$s 或更高的评分。"
+"zh": "在地牢第 %2$s 层获得 %1$s 或更高的评分。"
 },
 {
 "en": "Obtain a score of at least %1$s in Catacombs Floor I without a party",
-"zh": "不组队在地下墓穴第 I 层获得至少 %1$s 的评分"
+"zh": "不组队在地牢第 I 层获得至少 %1$s 的评分"
 },
 {
 "en": "Open %1$s Cans of Worms.",
@@ -154647,7 +154647,7 @@
 },
 {
 "en": "Pocket Black Holes cannot be placed inside The Catacombs!",
-"zh": "口袋黑洞不能放置在地下墓穴中！"
+"zh": "口袋黑洞不能放置在地牢中！"
 },
 {
 "en": "✆ But maybe... If you do something for me.",
@@ -155787,7 +155787,7 @@
 },
 {
 "en": "Join The Catacombs.",
-"zh": "加入地下墓穴。"
+"zh": "加入地牢。"
 },
 {
 "en": "Huh? A Catfish!",
@@ -156167,7 +156167,7 @@
 },
 {
 "en": "Upon starting a floor in The Catacombs, automatically consumes the selected Dungeon Potion from your inventory.",
-"zh": "开始地下墓穴的一层时，自动使用物品栏中所选的地牢药水。"
+"zh": "开始地牢的一层时，自动使用物品栏中所选的地牢药水。"
 },
 {
 "en": "When applied to Armor of Divan, grants %1$s Mining Fortune.",
@@ -156907,7 +156907,7 @@
 },
 {
 "en": "Ability: Dungeon Breaker DIG While in The Catacombs, consume %1$s⸕ charge to break a block. Blocks re-appear after %2$ss and restores %3$s⸕ charge.",
-"zh": "能力: 地牢破坏者 挖掘 在地下墓穴中时，消耗 %1$s⸕ 充能破坏一个方块。方块会在 %2$s 秒后重新出现，并恢复 %3$s⸕ 充能。"
+"zh": "能力: 地牢破坏者 挖掘 在地牢中时，消耗 %1$s⸕ 充能破坏一个方块。方块会在 %2$s 秒后重新出现，并恢复 %3$s⸕ 充能。"
 },
 {
 "en": "When killing an enemy, you have a %1$s chance to cocoon them! Cocooned enemies will quickly hatch, and can be killed again. (Cannot trigger in Dungeons, Kuudra, or on Bosses).",
@@ -156939,7 +156939,7 @@
 },
 {
 "en": "Deals %1$s damage to  Wither mobs. Grants %2$s  Damage and %3$s  Intelligence per Catacombs level.",
-"zh": "对 凋灵生物造成 %1$s 伤害。每级地下墓穴等级提供 %2$s  伤害和 %3$s  智力。"
+"zh": "对 凋灵生物造成 %1$s 伤害。每级地牢等级提供 %2$s  伤害和 %3$s  智力。"
 },
 {
 "en": "Full Set Bonus: Superior Blood (%1$s/%2$s) Increases all Combat stats and  Magic Find by %3$s and Aspect of the Dragons ability deals %4$s more damage.",
@@ -160815,7 +160815,7 @@
 },
 {
 "en": "Gain %1$s Catacombs XP & %2$s Class XP, doubled on S+ runs. Grants %3$s per %4$s Catacombs levels.",
-"zh": "获得 %1$s 地下墓穴经验和 %2$s 职业经验，S+ 评级时翻倍。每 %4$s 级地下墓穴等级提供 %3$s。"
+"zh": "获得 %1$s 地牢经验和 %2$s 职业经验，S+ 评级时翻倍。每 %4$s 级地牢等级提供 %3$s。"
 },
 {
 "en": "Help out Barry with the last efforts to open the Wizard Portal.",
@@ -161179,7 +161179,7 @@
 },
 {
 "en": "Gain %1$s Catacombs XP & %2$s Class XP, doubled on S+ runs. Grants %3$s❤ per %4$s Catacombs levels.",
-"zh": "获得 %1$s 地下墓穴经验和 %2$s 职业经验，S+ 评级时翻倍。每 %4$s 级地下墓穴等级提供 %3$s❤。"
+"zh": "获得 %1$s 地牢经验和 %2$s 职业经验，S+ 评级时翻倍。每 %4$s 级地牢等级提供 %3$s❤。"
 },
 {
 "en": "Gain %1$s extra Combat XP. Grants %2$s☣ Crit Chance.",
@@ -161619,7 +161619,7 @@
 },
 {
 "en": "Exchange Undead Essence for perks and items useful in The Catacombs!",
-"zh": "用亡灵精粹兑换在地下墓穴中有用的天赋和物品！"
+"zh": "用亡灵精粹兑换在地牢中有用的天赋和物品！"
 },
 {
 "en": "Exchange Wither Essence for perks and items!",
@@ -161627,31 +161627,31 @@
 },
 {
 "en": "Increases the quality of boss rewards in The Catacombs by %1$s.",
-"zh": "地下墓穴中 Boss 奖励的品质提高 %1$s。"
+"zh": "地牢中 Boss 奖励的品质提高 %1$s。"
 },
 {
 "en": "Increases the quality of mob loot drops in The Catacombs by %1$s.",
-"zh": "地下墓穴中生物战利品掉落的品质提高 %1$s。"
+"zh": "地牢中生物战利品掉落的品质提高 %1$s。"
 },
 {
 "en": "Increases your base  Intelligence while in The Catacombs by %1$s.",
-"zh": "在地下墓穴中时，你的基础 智力提高 %1$s。"
+"zh": "在地牢中时，你的基础 智力提高 %1$s。"
 },
 {
 "en": "Increases your base  Crit Damage while in The Catacombs by %1$s.",
-"zh": "在地下墓穴中时，你的基础 暴击伤害提高 %1$s。"
+"zh": "在地牢中时，你的基础 暴击伤害提高 %1$s。"
 },
 {
 "en": "Increases your base  Defense while in The Catacombs by %1$s.",
-"zh": "在地下墓穴中时，你的基础 防御提高 %1$s。"
+"zh": "在地牢中时，你的基础 防御提高 %1$s。"
 },
 {
 "en": "Increases your base  Strength while in The Catacombs by %1$s.",
-"zh": "在地下墓穴中时，你的基础 力量提高 %1$s。"
+"zh": "在地牢中时，你的基础 力量提高 %1$s。"
 },
 {
 "en": "Increases your base  Health while in The Catacombs by %1$s.",
-"zh": "在地下墓穴中时，你的基础 生命值提高 %1$s。"
+"zh": "在地牢中时，你的基础 生命值提高 %1$s。"
 },
 {
 "en": "Increases your  Intelligence by %1$s.",
@@ -161679,7 +161679,7 @@
 },
 {
 "en": "Start every run in The Catacombs with an invisible Revive Stone.",
-"zh": "每次进入地下墓穴时都携带一块隐形的复活石。"
+"zh": "每次进入地牢时都携带一块隐形的复活石。"
 },
 {
 "en": "You use the Ethereal Vine to free the rooted space, unlocking",
@@ -163639,7 +163639,7 @@
 },
 {
 "en": "Grants %1$s Strength per Catacombs skill level you have.",
-"zh": "你每拥有一级地下墓穴技能等级，获得 %1$s 力量。"
+"zh": "你每拥有一级地牢技能等级，获得 %1$s 力量。"
 },
 {
 "en": "GONE WITH THE WIND ENDED!",
@@ -164023,7 +164023,7 @@
 },
 {
 "en": "Investigate the Catacombs.",
-"zh": "调查地下墓穴。"
+"zh": "调查地牢。"
 },
 {
 "en": "The altar doesn't budge!",
@@ -166023,7 +166023,7 @@
 },
 {
 "en": "[BOSS] Livid: Well fought humans, no longer you will disrupt the silence of the Catacombs.",
-"zh": "[BOSS] 利维德: 打得好，人类，你们再也不会扰乱地下墓穴的寂静了。"
+"zh": "[BOSS] 利维德: 打得好，人类，你们再也不会扰乱地牢的寂静了。"
 },
 {
 "en": "[BOSS] %1$s: Catch this!",
@@ -166671,7 +166671,7 @@
 },
 {
 "en": "The Catacombs are an old maze under the island.",
-"zh": "地下墓穴是岛屿下方的一座古老迷宫。"
+"zh": "地牢是岛屿下方的一座古老迷宫。"
 },
 {
 "en": "✆ Anyways, I guess I'll add you, but only if you can prove to me that you won't just die like everyone else.",
@@ -166687,7 +166687,7 @@
 },
 {
 "en": "✆ I don't tend to give out my contact to those delving into The Catacombs.",
-"zh": "✆ 我一般不会把联系方式给那些钻研地下墓穴的人。"
+"zh": "✆ 我一般不会把联系方式给那些钻研地牢的人。"
 },
 {
 "en": "✆ I used to, but remembering who's still alive and who isn't is a nightmare.",
@@ -166695,7 +166695,7 @@
 },
 {
 "en": "✆ I wish you the best of luck in The Catacombs.",
-"zh": "✆ 祝你在地下墓穴好运。"
+"zh": "✆ 祝你在地牢好运。"
 },
 {
 "en": "✆ Removing them was a real pain.",
@@ -166935,7 +166935,7 @@
 },
 {
 "en": "Source: Drops from Healthy mobs in The Catacombs.",
-"zh": "来源: 地下墓穴中健康的生物掉落。"
+"zh": "来源: 地牢中健康的生物掉落。"
 },
 {
 "en": "Source: Drops from Riftstalker Bloodfiend slayer boss.",
@@ -166959,7 +166959,7 @@
 },
 {
 "en": "Source: Drops from mobs in the Blood Room of The Catacombs.",
-"zh": "来源: 地下墓穴血之房间中的生物掉落。"
+"zh": "来源: 地牢血之房间中的生物掉落。"
 },
 {
 "en": "Source: Drops from the Broodmother in the Spider's Den.",
@@ -166991,7 +166991,7 @@
 },
 {
 "en": "Source: Sometimes obtained from defeating Livid in The Catacombs.",
-"zh": "来源: 有时在地下墓穴击败利维德后获得。"
+"zh": "来源: 有时在地牢击败利维德后获得。"
 },
 {
 "en": "Source: Unlocked from Acacia IX collection.",
@@ -168123,11 +168123,11 @@
 },
 {
 "en": "Auto ready up when joining MM Catacombs if you have the requirements, so you don't have to!",
-"zh": "加入大师模式地下墓穴时，如果你满足要求则自动准备，省得你手动操作！"
+"zh": "加入大师模式地牢时，如果你满足要求则自动准备，省得你手动操作！"
 },
 {
 "en": "Auto ready up when joining The Catacombs if you have the requirements, so you don't have to!",
-"zh": "加入地下墓穴时，如果你满足要求则自动准备，省得你手动操作！"
+"zh": "加入地牢时，如果你满足要求则自动准备，省得你手动操作！"
 },
 {
 "en": "Change the order of groups in the menu.",
@@ -168175,7 +168175,7 @@
 },
 {
 "en": "View your statistics, best performances, and more for Master Mode Catacombs!",
-"zh": "查看你在大师模式地下墓穴中的数据、最佳表现等！"
+"zh": "查看你在大师模式地牢中的数据、最佳表现等！"
 },
 {
 "en": "The Mossybit is exhausted...",
@@ -168463,11 +168463,11 @@
 },
 {
 "en": "[BOSS] Necron: The Catacombs made you stronger, but can you beat me?!",
-"zh": "[BOSS] 耐克伦: 地下墓穴让你变得更强了，但你能打败我吗？！"
+"zh": "[BOSS] 耐克伦: 地牢让你变得更强了，但你能打败我吗？！"
 },
 {
 "en": "[BOSS] Necron: The Catacombs... are no more.",
-"zh": "[BOSS] 耐克伦: 地下墓穴……不复存在了。"
+"zh": "[BOSS] 耐克伦: 地牢……不复存在了。"
 },
 {
 "en": "[BOSS] Necron: WITNESS MY RAW NUCLEAR POWER!",
@@ -168475,7 +168475,7 @@
 },
 {
 "en": "[BOSS] Necron: You merely adopted the Catacombs! I was molded by them!",
-"zh": "[BOSS] 耐克伦: 你只是适应了地下墓穴！而我是被它塑造出来的！"
+"zh": "[BOSS] 耐克伦: 你只是适应了地牢！而我是被它塑造出来的！"
 },
 {
 "en": "[BOSS] Necron: You went further than any human before, congratulations.",
@@ -168799,23 +168799,23 @@
 },
 {
 "en": "Beat Floor %1$s of the Master Mode Catacombs with %2$s Archers.",
-"zh": "用 %2$s 名弓箭手通关大师模式地下墓穴第 %1$s 层。"
+"zh": "用 %2$s 名弓箭手通关大师模式地牢第 %1$s 层。"
 },
 {
 "en": "Beat Floor %1$s of the Master Mode Catacombs with %2$s Berserkers.",
-"zh": "用 %2$s 名狂战士通关大师模式地下墓穴第 %1$s 层。"
+"zh": "用 %2$s 名狂战士通关大师模式地牢第 %1$s 层。"
 },
 {
 "en": "Beat Floor %1$s of the Master Mode Catacombs with %2$s Healers.",
-"zh": "用 %2$s 名治疗通关大师模式地下墓穴第 %1$s 层。"
+"zh": "用 %2$s 名治疗通关大师模式地牢第 %1$s 层。"
 },
 {
 "en": "Beat Floor %1$s of the Master Mode Catacombs with %2$s Mages.",
-"zh": "用 %2$s 名法师通关大师模式地下墓穴第 %1$s 层。"
+"zh": "用 %2$s 名法师通关大师模式地牢第 %1$s 层。"
 },
 {
 "en": "Beat Floor %1$s of the Master Mode Catacombs with %2$s Tanks.",
-"zh": "用 %2$s 名坦克通关大师模式地下墓穴第 %1$s 层。"
+"zh": "用 %2$s 名坦克通关大师模式地牢第 %1$s 层。"
 },
 {
 "en": "Blow up %1$s Crypts in a single dungeon.",
@@ -168867,7 +168867,7 @@
 },
 {
 "en": "Obtain an S+ score in The Catacombs Floor VII without using any teleportation ability.",
-"zh": "在不使用任何传送能力的情况下，在地下墓穴第 VII 层获得 S+ 评级。"
+"zh": "在不使用任何传送能力的情况下，在地牢第 VII 层获得 S+ 评级。"
 },
 {
 "en": "Place in the top %1$s during Jacob's Farming Contest.",
@@ -172235,7 +172235,7 @@
 },
 {
 "en": "Full Set Bonus: Efficient training (%1$s/%2$s) Every %3$s Catacombs levels, this armor piece gains %4$s stats.",
-"zh": "套装奖励: 高效训练 (%1$s/%2$s) 每 %3$s 级地下墓穴等级，此盔甲部件获得 %4$s 属性。"
+"zh": "套装奖励: 高效训练 (%1$s/%2$s) 每 %3$s 级地牢等级，此盔甲部件获得 %4$s 属性。"
 },
 {
 "en": "Full Set Bonus: Frozen Blazing Aura (%1$s/%2$s) Damages mobs in a %3$s block range for %4$s base damage + %5$s of their max  Health every second and applies Slowness I for %6$s seconds.",
@@ -172259,7 +172259,7 @@
 },
 {
 "en": "Full Set Bonus: Shadow Assassin (%1$s/%2$s) Grants %3$s Strength for every mob you kill in The Catacombs. (Strength resets after each run)",
-"zh": "套装奖励: 暗影刺客 (%1$s/%2$s) 你在地下墓穴中每击杀一只生物，获得 %3$s 力量。(力量在每次地牢结束后重置)"
+"zh": "套装奖励: 暗影刺客 (%1$s/%2$s) 你在地牢中每击杀一只生物，获得 %3$s 力量。(力量在每次地牢结束后重置)"
 },
 {
 "en": "Full Set Bonus: Shoal (%1$s/%2$s) Gain %3$s Defense for each Zombie Soldier Set within %4$s blocks.",
@@ -172463,7 +172463,7 @@
 },
 {
 "en": "➤ Lose a layer on hit, consuming %1$s Vitality and block up to %2$s damage. ➤ The damage blocked scales with your Dungeon Stat Boost while in The Catacombs. ➤ When the damage exceeds a layer's limit, another layer is consumed, until all damage is accounted for. ➤ When you run out of  Vitality, consume all  Vitality and take slight knockback. ➤ You cannot attack or regenerate  Vitality while the veil is up.",
-"zh": "➤ 受到攻击时失去一层，消耗 %1$s 活力并抵挡最多 %2$s 伤害。➤ 在地下墓穴中，抵挡的伤害随你的地牢属性加成提升。➤ 当伤害超过一层的上限时，会消耗另一层，直到所有伤害都被抵消。➤ 当你的 活力耗尽时，消耗全部 活力并受到轻微击退。➤ 面纱存在期间你无法攻击或恢复 活力。"
+"zh": "➤ 受到攻击时失去一层，消耗 %1$s 活力并抵挡最多 %2$s 伤害。➤ 在地牢中，抵挡的伤害随你的地牢属性加成提升。➤ 当伤害超过一层的上限时，会消耗另一层，直到所有伤害都被抵消。➤ 当你的 活力耗尽时，消耗全部 活力并受到轻微击退。➤ 面纱存在期间你无法攻击或恢复 活力。"
 },
 {
 "en": "Full Set Bonus: Death Tax (%1$s/%2$s) Earn %3$s coins and heal %4$s each kill. Only against level %5$s+ mobs!",
@@ -174239,7 +174239,7 @@
 },
 {
 "en": "Gain XP by leveling up your Catacombs classes! Level %1$s-%2$s: %3$s XP",
-"zh": "通过提升地下墓穴职业等级获得经验！%1$s-%2$s 级: %3$s 经验"
+"zh": "通过提升地牢职业等级获得经验！%1$s-%2$s 级: %3$s 经验"
 },
 {
 "en": "Gain XP by mining ores during the Mining Fiesta event! Per %1$s Ores Mined: %2$s XP (Caps at %3$s ores mined!)",
@@ -177631,7 +177631,7 @@
 },
 {
 "en": "Grants %1$s ❁ Strength per Catacombs level.",
-"zh": "每级地下墓穴等级提供 %1$s ❁ 力量。"
+"zh": "每级地牢等级提供 %1$s ❁ 力量。"
 },
 {
 "en": "You don't have enough Coins!",
@@ -178591,7 +178591,7 @@
 },
 {
 "en": "[BOSS] Thorn: My Arena is the most entertaining place in all the Catacombs!",
-"zh": "[BOSS] 索恩: 我的竞技场是整个地下墓穴中最有娱乐性的地方！"
+"zh": "[BOSS] 索恩: 我的竞技场是整个地牢中最有娱乐性的地方！"
 },
 {
 "en": "[BOSS] Thorn: My energy, it goes away...",
@@ -181187,7 +181187,7 @@
 },
 {
 "en": "Increases the base stats of your dungeon items by %1$s while in The Catacombs for each digit on your secret count. (Max %2$s)",
-"zh": "在地下墓穴中时，你的秘密计数每有一位数，地牢物品的基础属性提高 %1$s。(最多 %2$s)"
+"zh": "在地牢中时，你的秘密计数每有一位数，地牢物品的基础属性提高 %1$s。(最多 %2$s)"
 },
 {
 "en": "ANCIENT! You swapped to the Black Ancient skin!",
@@ -191563,7 +191563,7 @@
 },
 {
 "en": "Guards the entrance to the catacombs.",
-"zh": "看守地下墓穴的入口。"
+"zh": "看守地牢的入口。"
 },
 {
 "en": "Fillets your Trophy Fish.",
@@ -193991,7 +193991,7 @@
 },
 {
 "en": "Grants %1$s  Damage and %2$s ❈ Defense per Catacombs level.",
-"zh": "每有 1 级地下墓穴等级，获得 %1$s  伤害和 %2$s ❈ 防御。"
+"zh": "每有 1 级地牢等级，获得 %1$s  伤害和 %2$s ❈ 防御。"
 },
 {
 "en": "Deal %1$s% damage to Endermen.",
@@ -194103,7 +194103,7 @@
 },
 {
 "en": "Grants %1$s  Damage and %2$s ✎ Intelligence per Catacombs level.",
-"zh": "每有 1 级地下墓穴等级，获得 %1$s  伤害和 %2$s ✎ 智力。"
+"zh": "每有 1 级地牢等级，获得 %1$s  伤害和 %2$s ✎ 智力。"
 },
 {
 "en": "Reduces the defense of your target by %1$s% of their max ❈ Defense on hit, stacking up to %2$s times.",
@@ -194159,7 +194159,7 @@
 },
 {
 "en": "Grants %1$s  Damage and %2$s ☠ Crit Damage per Catacombs level.",
-"zh": "每有 1 级地下墓穴等级，获得 %1$s  伤害和 %2$s ☠ 暴击伤害。"
+"zh": "每有 1 级地牢等级，获得 %1$s  伤害和 %2$s ☠ 暴击伤害。"
 },
 {
 "en": "Rapidly teleports you to up to %1$s enemies within %2$s blocks, rooting each of them and allowing you to hit them.",
@@ -194207,7 +194207,7 @@
 },
 {
 "en": "Grants %1$s  Damage and %2$s ❁ Strength per Catacombs level.",
-"zh": "每有 1 级地下墓穴等级，获得 %1$s  伤害和 %2$s ❁ 力量。"
+"zh": "每有 1 级地牢等级，获得 %1$s  伤害和 %2$s ❁ 力量。"
 },
 {
 "en": "Use %1$s% of your max health to boost your nearby allies by %2$s❁ Strength for %3$s seconds.",
@@ -194267,7 +194267,7 @@
 },
 {
 "en": "Grants %1$s❁ Strength for every mob you kill in The Catacombs.",
-"zh": "在地下墓穴中，每击杀 1 只怪物，获得 %1$s ❁ 力量。"
+"zh": "在地牢中，每击杀 1 只怪物，获得 %1$s ❁ 力量。"
 },
 {
 "en": "Doubles your ❈ Defense while in water.",
@@ -194403,7 +194403,7 @@
 },
 {
 "en": "Every %1$s Catacombs levels, this armor piece gains +%2$s stats.",
-"zh": "地下墓穴等级每满 %1$s 级，此部件的属性提高 %2$s。"
+"zh": "地牢等级每满 %1$s 级，此部件的属性提高 %2$s。"
 },
 {
 "en": "Healer: +%1$s☄ Mending, +%2$s❤ Health",
@@ -194455,7 +194455,7 @@
 },
 {
 "en": "While in The Catacombs, consume %1$s⸕ charge to break a block. %2$s blocks can be broken at a time, and re-appear after %3$ss. %4$s⸕ charges are regenerated each second.",
-"zh": "在地下墓穴中，消耗 %1$s ⸕ 充能破坏一个方块。同一时间最多破坏 %2$s 个方块，被破坏的方块会在 %3$s 秒后复原。每秒回复 %4$s ⸕ 充能。"
+"zh": "在地牢中，消耗 %1$s ⸕ 充能破坏一个方块。同一时间最多破坏 %2$s 个方块，被破坏的方块会在 %3$s 秒后复原。每秒回复 %4$s ⸕ 充能。"
 },
 {
 "en": "Your next attack deals double damage and weakens  Animal mobs, making them deal %1$s damage for %2$s seconds.",
@@ -194583,7 +194583,7 @@
 },
 {
 "en": "Deals %1$s damage to  Wither mobs. Grants %2$s  Damage and %3$s ❁ Strength per Catacombs level.",
-"zh": "对 凋灵生物造成的伤害 %1$s。每有 1 级地下墓穴等级，获得 %2$s  伤害和 %3$s ❁ 力量。"
+"zh": "对 凋灵生物造成的伤害 %1$s。每有 1 级地牢等级，获得 %2$s  伤害和 %3$s ❁ 力量。"
 },
 {
 "en": "Gain %1$s❁ Strength per piece of Ender Armor worn.",
@@ -194607,7 +194607,7 @@
 },
 {
 "en": "Reduces damage taken by %1$s for %2$s seconds. Also grants an absorption shield that scales based on your Catacombs Level.",
-"zh": "受到的伤害降低 %1$s，持续 %2$s 秒。同时获得随地下墓穴等级增强的伤害吸收护盾。"
+"zh": "受到的伤害降低 %1$s，持续 %2$s 秒。同时获得随地牢等级增强的伤害吸收护盾。"
 },
 {
 "en": "Gains %1$s❈ Defense when used with the Zombie Knight Sword",
@@ -194707,11 +194707,11 @@
 },
 {
 "en": "Grants +%1$s❁ Strength per Catacombs skill level you have.",
-"zh": "每有 1 级地下墓穴技能等级，获得 +%1$s❁ 力量。"
+"zh": "每有 1 级地牢技能等级，获得 +%1$s❁ 力量。"
 },
 {
 "en": "Grants +%1$s☠ Crit Damage per Catacombs skill level you have.",
-"zh": "每有 1 级地下墓穴技能等级，获得 +%1$s☠ 暴击伤害。"
+"zh": "每有 1 级地牢技能等级，获得 +%1$s☠ 暴击伤害。"
 },
 {
 "en": "Killing an enemy has a %1$s% chance to spawn a Spirit Decoy while in ⏣ Dungeons.",
@@ -199699,11 +199699,11 @@
 },
 {
 "en": "You begin Catacombs [Floor].",
-"zh": "你开始地下墓穴[楼层]。"
+"zh": "你开始地牢[楼层]。"
 },
 {
 "en": "You begin Catacombs Entrance.",
-"zh": "你开始地下墓穴入口层。"
+"zh": "你开始地牢入口层。"
 },
 {
 "en": "You start a slayer quest.",
@@ -202187,7 +202187,7 @@
 },
 {
 "en": "❣ Requires Catacombs Level %1$s while in The Catacombs.",
-"zh": "❣ 在地下墓穴中需要地下墓穴等级 %1$s。"
+"zh": "❣ 在地牢中需要地牢等级 %1$s。"
 },
 {
 "en": "Gains +%1$s❤ per 50 gifts given by wearer.",
@@ -202239,7 +202239,7 @@
 },
 {
 "en": "Breaks weak walls. Can be used to blow up Crypts in The Catacombs and Crystal Hollows.",
-"zh": "破坏脆弱的墙壁。可炸开位于地下墓穴或水晶洞窟的墓穴。"
+"zh": "破坏脆弱的墙壁。可炸开位于地牢或水晶洞窟的墓穴。"
 },
 {
 "en": "Gain XP by completing the Rift Guide!",
@@ -202971,7 +202971,7 @@
 },
 {
 "en": "Choose a Catacombs Floor",
-"zh": "选择地下墓穴楼层"
+"zh": "选择地牢楼层"
 },
 {
 "en": "Sea Creature Guide",
@@ -206347,7 +206347,7 @@
 },
 {
 "en": "Instead of dying, gain damage immunity and +%1$s  Strength for %2$ss and fully replenish your health. The cooldown and Strength bonus you receive improve based on your Dungeoneering Skill level. This ability only works while in The Catacombs!",
-"zh": "受到致命伤害时，改为免疫伤害并获得 +%1$s  力量，持续 %2$s 秒，同时回满生命值。冷却时间和力量加成随地牢探索技能等级提升。此技能仅在地下墓穴中生效！"
+"zh": "受到致命伤害时，改为免疫伤害并获得 +%1$s  力量，持续 %2$s 秒，同时回满生命值。冷却时间和力量加成随地牢探索技能等级提升。此技能仅在地牢中生效！"
 },
 {
 "en": "Grants %1$s%  Damage and %2$s✯ Magic Find on  Mythological mobs per Bestiary tier you have across all of them.",
@@ -206859,7 +206859,7 @@
 },
 {
 "en": "Reach Catacombs Level %1$s by completing Dungeon runs in The Catacombs.",
-"zh": "在地下墓穴中完成地牢，将地下墓穴等级提升至 %1$s 级。"
+"zh": "在地牢中完成地牢，将地牢等级提升至 %1$s 级。"
 },
 {
 "en": "Gemstone Spread is the chance to automatically mine adjacent blocks when mining Gemstones.",
@@ -207047,7 +207047,7 @@
 },
 {
 "en": "Catacombs RNG Meter",
-"zh": "地下墓穴 RNG 计量表"
+"zh": "地牢 RNG 计量表"
 },
 {
 "en": "The Hex - Your one-stop shop for personal refinement!",
@@ -209227,7 +209227,7 @@
 },
 {
 "en": "Grants %1$s Crit Damage per Catacombs skill level you have.",
-"zh": "你每有 1 级地下墓穴技能等级，获得 %1$s 暴击伤害。"
+"zh": "你每有 1 级地牢技能等级，获得 %1$s 暴击伤害。"
 },
 {
 "en": "Adds %1$s Level to your Life Steal, Drain, and Vampirism enchantments.",
@@ -210119,7 +210119,7 @@
 },
 {
 "en": "Instantly sell all Catacombs Misc. derivatives in your inventory.",
-"zh": "即时出售物品栏中所有地下墓穴杂项衍生品。"
+"zh": "即时出售物品栏中所有地牢杂项衍生品。"
 },
 {
 "en": "Throw an Axe, dealing the same damage as your highest hit in the last minute. Cooldown: %1$ss",
@@ -210603,7 +210603,7 @@
 },
 {
 "en": "Reach Catacombs level 40",
-"zh": "地下墓穴等级达到 40 级"
+"zh": "地牢等级达到 40 级"
 },
 {
 "en": "Disinfestor Gloves Rift Time: +30s",
@@ -216659,7 +216659,7 @@
 },
 {
 "en": "❣ Requires Master Mode The Catacombs Floor IV Completion.",
-"zh": "❣ 需要通关大师模式地下墓穴第 IV 层。"
+"zh": "❣ 需要通关大师模式地牢第 IV 层。"
 },
 {
 "en": "Healer:",
@@ -219111,7 +219111,7 @@
 },
 {
 "en": "Catacombs ➜ %1$s",
-"zh": "地下墓穴 ➜ %1$s"
+"zh": "地牢 ➜ %1$s"
 },
 {
 "en": "Secret Drops ➜ %1$s",
@@ -219295,7 +219295,7 @@
 },
 {
 "en": "Catacombs Misc. ➜ %1$s",
-"zh": "地下墓穴杂项 ➜ %1$s"
+"zh": "地牢杂项 ➜ %1$s"
 },
 {
 "en": "Master Stars ➜ %1$s",

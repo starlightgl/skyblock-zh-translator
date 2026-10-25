@@ -2783,7 +2783,7 @@
             "The Expedition Volume 4": "远征记 第 4 卷",
             "The Expedition Volume 5": "远征记 第 5 卷"
         },
-        "Wiki 补译：名称（2026-10-24 起，按 Sapphire 附带的 Wiki 原文清单逐条自译；不使用其机翻）": {
+        "Wiki 补译：名称（2026-10-24 起，按原文清单逐条自译）": {
             "Surprisingly bad at fighting": "出奇地不擅长战斗",
             "Down": "向下",
             "Up": "向上",
@@ -40838,7 +40838,7 @@
             "Stonk Exchange": "暴涨交易所",
             "Consume Experience Bottles from your inventories directly or purchase them from the Bazaar to increase your exp level.": "直接消耗物品栏中的经验瓶，或从集市购买经验瓶，以提升经验等级。"
         },
-        "Sapphire 词典补译（2026-10-25）：拍卖行 / 集市消息、委托、挖矿活动、奖杯鱼、地名、染料、菜单等。英文原文清单取自 Sapphire 自带的 CC0 词典，译文按本项目术语自译": {
+        "系统消息与菜单补译（2026-10-25）：拍卖行 / 集市消息、委托、挖矿活动、奖杯鱼、地名、染料、菜单等。译文按本项目术语整理": {
             "Processing bid...": "正在处理出价……",
             "You cannot afford this auction!": "你买不起这件拍卖品！",
             "This auction has ended!": "此拍卖已结束！",

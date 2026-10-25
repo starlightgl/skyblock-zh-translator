@@ -184,7 +184,7 @@ public final class TableNames {
         }
         String base = names.get(core);
         String reforge = null;
-        if (base == null) {
+        if (base == null && !protectedName(core)) {
             String prefix = reforgePrefix(core);
             int sp = prefix == null ? -1 : prefix.length();
             if (sp > 0) {
@@ -213,7 +213,7 @@ public final class TableNames {
             int at = indexAfterPlain(formatted, core.length());
             suffix = at >= 0 ? formatted.substring(at) : sm.group(2);
         }
-        if (notReforged.contains(core)) return null;
+        if (protectedName(core)) return null;
         String prefix = reforgePrefix(core);
         if (prefix == null) return null;
         String reforge = reforges.get(prefix);
@@ -224,13 +224,19 @@ public final class TableNames {
         return lead + reforge + " " + base + suffix;
     }
 
+    private static boolean protectedName(String core) {
+        if (notReforged.contains(core)) return true;
+        Matcher tier = TIER.matcher(core);
+        return tier.matches() && notReforged.contains(tier.group(1));
+    }
+
     /** Explicit reforge prefix wins over a stale whole-name sentence cache. */
     public static String translateReforgedName(String formatted) {
         load();
         if (formatted == null) return null;
         String plain = TranslationUtil.stripColorCodes(formatted).trim();
         Matcher sm0 = SUFFIX.matcher(plain);
-        if (notReforged.contains(sm0.matches() ? sm0.group(1).trim() : plain)) return null;
+        if (protectedName(sm0.matches() ? sm0.group(1).trim() : plain)) return null;
         String prefix = reforgePrefix(plain);
         if (prefix == null) return null;
         int sp = prefix.length();

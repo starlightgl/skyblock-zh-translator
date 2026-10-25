@@ -6200,6 +6200,35 @@
             "Turbo Warts": "极速下界疣",
             "Turbo Wheat": "极速小麦",
             "Ultimate Wisdom": "智慧"
+        },
+        "GPT beta.30（2026-10-26）：按用户要求修复 Claude 已定名与语境冲突；附魔和重铸校对名保持不变": {
+            "Reward Chi Rabbit": "奖励 凯兔子",
+            "Reward Lambda Rabbit": "奖励 兰姆达兔子",
+            "Instant Sell": "即时出售",
+            "Mythological Ritual": "神话庆典",
+            "Home": "主页",
+            "Superprotectron": "超级护卫者",
+            "Blessed Minos Hunter": "蒙福米诺斯猎人",
+            "Epic Rock Pet": "史诗岩石宠物",
+            "Legendary Rock Pet": "传说岩石宠物",
+            "Light Blue Paint": "淡蓝色油漆",
+            "Great Explorer": "伟大探险家",
+            "Lunar Moth": "月光蛾",
+            "Grand Library": "大图书馆",
+            "Combine Items": "合成物品",
+            "Enigma Soul (Rift)": "谜魂 (裂隙)",
+            "Pet Score Rewards": "宠物评分奖励",
+            "Bronze Trophy Frog Sack": "青铜奖杯蛙收纳袋",
+            "Silver Trophy Frog Sack": "白银奖杯蛙收纳袋",
+            "The Great Spook Experiments": "大惊吓实验",
+            "Undercover Agent": "卧底特工",
+            "Ship Navigator": "船只领航员",
+            "Ship Navigator (NPC)": "船只领航员 (NPC)",
+            "SHIP NAVIGATOR": "船只领航员",
+            "SHIP NAVIGATOR (NPC)": "船只领航员 (NPC)",
+            "Fisherman Gerald": "渔夫杰拉德",
+            "Fisherman Gerald (NPC)": "渔夫杰拉德 (NPC)",
+            "Spike Shard": "尖刺怪碎片"
         }
     },
     "lines": {
@@ -43201,6 +43230,45 @@
             "HOPPITY'S HUNT You found %1$s (LEGENDARY)!": "霍皮提寻兔 你找到了 %1$s (传说)!",
             "HOPPITY'S HUNT You found %1$s (MYTHIC)!": "霍皮提寻兔 你找到了 %1$s (神话)!",
             "HOPPITY'S HUNT You found %1$s (DIVINE)!": "霍皮提寻兔 你找到了 %1$s (神圣)!"
+        },
+        "GPT beta.30（2026-10-26）：按用户要求修复 Claude 已定名与语境冲突；附魔和重铸校对名保持不变": {
+            "Reward Chi Rabbit": "奖励 凯兔子",
+            "Reward Lambda Rabbit": "奖励 兰姆达兔子",
+            "Instant Sell": "即时出售",
+            "Mythological Ritual": "神话庆典",
+            "Home": "主页",
+            "Superprotectron": "超级护卫者",
+            "Blessed Minos Hunter": "蒙福米诺斯猎人",
+            "Epic Rock Pet": "史诗岩石宠物",
+            "Legendary Rock Pet": "传说岩石宠物",
+            "Light Blue Paint": "淡蓝色油漆",
+            "Great Explorer": "伟大探险家",
+            "Lunar Moth": "月光蛾",
+            "Grand Library": "大图书馆",
+            "Combine Items": "合成物品",
+            "Enigma Soul (Rift)": "谜魂 (裂隙)",
+            "Pet Score Rewards": "宠物评分奖励",
+            "Bronze Trophy Frog Sack": "青铜奖杯蛙收纳袋",
+            "Silver Trophy Frog Sack": "白银奖杯蛙收纳袋",
+            "The Great Spook Experiments": "大惊吓实验",
+            "Undercover Agent": "卧底特工",
+            "Ship Navigator": "船只领航员",
+            "Ship Navigator (NPC)": "船只领航员 (NPC)",
+            "SHIP NAVIGATOR": "船只领航员",
+            "SHIP NAVIGATOR (NPC)": "船只领航员 (NPC)",
+            "Fisherman Gerald": "渔夫杰拉德",
+            "Fisherman Gerald (NPC)": "渔夫杰拉德 (NPC)",
+            "Spike Shard": "尖刺怪碎片",
+            "▲ Absorb cannot be combined!": "▲ 林木汲取无法合成！",
+            "Export %1$sx %2$s": "出口 %1$s 个 %2$s",
+            "- %1$s Edition to %2$s!": "- %1$s 纪念版赠予 %2$s！",
+            "◆ Fire Spiral Rune I to IceSniperALT in an auction!": null,
+            "+%1$s% every": null,
+            "☠ Crit Damage each second for %1$s seconds": null,
+            "☠ Crit Damage and ❁ Strength by %1$s for every %2$s Swing Range over %3$s (up to %4$s)": "每超出 %3$s 的 %2$s 挥击范围，☠ 暴击伤害和 ❁ 力量提高 %1$s（最多计至 %4$s）",
+            "☠ Crit Damage and ❁ Strength by %1$s for every %2$s Swing Range over %3$s (up to %4$s).": "每超出 %3$s 的 %2$s 挥击范围，☠ 暴击伤害和 ❁ 力量提高 %1$s（最多计至 %4$s）。",
+            "+%1$s Defense in damage to any enemy in its path.": null,
+            "- %1$s with %2$s Honey Jar!": null
         }
     },
     "unify": [
@@ -43615,7 +43683,7 @@
             "en": "Compact",
             "to": "矿物压缩",
             "from": [
-                "压缩"
+                "(?<!矿物)压缩"
             ],
             "where": "^(?:▲ Compact cannot be combined!|Compact %1\\$s(?:-%2\\$s)?|Instantly sell all Compact derivatives.*|- Compact(?: \\(.*\\))?|Compact ➜ .*|.*➜ Compact(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
         },
@@ -43839,7 +43907,7 @@
             "en": "Duplex",
             "to": "火焰双发",
             "from": [
-                "双发"
+                "(?<!火焰)双发"
             ],
             "where": "^(?:▲ Duplex cannot be combined!|Duplex %1\\$s(?:-%2\\$s)?|Instantly sell all Duplex derivatives.*|- Duplex(?: \\(.*\\))?|Duplex ➜ .*|.*➜ Duplex(?: [IVX]+)?|› .*|(?:[A-Z][\\w\\' -]* [IVX]+, )+.*)$"
         },
@@ -43895,7 +43963,7 @@
             "en": ".",
             "to": "矿物压缩",
             "from": [
-                "矿物矿物压缩"
+                "(?:矿物){2,}压缩"
             ]
         },
         {
@@ -43909,7 +43977,7 @@
             "en": ".",
             "to": "火焰双发",
             "from": [
-                "火焰火焰双发"
+                "(?:火焰){2,}双发"
             ]
         },
         {
@@ -43925,6 +43993,97 @@
             "from": [
                 " ?Recipes?(?![A-Za-z])"
             ]
+        },
+        {
+            "en": "(?i:armor)",
+            "where": "(?is:^(?!.*shredding armor).*$)",
+            "from": [
+                "护甲"
+            ],
+            "to": "盔甲"
+        },
+        {
+            "en": "(?i:inventory)",
+            "where": "(?is:^(?!.*backpacks?).*$)",
+            "from": [
+                "背包"
+            ],
+            "to": "物品栏"
+        },
+        {
+            "en": "(?i:combin(?:e|ed|ing))",
+            "where": "(?is:^(?!.*raw magic).*$)",
+            "from": [
+                "合并"
+            ],
+            "to": "合成"
+        },
+        {
+            "en": "Cold Resistance",
+            "from": [
+                "抗寒"
+            ],
+            "to": "寒冷抵抗"
+        },
+        {
+            "en": "Elusive",
+            "from": [
+                "隐逸"
+            ],
+            "to": "隐匿"
+        },
+        {
+            "en": "(?i:insta-?sell|instant sell|instantly sell)",
+            "from": [
+                "立刻卖出",
+                "立即出售"
+            ],
+            "to": "即时出售"
+        },
+        {
+            "en": "(?i:insta-?buy|instant buy|instantly buy)",
+            "from": [
+                "立刻买入",
+                "立即购买"
+            ],
+            "to": "即时购买"
+        },
+        {
+            "en": "Mythological Ritual",
+            "from": [
+                "神话仪式"
+            ],
+            "to": "神话庆典"
+        },
+        {
+            "en": "Superprotectron",
+            "from": [
+                "超级守卫机"
+            ],
+            "to": "超级护卫者"
+        },
+        {
+            "en": "(?i:Ship Navigator)",
+            "from": [
+                "船舶导航器",
+                "航海领航员"
+            ],
+            "to": "船只领航员"
+        },
+        {
+            "en": "(?i:minions?|henchmen)",
+            "where": "(?is:Kuudra(?:\\x27s)?(?: and his)? minions?|\\[BOSS\\] Bal:|Watcher.*henchmen)",
+            "from": [
+                "小人"
+            ],
+            "to": "爪牙"
+        },
+        {
+            "en": "Full Set Bonus: Absorb",
+            "from": [
+                "吸收"
+            ],
+            "to": "吸纳"
         }
     ]
 }

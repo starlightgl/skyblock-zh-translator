@@ -26,6 +26,8 @@ def prefix(t):
         at = t.rfind(" ", 0, at)
     return None
 
-out = sorted(n for n in names if prefix(n))
+additions = os.path.join(ROOT, "data/not_reforged_additions.json")
+extra = json.load(open(additions, encoding="utf-8"))["names"] if os.path.exists(additions) else []
+out = sorted({n for n in names if prefix(n)} | set(extra))
 json.dump(out, open(D + "not_reforged.json", "w", encoding="utf-8", newline="\n"), ensure_ascii=False, indent=0)
 print(len(out))

@@ -3627,7 +3627,7 @@
 },
 {
 "en": "All Combat Stats on this armor piece are multiplied by %1$sx at night, or by %2$sx during the Spooky Festival! Additionally, it gives a +%3$s% chance to get Candy from mobs during the event.",
-"zh": "该护甲部件上的所有战斗属性在夜间乘以 %1$s 倍，在惊魂节期间乘以 %2$s 倍！此外，活动期间从怪物身上获得糖果的几率 +%3$s%。"
+"zh": "该盔甲部件上的所有战斗属性在夜间乘以 %1$s 倍，在惊魂节期间乘以 %2$s 倍！此外，活动期间从怪物身上获得糖果的几率 +%3$s%。"
 },
 {
 "en": "Full Set Bonus: Bat Powers Activate!",
@@ -3823,7 +3823,7 @@
 },
 {
 "en": "Full Set Bonus: Refraction (%1$s/%2$s) The stats of this armor change from %3$s to %4$s% depending on the current light level.",
-"zh": "套装效果: 折射 (%1$s/%2$s) 该护甲的属性会根据当前光照等级在 %3$s% 到 %4$s% 之间变化。"
+"zh": "套装效果: 折射 (%1$s/%2$s) 该盔甲的属性会根据当前光照等级在 %3$s% 到 %4$s% 之间变化。"
 },
 {
 "en": "Current Light Level %1$s (%2$s%)",
@@ -3935,7 +3935,7 @@
 },
 {
 "en": "All stats on this armor piece are multiplied by %1$sx while on the End Island!",
-"zh": "在末地岛屿上时，该护甲部件的所有属性乘以 %1$s 倍！"
+"zh": "在末地岛屿上时，该盔甲部件的所有属性乘以 %1$s 倍！"
 },
 {
 "en": "Right-click on your Kuudra Pet to apply this upgrade!",
@@ -4143,7 +4143,7 @@
 },
 {
 "en": "Ability: Growth Regen %1$s Vitality when killing a mob. Increase the  Health bonus of this armor by %2$s (Max %3$s)",
-"zh": "技能: 成长 击杀怪物时恢复 %1$s 活力。使该护甲的 生命值加成提高 %2$s（最多 %3$s）。"
+"zh": "技能: 成长 击杀怪物时恢复 %1$s 活力。使该盔甲的 生命值加成提高 %2$s（最多 %3$s）。"
 },
 {
 "en": "Enchanting Wisdom Boost Grants +%2$s☯ Enchanting Wisdom.",
@@ -4235,7 +4235,7 @@
 },
 {
 "en": "Ability: Spawn RIGHT CLICK Spawns a living metal autoarmor which can be assimilated into your own armor.",
-"zh": "技能: 生成 右键 生成一具活体金属自动护甲，可被同化进你自己的护甲。"
+"zh": "技能: 生成 右键 生成一具活体金属自动盔甲，可被同化进你自己的盔甲。"
 },
 {
 "en": "❣ Requires Adept Frog Collector.",
@@ -4559,7 +4559,7 @@
 },
 {
 "en": "Full Set Bonus: Protective Blood (%1$s/%2$s) Increases the defense of each armor piece by +%3$s%  Defense for each missing percent of HP.",
-"zh": "套装效果: 守护之血 (%1$s/%2$s) 每损失 1% 生命值，每件护甲的防御提高 +%3$s%。"
+"zh": "套装效果: 守护之血 (%1$s/%2$s) 每损失 1% 生命值，每件盔甲的防御提高 +%3$s%。"
 },
 {
 "en": "Caught when flying around the Lotus Atoll.",
@@ -4607,7 +4607,7 @@
 },
 {
 "en": "This rotten piece of armor grants %1$s% knockback resistance to arrows per piece worn.",
-"zh": "这件腐烂的护甲每穿戴一件，提供 %1$s% 箭矢击退抗性。"
+"zh": "这件腐烂的盔甲每穿戴一件，提供 %1$s% 箭矢击退抗性。"
 },
 {
 "en": "Full Set Bonus: Sieve Body (%1$s/%2$s) Gain an additional %3$s% knockback resistance to arrows.",
@@ -4711,7 +4711,7 @@
 },
 {
 "en": "Each armor piece grants +%1$s% chance to get Candy from mobs during the Spooky Festival.",
-"zh": "惊魂节期间，每件护甲使从怪物身上获得糖果的几率 +%1$s%。"
+"zh": "惊魂节期间，每件盔甲使从怪物身上获得糖果的几率 +%1$s%。"
 },
 {
 "en": "Full Set Bonus: Candy Man (%1$s/%2$s) Grants a +%3$s% chance to find rare Candy.",
@@ -4751,7 +4751,7 @@
 },
 {
 "en": "Each piece of this armor reduces the cooldown of Seismic Wave by %1$ss.",
-"zh": "该护甲每件使地震波的冷却时间缩短 %1$s 秒。"
+"zh": "该盔甲每件使地震波的冷却时间缩短 %1$s 秒。"
 },
 {
 "en": "Agile The wolf is small and fast, making it hard to hit.",
@@ -7995,7 +7995,7 @@
 },
 {
 "en": "▲ Absorb cannot be combined!",
-"zh": "▲ 吸纳无法合成！"
+"zh": "▲ 林木汲取无法合成！"
 },
 {
 "en": "This is barely holding together, seriously who made this?",
@@ -9663,7 +9663,7 @@
 },
 {
 "en": "Thorny Bonus Grants an additional +%1$s Overbloom per tier of Thorns on all of your armor pieces.",
-"zh": "多刺加成 你所有护甲上每级荆棘额外提供 +%1$s 繁花。"
+"zh": "多刺加成 你所有盔甲上每级荆棘额外提供 +%1$s 繁花。"
 },
 {
 "en": "Though it may not be bluer visually, it is in spirit.",
@@ -9763,7 +9763,7 @@
 },
 {
 "en": "Applies the Greater Spook reforge when combined with Great Spook armor and equipment.",
-"zh": "与大惊吓护甲和装备合成时，施加「大惊吓」重铸。"
+"zh": "与大惊吓盔甲和装备合成时，施加「大惊吓」重铸。"
 },
 {
 "en": " Fear",
@@ -16407,7 +16407,7 @@
 },
 {
 "en": "Kuudra Specialist Increases all damage to Kuudra and his minions by %5$s%.",
-"zh": "库德拉专家 对库德拉及其小人造成的所有伤害提高 %5$s%。"
+"zh": "库德拉专家 对库德拉及其爪牙造成的所有伤害提高 %5$s%。"
 },
 {
 "en": "Used to unlock the reward chest in the Burning Tier of the Kuudra fight.",
@@ -16931,23 +16931,23 @@
 },
 {
 "en": "Luck I Increases the chance for Monsters to drop their armor by %1$s%",
-"zh": "幸运 I 使怪物掉落其护甲的几率提高 %1$s%"
+"zh": "幸运 I 使怪物掉落其盔甲的几率提高 %1$s%"
 },
 {
 "en": "Luck II Increases the chance for Monsters to drop their armor by %1$s%",
-"zh": "幸运 II 使怪物掉落其护甲的几率提高 %1$s%"
+"zh": "幸运 II 使怪物掉落其盔甲的几率提高 %1$s%"
 },
 {
 "en": "Luck III Increases the chance for Monsters to drop their armor by %1$s%",
-"zh": "幸运 III 使怪物掉落其护甲的几率提高 %1$s%"
+"zh": "幸运 III 使怪物掉落其盔甲的几率提高 %1$s%"
 },
 {
 "en": "Luck IV Increases the chance for Monsters to drop their armor by %1$s%",
-"zh": "幸运 IV 使怪物掉落其护甲的几率提高 %1$s%"
+"zh": "幸运 IV 使怪物掉落其盔甲的几率提高 %1$s%"
 },
 {
 "en": "Luck V Increases the chance for Monsters to drop their armor by %1$s%",
-"zh": "幸运 V 使怪物掉落其护甲的几率提高 %1$s%"
+"zh": "幸运 V 使怪物掉落其盔甲的几率提高 %1$s%"
 },
 {
 "en": "Consume this item to unlock the Lucky Barn Skin on The Garden!",
@@ -24655,7 +24655,7 @@
 },
 {
 "en": "The Watcher´s personal henchmen",
-"zh": "看守者的私人小人"
+"zh": "看守者的私人爪牙"
 },
 {
 "en": "This Minion skin changes your minion's appearance to an Undead.",
@@ -28991,7 +28991,7 @@
 },
 {
 "en": "All Combat Stats on this armor piece are multiplied by %1$sx at night, or by %2$sx during the Spooky Festival!",
-"zh": "该护甲部件上的所有战斗属性在夜间乘以 %1$s 倍，在惊魂节期间乘以 %2$s 倍！"
+"zh": "该盔甲部件上的所有战斗属性在夜间乘以 %1$s 倍，在惊魂节期间乘以 %2$s 倍！"
 },
 {
 "en": "Additionally, it gives a +%1$s% chance to get Candy from mobs during the event.",
@@ -29439,7 +29439,7 @@
 },
 {
 "en": "of your armor pieces.",
-"zh": "护甲部件上的荆棘总等级计算。"
+"zh": "盔甲部件上的荆棘总等级计算。"
 },
 {
 "en": "Piece Bonus: Florist",
@@ -29627,7 +29627,7 @@
 },
 {
 "en": "Grants +%1$s Fishing Speed per ✪ Upgrade Star on your armor.",
-"zh": "你的护甲上每有一颗 ✪ 升级之星，提供 +%1$s 钓鱼速度。"
+"zh": "你的盔甲上每有一颗 ✪ 升级之星，提供 +%1$s 钓鱼速度。"
 },
 {
 "en": "Trophy Fish pickups of BRONZE",
@@ -29863,7 +29863,7 @@
 },
 {
 "en": "Grants %1$sx this armor's stats while in The Hub during Diana's Mythological Ritual.",
-"zh": "在戴安娜的神话庆典期间，在主城时此护甲的属性变为 %1$s 倍。"
+"zh": "在戴安娜的神话庆典期间，在主城时此盔甲的属性变为 %1$s 倍。"
 },
 {
 "en": "Gain %1$s% extra Combat XP. The %2$snd hit on a mob grants +%3$s coins & +%4$s exp orbs.",
@@ -30243,7 +30243,7 @@
 },
 {
 "en": "The stats of this armor change from %1$s to %2$s% depending on the current",
-"zh": "该护甲的属性会在 %1$s% 到 %2$s% 之间变化，取决于当前"
+"zh": "该盔甲的属性会在 %1$s% 到 %2$s% 之间变化，取决于当前"
 },
 {
 "en": "light level.",
@@ -32711,7 +32711,7 @@
 },
 {
 "en": "Regen %1$s Vitality when killing a mob. Increase the  Health bonus of this armor by %2$s (Max %3$s)",
-"zh": "击杀怪物时恢复 %1$s 活力。使该护甲的  生命值加成提高 %2$s（最多 %3$s）"
+"zh": "击杀怪物时恢复 %1$s 活力。使该盔甲的  生命值加成提高 %2$s（最多 %3$s）"
 },
 {
 "en": "Grungle",
@@ -33575,7 +33575,7 @@
 },
 {
 "en": "Increases all damage to Kuudra and his minions by %5$s%.",
-"zh": "对库德拉及其小人造成的所有伤害提高 %5$s%。"
+"zh": "对库德拉及其爪牙造成的所有伤害提高 %5$s%。"
 },
 {
 "en": "Full Set Bonus: Follower",
@@ -33787,7 +33787,7 @@
 },
 {
 "en": "Spawns a living metal autoarmor which can be assimilated into your own armor.",
-"zh": "生成一具活体金属自动护甲，可被同化进你自己的护甲。"
+"zh": "生成一具活体金属自动盔甲，可被同化进你自己的盔甲。"
 },
 {
 "en": "Placing this item on your private island will create a portal to the Lotus Atoll for you to use whenever",
@@ -33827,7 +33827,7 @@
 },
 {
 "en": "Increases the chance for Monsters to drop their armor by %1$s%",
-"zh": "使怪物掉落其护甲的几率提高 %1$s%"
+"zh": "使怪物掉落其盔甲的几率提高 %1$s%"
 },
 {
 "en": "Grants +%1$s Treasure Chance, which increases the chance of fishing treasure.",
@@ -35231,7 +35231,7 @@
 },
 {
 "en": "Increases the defense of each armor piece by +%1$s%  Defense for each missing percent of HP.",
-"zh": "每损失 1% 生命值，每件护甲的  防御提高 +%1$s%。"
+"zh": "每损失 1% 生命值，每件盔甲的  防御提高 +%1$s%。"
 },
 {
 "en": "Ability: Spiky",
@@ -35775,7 +35775,7 @@
 },
 {
 "en": "This rotten piece of armor grants %1$s% knockback resistance to arrows",
-"zh": "这件腐烂的护甲提供 %1$s% 箭矢击退抗性，"
+"zh": "这件腐烂的盔甲提供 %1$s% 箭矢击退抗性，"
 },
 {
 "en": "per piece worn.",
@@ -42751,7 +42751,7 @@
 },
 {
 "en": "Home",
-"zh": "家园"
+"zh": "主页"
 },
 {
 "en": " Dark Thic§vket",
@@ -47135,7 +47135,7 @@
 },
 {
 "en": "View and edit preset armor and",
-"zh": "查看并编辑预设的护甲和"
+"zh": "查看并编辑预设的盔甲和"
 },
 {
 "en": "equipment sets with other settings to",
@@ -60731,7 +60731,7 @@
 },
 {
 "en": "Every %1$s Catacombs levels, this armor piece",
-"zh": "地牢每提升 %1$s 级，此护甲部件"
+"zh": "地牢每提升 %1$s 级，此盔甲部件"
 },
 {
 "en": "Grants additional bonuses based on your",
@@ -63107,7 +63107,7 @@
 },
 {
 "en": "Forge helpful accessories, armor pieces, and equipment pieces.",
-"zh": "锻造实用的饰品、护甲部件和装备部件。"
+"zh": "锻造实用的饰品、盔甲部件和装备部件。"
 },
 {
 "en": "Refine your ores into more valuable ores.",
@@ -64891,7 +64891,7 @@
 },
 {
 "en": "Chimera V, Champion X, Compact IX Bane of Arthropods VI, Cleave V, Critical VI",
-"zh": "奇美拉 V, 百战勇士 X, 矿物矿物压缩 IX 节肢杀手 VI, 顺劈斩 V, 暴击 VI"
+"zh": "奇美拉 V, 百战勇士 X, 矿物压缩 IX 节肢杀手 VI, 顺劈斩 V, 暴击 VI"
 },
 {
 "en": "Cubism V, Efficiency X, Ender Slayer VI Experience III, Fire Aspect III, First Strike IV",
@@ -64907,7 +64907,7 @@
 },
 {
 "en": "Chimera IV, Champion X, Compact VI Bane of Arthropods VI, Critical VI, Cubism V Divine Gift III, Drain IV, Efficiency V Ender Slayer VI, Experience IV, Fire Aspect III",
-"zh": "奇美拉 IV、百战勇士 X、矿物矿物压缩 VI、节肢杀手 VI、暴击 VI、立方杀手 V、神之馈赠 III、活力汲取 IV、效率 V、末影杀手 VI、经验 IV、火焰附加 III"
+"zh": "奇美拉 IV、百战勇士 X、矿物压缩 VI、节肢杀手 VI、暴击 VI、立方杀手 V、神之馈赠 III、活力汲取 IV、效率 V、末影杀手 VI、经验 IV、火焰附加 III"
 },
 {
 "en": "First Strike IV, Fortune IV, Giant Killer VI Gravity V, Impaling III, Lethality VI Looting V, Luck VI, Prismatic V",
@@ -64923,7 +64923,7 @@
 },
 {
 "en": "Fatal Tempo II, Champion X, Compact X Critical VI, Cubism V, Divine Gift III Drain IV, Efficiency X, Experience III Fire Aspect III, First Strike V, Fortune IV Giant Killer VI, Lethality V, Looting V Luck VI, Prismatic V, Prosecute V Pyroclasm V, Scavenger VI, Sharpness VII Smite VII, Thunderlord VI, Vampirism V",
-"zh": "致命节奏 II、百战勇士 X、矿物矿物压缩 X、暴击 VI、立方杀手 V、神之馈赠 III、活力汲取 IV、效率 X、经验 III、火焰附加 III、先攻 V、时运 IV、巨人杀手 VI、破甲 V、抢夺 V、幸运 VI、宝石采掘 V、先机裁决 V、火山之怒 V、拾荒 VI、锋利 VII、亡灵杀手 VII、雷霆领主 VI、嗜血 V"
+"zh": "致命节奏 II、百战勇士 X、矿物压缩 X、暴击 VI、立方杀手 V、神之馈赠 III、活力汲取 IV、效率 X、经验 III、火焰附加 III、先攻 V、时运 IV、巨人杀手 VI、破甲 V、抢夺 V、幸运 VI、宝石采掘 V、先机裁决 V、火山之怒 V、拾荒 VI、锋利 VII、亡灵杀手 VII、雷霆领主 VI、嗜血 V"
 },
 {
 "en": "◆ Meow Music Rune III",
@@ -66047,7 +66047,7 @@
 },
 {
 "en": "View and edit preset armor and equipment sets with other settings to make switching activities easy.",
-"zh": "查看和编辑预设的护甲与装备套装以及其他设置，让切换活动更轻松。"
+"zh": "查看和编辑预设的盔甲与装备套装以及其他设置，让切换活动更轻松。"
 },
 {
 "en": "Teleport to islands you've already visited.",
@@ -66555,11 +66555,11 @@
 },
 {
 "en": "Plain old iron armor.",
-"zh": "朴实无华的铁护甲。"
+"zh": "朴实无华的铁盔甲。"
 },
 {
 "en": "Custom-designed and hand-crafted diamond armor.",
-"zh": "量身设计、纯手工打造的钻石护甲。"
+"zh": "量身设计、纯手工打造的钻石盔甲。"
 },
 {
 "en": "Dip a toe into the world of magic.",
@@ -68743,7 +68743,7 @@
 },
 {
 "en": "Sell price: %1$s coins Uncommon commodity Instantly sell all Dark Oak derivatives in your inventory.",
-"zh": "出售价: %1$s 硬币罕见商品即时出售你背包中所有深色橡木衍生品。"
+"zh": "出售价: %1$s 硬币罕见商品即时出售你物品栏中所有深色橡木衍生品。"
 },
 {
 "en": "You are selling the following items for much lower than the average insta-selling price!",
@@ -68919,7 +68919,7 @@
 },
 {
 "en": "Item: Enchanted Red Mushroom This item will automatically be crafted from ingredients in your inventory.",
-"zh": "物品: 附魔红色蘑菇此物品将使用你背包中的材料自动合成。"
+"zh": "物品: 附魔红色蘑菇此物品将使用你物品栏中的材料自动合成。"
 },
 {
 "en": "Your Personal Compactor is currently ON. Toggle it OFF to stop compacting items.",
@@ -69915,7 +69915,7 @@
 },
 {
 "en": "Every %1$s Catacombs levels, this armor piece gains +%1$s% stats.",
-"zh": "地牢每提升 %1$s 级，此护甲部件属性提升 +%1$s%。"
+"zh": "地牢每提升 %1$s 级，此盔甲部件属性提升 +%1$s%。"
 },
 {
 "en": "taken by %1$s% for each piece you have equipped if you are hit by the same monster within %1$s",
@@ -81307,19 +81307,19 @@
 },
 {
 "en": "+%1$s% Superprotectron coins",
-"zh": "+%1$s% 超级守卫机硬币"
+"zh": "+%1$s% 超级护卫者硬币"
 },
 {
 "en": "[Lv%1$s] Superprotectron",
-"zh": "[等级 %1$s] 超级守卫机"
+"zh": "[等级 %1$s] 超级护卫者"
 },
 {
 "en": "+%1$s Superprotectron  Magic Find",
-"zh": "+%1$s 超级守卫机  魔法寻宝"
+"zh": "+%1$s 超级护卫者  魔法寻宝"
 },
 {
 "en": "+%1$s Superprotectron  Strength",
-"zh": "+%1$s 超级守卫机  力量"
+"zh": "+%1$s 超级护卫者  力量"
 },
 {
 "en": "+%1$s% Tadgang coins",
@@ -86823,7 +86823,7 @@
 },
 {
 "en": "Salvage weapons and armor for materials.",
-"zh": "分解武器和护甲，获得材料。"
+"zh": "分解武器和盔甲，获得材料。"
 },
 {
 "en": "The item you are sacrificing in order to upgrade the item on the left should be placed in the slot on this side.",
@@ -87167,7 +87167,7 @@
 },
 {
 "en": "I can't eat people wearing armor like you are.",
-"zh": "像你这样穿着护甲的人，我可吃不下。"
+"zh": "像你这样穿着盔甲的人，我可吃不下。"
 },
 {
 "en": "So why don't we make a deal?",
@@ -87175,7 +87175,7 @@
 },
 {
 "en": "You bring me a delicious meal, one without any armor. I'll take them out and you get a reward!",
-"zh": "给我带一顿没穿护甲的美餐来。我负责把人吃掉，你负责拿奖励！"
+"zh": "给我带一顿没穿盔甲的美餐来。我负责把人吃掉，你负责拿奖励！"
 },
 {
 "en": "What say you? Are you in?",
@@ -87223,7 +87223,7 @@
 },
 {
 "en": "It has to be a human, and they cannot be wearing any armor. That's all I'm asking!",
-"zh": "必须是人类，而且不能穿任何护甲。我的要求就这么简单！"
+"zh": "必须是人类，而且不能穿任何盔甲。我的要求就这么简单！"
 },
 {
 "en": "I am famished! Bring me a meal and I will reward you!",
@@ -87231,7 +87231,7 @@
 },
 {
 "en": "Bring me a human meal. No armor! Thank you!",
-"zh": "给我带份人类大餐来。不能穿护甲！谢啦！"
+"zh": "给我带份人类大餐来。不能穿盔甲！谢啦！"
 },
 {
 "en": "Hey, just the one I needed to hear from!",
@@ -87315,7 +87315,7 @@
 },
 {
 "en": "That's a very impressive armor set you are wearing, Kuudra would be impressed!",
-"zh": "你这身护甲真气派，库德拉看了一定会满意！"
+"zh": "你这身盔甲真气派，库德拉看了一定会满意！"
 },
 {
 "en": "We are united! Kuudra SHOW YOURSELF TO US.",
@@ -90815,7 +90815,7 @@
 },
 {
 "en": "They sometimes drop important gear like the armor I'm wearing.",
-"zh": "它们有时会掉落很有用的装备，比如我身上这套护甲。"
+"zh": "它们有时会掉落很有用的装备，比如我身上这套盔甲。"
 },
 {
 "en": "Are you strong enough though?",
@@ -90891,7 +90891,7 @@
 },
 {
 "en": "Do you recognize me? I changed my armor!",
-"zh": "还认得我吗？我换了身护甲！"
+"zh": "还认得我吗？我换了身盔甲！"
 },
 {
 "en": "Have you found the full Ender Armor Set and Equipment yet?",
@@ -90931,7 +90931,7 @@
 },
 {
 "en": "It's just from regular Endermen, like the rest of the armor!",
-"zh": "它和其他护甲一样，普通末影人就会掉！"
+"zh": "它和其他盔甲一样，普通末影人就会掉！"
 },
 {
 "en": "This one isn't too bad.",
@@ -97631,11 +97631,11 @@
 },
 {
 "en": "Applies the Necrotic reforge when combined with armor.",
-"zh": "与护甲合成后，施加死灵重铸。"
+"zh": "与盔甲合成后，施加死灵重铸。"
 },
 {
 "en": "When applied to armor, grants +%1$s❈ Defense and +%2$s❤ Health.",
-"zh": "用于护甲时，获得 +%1$s❈ 防御和 +%2$s❤ 生命值。"
+"zh": "用于盔甲时，获得 +%1$s❈ 防御和 +%2$s❤ 生命值。"
 },
 {
 "en": "When applied to weapons, grants +%1$s❁ Strength and +%2$s Damage.",
@@ -102627,7 +102627,7 @@
 },
 {
 "en": "You can use the Ship Navigator to set sail to the Backwater Bayou!",
-"zh": "现在你可以用船舶导航器起航，前往死水河岸了！"
+"zh": "现在你可以用船只领航员起航，前往死水河岸了！"
 },
 {
 "en": "Safe travels!",
@@ -105679,7 +105679,7 @@
 },
 {
 "en": "And when you're ready, use the Ship Navigator to travel to the Bayou!",
-"zh": "准备好了，就用船舶导航器前往沼泽吧！"
+"zh": "准备好了，就用船只领航员前往沼泽吧！"
 },
 {
 "en": "Land ho! We have arrived at the Backwater Bayou!",
@@ -106267,7 +106267,7 @@
 },
 {
 "en": "Open the Ship Navigator to travel to the %1$s!",
-"zh": "打开船舶导航器，前往%1$s吧！"
+"zh": "打开船只领航员，前往%1$s吧！"
 },
 {
 "en": "I'll come and join you on the Ship shortly!",
@@ -110251,7 +110251,7 @@
 },
 {
 "en": "Rule One: You can't bring any items, armor, or potions inside with you.",
-"zh": "第一条: 不能携带任何物品、护甲或药水入场。"
+"zh": "第一条: 不能携带任何物品、盔甲或药水入场。"
 },
 {
 "en": "The only exception is your Safari Belt - that, you're welcome to bring along.",
@@ -111095,7 +111095,7 @@
 },
 {
 "en": "I recommend you gear up in the Combat Settlement. You should talk to Rosetta, she has some great armor for sale!",
-"zh": "我建议你去战斗聚落整备装备。你应该找罗塞塔聊聊，她那里有很不错的护甲出售！"
+"zh": "我建议你去战斗聚落整备装备。你应该找罗塞塔聊聊，她那里有很不错的盔甲出售！"
 },
 {
 "en": "Be careful in the Graveyard during the night time, the Zombies are stronger and even more of them like to show up!",
@@ -111751,7 +111751,7 @@
 },
 {
 "en": "Ye'll get more score based on what armor the Zombie's wearin'.",
-"zh": "你能获得更多得分，具体取决于护甲等级:这只僵尸穿得越厚，得分越高。"
+"zh": "你能获得更多得分，具体取决于盔甲等级:这只僵尸穿得越厚，得分越高。"
 },
 {
 "en": "There'll also be sum Redstone Lamps aroun' the arena that can be shot fer points when they light up!",
@@ -112431,7 +112431,7 @@
 },
 {
 "en": "You can apply runes to weapons and armor with the Rune Pedestal behind me.",
-"zh": "你可以把符文应用到武器和护甲上，使用我身后的符文基座即可。"
+"zh": "你可以把符文应用到武器和盔甲上，使用我身后的符文基座即可。"
 },
 {
 "en": "You can also combine two runes for a chance to create a higher level rune with a better effect!",
@@ -113027,7 +113027,7 @@
 },
 {
 "en": "Equipped armor, weapons, and accessories in your inventory all improve your stats.",
-"zh": "穿戴的护甲、武器，还有物品栏里的饰品，都能提升你的属性。"
+"zh": "穿戴的盔甲、武器，还有物品栏里的饰品，都能提升你的属性。"
 },
 {
 "en": "Additionally, leveling your Skills can permanently boost some of your stats!",
@@ -115147,7 +115147,7 @@
 },
 {
 "en": "Reforging items allows you to get the most out of your weapons, armor, and other items by applying stat modifiers to them!",
-"zh": "重铸物品可以通过附加属性修正，让你的武器、护甲和其他物品发挥出最大效果！"
+"zh": "重铸物品可以通过附加属性修正，让你的武器、盔甲和其他物品发挥出最大效果！"
 },
 {
 "en": "To reforge an item, place an item in my inventory. Reforging costs Coins - the more prestigious items cost more to reforge!",
@@ -122575,7 +122575,7 @@
 },
 {
 "en": "Obtain the armor set from the Argofay Traffickers chilling in the treehouses.",
-"zh": "向树屋里悠闲的阿戈菲·倒卖者购买整套护甲。"
+"zh": "向树屋里悠闲的阿戈菲·倒卖者购买整套盔甲。"
 },
 {
 "en": "Find Enigma Souls in the Rift to upgrade your Enigma Cloak.",
@@ -123287,7 +123287,7 @@
 },
 {
 "en": "Keep juicing up your armor pieces until you have the Living Metal Suit bonus on all on them.",
-"zh": "持续为护甲部件充能，直到每个部件都拥有活体金属套装加成。"
+"zh": "持续为盔甲部件充能，直到每个部件都拥有活体金属套装加成。"
 },
 {
 "en": "Monsters deal  damage in the Stillgore Château, obtain a healing melon from killing vampires.",
@@ -123299,7 +123299,7 @@
 },
 {
 "en": "Imagine an armor piece so bad that it needs to travel to another dimension to become relevant.",
-"zh": "想想看，一件护甲得差到什么程度，才要跑去另一个维度找存在感。"
+"zh": "想想看，一件盔甲得差到什么程度，才要跑去另一个维度找存在感。"
 },
 {
 "en": "Rift time: +%1$ss",
@@ -128247,7 +128247,7 @@
 },
 {
 "en": "From beyond the mirror, wear a golden armor.",
-"zh": "在镜子另一侧，穿上一身金质护甲。"
+"zh": "在镜子另一侧，穿上一身金质盔甲。"
 },
 {
 "en": "I seek a particular warrior.",
@@ -131215,7 +131215,7 @@
 },
 {
 "en": "Put on your new armor and speak to me.",
-"zh": "穿上新护甲，再来和我说话。"
+"zh": "穿上新盔甲，再来和我说话。"
 },
 {
 "en": "Well then.",
@@ -131223,7 +131223,7 @@
 },
 {
 "en": "You are the first one of your kind to defeat me and craft this armor.",
-"zh": "在无数个你之中，你是第一个打败我、做出这套护甲的人。"
+"zh": "在无数个你之中，你是第一个打败我、做出这套盔甲的人。"
 },
 {
 "en": "I, too, once stood in your shoes, having overthrown the Wizardman before me.",
@@ -131247,7 +131247,7 @@
 },
 {
 "en": "You are only missing one part of the armor to become Wizardman.",
-"zh": "你只差最后一件护甲，就能成为巫师侠了。"
+"zh": "你只差最后一件盔甲，就能成为巫师侠了。"
 },
 {
 "en": "Take this, the final piece.",
@@ -131423,7 +131423,7 @@
 },
 {
 "en": "For your victory, you have earned a Fragment of my armor.",
-"zh": "作为获胜的奖励，你赢得了一块我的护甲残片。"
+"zh": "作为获胜的奖励，你赢得了一块我的盔甲残片。"
 },
 {
 "en": "Keep it safe, for it is a piece of my power.",
@@ -131535,7 +131535,7 @@
 },
 {
 "en": "For your victory, you've earned a Fragment of my armor.",
-"zh": "作为获胜的奖励，你赢得了一块我的护甲残片。"
+"zh": "作为获胜的奖励，你赢得了一块我的盔甲残片。"
 },
 {
 "en": "It appears you're not quite ready to play in the league of wizards, little fellow.",
@@ -132175,7 +132175,7 @@
 },
 {
 "en": "Export %1$sx %2$s",
-"zh": "出口 %1$s 个 {物品}"
+"zh": "出口 %1$s 个 %2$s"
 },
 {
 "en": "✔ Garden Level %1$s",
@@ -138887,19 +138887,19 @@
 },
 {
 "en": "Purchase Diana's Favor III from the Mythological Ritual Perk Shop.",
-"zh": "在神话仪式天赋商店购买戴安娜的眷顾 III。"
+"zh": "在神话庆典天赋商店购买戴安娜的眷顾 III。"
 },
 {
 "en": "Purchase Storied Stinger V from the Mythological Ritual Perk Shop.",
-"zh": "在神话仪式天赋商店购买传奇毒刺 V。"
+"zh": "在神话庆典天赋商店购买传奇毒刺 V。"
 },
 {
 "en": "Purchase Elusive Hunter II from the Mythological Ritual Perk Shop.",
-"zh": "在神话仪式天赋商店购买隐匿猎手 II。"
+"zh": "在神话庆典天赋商店购买隐匿猎手 II。"
 },
 {
 "en": "Purchase Deadly Greed V from the Mythological Ritual Perk Shop.",
-"zh": "在神话仪式天赋商店购买致命贪婪 V。"
+"zh": "在神话庆典天赋商店购买致命贪婪 V。"
 },
 {
 "en": "Purchase Spooky Savant V from the Spooky Festival Perk Shop.",
@@ -143859,7 +143859,7 @@
 },
 {
 "en": "Place a target item in the left slot and a sacrifice item in the right slot to combine them!",
-"zh": "在左侧槽位放入目标物品，右侧槽位放入献祭物品，即可将它们合并！"
+"zh": "在左侧槽位放入目标物品，右侧槽位放入献祭物品，即可将它们合成！"
 },
 {
 "en": "Grants a  Speed boost and increases the chance for mob attacks to miss.",
@@ -149055,7 +149055,7 @@
 },
 {
 "en": "Insert all salvageable %1$s items dropped from mobs in your inventory that have not been modified or upgraded.",
-"zh": "放入背包中所有可分解、由怪物掉落且未经修改或升级的%1$s物品。"
+"zh": "放入物品栏中所有可分解、由怪物掉落且未经修改或升级的%1$s物品。"
 },
 {
 "en": "To Salvage Items",
@@ -149119,7 +149119,7 @@
 },
 {
 "en": "Click on a valid Hunting Tool in your inventory while this menu is open to store it in your toolkit.",
-"zh": "打开此菜单时，点击背包中有效的狩猎工具即可将其存入工具包。"
+"zh": "打开此菜单时，点击物品栏中有效的狩猎工具即可将其存入工具包。"
 },
 {
 "en": "Your co-op profile may have up to %1$s players.",
@@ -149203,7 +149203,7 @@
 },
 {
 "en": "Most commonly found during the Mythological Ritual.",
-"zh": "最常出现在神话仪式期间。"
+"zh": "最常出现在神话庆典期间。"
 },
 {
 "en": "Enemies of this type are typically found in %1$s and take increased damage from the %2$s enchantment.",
@@ -154707,7 +154707,7 @@
 },
 {
 "en": "Combine items in the Anvil.",
-"zh": "在铁砧中合并物品。"
+"zh": "在铁砧中合成物品。"
 },
 {
 "en": "Your radio is weak. Find another enjoyer to boost it.",
@@ -160039,7 +160039,7 @@
 },
 {
 "en": "Exchange your Carnival Tokens for Mythological Ritual perks!",
-"zh": "用你的嘉年华代币兑换神话仪式天赋！"
+"zh": "用你的嘉年华代币兑换神话庆典天赋！"
 },
 {
 "en": "Exchange your Carnival Tokens for Season of Jerry perks!",
@@ -167211,7 +167211,7 @@
 },
 {
 "en": "Only works while Diana's Mythological Ritual is active.",
-"zh": "仅在戴安娜的神话仪式生效时有效。"
+"zh": "仅在戴安娜的神话庆典生效时有效。"
 },
 {
 "en": "Gain rare drops %1$s more often.",
@@ -170695,7 +170695,7 @@
 },
 {
 "en": "Full Set Bonus: Absorb (%1$s/%2$s) Doubles your ❈ Defense while in water.",
-"zh": "套装奖励: 吸收 (%1$s/%2$s) 在水中时你的 ❈ 防御翻倍。"
+"zh": "套装奖励: 吸纳 (%1$s/%2$s) 在水中时你的 ❈ 防御翻倍。"
 },
 {
 "en": "Full Set Bonus: Armor of the Pack (%1$s/%2$s) Gain %3$s Strength and %4$s Defense for each Armor of the Pack wearer within %5$s blocks. Max of %6$s players!",
@@ -170859,7 +170859,7 @@
 },
 {
 "en": "Increases the chance for Monsters to drop their armor by %1$s.",
-"zh": "怪物掉落其身上护甲的几率提高 %1$s。"
+"zh": "怪物掉落其身上盔甲的几率提高 %1$s。"
 },
 {
 "en": "Sea IV Increases the chance of fishing treasure by %1$s.",
@@ -190503,7 +190503,7 @@
 },
 {
 "en": "Cold Resistance increases the amount of time you can spend in cold environments.",
-"zh": "抗寒延长你在寒冷环境中的活动时间。"
+"zh": "寒冷抵抗延长你在寒冷环境中的活动时间。"
 },
 {
 "en": "Makes Primal Fears spawn more often and reduces damage taken from Primal Fears.",
@@ -190763,7 +190763,7 @@
 },
 {
 "en": "Click on an armor piece in your inventory that belongs to this armor set to donate the full set to your Museum.",
-"zh": "点击物品栏中属于此套装的一件护甲,将整套捐入你的博物馆。"
+"zh": "点击物品栏中属于此套装的一件盔甲,将整套捐入你的博物馆。"
 },
 {
 "en": "Place a target item in the left slot and a sacrifice rune in the right slot to add the rune's effects to the item or add two runes to attempt to fuse them!",
@@ -191159,7 +191159,7 @@
 },
 {
 "en": "When applied to armor, grants %1$s❈ Defense and %2$s❤ Health.",
-"zh": "用于护甲时,获得 %1$s ❈ 防御及 %2$s ❤ 生命值。"
+"zh": "用于盔甲时,获得 %1$s ❈ 防御及 %2$s ❤ 生命值。"
 },
 {
 "en": "You are missing some of the cost, but you can buy it from the Bazaar!",
@@ -191231,7 +191231,7 @@
 },
 {
 "en": "Grants %1$s❤ Health when applied to an armor piece. Can only be applied to an item once.",
-"zh": "用于护甲时,获得 %1$s ❤ 生命值。每件物品只能使用一次。"
+"zh": "用于盔甲时,获得 %1$s ❤ 生命值。每件物品只能使用一次。"
 },
 {
 "en": "Ores Mined: %1$s",
@@ -192243,11 +192243,11 @@
 },
 {
 "en": "A nearby Superprotectron is defending this goblin!",
-"zh": "附近有 超级守卫机 正在保护这只哥布林!"
+"zh": "附近有 超级护卫者 正在保护这只哥布林!"
 },
 {
 "en": "A nearby Superprotectron defends this goblin against ability damage!",
-"zh": "附近的 超级守卫机 让这只哥布林免疫技能伤害!"
+"zh": "附近的 超级护卫者 让这只哥布林免疫技能伤害!"
 },
 {
 "en": "Fish in the pond.",
@@ -192439,7 +192439,7 @@
 },
 {
 "en": "Select an option: [What happens if I have more Cold Resistance than Cold?]",
-"zh": "请选择: [抗寒高于寒冷值时会怎样?]"
+"zh": "请选择: [寒冷抵抗高于寒冷值时会怎样?]"
 },
 {
 "en": "Select an option: [Yes]",
@@ -194299,7 +194299,7 @@
 },
 {
 "en": "The stats of this armor change from %1$s to %2$s% depending on the current light level.",
-"zh": "此护甲的属性随当前光照等级在 %1$s 至 %2$s% 之间变化。"
+"zh": "此盔甲的属性随当前光照等级在 %1$s 至 %2$s% 之间变化。"
 },
 {
 "en": "Converts your Intelligence into Mining Speed. %1$s⸕ Mining Speed for every %2$s✎ Intelligence removed.",
@@ -194335,7 +194335,7 @@
 },
 {
 "en": "Increases the defense of each armor piece by %1$s% ❈ Defense for each missing percent of HP.",
-"zh": "每损失 1% 生命值，每件护甲获得 %1$s% ❈ 防御加成。"
+"zh": "每损失 1% 生命值，每件盔甲获得 %1$s% ❈ 防御加成。"
 },
 {
 "en": "Grants %1$s❤ Health, %2$s❁ Strength, and %3$s☠ Crit Damage while on the Crimson Isle.",
@@ -194991,11 +194991,11 @@
 },
 {
 "en": "[Bazaar] Executing instant sell...",
-"zh": "[集市] 正在立刻卖出……"
+"zh": "[集市] 正在即时出售……"
 },
 {
 "en": "[Bazaar] Executing instant buy...",
-"zh": "[集市] 正在立刻买入……"
+"zh": "[集市] 正在即时购买……"
 },
 {
 "en": "[Bazaar] Putting goods in escrow...",
@@ -196811,7 +196811,7 @@
 },
 {
 "en": "Applies the %1$s reforge when combined with armor.",
-"zh": "与护甲合成后，施加%1$s重铸。"
+"zh": "与盔甲合成后，施加%1$s重铸。"
 },
 {
 "en": "Applies the %1$s reforge when combined with a farming tool.",
@@ -201127,7 +201127,7 @@
 },
 {
 "en": "Click to donate armor set!",
-"zh": "点击捐赠护甲套装！"
+"zh": "点击捐赠盔甲套装！"
 },
 {
 "en": "Ozanne will remove and refund",
@@ -206183,11 +206183,11 @@
 },
 {
 "en": "Applies %1$s❁ Strength to all Arachnal  weapons, armor, and equipment you have equipped.",
-"zh": "你已装备的所有节肢类  武器、护甲与装备获得 %1$s ❁ 力量。"
+"zh": "你已装备的所有节肢类  武器、盔甲与装备获得 %1$s ❁ 力量。"
 },
 {
 "en": "Applies %1$s❁ Strength to all Arachnal Ж weapons, armor, and equipment you have equipped.",
-"zh": "你已装备的所有节肢类 Ж 武器、护甲与装备获得 %1$s ❁ 力量。"
+"zh": "你已装备的所有节肢类 Ж 武器、盔甲与装备获得 %1$s ❁ 力量。"
 },
 {
 "en": "Spider, Cave Spider and Tarantula minions work %1$s faster while on your island.",
@@ -216590,6 +216590,110 @@
 "zh": "博物馆（盔甲）:"
 },
 {
+"en": "Instant Sell",
+"zh": "即时出售"
+},
+{
+"en": "Mythological Ritual",
+"zh": "神话庆典"
+},
+{
+"en": "Superprotectron",
+"zh": "超级护卫者"
+},
+{
+"en": "Blessed Minos Hunter",
+"zh": "蒙福米诺斯猎人"
+},
+{
+"en": "Epic Rock Pet",
+"zh": "史诗岩石宠物"
+},
+{
+"en": "Legendary Rock Pet",
+"zh": "传说岩石宠物"
+},
+{
+"en": "Light Blue Paint",
+"zh": "淡蓝色油漆"
+},
+{
+"en": "Great Explorer",
+"zh": "伟大探险家"
+},
+{
+"en": "Lunar Moth",
+"zh": "月光蛾"
+},
+{
+"en": "Grand Library",
+"zh": "大图书馆"
+},
+{
+"en": "Combine Items",
+"zh": "合成物品"
+},
+{
+"en": "Enigma Soul (Rift)",
+"zh": "谜魂 (裂隙)"
+},
+{
+"en": "Pet Score Rewards",
+"zh": "宠物评分奖励"
+},
+{
+"en": "Bronze Trophy Frog Sack",
+"zh": "青铜奖杯蛙收纳袋"
+},
+{
+"en": "Silver Trophy Frog Sack",
+"zh": "白银奖杯蛙收纳袋"
+},
+{
+"en": "The Great Spook Experiments",
+"zh": "大惊吓实验"
+},
+{
+"en": "Undercover Agent",
+"zh": "卧底特工"
+},
+{
+"en": "Ship Navigator",
+"zh": "船只领航员"
+},
+{
+"en": "Ship Navigator (NPC)",
+"zh": "船只领航员 (NPC)"
+},
+{
+"en": "SHIP NAVIGATOR (NPC)",
+"zh": "船只领航员 (NPC)"
+},
+{
+"en": "Fisherman Gerald",
+"zh": "渔夫杰拉德"
+},
+{
+"en": "Fisherman Gerald (NPC)",
+"zh": "渔夫杰拉德 (NPC)"
+},
+{
+"en": "Spike Shard",
+"zh": "尖刺怪碎片"
+},
+{
+"en": "- %1$s Edition to %2$s!",
+"zh": "- %1$s 纪念版赠予 %2$s！"
+},
+{
+"en": "☠ Crit Damage and ❁ Strength by %1$s for every %2$s Swing Range over %3$s (up to %4$s)",
+"zh": "每超出 %3$s 的 %2$s 挥击范围，☠ 暴击伤害和 ❁ 力量提高 %1$s（最多计至 %4$s）"
+},
+{
+"en": "☠ Crit Damage and ❁ Strength by %1$s for every %2$s Swing Range over %3$s (up to %4$s).",
+"zh": "每超出 %3$s 的 %2$s 挥击范围，☠ 暴击伤害和 ❁ 力量提高 %1$s（最多计至 %4$s）。"
+},
+{
 "en": "- %1$s ❤ Health (MM) : %2$s",
 "zh": "- %1$s ❤ 生命值 (大师模式) : %2$s"
 },
@@ -217116,10 +217220,6 @@
 {
 "en": "◆ Fire Spiral Rune I",
 "zh": "◆ 火焰螺旋符文 I"
-},
-{
-"en": "◆ Fire Spiral Rune I to IceSniperALT in an auction!",
-"zh": "◆ 火焰螺旋符文 I 卖给 IceSniperALT，领取了 %1$s 硬币！"
 },
 {
 "en": "■ Poppy",
@@ -217742,14 +217842,6 @@
 "zh": "行走速度:"
 },
 {
-"en": "+%1$s% every",
-"zh": "+%3$s  防御额外提高"
-},
-{
-"en": "+%1$s Defense in damage to any enemy in its path.",
-"zh": "+%2$s%。"
-},
-{
 "en": "- Master Mode:",
 "zh": "- 大师模式:"
 },
@@ -217906,10 +217998,6 @@
 "zh": "☠ 凋灵类型的生物从高处击落致死。"
 },
 {
-"en": "- %1$s Edition to %2$s!",
-"zh": "- %1$s 纪念版！"
-},
-{
 "en": "- Double AH & Bazaar Tax",
 "zh": "- 拍卖行和集市税费翻倍"
 },
@@ -218048,10 +218136,6 @@
 {
 "en": "- Random Quest Item",
 "zh": "- 随机任务物品"
-},
-{
-"en": "- %1$s with %2$s Honey Jar!",
-"zh": "- %1$s！"
 },
 {
 "en": "Special Requirements:",
@@ -218346,10 +218430,6 @@
 "zh": "活动加成:"
 },
 {
-"en": "☠ Crit Damage each second for %1$s seconds",
-"zh": "☠ 暴击伤害的 %2$s 倍的伤害，持续 %1$s 秒。"
-},
-{
 "en": "☠ Crit Damage for every nearby wolf monster.",
 "zh": "☠ 暴击伤害。"
 },
@@ -218358,16 +218438,8 @@
 "zh": "☠ 暴击伤害。最多计入 %1$s 只狼。"
 },
 {
-"en": "☠ Crit Damage and ❁ Strength by %1$s for every %2$s Swing Range over %3$s (up to %4$s)",
-"zh": "☠ 暴击伤害和 ❁ 力量提高 %1$s (最多计至 %4$s)"
-},
-{
 "en": "☠ Crit Damage when a mob gets close to you (%1$ss cooldown).",
 "zh": "☠ 暴击伤害 %1$s 倍的伤害，每 %1$s 秒至多触发一次。"
-},
-{
-"en": "☠ Crit Damage and ❁ Strength by %1$s for every %2$s Swing Range over %3$s (up to %4$s).",
-"zh": "☠ 暴击伤害和 ❁ 力量提高 %1$s (最多计至 %4$s)。"
 },
 {
 "en": "- Traveling Zookeeper",
@@ -218726,6 +218798,10 @@
 "zh": "龙气满满！你切换到了%1$s皮肤！"
 },
 {
+"en": "▲ %1$s cannot be combined!",
+"zh": "▲ %1$s无法合成！"
+},
+{
 "en": "Dropped rarely from %1$s during the Harvest Feast event.",
 "zh": "在丰收盛宴活动期间由%1$s小概率掉落。"
 },
@@ -218748,10 +218824,6 @@
 {
 "en": "HUNGY! You swapped to the %1$s skin!",
 "zh": "饿饿！你切换到了%1$s皮肤！"
-},
-{
-"en": "▲ %1$s cannot be combined!",
-"zh": "▲ %1$s无法合成！"
 },
 {
 "en": "Gain +%1$s% more %2$s.",

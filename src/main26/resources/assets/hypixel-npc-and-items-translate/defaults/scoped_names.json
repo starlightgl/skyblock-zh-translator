@@ -4,7 +4,7 @@
     "Bea": "比娅",
     "Taylor": "泰勒",
     "Seymour": "西摩",
-    "Fisherman Gerald": "渔夫杰拉尔德",
+    "Fisherman Gerald": "渔夫杰拉德",
     "Biblio": "比布里奥",
     "Susan": "苏珊",
     "Amelia": "阿米莉亚",
@@ -57,7 +57,9 @@
     "Curator": "馆长",
     "Guy": "盖伊",
     "Gladiator": "角斗士",
-    "VARGUL": "瓦古尔"
+    "VARGUL": "瓦古尔",
+    "Ship Navigator": "船只领航员",
+    "SHIP NAVIGATOR": "船只领航员"
   },
   "regions": {
     "Community Center": "社区中心",
@@ -97,7 +99,7 @@
     "Bea": "比娅",
     "Taylor": "泰勒",
     "Seymour": "西摩",
-    "Fisherman Gerald": "渔夫杰拉尔德",
+    "Fisherman Gerald": "渔夫杰拉德",
     "Biblio": "比布里奥",
     "Susan": "苏珊",
     "Amelia": "阿米莉亚",
@@ -201,7 +203,8 @@
     "Promising Pickaxe": "潜力镐",
     "Artisanal Shortbow": "匠造短弓",
     "Undead Sword": "亡灵剑",
-    "Wither Bow": "凋灵弓"
+    "Wither Bow": "凋灵弓",
+    "Ship Navigator": "船只领航员"
   },
   "levels": {
     "Ammonite": "菊石",

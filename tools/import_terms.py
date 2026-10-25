@@ -30,7 +30,6 @@ NAME_SHEETS = ["物品名称", "宠物", "生物", "区域", "修饰词", "附�
 # but some descriptions and item names still carried the old word). Order matters.
 REPLACE = {
     "地下墓穴": "地牢",  # 2026-10-25 user: Catacombs
-    "爪牙": "小人",
     "水晶残核": "水晶洞窟",
     "残核": "洞窟",
     "Kada 骑士": "卡达骑士",
@@ -327,6 +326,37 @@ for enchant in enchants["enchants"]:
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import layout_fixes
 layout_stats, _ = layout_fixes.post_process(lines, names, overrides.get("unify", []))
+# Apply the same scoped decisions to all generated entries, after derived rows exist.
+from terminology_rules import apply_context
+for en in names:
+    names[en] = apply_context(en, names[en])
+for entry in lines:
+    entry["zh"] = apply_context(entry["en"], entry["zh"])
+# Layout/generalization can derive wrapped rows after explicit overrides were read.
+# Explicit removals still win; a fragment must not invent a missing parameter.
+dropped = {en for group in overrides.get("lines", {}).values() for en, zh in group.items() if not zh}
+lines[:] = [entry for entry in lines if entry["en"] not in dropped]
+# Derived templates must preserve their argument set as well as original workbook rows.
+def format_args(text):
+    args, next_arg = set(), 0
+    for match in re.finditer(r"%(?:(\d+)\$)?[sdf]", text):
+        if match.group(1):
+            args.add(int(match.group(1)))
+        else:
+            next_arg += 1
+            args.add(next_arg)
+    return args
+for entry in lines:
+    if format_args(entry["en"]) != format_args(entry["zh"]):
+        raise ValueError("Generated template loses or invents an argument: " + entry["en"])
+# Keep real-name protection reproducible without needing a fresh NEU download.
+protection = os.path.join(ROOT, "data/not_reforged_additions.json")
+if os.path.exists(protection):
+    nr_path = os.path.join(DEFAULTS, "not_reforged.json")
+    protected = set(json.load(open(nr_path, encoding="utf-8")))
+    protected.update(json.load(open(protection, encoding="utf-8"))["names"])
+    with open(nr_path, "w", encoding="utf-8") as f:
+        json.dump(sorted(protected), f, ensure_ascii=False, indent=0)
 
 with open(os.path.join(DEFAULTS, "table_names.json"), "w", encoding="utf-8") as f:
     json.dump({"_说明": "由 tools/import_terms.py 从 data/SkyBlock术语表.xlsx 生成，请勿手动修改。", "names": names, "aliases": alias,

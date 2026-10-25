@@ -76,7 +76,10 @@ public final class ItemLines {
             String parsed = lines.get(i);
             String rule = filter != null && filter[i] != null ? filter[i] : (parsed.isEmpty() ? null : PatternRules.translate(parsed));
             if (rule != null && p.fixed[i] != PhraseMatcher.MERGED) p.fixed[i] = rule;
-            if (p.fixed[i] == null && !parsed.isEmpty()) p.fixed[i] = EnchantHints.translateList(parsed);
+            // A verified enchant-only row wins over generic words and accidental reforge splits.
+            // Bare words (Power, Sunset, Absorb) still need their surrounding context.
+            String enchant = parsed.isEmpty() ? null : EnchantHints.translateList(parsed);
+            if (enchant != null && p.fixed[i] != PhraseMatcher.MERGED) p.fixed[i] = enchant;
             if (p.fixed[i] == null && !parsed.isEmpty() && i == 0) p.fixed[i] = TableNames.translateName(parsed);
             if (p.fixed[i] == null && !parsed.isEmpty()) p.fixed[i] = glossaryName(parsed);
             // a line that is just a name, maybe with a bullet or a tier: "▶ Enchanted Ink Sac", "Missile IV"

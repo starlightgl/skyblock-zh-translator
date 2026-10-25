@@ -38,7 +38,6 @@ public final class TermFixes {
     /** Wording decisions applied to every translated line. */
     private static final Map<String, String> ZH_REPLACE = new java.util.LinkedHashMap<>(Map.of());
     static {
-        ZH_REPLACE.put("爪牙", "小人");
         ZH_REPLACE.put("地下墓穴", "地牢"); // User wording: Catacombs, including saved translations
         ZH_REPLACE.put("水晶残核", "水晶洞窟"); // Crystal Hollows；“残核”是与 Crystal Nucleus 混淆的旧译
         ZH_REPLACE.put("残核", "洞窟");
